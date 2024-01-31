@@ -1,0 +1,12 @@
+service: pipelines
+image: dorianmariefr/pipelines
+servers:
+  - 165.232.151.194
+registry:
+  username: dorianmariefr
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+env:
+  secret:
+    - RAILS_MASTER_KEY
+
