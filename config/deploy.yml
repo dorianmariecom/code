@@ -3,7 +3,7 @@ image: dorianmariefr/code
 servers:
   web:
     hosts:
-      - 165.232.151.194
+      - 165.232.149.13
     labels:
       traefik.http.routers.blog.entrypoints: websecure
       traefik.http.routers.blog.rule: Host(`code.dorianmarie.com`)
