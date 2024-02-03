@@ -5,9 +5,9 @@ servers:
     hosts:
       - 165.232.149.13
     labels:
-      traefik.http.routers.blog.entrypoints: websecure
-      traefik.http.routers.blog.rule: Host(`code.dorianmarie.com`)
-      traefik.http.routers.blog.tls.certresolver: letsencrypt
+      traefik.http.routers.code.entrypoints: websecure
+      traefik.http.routers.code.rule: Host(`code.dorianmarie.com`)
+      traefik.http.routers.code.tls.certresolver: letsencrypt
 
 registry:
   username: dorianmariefr
