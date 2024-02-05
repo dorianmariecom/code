@@ -168,6 +168,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
+    pg (1.5.4)
     psych (5.1.2)
       stringio
     public_suffix (5.0.4)
@@ -236,12 +237,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.7.2-aarch64-linux)
-    sqlite3 (1.7.2-arm-linux)
-    sqlite3 (1.7.2-arm64-darwin)
-    sqlite3 (1.7.2-x86-linux)
-    sqlite3 (1.7.2-x86_64-darwin)
-    sqlite3 (1.7.2-x86_64-linux)
     sshkit (1.22.0)
       mutex_m
       net-scp (>= 1.1.2)
@@ -281,12 +276,12 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  pg
   puma
   rails
   redis
   selenium-webdriver
   sprockets-rails
-  sqlite3
   stimulus-rails
   turbo-rails
 

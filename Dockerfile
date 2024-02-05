@@ -11,7 +11,7 @@ ENV RAILS_ENV="production" \
 FROM base as build
 
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config
+    apt-get install --no-install-recommends -y build-essential git libpq-dev libvips pkg-config
 
 COPY Gemfile Gemfile.lock ./
 
@@ -28,7 +28,7 @@ RUN RAILS_MASTER_KEY_DUMMY=1 SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompi
 FROM base
 
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips && \
+    apt-get install --no-install-recommends -y curl libvips postgresql-client && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 COPY --from=build /usr/local/bundle /usr/local/bundle

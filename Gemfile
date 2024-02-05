@@ -12,7 +12,7 @@ gem "puma"
 gem "rails"
 gem "redis"
 gem "sprockets-rails"
-gem "sqlite3"
+gem "pg"
 gem "stimulus-rails"
 gem "turbo-rails"
 
