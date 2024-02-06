@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title= title
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+  body.prose.max-w-lg.mx-auto.p-8
+    h1= title
+    = yield

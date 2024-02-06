@@ -5,15 +5,18 @@ source "https://rubygems.org"
 ruby "3.2.3"
 
 gem "bootsnap", require: false
+gem "code-ruby"
 gem "importmap-rails"
 gem "jbuilder"
 gem "kamal"
+gem "pg"
 gem "puma"
 gem "rails"
 gem "redis"
+gem "slim-rails"
 gem "sprockets-rails"
-gem "pg"
 gem "stimulus-rails"
+gem "tailwindcss-rails"
 gem "turbo-rails"
 
 group :test do

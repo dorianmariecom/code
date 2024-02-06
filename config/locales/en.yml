@@ -1,1 +1,6 @@
 en:
+  pages:
+    home:
+      title: Code
+    up:
+      title: /up
