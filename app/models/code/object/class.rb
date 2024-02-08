@@ -9,8 +9,20 @@ class Code
         value = arguments.first&.value
 
         if raw == Email && operator.to_s == "send"
-          sig(args)
-          Class.new(Email)
+          sig(args) do
+            {
+              from: String.maybe,
+              to: String.maybe,
+              subject: String.maybe,
+              body: String.maybe
+            }
+          end
+          Email.code_send(
+            from: value.code_get(String.new("from")),
+            to: value.code_get(String.new("to")),
+            subject: value.code_get(String.new("subject")),
+            body: value.code_get(String.new("body")),
+          )
         else
           original_call(**args)
         end
