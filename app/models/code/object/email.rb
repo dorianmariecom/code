@@ -13,25 +13,31 @@ class Code
           from = from.raw
         end
 
-        from = Mail::AddressList.new(from)
-        p from
+        if to.nil? || to.falsy?
+          to = Current.primary_email_address!
+          to = from.email_address_with_display_name
+        else
+          to = to.raw
+        end
 
-        #mail = Mail.new
-        #mail.from = from
-        #mail.to = to
-        #mail.subject = subject.raw
-        #mail.body = body.raw
-        #mail.delivery_method(
-        #  :smtp,
-        #  address: address,
-        #  port: port,
-        #  user_name: user_name,
-        #  password: password,
-        #  authentication: authentication,
-        #  enable_starttls_auto: enable_starttls_auto
-        #)
-        #mail.deliver!
-        #Nothing.new
+        from = Mail::AddressList.new(from)
+        to = Mail::AddressList.new(to)
+
+        from.addresses.each do |from_address|
+          to.addresses.each do |to_address|
+            Current
+              .email_addresses
+              .find_by!(email_address: from_address.address)
+              .deliver!(
+                from: from_address,
+                to: to_address,
+                subject: subject&.raw || "",
+                body: body&.raw || "",
+              )
+          end
+        end
+
+        Nothing.new
       end
 
       def to_s

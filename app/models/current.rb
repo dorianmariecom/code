@@ -8,6 +8,11 @@ class Current < ActiveSupport::CurrentAttributes
     Time.zone = user.time_zone
   end
 
+  def email_addresses
+    return unless user
+    user.email_addresses
+  end
+
   def primary_email_address
     return unless user
     user.primary_email_address || user.email_addresses.first
