@@ -1,0 +1,37 @@
+- type = local_assigns.fetch(:type, :string).to_s.inquiry
+- field = local_assigns.fetch(:field)
+- f = local_assigns.fetch(:f)
+- scope = local_assigns.fetch(:scope) { f.object.class.name.underscore }
+- options = local_assigns.fetch(:options, [])
+- required = local_assigns.fetch(:required, false)
+- autocomplete = local_assigns.fetch(:autocomplete, :off).to_sym
+- data = local_assigns.fetch(:data, {})
+- data[:form_type] ||= FormType.from(autocomplete)
+- value = local_assigns.fetch(:value) { f.object.public_send(field) }
+
+.p
+  .font-bold= f.label field, t(".#{scope}.#{field}.label")
+  - if type.time_zone?
+    div(data-controller="time-zone")
+      = f.select field, options_for_select(options), { include_blank: true }, data: { time_zone_target: "input", action: "time-zone#change", **data }, class: "w-full", autocomplete: autocomplete, value: value
+  - elsif type.checkbox?
+    = f.check_box field, data: data, autocomplete: autocomplete, required: required, value: value
+  - elsif type.email_address?
+    div(data-controller="email-address")
+      = f.email_field field, data: { email_address_target: "input", action: "email-address#input", **data }, class: "w-full", required: required, autocomplete: autocomplete, value: value
+      .text-red-600(data-email-address-target="error")
+  - elsif type.name?
+    div(data-controller="name")
+      = f.text_field field, data: { name_target: "input", action: "name#input", **data }, required: required, class: "w-full", autocomplete: autocomplete, value: value
+      .text-red-600(data-name-target="error")
+  - elsif type.domain?
+    div(data-controller="domain")
+      = f.text_field field, data: { domain_target: "input", action: "domain#input", **data }, required: required, class: "w-full", autocomplete: autocomplete, value: value
+      .text-red-600(data-domain-target="error")
+  - elsif type.number?
+    = f.number_field field, required: required, autocomplete: autocomplete, class: "w-full", value: value
+  - elsif type.password?
+    = f.password_field field, required: required, autocomplete: autocomplete, class: "w-full", value: value
+  - elsif type.string?
+    = f.text_field field, required: required, autocomplete: autocomplete, class: "w-full", value: value
+  .text-sm.text-gray-600= t(".#{scope}.#{field}.hint")

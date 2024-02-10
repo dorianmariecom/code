@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :email_address do
     user
+    primary { false }
     display_name { "Dorian Marié" }
     email_address { "dorian@dorianmarie.com" }
     smtp_user_name { email_address }

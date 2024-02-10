@@ -1,21 +1,19 @@
 class EmailAddress < ApplicationRecord
+  EMAIL_ADDRESS_REGEXP = URI::MailTo::EMAIL_REGEXP
+  DOMAIN_REGEXP = /\A[a-zA-Z0-9]+([\-\.]{1}[a-zA-Z0-9]+)*\.[a-zA-Z]{2,5}\z/
+
   belongs_to :user, default: -> { Current.user }
 
   encrypts :smtp_password
 
   validates :email_address, presence: true
-  validates :email_address, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :smtp_address, presence: true
+  validates :email_address, format: { with: EMAIL_ADDRESS_REGEXP }
+  validates :smtp_address, presence: true, format: { with: DOMAIN_REGEXP }
   validates :smtp_port, presence: true
-  validates :smtp_user_name, presence: true
-  validates :smtp_password, presence: true
+  validates :smtp_user_name, presence: true, format: { with: EMAIL_ADDRESS_REGEXP }
   validates :smtp_authentication, presence: true
 
-  after_commit do
-    if user && user.primary_email_address.nil?
-      user.update!(primary_email_address: self)
-    end
-  end
+  scope :primary, -> { where(primary: true) }
 
   def email_address_with_display_name
     ActionMailer::Base.email_address_with_name(email_address, display_name)

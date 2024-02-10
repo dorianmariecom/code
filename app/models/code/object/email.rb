@@ -32,7 +32,7 @@ class Code
                 from: from_address,
                 to: to_address,
                 subject: subject&.raw || "",
-                body: body&.raw || "",
+                body: body&.raw || ""
               )
           end
         end

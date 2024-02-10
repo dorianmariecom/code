@@ -6,8 +6,30 @@ html
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
-    = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
+
+    javascript:
+      window.constants = {}
+      window.constants.EMAIL_ADDRESS_REGEXP = #{raw email_address_regexp.to_json}
+      window.constants.DOMAIN_REGEXP = #{raw domain_regexp.to_json}
+      window.translations = #{raw I18n.t(".js").to_json}
   body.prose.max-w-lg.mx-auto.p-8
+    .p
+      => link_to t(".title"), root_path
+
+      - if current_user
+        => link_to current_user
+        => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
+      - else
+        => link_to t(".register"), new_user_path
+        => link_to t(".log_in"), new_session_path
+
+    - if notice.present?
+      p.text-green-600= notice
+
+    - if alert.present?
+      p.text-red-600= alert
+
     h1= title
+
     = yield

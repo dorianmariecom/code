@@ -15,7 +15,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def primary_email_address
     return unless user
-    user.primary_email_address || user.email_addresses.first
+    email_addresses.primary.first || email_addresses.first
   end
 
   def primary_email_address!

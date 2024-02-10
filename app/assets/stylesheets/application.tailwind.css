@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .p {
+    @apply my-5;
+  }
+
+  .a {
+    color: var(--tw-prose-links);
+    font-weight: 500;
+    text-decoration: underline;
   }
 }
-
-*/

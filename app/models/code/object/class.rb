@@ -21,7 +21,7 @@ class Code
             from: value.code_get(String.new("from")),
             to: value.code_get(String.new("to")),
             subject: value.code_get(String.new("subject")),
-            body: value.code_get(String.new("body")),
+            body: value.code_get(String.new("body"))
           )
         else
           original_call(**args)

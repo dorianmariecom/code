@@ -1,6 +1,80 @@
 en:
+  js:
+    email_address:
+      not_present: Not present
+      not_valid: Not valid
+    name:
+      not_present: Not present
+    domain:
+      not_present: Not present
+      not_valid: Not valid
+  layouts:
+    application:
+      register: Register
+      log_in: Log in
+      log_out: Log out
+      title: Code
   pages:
     home:
       title: Code
     up:
       title: /up
+  users:
+    create:
+      notice: Registered
+    update:
+      notice: User updated
+    destroy:
+      notice: User deleted
+    new:
+      title: Registration
+      submit: Register
+    edit:
+      title: Edit user
+      submit: Update
+    show:
+      edit: Edit user
+      destroy: Delete user
+      confirm: Are you sure you want to delete this user?
+  sessions:
+    destroy:
+      notice: Logged out
+  email_addresses:
+    form:
+      remove: Remove
+    nested:
+      add_email_address: Add email address
+  shared:
+    field:
+      email_address:
+        primary:
+          label: Primary?
+          hint: Will this be the primary email address to send and receive emails from
+        email_address:
+          label: Email address
+          hint: The email address you will send and receive emails from
+        display_name:
+          label: Display name
+          hint: Optional, name to be displayed when you send emails
+        smtp_address:
+          label: SMTP address
+          hint: "Domain of your email provider. Gmail: smtp.gmail.com, Yahoo Mail: smtp.mail.yahoo.com, Outlook.com/Office 365: smtp.office365.com, etc."
+        smtp_port:
+          label: SMTP port
+          hint: Generally 465 (SSL) or 587 (TLS)
+        smtp_user_name:
+          label: SMTP user name
+          hint: Your email address
+        smtp_password:
+          label: SMTP password
+          hint: In case of Google, you can use App Passwords
+        smtp_authentication:
+          label: SMTP authentication
+          hint: Generally "plain"
+        smtp_enable_starttls_auto:
+          label: SMTP enable StartTLS auto
+          hint: Generally true
+      user:
+        time_zone:
+          label: Time zone
+          hint: Which time zone are you currently located in?

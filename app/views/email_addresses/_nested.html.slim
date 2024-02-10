@@ -1,0 +1,13 @@
+div(data-controller="email-addresses")
+  template(data-email-addresses-target="template")
+    = f.fields_for :email_addresses, EmailAddress.new, child_index: 'NEW_RECORD' do |email_address_f|
+      = render "email_addresses/form", f: email_address_f
+
+  = f.fields_for :email_addresses do |email_address_f|
+    = render "email_addresses/form", f: email_address_f
+
+  div(data-email-addresses-target="target")
+
+  .p
+    button.underline.cursor-pointer(type="button" data-action="email-addresses#add")
+      = t(".add_email_address")
