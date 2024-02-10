@@ -4,9 +4,24 @@ class User < ApplicationRecord
       ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:canonical_identifier)
 
   has_many :email_addresses
+  has_many :passwords
+
+  scope :where_email_address, ->(email_address) {
+    joins(:email_addresses)
+      .where(email_addresses: { email_address: email_address })
+      .or(
+        joins(:email_addresses)
+          .where(email_addresses: { smtp_user_name: email_address })
+      )
+  }
 
   accepts_nested_attributes_for(
     :email_addresses,
+    reject_if: :all_blank,
+    allow_destroy: true
+  )
+  accepts_nested_attributes_for(
+    :passwords,
     reject_if: :all_blank,
     allow_destroy: true
   )

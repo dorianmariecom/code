@@ -3,9 +3,11 @@
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
-  helper_method :current_user
-
   before_action :set_current_user
+  after_action :verify_authorized
+  after_action :verify_policy_scoped
+
+  helper_method :current_user
 
   def current_user
     Current.user

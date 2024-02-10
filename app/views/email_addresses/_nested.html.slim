@@ -1,10 +1,10 @@
 div(data-controller="email-addresses")
   template(data-email-addresses-target="template")
     = f.fields_for :email_addresses, EmailAddress.new, child_index: 'NEW_RECORD' do |email_address_f|
-      = render "email_addresses/form", f: email_address_f
+      = render "email_addresses/form", f: email_address_f, removable: true
 
   = f.fields_for :email_addresses do |email_address_f|
-    = render "email_addresses/form", f: email_address_f
+    = render "email_addresses/form", f: email_address_f, removable: f.object.email_addresses.many?
 
   div(data-email-addresses-target="target")
 

@@ -2,7 +2,9 @@ class FormType
   AUTOCOMPLETE_TO_FORM_TYPE = {
     off: :other,
     email: :email,
-    name: :name
+    name: :name,
+    "new-password": "password,new",
+    "current-password": "password"
   }
 
   attr_reader :autocomplete

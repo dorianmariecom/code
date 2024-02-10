@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 ruby "3.3.0"
 
+gem "bcrypt"
 gem "bootsnap", require: false
 gem "code-ruby"
 gem "importmap-rails"
@@ -19,6 +20,8 @@ gem "sprockets-rails"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "turbo-rails"
+gem "zxcvbn-ruby", require: "zxcvbn"
+gem "heroicon"
 
 group :test do
   gem "capybara"

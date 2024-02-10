@@ -8,6 +8,13 @@ en:
     domain:
       not_present: Not present
       not_valid: Not valid
+    password:
+      not_present: Not present
+  passwords:
+    form:
+      remove: Remove
+    nested:
+      add_password: Add password
   layouts:
     application:
       register: Register
@@ -37,6 +44,13 @@ en:
       destroy: Delete user
       confirm: Are you sure you want to delete this user?
   sessions:
+    create:
+      wrong_email_address: Wrong email address
+      wrong_password: Wrong password
+      notice: Logged in
+    new:
+      title: Log in
+      submit: Log in
     destroy:
       notice: Logged out
   email_addresses:
@@ -46,6 +60,19 @@ en:
       add_email_address: Add email address
   shared:
     field:
+      session:
+        email_address:
+          label: Email address
+          hint: One of your email addresses
+        password:
+          label: Password
+          hint: One of your passwords
+      password:
+        show_password: Show password
+        hide_password: Hide password
+        password:
+          label: Password
+          hint: Your code.dorianmarie.com password
       email_address:
         primary:
           label: Primary?
@@ -78,3 +105,14 @@ en:
         time_zone:
           label: Time zone
           hint: Which time zone are you currently located in?
+  password_validator:
+    model:
+      sequence:
+        bruteforce: Add another word or two, preferably uncommon
+        date: Avoid dates and years that are associated with you
+        dictionary: Add another word or two, preferably uncommon
+        digits: Avoid digits
+        repeat: Avoid repeated words or characters
+        sequence: Avoid sequences
+        spatial: Use longer keyboard patterns with more turns
+        year: Avoid recent years, especially if they are associated with you

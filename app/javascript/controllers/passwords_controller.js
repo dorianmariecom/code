@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["target", "template", "remove", "primary"];
+  static targets = ["target", "template", "remove"];
 
   connect() {
     this.update();
@@ -22,7 +22,7 @@ export default class extends Controller {
   remove(event) {
     event.preventDefault();
 
-    const wrapper = event.target.closest(".email-address");
+    const wrapper = event.target.closest(".password");
 
     if (wrapper.dataset.newRecord === "true") {
       wrapper.remove();
@@ -34,38 +34,8 @@ export default class extends Controller {
   }
 
   update(event) {
-    const visiblePrimaryTargets = this.primaryTargets.filter(
-      (primaryTarget) => {
-        const parent = primaryTarget.closest(".email-address");
-        const destroy = parent.querySelector("input[name*='_destroy']");
-        return destroy.value === "false";
-      },
-    );
-
-    let checked;
-
-    if (event && event.target.checked) {
-      checked = event.target;
-    } else {
-      checked = visiblePrimaryTargets.find(
-        (primaryTarget) => primaryTarget.checked,
-      );
-    }
-
-    if (!checked) {
-      if (event && event.target === this.primaryTargets[0]) {
-        checked = visiblePrimaryTargets[1] || visiblePrimaryTargets[0];
-      } else {
-        checked = visiblePrimaryTargets[0];
-      }
-    }
-
-    visiblePrimaryTargets.forEach((primaryTarget) => {
-      primaryTarget.checked = primaryTarget === checked;
-    });
-
     const visibleRemoveTargets = this.removeTargets.filter((removeTarget) => {
-      const parent = removeTarget.closest(".email-address");
+      const parent = removeTarget.closest(".password");
       const destroy = parent.querySelector("input[name*='_destroy']");
       return destroy.value === "false";
     });

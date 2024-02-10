@@ -10,12 +10,12 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = authorize User.new
+    @user = authorize policy_scope(User).new
     build_user
   end
 
   def create
-    @user = authorize User.new(user_params)
+    @user = authorize policy_scope(User).new(user_params)
 
     if @user.save
       session[:user_id] = @user.id
@@ -52,6 +52,7 @@ class UsersController < ApplicationController
 
   def build_user
     @user.email_addresses.build(primary: true) if @user.email_addresses.none?
+    @user.passwords.build if @user.passwords.none?
   end
 
   def load_user
@@ -75,6 +76,11 @@ class UsersController < ApplicationController
           :smtp_password,
           :smtp_authentication,
           :smtp_enable_starttls_auto
+        ],
+        passwords_attributes: [
+          :id,
+          :_destroy,
+          :password
         ]
       )
   end

@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resource :session
+  resource :password
   resources :users
 
   get "up" => "pages#up"
