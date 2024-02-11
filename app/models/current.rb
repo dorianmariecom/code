@@ -13,6 +13,10 @@ class Current < ActiveSupport::CurrentAttributes
     user.email_addresses
   end
 
+  def email_addresses!
+    email_addresses || raise(Code::Error.new("No email addresses found"))
+  end
+
   def primary_email_address
     return unless user
     email_addresses.primary.first || email_addresses.first

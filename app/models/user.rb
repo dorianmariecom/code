@@ -1,7 +1,5 @@
 class User < ApplicationRecord
-  TIME_ZONES =
-    ["UTC"] +
-      ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:canonical_identifier)
+  TIME_ZONES = ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:canonical_identifier)
 
   has_many :email_addresses, dependent: :destroy
   has_many :passwords, dependent: :destroy
@@ -26,7 +24,7 @@ class User < ApplicationRecord
     allow_destroy: true
   )
 
-  validates :time_zone, presence: true, inclusion: { in: TIME_ZONES }
+  validates :time_zone, inclusion: { in: TIME_ZONES, allow_nil: true }
 
   def to_s
     "User##{id}"

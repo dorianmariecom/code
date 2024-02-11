@@ -9,9 +9,11 @@
 - action = data.delete(:action)
 - data[:form_type] ||= FormType.from(autocomplete)
 - value = local_assigns.fetch(:value) { f.object.public_send(field) }
+- fake = local_assigns.fetch(:fake, nil)
+- fake = fake.to_sentence(two_words_connector: " #{t(".or")} ", last_word_connector: " #{t(".or")} ") if fake.is_a?(Array) 
 
 .p
-  .font-bold= f.label field, t(".#{scope}.#{field}.label")
+  .font-bold= f.label field, t(".#{scope}.#{field}")
   - if type.time_zone?
     div(data-controller="time-zone")
       = f.select field, options_for_select(options), { include_blank: true }, data: { time_zone_target: "input", action: "time-zone#change #{action}", **data }, class: "w-full", autocomplete: autocomplete, value: value
@@ -48,4 +50,8 @@
     = f.select field, options_for_select(options), {}, required: required, autocomplete: autocomplete, class: "w-full", value: value, data: data
   - elsif type.text?
     = f.text_area field, required: required, autocomplete: autocomplete, class: "w-full h-40", value: value, data: data
-  .text-sm.text-gray-600= t(".#{scope}.#{field}.hint")
+
+  - if fake.present?
+    .text-sm.text-gray-600.italic
+      => t(".eg")
+      = fake

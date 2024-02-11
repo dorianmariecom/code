@@ -9,6 +9,52 @@ module ApplicationHelper
     content_for(:title).presence || t("#{controller}.#{action}.title")
   end
 
+  def fake_inputs
+    "1 + 1, :Hello * 10, Mail.send"
+  end
+
+  def fake_email_addresses
+    3.times.map { Faker::Internet.email }
+  end
+
+  def fake_passwords
+    3.times.map { Faker::Internet.password }
+  end
+
+  def fake_time_zones
+    User::TIME_ZONES.sample(3)
+  end
+
+  def fake_display_names
+    3.times.map { Faker::Name.name }
+  end
+
+  def fake_smtp_addresses
+    [
+      "smtp.gmail.com",
+      "smtp.mail.yahoo.com",
+      "smtp.office365.com",
+      "smtp.aol.com",
+      "smtp.mail.me.com",
+      "smtp.bizmail.yahoo.com",
+      "smtpcorp.com",
+      "smtp.mailgun.org",
+      "smtp.mailchimp.com"
+    ]
+  end
+
+  def fake_smtp_ports
+    [465, 587]
+  end
+
+  def fake_smtp_user_names
+    fake_email_addresses
+  end
+
+  def fake_smtp_passwords
+    fake_passwords
+  end
+
   def time_zone_options
     User::TIME_ZONES
   end

@@ -1,3 +1,2 @@
-= form_for @program do |f|
-  = render "shared/field", f: f, field: :input, type: :text
-  = f.submit t(".submit"), class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+div(data-turbo="false")
+  = render "programs/form", program: @program, submit: t(".submit")

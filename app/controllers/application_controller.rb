@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_current_user
-    return unless session[:user_id].present?
+    return if session[:user_id].blank?
 
     Current.user = User.find_by(id: session[:user_id])
 

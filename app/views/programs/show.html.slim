@@ -25,3 +25,7 @@
 
 = link_to t(".edit"), [:edit, @program]
 = button_to t(".delete"), @program, method: :delete, class: "a text-red-600"
+
+hr
+
+= render "form", program: @program, submit: t(".submit")

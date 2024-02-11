@@ -7,6 +7,8 @@ ruby "3.3.0"
 gem "bcrypt"
 gem "bootsnap", require: false
 gem "code-ruby"
+gem "faker"
+gem "heroicon"
 gem "importmap-rails"
 gem "jbuilder"
 gem "kamal"
@@ -21,7 +23,6 @@ gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "turbo-rails"
 gem "zxcvbn-ruby", require: "zxcvbn"
-gem "heroicon"
 
 group :test do
   gem "capybara"

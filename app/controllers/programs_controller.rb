@@ -15,7 +15,15 @@ class ProgramsController < ApplicationController
     @program = authorize scope.new
   end
 
+  def redirect
+  end
+
   def create
+    if !current_user
+      Current.user = User.create!
+      session[:user_id] = Current.user.id
+    end
+
     @program = authorize scope.new(program_params)
 
     if @program.save

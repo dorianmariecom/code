@@ -34,6 +34,7 @@ en:
       output: output
       error: error
       result: result
+      submit: Re-evaluate
     form:
       remove: Remove
     nested:
@@ -102,6 +103,8 @@ en:
       destroy: Delete user
       confirm: Are you sure you want to delete this user?
       admin: Admin
+      new_email_address: New email address
+      new_password: New password
   sessions:
     create:
       wrong_email_address: Wrong email address
@@ -147,64 +150,32 @@ en:
       add_email_address: Add email address
   shared:
     field:
+      or: or
+      eg: e.g.
       session:
-        email_address:
-          label: Email address
-          hint: One of your email addresses
-        password:
-          label: Password
-          hint: One of your passwords
+        email_address: Email address
+        password: Password
       password:
         show_password: Show password
         hide_password: Hide password
-        user_id:
-          label: User
-          hint: Belongs to this user
-        password:
-          label: Password
-          hint: Your code.dorianmarie.com password
+        user_id: User
+        password: Password
       email_address:
-        user_id:
-          label: User
-          hint: Belongs to this user
-        primary:
-          label: Primary?
-          hint: Will this be the primary email address to send and receive emails from
-        email_address:
-          label: Email address
-          hint: The email address you will send and receive emails from
-        display_name:
-          label: Display name
-          hint: Optional, name to be displayed when you send emails
-        smtp_address:
-          label: SMTP address
-          hint: "Domain of your email provider. Gmail: smtp.gmail.com, Yahoo Mail: smtp.mail.yahoo.com, Outlook.com/Office 365: smtp.office365.com, etc."
-        smtp_port:
-          label: SMTP port
-          hint: Generally 465 (SSL) or 587 (TLS)
-        smtp_user_name:
-          label: SMTP user name
-          hint: Your email address
-        smtp_password:
-          label: SMTP password
-          hint: In case of Google, you can use App Passwords
-        smtp_authentication:
-          label: SMTP authentication
-          hint: Generally "plain"
-        smtp_enable_starttls_auto:
-          label: SMTP enable StartTLS auto
-          hint: Generally true
+        user_id: User
+        primary: Primary?
+        email_address: Email address
+        display_name: Display name
+        smtp_address: SMTP address
+        smtp_port: SMTP port
+        smtp_user_name: SMTP user name
+        smtp_password: SMTP password
+        smtp_authentication: SMTP authentication
+        smtp_enable_starttls_auto: SMTP enable StartTLS auto
       user:
-        admin:
-          label: Admin?
-          hint: You know it
-        time_zone:
-          label: Time zone
-          hint: Which time zone are you currently located in?
+        admin: Admin?
+        time_zone: Time zone
       program:
-        input:
-          label: Input
-          hint: Try "1 + 1"
+        input: Input
   password_validator:
     model:
       sequence:

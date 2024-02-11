@@ -5,9 +5,13 @@
 
 p.text-sm= link_to t(".email_addresses"), [@user, :email_addresses]
 
+p= link_to t(".new_email_address"), new_email_address_path
+
 = render @email_addresses
 
 p.text-sm= link_to t(".passwords"), [@user, :passwords]
+
+p= link_to t(".new_password"), new_password_path
 
 = render @passwords
 
