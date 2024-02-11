@@ -12,7 +12,7 @@ class EmailAddressesController < ApplicationController
   end
 
   def new
-    @email_address = authorize scope.new
+    @email_address = authorize scope.new(primary: current_user.email_addresses.none?)
   end
 
   def create

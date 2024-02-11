@@ -35,6 +35,8 @@ en:
       error: error
       result: result
       submit: Re-evaluate
+      new_email_address: New email address
+      new_password: New password
     form:
       remove: Remove
     nested:

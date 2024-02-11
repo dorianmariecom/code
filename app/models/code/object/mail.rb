@@ -7,14 +7,14 @@ class Code
 
       def self.code_send(from: nil, to: nil, subject: nil, body: nil)
         if from.nil? || from.falsy?
-          from = Current.primary_email_address!
+          from = ::Current.primary_email_address!
           from = from.email_address_with_display_name
         else
           from = from.raw
         end
 
         if to.nil? || to.falsy?
-          to = Current.primary_email_address!
+          to = ::Current.primary_email_address!
           to = to.email_address_with_display_name
         else
           to = to.raw
@@ -34,6 +34,8 @@ class Code
                 subject: subject&.raw || "",
                 body: body&.raw || ""
               )
+          rescue ::Net::SMTPAuthenticationError => error
+            raise ::Code::Error, "Wrong SMTP username or SMTP password"
           end
         end
 
