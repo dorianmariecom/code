@@ -44,4 +44,6 @@
       .text-red-600(data-password-target="error")
   - elsif type.string?
     = f.text_field field, required: required, autocomplete: autocomplete, class: "w-full", value: value, data: data
+  - elsif type.select?
+    = f.select field, options_for_select(options), {}, required: required, autocomplete: autocomplete, class: "w-full", value: value, data: data
   .text-sm.text-gray-600= t(".#{scope}.#{field}.hint")

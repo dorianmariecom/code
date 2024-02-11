@@ -1,6 +1,7 @@
 class ApplicationPolicy
   class Scope
     include Pundit::Authorization
+    include CanConcern
 
     attr_reader :current_user, :scope
 
@@ -16,7 +17,7 @@ class ApplicationPolicy
     private
 
     def admin?
-      currrent_user.admin?
+      current_user? && current_user.admin?
     end
 
     def current_user?
@@ -29,6 +30,7 @@ class ApplicationPolicy
   end
 
   include Pundit::Authorization
+  include CanConcern
 
   attr_reader :current_user, :record
 
@@ -68,7 +70,7 @@ class ApplicationPolicy
   private
 
   def admin?
-    currrent_user.admin?
+    current_user? && current_user.admin?
   end
 
   def current_user?

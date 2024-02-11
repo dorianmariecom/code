@@ -1,5 +1,7 @@
 class PasswordPolicy < ApplicationPolicy
-  def create?
-    true
+  class Scope < ApplicationPolicy::Scope
+    def resolve
+      scope.where(user: policy_scope(User))
+    end
   end
 end

@@ -1,5 +1,16 @@
 - content_for(:title, @user)
 
+- if @user.admin?
+  p.font-bold= t(".admin")
+
+p.text-sm= link_to t(".email_addresses"), [@user, :email_addresses]
+
+= render @email_addresses
+
+p.text-sm= link_to t(".passwords"), [@user, :passwords]
+
+= render @passwords
+
 = link_to t(".edit"), [:edit, @user]
 
 = button_to t(".destroy"), @user, method: :delete, class: "a text-red-600", data: { turbo_confirm: t(".confirm") }

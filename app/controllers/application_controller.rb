@@ -2,15 +2,27 @@
 
 class ApplicationController < ActionController::Base
   include Pundit::Authorization
+  include CanConcern
 
   before_action :set_current_user
   after_action :verify_authorized
   after_action :verify_policy_scoped
 
   helper_method :current_user
+  helper_method :current_user?
+  helper_method :admin?
+  helper_method :can?
 
   def current_user
     Current.user
+  end
+
+  def current_user?
+    !!current_user
+  end
+
+  def admin?
+    current_user? && current_user.admin?
   end
 
   private

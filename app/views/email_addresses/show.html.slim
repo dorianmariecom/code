@@ -1,0 +1,37 @@
+- content_for(:title, @email_address.to_s)
+
+.text-sm= t(".belongs_to")
+.mb-5= link_to @email_address.user
+
+.text-sm= t(".primary")
+.mb-5= @email_address.primary
+
+.text-sm=> t(".email_address")
+.mb-5= mail_to @email_address.email_address
+
+.text-sm=> t(".display_name")
+.mb-5= @email_address.display_name
+
+.text-sm=> t(".smtp_address")
+.mb-5= @email_address.smtp_address
+
+.text-sm=> t(".smtp_port")
+.mb-5= @email_address.smtp_port
+
+.text-sm=> t(".smtp_user_name")
+.mb-5= @email_address.smtp_user_name
+
+.text-sm=> t(".smtp_password")
+.mb-5
+  ' ***
+
+.text-sm=> t(".smtp_authentication")
+.mb-5= @email_address.smtp_authentication
+
+.text-sm=> t(".smtp_enable_starttls_auto")
+.mb-5= @email_address.smtp_enable_starttls_auto
+
+= link_to t(".edit"), [:edit, @email_address]
+
+- if can?(:destroy, @email_address)
+  = button_to t(".delete"), @email_address, method: :delete, class: "a text-red-600"

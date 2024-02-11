@@ -36,4 +36,8 @@ class EmailAddress < ApplicationRecord
     )
     mail.deliver!
   end
+
+  def to_s
+    "EmailAddress##{id}"
+  end
 end

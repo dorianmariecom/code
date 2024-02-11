@@ -13,6 +13,16 @@ module ApplicationHelper
     User::TIME_ZONES
   end
 
+  def user_options(user_id: nil)
+    policy_scope(User).order(:id).map do |user|
+      [
+        user.to_s,
+        user.id,
+        { selected: user_id == user.id }
+      ]
+    end
+  end
+
   def email_address_regexp
     json_regexp(EmailAddress::EMAIL_ADDRESS_REGEXP)
   end

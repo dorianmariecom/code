@@ -1,9 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :password_validations
+
   resource :session
-  resource :password
-  resources :users
+
+  resources :users do
+    resources :email_addresses
+    resources :passwords
+  end
+
+  resources :email_addresses
+  resources :passwords
 
   get "up" => "pages#up"
 

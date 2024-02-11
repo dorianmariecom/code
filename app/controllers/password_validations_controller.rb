@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class PasswordsController < ApplicationController
-  before_action { authorize :password }
+class PasswordValidationsController < ApplicationController
+  before_action { authorize :password_validation }
   skip_after_action :verify_policy_scoped
 
   def create

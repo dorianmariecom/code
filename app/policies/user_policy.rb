@@ -1,7 +1,13 @@
 class UserPolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     def resolve
-      scope.where(id: current_user)
+      if admin?
+        scope.all
+      elsif current_user?
+        scope.where(id: current_user)
+      else
+        scope.none
+      end
     end
   end
 
