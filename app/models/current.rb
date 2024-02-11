@@ -5,7 +5,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def user=(user)
     super
-    Time.zone = user.time_zone
+    Time.zone = user&.time_zone
   end
 
   def email_addresses
@@ -19,12 +19,6 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_email_address!
-    return primary_email_address if primary_email_address
-
-    if user
-      raise "You need to add an email address"
-    else
-      raise "You need to sign up or log in"
-    end
+    primary_email_address || raise(Code::Error.new("No primary email address found"))
   end
 end

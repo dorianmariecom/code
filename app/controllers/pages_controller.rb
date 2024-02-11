@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   layout "empty", only: :up
 
   PROGRAM_INPUT = <<~CODE
-    Email.send(
+    Mail.send(
       to: "dorian@dorianmarie.com",
       subject: "Hello",
       body: "What's up?"
