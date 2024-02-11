@@ -3,8 +3,8 @@ class User < ApplicationRecord
     ["UTC"] +
       ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:canonical_identifier)
 
-  has_many :email_addresses
-  has_many :passwords
+  has_many :email_addresses, dependent: :destroy
+  has_many :passwords, dependent: :destroy
 
   scope :where_email_address, ->(email_address) {
     joins(:email_addresses)

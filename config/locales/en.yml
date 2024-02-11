@@ -10,6 +10,34 @@ en:
       not_valid: Not valid
     password:
       not_present: Not present
+  programs:
+    index:
+      title: Programs
+      new: New program
+    create:
+      notice: Program created
+    update:
+      notice: Program updated
+    destroy:
+      notice: Program deleted
+    new:
+      title: New program
+      submit: Evaluate
+    edit:
+      title: Edit program
+      submit: Re-evaluate
+    show:
+      edit: Edit program
+      delete: Delete program
+      belongs_to: belongs to
+      input: input
+      output: output
+      error: error
+      result: result
+    form:
+      remove: Remove
+    nested:
+      add_program: Add program
   passwords:
     index:
       title: Passwords
@@ -44,9 +72,11 @@ en:
       users: Users
       email_addresses: Email addresses
       passwords: Passwords
+      programs: Programs
   pages:
     home:
       title: Code
+      submit: Evaluate
     up:
       title: /up
   users:
@@ -171,6 +201,10 @@ en:
         time_zone:
           label: Time zone
           hint: Which time zone are you currently located in?
+      program:
+        input:
+          label: Input
+          hint: Try "1 + 1"
   password_validator:
     model:
       sequence:

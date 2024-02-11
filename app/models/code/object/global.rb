@@ -8,9 +8,9 @@ class Code
         arguments = args.fetch(:arguments, [])
         value = arguments.first&.value
 
-        if operator.to_s == "Email"
+        if operator.to_s == "Mail"
           sig(args)
-          Class.new(Email)
+          Class.new(Mail)
         else
           original_call(**args)
         end

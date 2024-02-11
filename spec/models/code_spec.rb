@@ -7,13 +7,11 @@ RSpec.describe Code, type: :model do
     expect_any_instance_of(EmailAddress).to receive(:deliver!)
 
     Code.evaluate(<<~CODE)
-      Email.send(
+      Mail.send(
         to: "dorian@dorianmarie.com",
         subject: "Hello",
         body: "What's up?"
       )
     CODE
-  ensure
-    Current.reset
   end
 end

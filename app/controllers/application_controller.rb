@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
   helper_method :admin?
   helper_method :can?
 
+  rescue_from Pundit::NotAuthorizedError do |error|
+    redirect_to root_path, alert: error.message
+  end
+
   def current_user
     Current.user
   end

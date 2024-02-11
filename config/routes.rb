@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   resources :users do
     resources :email_addresses
     resources :passwords
+    resources :programs
   end
 
   resources :email_addresses
   resources :passwords
+  resources :programs
 
   get "up" => "pages#up"
 

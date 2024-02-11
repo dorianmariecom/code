@@ -1,8 +1,8 @@
 class Code
   class Object
-    class Email < Object
+    class Mail < Object
       def self.name
-        "Email"
+        "Mail"
       end
 
       def self.code_send(from: nil, to: nil, subject: nil, body: nil)
@@ -20,8 +20,8 @@ class Code
           to = to.raw
         end
 
-        from = Mail::AddressList.new(from)
-        to = Mail::AddressList.new(to)
+        from = ::Mail::AddressList.new(from)
+        to = ::Mail::AddressList.new(to)
 
         from.addresses.each do |from_address|
           to.addresses.each do |to_address|
@@ -41,7 +41,7 @@ class Code
       end
 
       def to_s
-        "email"
+        "mail"
       end
     end
   end

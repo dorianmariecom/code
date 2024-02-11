@@ -8,7 +8,7 @@ class Code
         arguments = args.fetch(:arguments, [])
         value = arguments.first&.value
 
-        if raw == Email && operator.to_s == "send"
+        if raw == Mail && operator.to_s == "send"
           sig(args) do
             {
               from: String.maybe,
@@ -17,7 +17,7 @@ class Code
               body: String.maybe
             }
           end
-          Email.code_send(
+          Mail.code_send(
             from: value.code_get(String.new("from")),
             to: value.code_get(String.new("to")),
             subject: value.code_get(String.new("subject")),

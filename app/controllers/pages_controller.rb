@@ -4,7 +4,16 @@ class PagesController < ApplicationController
 
   layout "empty", only: :up
 
+  PROGRAM_INPUT = <<~CODE
+    Email.send(
+      to: "dorian@dorianmarie.com",
+      subject: "Hello",
+      body: "What's up?"
+    )
+  CODE
+
   def home
+    @program = Program.new(input: PROGRAM_INPUT)
   end
 
   def up

@@ -1,4 +1,4 @@
-class PasswordPolicy < ApplicationPolicy
+class ProgramPolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     def resolve
       scope.where(user: policy_scope(User))
@@ -22,7 +22,7 @@ class PasswordPolicy < ApplicationPolicy
   end
 
   def destroy?
-    (owner? || admin?) && user.passwords.many?
+    owner? || admin?
   end
 
   private
