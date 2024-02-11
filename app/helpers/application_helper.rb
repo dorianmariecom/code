@@ -14,11 +14,11 @@ module ApplicationHelper
   end
 
   def user_options(user_id: nil)
-    policy_scope(User).order(:id).map do |user|
+    ([nil] + policy_scope(User).order(:id).to_a).map do |user|
       [
-        user.to_s,
-        user.id,
-        { selected: user_id == user.id }
+        user&.to_s,
+        user&.id,
+        { selected: user_id == user&.id }
       ]
     end
   end

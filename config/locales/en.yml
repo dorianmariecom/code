@@ -11,6 +11,26 @@ en:
     password:
       not_present: Not present
   passwords:
+    index:
+      title: Passwords
+      new: New password
+    create:
+      notice: Password created
+    update:
+      notice: Password updated
+    destroy:
+      notice: Password deleted
+    new:
+      title: New password
+      submit: Create password
+    edit:
+      title: Edit password
+      submit: Update password
+    show:
+      edit: Edit password
+      delete: Delete password
+      belongs_to: belongs to
+      password: password
     form:
       remove: Remove
     nested:
@@ -107,6 +127,9 @@ en:
       password:
         show_password: Show password
         hide_password: Hide password
+        user_id:
+          label: User
+          hint: Belongs to this user
         password:
           label: Password
           hint: Your code.dorianmarie.com password
