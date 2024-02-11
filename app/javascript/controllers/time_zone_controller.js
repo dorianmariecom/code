@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
-import { VALID_CLASSES } from "../constants";
+import { VALID_CLASSES } from "constants";
 
 export default class extends Controller {
   static targets = ["input"];

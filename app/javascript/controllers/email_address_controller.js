@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
-import I18n from "../i18n";
-import { VALID_CLASSES, INVALID_CLASSES } from "../constants";
+import I18n from "i18n";
+import { VALID_CLASSES, INVALID_CLASSES } from "constants";
 
 const t = I18n("email_address");
 
