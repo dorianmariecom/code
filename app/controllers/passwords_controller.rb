@@ -1,6 +1,6 @@
 class PasswordsController < ApplicationController
   before_action :load_user
-  before_action :load_password, only: [:show, :edit, :update, :destroy]
+  before_action :load_password, only: %i[show edit update destroy]
 
   def index
     authorize Password
@@ -55,11 +55,7 @@ class PasswordsController < ApplicationController
   end
 
   def scope
-    if @user
-      policy_scope(Password).where(user: @user)
-    else
-      policy_scope(Password)
-    end
+    @user ? policy_scope(Password).where(user: @user) : policy_scope(Password)
   end
 
   def id

@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   resources :password_validations
+  resources :prompts
 
   resource :session
 

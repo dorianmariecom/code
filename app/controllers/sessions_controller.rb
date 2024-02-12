@@ -11,11 +11,10 @@ class SessionsController < ApplicationController
   def create
     @users = User.joins(:passwords).where_email_address(email_address_param)
 
-    @user = @users.detect do |user|
-      user.passwords.any? do |password|
-        password.authenticate(password_param)
+    @user =
+      @users.detect do |user|
+        user.passwords.any? { |password| password.authenticate(password_param) }
       end
-    end
 
     if @users.none?
       flash.now.alert = t(".wrong_email_address")

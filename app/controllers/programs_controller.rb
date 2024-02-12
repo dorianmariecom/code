@@ -1,6 +1,6 @@
 class ProgramsController < ApplicationController
   before_action :load_user
-  before_action :load_program, only: [:show, :edit, :update, :destroy]
+  before_action :load_program, only: %i[show edit update destroy]
 
   def index
     authorize Program
@@ -65,11 +65,7 @@ class ProgramsController < ApplicationController
   end
 
   def scope
-    if @user
-      policy_scope(Program).where(user: @user)
-    else
-      policy_scope(Program)
-    end
+    @user ? policy_scope(Program).where(user: @user) : policy_scope(Program)
   end
 
   def id
@@ -86,59 +82,50 @@ class ProgramsController < ApplicationController
         :user_id,
         :input,
         :name,
+        :prompt,
         user_attributes: [
           :admin,
           :name,
           :time_zone,
-          email_addresses_attributes: [
-            :user_id,
-            :id,
-            :_destroy,
-            :primary,
-            :email_address,
-            :display_name,
-            :smtp_address,
-            :smtp_port,
-            :smtp_user_name,
-            :smtp_password,
-            :smtp_authentication,
-            :smtp_enable_starttls_auto
+          email_addresses_attributes: %i[
+            user_id
+            id
+            _destroy
+            primary
+            email_address
+            display_name
+            smtp_address
+            smtp_port
+            smtp_user_name
+            smtp_password
+            smtp_authentication
+            smtp_enable_starttls_auto
           ],
-          passwords_attributes: [
-            :user_id,
-            :id,
-            :_destroy,
-            :password,
-            :hint
-          ]
+          passwords_attributes: %i[user_id id _destroy password hint]
         ]
       )
     else
       params.require(:program).permit(
         :input,
         :name,
+        :prompt,
         user_attributes: [
           :name,
           :time_zone,
-          email_addresses_attributes: [
-            :id,
-            :_destroy,
-            :primary,
-            :email_address,
-            :display_name,
-            :smtp_address,
-            :smtp_port,
-            :smtp_user_name,
-            :smtp_password,
-            :smtp_authentication,
-            :smtp_enable_starttls_auto
+          email_addresses_attributes: %i[
+            id
+            _destroy
+            primary
+            email_address
+            display_name
+            smtp_address
+            smtp_port
+            smtp_user_name
+            smtp_password
+            smtp_authentication
+            smtp_enable_starttls_auto
           ],
-          passwords_attributes: [
-            :id,
-            :_destroy,
-            :password,
-            :hint
-          ]
+          passwords_attributes: %i[id _destroy password hint]
         ]
       )
     end

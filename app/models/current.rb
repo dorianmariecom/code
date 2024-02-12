@@ -23,6 +23,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_email_address!
-    primary_email_address || raise(Code::Error.new("No primary email address found"))
+    primary_email_address ||
+      raise(Code::Error.new("No primary email address found"))
   end
 end

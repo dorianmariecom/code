@@ -5,9 +5,13 @@
     - if admin?
       = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
 
-    = render "shared/field", f: f, field: :name, type: :string, fake: fake_program_names
-
-    = render "shared/field", f: f, field: :input, type: :text, fake: fake_inputs
+    div(data-controller="prompt")
+      .font-bold= f.label :prompt, t(".prompt")
+      = f.text_area :prompt, autocomplete: "off", class: "w-full", data: { form_type: "other", prompt_target: "prompt" }
+      button.bg-black.text-white.rounded.px-2.py-1.cursor-pointer(data-action="prompt#generate:prevent")
+        = t(".generate")
+      = render "shared/field", f: f, field: :name, type: :string, fake: fake_program_names, data: { prompt_target: :name }
+      = render "shared/field", f: f, field: :input, type: :text, fake: fake_inputs, data: { prompt_target: :input }
 
     - if !current_user
       = f.fields_for :user, User.new do |user_f|

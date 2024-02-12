@@ -15,8 +15,8 @@ export default class extends Controller {
   input() {
     if (!this.inputTarget.value.trim() && this.inputTarget.required) {
       this.errorTarget.innerText = t("not_present");
-      this.inputTarget.classList.add(...INVALID_CLASSES)
-      this.inputTarget.classList.remove(...VALID_CLASSES)
+      this.inputTarget.classList.add(...INVALID_CLASSES);
+      this.inputTarget.classList.remove(...VALID_CLASSES);
     } else {
       this.validate();
     }
@@ -38,12 +38,12 @@ export default class extends Controller {
 
     if (json.success) {
       this.errorTarget.innerText = "";
-      this.inputTarget.classList.add(...VALID_CLASSES)
-      this.inputTarget.classList.remove(...INVALID_CLASSES)
+      this.inputTarget.classList.add(...VALID_CLASSES);
+      this.inputTarget.classList.remove(...INVALID_CLASSES);
     } else {
       this.errorTarget.innerText = json.message;
-      this.inputTarget.classList.add(...INVALID_CLASSES)
-      this.inputTarget.classList.remove(...VALID_CLASSES)
+      this.inputTarget.classList.add(...INVALID_CLASSES);
+      this.inputTarget.classList.remove(...VALID_CLASSES);
     }
   }
 

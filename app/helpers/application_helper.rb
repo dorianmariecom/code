@@ -38,16 +38,16 @@ module ApplicationHelper
   end
 
   def fake_smtp_addresses
-    [
-      "smtp.gmail.com",
-      "smtp.mail.yahoo.com",
-      "smtp.office365.com",
-      "smtp.aol.com",
-      "smtp.mail.me.com",
-      "smtp.bizmail.yahoo.com",
-      "smtpcorp.com",
-      "smtp.mailgun.org",
-      "smtp.mailchimp.com"
+    %w[
+      smtp.gmail.com
+      smtp.mail.yahoo.com
+      smtp.office365.com
+      smtp.aol.com
+      smtp.mail.me.com
+      smtp.bizmail.yahoo.com
+      smtpcorp.com
+      smtp.mailgun.org
+      smtp.mailchimp.com
     ]
   end
 
@@ -69,11 +69,7 @@ module ApplicationHelper
 
   def user_options(user_id: nil)
     ([nil] + policy_scope(User).order(:id).to_a).map do |user|
-      [
-        user&.to_s,
-        user&.id,
-        { selected: user_id == user&.id }
-      ]
+      [user&.to_s, user&.id, { selected: user_id == user&.id }]
     end
   end
 

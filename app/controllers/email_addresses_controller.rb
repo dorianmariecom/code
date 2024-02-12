@@ -1,6 +1,6 @@
 class EmailAddressesController < ApplicationController
   before_action :load_user
-  before_action :load_email_address, only: [:show, :edit, :update, :destroy]
+  before_action :load_email_address, only: %i[show edit update destroy]
 
   def index
     authorize EmailAddress
@@ -12,7 +12,8 @@ class EmailAddressesController < ApplicationController
   end
 
   def new
-    @email_address = authorize scope.new(primary: current_user.email_addresses.none?)
+    @email_address =
+      authorize scope.new(primary: current_user.email_addresses.none?)
   end
 
   def create

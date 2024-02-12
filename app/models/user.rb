@@ -1,17 +1,24 @@
 class User < ApplicationRecord
-  TIME_ZONES = ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:canonical_identifier)
+  TIME_ZONES =
+    ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:canonical_identifier)
 
   has_many :email_addresses, dependent: :destroy
   has_many :passwords, dependent: :destroy
 
-  scope :where_email_address, ->(email_address) {
-    joins(:email_addresses)
-      .where(email_addresses: { email_address: email_address })
-      .or(
-        joins(:email_addresses)
-          .where(email_addresses: { smtp_user_name: email_address })
-      )
-  }
+  scope :where_email_address,
+        ->(email_address) do
+          joins(:email_addresses).where(
+            email_addresses: {
+              email_address: email_address
+            }
+          ).or(
+            joins(:email_addresses).where(
+              email_addresses: {
+                smtp_user_name: email_address
+              }
+            )
+          )
+        end
 
   accepts_nested_attributes_for(
     :email_addresses,

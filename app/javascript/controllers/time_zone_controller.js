@@ -15,6 +15,6 @@ export default class extends Controller {
       this.inputTarget.value = timeZone;
     }
 
-    this.inputTarget.classList.add(...VALID_CLASSES)
+    this.inputTarget.classList.add(...VALID_CLASSES);
   }
 }

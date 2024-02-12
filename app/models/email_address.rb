@@ -10,7 +10,11 @@ class EmailAddress < ApplicationRecord
   validates :email_address, format: { with: EMAIL_ADDRESS_REGEXP }
   validates :smtp_address, presence: true, format: { with: DOMAIN_REGEXP }
   validates :smtp_port, presence: true
-  validates :smtp_user_name, presence: true, format: { with: EMAIL_ADDRESS_REGEXP }
+  validates :smtp_user_name,
+            presence: true,
+            format: {
+              with: EMAIL_ADDRESS_REGEXP
+            }
   validates :smtp_authentication, presence: true
 
   scope :primary, -> { where(primary: true) }

@@ -12,12 +12,12 @@ export default class extends Controller {
   input() {
     if (!this.inputTarget.value && this.inputTarget.required) {
       this.errorTarget.innerText = t("not_present");
-      this.inputTarget.classList.add(...INVALID_CLASSES)
-      this.inputTarget.classList.remove(...VALID_CLASSES)
+      this.inputTarget.classList.add(...INVALID_CLASSES);
+      this.inputTarget.classList.remove(...VALID_CLASSES);
     } else {
       this.errorTarget.innerText = "";
-      this.inputTarget.classList.add(...VALID_CLASSES)
-      this.inputTarget.classList.remove(...INVALID_CLASSES)
+      this.inputTarget.classList.add(...VALID_CLASSES);
+      this.inputTarget.classList.remove(...INVALID_CLASSES);
     }
   }
 }

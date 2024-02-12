@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: [:show, :edit, :update, :destroy]
+  before_action :load_user, only: %i[show edit update destroy]
 
   def index
     authorize User
@@ -59,60 +59,45 @@ class UsersController < ApplicationController
 
   def user_params
     if admin?
-      params
-        .require(:user)
-        .permit(
-          :admin,
-          :name,
-          :time_zone,
-          email_addresses_attributes: [
-            :user_id,
-            :id,
-            :_destroy,
-            :primary,
-            :email_address,
-            :display_name,
-            :smtp_address,
-            :smtp_port,
-            :smtp_user_name,
-            :smtp_password,
-            :smtp_authentication,
-            :smtp_enable_starttls_auto
-          ],
-          passwords_attributes: [
-            :user_id,
-            :id,
-            :_destroy,
-            :password,
-            :hint
-          ]
-        )
+      params.require(:user).permit(
+        :admin,
+        :name,
+        :time_zone,
+        email_addresses_attributes: %i[
+          user_id
+          id
+          _destroy
+          primary
+          email_address
+          display_name
+          smtp_address
+          smtp_port
+          smtp_user_name
+          smtp_password
+          smtp_authentication
+          smtp_enable_starttls_auto
+        ],
+        passwords_attributes: %i[user_id id _destroy password hint]
+      )
     else
-      params
-        .require(:user)
-        .permit(
-          :name,
-          :time_zone,
-          email_addresses_attributes: [
-            :id,
-            :_destroy,
-            :primary,
-            :email_address,
-            :display_name,
-            :smtp_address,
-            :smtp_port,
-            :smtp_user_name,
-            :smtp_password,
-            :smtp_authentication,
-            :smtp_enable_starttls_auto
-          ],
-          passwords_attributes: [
-            :id,
-            :_destroy,
-            :password,
-            :hint
-          ]
-        )
+      params.require(:user).permit(
+        :name,
+        :time_zone,
+        email_addresses_attributes: %i[
+          id
+          _destroy
+          primary
+          email_address
+          display_name
+          smtp_address
+          smtp_port
+          smtp_user_name
+          smtp_password
+          smtp_authentication
+          smtp_enable_starttls_auto
+        ],
+        passwords_attributes: %i[id _destroy password hint]
+      )
     end
   end
 end
