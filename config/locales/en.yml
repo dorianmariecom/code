@@ -38,9 +38,7 @@ en:
       new_email_address: New email address
       new_password: New password
     form:
-      remove: Remove
-    nested:
-      add_program: Add program
+      program: Program
   passwords:
     index:
       title: Passwords
@@ -63,6 +61,7 @@ en:
       belongs_to: belongs to
       password: password
     form:
+      password: Password
       remove: Remove
     nested:
       add_password: Add password
@@ -83,6 +82,8 @@ en:
     up:
       title: /up
   users:
+    form:
+      user: User
     index:
       title: Users
       new: New user
@@ -150,6 +151,7 @@ en:
       smtp_enable_starttls_auto: SMTP enable StartTLS auto
     form:
       remove: Remove
+      email_address: Email address
     nested:
       add_email_address: Add email address
   shared:
