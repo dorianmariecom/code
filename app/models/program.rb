@@ -13,7 +13,7 @@ class Program < ApplicationRecord
     end
     update!(result: result, output: output.string, error: error.string)
   rescue Code::Error => error
-    update!(error: "#{error.class}: #{error.message}")
+    update!(result: "", output: "", error: "#{error.class}: #{error.message}")
   end
 
   def no_primary_address_found?
