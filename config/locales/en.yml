@@ -75,7 +75,10 @@ en:
       email_addresses: Email addresses
       passwords: Passwords
       programs: Programs
+      documentation: Documentation
   pages:
+    documentation:
+      title: Documentation
     home:
       title: Code
       submit: Evaluate

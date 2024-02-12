@@ -1,0 +1,97 @@
+div(class="[&_p]:mb-0 [&_pre]:mt-0 [&_.sourceCode]:mt-0 [&_.dt]:no-underline [&_.dt]:text-orange-400")
+  markdown:
+    ## Hello World
+
+    input:
+
+    ```ruby
+    "Hello World"
+    ```
+
+    result:
+    ```
+    Hello World
+    ```
+
+    ---
+
+    ## Printing Hello World
+
+    input:
+    ```ruby
+    puts("Hello world")
+    ```
+
+    output:
+    ```
+    Hello World
+    ```
+
+    ---
+
+    ## Maths
+
+    input:
+    ```ruby
+    1 + 1
+    ```
+
+    result:
+    ```
+    2
+    ```
+
+    ---
+
+    ## Integer#times
+
+    input:
+    ```ruby
+    3.times { |i| puts(i) }
+    ```
+
+    output:
+    ```
+    0
+    1
+    2
+    ```
+
+    result:
+    ```
+    3
+    ```
+
+    ---
+
+    ## Mail.send(from:, to:, subject:, body:)
+
+    **from**: The email address(es) you send from, e.g. "#{Faker::Internet.email}", "#{Faker::Name.name} <#{Faker::Internet.email}>", default: your primary email address
+
+    **to**: The email address(es) you send to, e.g. "#{Faker::Internet.email}", "#{Faker::Name.name} <#{Faker::Internet.email}>", default: your primary email address
+
+    **subject**: The subject of the email, e.g. "#{Faker::Book.title}", default: ""
+
+    **body**: The body of the email, e.g. "#{Faker::Company.catch_phrase}", default: ""
+
+    ### Send an empty email to yourself
+
+    input:
+    ```ruby
+    Mail.send
+    ```
+
+    ### Send a email to a list of persons
+
+    input:
+    ```ruby
+    [
+      "#{Faker::Internet.email}",
+      "#{Faker::Internet.email}",
+      "#{Faker::Internet.email}",
+      "#{Faker::Internet.email}",
+      "#{Faker::Internet.email}",
+    ].each do |to|
+      Mail.send(to: to, subject: "Hello")
+    end
+    ```

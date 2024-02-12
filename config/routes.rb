@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :programs
 
   get "up" => "pages#up"
+  get "documentation" => "pages#documentation"
 
   root to: "pages#home"
 end
