@@ -8,6 +8,9 @@ hr
   .text-sm= t(".belongs_to")
   .mb-5= link_to @program.user
 
+.text-sm= t(".id")
+.mb-5= @program.id
+
 - if @program.input.present?
   .text-sm=> t(".input")
   pre.mt-0

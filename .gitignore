@@ -1,14 +1,17 @@
 /.bundle
 /.env*
+/app/assets/builds/*
 /config/master.key
 /db/*
 /log/*
 /public/assets
+/spec/examples.txt
 /storage/*
 /tmp/*
 /tmp/pids/*
 /tmp/storage/*
 !/.env*.erb
+!/app/assets/builds/.keep
 !/db/.keep
 !/log/.keep
 !/storage/.keep
@@ -17,5 +20,3 @@
 !/tmp/pids/.keep
 !/tmp/storage/
 !/tmp/storage/.keep
-/app/assets/builds/*
-!/app/assets/builds/.keep

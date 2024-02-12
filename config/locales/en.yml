@@ -27,6 +27,7 @@ en:
       title: Edit program
       submit: Re-evaluate
     show:
+      id: ID
       edit: Edit program
       delete: Delete program
       belongs_to: belongs to
@@ -58,6 +59,7 @@ en:
       title: Edit password
       submit: Update password
     show:
+      id: ID
       edit: Edit password
       delete: Delete password
       belongs_to: belongs to
@@ -115,6 +117,8 @@ en:
       new_password: New password
       programs: Programs
       new_program: New program
+      id: ID
+      time_zone: Time zone
   sessions:
     create:
       wrong_email_address: Wrong email address
@@ -142,6 +146,7 @@ en:
       title: Edit email address
       submit: Update email address
     show:
+      id: ID
       primary: primary
       edit: Edit email address
       delete: Delete email address

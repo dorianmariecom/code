@@ -3,6 +3,13 @@
 - if @user.admin?
   p.font-bold= t(".admin")
 
+.text-sm= t(".id")
+.mb-5= @user.id
+
+- if @user.time_zone.present?
+  .text-sm= t(".time_zone")
+  .mb-5= @user.time_zone
+
 p.text-sm= link_to t(".email_addresses"), [@user, :email_addresses]
 
 p= link_to t(".new_email_address"), new_email_address_path
