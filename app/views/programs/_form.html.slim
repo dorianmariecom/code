@@ -1,3 +1,12 @@
 = form_for program do |f|
+  - if admin?
+    = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
+
+  - if !current_user
+    .border-black.border-l-2.pl-4
+      = f.fields_for :user, User.new do |user_f|
+        = render "users/form", f: user_f
+
+  = render "shared/field", f: f, field: :name, type: :string, fake: fake_program_names
   = render "shared/field", f: f, field: :input, type: :text, fake: fake_inputs
   = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

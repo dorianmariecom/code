@@ -1,7 +1,9 @@
-= form_for user do |f|
-  - if admin?
-    = render "shared/field", f: f, field: :admin, type: :checkbox
-  = render "shared/field", f: f, field: :time_zone, type: :time_zone, options: time_zone_options, required: true, fake: fake_time_zones
-  = render "email_addresses/nested", f: f
-  = render "passwords/nested", f: f
-  = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+- if admin?
+  = render "shared/field", f: f, field: :admin, type: :checkbox
+
+= render "shared/field", f: f, field: :name, type: :string, fake: fake_names, autocomplete: :name
+= render "shared/field", f: f, field: :time_zone, type: :time_zone, options: time_zone_options, required: true, fake: fake_time_zones
+
+= render "email_addresses/nested", f: f
+
+= render "passwords/nested", f: f

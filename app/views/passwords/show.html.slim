@@ -1,13 +1,12 @@
 - content_for(:title, @password.to_s)
 
-.text-sm= t(".belongs_to")
-.mb-5= link_to @password.user
+- if admin?
+  .text-sm= t(".belongs_to")
+  .mb-5= link_to @password.user
 
 .text-sm=> t(".password")
 .mb-5
   ' ***
 
 = link_to t(".edit"), [:edit, @password]
-
-- if can?(:destroy, @password)
-  = button_to t(".delete"), @password, method: :delete, class: "a text-red-600"
+= button_to t(".delete"), @password, method: :delete, class: "a text-red-600"

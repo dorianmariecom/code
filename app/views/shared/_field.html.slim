@@ -49,7 +49,7 @@
   - elsif type.select?
     = f.select field, options_for_select(options), {}, required: required, autocomplete: autocomplete, class: "w-full", value: value, data: data
   - elsif type.text?
-    = f.text_area field, required: required, autocomplete: autocomplete, class: "w-full h-40", value: value, data: data
+    = f.text_area field, required: required, autocomplete: autocomplete, class: "w-full align-top", value: value, data: data, rows: 6
 
   - if fake.present?
     .text-sm.text-gray-600.italic

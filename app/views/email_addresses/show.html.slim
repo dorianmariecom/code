@@ -1,7 +1,8 @@
 - content_for(:title, @email_address.to_s)
 
-.text-sm= t(".belongs_to")
-.mb-5= link_to @email_address.user
+- if admin?
+  .text-sm= t(".belongs_to")
+  .mb-5= link_to @email_address.user
 
 .text-sm= t(".primary")
 .mb-5= @email_address.primary
@@ -32,6 +33,4 @@
 .mb-5= @email_address.smtp_enable_starttls_auto
 
 = link_to t(".edit"), [:edit, @email_address]
-
-- if can?(:destroy, @email_address)
-  = button_to t(".delete"), @email_address, method: :delete, class: "a text-red-600"
+= button_to t(".delete"), @email_address, method: :delete, class: "a text-red-600"

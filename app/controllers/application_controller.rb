@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: error.message
   end
 
+  rescue_from ActiveRecord::RecordNotFound do |error|
+    redirect_to root_path, alert: error.message
+  end
+
   def current_user
     Current.user
   end

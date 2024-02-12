@@ -22,7 +22,7 @@ class PasswordPolicy < ApplicationPolicy
   end
 
   def destroy?
-    (owner? || admin?) && user.passwords.many?
+    owner? || admin?
   end
 
   private

@@ -27,6 +27,6 @@ class User < ApplicationRecord
   validates :time_zone, inclusion: { in: TIME_ZONES, allow_nil: true }
 
   def to_s
-    "User##{id}"
+    name.presence || "User##{id}"
   end
 end

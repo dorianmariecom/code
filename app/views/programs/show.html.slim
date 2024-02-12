@@ -1,7 +1,12 @@
 - content_for(:title, @program.to_s)
 
-.text-sm= t(".belongs_to")
-.mb-5= link_to @program.user
+= render "form", program: @program, submit: t(".submit")
+
+hr
+
+- if admin?
+  .text-sm= t(".belongs_to")
+  .mb-5= link_to @program.user
 
 - if @program.input.present?
   .text-sm=> t(".input")
@@ -32,6 +37,3 @@
 = link_to t(".edit"), [:edit, @program]
 = button_to t(".delete"), @program, method: :delete, class: "a text-red-600"
 
-hr
-
-= render "form", program: @program, submit: t(".submit")

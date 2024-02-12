@@ -38,6 +38,6 @@ class EmailAddress < ApplicationRecord
   end
 
   def to_s
-    "EmailAddress##{id}"
+    email_address.presence || "EmailAddress##{id}"
   end
 end

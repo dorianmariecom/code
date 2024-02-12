@@ -4,7 +4,7 @@ div(data-controller="passwords")
       = render "passwords/form", f: password_f, removable: true
 
   = f.fields_for :passwords do |password_f|
-    = render "passwords/form", f: password_f, removable: f.object.passwords.many?
+    = render "passwords/form", f: password_f, removable: true
 
   div(data-passwords-target="target")
 

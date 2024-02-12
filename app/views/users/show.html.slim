@@ -15,6 +15,12 @@ p= link_to t(".new_password"), new_password_path
 
 = render @passwords
 
+p.text-sm= link_to t(".programs"), [@user, :programs]
+
+p= link_to t(".new_program"), new_program_path
+
+= render @programs
+
 = link_to t(".edit"), [:edit, @user]
 
 = button_to t(".destroy"), @user, method: :delete, class: "a text-red-600", data: { turbo_confirm: t(".confirm") }

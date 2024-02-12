@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  * {
+    overflow-wrap: break-word;
+  }
+
   .p {
     @apply my-5;
   }

@@ -9,11 +9,11 @@ class UsersController < ApplicationController
   def show
     @email_addresses = policy_scope(EmailAddress).where(user: @user)
     @passwords = policy_scope(Password).where(user: @user)
+    @programs = policy_scope(Program).where(user: @user)
   end
 
   def new
     @user = authorize policy_scope(User).new
-    build_user
   end
 
   def create
@@ -23,21 +23,18 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id unless admin?
       redirect_to @user, notice: t(".notice")
     else
-      build_user
       flash.now.alert = @user.alert
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    build_user
   end
 
   def update
     if @user.update(user_params)
       redirect_to @user, notice: t(".notice")
     else
-      build_user
       flash.now.alert = @user.alert
       render :edit, status: :unprocessable_entity
     end
@@ -51,11 +48,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def build_user
-    @user.email_addresses.build(primary: true) if @user.email_addresses.none?
-    @user.passwords.build if @user.passwords.none?
-  end
 
   def load_user
     if params[:id] == "me"
@@ -71,8 +63,10 @@ class UsersController < ApplicationController
         .require(:user)
         .permit(
           :admin,
+          :name,
           :time_zone,
           email_addresses_attributes: [
+            :user_id,
             :id,
             :_destroy,
             :primary,
@@ -86,15 +80,18 @@ class UsersController < ApplicationController
             :smtp_enable_starttls_auto
           ],
           passwords_attributes: [
+            :user_id,
             :id,
             :_destroy,
-            :password
+            :password,
+            :hint
           ]
         )
     else
       params
         .require(:user)
         .permit(
+          :name,
           :time_zone,
           email_addresses_attributes: [
             :id,
@@ -112,7 +109,8 @@ class UsersController < ApplicationController
           passwords_attributes: [
             :id,
             :_destroy,
-            :password
+            :password,
+            :hint
           ]
         )
     end

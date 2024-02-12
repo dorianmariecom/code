@@ -107,6 +107,8 @@ en:
       admin: Admin
       new_email_address: New email address
       new_password: New password
+      programs: Programs
+      new_program: New program
   sessions:
     create:
       wrong_email_address: Wrong email address
@@ -162,6 +164,7 @@ en:
         hide_password: Hide password
         user_id: User
         password: Password
+        hint: Hint
       email_address:
         user_id: User
         primary: Primary?
@@ -175,8 +178,11 @@ en:
         smtp_enable_starttls_auto: SMTP enable StartTLS auto
       user:
         admin: Admin?
+        name: Name
         time_zone: Time zone
       program:
+        user_id: User
+        name: Name
         input: Input
   password_validator:
     model:

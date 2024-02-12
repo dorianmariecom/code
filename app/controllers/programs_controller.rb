@@ -19,14 +19,14 @@ class ProgramsController < ApplicationController
   end
 
   def create
-    if !current_user
-      Current.user = User.create!
-      session[:user_id] = Current.user.id
-    end
-
     @program = authorize scope.new(program_params)
 
     if @program.save
+      if !current_user
+        Current.user = @program.user
+        session[:user_id] = Current.user.id
+      end
+
       @program.evaluate!
       redirect_to @program, notice: t(".notice")
     else
@@ -82,9 +82,65 @@ class ProgramsController < ApplicationController
 
   def program_params
     if admin?
-      params.require(:program).permit(:user_id, :input)
+      params.require(:program).permit(
+        :user_id,
+        :input,
+        :name,
+        user_attributes: [
+          :admin,
+          :name,
+          :time_zone,
+          email_addresses_attributes: [
+            :user_id,
+            :id,
+            :_destroy,
+            :primary,
+            :email_address,
+            :display_name,
+            :smtp_address,
+            :smtp_port,
+            :smtp_user_name,
+            :smtp_password,
+            :smtp_authentication,
+            :smtp_enable_starttls_auto
+          ],
+          passwords_attributes: [
+            :user_id,
+            :id,
+            :_destroy,
+            :password,
+            :hint
+          ]
+        ]
+      )
     else
-      params.require(:program).permit(:input)
+      params.require(:program).permit(
+        :input,
+        :name,
+        user_attributes: [
+          :name,
+          :time_zone,
+          email_addresses_attributes: [
+            :id,
+            :_destroy,
+            :primary,
+            :email_address,
+            :display_name,
+            :smtp_address,
+            :smtp_port,
+            :smtp_user_name,
+            :smtp_password,
+            :smtp_authentication,
+            :smtp_enable_starttls_auto
+          ],
+          passwords_attributes: [
+            :id,
+            :_destroy,
+            :password,
+            :hint
+          ]
+        ]
+      )
     end
   end
 end

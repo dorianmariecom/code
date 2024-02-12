@@ -25,8 +25,16 @@ module ApplicationHelper
     User::TIME_ZONES.sample(3)
   end
 
+  def fake_names
+    3.times.map { Faker::Name.name }
+  end
+
   def fake_display_names
     3.times.map { Faker::Name.name }
+  end
+
+  def fake_program_names
+    3.times.map { Faker::Book.title }
   end
 
   def fake_smtp_addresses
@@ -48,11 +56,11 @@ module ApplicationHelper
   end
 
   def fake_smtp_user_names
-    fake_email_addresses
+    3.times.map { Faker::Internet.email }
   end
 
   def fake_smtp_passwords
-    fake_passwords
+    3.times.map { Faker::Internet.password }
   end
 
   def time_zone_options

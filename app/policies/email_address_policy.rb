@@ -22,7 +22,7 @@ class EmailAddressPolicy < ApplicationPolicy
   end
 
   def destroy?
-    (owner? || admin?) && user.email_addresses.many?
+    owner? || admin?
   end
 
   private

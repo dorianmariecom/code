@@ -14,7 +14,7 @@ class ProgramPolicy < ApplicationPolicy
   end
 
   def create?
-    current_user?
+    true
   end
 
   def update?
