@@ -28,7 +28,10 @@ gem "zxcvbn-ruby", require: "zxcvbn"
 
 group :test do
   gem "capybara"
-  gem "selenium-webdriver"
-  gem "rspec-rails"
   gem "factory_bot_rails"
+  gem "rspec-rails"
+  gem "selenium-webdriver"
+  gem "sinatra"
+  gem "timecop"
+  gem "webmock"
 end

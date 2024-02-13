@@ -16,10 +16,15 @@ RSpec.describe Code, type: :model do
   end
 
   it "checks the weather" do
-    Current.user = create(:user, :dorian)
+    Timecop.freeze("2024-02-13 11:52") do
+      Current.user = create(:user, :dorian)
 
-    Code.evaluate(<<~CODE)
-    CODE
+      Code.evaluate(<<~CODE)
+        if Weather.raining?(query: "Paris, France", date: Date.tomorrow)
+          Sms.send("It will be raining tomorrow")
+        end
+      CODE
+    end
   end
 
   it "sends reminders" do
