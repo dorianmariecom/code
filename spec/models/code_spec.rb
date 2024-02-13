@@ -21,34 +21,34 @@ RSpec.describe Code, type: :model do
 
       Code.evaluate(<<~CODE)
         if Weather.raining?(query: "Paris, France", date: Date.tomorrow)
-          Sms.send("It will be raining tomorrow")
+          Sms.send(body: "It will be raining tomorrow")
         end
       CODE
     end
   end
 
-  it "sends reminders" do
+  xit "sends reminders" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
     CODE
   end
 
-  it "searches for tweets" do
+  xit "searches for tweets" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
     CODE
   end
 
-  it "sends payment notifications" do
+  xit "sends payment notifications" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
     CODE
   end
 
-  it "send messages" do
+  xit "send messages" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)

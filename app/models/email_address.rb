@@ -18,6 +18,9 @@ class EmailAddress < ApplicationRecord
   validates :smtp_authentication, presence: true
 
   scope :primary, -> { where(primary: true) }
+  scope :not_primary, -> { where(primary: false) }
+  scope :verified, -> { where(verified: true) }
+  scope :not_verified, -> { where(verified: false) }
 
   def email_address_with_display_name
     ActionMailer::Base.email_address_with_name(email_address, display_name)

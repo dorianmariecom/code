@@ -6,16 +6,16 @@ FactoryBot.define do
     trait :dorian do
       name { "Dorian Marié" }
       time_zone { "Europe/Paris" }
+      phone_numbers { [association(:phone_number, :dorian_fr)] }
+      passwords { [association(:password)] }
 
       email_addresses do
         [
-          association(:email_address, :com, primary: true),
-          association(:email_address, :fr),
-          association(:email_address, :gmail),
+          association(:email_address, :dorian_com, primary: true),
+          association(:email_address, :dorian_fr),
+          association(:email_address, :dorian_gmail),
         ]
       end
-
-      passwords { [association(:password)] }
     end
   end
 end

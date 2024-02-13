@@ -14,6 +14,9 @@ class Code
         elsif operator.to_s == "Weather"
           sig(args)
           Class.new(Weather)
+        elsif operator.to_s == "Sms"
+          sig(args)
+          Class.new(Sms)
         else
           original_call(**args)
         end

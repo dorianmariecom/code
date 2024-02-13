@@ -33,6 +33,9 @@ class Code
             query: value&.code_get(String.new("query")),
             date: value&.code_get(String.new("date")),
           )
+        elsif raw == Sms && operator.to_s == "send"
+          sig(args) { { body: String.maybe } }
+          Sms.code_send(body: value&.code_get(String.new("body")))
         else
           original_call(**args)
         end
