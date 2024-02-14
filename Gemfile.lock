@@ -229,6 +229,7 @@ GEM
       racc (~> 1.4)
     pandoc-ruby (2.1.10)
     pg (1.5.4)
+    phonelib (0.8.7)
     prettier_print (1.2.1)
     psych (5.1.2)
       stringio
@@ -407,6 +408,7 @@ DEPENDENCIES
   net-http
   pandoc-ruby
   pg
+  phonelib
   puma
   pundit
   rails

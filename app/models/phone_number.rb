@@ -8,8 +8,10 @@ class PhoneNumber < ApplicationRecord
   scope :verified, -> { where(verified: true) }
   scope :not_verified, -> { where(verified: false) }
 
+  validates :phone_number, phone: true
+
   def formatted_phone_number
-    phone_number
+    Phonelib.parse(phone_number).international
   end
 
   def to_s
