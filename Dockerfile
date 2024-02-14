@@ -1,32 +1,49 @@
 FROM debian:bullseye-slim as base
+ENV RUBY_VERSION="3.3.0" \
+    NODE_VERSION="20.11.0" \
+    NPM_VERSION="10.4.0" \
+    YARN_VERSION="1.22.19" \
+    RAILS_ENV="production" \
+    BUNDLE_DEPLOYMENT="1" \
+    BUNDLE_PATH="/usr/local/bundle" \
+    BUNDLE_WITHOUT="development" \
+    PATH="/opt/rubies/ruby-${RUBY_VERSION}/bin:/usr/local/node/bin:${PATH}"
 
-RUN apt-get update && apt-get install -y build-essential wget autoconf
+RUN apt-get update && \
+    apt-get install -y \
+        build-essential \
+        wget \
+        autoconf \
+        git \
+        libpq-dev \
+        libvips \
+        pkg-config \
+        vim \
+        fish
 
 RUN wget https://github.com/postmodern/ruby-install/releases/download/v0.9.3/ruby-install-0.9.3.tar.gz \
   && tar -xzvf ruby-install-0.9.3.tar.gz \
   && cd ruby-install-0.9.3/ \
   && make install
 
-RUN ruby-install -p https://github.com/ruby/ruby/pull/9371.diff ruby 3.3.0
-ENV PATH="/opt/rubies/ruby-3.3.0/bin:${PATH}"
+RUN ruby-install -p https://github.com/ruby/ruby/pull/9371.diff ruby "${RUBY_VERSION}"
 
 WORKDIR /rails
 
-ENV RAILS_ENV="production" \
-    BUNDLE_DEPLOYMENT="1" \
-    BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development"
-
 FROM base as build
 
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libpq-dev libvips pkg-config
+RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
+    /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
+    npm install -g "yarn@${YARN_VERSION}" && \
+    rm -rf /tmp/node-build-master
 
 COPY Gemfile Gemfile.lock ./
-
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
+
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
 
 COPY . .
 
