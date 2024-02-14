@@ -10,6 +10,16 @@ en:
       not_valid: Not valid
     password:
       not_present: Not present
+    phone_number:
+      invalid_country_code: Invalid country code
+      invalid_length: Invalid length
+      invalid_phone_number: Invalid phone number
+      is_possible: Is possible
+      is_possible_local_only: Is possible local only
+      is_taken: Is taken
+      not_present: Not present
+      too_long: Too long
+      too_short: Too short
   programs:
     index:
       title: Programs
@@ -77,6 +87,7 @@ en:
       title: Code
       users: Users
       email_addresses: Email addresses
+      phone_numbers: Phone numbers
       passwords: Passwords
       programs: Programs
       documentation: Documentation
@@ -107,6 +118,7 @@ en:
       title: Edit user
       submit: Update
     show:
+      phone_numbers: Phone numbers
       email_addresses: Email addresses
       passwords: Passwords
       edit: Edit user
@@ -129,6 +141,34 @@ en:
       submit: Log in
     destroy:
       notice: Logged out
+  phone_numbers:
+    index:
+      title: Phone numbers
+      new: New phone number
+    create:
+      notice: Phone number created
+    update:
+      notice: Phone number updated
+    destroy:
+      notice: Phone number deleted
+    new:
+      title: New phone number
+      submit: Create phone number
+    edit:
+      title: Edit phone number
+      submit: Update phone number
+    show:
+      id: ID
+      primary: primary
+      edit: Edit phone number
+      delete: Delete phone number
+      belongs_to: belongs to
+      phone_number: phone number
+    form:
+      remove: Remove
+      phone_number: Phone number
+    nested:
+      add_phone_number: Add phone number
   email_addresses:
     index:
       title: Email addresses
@@ -177,6 +217,10 @@ en:
         user_id: User
         password: Password
         hint: Hint
+      phone_number:
+        user_id: User
+        primary: Primary?
+        phone_number: Phone number
       email_address:
         user_id: User
         primary: Primary?

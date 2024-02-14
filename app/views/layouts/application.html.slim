@@ -5,7 +5,7 @@ html
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "tailwind", "data-turbo-track": "reload"
     = stylesheet_link_tag "espresso", "data-turbo-track": "reload"
     = javascript_importmap_tags
 
@@ -13,6 +13,7 @@ html
       window.constants = {}
       window.constants.EMAIL_ADDRESS_REGEXP = #{raw email_address_regexp.to_json}
       window.constants.DOMAIN_REGEXP = #{raw domain_regexp.to_json}
+      window.constants.DEFAULT_COUNTRY_CODE = #{raw default_country_code.to_json}
       window.translations = #{raw I18n.t(".js").to_json}
   body.prose.max-w-lg.mx-auto.p-8
     .p
@@ -25,6 +26,7 @@ html
         - if admin?
           => link_to t(".users"), users_path 
           => link_to t(".email_addresses"), email_addresses_path
+          => link_to t(".phone_numbers"), phone_numbers_path
           => link_to t(".passwords"), passwords_path
         => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
       - else

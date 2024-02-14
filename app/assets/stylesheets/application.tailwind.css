@@ -1,19 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("tailwindcss/base");
+@import url("tailwindcss/components");
+@import url("tailwindcss/utilities");
+@import url("intl-tel-input/build/css/intlTelInput");
 
-@layer components {
-  * {
-    overflow-wrap: break-word;
-  }
+* {
+  overflow-wrap: break-word;
+}
 
-  .p {
-    @apply my-5;
-  }
+.p {
+  @apply my-5;
+}
 
-  .a {
-    color: var(--tw-prose-links);
-    font-weight: 500;
-    text-decoration: underline;
-  }
+.a {
+  color: var(--tw-prose-links);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.iti {
+  @apply w-full;
 }

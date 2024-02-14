@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :set_current_user
   after_action :verify_authorized
   after_action :verify_policy_scoped
+  after_action :delete_link_header
 
   helper_method :current_user
   helper_method :current_user?
@@ -41,5 +42,9 @@ class ApplicationController < ActionController::Base
     Current.user = User.find_by(id: session[:user_id])
 
     reset_session if Current.user.nil?
+  end
+
+  def delete_link_header
+    response.headers.delete("Link")
   end
 end

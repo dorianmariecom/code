@@ -17,6 +17,10 @@ module ApplicationHelper
     3.times.map { Faker::Internet.email }
   end
 
+  def fake_phone_numbers
+    3.times.map { Faker::PhoneNumber.phone_number_with_country_code }
+  end
+
   def fake_passwords
     3.times.map { Faker::Internet.password }
   end
@@ -71,6 +75,10 @@ module ApplicationHelper
     ([nil] + policy_scope(User).order(:id).to_a).map do |user|
       [user&.to_s, user&.id, { selected: user_id == user&.id }]
     end
+  end
+
+  def default_country_code
+    PhoneNumber::DEFAULT_COUNTRY_CODE
   end
 
   def email_address_regexp

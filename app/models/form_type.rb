@@ -2,6 +2,7 @@ class FormType
   AUTOCOMPLETE_TO_FORM_TYPE = {
     off: :other,
     email: :email,
+    phone: :phone,
     name: :name,
     "new-password": "password,new",
     "current-password": "password"

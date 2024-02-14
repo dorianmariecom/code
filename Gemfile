@@ -7,6 +7,7 @@ ruby "3.3.0"
 gem "bcrypt"
 gem "bootsnap", require: false
 gem "code-ruby"
+gem "dorian"
 gem "faker"
 gem "heroicon"
 gem "importmap-rails"
