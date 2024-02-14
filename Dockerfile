@@ -11,15 +11,16 @@ ENV RUBY_VERSION="3.3.0" \
 
 RUN apt-get update && \
     apt-get install -y \
-        build-essential \
-        wget \
         autoconf \
+        build-essential \
+        curl \
+        fish \
         git \
         libpq-dev \
         libvips \
         pkg-config \
         vim \
-        fish
+        wget
 
 RUN wget https://github.com/postmodern/ruby-install/releases/download/v0.9.3/ruby-install-0.9.3.tar.gz \
   && tar -xzvf ruby-install-0.9.3.tar.gz \
