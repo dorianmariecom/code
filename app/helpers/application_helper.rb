@@ -13,6 +13,10 @@ module ApplicationHelper
     "1 + 1, :Hello * 10, Mail.send"
   end
 
+  def fake_verification_codes
+    3.times.map { rand(10000).to_s.rjust(4, "0") }
+  end
+
   def fake_email_addresses
     3.times.map { Faker::Internet.email }
   end
@@ -87,6 +91,10 @@ module ApplicationHelper
 
   def domain_regexp
     json_regexp(EmailAddress::DOMAIN_REGEXP)
+  end
+
+  def verification_code_regexp
+    json_regexp(PhoneNumber::VERIFICATION_CODE_REGEXP)
   end
 
   def json_regexp(regexp)

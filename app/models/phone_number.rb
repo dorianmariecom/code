@@ -1,6 +1,7 @@
 class PhoneNumber < ApplicationRecord
   DEFAULT_COUNTRY_CODE = "FR"
   BRAND = "Code"
+  VERIFICATION_CODE_REGEXP = /\A[0-9 ]+\z/
 
   belongs_to :user, default: -> { Current.user }
 
@@ -60,6 +61,44 @@ class PhoneNumber < ApplicationRecord
     response = Net::HTTP.get_response(uri)
     json = JSON.parse(response.body)
     update!(nexmo_request_id: json["request_id"]) if json["status"] == "0"
+  end
+
+  def verify!(verification_code)
+    return if nexmo_request_id.blank?
+    verification_code = verification_code.gsub(/\D/, '')
+    return if verification_code.blank?
+    query = {
+      api_key: Rails.application.credentials.nexmo.api_key,
+      api_secret: Rails.application.credentials.nexmo.api_secret,
+      request_id: nexmo_request_id,
+      code: verification_code
+    }.to_query
+
+    uri = URI.parse("https://api.nexmo.com/verify/check/json?#{query}")
+    response = Net::HTTP.get_response(uri)
+    json = JSON.parse(response.body)
+
+    if json["status"] == "0"
+      update!(verified: true, nexmo_request_id: "")
+    else
+      update!(nexmo_request_id: "")
+    end
+  end
+
+  def cancel_verification!
+    return if nexmo_request_id.blank?
+
+    query = {
+      api_key: Rails.application.credentials.nexmo.api_key,
+      api_secret: Rails.application.credentials.nexmo.api_secret,
+      request_id: nexmo_request_id,
+      cmd: :cancel
+    }.to_query
+
+    update!(nexmo_request_id: "")
+
+    uri = URI.parse("https://api.nexmo.com/verify/control/json?#{query}")
+    Net::HTTP.get_response(uri)
   end
 
   def valid_phone_number

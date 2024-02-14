@@ -11,9 +11,10 @@ html
 
     javascript:
       window.constants = {}
-      window.constants.EMAIL_ADDRESS_REGEXP = #{raw email_address_regexp.to_json}
-      window.constants.DOMAIN_REGEXP = #{raw domain_regexp.to_json}
       window.constants.DEFAULT_COUNTRY_CODE = #{raw default_country_code.to_json}
+      window.constants.DOMAIN_REGEXP = #{raw domain_regexp.to_json}
+      window.constants.EMAIL_ADDRESS_REGEXP = #{raw email_address_regexp.to_json}
+      window.constants.VERIFICATION_CODE_REGEXP = #{raw verification_code_regexp.to_json}
       window.translations = #{raw I18n.t(".js").to_json}
   body.prose.max-w-lg.mx-auto.p-8
     .p

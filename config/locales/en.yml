@@ -16,6 +16,9 @@ en:
     domain:
       not_present: Not present
       not_valid: Not valid
+    verification_code:
+      not_present: Not present
+      not_valid: Not valid
     password:
       not_present: Not present
     phone_number:
@@ -178,6 +181,8 @@ en:
       sms: SMS
       send_verification_code: Send verification code
       verified: verified
+      verify: Verify
+      cancel: Cancel
     form:
       remove: Remove
       phone_number: Phone number
@@ -236,6 +241,7 @@ en:
         user_id: User
         primary: Primary?
         phone_number: Phone number
+        verification_code: Verification code
       email_address:
         user_id: User
         primary: Primary?

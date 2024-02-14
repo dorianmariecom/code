@@ -24,7 +24,10 @@
 
 - if @phone_number.not_verified?
   - if @phone_number.verification_code_sent?
-    = @phone_number.nexmo_request_id
+      = form_for @phone_number, url: [@phone_number, :verification_code] do |f|
+        = render "shared/field", f: f, field: :verification_code, type: :verification_code, value: "", required: true, fake: fake_verification_codes
+        p=> f.submit t(".verify"), class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+      .p= button_to t(".cancel"), [@phone_number, :verification_code], method: :delete, class: "a text-red-600"
   - else
     .p= button_to t(".send_verification_code"), [@phone_number, :verification_code], class: "bg-black text-white rounded px-4 py-2 cursor-pointer"
 
