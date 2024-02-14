@@ -1,5 +1,5 @@
 class FakeRestNexmoCom < Sinatra::Base
-  post '/sms/json' do
+  post "/sms/json" do
     content_type :json
 
     File.read("spec/files/rest.nexmo.com/sms/json")

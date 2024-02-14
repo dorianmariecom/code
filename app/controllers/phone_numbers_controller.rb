@@ -77,13 +77,10 @@ class PhoneNumbersController < ApplicationController
         :user_id,
         :primary,
         :verified,
-        :phone_number,
+        :phone_number
       )
     else
-      params.require(:phone_number).permit(
-        :primary,
-        :phone_number,
-      )
+      params.require(:phone_number).permit(:primary, :phone_number)
     end
   end
 end

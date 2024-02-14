@@ -13,7 +13,7 @@ FactoryBot.define do
         [
           association(:email_address, :dorian_com, primary: true),
           association(:email_address, :dorian_fr),
-          association(:email_address, :dorian_gmail),
+          association(:email_address, :dorian_gmail)
         ]
       end
     end

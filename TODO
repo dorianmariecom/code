@@ -1,5 +1,3 @@
 - normalize fields
-- phone number formatting
-- phone number validation
 - phone number verification
-- phone number Call / Send SMS
+- phone number WhatsApp / Telegram / iMessage / ?

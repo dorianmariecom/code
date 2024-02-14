@@ -8,26 +8,31 @@ class PhoneNumber < ApplicationRecord
   scope :verified, -> { where(verified: true) }
   scope :not_verified, -> { where(verified: false) }
 
+  normalizes(
+    :phone_number,
+    with: ->(phone_number) { Phonelib.parse(phone_number).e164 }
+  )
+
   validate :valid_phone_number
 
   def valid_phone_number
-    if !phonelib.valid?
-      errors.add(:phone_number, :not_valid)
-    end
-    if !phonelib.possible?
-      errors.add(:phone_number, :not_possible)
-    end
+    errors.add(:phone_number, :invalid) if phonelib.invalid?
+    errors.add(:phone_number, :impossible) if phonelib.impossible?
   end
 
   def phonelib
     Phonelib.parse(phone_number)
   end
 
-  def formatted_phone_number
+  def e164
+    phonelib.e164
+  end
+
+  def formatted
     phonelib.international
   end
 
   def to_s
-    formatted_phone_number.presence || "PhoneNumber##{id}"
+    formatted.presence || "PhoneNumber##{id}"
   end
 end

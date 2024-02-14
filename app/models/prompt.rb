@@ -165,9 +165,10 @@ class Prompt
   end
 
   def response
-    @response ||= Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-      http.request(request)
-    end
+    @response ||=
+      Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(request)
+      end
   end
 
   def json

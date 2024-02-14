@@ -1,5 +1,5 @@
 class FakeApiWeatherapiCom < Sinatra::Base
-  post '/v1/forecast.json' do
+  post "/v1/forecast.json" do
     content_type :json
 
     File.read("spec/files/api.weatherapi.com/v1/forecast.json")

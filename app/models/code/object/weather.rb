@@ -28,9 +28,10 @@ class Code
           days: MAX_FORECAST_DAYS
         )
 
-        response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-          http.request(request)
-        end
+        response =
+          Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+            http.request(request)
+          end
 
         json = JSON.parse(response.body)
 

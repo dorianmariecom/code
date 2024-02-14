@@ -6,6 +6,15 @@ class EmailAddress < ApplicationRecord
 
   encrypts :smtp_password
 
+  normalizes(
+    :email_address,
+    with: ->(email_address) { email_address.to_s.downcase.strip }
+  )
+  normalizes(
+    :smtp_user_name,
+    with: ->(smtp_user_name) { smtp_user_name.to_s.downcase.strip }
+  )
+
   validates :email_address, presence: true
   validates :email_address, format: { with: EMAIL_ADDRESS_REGEXP }
   validates :smtp_address, presence: true, format: { with: DOMAIN_REGEXP }

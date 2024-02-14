@@ -12,11 +12,11 @@
 
 .text-sm=> t(".phone_number")
 .mb-5
-  => @phone_number.formatted_phone_number
+  => @phone_number.formatted
   | (
-  = phone_to @phone_number.formatted_phone_number, t(".call")
+  = phone_to @phone_number.formatted, t(".call")
   ' ,
-  = sms_to @phone_number.formatted_phone_number, t(".sms")
+  = sms_to @phone_number.formatted, t(".sms")
   ' )
 
 = link_to t(".edit"), [:edit, @phone_number]

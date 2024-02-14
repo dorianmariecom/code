@@ -2,7 +2,9 @@ require "webmock/rspec"
 require "sinatra"
 require "timecop"
 
-Dir["spec/support/**/*.rb"].each { |filename| require_relative("../#{filename}") }
+Dir["spec/support/**/*.rb"].each do |filename|
+  require_relative("../#{filename}")
+end
 
 Timecop.safe_mode = true
 

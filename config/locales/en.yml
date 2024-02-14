@@ -5,8 +5,8 @@ en:
         phone_number:
           attributes:
             phone_number:
-              not_valid: not valid
-              not_possible: not possible
+              invalid: is invalid
+              impossible: is impossible
   js:
     email_address:
       not_present: Not present

@@ -31,7 +31,7 @@ class Code
           sig(args) { { query: String.maybe, date: Date.maybe } }
           Weather.code_raining?(
             query: value&.code_get(String.new("query")),
-            date: value&.code_get(String.new("date")),
+            date: value&.code_get(String.new("date"))
           )
         elsif raw == Sms && operator.to_s == "send"
           sig(args) { { body: String.maybe } }
