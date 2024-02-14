@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-class AdminRoutes
+class AdminConstraints
   def matches?(request)
     User.find_by(id: request.session[:user_id])&.admin?
   end
 end
 
 Rails.application.routes.draw do
-  constraints AdminRoutes.new do
-    mount SolidErrors::Engine, at: "/errors"
+  constraints AdminConstraints.new do
+    mount SolidErrors::Engine, at: "/errors", as: :errors
   end
 
   resources :country_codes

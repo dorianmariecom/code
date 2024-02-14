@@ -52,7 +52,7 @@
     = f.text_area field, required: required, autocomplete: autocomplete, class: "w-full align-top", value: value, data: data, rows: 6
   - elsif type.phone_number?
     .not-prose(data-controller="phone-number")
-      = f.hidden_field field, data: { phone_number_target: "hidden" }
+      = f.hidden_field field, data: { phone_number_target: "hidden" }, value: value
       = telephone_field_tag "#{field}_national", "", class: "w-full", autocomplete: autocomplete, data: { phone_number_target: "input", action: "phone-number#input", **data }, value: value, required: required
       .text-red-600(data-phone-number-target="error")
   - if fake.present?

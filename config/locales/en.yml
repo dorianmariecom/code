@@ -91,6 +91,7 @@ en:
       passwords: Passwords
       programs: Programs
       documentation: Documentation
+      errors: Errors
   pages:
     documentation:
       title: Documentation
@@ -165,6 +166,8 @@ en:
       delete: Delete phone number
       belongs_to: belongs to
       phone_number: phone number
+      call: Call
+      sms: SMS
     form:
       remove: Remove
       phone_number: Phone number
