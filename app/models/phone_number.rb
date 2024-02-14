@@ -1,5 +1,6 @@
 class PhoneNumber < ApplicationRecord
   DEFAULT_COUNTRY_CODE = "FR"
+  BRAND = "Code"
 
   belongs_to :user, default: -> { Current.user }
 
@@ -15,9 +16,20 @@ class PhoneNumber < ApplicationRecord
 
   validate :valid_phone_number
 
-  def valid_phone_number
-    errors.add(:phone_number, :invalid) if phonelib.invalid?
-    errors.add(:phone_number, :impossible) if phonelib.impossible?
+  def primary?
+    !!primary
+  end
+
+  def not_primary?
+    !primary?
+  end
+
+  def verified?
+    !!verified
+  end
+
+  def not_verified?
+    !verified?
   end
 
   def phonelib
@@ -31,6 +43,30 @@ class PhoneNumber < ApplicationRecord
   def formatted
     phonelib.international
   end
+
+  def verification_code_sent?
+    nexmo_request_id.present?
+  end
+
+  def send_verification_code!
+    query = {
+      api_key: Rails.application.credentials.nexmo.api_key,
+      api_secret: Rails.application.credentials.nexmo.api_secret,
+      number: e164,
+      brand: BRAND
+    }.to_query
+
+    uri = URI.parse("https://api.nexmo.com/verify/json?#{query}")
+    response = Net::HTTP.get_response(uri)
+    json = JSON.parse(response.body)
+    update!(nexmo_request_id: json["request_id"]) if json["status"] == "0"
+  end
+
+  def valid_phone_number
+    errors.add(:phone_number, :invalid) if phonelib.invalid?
+    errors.add(:phone_number, :impossible) if phonelib.impossible?
+  end
+
 
   def to_s
     formatted.presence || "PhoneNumber##{id}"

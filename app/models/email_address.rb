@@ -31,6 +31,22 @@ class EmailAddress < ApplicationRecord
   scope :verified, -> { where(verified: true) }
   scope :not_verified, -> { where(verified: false) }
 
+  def primary?
+    !!primary
+  end
+
+  def not_primary?
+    !primary?
+  end
+
+  def verified?
+    !!verified
+  end
+
+  def not_verified?
+    !verified?
+  end
+
   def email_address_with_display_name
     ActionMailer::Base.email_address_with_name(email_address, display_name)
   end

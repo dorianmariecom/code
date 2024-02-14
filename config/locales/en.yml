@@ -176,6 +176,8 @@ en:
       phone_number: phone number
       call: Call
       sms: SMS
+      send_verification_code: Send verification code
+      verified: verified
     form:
       remove: Remove
       phone_number: Phone number
@@ -199,6 +201,7 @@ en:
       submit: Update email address
     show:
       id: ID
+      verified: verified
       primary: primary
       edit: Edit email address
       delete: Delete email address

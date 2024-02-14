@@ -19,13 +19,17 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :email_addresses
-    resources :phone_numbers
+    resources :phone_numbers do
+      resource :verification_code
+    end
     resources :passwords
     resources :programs
   end
 
   resources :email_addresses
-  resources :phone_numbers
+  resources :phone_numbers do
+    resource :verification_code
+  end
   resources :passwords
   resources :programs
 

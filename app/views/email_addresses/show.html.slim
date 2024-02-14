@@ -8,7 +8,10 @@
 .mb-5= @email_address.id
 
 .text-sm= t(".primary")
-.mb-5= @email_address.primary
+.mb-5= @email_address.primary?
+
+.text-sm= t(".verified")
+.mb-5= @email_address.verified?
 
 .text-sm=> t(".email_address")
 .mb-5= mail_to @email_address.email_address

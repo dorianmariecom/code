@@ -8,7 +8,10 @@
 .mb-5= @phone_number.id
 
 .text-sm= t(".primary")
-.mb-5= @phone_number.primary
+.mb-5= @phone_number.primary?
+
+.text-sm= t(".verified")
+.mb-5= @phone_number.verified?
 
 .text-sm=> t(".phone_number")
 .mb-5
@@ -18,6 +21,12 @@
   ' ,
   = sms_to @phone_number.formatted, t(".sms")
   ' )
+
+- if @phone_number.not_verified?
+  - if @phone_number.verification_code_sent?
+    = @phone_number.nexmo_request_id
+  - else
+    .p= button_to t(".send_verification_code"), [@phone_number, :verification_code], class: "bg-black text-white rounded px-4 py-2 cursor-pointer"
 
 = link_to t(".edit"), [:edit, @phone_number]
 = button_to t(".delete"), @phone_number, method: :delete, class: "a text-red-600"
