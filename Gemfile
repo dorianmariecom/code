@@ -2,6 +2,8 @@
 
 source "https://rubygems.org"
 
+git_source(:rails) { |name| "https://github.com/rails/#{name}" }
+
 ruby "3.3.0"
 
 gem "bcrypt"
@@ -20,7 +22,7 @@ gem "phonelib"
 gem "puma"
 gem "pundit"
 gem "rack-timeout"
-gem "rails"
+gem "rails", rails: :rails
 gem "redis"
 gem "slim-rails"
 gem "solid_errors"
