@@ -43,20 +43,19 @@ export default class extends Controller {
   }
 
   input() {
+    this.hiddenTarget.value = this.iti.getNumber();
+
     if (this.inputTarget.value.trim() || !this.inputTarget.required) {
       if (this.iti.isValidNumber()) {
-        this.hiddenTarget.value = this.iti.getNumber();
         this.errorTarget.innerText = "";
         this.inputTarget.classList.add(...VALID_CLASSES);
         this.inputTarget.classList.remove(...INVALID_CLASSES);
       } else {
-        this.hiddenTarget.value = "";
         this.errorTarget.innerText = ERRORS[this.iti.getValidationError()];
         this.inputTarget.classList.add(...INVALID_CLASSES);
         this.inputTarget.classList.remove(...VALID_CLASSES);
       }
     } else {
-      this.hiddenTarget.value = "";
       this.errorTarget.innerText = t("not_present");
       this.inputTarget.classList.add(...INVALID_CLASSES);
       this.inputTarget.classList.remove(...VALID_CLASSES);

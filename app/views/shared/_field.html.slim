@@ -53,7 +53,7 @@
   - elsif type.phone_number?
     .not-prose(data-controller="phone-number")
       = f.hidden_field field, data: { phone_number_target: "hidden" }, value: value
-      = telephone_field_tag "#{field}_national", "", class: "w-full", autocomplete: autocomplete, data: { phone_number_target: "input", action: "phone-number#input", **data }, value: value, required: required
+      = telephone_field_tag "#{field}_national", "", class: "w-full", autocomplete: autocomplete, data: { phone_number_target: "input", action: "phone-number#input countrychange->phone-number#input", **data }, value: value, required: required
       .text-red-600(data-phone-number-target="error")
   - if fake.present?
     .text-sm.text-gray-600.italic

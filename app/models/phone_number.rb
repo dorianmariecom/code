@@ -13,7 +13,8 @@ class PhoneNumber < ApplicationRecord
   def valid_phone_number
     if !phonelib.valid?
       errors.add(:phone_number, :not_valid)
-    elsif !phonelib.possible?
+    end
+    if !phonelib.possible?
       errors.add(:phone_number, :not_possible)
     end
   end

@@ -6,6 +6,7 @@ ENV BUNDLER_VERSION="2.5.5" \
     NODE_VERSION="20.11.0" \
     NPM_VERSION="10.4.0" \
     RAILS_ENV="production" \
+    RUBY_INSTALL_VERSION="0.9.3" \
     RUBY_VERSION="3.3.0" \
     YARN_VERSION="1.22.19"
 
@@ -26,9 +27,9 @@ RUN apt-get update && \
         vim \
         wget
 
-RUN wget https://github.com/postmodern/ruby-install/releases/download/v0.9.3/ruby-install-0.9.3.tar.gz \
-  && tar -xzvf ruby-install-0.9.3.tar.gz \
-  && cd ruby-install-0.9.3/ \
+RUN wget "https://github.com/postmodern/ruby-install/releases/download/v${RUBY_INSTALL_VERSION}/ruby-install-${RUBY_INSTALL_VERSION}.tar.gz" \
+  && tar -xzvf "ruby-install-${RUBY_INSTALL_VERSION}.tar.gz" \
+  && cd "ruby-install-${RUBY_INSTALL_VERSION}" \
   && make install
 
 RUN ruby-install -p https://github.com/ruby/ruby/pull/9371.diff ruby "${RUBY_VERSION}"

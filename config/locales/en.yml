@@ -1,4 +1,12 @@
 en:
+  activerecord:
+    errors:
+      models:
+        phone_number:
+          attributes:
+            phone_number:
+              not_valid: not valid
+              not_possible: not possible
   js:
     email_address:
       not_present: Not present
