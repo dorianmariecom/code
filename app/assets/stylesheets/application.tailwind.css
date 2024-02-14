@@ -7,6 +7,10 @@
   @apply break-words;
 }
 
+pre {
+  @apply whitespace-pre-wrap;
+}
+
 .p {
   @apply my-5;
 }

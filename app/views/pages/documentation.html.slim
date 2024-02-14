@@ -95,3 +95,76 @@ div(class="[&_p]:mb-0 [&_pre]:mt-0 [&_.sourceCode]:mt-0 [&_.dt]:no-underline [&_
       Mail.send(to: to, subject: "Hello")
     end
     ```
+
+    ---
+
+    ## Sms.send(body:)
+
+    **body**: The body of the text message, e.g. "#{Faker::Book.title}", default: ""
+
+    ### Send an empty SMS to yourself
+
+    input
+    ```ruby
+    Sms.send
+    ```
+
+    ### Send an SMS to yourself
+
+    input
+    ```ruby
+    Sms.send(body: "How are you?")
+    ```
+
+    ### Send an SMS when it's going to rain tomorrow in Paris, France
+
+    input
+    ```ruby
+    if Weather.raining?(query: "Paris, France", date: Date.tomorrow)
+      Sms.send(body: "It will be raining tomorrow")
+    end
+    ```
+
+    ---
+
+    ## Weather.raining?(query:, date:)
+
+    **query**: The location of the weather, e.g. "#{Faker::Address.full_address}", "#{Faker::Address.latitude},#{Faker::Address.longitude}", default: Your location
+
+    **date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from_now, 1.hour.ago, 2.hours.from_now, 2.hours.ago, default: Date.now
+
+    ### Check if it's raining
+
+    input
+    ```ruby
+    Weather.raining?
+    ```
+
+    output
+    ```
+    #{Faker::Boolean.boolean}
+    ```
+
+    ### Check if it's raining in Paris, France
+
+    input
+    ```ruby
+    Weather.raining?(query: "Paris, France")
+    ```
+
+    output
+    ```
+    #{Faker::Boolean.boolean}
+    ```
+
+    ### Check if it's raining in Paris, France tomorrow
+
+    input
+    ```ruby
+    Weather.raining?(query: "Paris, France", date: Date.tomorrow)
+    ```
+
+    output
+    ```
+    #{Faker::Boolean.boolean}
+    ```
