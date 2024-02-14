@@ -1,9 +1,5 @@
 - content_for(:title, @program.to_s)
 
-= render "form", program: @program, submit: t(".submit")
-
-hr
-
 - if admin?
   .text-sm= t(".belongs_to")
   .mb-5= link_to @program.user
@@ -31,7 +27,7 @@ hr
   pre.mt-0
     = @program.result
 
-- if @program.no_primary_address_found?
+- if current_user.email_addresses.none?
   .p= button_to t(".new_email_address"), new_email_address_path, method: :get, class: "bg-black text-white rounded px-4 py-2 cursor-pointer"
 
 - if current_user.passwords.none?

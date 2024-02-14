@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @email_addresses = policy_scope(EmailAddress).where(user: @user)
+    @phone_numbers = policy_scope(PhoneNumber).where(user: @user)
     @passwords = policy_scope(Password).where(user: @user)
     @programs = policy_scope(Program).where(user: @user)
   end
@@ -77,6 +78,7 @@ class UsersController < ApplicationController
           smtp_authentication
           smtp_enable_starttls_auto
         ],
+        phone_numbers_attributes: %i[user_id id _destroy primary phone_number],
         passwords_attributes: %i[user_id id _destroy password hint]
       )
     else
@@ -96,6 +98,7 @@ class UsersController < ApplicationController
           smtp_authentication
           smtp_enable_starttls_auto
         ],
+        phone_numbers_attributes: %i[id _destroy primary phone_number],
         passwords_attributes: %i[id _destroy password hint]
       )
     end

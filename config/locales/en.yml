@@ -125,6 +125,7 @@ en:
       destroy: Delete user
       confirm: Are you sure you want to delete this user?
       admin: Admin
+      new_phone_number: New phone number
       new_email_address: New email address
       new_password: New password
       programs: Programs

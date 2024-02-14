@@ -101,6 +101,7 @@ class ProgramsController < ApplicationController
             smtp_authentication
             smtp_enable_starttls_auto
           ],
+          phone_numbers_attributes: %i[user_id id _destroy primary phone_number],
           passwords_attributes: %i[user_id id _destroy password hint]
         ]
       )
@@ -125,6 +126,7 @@ class ProgramsController < ApplicationController
             smtp_authentication
             smtp_enable_starttls_auto
           ],
+          phone_numbers_attributes: %i[id _destroy primary phone_number],
           passwords_attributes: %i[id _destroy password hint]
         ]
       )

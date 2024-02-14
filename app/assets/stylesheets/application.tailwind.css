@@ -4,7 +4,7 @@
 @import url("intl-tel-input/build/css/intlTelInput");
 
 * {
-  overflow-wrap: break-word;
+  @apply break-words;
 }
 
 .p {
@@ -13,10 +13,17 @@
 
 .a {
   color: var(--tw-prose-links);
-  font-weight: 500;
-  text-decoration: underline;
+  @apply underline font-medium;
+}
+
+.a.text-red-600 {
+  color: theme('colors.red.600');
 }
 
 .iti {
   @apply w-full;
+}
+
+.font-bold > a {
+  font-weight: 700
 }
