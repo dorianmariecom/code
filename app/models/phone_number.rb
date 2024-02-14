@@ -106,7 +106,6 @@ class PhoneNumber < ApplicationRecord
     errors.add(:phone_number, :impossible) if phonelib.impossible?
   end
 
-
   def to_s
     formatted.presence || "PhoneNumber##{id}"
   end

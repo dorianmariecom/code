@@ -20,6 +20,8 @@
   = phone_to @phone_number.formatted, t(".call")
   ' ,
   = sms_to @phone_number.formatted, t(".sms")
+  ' ,
+  = whatsapp_to @phone_number.formatted, t(".whatsapp")
   ' )
 
 - if @phone_number.not_verified?

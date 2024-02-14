@@ -183,6 +183,7 @@ en:
       verified: verified
       verify: Verify
       cancel: Cancel
+      whatsapp: WhatsApp
     form:
       remove: Remove
       phone_number: Phone number
