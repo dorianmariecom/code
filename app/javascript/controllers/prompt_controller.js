@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["prompt", "name", "input"];
 
   async generate() {
-    const csrfToken = document.querySelector("[name='csrf-token']").content;
+    const csrfToken = document.querySelector("[name='csrf-token']")?.content;
 
     const response = await fetch("/prompts", {
       method: "POST",

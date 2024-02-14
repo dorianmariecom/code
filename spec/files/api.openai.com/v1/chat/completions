@@ -1,0 +1,23 @@
+{
+  "id": "chatcmpl-8sFM5aopzRfKtmV3yJUL6JGSD2xrD",
+  "object": "chat.completion",
+  "created": 1707939429,
+  "model": "gpt-4-1106-preview",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"input\": \"1 + 1\",\n  \"name\": \"Arithmetics\"\n}"
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 419,
+    "completion_tokens": 21,
+    "total_tokens": 440
+  },
+  "system_fingerprint": "fp_c3e45ce344"
+}

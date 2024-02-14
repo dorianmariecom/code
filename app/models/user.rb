@@ -39,7 +39,7 @@ class User < ApplicationRecord
     allow_destroy: true
   )
 
-  validates :time_zone, inclusion: { in: TIME_ZONES, allow_nil: true }
+  validates :time_zone, inclusion: { in: TIME_ZONES, allow_blank: true }
 
   def to_s
     name.presence || "User##{id}"

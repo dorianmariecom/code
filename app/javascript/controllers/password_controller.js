@@ -23,7 +23,7 @@ export default class extends Controller {
   }
 
   async validate() {
-    const csrfToken = document.querySelector("[name='csrf-token']").content;
+    const csrfToken = document.querySelector("[name='csrf-token']")?.content;
 
     const response = await fetch("/password_validations", {
       method: "POST",
