@@ -1,13 +1,15 @@
 FROM debian:bullseye-slim as base
-ENV RUBY_VERSION="3.3.0" \
-    NODE_VERSION="20.11.0" \
-    NPM_VERSION="10.4.0" \
-    YARN_VERSION="1.22.19" \
-    RAILS_ENV="production" \
+ENV BUNDLER_VERSION="2.5.5" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development" \
-    PATH="/opt/rubies/ruby-${RUBY_VERSION}/bin:/usr/local/node/bin:${PATH}"
+    NODE_VERSION="20.11.0" \
+    NPM_VERSION="10.4.0" \
+    RAILS_ENV="production" \
+    RUBY_VERSION="3.3.0" \
+    YARN_VERSION="1.22.19"
+
+ENV PATH="/opt/rubies/ruby-${RUBY_VERSION}/bin:/usr/local/node/bin:${PATH}"
 
 RUN apt-get update && \
     apt-get install -y \
@@ -39,6 +41,7 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
     rm -rf /tmp/node-build-master
 
 COPY Gemfile Gemfile.lock ./
+RUN gem install bundler -v "${BUNDLER_VERSION}"
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
