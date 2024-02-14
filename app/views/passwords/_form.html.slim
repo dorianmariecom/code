@@ -2,8 +2,6 @@
 - removable = local_assigns.fetch(:removable, false)
 
 .password.border-l-2.border-black.pl-4.mb-5(data-new-record="#{f.object.new_record?}")
-  = f.hidden_field :_destroy
-
   .font-bold.italic= t(".password")
 
   - if admin?
@@ -12,6 +10,8 @@
   = render "shared/field", f: f, field: :hint, type: :string
   = render "shared/field", f: f, field: :password, type: :password, required: f.object.new_record?, autocomplete: f.object.new_record? ? "new-password" : "current-password", fake: fake_passwords
 
-  button.text-red-600.underline(class="#{removable ? "" : "hidden"}" type="button" data-action="passwords#remove" data-passwords-target="remove")
-    = t(".remove")
+  - if removable
+    = f.hidden_field :_destroy
+    button.text-red-600.underline(type="button" data-action="passwords#remove")
+      = t(".remove")
 

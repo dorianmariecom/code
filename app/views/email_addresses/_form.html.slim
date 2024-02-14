@@ -2,8 +2,6 @@
 - removable = local_assigns.fetch(:removable, false)
 
 .email-address.border-l-2.border-black.pl-4.mb-5(data-controller="nested-email-address" data-new-record="#{f.object.new_record?}")
-  = f.hidden_field :_destroy
-
   .font-bold.italic= t(".email_address")
 
   - if admin?
@@ -19,6 +17,7 @@
   = render "shared/field", f: f, field: :smtp_authentication, type: :string, required: true
   = render "shared/field", f: f, field: :smtp_enable_starttls_auto, type: :checkbox, required: true
 
-  button.text-red-600.underline(class="#{removable ? "" : "hidden"}" type="button" data-action="email-addresses#remove")
-    = t(".remove")
-
+  - if removable
+    = f.hidden_field :_destroy
+    button.text-red-600.underline(type="button" data-action="email-addresses#remove")
+      = t(".remove")

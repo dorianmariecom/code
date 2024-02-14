@@ -2,8 +2,6 @@
 - removable = local_assigns.fetch(:removable, false)
 
 .phone-number.border-l-2.border-black.pl-4.mb-5(data-new-record="#{f.object.new_record?}")
-  = f.hidden_field :_destroy
-
   .font-bold.italic= t(".phone_number")
 
   - if admin?
@@ -12,6 +10,9 @@
   = render "shared/field", f: f, field: :primary, type: :checkbox, data: { phone_numbers_target: :primary, action: "phone-numbers#update" }, required: false
   = render "shared/field", f: f, field: :phone_number, type: :phone_number, autocomplete: :phone, required: true, fake: fake_phone_numbers, value: f.object.formatted
 
-  button.text-red-600.underline(class="#{removable ? "" : "hidden"}" type="button" data-action="phone-numbers#remove")
-    = t(".remove")
+  - if removable
+    = f.hidden_field :_destroy
+
+    button.text-red-600.underline(type="button" data-action="phone-numbers#remove")
+      = t(".remove")
 
