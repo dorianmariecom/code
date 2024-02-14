@@ -8,7 +8,7 @@ class Code
       end
 
       def self.code_send(body: nil)
-        from = "Code"
+        from = "code.dorian"
         to = Current.primary_phone_number!.phone_number
         body = body&.raw || ""
 
