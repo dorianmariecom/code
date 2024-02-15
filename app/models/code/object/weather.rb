@@ -7,6 +7,23 @@ class Code
         "Weather"
       end
 
+      def self.call(**args)
+        operator = args.fetch(:operator, nil)
+        arguments = args.fetch(:arguments, [])
+        value = arguments.first&.value
+
+        case operator.to_s
+        when "raining?"
+          sig(args) { { query: String.maybe, date: Date.maybe } }
+          code_raining?(
+            query: value&.code_get(String.new("query")),
+            date: value&.code_get(String.new("date"))
+          )
+        else
+          super
+        end
+      end
+
       def self.code_raining?(query: nil, date: nil)
         if query.nil? || query.falsy?
           query = "#{Current.latitude},#{Current.longitude}"

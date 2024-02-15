@@ -1,5 +1,5 @@
 class VerificationCodesController < ApplicationController
-  before_action :load_verifiable, only: [:create, :update, :destroy]
+  before_action :load_verifiable, only: %i[create update destroy]
 
   def create
     @verifiable.send_verification_code!
@@ -20,9 +20,11 @@ class VerificationCodesController < ApplicationController
 
   def load_verifiable
     if params[:phone_number_id].present?
-      @verifiable = authorize policy_scope(PhoneNumber).find(params[:phone_number_id])
+      @verifiable =
+        authorize policy_scope(PhoneNumber).find(params[:phone_number_id])
     elsif params[:email_address_id].present?
-      @verifiable = authorize policy_scope(EmailAddress).find(params[:email_address_id])
+      @verifiable =
+        authorize policy_scope(EmailAddress).find(params[:email_address_id])
     else
       raise NotImplementedError
     end

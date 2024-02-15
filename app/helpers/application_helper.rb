@@ -14,7 +14,7 @@ module ApplicationHelper
   end
 
   def fake_verification_codes
-    3.times.map { rand(10000).to_s.rjust(4, "0") }
+    3.times.map { rand(10_000).to_s.rjust(4, "0") }
   end
 
   def fake_email_addresses

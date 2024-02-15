@@ -27,31 +27,83 @@ RSpec.describe Code, type: :model do
     end
   end
 
-  xit "sends reminders" do
+  it "sends reminders" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
+      Meetup::Group.new("parisrb").events.each do |event|
+        if event.time.before?(1.day.from_now)
+          unless Storage.exists?(id: event.id, type: :one_day_reminder)
+            Sms.send(body: "{event.group.name}: {event.name} in one day {event.url}")
+            Storage.create!(id: event.id, type: :one_day_reminder)
+          end
+        end
+
+        if event.time.before?(2.hours.from_now)
+          unless Storage.exists?(id: event.id, type: :two_hours_reminder)
+            Sms.send(body: "{event.group.name}: {event.name} in two hours {event.url}")
+            Storage.create!(id: event.id, type: :two_hours_reminder)
+          end
+        end
+      end
     CODE
   end
 
-  xit "searches for tweets" do
+  it "searches for tweets" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
+      Twitter.search(query: "to:dorianmariecom", type: :recent).each do |tweet|
+        next if Storage.exists?(id: tweet.id)
+        Sms.send(body: "New mention: {tweet.user.screen_name}: {tweet.text}")
+        Storage.create!(id: tweet.id)
+      end
     CODE
   end
 
-  xit "sends payment notifications" do
+  it "searches for mentions on Twitter" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
+      Twitter.mentions.each do |tweet|
+        next if Storage.exists?(id: tweet.id)
+        Sms.send(body: "New mention: {tweet.user.screen_name}: {tweet.text}")
+        Storage.create!(id: tweet.id)
+      end
     CODE
   end
 
-  xit "send messages" do
+  it "sends payment notifications" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
+      event = Stripe::Webhook.event
+
+      if event.payment_intent&.succeeded?
+        Sms.send(body: "You got paid {event.payment_intent.amount}")
+      end
+    CODE
+  end
+
+  it "send messages" do
+    Current.user = create(:user, :dorian)
+
+    Code.evaluate(<<~CODE)
+      Slack.send(body: "Who is leading the syncs?", channel: "#team-template")
+
+      Twitter.send(body: "What do you want to do this week?")
+
+      Discord.send("Who will be the game master this week?")
+
+      Email.send(
+        subject: "What did you do last week?",
+        reply_to: "adrienicohen@gmail.com"
+      )
+
+      Email.send(
+        subject: "What do you want to do this week?",
+        reply_to: "adrienicohen@gmail.com"
+      )
     CODE
   end
 end

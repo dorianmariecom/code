@@ -7,6 +7,20 @@ class Code
         "Sms"
       end
 
+      def self.call(**args)
+        operator = args.fetch(:operator, nil)
+        arguments = args.fetch(:arguments, [])
+        value = arguments.first&.value
+
+        case operator.to_s
+        when "send"
+          sig(args) { { body: String.maybe } }
+          code_send(body: value&.code_get(String.new("body")))
+        else
+          super
+        end
+      end
+
       def self.code_send(body: nil)
         from = "14155485560"
         to = Current.primary_phone_number!.phone_number

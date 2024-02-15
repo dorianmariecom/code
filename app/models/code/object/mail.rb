@@ -5,6 +5,32 @@ class Code
         "Mail"
       end
 
+      def self.call(**args)
+        operator = args.fetch(:operator, nil)
+        arguments = args.fetch(:arguments, [])
+        value = arguments.first&.value
+
+        case operator.to_s
+        when "send"
+          sig(args) do
+            {
+              from: String.maybe,
+              to: String.maybe,
+              subject: String.maybe,
+              body: String.maybe
+            }
+          end
+          code_send(
+            from: value&.code_get(String.new("from")),
+            to: value&.code_get(String.new("to")),
+            subject: value&.code_get(String.new("subject")),
+            body: value&.code_get(String.new("body"))
+          )
+        else
+          super
+        end
+      end
+
       def self.code_send(from: nil, to: nil, subject: nil, body: nil)
         if from.nil? || from.falsy?
           from = ::Current.primary_email_address!

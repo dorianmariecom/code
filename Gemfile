@@ -24,6 +24,7 @@ gem "pundit"
 gem "rack-timeout"
 gem "rails", rails: :rails
 gem "redis"
+gem "rubocop"
 gem "slim-rails"
 gem "solid_errors"
 gem "sprockets-rails"
