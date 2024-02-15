@@ -61,6 +61,7 @@ en:
       new_password: New password
     form:
       prompt: Prompt
+      loading: Generating...
       generate: Generate
       program: Program
   passwords:

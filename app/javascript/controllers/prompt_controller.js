@@ -1,9 +1,11 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["prompt", "name", "input"];
+  static targets = ["prompt", "name", "input", "loading"];
 
   async generate() {
+    this.loadingTarget.classList.remove("hidden")
+
     const csrfToken = document.querySelector("[name='csrf-token']")?.content;
 
     const response = await fetch("/prompts", {
@@ -19,5 +21,7 @@ export default class extends Controller {
 
     this.nameTarget.value = json.name;
     this.inputTarget.value = json.input;
+
+    this.loadingTarget.classList.add("hidden")
   }
 }
