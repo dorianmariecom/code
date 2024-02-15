@@ -44,10 +44,6 @@ class Code
 
         Nothing.new
       end
-
-      def to_s
-        "sms"
-      end
     end
   end
 end

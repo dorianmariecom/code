@@ -7,12 +7,16 @@ class Code
         "Meetup"
       end
 
-      def to_s
-        "meetup"
-      end
+      def self.call(**args)
+        operator = args.fetch(:operator, nil)
 
-      def inspect
-        to_s
+        case operator.to_s
+        when "Group"
+          sig(args)
+          Class.new(Group)
+        else
+          super
+        end
       end
     end
   end

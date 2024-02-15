@@ -69,10 +69,6 @@ class Code
 
         Nothing.new
       end
-
-      def to_s
-        "mail"
-      end
     end
   end
 end

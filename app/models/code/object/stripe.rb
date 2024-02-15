@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "stripe/webhook"
+
 class Code
   class Object
     class Stripe < Object
@@ -7,12 +9,16 @@ class Code
         "Stripe"
       end
 
-      def to_s
-        "stripe"
-      end
+      def self.call(**args)
+        operator = args.fetch(:operator, nil)
 
-      def inspect
-        to_s
+        case operator.to_s
+        when "Webhook"
+          sig(args)
+          Class.new(Webhook)
+        else
+          super
+        end
       end
     end
   end

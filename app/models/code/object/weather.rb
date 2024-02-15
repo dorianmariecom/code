@@ -62,10 +62,6 @@ class Code
 
         Boolean.new(day.dig("day", "daily_will_it_rain") == 1)
       end
-
-      def to_s
-        "weather"
-      end
     end
   end
 end
