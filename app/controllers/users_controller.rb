@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :load_user, only: %i[show edit update destroy]
 
@@ -51,11 +53,12 @@ class UsersController < ApplicationController
   private
 
   def load_user
-    if params[:id] == "me"
-      @user = authorize current_user
-    else
-      @user = authorize policy_scope(User).find(params[:id])
-    end
+    @user =
+      if params[:id] == "me"
+        authorize current_user
+      else
+        authorize policy_scope(User).find(params[:id])
+      end
   end
 
   def user_params

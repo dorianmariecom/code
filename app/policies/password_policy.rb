@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PasswordPolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     def resolve

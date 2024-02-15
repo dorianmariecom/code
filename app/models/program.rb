@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Program < ApplicationRecord
   belongs_to :user, default: -> { Current.user }
 
@@ -6,13 +8,10 @@ class Program < ApplicationRecord
   def evaluate!
     output = StringIO.new
     error = StringIO.new
-    result =
-      Current.with(user: user) do
-        Code.evaluate(input, output: output, error: error)
-      end
-    update!(result: result, output: output.string, error: error.string)
-  rescue Code::Error => error
-    update!(result: "", output: "", error: "#{error.class}: #{error.message}")
+    result = Current.with(user:) { Code.evaluate(input, output:, error:) }
+    update!(result:, output: output.string, error: error.string)
+  rescue Code::Error => e
+    update!(result: "", output: "", error: "#{e.class}: #{e.message}")
   end
 
   def to_s

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "object/global"
 require_relative "object/mail"
 require_relative "object/meetup"

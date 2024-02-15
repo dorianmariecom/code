@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
   before_action { authorize :session }
   skip_after_action :verify_policy_scoped

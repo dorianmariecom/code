@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 import intlTelInput from "intl-tel-input";
-import utilsScript from "intl-tel-input/build/js/utils"
+import utilsScript from "intl-tel-input/build/js/utils";
 import I18n from "i18n";
 import { VALID_CLASSES, INVALID_CLASSES } from "constants";
 

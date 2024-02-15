@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   TIME_ZONES =
     ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:canonical_identifier)
@@ -8,12 +10,8 @@ class User < ApplicationRecord
 
   scope(
     :where_email_address,
-    ->(email_address) do
-      joins(:email_addresses).where(
-        email_addresses: {
-          email_address: email_address
-        }
-      ).or(
+    lambda do |email_address|
+      joins(:email_addresses).where(email_addresses: { email_address: }).or(
         joins(:email_addresses).where(
           email_addresses: {
             smtp_user_name: email_address

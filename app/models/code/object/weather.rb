@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Code
   class Object
     class Weather < Object
@@ -25,17 +27,19 @@ class Code
       end
 
       def self.code_raining?(query: nil, date: nil)
-        if query.nil? || query.falsy?
-          query = "#{Current.latitude},#{Current.longitude}"
-        else
-          query = query.raw
-        end
+        query =
+          if query.nil? || query.falsy?
+            "#{Current.latitude},#{Current.longitude}"
+          else
+            query.raw
+          end
 
-        if date.nil? || date.falsy?
-          date = Date.current
-        else
-          date = date.raw
-        end
+        date =
+          if date.nil? || date.falsy?
+            Date.current
+          else
+            date.raw
+          end
 
         uri = URI.parse("https://api.weatherapi.com/v1/forecast.json")
         request = Net::HTTP::Post.new(uri)

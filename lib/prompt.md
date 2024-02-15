@@ -1,5 +1,4 @@
-Hello World
------------
+## Hello World
 
 input:
 
@@ -9,10 +8,9 @@ result:
 
     Hello World
 
-* * *
+---
 
-Printing Hello World
---------------------
+## Printing Hello World
 
 input:
 
@@ -22,10 +20,9 @@ output:
 
     Hello World
 
-* * *
+---
 
-Maths
------
+## Maths
 
 input:
 
@@ -35,10 +32,9 @@ result:
 
     2
 
-* * *
+---
 
-Integer#times
--------------
+## Integer#times
 
 input:
 
@@ -54,10 +50,9 @@ result:
 
     3
 
-* * *
+---
 
-Mail.send(from:, to:, subject:, body:)
---------------------------------------
+## Mail.send(from:, to:, subject:, body:)
 
 **from**: The email address(es) you send from, e.g. "bryan.ankunding@morissette-stracke.example", "Kellee Haag <fredric@johnston.example>", default: your primary email address
 
@@ -87,10 +82,9 @@ input:
       Mail.send(to: to, subject: "Hello")
     end
 
-* * *
+---
 
-Sms.send(body:)
----------------
+## Sms.send(body:)
 
 **body**: The body of the text message, e.g. "Rosemary Sutcliff", default: ""
 
@@ -114,14 +108,13 @@ input
       Sms.send(body: "It will be raining tomorrow")
     end
 
-* * *
+---
 
-Weather.raining?(query:, date:)
--------------------------------
+## Weather.raining?(query:, date:)
 
 **query**: The location of the weather, e.g. "506 Bo Lock, Port Rosia, AK 66769", "42.01656369618982,49.2699455956712", default: Your location
 
-**date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from\_now, 1.hour.ago, 2.hours.from\_now, 2.hours.ago, default: Date.now
+**date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from_now, 1.hour.ago, 2.hours.from_now, 2.hours.ago, default: Date.now
 
 ### Check if it's raining
 

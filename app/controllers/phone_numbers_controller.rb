@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PhoneNumbersController < ApplicationController
   before_action :load_user
   before_action :load_phone_number, only: %i[show edit update destroy]

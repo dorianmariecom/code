@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EmailAddressesController < ApplicationController
   before_action :load_user
   before_action :load_email_address, only: %i[show edit update destroy]

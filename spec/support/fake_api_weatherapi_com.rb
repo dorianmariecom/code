@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FakeApiWeatherapiCom < Sinatra::Base
   post "/v1/forecast.json" do
     content_type :json

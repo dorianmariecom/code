@@ -21,7 +21,7 @@ pre {
 }
 
 .a.text-red-600 {
-  color: theme('colors.red.600');
+  color: theme("colors.red.600");
 }
 
 .iti {
@@ -29,5 +29,5 @@ pre {
 }
 
 .font-bold > a {
-  font-weight: 700
+  font-weight: 700;
 }

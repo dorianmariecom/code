@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class EmailAddress < ApplicationRecord
   EMAIL_ADDRESS_REGEXP = URI::MailTo::EMAIL_REGEXP
-  DOMAIN_REGEXP = /\A[a-zA-Z0-9]+([\-\.]{1}[a-zA-Z0-9]+)*\.[a-zA-Z]{2,5}\z/
+  DOMAIN_REGEXP = /\A[a-zA-Z0-9]+([-.]{1}[a-zA-Z0-9]+)*\.[a-zA-Z]{2,5}\z/
 
   belongs_to :user, default: -> { Current.user }
 

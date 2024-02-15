@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 ENV["RAILS_ENV"] ||= "test"
@@ -20,11 +22,8 @@ WebMock.disable_net_connect!(allow_localhost: true)
 
 Capybara.server = :puma, { Silent: true }
 
-if ENV["HEADFULL"]
-  Capybara.current_driver = :selenium_chrome
-else
-  Capybara.current_driver = :selenium_chrome_headless
-end
+Capybara.current_driver =
+  (ENV["HEADFULL"] ? :selenium_chrome : :selenium_chrome_headless)
 
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class VerificationCodesController < ApplicationController
   before_action :load_verifiable, only: %i[create update destroy]
 

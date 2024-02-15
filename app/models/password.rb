@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Password < ApplicationRecord
   belongs_to :user, default: -> { Current.user }
 

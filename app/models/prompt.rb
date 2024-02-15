@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Prompt
   attr_reader :prompt, :name, :input
 
@@ -23,7 +25,7 @@ class Prompt
   end
 
   def as_json(...)
-    { name: name, input: input }.as_json(...)
+    { name:, input: }.as_json(...)
   end
 
   def uri
@@ -48,8 +50,8 @@ class Prompt
 
   def body
     JSON.dump(
-      model: model,
-      response_format: response_format,
+      model:,
+      response_format:,
       messages: [
         { role: "system", content: system_prompt },
         { role: "user", content: prompt }

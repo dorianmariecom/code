@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FakeApiOpenaiCom < Sinatra::Base
   post "/v1/chat/completions" do
     content_type :json

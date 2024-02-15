@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FakeRestNexmoCom < Sinatra::Base
   post "/sms/json" do
     content_type :json

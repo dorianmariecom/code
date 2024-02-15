@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PasswordsController < ApplicationController
   before_action :load_user
   before_action :load_password, only: %i[show edit update destroy]

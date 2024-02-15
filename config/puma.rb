@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "concurrent-ruby"
 
 max_threads_count = ENV.fetch("RAILS_MAX_THREADS", 5)

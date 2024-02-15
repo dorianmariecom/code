@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Code
   class Object
     class Sms < Object
@@ -29,8 +31,8 @@ class Code
         uri = URI.parse("https://rest.nexmo.com/sms/json")
         request = Net::HTTP::Post.new(uri)
         request.body = {
-          from: from,
-          to: to,
+          from:,
+          to:,
           text: body,
           api_key: Rails.application.credentials.nexmo.api_key,
           api_secret: Rails.application.credentials.nexmo.api_secret

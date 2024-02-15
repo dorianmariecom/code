@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Code
   class Object
     class Mail < Object
@@ -60,7 +62,7 @@ class Code
                 subject: subject&.raw || "",
                 body: body&.raw || ""
               )
-          rescue ::Net::SMTPAuthenticationError => error
+          rescue ::Net::SMTPAuthenticationError
             raise ::Code::Error, "Wrong SMTP username or SMTP password"
           end
         end

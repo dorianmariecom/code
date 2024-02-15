@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PhoneNumber < ApplicationRecord
   DEFAULT_COUNTRY_CODE = "FR"
   BRAND = "Code"
@@ -65,8 +67,10 @@ class PhoneNumber < ApplicationRecord
 
   def verify!(verification_code)
     return if nexmo_request_id.blank?
+
     verification_code = verification_code.gsub(/\D/, "")
     return if verification_code.blank?
+
     query = {
       api_key: Rails.application.credentials.nexmo.api_key,
       api_secret: Rails.application.credentials.nexmo.api_secret,

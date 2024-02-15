@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FormType
   AUTOCOMPLETE_TO_FORM_TYPE = {
     off: :other,
@@ -6,7 +8,7 @@ class FormType
     name: :name,
     "new-password": "password,new",
     "current-password": "password"
-  }
+  }.freeze
 
   attr_reader :autocomplete
 
