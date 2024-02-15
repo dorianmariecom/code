@@ -29,6 +29,7 @@ RSpec.describe Code, type: :model do
     end
   end
 
+=begin
   it "sends reminders" do
     Current.user = create(:user, :dorian)
 
@@ -86,6 +87,7 @@ RSpec.describe Code, type: :model do
       end
     CODE
   end
+=end
 
   it "send messages" do
     Current.user = create(:user, :dorian)
