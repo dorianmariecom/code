@@ -52,32 +52,18 @@ class PhoneNumber < ApplicationRecord
   end
 
   def send_verification_code!
-    query = {
-      api_key: Rails.application.credentials.nexmo.api_key,
-      api_secret: Rails.application.credentials.nexmo.api_secret,
-      number: e164,
-      brand: BRAND
-    }.to_query
-
+    query = { api_key:, api_secret:, number: e164, brand: BRAND }.to_query
     uri = URI.parse("https://api.nexmo.com/verify/json?#{query}")
     response = Net::HTTP.get_response(uri)
     json = JSON.parse(response.body)
     update!(nexmo_request_id: json["request_id"]) if json["status"] == "0"
   end
 
-  def verify!(verification_code)
+  def verify!(code)
     return if nexmo_request_id.blank?
-
-    verification_code = verification_code.gsub(/\D/, "")
-    return if verification_code.blank?
-
-    query = {
-      api_key: Rails.application.credentials.nexmo.api_key,
-      api_secret: Rails.application.credentials.nexmo.api_secret,
-      request_id: nexmo_request_id,
-      code: verification_code
-    }.to_query
-
+    code = code.gsub(/\D/, "")
+    return if code.blank?
+    query = { api_key:, api_secret:, request_id:, code: }.to_query
     uri = URI.parse("https://api.nexmo.com/verify/check/json?#{query}")
     response = Net::HTTP.get_response(uri)
     json = JSON.parse(response.body)
@@ -91,16 +77,8 @@ class PhoneNumber < ApplicationRecord
 
   def cancel_verification!
     return if nexmo_request_id.blank?
-
-    query = {
-      api_key: Rails.application.credentials.nexmo.api_key,
-      api_secret: Rails.application.credentials.nexmo.api_secret,
-      request_id: nexmo_request_id,
-      cmd: :cancel
-    }.to_query
-
+    query = { api_key:, api_secret:, request_id:, cmd: :cancel }.to_query
     update!(nexmo_request_id: "")
-
     uri = URI.parse("https://api.nexmo.com/verify/control/json?#{query}")
     Net::HTTP.get_response(uri)
   end
@@ -108,6 +86,18 @@ class PhoneNumber < ApplicationRecord
   def valid_phone_number
     errors.add(:phone_number, :invalid) if phonelib.invalid?
     errors.add(:phone_number, :impossible) if phonelib.impossible?
+  end
+
+  def api_key
+    Rails.application.credentials.rest.nexmo.com.api_key
+  end
+
+  def api_secret
+    Rails.application.credentials.rest.nexmo.com.api_secret
+  end
+
+  def request_id
+    nexmo_request_id
   end
 
   def to_s
