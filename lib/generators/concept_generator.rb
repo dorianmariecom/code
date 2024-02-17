@@ -3,11 +3,6 @@ class ConceptGenerator < Rails::Generators::NamedBase
 
   # https://api.rubyonrails.org/classes/Rails/Generators/NamedBase.html
   def generate
-    p(name:)
-    p(attributes: attributes.join(" "))
-    p(file_name:)
-    p(class_name:)
-    p(options:)
-    # rails_command
+    rails_command("generate model #{class_name} #{attributes.join(" ")}")
   end
 end
