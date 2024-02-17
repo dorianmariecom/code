@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :email_addresses, dependent: :destroy
   has_many :phone_numbers, dependent: :destroy
+  has_many :slack_accounts, dependent: :destroy
   has_many :passwords, dependent: :destroy
 
   scope(
@@ -28,6 +29,11 @@ class User < ApplicationRecord
   )
   accepts_nested_attributes_for(
     :phone_numbers,
+    reject_if: :all_blank,
+    allow_destroy: true
+  )
+  accepts_nested_attributes_for(
+    :slack_accounts,
     reject_if: :all_blank,
     allow_destroy: true
   )

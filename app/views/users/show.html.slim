@@ -29,6 +29,13 @@
   = render @phone_numbers
 
 .border-l-2.border-black.pl-4
+  p.font-bold= link_to t(".slack_accounts"), [@user, :slack_accounts]
+
+  .p= button_to t(".new_slack_account"), new_slack_account_path, method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
+
+  = render @slack_accounts
+
+.border-l-2.border-black.pl-4
   p.font-bold= link_to t(".passwords"), [@user, :passwords]
 
   .p= button_to t(".new_password"), new_password_path, method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"

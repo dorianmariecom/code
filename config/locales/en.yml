@@ -99,6 +99,7 @@ en:
       title: Code
       users: Users
       email_addresses: Email addresses
+      slack_accounts: Slack accounts
       phone_numbers: Phone numbers
       passwords: Passwords
       programs: Programs
@@ -133,6 +134,7 @@ en:
     show:
       phone_numbers: Phone numbers
       email_addresses: Email addresses
+      slack_accounts: Slack accounts
       passwords: Passwords
       edit: Edit user
       destroy: Delete user
@@ -140,6 +142,7 @@ en:
       admin: Admin
       new_phone_number: New phone number
       new_email_address: New email address
+      new_slack_account: New slack account
       new_password: New password
       programs: Programs
       new_program: New program
@@ -244,6 +247,9 @@ en:
         primary: Primary?
         phone_number: Phone number
         verification_code: Verification code
+      slack_account:
+        user_id: User
+        primary: Primary?
       email_address:
         user_id: User
         primary: Primary?
@@ -274,3 +280,32 @@ en:
         sequence: Avoid sequences
         spatial: Use longer keyboard patterns with more turns
         year: Avoid recent years, especially if they are associated with you
+  slack_accounts:
+    index:
+      title: Slack accounts
+      new: New slack account
+    create:
+      notice: Slack account created
+    update:
+      notice: Slack account updated
+    destroy:
+      notice: Slack account deleted
+    new:
+      title: New slack account
+      submit: Create slack account
+    edit:
+      title: Edit slack account
+      submit: Update slack account
+    show:
+      id: ID
+      verified: verified
+      primary: primary
+      token: token
+      name: name
+      edit: Edit slack account
+      delete: Delete slack account
+    form:
+      remove: Remove
+      slack_account: Slack account
+    nested:
+      add_slack_account: Add slack account

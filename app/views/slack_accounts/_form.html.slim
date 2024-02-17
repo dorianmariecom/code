@@ -1,0 +1,17 @@
+- f = local_assigns.fetch(:f)
+- removable = local_assigns.fetch(:removable, false)
+
+.slack-account.border-l-2.border-black.pl-4.mb-5(data-new-record="#{f.object.new_record?}")
+  .font-bold.italic= t(".slack_account")
+
+  - if admin?
+    = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
+
+  = render "shared/field", f: f, field: :primary, type: :checkbox, data: { slack_accounts_target: :primary, action: "slack-accounts#update" }, required: false
+
+  - if removable
+    = f.hidden_field :_destroy
+
+    button.text-red-600.underline(type="button" data-action="slack-accounts#remove")
+      = t(".remove")
+

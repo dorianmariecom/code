@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     end
     resources :passwords
     resources :programs
+    resources :slack_accounts
   end
 
   resources :email_addresses
@@ -32,6 +33,7 @@ Rails.application.routes.draw do
   end
   resources :passwords
   resources :programs
+  resources :slack_accounts
 
   get "up" => "pages#up"
   get "documentation" => "pages#documentation"

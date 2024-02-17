@@ -1,0 +1,17 @@
+- content_for(:title, @slack_account.to_s)
+
+- if admin?
+  .text-sm= t(".belongs_to")
+  .mb-5= link_to @slack_account.user
+
+.text-sm= t(".id")
+.mb-5= @slack_account.id
+
+.text-sm= t(".primary")
+.mb-5= @slack_account.primary?
+
+.text-sm= t(".verified")
+.mb-5= @slack_account.verified?
+
+= link_to t(".edit"), [:edit, @slack_account]
+= button_to t(".delete"), @slack_account, method: :delete, class: "a text-red-600"

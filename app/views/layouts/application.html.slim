@@ -24,17 +24,20 @@ html
         => link_to current_user
         => link_to t(".programs"), programs_path
         => link_to t(".documentation"), documentation_path
-        - if admin?
-          => link_to t(".users"), users_path 
-          => link_to t(".email_addresses"), email_addresses_path
-          => link_to t(".phone_numbers"), phone_numbers_path
-          => link_to t(".passwords"), passwords_path
-          => link_to t(".errors"), errors_path
         => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
       - else
         => link_to t(".documentation"), documentation_path
         => link_to t(".register"), new_user_path
         => link_to t(".log_in"), new_session_path
+
+    - if admin?
+      .p
+        => link_to t(".email_addresses"), email_addresses_path
+        => link_to t(".errors"), errors_path
+        => link_to t(".passwords"), passwords_path
+        => link_to t(".phone_numbers"), phone_numbers_path
+        => link_to t(".slack_accounts"), slack_accounts_path
+        => link_to t(".users"), users_path 
 
     - if notice.present?
       p.text-green-600= notice

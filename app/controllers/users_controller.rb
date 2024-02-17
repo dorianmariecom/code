@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @email_addresses = policy_scope(EmailAddress).where(user: @user)
     @phone_numbers = policy_scope(PhoneNumber).where(user: @user)
+    @slack_accounts = policy_scope(SlackAccount).where(user: @user)
     @passwords = policy_scope(Password).where(user: @user)
     @programs = policy_scope(Program).where(user: @user)
   end
