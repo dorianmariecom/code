@@ -37,12 +37,7 @@ class Code
             "#{Current.latitude},#{Current.longitude}"
           end
 
-        date =
-          if date.truthy?
-            date.raw
-          else
-            Date.current
-          end
+        date = date.truthy? ? date.raw : Date.current
 
         uri = URI.parse("https://api.weatherapi.com/v1/forecast.json")
         request = Net::HTTP::Post.new(uri)
