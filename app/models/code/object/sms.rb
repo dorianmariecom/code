@@ -24,9 +24,11 @@ class Code
       end
 
       def self.code_send(body: nil)
+        body ||= Nothing.new
+
         from = "14155485560"
         to = Current.primary_phone_number!.phone_number
-        body = body&.raw || ""
+        body = body.truthy? ? body.raw : ""
 
         uri = URI.parse("https://rest.nexmo.com/sms/json")
         request = Net::HTTP::Post.new(uri)

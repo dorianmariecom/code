@@ -34,19 +34,24 @@ class Code
       end
 
       def self.code_send(from: nil, to: nil, subject: nil, body: nil)
-        if from.nil? || from.falsy?
-          from = ::Current.primary_email_address!
-          from = from.email_address_with_display_name
-        else
-          from = from.raw
-        end
+        from ||= Nothing.new
+        to ||= Nothing.new
+        subject ||= Nothing.new
+        body ||= Nothing.new
 
-        if to.nil? || to.falsy?
-          to = ::Current.primary_email_address!
-          to = to.email_address_with_display_name
-        else
-          to = to.raw
-        end
+        from =
+          if from.truthy?
+            from.raw
+          else
+            ::Current.primary_email_address!.email_address_with_display_name
+          end
+
+        to =
+          if to.truthy?
+            to.raw
+          else
+            ::Current.primary_email_address!.email_address_with_display_name
+          end
 
         from = ::Mail::AddressList.new(from)
         to = ::Mail::AddressList.new(to)

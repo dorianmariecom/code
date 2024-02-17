@@ -27,18 +27,21 @@ class Code
       end
 
       def self.code_raining?(query: nil, date: nil)
+        query ||= Nothing.new
+        date ||= Nothing.new
+
         query =
-          if query.nil? || query.falsy?
-            "#{Current.latitude},#{Current.longitude}"
-          else
+          if query.truthy?
             query.raw
+          else
+            "#{Current.latitude},#{Current.longitude}"
           end
 
         date =
-          if date.nil? || date.falsy?
-            Date.current
-          else
+          if date.truthy?
             date.raw
+          else
+            Date.current
           end
 
         uri = URI.parse("https://api.weatherapi.com/v1/forecast.json")
