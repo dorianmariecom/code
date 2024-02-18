@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["prompt", "name", "input", "loading"];
 
   async generate() {
-    this.loadingTarget.classList.remove("hidden")
+    this.loadingTarget.classList.remove("hidden");
 
     const csrfToken = document.querySelector("[name='csrf-token']")?.content;
 
@@ -22,6 +22,6 @@ export default class extends Controller {
     this.nameTarget.value = json.name;
     this.inputTarget.value = json.input;
 
-    this.loadingTarget.classList.add("hidden")
+    this.loadingTarget.classList.add("hidden");
   }
 }

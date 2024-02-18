@@ -1,11 +1,11 @@
-import PlacesAutocomplete from 'stimulus-places-autocomplete'
-import { Loader } from "@googlemaps/js-api-loader"
+import PlacesAutocomplete from "stimulus-places-autocomplete";
+import { Loader } from "@googlemaps/js-api-loader";
 
 const loader = new Loader({
   apiKey: window.constants.GOOGLE_MAPS_API_KEY,
   version: "weekly",
-  libraries: ["places"]
-})
+  libraries: ["places"],
+});
 
 export default class extends PlacesAutocomplete {
   static targets = [
@@ -17,16 +17,16 @@ export default class extends PlacesAutocomplete {
     "postalCode",
     "country",
     "latitude",
-    "longitude"
-  ]
+    "longitude",
+  ];
 
   connect() {
     loader.load().then((google) => {
       this.autocomplete = new google.maps.places.Autocomplete(
         this.inputTarget,
-        this.autocompleteOptions
+        this.autocompleteOptions,
       );
-      this.autocomplete.addListener("place_changed", this.placeChanged)
-    })
+      this.autocomplete.addListener("place_changed", this.placeChanged);
+    });
   }
 }

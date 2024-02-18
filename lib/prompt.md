@@ -1,5 +1,4 @@
-Hello World
------------
+## Hello World
 
 input:
 
@@ -9,10 +8,9 @@ result:
 
     Hello World
 
-* * *
+---
 
-Printing Hello World
---------------------
+## Printing Hello World
 
 input:
 
@@ -22,10 +20,9 @@ output:
 
     Hello World
 
-* * *
+---
 
-Maths
------
+## Maths
 
 input:
 
@@ -35,10 +32,9 @@ result:
 
     2
 
-* * *
+---
 
-Integer#times
--------------
+## Integer#times
 
 input:
 
@@ -54,10 +50,9 @@ result:
 
     3
 
-* * *
+---
 
-Mail.send(from:, to:, subject:, body:)
---------------------------------------
+## Mail.send(from:, to:, subject:, body:)
 
 **from**: The email address(es) you send from, e.g. "jeremy@koch.example", "Daryl Weimann <bruno@cummerata-streich.example>", default: your primary email address
 
@@ -87,10 +82,9 @@ input:
       Mail.send(to: to, subject: "Hello")
     end
 
-* * *
+---
 
-Sms.send(body:)
----------------
+## Sms.send(body:)
 
 **body**: The body of the text message, e.g. "I Will Fear No Evil", default: ""
 
@@ -114,14 +108,13 @@ input
       Sms.send(body: "It will be raining tomorrow")
     end
 
-* * *
+---
 
-Weather.raining?(query:, date:)
--------------------------------
+## Weather.raining?(query:, date:)
 
 **query**: The location of the weather, e.g. "5316 Champlin Key, East Eddie, MA 21777-1431", "-22.284798477041647,45.12454353961925", default: Your location
 
-**date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from\_now, 1.hour.ago, 2.hours.from\_now, 2.hours.ago, default: Date.now
+**date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from_now, 1.hour.ago, 2.hours.from_now, 2.hours.ago, default: Date.now
 
 ### Check if it's raining
 
@@ -153,14 +146,13 @@ output
 
     true
 
-* * *
+---
 
-Slack.send(team:, channel:, body:)
-----------------------------------
+## Slack.send(team:, channel:, body:)
 
 **team**: Your team ID or team name, e.g. "A00AA0AAAAA" or "Schmeler, Wunsch and Zemlak", default: Your primary slack account team
 
-**channel**: The channel you want to send to, e.g. "#general", "#random", "#carol\_turner", default: "#general"
+**channel**: The channel you want to send to, e.g. "#general", "#random", "#carol_turner", default: "#general"
 
 **body**: The body of the text message, e.g. "Fear and Trembling", default: ""
 
