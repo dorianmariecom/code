@@ -5,26 +5,19 @@ class User < ApplicationRecord
     ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:canonical_identifier)
 
   has_many :email_addresses, dependent: :destroy
-  has_many :phone_numbers, dependent: :destroy
-  has_many :slack_accounts, dependent: :destroy
   has_many :passwords, dependent: :destroy
+  has_many :phone_numbers, dependent: :destroy
   has_many :programs, dependent: :destroy
-
-  scope(
-    :where_email_address,
-    lambda do |email_address|
-      joins(:email_addresses).where(email_addresses: { email_address: }).or(
-        joins(:email_addresses).where(
-          email_addresses: {
-            smtp_user_name: email_address
-          }
-        )
-      )
-    end
-  )
+  has_many :slack_accounts, dependent: :destroy
+  has_many :smtp_accounts, dependent: :destroy
 
   accepts_nested_attributes_for(
     :email_addresses,
+    reject_if: :all_blank,
+    allow_destroy: true
+  )
+  accepts_nested_attributes_for(
+    :passwords,
     reject_if: :all_blank,
     allow_destroy: true
   )
@@ -39,7 +32,7 @@ class User < ApplicationRecord
     allow_destroy: true
   )
   accepts_nested_attributes_for(
-    :passwords,
+    :smtp_accounts,
     reject_if: :all_blank,
     allow_destroy: true
   )
