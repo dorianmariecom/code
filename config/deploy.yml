@@ -18,6 +18,8 @@ env:
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_PASSWORD
+    - HOST
+    - BASE_URL
 traefik:
   options:
     publish:
