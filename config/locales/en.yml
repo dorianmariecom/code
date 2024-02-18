@@ -99,14 +99,35 @@ en:
       log_in: Log in
       log_out: Log out
       title: Code
-      users: Users
-      email_addresses: Email addresses
-      slack_accounts: Slack accounts
-      phone_numbers: Phone numbers
-      passwords: Passwords
-      programs: Programs
+      users:
+        zero: 0 users
+        one: 1 user
+        other: "%{count} users"
+      email_addresses:
+        zero: 0 email addresses
+        one: 1 email address
+        other: "%{count} email addresses"
+      slack_accounts:
+        zero: 0 slack accounts
+        one: 1 slack account
+        other: "%{count} slack accounts"
+      phone_numbers:
+        zero: 0 phone numbers
+        one: 1 phone number
+        other: "%{count} phone numbers"
+      passwords:
+        zero: 0 passwords
+        one: 1 password
+        other: "%{count} passwords"
+      programs:
+        zero: 0 programs
+        one: 1 program
+        other: "%{count} programs"
+      errors:
+        zero: 0 errors
+        one: 1 error
+        other: "%{count} errors"
       documentation: Documentation
-      errors: Errors
   pages:
     documentation:
       title: Documentation
@@ -144,10 +165,6 @@ en:
       state: state
       postal_code: postal code
       country: country
-      phone_numbers: Phone numbers
-      email_addresses: Email addresses
-      slack_accounts: Slack accounts
-      passwords: Passwords
       edit: Edit user
       destroy: Delete user
       confirm: Are you sure you want to delete this user?
@@ -156,10 +173,29 @@ en:
       new_email_address: New email address
       new_slack_account: New slack account
       new_password: New password
-      programs: Programs
       new_program: New program
       id: ID
       time_zone: Time zone
+      email_addresses:
+        zero: 0 email addresses
+        one: 1 email address
+        other: "%{count} email addresses"
+      slack_accounts:
+        zero: 0 slack accounts
+        one: 1 slack account
+        other: "%{count} slack accounts"
+      phone_numbers:
+        zero: 0 phone numbers
+        one: 1 phone number
+        other: "%{count} phone numbers"
+      passwords:
+        zero: 0 passwords
+        one: 1 password
+        other: "%{count} passwords"
+      programs:
+        zero: 0 programs
+        one: 1 program
+        other: "%{count} programs"
   sessions:
     create:
       wrong_email_address: Wrong email address

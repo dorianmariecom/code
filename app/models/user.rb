@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :phone_numbers, dependent: :destroy
   has_many :slack_accounts, dependent: :destroy
   has_many :passwords, dependent: :destroy
+  has_many :programs, dependent: :destroy
 
   scope(
     :where_email_address,
