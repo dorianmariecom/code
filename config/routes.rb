@@ -7,6 +7,8 @@ class AdminConstraints
 end
 
 Rails.application.routes.draw do
+  default_url_options(host: ENV.fetch("BASE_URL"))
+
   constraints AdminConstraints.new do
     mount SolidErrors::Engine, at: "/errors", as: :errors
   end
@@ -35,6 +37,8 @@ Rails.application.routes.draw do
   resources :programs
   resources :slack_accounts
 
+  match "/auth/slack/callback" => "slack_accounts#callback",
+        :via => %i[get post]
   get "up" => "pages#up"
   get "documentation" => "pages#documentation"
 

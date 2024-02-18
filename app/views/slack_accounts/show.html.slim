@@ -13,5 +13,9 @@
 .text-sm= t(".verified")
 .mb-5= @slack_account.verified?
 
-= link_to t(".edit"), [:edit, @slack_account]
+.text-sm= t(".channels")
+ul
+  - @slack_account.channels.each do |channel|
+    li= "##{channel["name"]}"
+
 = button_to t(".delete"), @slack_account, method: :delete, class: "a text-red-600"

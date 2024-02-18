@@ -11,15 +11,11 @@ class SlackAccountPolicy < ApplicationPolicy
     current_user?
   end
 
-  def show?
-    owner? || admin?
-  end
-
-  def create?
+  def callback?
     current_user?
   end
 
-  def update?
+  def show?
     owner? || admin?
   end
 

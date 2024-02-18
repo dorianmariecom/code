@@ -2,7 +2,7 @@
 
 class SlackAccountsController < ApplicationController
   before_action :load_user
-  before_action :load_slack_account, only: %i[show edit update destroy]
+  before_action :load_slack_account, only: %i[show destroy]
 
   def index
     authorize SlackAccount
@@ -10,35 +10,12 @@ class SlackAccountsController < ApplicationController
     @slack_accounts = scope
   end
 
+  def callback
+    authorize SlackAccount
+    redirect_to policy_scope(SlackAccount).verify!(code: params[:code])
+  end
+
   def show
-  end
-
-  def new
-    @slack_account =
-      authorize scope.new(primary: current_user.slack_accounts.none?)
-  end
-
-  def create
-    @slack_account = authorize scope.new(slack_account_params)
-
-    if @slack_account.save
-      redirect_to @slack_account, notice: t(".notice")
-    else
-      flash.now.alert = @slack_account.alert
-      render :new, status: :unprocessable_entity
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    if @slack_account.update(slack_account_params)
-      redirect_to @slack_account, notice: t(".notice")
-    else
-      flash.now.alert = @slack_account.alert
-      render :edit, status: :unprocessable_entity
-    end
   end
 
   def destroy
@@ -77,16 +54,12 @@ class SlackAccountsController < ApplicationController
     if admin?
       params.require(:slack_account).permit(
         :user_id,
+        :verified,
         :primary,
-        :name,
-        :token
+        :auth
       )
     else
-      params.require(:slack_account).permit(
-        :primary,
-        :name,
-        :token
-      )
+      params.require(:slack_account).permit(:primary)
     end
   end
 end

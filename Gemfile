@@ -10,6 +10,7 @@ gem "bcrypt"
 gem "bootsnap", require: false
 gem "code-ruby"
 gem "dorian"
+gem "dotenv-rails"
 gem "faker"
 gem "heroicon"
 gem "importmap-rails"
@@ -21,7 +22,6 @@ gem "pg"
 gem "phonelib"
 gem "puma"
 gem "pundit"
-gem "rack-timeout"
 gem "rails", rails: :rails
 gem "redis"
 gem "rubocop"
@@ -32,6 +32,10 @@ gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "turbo-rails"
 gem "zxcvbn-ruby", require: "zxcvbn"
+
+group :production do
+  gem "rack-timeout"
+end
 
 group :test do
   gem "capybara"

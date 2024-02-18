@@ -9,15 +9,9 @@ FactoryBot.define do
       name { "Dorian Marié" }
       time_zone { "Europe/Paris" }
       phone_numbers { [association(:phone_number, :dorian_fr)] }
+      email_addresses { [association(:email_address, :dorian_com)] }
+      slack_accounts { [association(:slack_account, :dorianmariecom)] }
       passwords { [association(:password)] }
-
-      email_addresses do
-        [
-          association(:email_address, :dorian_com, primary: true),
-          association(:email_address, :dorian_fr),
-          association(:email_address, :dorian_gmail)
-        ]
-      end
     end
   end
 end

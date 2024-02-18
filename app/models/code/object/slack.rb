@@ -14,35 +14,32 @@ class Code
 
         case operator.to_s
         when "send"
-          sig(args) { { channel: String.maybe, body: String.maybe } }
+          sig(args) do
+            { team: String.maybe, channel: String.maybe, body: String.maybe }
+          end
           code_send(
+            team: value&.code_get(String.new("team")),
             channel: value&.code_get(String.new("channel")),
             body: value&.code_get(String.new("body"))
           )
         end
       end
 
-      def self.token
-        Rails.application.credentials.slack.com.token
-      end
-
-      def self.code_send(channel: nil, body: nil)
+      def self.code_send(team: nil, channel: nil, body: nil)
+        team ||= Nothing.new
         channel ||= Nothing.new
         body ||= Nothing.new
 
-        channel =
-          if channel.truthy?
-            channel.raw
-          else
-            Current.primary_slack_account!.primary_channel!.slack_id
-          end
-
+        team = team.truthy? ? url.raw : Current.primary_slack_account!.team_id
+        channel = channel.truthy? ? channel.raw : "#general"
         body = body.truthy? ? body.raw : ""
+
+        access_token = Current.slack_accounts!.find_by_team!(team).access_token
 
         uri = URI.parse("https://slack.com/api/chat.postMessage")
         request = Net::HTTP::Post.new(uri)
         request.content_type = "application/json"
-        request["Authorization"] = "Bearer #{token}"
+        request["Authorization"] = "Bearer #{access_token}"
         request.body =
           JSON.dump(
             {

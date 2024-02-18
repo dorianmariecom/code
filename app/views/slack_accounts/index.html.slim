@@ -1,3 +1,3 @@
-.p= button_to t(".new"), new_slack_account_path, method: :get, class: "bg-black text-white rounded px-4 py-2 cursor-pointer"
+p= link_to t(".new"), SlackAccount.authorize_url, class: "no-underline inline-block bg-black text-white rounded px-4 py-2 cursor-pointer"
 
 = render @slack_accounts

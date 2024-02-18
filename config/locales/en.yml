@@ -247,9 +247,6 @@ en:
         primary: Primary?
         phone_number: Phone number
         verification_code: Verification code
-      slack_account:
-        user_id: User
-        primary: Primary?
       email_address:
         user_id: User
         primary: Primary?
@@ -284,28 +281,13 @@ en:
     index:
       title: Slack accounts
       new: New slack account
-    create:
-      notice: Slack account created
-    update:
-      notice: Slack account updated
     destroy:
       notice: Slack account deleted
-    new:
-      title: New slack account
-      submit: Create slack account
-    edit:
-      title: Edit slack account
-      submit: Update slack account
     show:
       id: ID
+      belongs_to: belongs to
       verified: verified
       primary: primary
       token: token
-      name: name
-      edit: Edit slack account
       delete: Delete slack account
-    form:
-      remove: Remove
-      slack_account: Slack account
-    nested:
-      add_slack_account: Add slack account
+      channels: channels
