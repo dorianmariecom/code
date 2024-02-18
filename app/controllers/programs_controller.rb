@@ -89,6 +89,16 @@ class ProgramsController < ApplicationController
           :admin,
           :name,
           :time_zone,
+          :location,
+          :city,
+          :street_number,
+          :route,
+          :county,
+          :state,
+          :postal_code,
+          :country,
+          :latitude,
+          :longitude,
           {
             email_addresses_attributes: %i[
               user_id
@@ -123,6 +133,16 @@ class ProgramsController < ApplicationController
         user_attributes: [
           :name,
           :time_zone,
+          :location,
+          :city,
+          :street_number,
+          :route,
+          :county,
+          :state,
+          :postal_code,
+          :country,
+          :latitude,
+          :longitude,
           {
             email_addresses_attributes: %i[
               id

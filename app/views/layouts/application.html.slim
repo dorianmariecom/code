@@ -11,11 +11,13 @@ html
 
     javascript:
       window.constants = {}
-      window.constants.DEFAULT_COUNTRY_CODE = #{raw default_country_code.to_json}
-      window.constants.DOMAIN_REGEXP = #{raw domain_regexp.to_json}
-      window.constants.EMAIL_ADDRESS_REGEXP = #{raw email_address_regexp.to_json}
-      window.constants.VERIFICATION_CODE_REGEXP = #{raw verification_code_regexp.to_json}
-      window.translations = #{raw I18n.t(".js").to_json}
+      window.constants.DEFAULT_COUNTRY_CODE = #{raw default_country_code.to_json};
+      window.constants.DOMAIN_REGEXP = #{raw domain_regexp.to_json};
+      window.constants.EMAIL_ADDRESS_REGEXP = #{raw email_address_regexp.to_json};
+      window.constants.VERIFICATION_CODE_REGEXP = #{raw verification_code_regexp.to_json};
+      window.constants.GOOGLE_MAPS_API_KEY = #{raw google_maps_api_key.to_json};
+      window.translations = #{raw I18n.t(".js").to_json};
+
   body.prose.max-w-lg.mx-auto.p-8
     .p
       => link_to t(".title"), root_path

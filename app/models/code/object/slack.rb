@@ -30,7 +30,7 @@ class Code
         channel ||= Nothing.new
         body ||= Nothing.new
 
-        team = team.truthy? ? url.raw : Current.primary_slack_account!.team_id
+        team = team.truthy? ? team.raw : Current.primary_slack_account!.team_id
         channel = channel.truthy? ? channel.raw : "#general"
         body = body.truthy? ? body.raw : ""
 

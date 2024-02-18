@@ -1,4 +1,5 @@
-## Hello World
+Hello World
+-----------
 
 input:
 
@@ -8,9 +9,10 @@ result:
 
     Hello World
 
----
+* * *
 
-## Printing Hello World
+Printing Hello World
+--------------------
 
 input:
 
@@ -20,9 +22,10 @@ output:
 
     Hello World
 
----
+* * *
 
-## Maths
+Maths
+-----
 
 input:
 
@@ -32,9 +35,10 @@ result:
 
     2
 
----
+* * *
 
-## Integer#times
+Integer#times
+-------------
 
 input:
 
@@ -50,17 +54,18 @@ result:
 
     3
 
----
+* * *
 
-## Mail.send(from:, to:, subject:, body:)
+Mail.send(from:, to:, subject:, body:)
+--------------------------------------
 
-**from**: The email address(es) you send from, e.g. "bryan.ankunding@morissette-stracke.example", "Kellee Haag <fredric@johnston.example>", default: your primary email address
+**from**: The email address(es) you send from, e.g. "jeremy@koch.example", "Daryl Weimann <bruno@cummerata-streich.example>", default: your primary email address
 
-**to**: The email address(es) you send to, e.g. "tamika@hirthe.test", "Clyde Weber <bonita@runolfsson-kuhlman.example>", default: your primary email address
+**to**: The email address(es) you send to, e.g. "corrine\_marks@klocko.test", "Monroe Heathcote <andre@murazik-bartell.test>", default: your primary email address
 
-**subject**: The subject of the email, e.g. "Vile Bodies", default: ""
+**subject**: The subject of the email, e.g. "A Farewell to Arms", default: ""
 
-**body**: The body of the email, e.g. "Intuitive cohesive concept", default: ""
+**body**: The body of the email, e.g. "Ameliorated bandwidth-monitored moratorium", default: ""
 
 ### Send an empty email to yourself
 
@@ -73,20 +78,21 @@ input:
 input:
 
     [
-      "leon@gleason.test",
-      "noah_thiel@balistreri-abbott.test",
-      "elisa@feest.test",
-      "keith.gusikowski@ondricka.test",
-      "orville@fay.example",
+      "emerita.okeefe@carter.test",
+      "lavonna@reichel.example",
+      "reginald.casper@hahn-lehner.test",
+      "ivonne_leffler@denesik-mosciski.example",
+      "victor@schamberger-stroman.example",
     ].each do |to|
       Mail.send(to: to, subject: "Hello")
     end
 
----
+* * *
 
-## Sms.send(body:)
+Sms.send(body:)
+---------------
 
-**body**: The body of the text message, e.g. "Rosemary Sutcliff", default: ""
+**body**: The body of the text message, e.g. "I Will Fear No Evil", default: ""
 
 ### Send an empty SMS to yourself
 
@@ -108,13 +114,14 @@ input
       Sms.send(body: "It will be raining tomorrow")
     end
 
----
+* * *
 
-## Weather.raining?(query:, date:)
+Weather.raining?(query:, date:)
+-------------------------------
 
-**query**: The location of the weather, e.g. "506 Bo Lock, Port Rosia, AK 66769", "42.01656369618982,49.2699455956712", default: Your location
+**query**: The location of the weather, e.g. "5316 Champlin Key, East Eddie, MA 21777-1431", "-22.284798477041647,45.12454353961925", default: Your location
 
-**date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from_now, 1.hour.ago, 2.hours.from_now, 2.hours.ago, default: Date.now
+**date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from\_now, 1.hour.ago, 2.hours.from\_now, 2.hours.ago, default: Date.now
 
 ### Check if it's raining
 
@@ -124,7 +131,7 @@ input
 
 output
 
-    true
+    false
 
 ### Check if it's raining in Paris, France
 
@@ -144,4 +151,37 @@ input
 
 output
 
-    false
+    true
+
+* * *
+
+Slack.send(team:, channel:, body:)
+----------------------------------
+
+**team**: Your team ID or team name, e.g. "A00AA0AAAAA" or "Schmeler, Wunsch and Zemlak", default: Your primary slack account team
+
+**channel**: The channel you want to send to, e.g. "#general", "#random", "#carol\_turner", default: "#general"
+
+**body**: The body of the text message, e.g. "Fear and Trembling", default: ""
+
+### Send an empty Slack message to #general in your primary slack account
+
+input
+
+    Slack.send
+
+### Send a Slack message to the #general channel
+
+input
+
+    Slack.send(body: "Hello everybody")
+
+### Send a slack message to #weather if it's going to be raining tomorrow
+
+input
+
+    if Weather.raining?(date: Date.tomorrow)
+      Slack.send(body: "It's going to be raining tomorrow", channel: "#weather")
+    else
+      Slack.send(body: "It's not going to be raining tomorrow", channel: "#weather")
+    end

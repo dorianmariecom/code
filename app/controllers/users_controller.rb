@@ -68,6 +68,16 @@ class UsersController < ApplicationController
         :admin,
         :name,
         :time_zone,
+        :location,
+        :city,
+        :street_number,
+        :route,
+        :county,
+        :state,
+        :postal_code,
+        :country,
+        :latitude,
+        :longitude,
         email_addresses_attributes: %i[
           user_id
           id
@@ -89,6 +99,16 @@ class UsersController < ApplicationController
       params.require(:user).permit(
         :name,
         :time_zone,
+        :location,
+        :city,
+        :street_number,
+        :route,
+        :county,
+        :state,
+        :postal_code,
+        :country,
+        :latitude,
+        :longitude,
         email_addresses_attributes: %i[
           id
           _destroy

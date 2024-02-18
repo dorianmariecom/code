@@ -261,6 +261,7 @@ en:
         smtp_authentication: SMTP authentication
         smtp_enable_starttls_auto: SMTP enable StartTLS auto
       user:
+        location: Location
         admin: Admin?
         name: Name
         time_zone: Time zone

@@ -23,7 +23,15 @@ RSpec.describe Code, type: :model do
 
       Code.evaluate(<<~CODE)
         if Weather.raining?(query: "Paris, France", date: Date.tomorrow)
-          Sms.send(body: "It will be raining tomorrow")
+          Sms.send(body: "It will be raining tomorrow in Paris, France")
+        end
+
+        if Weather.raining?(date: Date.tomorrow)
+          Sms.send(body: "It will be raining tomorrow in your current location")
+        end
+
+        if Weather.raining?
+          Sms.send(body: "It's raining today")
         end
       CODE
     end
@@ -89,9 +97,20 @@ RSpec.describe Code, type: :model do
   end
 =end
 
-  it "send messages" do
+  it "sends slack messages" do
     Current.user = create(:user, :dorian)
 
+    Code.evaluate(<<~CODE)
+      Slack.send(body: "Who is leading the syncs?", channel: "#team-template")
+      Slack.send(body: "Who is leading the syncs?")
+      Slack.send
+      Slack.send(team: "dorianmarie.com")
+    CODE
+  end
+
+=begin
+  it "send messages" do
+    Current.user = create(:user, :dorian)
     Code.evaluate(<<~CODE)
       Slack.send(body: "Who is leading the syncs?", channel: "#team-template")
 
@@ -110,4 +129,5 @@ RSpec.describe Code, type: :model do
       )
     CODE
   end
+=end
 end

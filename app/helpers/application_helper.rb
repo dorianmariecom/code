@@ -9,6 +9,14 @@ module ApplicationHelper
     content_for(:title).presence || t("#{controller}.#{action}.title")
   end
 
+  def google_maps_api_key
+    Rails.application.credentials.console.cloud.google.com.api_key
+  end
+
+  def fake_locations
+    3.times.map { Faker::Address.full_address }
+  end
+
   def fake_prompts
     "Do a math operation, " \
       "Send an email to Elon Musk or " \

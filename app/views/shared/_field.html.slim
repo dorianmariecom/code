@@ -59,6 +59,18 @@
     div(data-controller="verification-code")
       = f.text_field field, data: { verification_code_target: "input", action: "verification-code#input #{action}", **data }, required: required, class: "w-full", autocomplete: autocomplete, value: value
       .text-red-600(data-verification-code-target="error")
+  - elsif type.location?
+    div(data-controller="location")
+      = f.hidden_field :city, data: { location_target: "city" }
+      = f.hidden_field :street_number, data: { location_target: "streetNumber" }
+      = f.hidden_field :route, data: { location_target: "route" }
+      = f.hidden_field :county, data: { location_target: "county" }
+      = f.hidden_field :state, data: { location_target: "state" }
+      = f.hidden_field :postal_code, data: { location_target: "postalCode" }
+      = f.hidden_field :country, data: { location_target: "country" }
+      = f.hidden_field :latitude, data: { location_target: "latitude" }
+      = f.hidden_field :longitude, data: { location_target: "longitude" }
+      = f.text_field :location, data: { location_target: "input", action: "keydown->location#preventSubmit #{action}", **data }, required: required, class: "w-full", autocomplete: autocomplete, value: value
   - if fake.present?
     .text-sm.text-gray-600.italic
       => t(".eg")

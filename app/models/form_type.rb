@@ -7,7 +7,8 @@ class FormType
     phone: :phone,
     name: :name,
     "new-password": "password,new",
-    "current-password": "password"
+    "current-password": "password",
+    "street-address": "street-address"
   }.freeze
 
   attr_reader :autocomplete

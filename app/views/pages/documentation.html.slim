@@ -168,3 +168,38 @@ div(class="[&_p]:mb-0 [&_pre]:mt-0 [&_.sourceCode]:mt-0 [&_.dt]:no-underline [&_
     ```
     #{Faker::Boolean.boolean}
     ```
+
+    ---
+
+    ## Slack.send(team:, channel:, body:)
+
+    **team**: Your team ID or team name, e.g. "A00AA0AAAAA" or "#{Faker::Company.name}", default: Your primary slack account team
+
+    **channel**: The channel you want to send to, e.g. "#general", "#random", "##{Faker::Internet.username}", default: "#general"
+
+    **body**: The body of the text message, e.g. "#{Faker::Book.title}", default: ""
+
+    ### Send an empty Slack message to #general in your primary slack account
+
+    input
+    ```ruby
+    Slack.send
+    ```
+
+    ### Send a Slack message to the #general channel
+
+    input
+    ```ruby
+    Slack.send(body: "Hello everybody")
+    ```
+
+    ### Send a slack message to #weather if it's going to be raining tomorrow
+
+    input
+    ```ruby
+    if Weather.raining?(date: Date.tomorrow)
+      Slack.send(body: "It's going to be raining tomorrow", channel: "#weather")
+    else
+      Slack.send(body: "It's not going to be raining tomorrow", channel: "#weather")
+    end
+    ```
