@@ -10,6 +10,9 @@
       = f.text_area :prompt, autocomplete: "off", class: "w-full", data: { form_type: "other", prompt_target: "prompt" }
       button.bg-black.text-white.rounded.px-2.py-1.cursor-pointer(data-action="prompt#generate:prevent")
         = t(".generate")
+      .text-sm.text-gray-600.italic
+        => t(".eg")
+        = fake_prompts
 
       .hidden(data-prompt-target="loading")= t(".loading")
 

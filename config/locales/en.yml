@@ -60,6 +60,7 @@ en:
       new_email_address: New email address
       new_password: New password
     form:
+      eg: e.g.
       prompt: Prompt
       loading: Generating...
       generate: Generate

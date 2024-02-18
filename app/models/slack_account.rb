@@ -23,7 +23,7 @@ class SlackAccount < ApplicationRecord
   def self.verify!(code:)
     uri = URI.parse("#{BASE_URL}/api/oauth.v2.access")
     request = Net::HTTP::Post.new(uri)
-    request.set_form_data(client_id:, client_secret:, code:)
+    request.set_form_data(client_id:, client_secret:, code:, redirect_uri:)
     response =
       Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
         http.request(request)
@@ -87,7 +87,7 @@ class SlackAccount < ApplicationRecord
   end
 
   def channels
-    conversations["channels"]
+    conversations.fetch("channels", [])
   end
 
   def team_id

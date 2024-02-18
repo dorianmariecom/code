@@ -9,6 +9,12 @@ module ApplicationHelper
     content_for(:title).presence || t("#{controller}.#{action}.title")
   end
 
+  def fake_prompts
+    "Do a math operation, " \
+      "Send an email to Elon Musk or " \
+      "Send a slack message if it will be raining tomorrow"
+  end
+
   def fake_inputs
     "1 + 1, :Hello * 10, Mail.send"
   end
