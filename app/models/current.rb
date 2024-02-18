@@ -22,7 +22,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def user=(user)
     super
-    Time.zone = user&.time_zone
+    Time.zone = user&.time_zone.presence
   end
 
   def email_addresses
