@@ -15,11 +15,12 @@ registry:
   password:
     - KAMAL_REGISTRY_PASSWORD
 env:
+  clear:
+    HOST: code.dorianmarie.com
+    BASE_URL: https://code.dorianmarie.com
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_PASSWORD
-    - HOST
-    - BASE_URL
 traefik:
   options:
     publish:
