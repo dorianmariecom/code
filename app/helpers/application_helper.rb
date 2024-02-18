@@ -104,7 +104,7 @@ module ApplicationHelper
   end
 
   def domain_regexp
-    json_regexp(EmailAddress::DOMAIN_REGEXP)
+    json_regexp(SmtpAccount::DOMAIN_REGEXP)
   end
 
   def verification_code_regexp

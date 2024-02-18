@@ -102,17 +102,11 @@ class ProgramsController < ApplicationController
           {
             email_addresses_attributes: %i[
               user_id
+              verified
               id
               _destroy
               primary
               email_address
-              display_name
-              smtp_address
-              smtp_port
-              smtp_user_name
-              smtp_password
-              smtp_authentication
-              smtp_enable_starttls_auto
             ],
             phone_numbers_attributes: %i[
               user_id
@@ -144,19 +138,7 @@ class ProgramsController < ApplicationController
           :latitude,
           :longitude,
           {
-            email_addresses_attributes: %i[
-              id
-              _destroy
-              primary
-              email_address
-              display_name
-              smtp_address
-              smtp_port
-              smtp_user_name
-              smtp_password
-              smtp_authentication
-              smtp_enable_starttls_auto
-            ],
+            email_addresses_attributes: %i[id _destroy primary email_address],
             phone_numbers_attributes: %i[id _destroy primary phone_number],
             passwords_attributes: %i[id _destroy password hint]
           }

@@ -1,21 +1,14 @@
 - f = local_assigns.fetch(:f)
 - removable = local_assigns.fetch(:removable, false)
 
-.email-address.border-l-2.border-black.pl-4.mb-5(data-controller="nested-email-address" data-new-record="#{f.object.new_record?}")
+.email-address.border-l-2.border-black.pl-4.mb-5(data-new-record="#{f.object.new_record?}")
   .font-bold.italic= t(".email_address")
 
   - if admin?
     = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
 
   = render "shared/field", f: f, field: :primary, type: :checkbox, data: { email_addresses_target: :primary, action: "email-addresses#update" }, required: false
-  = render "shared/field", f: f, field: :email_address, type: :email_address, autocomplete: :email, data: { nested_email_address_target: "emailAddress", action: "change->nested-email-address#change" }, required: true, fake: fake_email_addresses
-  = render "shared/field", f: f, field: :display_name, type: :name, autocomplete: :name, required: false, fake: fake_display_names
-  = render "shared/field", f: f, field: :smtp_address, type: :domain, required: true, fake: fake_smtp_addresses
-  = render "shared/field", f: f, field: :smtp_port, type: :number, required: true, fake: fake_smtp_ports
-  = render "shared/field", f: f, field: :smtp_user_name, type: :email_address, autocomplete: :email, data: { nested_email_address_target: "smtpUserName", action: "change->nested-email-address#change" }, required: true, fake: fake_smtp_user_names
-  = render "shared/field", f: f, field: :smtp_password, type: :password, required: true, fake: fake_smtp_passwords
-  = render "shared/field", f: f, field: :smtp_authentication, type: :string, required: true
-  = render "shared/field", f: f, field: :smtp_enable_starttls_auto, type: :checkbox, required: true
+  = render "shared/field", f: f, field: :email_address, type: :email_address, autocomplete: :email, required: true, fake: fake_email_addresses
 
   - if removable
     = f.hidden_field :_destroy

@@ -9,7 +9,5 @@ class FakeSlackCom < Sinatra::Base
 end
 
 RSpec.configure do |config|
-  config.before do
-    stub_request(:any, /slack.com/).to_rack(FakeSlackCom)
-  end
+  config.before { stub_request(:any, /slack.com/).to_rack(FakeSlackCom) }
 end

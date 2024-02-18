@@ -77,28 +77,12 @@ class EmailAddressesController < ApplicationController
     if admin?
       params.require(:email_address).permit(
         :user_id,
+        :verified,
         :primary,
-        :email_address,
-        :display_name,
-        :smtp_address,
-        :smtp_port,
-        :smtp_user_name,
-        :smtp_password,
-        :smtp_authentication,
-        :smtp_enable_starttls_auto
+        :email_address
       )
     else
-      params.require(:email_address).permit(
-        :primary,
-        :email_address,
-        :display_name,
-        :smtp_address,
-        :smtp_port,
-        :smtp_user_name,
-        :smtp_password,
-        :smtp_authentication,
-        :smtp_enable_starttls_auto
-      )
+      params.require(:email_address).permit(:primary, :email_address)
     end
   end
 end
