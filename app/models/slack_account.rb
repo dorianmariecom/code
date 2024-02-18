@@ -17,7 +17,7 @@ class SlackAccount < ApplicationRecord
   end
 
   def self.find_by_team!(team)
-    find_by_team(team) || raise(ActiveRecord::RecordNotFound.new(team))
+    find_by_team(team) || raise(ActiveRecord::RecordNotFound)
   end
 
   def self.verify!(code:)

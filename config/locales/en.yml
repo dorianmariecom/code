@@ -93,6 +93,7 @@ en:
       add_password: Add password
   layouts:
     application:
+      up: /up
       register: Register
       log_in: Log in
       log_out: Log out
