@@ -11,7 +11,8 @@ servers:
       traefik.http.routers.code_secure.tls.certresolver: letsencrypt
       traefik.http.routers.code_secure.tls: true
 registry:
-  username: dorianmariefr
+  username:
+    - KAMAL_REGISTRY_USERNAME
   password:
     - KAMAL_REGISTRY_PASSWORD
 env:
