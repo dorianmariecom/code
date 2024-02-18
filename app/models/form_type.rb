@@ -8,7 +8,6 @@ class FormType
     name: :name,
     "new-password": "password,new",
     "current-password": "password",
-    "street-address": "street-address"
   }.freeze
 
   attr_reader :autocomplete

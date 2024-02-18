@@ -21,7 +21,7 @@ export default class extends PlacesAutocomplete {
   ]
 
   connect() {
-    loader.load().then((google) =>{
+    loader.load().then((google) => {
       this.autocomplete = new google.maps.places.Autocomplete(
         this.inputTarget,
         this.autocompleteOptions

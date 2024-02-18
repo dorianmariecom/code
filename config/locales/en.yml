@@ -134,6 +134,16 @@ en:
       title: Edit user
       submit: Update
     show:
+      location: location
+      latitude: latitude
+      longitude: longitude
+      city: city
+      street_number: street number
+      route: route
+      county: county
+      state: state
+      postal_code: postal code
+      country: country
       phone_numbers: Phone numbers
       email_addresses: Email addresses
       slack_accounts: Slack accounts

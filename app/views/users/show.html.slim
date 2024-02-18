@@ -6,6 +6,46 @@
 .text-sm= t(".id")
 .mb-5= @user.id
 
+- if @user.location.present?
+  .text-sm= t(".location")
+  .mb-5= @user.location
+
+- if @user.latitude.present?
+  .text-sm= t(".latitude")
+  .mb-5= @user.latitude
+
+- if @user.longitude.present?
+  .text-sm= t(".longitude")
+  .mb-5= @user.longitude
+
+- if @user.street_number.present?
+  .text-sm= t(".street_number")
+  .mb-5= @user.street_number
+
+- if @user.route.present?
+  .text-sm= t(".route")
+  .mb-5= @user.route
+
+- if @user.city.present?
+  .text-sm= t(".city")
+  .mb-5= @user.city
+
+- if @user.county.present?
+  .text-sm= t(".county")
+  .mb-5= @user.county
+
+- if @user.postal_code.present?
+  .text-sm= t(".postal_code")
+  .mb-5= @user.postal_code
+
+- if @user.state.present?
+  .text-sm= t(".state")
+  .mb-5= @user.state
+
+- if @user.country.present?
+  .text-sm= t(".country")
+  .mb-5= @user.country
+
 - if @user.time_zone.present?
   .text-sm= t(".time_zone")
   .mb-5= @user.time_zone

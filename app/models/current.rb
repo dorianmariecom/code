@@ -3,6 +3,21 @@
 class Current < ActiveSupport::CurrentAttributes
   attribute :user
 
+  delegate(
+    :location,
+    :latitude,
+    :longitude,
+    :city,
+    :street_number,
+    :route,
+    :county,
+    :state,
+    :postal_code,
+    :country,
+    to: :user,
+    allow_nil: true
+  )
+
   resets { Time.zone = nil }
 
   def user=(user)
