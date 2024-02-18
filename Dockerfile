@@ -56,7 +56,11 @@ COPY . .
 
 RUN bundle exec bootsnap precompile app/ lib/
 
-RUN RAILS_MASTER_KEY_DUMMY=1 SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN HOST=example.com \
+    BASE_URL=https://example.com \
+    RAILS_MASTER_KEY_DUMMY=1 \
+    SECRET_KEY_BASE_DUMMY=1 \
+    ./bin/rails assets:precompile
 
 FROM base
 
