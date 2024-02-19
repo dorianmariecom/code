@@ -14,5 +14,6 @@ class Code
     config.autoload_lib(ignore: %w[assets tasks])
     config.hosts << "localhost:3000"
     config.hosts << ENV.fetch("HOST")
+    config.action_mailer.preview_paths << "#{Rails.root}/spec/mailers/previews"
   end
 end

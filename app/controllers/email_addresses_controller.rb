@@ -4,6 +4,9 @@ class EmailAddressesController < ApplicationController
   before_action :load_user
   before_action :load_email_address, only: %i[show edit update destroy]
 
+  helper_method :verification_code_param
+  helper_method :id
+
   def index
     authorize EmailAddress
 
@@ -70,7 +73,19 @@ class EmailAddressesController < ApplicationController
   end
 
   def load_email_address
+    @email_address =
+      EmailAddress
+        .find_verification_code_signed!(id)
+        .tap do
+          skip_policy_scope
+          skip_authorization
+        end
+  rescue ActiveSupport::MessageVerifier::InvalidSignature
     @email_address = authorize scope.find(id)
+  end
+
+  def verification_code_param
+    params.dig(:email_address, :verification_code)
   end
 
   def email_address_params

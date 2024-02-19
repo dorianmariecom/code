@@ -16,27 +16,15 @@
 .text-sm=> t(".email_address")
 .mb-5= mail_to @email_address.email_address
 
-.text-sm=> t(".display_name")
-.mb-5= @email_address.display_name
+- if @email_address.not_verified?
+  - if @email_address.verification_code_sent?
+      = form_for @email_address, url: email_address_verification_code_path(id) do |f|
+        = render "shared/field", f: f, field: :verification_code, type: :verification_code, value: verification_code_param, required: true, fake: fake_verification_codes(n: 6)
+        p=> f.submit t(".verify"), class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+      .p= button_to t(".cancel"), [@email_address, :verification_code], method: :delete, class: "a text-red-600"
+  - else
+    .p= button_to t(".send_verification_code"), [@email_address, :verification_code], class: "bg-black text-white rounded px-4 py-2 cursor-pointer"
 
-.text-sm=> t(".smtp_address")
-.mb-5= @email_address.smtp_address
-
-.text-sm=> t(".smtp_port")
-.mb-5= @email_address.smtp_port
-
-.text-sm=> t(".smtp_user_name")
-.mb-5= @email_address.smtp_user_name
-
-.text-sm=> t(".smtp_password")
-.mb-5
-  ' ***
-
-.text-sm=> t(".smtp_authentication")
-.mb-5= @email_address.smtp_authentication
-
-.text-sm=> t(".smtp_enable_starttls_auto")
-.mb-5= @email_address.smtp_enable_starttls_auto
-
-= link_to t(".edit"), [:edit, @email_address]
-= button_to t(".delete"), @email_address, method: :delete, class: "a text-red-600"
+- if can?(:update, @email_address)
+  = link_to t(".edit"), [:edit, @email_address]
+  = button_to t(".delete"), @email_address, method: :delete, class: "a text-red-600"

@@ -2,6 +2,8 @@
 
 class EmailAddress < ApplicationRecord
   EMAIL_ADDRESS_REGEXP = URI::MailTo::EMAIL_REGEXP
+  VERIFICATION_CODE_PURPOSE = :verification_code
+  VERIFICATION_CODE_EXPIRES_IN = 1.hour
 
   belongs_to :user, default: -> { Current.user }
 
@@ -17,6 +19,10 @@ class EmailAddress < ApplicationRecord
   scope :not_primary, -> { where(primary: false) }
   scope :verified, -> { where(verified: true) }
   scope :not_verified, -> { where(verified: false) }
+
+  def self.find_verification_code_signed!(id)
+    find_signed!(id, purpose: VERIFICATION_CODE_PURPOSE)
+  end
 
   def primary?
     !!primary
@@ -34,22 +40,44 @@ class EmailAddress < ApplicationRecord
     !verified?
   end
 
-  def deliver!(from:, to:, subject:, body:)
-    mail = Mail.new
-    mail.from = from
-    mail.to = to
-    mail.subject = subject
-    mail.body = body
-    mail.delivery_method(
-      :smtp,
-      address: smtp_address,
-      port: smtp_port,
-      user_name: smtp_user_name,
-      password: smtp_password,
-      authentication: smtp_authentication,
-      enable_starttls_auto: smtp_enable_starttls_auto
+  def email_address_with_name
+    ActionMailer::Base.email_address_with_name(email_address, user.name)
+  end
+
+  def verification_code_signed_id
+    signed_id(
+      purpose: VERIFICATION_CODE_PURPOSE,
+      expires_in: VERIFICATION_CODE_EXPIRES_IN
     )
-    mail.deliver!
+  end
+
+  def verification_code_sent?
+    verification_code.present?
+  end
+
+  def reset_verification_code!
+    update!(
+      verification_code: rand(1_000_000).to_s.rjust(6, "0"),
+      verified: false
+    )
+  end
+
+  def send_verification_code!
+    EmailAddressMailer
+      .with(email_address: self)
+      .verification_code_email
+      .deliver_later
+  end
+
+  def verify!(code)
+    return if code.blank? || verification_code.blank?
+    code = code.gsub(/\D/, "")
+    self.verification_code = self.verification_code.gsub(/\D/, "")
+    if code == self.verification_code
+      update!(verified: true, verification_code: "")
+    else
+      update!(verification_code: "")
+    end
   end
 
   def to_s

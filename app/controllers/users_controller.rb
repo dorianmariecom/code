@@ -86,7 +86,14 @@ class UsersController < ApplicationController
           primary
           email_address
         ],
-        phone_numbers_attributes: %i[user_id id _destroy primary phone_number],
+        phone_numbers_attributes: %i[
+          user_id
+          verified
+          id
+          _destroy
+          primary
+          phone_number
+        ],
         passwords_attributes: %i[user_id id _destroy password hint]
       )
     else

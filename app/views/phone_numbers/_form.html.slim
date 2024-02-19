@@ -7,7 +7,7 @@
   - if admin?
     = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
 
-  = render "shared/field", f: f, field: :primary, type: :checkbox, data: { phone_numbers_target: :primary, action: "phone-numbers#update" }, required: false
+  = render "shared/field", f: f, field: :primary, type: :checkbox
   = render "shared/field", f: f, field: :phone_number, type: :phone_number, autocomplete: :phone, required: true, fake: fake_phone_numbers, value: f.object.formatted
 
   - if removable

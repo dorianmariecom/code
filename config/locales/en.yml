@@ -258,6 +258,8 @@ en:
       title: Edit email address
       submit: Update email address
     show:
+      verify: Verify
+      cancel: Cancel
       id: ID
       verified: verified
       primary: primary
@@ -265,13 +267,7 @@ en:
       delete: Delete email address
       belongs_to: belongs to
       email_address: email address
-      display_name: display name
-      smtp_address: SMTP address
-      smtp_port: SMTP port
-      smtp_user_name: SMTP user name
-      smtp_password: SMTP password
-      smtp_authentication: SMTP authentication
-      smtp_enable_starttls_auto: SMTP enable StartTLS auto
+      send_verification_code: Send verification code
     form:
       remove: Remove
       email_address: Email address
@@ -295,7 +291,11 @@ en:
         primary: Primary?
         phone_number: Phone number
         verification_code: Verification code
+      smtp_account:
+        user_id: User
+        primary: Primary?
       email_address:
+        verification_code: Verification code
         user_id: User
         primary: Primary?
         email_address: Email address
@@ -340,3 +340,39 @@ en:
       token: token
       delete: Delete slack account
       channels: channels
+  smtp_accounts:
+    index:
+      title: SMTP accounts
+      new: New SMTP account
+    create:
+      notice: SMTP account created
+    update:
+      notice: SMTP account updated
+    destroy:
+      notice: SMTP account deleted
+    new:
+      title: New SMTP account
+      submit: Create SMTP account
+    edit:
+      title: Edit SMTP account
+      submit: Update SMTP account
+    show:
+      id: ID
+      primary: primary
+      edit: Edit SMTP account
+      delete: Delete SMTP account
+      belongs_to: belongs to
+      smtp_account: SMTP account
+      verified: verified
+    form:
+      remove: Remove
+      smtp_account: SMTP account
+    nested:
+      add_smtp_account: Add SMTP account
+  email_address_mailer:
+    verification_code_email:
+      subject: "Your %{host} verification code is %{verification_code}"
+      hi: Hi,
+      intro: "Here is your verification code for %{host}:"
+      thanks: Thanks,
+      dorian: Dorian

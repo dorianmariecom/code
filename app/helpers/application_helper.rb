@@ -27,8 +27,8 @@ module ApplicationHelper
     "1 + 1, :Hello * 10, Mail.send"
   end
 
-  def fake_verification_codes
-    3.times.map { rand(10_000).to_s.rjust(4, "0") }
+  def fake_verification_codes(n: 4)
+    3.times.map { rand(10**n).to_s.rjust(n, "0") }
   end
 
   def fake_email_addresses

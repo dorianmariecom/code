@@ -20,13 +20,25 @@ class VerificationCodesController < ApplicationController
 
   private
 
+  def id
+    params[:phone_number_id] || params[:email_address_id]
+  end
+
   def load_verifiable
     if params[:phone_number_id].present?
-      @verifiable =
-        authorize policy_scope(PhoneNumber).find(params[:phone_number_id])
+      @verifiable = authorize policy_scope(PhoneNumber).find(id)
     elsif params[:email_address_id].present?
-      @verifiable =
-        authorize policy_scope(EmailAddress).find(params[:email_address_id])
+      begin
+        @verifiable =
+          EmailAddress
+            .find_verification_code_signed!(id)
+            .tap do
+              skip_policy_scope
+              skip_authorization
+            end
+      rescue ActiveSupport::MessageVerifier::InvalidSignature
+        @verifiable = authorize policy_scope(EmailAddress).find(id)
+      end
     else
       raise NotImplementedError
     end

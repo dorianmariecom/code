@@ -19,7 +19,7 @@ class SmtpAccount < ApplicationRecord
   validates :password, presence: true
   validates :authentication, presence: true
 
-  def email_address_with_display_name
+  def email_address_with_name
     ActionMailer::Base.email_address_with_name(user_name, display_name)
   end
 
@@ -37,6 +37,24 @@ class SmtpAccount < ApplicationRecord
 
   def not_verified?
     !verified?
+  end
+
+  def deliver!(from:, to:, subject:, body:)
+    mail = Mail.new
+    mail.from = from
+    mail.to = to
+    mail.subject = subject
+    mail.body = body
+    mail.delivery_method(
+      :smtp,
+      address: smtp_address,
+      port: smtp_port,
+      user_name: smtp_user_name,
+      password: smtp_password,
+      authentication: smtp_authentication,
+      enable_starttls_auto: smtp_enable_starttls_auto
+    )
+    mail.deliver!
   end
 
   def to_s

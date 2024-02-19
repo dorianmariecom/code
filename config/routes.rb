@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   resource :session
 
   resources :users do
-    resources :email_addresses
+    resources :email_addresses do
+      resource :verification_code
+    end
     resources :phone_numbers do
       resource :verification_code
     end
@@ -29,7 +31,9 @@ Rails.application.routes.draw do
     resources :slack_accounts
   end
 
-  resources :email_addresses
+  resources :email_addresses do
+    resource :verification_code
+  end
   resources :phone_numbers do
     resource :verification_code
   end
