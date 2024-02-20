@@ -25,7 +25,6 @@ gem "pundit"
 gem "rails", rails: :rails
 gem "redis"
 gem "rubocop"
-gem "sequel"
 gem "slim-rails"
 gem "solid_errors"
 gem "sprockets-rails"
