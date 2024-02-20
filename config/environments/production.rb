@@ -3,7 +3,8 @@
 Rails.application.configure do
   config.action_controller.perform_caching = true
   config.action_mailer.perform_caching = false
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = Rails.application.credentials.smtp_settings
   config.active_record.dump_schema_after_migration = false
   config.active_storage.service = :local
   config.active_support.report_deprecations = false
@@ -13,6 +14,8 @@ Rails.application.configure do
   config.eager_load = true
   config.enable_reloading = false
   config.force_ssl = true
+  config.hosts << "localhost:3000"
+  config.hosts << ENV.fetch("HOST")
   config.i18n.fallbacks = true
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
   config.log_tags = [:request_id]
