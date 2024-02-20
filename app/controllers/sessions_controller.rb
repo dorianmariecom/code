@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 
   def create
     @users =
-      User.joins(:passwords, :email_addreses).where(
+      User.joins(:passwords, :email_addresses).where(
         email_addresses: {
           email_address: email_address_param
         }
