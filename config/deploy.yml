@@ -15,7 +15,6 @@ servers:
       traefik.http.routers.code_secure.tls.certresolver: letsencrypt
       traefik.http.routers.code_secure.tls: true
 registry:
-  server: registry.digitalocean.com
   username:
     - KAMAL_REGISTRY_USERNAME
   password:
