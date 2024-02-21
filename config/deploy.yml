@@ -45,7 +45,7 @@ traefik:
 accessories:
   db:
     image: postgres:16.1
-    host: 165.232.149.13
+    host: 45.55.196.152
     port: 5432
     env:
       clear:
