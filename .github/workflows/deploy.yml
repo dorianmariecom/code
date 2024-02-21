@@ -1,7 +1,6 @@
 name: Deploy
 concurrency:
   group: production
-  cancel-in-progress: true
 on:
   push:
     branches:
@@ -10,8 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      RAILS_ENV: production
       RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+      KAMAL_REGISTRY_SERVER: ${{ secrets.KAMAL_REGISTRY_SERVER }}
       KAMAL_REGISTRY_PASSWORD: ${{ secrets.KAMAL_REGISTRY_PASSWORD }}
       KAMAL_REGISTRY_USERNAME: ${{ secrets.KAMAL_REGISTRY_USERNAME }}
     steps:
