@@ -1,20 +1,4 @@
 GIT
-  remote: https://github.com/basecamp/kamal
-  revision: aea55480adcaf61e3eebfd49f2b8c039207ad0de
-  specs:
-    kamal (1.3.1)
-      activesupport (>= 7.0)
-      base64 (~> 0.2)
-      bcrypt_pbkdf (~> 1.0)
-      concurrent-ruby (~> 1.2)
-      dotenv (~> 2.8)
-      ed25519 (~> 1.2)
-      net-ssh (~> 7.0)
-      sshkit (~> 1.21)
-      thor (~> 1.2)
-      zeitwerk (~> 2.5)
-
-GIT
   remote: https://github.com/rails/rails
   revision: 9e01d93547e2082e2e88472748baa0f9ea63c181
   specs:
@@ -117,7 +101,6 @@ GEM
     ast (2.4.2)
     base64 (0.2.0)
     bcrypt (3.1.20)
-    bcrypt_pbkdf (1.1.0)
     bigdecimal (3.1.6)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
@@ -180,7 +163,6 @@ GEM
       railties (>= 3.2)
     drb (2.2.0)
       ruby2_keywords
-    ed25519 (1.3.0)
     erubi (1.12.0)
     factory_bot (6.4.6)
       activesupport (>= 5.0.0)
@@ -234,7 +216,6 @@ GEM
     msgpack (1.7.2)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
-    mutex_m (0.2.0)
     net-http (0.4.1)
       uri
     net-imap (0.4.10)
@@ -244,13 +225,8 @@ GEM
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-scp (4.0.0)
-      net-ssh (>= 2.6.5, < 8.0.0)
-    net-sftp (4.0.0)
-      net-ssh (>= 5.0.0, < 8.0.0)
     net-smtp (0.4.0.1)
       net-protocol
-    net-ssh (7.2.1)
     nio4r (2.7.0)
     nokogiri (1.16.2-aarch64-linux)
       racc (~> 1.4)
@@ -374,11 +350,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sshkit (1.22.0)
-      mutex_m
-      net-scp (>= 1.1.2)
-      net-sftp (>= 2.1.2)
-      net-ssh (>= 2.8.0)
     stimulus-rails (1.3.3)
       railties (>= 6.0.0)
     stringio (3.1.0)
@@ -445,7 +416,6 @@ DEPENDENCIES
   importmap-rails
   irb
   jbuilder
-  kamal!
   mission_control-jobs
   net-http
   pandoc-ruby
