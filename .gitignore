@@ -3,7 +3,6 @@
 /.env.*.local
 /app/assets/builds/*
 /config/master.key
-/db/*
 /log/*
 /node_modules
 /public/assets
