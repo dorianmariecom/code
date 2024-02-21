@@ -1,5 +1,5 @@
 service: code
-image: code
+image: dorianmariecom/code
 builder:
   remote:
     arch: amd64
