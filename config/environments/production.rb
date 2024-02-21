@@ -13,7 +13,6 @@ Rails.application.configure do
   config.consider_all_requests_local = false
   config.eager_load = true
   config.enable_reloading = false
-  config.force_ssl = true
   config.hosts << "localhost:3000"
   config.hosts << ENV.fetch("HOST")
   config.i18n.fallbacks = true
