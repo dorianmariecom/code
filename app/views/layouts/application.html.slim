@@ -36,13 +36,24 @@ html
       .p
         => link_to t(".email_addresses", count: policy_scope(EmailAddress).size), email_addresses_path
         => link_to t(".errors", count: policy_scope(SolidErrors::Error).size), errors_path
-        => link_to t(".jobs"), jobs_path
         => link_to t(".passwords", count: policy_scope(Password).size), passwords_path
         => link_to t(".phone_numbers", count: policy_scope(PhoneNumber).size), phone_numbers_path
         => link_to t(".programs", count: policy_scope(Program).size), programs_path
         => link_to t(".slack_accounts", count: policy_scope(SlackAccount).size), slack_accounts_path
         => link_to t(".up"), up_path
         => link_to t(".users", count: policy_scope(User).size), users_path
+
+    - if admin?
+      .p
+        => link_to t(".blocked_jobs", count: policy_scope(SolidQueue::BlockedExecution).size), jobs_path
+        => link_to t(".claimed_jobs", count: policy_scope(SolidQueue::ClaimedExecution).size), jobs_path
+        => link_to t(".failed_jobs", count: policy_scope(SolidQueue::FailedExecution).size), jobs_path
+        => link_to t(".job_pauses", count: policy_scope(SolidQueue::Pause).size), jobs_path
+        => link_to t(".job_processes", count: policy_scope(SolidQueue::Process).size), jobs_path
+        => link_to t(".job_semaphores", count: policy_scope(SolidQueue::Semaphore).size), jobs_path
+        => link_to t(".jobs", count: policy_scope(SolidQueue::Job).size), jobs_path
+        => link_to t(".ready_jobs", count: policy_scope(SolidQueue::ReadyExecution).size), jobs_path
+        => link_to t(".scheduled_jobs", count: policy_scope(SolidQueue::ScheduledExecution).size), jobs_path
 
     - if notice.present?
       p.text-green-600= notice

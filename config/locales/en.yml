@@ -94,7 +94,42 @@ en:
       add_password: Add password
   layouts:
     application:
-      jobs: Jobs
+      jobs:
+        zero: 0 jobs
+        one: 1 job
+        other: "%{count} jobs"
+      blocked_jobs:
+        zero: 0 blocked jobs
+        one: 1 blocked job
+        other: "%{count} blocked jobs"
+      claimed_jobs:
+        zero: 0 claimed jobs
+        one: 1 claimed job
+        other: "%{count} claimed jobs"
+      ready_jobs:
+        zero: 0 ready jobs
+        one: 1 ready job
+        other: "%{count} ready jobs"
+      scheduled_jobs:
+        zero: 0 scheduled jobs
+        one: 1 scheduled job
+        other: "%{count} scheduled jobs"
+      failed_jobs:
+        zero: 0 failed jobs
+        one: 1 failed job
+        other: "%{count} failed jobs"
+      job_pauses:
+        zero: 0 job pauses
+        one: 1 job pause
+        other: "%{count} job pauses"
+      job_processes:
+        zero: 0 job processes
+        one: 1 job process
+        other: "%{count} job processes"
+      job_semaphores:
+        zero: 0 job semaphores
+        one: 1 job semaphore
+        other: "%{count} job semaphores"
       up: /up
       register: Register
       log_in: Log in
