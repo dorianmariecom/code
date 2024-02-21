@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   constraints AdminConstraints.new do
     mount SolidErrors::Engine, at: "/errors", as: :errors
+    mount MissionControl::Jobs::Engine, at: "/jobs", as: :jobs
   end
 
   resources :country_codes

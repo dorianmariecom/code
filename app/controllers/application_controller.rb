@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized
   after_action :verify_policy_scoped
   after_action :delete_link_header
+  skip_after_action :verify_authorized, if: :mission_control_controller?
+  skip_after_action :verify_policy_scoped, if: :mission_control_controller?
 
   helper_method :current_user
   helper_method :current_user?
@@ -46,5 +48,9 @@ class ApplicationController < ActionController::Base
 
   def delete_link_header
     response.headers.delete("Link")
+  end
+
+  def mission_control_controller?
+    is_a?(::MissionControl::Jobs::ApplicationController)
   end
 end

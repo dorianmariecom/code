@@ -221,6 +221,11 @@ GEM
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.21.2)
+    mission_control-jobs (0.1.1)
+      importmap-rails
+      rails (~> 7.1)
+      stimulus-rails
+      turbo-rails
     msgpack (1.7.2)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
@@ -433,8 +438,10 @@ DEPENDENCIES
   faker
   heroicon
   importmap-rails
+  irb
   jbuilder
   kamal
+  mission_control-jobs
   net-http
   pandoc-ruby
   pg

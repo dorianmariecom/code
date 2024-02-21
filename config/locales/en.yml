@@ -94,6 +94,7 @@ en:
       add_password: Add password
   layouts:
     application:
+      jobs: Jobs
       up: /up
       register: Register
       log_in: Log in

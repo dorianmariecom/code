@@ -36,12 +36,13 @@ html
       .p
         => link_to t(".email_addresses", count: policy_scope(EmailAddress).size), email_addresses_path
         => link_to t(".errors", count: policy_scope(SolidErrors::Error).size), errors_path
+        => link_to t(".jobs"), jobs_path
         => link_to t(".passwords", count: policy_scope(Password).size), passwords_path
         => link_to t(".phone_numbers", count: policy_scope(PhoneNumber).size), phone_numbers_path
         => link_to t(".programs", count: policy_scope(Program).size), programs_path
         => link_to t(".slack_accounts", count: policy_scope(SlackAccount).size), slack_accounts_path
-        => link_to t(".users", count: policy_scope(User).size), users_path 
         => link_to t(".up"), up_path
+        => link_to t(".users", count: policy_scope(User).size), users_path
 
     - if notice.present?
       p.text-green-600= notice
