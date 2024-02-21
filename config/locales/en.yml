@@ -94,6 +94,7 @@ en:
       add_password: Add password
   layouts:
     application:
+      mailers: Mailers
       jobs:
         zero: 0 jobs
         one: 1 job

@@ -36,6 +36,7 @@ html
       .p
         => link_to t(".email_addresses", count: policy_scope(EmailAddress).size), email_addresses_path
         => link_to t(".errors", count: policy_scope(SolidErrors::Error).size), errors_path
+        => link_to t(".mailers"), "/rails/mailers"
         => link_to t(".passwords", count: policy_scope(Password).size), passwords_path
         => link_to t(".phone_numbers", count: policy_scope(PhoneNumber).size), phone_numbers_path
         => link_to t(".programs", count: policy_scope(Program).size), programs_path
