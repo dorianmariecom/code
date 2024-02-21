@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 
 git_source(:rails) { |name| "https://github.com/rails/#{name}" }
+git_source(:basecamp) { |name| "https://github.com/basecamp/#{name}" }
 
 ruby "3.3.0"
 
@@ -16,7 +17,7 @@ gem "heroicon"
 gem "importmap-rails"
 gem "irb"
 gem "jbuilder"
-gem "kamal"
+gem "kamal", basecamp: :kamal
 gem "mission_control-jobs"
 gem "net-http"
 gem "pandoc-ruby"
