@@ -3,11 +3,11 @@ image: dorianmariecom/code
 builder:
   remote:
     arch: amd64
-    ssh: root@165.232.149.13
+    ssh: root@45.55.196.152
 servers:
   web:
     hosts:
-      - 165.232.149.13
+      - 45.55.196.152
     labels:
       traefik.http.routers.code.rule: Host(`code.dorianmarie.com`)
       traefik.http.routers.code_secure.entrypoints: websecure
