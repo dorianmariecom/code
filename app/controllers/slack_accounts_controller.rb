@@ -2,7 +2,7 @@
 
 class SlackAccountsController < ApplicationController
   before_action :load_user
-  before_action :load_slack_account, only: %i[show destroy]
+  before_action :load_slack_account, only: %i[show edit update destroy]
 
   def index
     authorize SlackAccount
@@ -16,6 +16,18 @@ class SlackAccountsController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @slack_account.update(slack_account_params)
+      redirect_to @slack_account, notice: t(".notice")
+    else
+      flash.now.alert = @slack_account.alert
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -56,7 +68,6 @@ class SlackAccountsController < ApplicationController
         :user_id,
         :verified,
         :primary,
-        :auth
       )
     else
       params.require(:slack_account).permit(:primary)

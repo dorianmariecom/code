@@ -18,4 +18,5 @@ ul
   - @slack_account.channels.each do |channel|
     li= "##{channel["name"]}"
 
-= button_to t(".delete"), @slack_account, method: :delete, class: "a text-red-600"
+.p= link_to t(".edit"), [:edit, @slack_account]
+.p= button_to t(".delete"), @slack_account, method: :delete, class: "a text-red-600"

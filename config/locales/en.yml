@@ -336,6 +336,10 @@ en:
         user_id: User
         primary: Primary?
         verified: Verified?
+      slack_account:
+        user_id: User
+        primary: Primary?
+        verified: Verified?
       email_address:
         verification_code: Verification code
         user_id: User
@@ -370,6 +374,14 @@ en:
         spatial: Use longer keyboard patterns with more turns
         year: Avoid recent years, especially if they are associated with you
   slack_accounts:
+    update:
+      notice: Slack account updated
+    edit:
+      title: Edit slack account
+      submit: Update slack account
+    form:
+      slack_account: Slack account
+      remove: Remove
     index:
       eg: e.g.
       title: Slack accounts
@@ -377,6 +389,7 @@ en:
     destroy:
       notice: Slack account deleted
     show:
+      edit: Edit slack account
       id: ID
       belongs_to: belongs to
       verified: verified

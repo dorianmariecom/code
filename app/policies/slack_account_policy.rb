@@ -19,6 +19,14 @@ class SlackAccountPolicy < ApplicationPolicy
     owner? || admin?
   end
 
+  def create?
+    false
+  end
+
+  def update?
+    owner? || admin?
+  end
+
   def destroy?
     owner? || admin?
   end
