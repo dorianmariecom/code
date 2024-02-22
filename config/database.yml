@@ -1,14 +1,13 @@
+---
 development:
   adapter: postgresql
   database: code_development
-
-test:
-  adapter: postgresql
-  database: code_test
-
 production:
   adapter: postgresql
   database: code_production
-  username: code
-  password: <%= ENV["POSTGRES_PASSWORD"] %>
   host: 165.232.149.13
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
+  username: code
+test:
+  adapter: postgresql
+  database: code_test

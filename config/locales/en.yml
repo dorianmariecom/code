@@ -1,3 +1,4 @@
+---
 en:
   activerecord:
     errors:
@@ -5,23 +6,56 @@ en:
         phone_number:
           attributes:
             phone_number:
-              invalid: is invalid
               impossible: is impossible
+              invalid: is invalid
+  email_address_mailer:
+    verification_code_email:
+      dorian: Dorian
+      hi: Hi,
+      intro: 'Here is your verification code for %{host}:'
+      subject: Your %{host} verification code is %{verification_code}
+      thanks: Thanks,
+  email_addresses:
+    create:
+      notice: Email address created
+    destroy:
+      notice: Email address deleted
+    edit:
+      submit: Update email address
+      title: Edit email address
+    form:
+      email_address: Email address
+      remove: Remove
+    index:
+      new: New email address
+      title: Email addresses
+    nested:
+      add_email_address: Add email address
+    new:
+      submit: Create email address
+      title: New email address
+    show:
+      belongs_to: belongs to
+      cancel: Cancel
+      delete: Delete email address
+      edit: Edit email address
+      email_address: email address
+      id: ID
+      primary: primary
+      send_verification_code: Send verification code
+      verified: verified
+      verify: Verify
+    update:
+      notice: Email address updated
   js:
-    email_address:
+    domain:
       not_present: Not present
       not_valid: Not valid
-    slack_authorize_url:
+    email_address:
       not_present: Not present
       not_valid: Not valid
     name:
       not_present: Not present
-    domain:
-      not_present: Not present
-      not_valid: Not valid
-    verification_code:
-      not_present: Not present
-      not_valid: Not valid
     password:
       not_present: Not present
     phone_number:
@@ -34,346 +68,93 @@ en:
       not_present: Not present
       too_long: Too long
       too_short: Too short
-  programs:
-    index:
-      title: Programs
-      new: New program
-    create:
-      notice: Program created
-    update:
-      notice: Program updated
-    destroy:
-      notice: Program deleted
-    new:
-      title: New program
-      submit: Evaluate
-    edit:
-      title: Edit program
-      submit: Re-evaluate
-    show:
-      id: ID
-      edit: Edit program
-      delete: Delete program
-      belongs_to: belongs to
-      input: input
-      output: output
-      error: error
-      result: result
-      submit: Re-evaluate
-      new_email_address: New email address
-      new_password: New password
-    form:
-      eg: e.g.
-      prompt: Prompt
-      loading: Generating...
-      generate: Generate
-      program: Program
-  passwords:
-    index:
-      title: Passwords
-      new: New password
-    create:
-      notice: Password created
-    update:
-      notice: Password updated
-    destroy:
-      notice: Password deleted
-    new:
-      title: New password
-      submit: Create password
-    edit:
-      title: Edit password
-      submit: Update password
-    show:
-      id: ID
-      edit: Edit password
-      delete: Delete password
-      belongs_to: belongs to
-      password: password
-    form:
-      password: Password
-      remove: Remove
-    nested:
-      add_password: Add password
+    slack_authorize_url:
+      not_present: Not present
+      not_valid: Not valid
+    verification_code:
+      not_present: Not present
+      not_valid: Not valid
   layouts:
     application:
-      mailers: Mailers
-      jobs:
-        zero: 0 jobs
-        one: 1 job
-        other: "%{count} jobs"
       blocked_jobs:
-        zero: 0 blocked jobs
         one: 1 blocked job
         other: "%{count} blocked jobs"
+        zero: 0 blocked jobs
       claimed_jobs:
-        zero: 0 claimed jobs
         one: 1 claimed job
         other: "%{count} claimed jobs"
-      ready_jobs:
-        zero: 0 ready jobs
-        one: 1 ready job
-        other: "%{count} ready jobs"
-      scheduled_jobs:
-        zero: 0 scheduled jobs
-        one: 1 scheduled job
-        other: "%{count} scheduled jobs"
-      failed_jobs:
-        zero: 0 failed jobs
-        one: 1 failed job
-        other: "%{count} failed jobs"
-      job_pauses:
-        zero: 0 job pauses
-        one: 1 job pause
-        other: "%{count} job pauses"
-      job_processes:
-        zero: 0 job processes
-        one: 1 job process
-        other: "%{count} job processes"
-      job_semaphores:
-        zero: 0 job semaphores
-        one: 1 job semaphore
-        other: "%{count} job semaphores"
-      up: /up
-      register: Register
-      log_in: Log in
-      log_out: Log out
-      title: Code
-      users:
-        zero: 0 users
-        one: 1 user
-        other: "%{count} users"
+        zero: 0 claimed jobs
+      documentation: Documentation
       email_addresses:
-        zero: 0 email addresses
         one: 1 email address
         other: "%{count} email addresses"
-      slack_accounts:
-        zero: 0 slack accounts
-        one: 1 slack account
-        other: "%{count} slack accounts"
-      phone_numbers:
-        zero: 0 phone numbers
-        one: 1 phone number
-        other: "%{count} phone numbers"
-      passwords:
-        zero: 0 passwords
-        one: 1 password
-        other: "%{count} passwords"
-      programs:
-        zero: 0 programs
-        one: 1 program
-        other: "%{count} programs"
+        zero: 0 email addresses
       errors:
-        zero: 0 errors
         one: 1 error
         other: "%{count} errors"
-      documentation: Documentation
+        zero: 0 errors
+      failed_jobs:
+        one: 1 failed job
+        other: "%{count} failed jobs"
+        zero: 0 failed jobs
+      job_pauses:
+        one: 1 job pause
+        other: "%{count} job pauses"
+        zero: 0 job pauses
+      job_processes:
+        one: 1 job process
+        other: "%{count} job processes"
+        zero: 0 job processes
+      job_semaphores:
+        one: 1 job semaphore
+        other: "%{count} job semaphores"
+        zero: 0 job semaphores
+      jobs:
+        one: 1 job
+        other: "%{count} jobs"
+        zero: 0 jobs
+      log_in: Log in
+      log_out: Log out
+      mailers: Mailers
+      passwords:
+        one: 1 password
+        other: "%{count} passwords"
+        zero: 0 passwords
+      phone_numbers:
+        one: 1 phone number
+        other: "%{count} phone numbers"
+        zero: 0 phone numbers
+      programs:
+        one: 1 program
+        other: "%{count} programs"
+        zero: 0 programs
+      ready_jobs:
+        one: 1 ready job
+        other: "%{count} ready jobs"
+        zero: 0 ready jobs
+      register: Register
+      scheduled_jobs:
+        one: 1 scheduled job
+        other: "%{count} scheduled jobs"
+        zero: 0 scheduled jobs
+      slack_accounts:
+        one: 1 slack account
+        other: "%{count} slack accounts"
+        zero: 0 slack accounts
+      title: Code
+      up: "/up"
+      users:
+        one: 1 user
+        other: "%{count} users"
+        zero: 0 users
   pages:
     documentation:
       title: Documentation
     home:
-      title: Code
       submit: Evaluate
+      title: Code
     up:
-      title: /up
-  users:
-    form:
-      user: User
-    index:
-      title: Users
-      new: New user
-    create:
-      notice: Registered
-    update:
-      notice: User updated
-    destroy:
-      notice: User deleted
-    new:
-      title: Registration
-      submit: Register
-    edit:
-      title: Edit user
-      submit: Update
-    show:
-      location: location
-      latitude: latitude
-      longitude: longitude
-      city: city
-      street_number: street number
-      route: route
-      county: county
-      state: state
-      postal_code: postal code
-      country: country
-      edit: Edit user
-      destroy: Delete user
-      confirm: Are you sure you want to delete this user?
-      admin: Admin
-      new_phone_number: New phone number
-      new_email_address: New email address
-      new_slack_account: New slack account
-      new_smtp_account: New SMTP account
-      new_password: New password
-      new_program: New program
-      id: ID
-      time_zone: Time zone
-      email_addresses:
-        zero: 0 email addresses
-        one: 1 email address
-        other: "%{count} email addresses"
-      slack_accounts:
-        zero: 0 slack accounts
-        one: 1 slack account
-        other: "%{count} slack accounts"
-      smtp_accounts:
-        zero: 0 SMTP accounts
-        one: 1 SMTP account
-        other: "%{count} SMTP accounts"
-      phone_numbers:
-        zero: 0 phone numbers
-        one: 1 phone number
-        other: "%{count} phone numbers"
-      passwords:
-        zero: 0 passwords
-        one: 1 password
-        other: "%{count} passwords"
-      programs:
-        zero: 0 programs
-        one: 1 program
-        other: "%{count} programs"
-  sessions:
-    create:
-      wrong_email_address: Wrong email address
-      wrong_password: Wrong password
-      notice: Logged in
-    new:
-      title: Log in
-      submit: Log in
-    destroy:
-      notice: Logged out
-  phone_numbers:
-    index:
-      title: Phone numbers
-      new: New phone number
-    create:
-      notice: Phone number created
-    update:
-      notice: Phone number updated
-    destroy:
-      notice: Phone number deleted
-    new:
-      title: New phone number
-      submit: Create phone number
-    edit:
-      title: Edit phone number
-      submit: Update phone number
-    show:
-      id: ID
-      primary: primary
-      edit: Edit phone number
-      delete: Delete phone number
-      belongs_to: belongs to
-      phone_number: phone number
-      call: Call
-      sms: SMS
-      send_verification_code: Send verification code
-      verified: verified
-      verify: Verify
-      cancel: Cancel
-      whatsapp: WhatsApp
-    form:
-      remove: Remove
-      phone_number: Phone number
-    nested:
-      add_phone_number: Add phone number
-  email_addresses:
-    index:
-      title: Email addresses
-      new: New email address
-    create:
-      notice: Email address created
-    update:
-      notice: Email address updated
-    destroy:
-      notice: Email address deleted
-    new:
-      title: New email address
-      submit: Create email address
-    edit:
-      title: Edit email address
-      submit: Update email address
-    show:
-      verify: Verify
-      cancel: Cancel
-      id: ID
-      verified: verified
-      primary: primary
-      edit: Edit email address
-      delete: Delete email address
-      belongs_to: belongs to
-      email_address: email address
-      send_verification_code: Send verification code
-    form:
-      remove: Remove
-      email_address: Email address
-    nested:
-      add_email_address: Add email address
-  shared:
-    field:
-      or: or
-      eg: e.g.
-      session:
-        email_address: Email address
-        password: Password
-      password:
-        show_password: Show password
-        hide_password: Hide password
-        user_id: User
-        password: Password
-        hint: Hint
-      phone_number:
-        user_id: User
-        primary: Primary?
-        verified: Verified?
-        phone_number: Phone number
-        verification_code: Verification code
-      smtp_account:
-        port: Port
-        address: Address
-        user_name: User name
-        user_id: User
-        primary: Primary?
-        verified: Verified?
-        password: Password
-        authentication: Authentication
-        enable_starttls_auto: Enable StartTLS auto
-        display_name: Display name
-      slack_account:
-        user_id: User
-        primary: Primary?
-        verified: Verified?
-      email_address:
-        verification_code: Verification code
-        user_id: User
-        primary: Primary?
-        verified: Verified?
-        email_address: Email address
-        display_name: Display name
-        smtp_address: SMTP address
-        smtp_port: SMTP port
-        smtp_user_name: SMTP user name
-        smtp_password: SMTP password
-        smtp_authentication: SMTP authentication
-        smtp_enable_starttls_auto: SMTP enable StartTLS auto
-      user:
-        location: Location
-        admin: Admin?
-        name: Name
-        time_zone: Time zone
-      program:
-        user_id: User
-        name: Name
-        input: Input
+      title: "/up"
   password_validator:
     model:
       sequence:
@@ -385,70 +166,290 @@ en:
         sequence: Avoid sequences
         spatial: Use longer keyboard patterns with more turns
         year: Avoid recent years, especially if they are associated with you
-  slack_accounts:
-    update:
-      notice: Slack account updated
+  passwords:
+    create:
+      notice: Password created
+    destroy:
+      notice: Password deleted
     edit:
-      title: Edit slack account
-      submit: Update slack account
+      submit: Update password
+      title: Edit password
     form:
-      slack_account: Slack account
+      password: Password
       remove: Remove
     index:
+      new: New password
+      title: Passwords
+    nested:
+      add_password: Add password
+    new:
+      submit: Create password
+      title: New password
+    show:
+      belongs_to: belongs to
+      delete: Delete password
+      edit: Edit password
+      id: ID
+      password: password
+    update:
+      notice: Password updated
+  phone_numbers:
+    create:
+      notice: Phone number created
+    destroy:
+      notice: Phone number deleted
+    edit:
+      submit: Update phone number
+      title: Edit phone number
+    form:
+      phone_number: Phone number
+      remove: Remove
+    index:
+      new: New phone number
+      title: Phone numbers
+    nested:
+      add_phone_number: Add phone number
+    new:
+      submit: Create phone number
+      title: New phone number
+    show:
+      belongs_to: belongs to
+      call: Call
+      cancel: Cancel
+      delete: Delete phone number
+      edit: Edit phone number
+      id: ID
+      phone_number: phone number
+      primary: primary
+      send_verification_code: Send verification code
+      sms: SMS
+      verified: verified
+      verify: Verify
+      whatsapp: WhatsApp
+    update:
+      notice: Phone number updated
+  programs:
+    create:
+      notice: Program created
+    destroy:
+      notice: Program deleted
+    edit:
+      submit: Re-evaluate
+      title: Edit program
+    form:
       eg: e.g.
-      title: Slack accounts
-      new: New slack account
+      generate: Generate
+      loading: Generating...
+      program: Program
+      prompt: Prompt
+    index:
+      new: New program
+      title: Programs
+    new:
+      submit: Evaluate
+      title: New program
+    show:
+      belongs_to: belongs to
+      delete: Delete program
+      edit: Edit program
+      error: error
+      id: ID
+      input: input
+      new_email_address: New email address
+      new_password: New password
+      output: output
+      result: result
+      submit: Re-evaluate
+    update:
+      notice: Program updated
+  sessions:
+    create:
+      notice: Logged in
+      wrong_email_address: Wrong email address
+      wrong_password: Wrong password
+    destroy:
+      notice: Logged out
+    new:
+      submit: Log in
+      title: Log in
+  shared:
+    field:
+      eg: e.g.
+      email_address:
+        display_name: Display name
+        email_address: Email address
+        primary: Primary?
+        smtp_address: SMTP address
+        smtp_authentication: SMTP authentication
+        smtp_enable_starttls_auto: SMTP enable StartTLS auto
+        smtp_password: SMTP password
+        smtp_port: SMTP port
+        smtp_user_name: SMTP user name
+        user_id: User
+        verification_code: Verification code
+        verified: Verified?
+      or: or
+      password:
+        hide_password: Hide password
+        hint: Hint
+        password: Password
+        show_password: Show password
+        user_id: User
+      phone_number:
+        phone_number: Phone number
+        primary: Primary?
+        user_id: User
+        verification_code: Verification code
+        verified: Verified?
+      program:
+        input: Input
+        name: Name
+        user_id: User
+      session:
+        email_address: Email address
+        password: Password
+      slack_account:
+        primary: Primary?
+        user_id: User
+        verified: Verified?
+      smtp_account:
+        address: Address
+        authentication: Authentication
+        display_name: Display name
+        enable_starttls_auto: Enable StartTLS auto
+        password: Password
+        port: Port
+        primary: Primary?
+        user_id: User
+        user_name: User name
+        verified: Verified?
+      user:
+        admin: Admin?
+        location: Location
+        name: Name
+        time_zone: Time zone
+  slack_accounts:
     destroy:
       notice: Slack account deleted
+    edit:
+      submit: Update slack account
+      title: Edit slack account
+    form:
+      remove: Remove
+      slack_account: Slack account
+    index:
+      eg: e.g.
+      new: New slack account
+      title: Slack accounts
     show:
+      belongs_to: belongs to
+      channels: channels
+      delete: Delete slack account
       edit: Edit slack account
       id: ID
-      belongs_to: belongs to
-      verified: verified
       primary: primary
       token: token
-      delete: Delete slack account
-      channels: channels
+      verified: verified
+    update:
+      notice: Slack account updated
   smtp_accounts:
-    index:
-      title: SMTP accounts
-      new: New SMTP account
     create:
       notice: SMTP account created
-    update:
-      notice: SMTP account updated
     destroy:
       notice: SMTP account deleted
-    new:
-      title: New SMTP account
-      submit: Create SMTP account
     edit:
-      title: Edit SMTP account
       submit: Update SMTP account
-    show:
-      id: ID
-      primary: primary
-      edit: Edit SMTP account
-      delete: Delete SMTP account
-      belongs_to: belongs to
-      smtp_account: SMTP account
-      verified: verified
-      port: port
-      address: address
-      user_name: user name
-      password: password
-      authentication: authentication
-      enable_starttls_auto: enable StartTLS auto
-      display_name: display name
+      title: Edit SMTP account
     form:
       remove: Remove
       smtp_account: SMTP account
+    index:
+      new: New SMTP account
+      title: SMTP accounts
     nested:
       add_smtp_account: Add SMTP account
-  email_address_mailer:
-    verification_code_email:
-      subject: "Your %{host} verification code is %{verification_code}"
-      hi: Hi,
-      intro: "Here is your verification code for %{host}:"
-      thanks: Thanks,
-      dorian: Dorian
+    new:
+      submit: Create SMTP account
+      title: New SMTP account
+    show:
+      address: address
+      authentication: authentication
+      belongs_to: belongs to
+      delete: Delete SMTP account
+      display_name: display name
+      edit: Edit SMTP account
+      enable_starttls_auto: enable StartTLS auto
+      id: ID
+      password: password
+      port: port
+      primary: primary
+      smtp_account: SMTP account
+      user_name: user name
+      verified: verified
+    update:
+      notice: SMTP account updated
+  users:
+    create:
+      notice: Registered
+    destroy:
+      notice: User deleted
+    edit:
+      submit: Update
+      title: Edit user
+    form:
+      user: User
+    index:
+      new: New user
+      title: Users
+    new:
+      submit: Register
+      title: Registration
+    show:
+      admin: Admin
+      city: city
+      confirm: Are you sure you want to delete this user?
+      country: country
+      county: county
+      destroy: Delete user
+      edit: Edit user
+      email_addresses:
+        one: 1 email address
+        other: "%{count} email addresses"
+        zero: 0 email addresses
+      id: ID
+      latitude: latitude
+      location: location
+      longitude: longitude
+      new_email_address: New email address
+      new_password: New password
+      new_phone_number: New phone number
+      new_program: New program
+      new_slack_account: New slack account
+      new_smtp_account: New SMTP account
+      passwords:
+        one: 1 password
+        other: "%{count} passwords"
+        zero: 0 passwords
+      phone_numbers:
+        one: 1 phone number
+        other: "%{count} phone numbers"
+        zero: 0 phone numbers
+      postal_code: postal code
+      programs:
+        one: 1 program
+        other: "%{count} programs"
+        zero: 0 programs
+      route: route
+      slack_accounts:
+        one: 1 slack account
+        other: "%{count} slack accounts"
+        zero: 0 slack accounts
+      smtp_accounts:
+        one: 1 SMTP account
+        other: "%{count} SMTP accounts"
+        zero: 0 SMTP accounts
+      state: state
+      street_number: street number
+      time_zone: Time zone
+    update:
+      notice: User updated
