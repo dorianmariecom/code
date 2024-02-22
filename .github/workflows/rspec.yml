@@ -16,6 +16,14 @@ jobs:
       postgres:
         image: postgres:latest
         ports: ["5432:5432"]
+        env:
+          RAILS_ENV: test
+          PGHOST: localhost
+          PGUSER: postgres
+          PGPASSWORD: password
+          POSTGRES_HOST: localhost
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
