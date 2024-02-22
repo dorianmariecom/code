@@ -30,6 +30,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - uses: actions/setup-node@v4
       - run: sudo apt-get -yqq install libpq-dev
       - run: bin/rails db:create db:schema:load
       - run: bin/rails assets:precompile
