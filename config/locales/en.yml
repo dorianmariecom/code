@@ -12,7 +12,7 @@ en:
     verification_code_email:
       dorian: Dorian
       hi: Hi,
-      intro: 'Here is your verification code for %{host}:'
+      intro: "Here is your verification code for %{host}:"
       subject: Your %{host} verification code is %{verification_code}
       thanks: Thanks,
   email_addresses:

@@ -13,4 +13,4 @@ pin "intl-tel-input/build/js/intlTelInput",
     to: "intl-tel-input--build--js--intlTelInput.js.js"
 pin "intl-tel-input/build/js/utils", to: "intl-tel-input--build--js--utils.js"
 pin "stimulus-places-autocomplete"
-pin "@googlemaps/js-api-loader", to: "@googlemaps--js-api-loader.js" # @1.16.2
+pin "@googlemaps/js-api-loader", to: "@googlemaps--js-api-loader.js"

@@ -1,41 +1,52 @@
-function __awaiter(e, t, i, r) {
+function __awaiter(e, t, r, i) {
   function adopt(e) {
-    return e instanceof i
+    return e instanceof r
       ? e
-      : new i(function (t) {
+      : new r(function (t) {
           t(e);
         });
   }
-  return new (i || (i = Promise))(function (i, s) {
+  return new (r || (r = Promise))(function (r, s) {
     function fulfilled(e) {
       try {
-        step(r.next(e));
+        step(i.next(e));
       } catch (e) {
         s(e);
       }
     }
     function rejected(e) {
       try {
-        step(r.throw(e));
+        step(i.throw(e));
       } catch (e) {
         s(e);
       }
     }
     function step(e) {
-      e.done ? i(e.value) : adopt(e.value).then(fulfilled, rejected);
+      e.done ? r(e.value) : adopt(e.value).then(fulfilled, rejected);
     }
-    step((r = r.apply(e, t || [])).next());
+    step((i = i.apply(e, t || [])).next());
   });
+}
+typeof SuppressedError === "function"
+  ? SuppressedError
+  : function (e, t, r) {
+      var i = new Error(r);
+      return (i.name = "SuppressedError"), (i.error = e), (i.suppressed = t), i;
+    };
+function getDefaultExportFromCjs(e) {
+  return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default")
+    ? e.default
+    : e;
 }
 var e = function equal(e, t) {
   if (e === t) return true;
-  if (e && t && "object" == typeof e && "object" == typeof t) {
+  if (e && t && typeof e == "object" && typeof t == "object") {
     if (e.constructor !== t.constructor) return false;
-    var i, r, s;
+    var r, i, s;
     if (Array.isArray(e)) {
-      i = e.length;
-      if (i != t.length) return false;
-      for (r = i; 0 !== r--; ) if (!equal(e[r], t[r])) return false;
+      r = e.length;
+      if (r != t.length) return false;
+      for (i = r; i-- !== 0; ) if (!equal(e[i], t[i])) return false;
       return true;
     }
     if (e.constructor === RegExp)
@@ -45,19 +56,20 @@ var e = function equal(e, t) {
     if (e.toString !== Object.prototype.toString)
       return e.toString() === t.toString();
     s = Object.keys(e);
-    i = s.length;
-    if (i !== Object.keys(t).length) return false;
-    for (r = i; 0 !== r--; )
-      if (!Object.prototype.hasOwnProperty.call(t, s[r])) return false;
-    for (r = i; 0 !== r--; ) {
-      var o = s[r];
+    r = s.length;
+    if (r !== Object.keys(t).length) return false;
+    for (i = r; i-- !== 0; )
+      if (!Object.prototype.hasOwnProperty.call(t, s[i])) return false;
+    for (i = r; i-- !== 0; ) {
+      var o = s[i];
       if (!equal(e[o], t[o])) return false;
     }
     return true;
   }
   return e !== e && t !== t;
 };
-const t = "__googleMapsScriptId";
+var t = getDefaultExportFromCjs(e);
+const r = "__googleMapsScriptId";
 var i;
 (function (e) {
   e[(e.INITIALIZED = 0)] = "INITIALIZED";
@@ -67,39 +79,39 @@ var i;
 })(i || (i = {}));
 class Loader {
   constructor({
-    apiKey: i,
-    authReferrerPolicy: r,
+    apiKey: e,
+    authReferrerPolicy: i,
     channel: s,
     client: o,
-    id: n = t,
+    id: n = r,
     language: a,
     libraries: l = [],
     mapIds: h,
     nonce: c,
     region: d,
-    retries: g = 3,
-    url: p = "https://maps.googleapis.com/maps/api/js",
+    retries: p = 3,
+    url: g = "https://maps.googleapis.com/maps/api/js",
     version: f,
   }) {
     this.callbacks = [];
     this.done = false;
     this.loading = false;
     this.errors = [];
-    this.apiKey = i;
-    this.authReferrerPolicy = r;
+    this.apiKey = e;
+    this.authReferrerPolicy = i;
     this.channel = s;
     this.client = o;
-    this.id = n || t;
+    this.id = n || r;
     this.language = a;
     this.libraries = l;
     this.mapIds = h;
     this.nonce = c;
     this.region = d;
-    this.retries = g;
-    this.url = p;
+    this.retries = p;
+    this.url = g;
     this.version = f;
     if (Loader.instance) {
-      if (!e(this.options, Loader.instance.options))
+      if (!t(this.options, Loader.instance.options))
         throw new Error(
           `Loader must not be called again with different options. ${JSON.stringify(this.options)} !== ${JSON.stringify(Loader.instance.options)}`,
         );
@@ -142,7 +154,7 @@ class Loader {
    * @deprecated
    */ createUrl() {
     let e = this.url;
-    e += "?callback=__googleMapsCallback";
+    e += "?callback=__googleMapsCallback&loading=async";
     this.apiKey && (e += `&key=${this.apiKey}`);
     this.channel && (e += `&channel=${this.channel}`);
     this.client && (e += `&client=${this.client}`);
@@ -173,8 +185,8 @@ class Loader {
    * @deprecated, use importLibrary() instead.
    */ loadPromise() {
     return new Promise((e, t) => {
-      this.loadCallback((i) => {
-        i ? t(i.error) : e(window.google);
+      this.loadCallback((r) => {
+        r ? t(r.error) : e(window.google);
       });
     });
   }
@@ -195,7 +207,7 @@ class Loader {
       this.callback();
       return;
     }
-    const i = {
+    const r = {
       key: this.apiKey,
       channel: this.channel,
       client: this.client,
@@ -206,20 +218,18 @@ class Loader {
       region: this.region,
       authReferrerPolicy: this.authReferrerPolicy,
     };
-    Object.keys(i).forEach((e) => !i[e] && delete i[e]);
-    (null ===
-      (t =
-        null ===
-          (e = null === window || void 0 === window ? void 0 : window.google) ||
-        void 0 === e
-          ? void 0
-          : e.maps) || void 0 === t
+    Object.keys(r).forEach((e) => !r[e] && delete r[e]);
+    ((t =
+      (e = window === null || window === void 0 ? void 0 : window.google) ===
+        null || e === void 0
+        ? void 0
+        : e.maps) === null || t === void 0
       ? void 0
       : t.importLibrary) ||
       ((e) => {
         let t,
-          i,
           r,
+          i,
           s = "The Google Maps JavaScript API",
           o = "google",
           n = "importLibrary",
@@ -229,41 +239,41 @@ class Loader {
         h = h[o] || (h[o] = {});
         const c = h.maps || (h.maps = {}),
           d = new Set(),
-          g = new URLSearchParams(),
+          p = new URLSearchParams(),
           u = () =>
             t ||
             (t = new Promise((n, h) =>
               __awaiter(this, void 0, void 0, function* () {
-                var p;
-                yield (i = l.createElement("script"));
-                i.id = this.id;
-                g.set("libraries", [...d] + "");
-                for (r in e)
-                  g.set(
-                    r.replace(/[A-Z]/g, (e) => "_" + e[0].toLowerCase()),
-                    e[r],
+                var g;
+                yield (r = l.createElement("script"));
+                r.id = this.id;
+                p.set("libraries", [...d] + "");
+                for (i in e)
+                  p.set(
+                    i.replace(/[A-Z]/g, (e) => "_" + e[0].toLowerCase()),
+                    e[i],
                   );
-                g.set("callback", o + ".maps." + a);
-                i.src = this.url + "?" + g;
+                p.set("callback", o + ".maps." + a);
+                r.src = this.url + "?" + p;
                 c[a] = n;
-                i.onerror = () => (t = h(Error(s + " could not load.")));
-                i.nonce =
+                r.onerror = () => (t = h(Error(s + " could not load.")));
+                r.nonce =
                   this.nonce ||
-                  (null === (p = l.querySelector("script[nonce]")) ||
-                  void 0 === p
+                  ((g = l.querySelector("script[nonce]")) === null ||
+                  g === void 0
                     ? void 0
-                    : p.nonce) ||
+                    : g.nonce) ||
                   "";
-                l.head.append(i);
+                l.head.append(r);
               }),
             ));
         c[n]
           ? console.warn(s + " only loads once. Ignoring:", e)
           : (c[n] = (e, ...t) => d.add(e) && u().then(() => c[n](e, ...t)));
-      })(i);
-    const r = this.libraries.map((e) => this.importLibrary(e));
-    r.length || r.push(this.importLibrary("core"));
-    Promise.all(r).then(
+      })(r);
+    const i = this.libraries.map((e) => this.importLibrary(e));
+    i.length || i.push(this.importLibrary("core"));
+    Promise.all(i).then(
       () => this.callback(),
       (e) => {
         const t = new ErrorEvent("error", { error: e });
@@ -322,4 +332,4 @@ class Loader {
     }
   }
 }
-export { t as DEFAULT_ID, Loader, i as LoaderStatus };
+export { r as DEFAULT_ID, Loader, i as LoaderStatus };
