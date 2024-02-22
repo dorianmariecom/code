@@ -2,7 +2,8 @@
 /.env
 /.env.*.local
 /app/assets/builds/*
-/config/master.key
+/config/credentials/*.key
+/config/*.key
 /log/*
 /node_modules
 /public/assets
