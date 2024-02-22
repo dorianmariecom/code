@@ -9,6 +9,7 @@ jobs:
       postgres:
         image: postgres:16.2
         env:
+          POSTGRES_HOST: localhost
           POSTGRES_USER: code
           POSTGRES_PASSWORD: password
           POSTGRES_DB: code_test
@@ -26,8 +27,10 @@ jobs:
           bundler-cache: true
       - uses: actions/setup-node@v4
       - run: bin/rails db:create db:schema:load
+        env:
+          POSTGRES_USER: code
+          POSTGRES_PASSWORD: password
       - run: bin/rspec
         env:
+          POSTGRES_USER: code
           POSTGRES_PASSWORD: password
-          POSTGRES_HOST: postgres
-          POSTGRES_PORT: 5432

@@ -5,9 +5,8 @@ development:
 production:
   adapter: postgresql
   database: code_production
-  host: 165.232.149.13
-  password: <%= ENV["POSTGRES_PASSWORD"] %>
-  username: code
 test:
   adapter: postgresql
   database: code_test
+  password: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
