@@ -5,7 +5,7 @@ class Rack::Attack
     request.ip if request.path =~ /session/
   end
 
-  thottle("verification_codes/ip", limit: 5, period: 20.seconds) do |request|
+  throttle("verification_codes/ip", limit: 5, period: 20.seconds) do |request|
     request.ip if request.path =~ /verification_code/
   end
 end
