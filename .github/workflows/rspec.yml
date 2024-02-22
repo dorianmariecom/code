@@ -27,3 +27,7 @@ jobs:
       - uses: actions/setup-node@v4
       - run: bin/rails db:create db:schema:load
       - run: bin/rspec
+        env:
+          POSTGRES_PASSWORD: password
+          POSTGRES_HOST: postgres
+          POSTGRES_PORT: 5432
