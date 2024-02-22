@@ -42,6 +42,10 @@ group :production do
   gem "rack-timeout"
 end
 
+group :development do
+  gem "rubocop-rails-omakase", require: false
+end
+
 group :test do
   gem "capybara"
   gem "factory_bot_rails"

@@ -21,7 +21,8 @@ class VerificationCodesController < ApplicationController
   private
 
   def id
-    params[:phone_number_id] || params[:email_address_id] || params[:smtp_account_id]
+    params[:phone_number_id] || params[:email_address_id] ||
+      params[:smtp_account_id]
   end
 
   def load_verifiable

@@ -17,7 +17,7 @@ class Code
         case operator.to_s
         when "send"
           sig(args) { { body: String.maybe } }
-          code_send(body: value&.code_get(String.new("body")))
+          code_send(body: value&.code_get(+"body"))
         else
           super
         end

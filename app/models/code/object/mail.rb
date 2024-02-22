@@ -23,10 +23,10 @@ class Code
             }
           end
           code_send(
-            from: value&.code_get(String.new("from")),
-            to: value&.code_get(String.new("to")),
-            subject: value&.code_get(String.new("subject")),
-            body: value&.code_get(String.new("body"))
+            from: value&.code_get(+"from"),
+            to: value&.code_get(+"to"),
+            subject: value&.code_get(+"subject"),
+            body: value&.code_get(+"body")
           )
         else
           super
