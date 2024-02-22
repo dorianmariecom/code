@@ -329,15 +329,18 @@ en:
       phone_number:
         user_id: User
         primary: Primary?
+        verified: Verified?
         phone_number: Phone number
         verification_code: Verification code
       smtp_account:
         user_id: User
         primary: Primary?
+        verified: Verified?
       email_address:
         verification_code: Verification code
         user_id: User
         primary: Primary?
+        verified: Verified?
         email_address: Email address
         display_name: Display name
         smtp_address: SMTP address
