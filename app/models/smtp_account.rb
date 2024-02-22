@@ -39,6 +39,13 @@ class SmtpAccount < ApplicationRecord
     !verified?
   end
 
+  def send_verification_code!
+    Net::SMTP.start(address, port) do |smtp|
+      smtp.authenticate(user_name, password)
+      update!(verified: true)
+    end
+  end
+
   def deliver!(from:, to:, subject:, body:)
     mail = Mail.new
     mail.from = from
@@ -47,12 +54,12 @@ class SmtpAccount < ApplicationRecord
     mail.body = body
     mail.delivery_method(
       :smtp,
-      address: smtp_address,
-      port: smtp_port,
-      user_name: smtp_user_name,
-      password: smtp_password,
-      authentication: smtp_authentication,
-      enable_starttls_auto: smtp_enable_starttls_auto
+      address:,
+      port:,
+      user_name:,
+      password:,
+      authentication:,
+      enable_starttls_auto:
     )
     mail.deliver!
   end

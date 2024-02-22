@@ -43,14 +43,14 @@ class Code
           if from.truthy?
             from.raw
           else
-            ::Current.primary_smtp_account!.email_address_with_display_name
+            ::Current.primary_smtp_account!.email_address_with_name
           end
 
         to =
           if to.truthy?
             to.raw
           else
-            ::Current.primary_smtp_account!.email_address_with_display_name
+            ::Current.primary_smtp_account!.email_address_with_name
           end
 
         from = ::Mail::AddressList.new(from)

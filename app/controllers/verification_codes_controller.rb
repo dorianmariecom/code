@@ -21,7 +21,7 @@ class VerificationCodesController < ApplicationController
   private
 
   def id
-    params[:phone_number_id] || params[:email_address_id]
+    params[:phone_number_id] || params[:email_address_id] || params[:smtp_account_id]
   end
 
   def load_verifiable
@@ -39,8 +39,10 @@ class VerificationCodesController < ApplicationController
       rescue ActiveSupport::MessageVerifier::InvalidSignature
         @verifiable = authorize policy_scope(EmailAddress).find(id)
       end
+    elsif params[:smtp_account_id].present?
+      @verifiable = authorize policy_scope(SmtpAccount).find(id)
     else
-      raise NotImplementedError
+      raise NotImplementedError, params.inspect
     end
   end
 

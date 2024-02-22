@@ -141,6 +141,10 @@ en:
         one: 1 slack account
         other: "%{count} slack accounts"
         zero: 0 slack accounts
+      smtp_accounts:
+        one: 1 SMTP account
+        other: "%{count} SMTP accounts"
+        zero: 0 SMTP accounts
       title: Code
       up: "/up"
       users:
@@ -372,6 +376,7 @@ en:
       submit: Create SMTP account
       title: New SMTP account
     show:
+      verify: Verify
       address: address
       authentication: authentication
       belongs_to: belongs to

@@ -27,10 +27,12 @@ Rails.application.routes.draw do
     resources :phone_numbers do
       resource :verification_code
     end
+    resources :smtp_accounts do
+      resource :verification_code
+    end
+    resources :slack_accounts
     resources :passwords
     resources :programs
-    resources :slack_accounts
-    resources :smtp_accounts
   end
 
   resources :email_addresses do
@@ -39,10 +41,12 @@ Rails.application.routes.draw do
   resources :phone_numbers do
     resource :verification_code
   end
+  resources :smtp_accounts do
+    resource :verification_code
+  end
+  resources :slack_accounts
   resources :passwords
   resources :programs
-  resources :slack_accounts
-  resources :smtp_accounts
 
   match "/auth/slack/callback" => "slack_accounts#callback",
         :via => %i[get post]
