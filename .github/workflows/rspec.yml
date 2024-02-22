@@ -5,9 +5,21 @@ jobs:
   rspec:
     name: RSpec
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16.2
+        env:
+          POSTGRES_USER: code
+          POSTGRES_PASSWORD: ""
+          POSTGRES_DB: code_test
+        ports:
+        - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - uses: actions/setup-node@v4
+      - run: bin/rails db:create db:schema:load
       - run: bin/rspec
