@@ -6,7 +6,8 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.preview_paths << "#{Rails.root}/spec/mailers/previews"
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.smtp_settings = Rails.application.credentials.smtp_settings
+  config.action_mailer.smtp_settings =
+    Rails.application.credentials.smtp_settings
   config.action_view.annotate_rendered_view_with_filenames = true
   config.active_job.verbose_enqueue_logs = true
   config.active_record.migration_error = :page_load

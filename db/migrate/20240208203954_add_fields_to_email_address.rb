@@ -6,33 +6,17 @@ class AddFieldsToEmailAddress < ActiveRecord::Migration[7.1]
       :email_addresses,
       :smtp_address,
       :string,
-      default: 'smtp.gmail.com',
+      default: "smtp.gmail.com",
       null: false
     )
-    add_column(
-      :email_addresses,
-      :smtp_port,
-      :bigint,
-      default: 465,
-      null: false
-    )
-    add_column(
-      :email_addresses,
-      :smtp_user_name,
-      :string,
-      null: false
-    )
-    add_column(
-      :email_addresses,
-      :smtp_password,
-      :string,
-      null: false
-    )
+    add_column(:email_addresses, :smtp_port, :bigint, default: 465, null: false)
+    add_column(:email_addresses, :smtp_user_name, :string, null: false)
+    add_column(:email_addresses, :smtp_password, :string, null: false)
     add_column(
       :email_addresses,
       :smtp_authentication,
       :string,
-      default: 'plain',
+      default: "plain",
       null: false
     )
     add_column(

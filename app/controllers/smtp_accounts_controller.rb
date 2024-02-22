@@ -79,10 +79,25 @@ class SmtpAccountsController < ApplicationController
         :user_id,
         :primary,
         :verified,
-        :smtp_account
+        :display_name,
+        :address,
+        :port,
+        :user_name,
+        :password,
+        :authentication,
+        :enable_starttls_auto
       )
     else
-      params.require(:smtp_account).permit(:primary, :smtp_account)
+      params.require(:smtp_account).permit(
+        :primary,
+        :display_name,
+        :address,
+        :port,
+        :user_name,
+        :password,
+        :authentication,
+        :enable_starttls_auto
+      )
     end
   end
 end

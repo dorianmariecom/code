@@ -9,6 +9,13 @@
     = render "shared/field", f: f, field: :verified, type: :checkbox
 
   = render "shared/field", f: f, field: :primary, type: :checkbox
+  = render "shared/field", f: f, field: :display_name, type: :name, fake: fake_smtp_display_names, autocomplete: :name
+  = render "shared/field", f: f, field: :address, type: :domain, required: true, fake: fake_smtp_addresses
+  = render "shared/field", f: f, field: :port, type: :number, required: true, fake: fake_smtp_ports
+  = render "shared/field", f: f, field: :user_name, type: :email_address, autocomplete: :email, required: true, fake: fake_smtp_user_names
+  = render "shared/field", f: f, field: :password, type: :password, required: true, fake: fake_smtp_passwords
+  = render "shared/field", f: f, field: :authentication, type: :string, required: true, fake: fake_smtp_authentications
+  = render "shared/field", f: f, field: :enable_starttls_auto, type: :checkbox
 
   - if removable
     = f.hidden_field :_destroy

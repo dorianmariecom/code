@@ -212,6 +212,7 @@ en:
       new_phone_number: New phone number
       new_email_address: New email address
       new_slack_account: New slack account
+      new_smtp_account: New SMTP account
       new_password: New password
       new_program: New program
       id: ID
@@ -224,6 +225,10 @@ en:
         zero: 0 slack accounts
         one: 1 slack account
         other: "%{count} slack accounts"
+      smtp_accounts:
+        zero: 0 SMTP accounts
+        one: 1 SMTP account
+        other: "%{count} SMTP accounts"
       phone_numbers:
         zero: 0 phone numbers
         one: 1 phone number
@@ -333,9 +338,16 @@ en:
         phone_number: Phone number
         verification_code: Verification code
       smtp_account:
+        port: Port
+        address: Address
+        user_name: User name
         user_id: User
         primary: Primary?
         verified: Verified?
+        password: Password
+        authentication: Authentication
+        enable_starttls_auto: Enable StartTLS auto
+        display_name: Display name
       slack_account:
         user_id: User
         primary: Primary?
@@ -421,6 +433,13 @@ en:
       belongs_to: belongs to
       smtp_account: SMTP account
       verified: verified
+      port: port
+      address: address
+      user_name: user name
+      password: password
+      authentication: authentication
+      enable_starttls_auto: enable StartTLS auto
+      display_name: display name
     form:
       remove: Remove
       smtp_account: SMTP account

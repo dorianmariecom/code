@@ -5,7 +5,9 @@ class AddPrimaryEmailAddressToUsers < ActiveRecord::Migration[7.1]
     add_reference(
       :users,
       :primary_email_address,
-      foreign_key: { to_table: :email_addresses }
+      foreign_key: {
+        to_table: :email_addresses
+      }
     )
   end
 end
