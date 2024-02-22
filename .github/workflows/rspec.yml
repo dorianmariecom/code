@@ -1,13 +1,13 @@
-name: Brakeman
+name: RSpec
 on: [push]
 
 jobs:
-  brakeman:
-    name: Brakeman
+  rspec:
+    name: RSpec
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: brakeman -A -q --color
+      - run: rspec

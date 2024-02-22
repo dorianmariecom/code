@@ -1,13 +1,13 @@
-name: Brakeman
+name: Rubocop
 on: [push]
 
 jobs:
-  brakeman:
-    name: Brakeman
+  rubocop:
+    name: Rubocop
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: brakeman -A -q --color
+      - run: rubocop

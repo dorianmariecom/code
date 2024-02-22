@@ -1,5 +1,1 @@
-- brakeman
-- bundle audit
-- yarn audit
-- importmap audit
 - set sms verification to 6 digits

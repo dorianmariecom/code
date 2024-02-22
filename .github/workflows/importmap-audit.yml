@@ -1,13 +1,13 @@
-name: Brakeman
+name: Importmap Audit
 on: [push]
 
 jobs:
-  brakeman:
-    name: Brakeman
+  importmap-audit:
+    name: Importmap Audit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: brakeman -A -q --color
+      - run: bin/importmap audit
