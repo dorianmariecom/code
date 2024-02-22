@@ -4,8 +4,6 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
   config.action_mailer.perform_caching = false
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings =
-    Rails.application.credentials.smtp_settings
   config.active_record.dump_schema_after_migration = false
   config.active_storage.service = :local
   config.active_support.report_deprecations = false
@@ -14,6 +12,7 @@ Rails.application.configure do
   config.consider_all_requests_local = false
   config.eager_load = true
   config.enable_reloading = false
+  config.force_ssl = true
   config.hosts << "localhost:3000"
   config.hosts << ENV.fetch("HOST")
   config.i18n.fallbacks = true
@@ -21,9 +20,11 @@ Rails.application.configure do
   config.log_tags = [:request_id]
   config.public_file_server.enabled = true
   config.require_master_key = ENV["RAILS_MASTER_KEY_DUMMY"].blank?
-  config.solid_errors.send_emails = true
   config.solid_errors.email_from = "dorian@dorianmarie.com"
   config.solid_errors.email_to = "dorian@dorianmarie.com"
+  config.solid_errors.send_emails = true
+  config.action_mailer.smtp_settings =
+    Rails.application.credentials.smtp_settings
   config.logger =
     ActiveSupport::Logger
       .new($stdout)
