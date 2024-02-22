@@ -3,6 +3,4 @@
 set -e
 
 git push
-kamal lock release
-kamal envify
-kamal redeploy
+git push heroku
