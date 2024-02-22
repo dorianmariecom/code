@@ -114,7 +114,7 @@ class UsersController < ApplicationController
         :longitude,
         email_addresses_attributes: %i[id _destroy primary email_address],
         phone_numbers_attributes: %i[id _destroy primary phone_number],
-        passwords_attributes: %i[id _destroy password hint]
+        passwords_attributes: %i[id _destroy password hint],
         smtp_accounts_attributes: %i[id _destroy primary],
         slack_accounts_attributes: %i[id _destroy primary]
       )
