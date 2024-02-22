@@ -24,6 +24,7 @@ gem "pg"
 gem "phonelib"
 gem "puma"
 gem "pundit"
+gem "rack-attack"
 gem "rails", rails: :rails
 gem "redis"
 gem "rubocop"
