@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+git_source(:github) { |name| "https://github.com/#{name}" }
 git_source(:rails) { |name| "https://github.com/rails/#{name}" }
 
 ruby "3.3.0"
@@ -27,7 +28,7 @@ gem "rails", rails: :rails
 gem "redis"
 gem "rubocop"
 gem "slim-rails"
-gem "solid_errors"
+gem "solid_errors", github: "fractaledmind/solid_errors"
 gem "solid_queue"
 gem "sprockets-rails"
 gem "stimulus-rails"

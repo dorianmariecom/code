@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/fractaledmind/solid_errors
+  revision: 6e23ceea68932423863976e2392f370da182c16a
+  specs:
+    solid_errors (0.3.5)
+      rails (~> 7.0)
+
+GIT
   remote: https://github.com/rails/rails
   revision: 32587c3bdd6c5255fba0bb75f5575d61a2e15c3f
   specs:
@@ -340,8 +347,6 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (>= 3.0, < 6.0, != 5.0.0)
-    solid_errors (0.3.5)
-      rails (~> 7.0)
     solid_queue (0.2.1)
       rails (~> 7.1)
     sprockets (4.2.1)
@@ -432,7 +437,7 @@ DEPENDENCIES
   selenium-webdriver
   sinatra
   slim-rails
-  solid_errors
+  solid_errors!
   solid_queue
   sprockets-rails
   stimulus-rails
