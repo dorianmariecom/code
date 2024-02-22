@@ -8,6 +8,10 @@ jobs:
       RAILS_ENV: test
       PGHOST: localhost
       PGUSER: postgres
+      PGPASSWORD: password
+      POSTGRES_HOST: localhost
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
     services:
       postgres:
         image: postgres:latest
