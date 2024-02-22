@@ -1,6 +1,7 @@
 div(data-controller="slack-authorize-url")
   div= label_tag :team
   div= text_field_tag :team, "", data: { slack_authorize_url_target: "input", action: "slack-authorize-url#input" }
+  .text-red-600(data-slack-authorize-url-target="error")
   .text-sm.text-gray-600.italic
     => t(".eg")
     = fake_slack_teams

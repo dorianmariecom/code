@@ -1,5 +1,6 @@
 class SlackAccount < ApplicationRecord
   BASE_URL = "https://slack.com"
+  TEAM_REGEXP = /\A[a-zA-Z0-9_-]+\z/
 
   belongs_to :user, default: -> { Current.user }
 

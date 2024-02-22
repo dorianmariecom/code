@@ -115,6 +115,10 @@ module ApplicationHelper
     json_regexp(PhoneNumber::VERIFICATION_CODE_REGEXP)
   end
 
+  def slack_team_regexp
+    json_regexp(SlackAccount::TEAM_REGEXP)
+  end
+
   def whatsapp_to(phone_number, name)
     phone_number = Phonelib.parse(phone_number).e164
     link_to(name, "https://wa.me/#{h(phone_number)}")

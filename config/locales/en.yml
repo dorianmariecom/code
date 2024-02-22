@@ -11,6 +11,9 @@ en:
     email_address:
       not_present: Not present
       not_valid: Not valid
+    slack_authorize_url:
+      not_present: Not present
+      not_valid: Not valid
     name:
       not_present: Not present
     domain:
