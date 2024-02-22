@@ -24,7 +24,7 @@ html
 
       - if current_user?
         => link_to current_user
-        => link_to t(".programs", count: current_user.programs.size), [current_user, :programs]
+        => link_to t(".programs", count: policy_scope(Program).where(user: current_user).size), [current_user, :programs]
         => link_to t(".documentation"), documentation_path
         => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
       - else

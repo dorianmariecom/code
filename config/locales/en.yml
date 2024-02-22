@@ -365,6 +365,7 @@ en:
         year: Avoid recent years, especially if they are associated with you
   slack_accounts:
     index:
+      eg: e.g.
       title: Slack accounts
       new: New slack account
     destroy:

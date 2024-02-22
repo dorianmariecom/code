@@ -9,6 +9,10 @@ module ApplicationHelper
     content_for(:title).presence || t("#{controller}.#{action}.title")
   end
 
+  def fake_slack_teams
+    3.times.map { Faker::Internet.username(separators: []) }.join(", ")
+  end
+
   def google_maps_api_key
     Rails.application.credentials.console.cloud.google.com.api_key
   end
