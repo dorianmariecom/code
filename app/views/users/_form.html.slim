@@ -1,9 +1,6 @@
 .border-black.border-l-2.pl-4
   .font-bold.italic= t(".user")
 
-  - if admin?
-    = render "shared/field", f: f, field: :admin, type: :checkbox
-
   = render "shared/field", f: f, field: :name, type: :string, fake: fake_names, autocomplete: :name
   = render "shared/field", f: f, field: :location, type: :location, fake: fake_locations
   = render "shared/field", f: f, field: :time_zone, type: :time_zone, options: time_zone_options, required: true, fake: fake_time_zones

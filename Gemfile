@@ -9,6 +9,7 @@ ruby "3.3.0"
 
 gem "bcrypt"
 gem "bootsnap", require: false
+gem "brakeman"
 gem "code-ruby"
 gem "dorian"
 gem "dotenv-rails"

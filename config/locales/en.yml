@@ -328,7 +328,6 @@ en:
         user_name: User name
         verified: Verified?
       user:
-        admin: Admin?
         location: Location
         name: Name
         time_zone: Time zone
@@ -410,7 +409,6 @@ en:
       submit: Register
       title: Registration
     show:
-      admin: Admin
       city: city
       confirm: Are you sure you want to delete this user?
       country: country

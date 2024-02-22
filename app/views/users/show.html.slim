@@ -59,39 +59,39 @@
 
   .p= button_to t(".new_email_address"), new_email_address_path, method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
-  = render @email_addresses
+  = render "email_addresses/email_address", collection: @email_addresses
 
 .border-l-2.border-black.pl-4
   p.font-bold= link_to t(".phone_numbers", count: @phone_numbers.size), [@user, :phone_numbers]
 
   .p= button_to t(".new_phone_number"), new_phone_number_path, method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
-  = render @phone_numbers
+  = render "phone_numbers/phone_number", collection: @phone_numbers
 
 .border-l-2.border-black.pl-4
   p.font-bold= link_to t(".slack_accounts", count: @slack_accounts.size), [@user, :slack_accounts]
 
   .p= button_to t(".new_slack_account"), new_slack_account_path, method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
-  = render @slack_accounts
+  = render "slack_accounts/slack_account", collection: @slack_accounts
 
 .border-l-2.border-black.pl-4
   p.font-bold= link_to t(".smtp_accounts", count: @smtp_accounts.size), [@user, :smtp_accounts]
 
   .p= button_to t(".new_smtp_account"), new_smtp_account_path, method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
-  = render @smtp_accounts
+  = render "smtp_accounts/smtp_account", collection: @smtp_accounts
 
 .border-l-2.border-black.pl-4
   p.font-bold= link_to t(".passwords", count: @passwords.size), [@user, :passwords]
 
   .p= button_to t(".new_password"), new_password_path, method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
-  = render @passwords
+  = render "passwords/password", collection: @passwords
 
 .border-l-2.border-black.pl-4.mb-5
   p.font-bold= link_to t(".programs", count: @programs.size), [@user, :programs]
 
   .p= button_to t(".new_program"), new_program_path, method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
-  = render @programs
+  = render "programs/program", collection: @programs

@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   include Pundit::Authorization
   include CanConcern
 
+  protect_from_forgery with: :exception
+
   before_action :set_current_user
   after_action :verify_authorized
   after_action :verify_policy_scoped

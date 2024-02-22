@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: t(".notice")
+      redirect_to user_path(@user), notice: t(".notice")
     else
       flash.now.alert = @user.alert
       render :edit, status: :unprocessable_entity
@@ -66,7 +66,6 @@ class UsersController < ApplicationController
   def user_params
     if admin?
       params.require(:user).permit(
-        :admin,
         :name,
         :time_zone,
         :location,
