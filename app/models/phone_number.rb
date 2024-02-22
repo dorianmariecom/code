@@ -2,7 +2,7 @@
 
 class PhoneNumber < ApplicationRecord
   DEFAULT_COUNTRY_CODE = "FR"
-  BRAND = "Code"
+  BRAND = "CodeDorian"
   VERIFICATION_CODE_REGEXP = /\A[0-9 ]+\z/
 
   belongs_to :user, default: -> { Current.user }
