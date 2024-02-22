@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_02_20_203959) do
+ActiveRecord::Schema[7.2].define(version: 2024_02_22_061215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -86,14 +86,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_02_20_203959) do
   end
 
   create_table "solid_errors", force: :cascade do |t|
-    t.string "exception_class", limit: 200, null: false
-    t.string "message", null: false
-    t.string "severity", limit: 25, null: false
-    t.string "source"
+    t.text "exception_class", null: false
+    t.text "message", null: false
+    t.text "severity", null: false
+    t.text "source"
     t.datetime "resolved_at"
+    t.string "fingerprint", limit: 64, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["exception_class", "message", "severity", "source"], name: "solid_error_uniqueness_index", unique: true
+    t.index ["fingerprint"], name: "index_solid_errors_on_fingerprint", unique: true
     t.index ["resolved_at"], name: "index_solid_errors_on_resolved_at"
   end
 

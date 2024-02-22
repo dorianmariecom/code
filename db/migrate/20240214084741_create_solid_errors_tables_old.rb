@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateSolidErrorsTables < ActiveRecord::Migration[7.1]
+class CreateSolidErrorsTablesOld < ActiveRecord::Migration[7.1]
   def change
     create_table :solid_errors do |t|
       t.string :exception_class, null: false, limit: 200
