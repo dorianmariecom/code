@@ -5,32 +5,22 @@ jobs:
   rspec:
     name: RSpec
     runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      PGHOST: localhost
+      PGUSER: postgres
+
     services:
       postgres:
-        image: postgres:16.2
-        env:
-          POSTGRES_HOST: localhost
-          POSTGRES_USER: code
-          POSTGRES_PASSWORD: password
-          POSTGRES_DB: code_test
-        ports:
-        - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+        image: postgres:latest
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - uses: actions/setup-node@v4
+      - run: sudo apt-get -yqq install libpq-dev
       - run: bin/rails db:create db:schema:load
-        env:
-          POSTGRES_USER: code
-          POSTGRES_PASSWORD: password
       - run: bin/rspec
-        env:
-          POSTGRES_USER: code
-          POSTGRES_PASSWORD: password
