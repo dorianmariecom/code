@@ -45,16 +45,11 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
 
 COPY Gemfile Gemfile.lock ./
 RUN gem install bundler -v "${BUNDLER_VERSION}"
-RUN bundle install && \
-    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
-    bundle exec bootsnap precompile --gemfile
-
+RUN bundle install
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 COPY . .
-
-RUN bundle exec bootsnap precompile app/ lib/
 
 RUN HOST=example.com \
     BASE_URL=https://example.com \

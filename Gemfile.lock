@@ -109,8 +109,6 @@ GEM
     base64 (0.2.0)
     bcrypt (3.1.20)
     bigdecimal (3.1.6)
-    bootsnap (1.18.3)
-      msgpack (~> 1.2)
     brakeman (6.1.2)
       racc
     builder (3.2.4)
@@ -226,7 +224,6 @@ GEM
       rails (~> 7.1)
       stimulus-rails
       turbo-rails
-    msgpack (1.7.2)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     net-http (0.4.1)
@@ -434,7 +431,6 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
-  bootsnap
   brakeman
   bundler-audit
   capybara

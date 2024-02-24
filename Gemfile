@@ -8,7 +8,6 @@ git_source(:rails) { |name| "https://github.com/rails/#{name}" }
 ruby "3.3.0"
 
 gem "bcrypt"
-gem "bootsnap", require: false
 gem "brakeman"
 gem "bundler-audit"
 gem "code-ruby"
