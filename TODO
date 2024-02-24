@@ -1,0 +1,21 @@
+### code
+
+- unverify email address if email address changes
+- unverify smtp account if address, port, user_name, password or enable_starttls_auto changes
+- unverify phone_number if phone number changes
+
+### Code
+
+- Meetup::Group.new
+- Meetup::Group#events
+- event.time
+- time.before?
+- Storage.exists?
+- Storage.create!
+- Twitter.search
+- Twitter.mentions
+- Stripe::Webhook.event
+- &.
+- Twitter.send
+- Discord.send
+- Mail.send(reply_to: ...)

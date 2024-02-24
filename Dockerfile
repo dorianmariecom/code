@@ -45,7 +45,7 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
 
 COPY Gemfile Gemfile.lock ./
 RUN gem install bundler -v "${BUNDLER_VERSION}"
-RUN bundle install
+RUN bundle install --deployment
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 

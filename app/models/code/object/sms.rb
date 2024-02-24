@@ -26,7 +26,7 @@ class Code
       def self.code_send(body: nil)
         body ||= Nothing.new
 
-        from = "14155485560"
+        from = "CodeDorian"
         to = Current.primary_phone_number!.phone_number
         body = body.truthy? ? body.raw : ""
 
