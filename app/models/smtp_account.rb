@@ -11,11 +11,13 @@ class SmtpAccount < ApplicationRecord
   scope :verified, -> { where(verified: true) }
   scope :not_verified, -> { where(verified: false) }
 
-  normalizes(:user_name, with: ->(user_name) { user_name.to_s.downcase.strip })
+  normalizes(:address, with: ->(address) { address.to_s.strip })
+  normalizes(:user_name, with: ->(user_name) { user_name.to_s.strip })
+  normalizes(:authentication, with: ->(authentication) { authentication.to_s.strip })
 
   validates :address, presence: true, format: { with: DOMAIN_REGEXP }
   validates :port, presence: true
-  validates :user_name, presence: true, format: { with: EMAIL_ADDRESS_REGEXP }
+  validates :user_name, presence: true
   validates :password, presence: true
   validates :authentication, presence: true
 
