@@ -409,6 +409,7 @@ en:
       submit: Register
       title: Registration
     show:
+      admin: Admin
       city: city
       confirm: Are you sure you want to delete this user?
       country: country
