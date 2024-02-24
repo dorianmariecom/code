@@ -46,8 +46,7 @@ RUN npm install -g "yarn@${YARN_VERSION}"
 COPY Gemfile Gemfile.lock ./
 
 RUN gem install bundler -v "${BUNDLER_VERSION}"
-RUN bundle pack
-RUN bundle install --path vendor/cache
+RUN bundle install --verbose
 
 COPY package.json yarn.lock ./
 
