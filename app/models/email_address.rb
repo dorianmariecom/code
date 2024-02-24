@@ -20,6 +20,10 @@ class EmailAddress < ApplicationRecord
   scope :verified, -> { where(verified: true) }
   scope :not_verified, -> { where(verified: false) }
 
+  before_save do
+    unverify! if email_address_changed? && (verified? || verifying?)
+  end
+
   def self.find_verification_code_signed!(id)
     find_signed!(id, purpose: VERIFICATION_CODE_PURPOSE)
   end
@@ -38,6 +42,14 @@ class EmailAddress < ApplicationRecord
 
   def not_verified?
     !verified?
+  end
+
+  def verifying?
+    verification_code.present?
+  end
+
+  def unverify!
+    update!(verified: false, verification_code: "")
   end
 
   def email_address_with_name

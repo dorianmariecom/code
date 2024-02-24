@@ -27,26 +27,30 @@ RUN apt-get update && \
         vim \
         wget
 
-RUN wget "https://github.com/postmodern/ruby-install/releases/download/v${RUBY_INSTALL_VERSION}/ruby-install-${RUBY_INSTALL_VERSION}.tar.gz" \
-  && tar -xzvf "ruby-install-${RUBY_INSTALL_VERSION}.tar.gz" \
-  && cd "ruby-install-${RUBY_INSTALL_VERSION}" \
-  && make install
+RUN wget "https://github.com/postmodern/ruby-install/releases/download/v${RUBY_INSTALL_VERSION}/ruby-install-${RUBY_INSTALL_VERSION}.tar.gz"
+RUN tar -xzvf "ruby-install-${RUBY_INSTALL_VERSION}.tar.gz"
 
+WORKDIR "ruby-install-${RUBY_INSTALL_VERSION}"
+
+RUN make install
 RUN ruby-install -p https://github.com/ruby/ruby/pull/9371.diff ruby "${RUBY_VERSION}"
 
 WORKDIR /rails
 
 FROM base as build
 
-RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
-    /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
-    npm install -g "yarn@${YARN_VERSION}" && \
-    rm -rf /tmp/node-build-master
+RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/
+RUN /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node
+RUN npm install -g "yarn@${YARN_VERSION}"
 
 COPY Gemfile Gemfile.lock ./
+
 RUN gem install bundler -v "${BUNDLER_VERSION}"
-RUN bundle install --deployment
+RUN bundle pack
+RUN bundle install --path vendor/cache
+
 COPY package.json yarn.lock ./
+
 RUN yarn install --frozen-lockfile
 
 COPY . .
@@ -61,10 +65,6 @@ FROM base
 
 COPY --from=build /usr/local/bundle /usr/local/bundle
 COPY --from=build /rails /rails
-
-RUN useradd rails --create-home --shell /bin/bash && \
-    chown -R rails:rails db log storage tmp
-USER rails:rails
 
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
