@@ -80,6 +80,10 @@ class EmailAddress < ApplicationRecord
     end
   end
 
+  def cancel_verification!
+    update!(verification_code: "")
+  end
+
   def to_s
     email_address.presence || "EmailAddress##{id}"
   end
