@@ -1,12 +1,7 @@
 ---
 development:
-  adapter: postgresql
-  database: code_development
+  url: <%= ENV.fetch("DATABASE_URL") %>
 production:
-  adapter: postgresql
-  database: code_production
+  url: <%= ENV.fetch("DATABASE_URL") %>
 test:
-  adapter: postgresql
-  database: code_test
-  password: <%= ENV["POSTGRES_USER"] %>
-  password: <%= ENV["POSTGRES_PASSWORD"] %>
+  url: <%= ENV.fetch("DATABASE_URL") %>
