@@ -13,7 +13,10 @@ class SmtpAccount < ApplicationRecord
 
   normalizes(:address, with: ->(address) { address.to_s.strip })
   normalizes(:user_name, with: ->(user_name) { user_name.to_s.strip })
-  normalizes(:authentication, with: ->(authentication) { authentication.to_s.strip })
+  normalizes(
+    :authentication,
+    with: ->(authentication) { authentication.to_s.strip }
+  )
 
   validates :address, presence: true, format: { with: DOMAIN_REGEXP }
   validates :port, presence: true

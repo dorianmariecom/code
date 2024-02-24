@@ -17,7 +17,8 @@
 # KAMAL_DESTINATION (if set)
 
 # Only check the build status for production deployments
-if ENV["KAMAL_COMMAND"] == "rollback" || ENV["KAMAL_DESTINATION"] != "production"
+if ENV["KAMAL_COMMAND"] == "rollback" ||
+     ENV["KAMAL_DESTINATION"] != "production"
   exit 0
 end
 
@@ -43,7 +44,10 @@ class GithubStatusChecks
   attr_reader :remote_url, :git_sha, :github_client, :combined_status
 
   def initialize
-    @remote_url = `git config --get remote.origin.url`.strip.delete_prefix("https://github.com/")
+    @remote_url =
+      `git config --get remote.origin.url`.strip.delete_prefix(
+        "https://github.com/"
+      )
     @git_sha = `git rev-parse HEAD`.strip
     @github_client = Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"])
     refresh!
@@ -58,12 +62,13 @@ class GithubStatusChecks
   end
 
   def first_status_url
-    first_status = combined_status[:statuses].find { |status| status[:state] == state }
+    first_status =
+      combined_status[:statuses].find { |status| status[:state] == state }
     first_status && first_status[:target_url]
   end
 
   def complete_count
-    combined_status[:statuses].count { |status| status[:state] != "pending"}
+    combined_status[:statuses].count { |status| status[:state] != "pending" }
   end
 
   def total_count
@@ -78,7 +83,6 @@ class GithubStatusChecks
     end
   end
 end
-
 
 $stdout.sync = true
 
@@ -98,7 +102,9 @@ begin
       attempts += 1
     end
 
-    exit_with_error "Checks are still pending, gave up after #{MAX_ATTEMPTS * ATTEMPTS_GAP} seconds" if attempts == MAX_ATTEMPTS
+    if attempts == MAX_ATTEMPTS
+      exit_with_error "Checks are still pending, gave up after #{MAX_ATTEMPTS * ATTEMPTS_GAP} seconds"
+    end
 
     puts checks.current_status
     sleep(ATTEMPTS_GAP)
