@@ -5,25 +5,25 @@ on:
       - main
 jobs:
   brakeman:
-    uses: dorianmariecom/code/.github/workflows/brakeman.yml@main
+    uses: dorianmariecom/code/.github/workflows/brakeman.yml@${{ github.sha }}
 
   bundler-audit:
-    uses: dorianmariecom/code/.github/workflows/bundler-audit.yml@main
+    uses: dorianmariecom/code/.github/workflows/bundler-audit.yml@${{ github.sha }}
 
   importmap-audit:
-    uses: dorianmariecom/code/.github/workflows/importmap-audit.yml@main
+    uses: dorianmariecom/code/.github/workflows/importmap-audit.yml@${{ github.sha }}
 
   importmap-outdated:
-    uses: dorianmariecom/code/.github/workflows/importmap-outdated.yml@main
+    uses: dorianmariecom/code/.github/workflows/importmap-outdated.yml@${{ github.sha }}
 
   rspec:
-    uses: dorianmariecom/code/.github/workflows/rspec.yml@main
+    uses: dorianmariecom/code/.github/workflows/rspec.yml@${{ github.sha }}
 
   rubocop:
-    uses: dorianmariecom/code/.github/workflows/rubocop.yml@main
+    uses: dorianmariecom/code/.github/workflows/rubocop.yml@${{ github.sha }}
 
   yarn-audit:
-    uses: dorianmariecom/code/.github/workflows/yarn-audit.yml@main
+    uses: dorianmariecom/code/.github/workflows/yarn-audit.yml@${{ github.sha }}
 
   deploy:
     name: Deploy
