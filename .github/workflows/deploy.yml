@@ -26,6 +26,7 @@ jobs:
     uses: dorianmariecom/code/.github/workflows/yarn-audit.yml@main
 
   deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     needs:
       - brakeman
