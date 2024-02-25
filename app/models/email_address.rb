@@ -75,6 +75,8 @@ class EmailAddress < ApplicationRecord
   end
 
   def send_verification_code!
+    reset_verification_code!
+
     EmailAddressMailer
       .with(email_address: self)
       .verification_code_email
