@@ -27,6 +27,7 @@ jobs:
         with:
           ruby-version: 3.3.0
           bundler-cache: true
+      - run: git status
       - run: gem install kamal
       - run: kamal lock release
       - run: kamal redeploy --skip-push
