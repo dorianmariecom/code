@@ -2,6 +2,9 @@ name: RSpec
 on:
   push:
   workflow_call:
+    osecrets:
+      RAILS_MASTER_KEY:
+        required: true
 jobs:
   rspec:
     name: RSpec
