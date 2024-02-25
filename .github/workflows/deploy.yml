@@ -5,25 +5,25 @@ on:
       - main
 jobs:
   brakeman:
-    uses: dorianmariecom/code/.github/workflows/brakeman.yml
+    uses: dorianmariecom/code/.github/workflows/brakeman.yml@main
 
   bundler-audit:
-    uses: dorianmariecom/code/.github/workflows/bundler-audit.yml
+    uses: dorianmariecom/code/.github/workflows/bundler-audit.yml@main
 
   importmap-audit:
-    uses: dorianmariecom/code/.github/workflows/importmap-audit.yml
+    uses: dorianmariecom/code/.github/workflows/importmap-audit.yml@main
 
   importmap-outdated:
-    uses: dorianmariecom/code/.github/workflows/importmap-outdated.yml
+    uses: dorianmariecom/code/.github/workflows/importmap-outdated.yml@main
 
   rspec:
-    uses: dorianmariecom/code/.github/workflows/rspec.yml
+    uses: dorianmariecom/code/.github/workflows/rspec.yml@main
 
   rubocop:
-    uses: dorianmariecom/code/.github/workflows/rubocop.yml
+    uses: dorianmariecom/code/.github/workflows/rubocop.yml@main
 
   yarn-audit:
-    uses: dorianmariecom/code/.github/workflows/yarn-audit.yml
+    uses: dorianmariecom/code/.github/workflows/yarn-audit.yml@main
 
   deploy:
     runs-on: ubuntu-latest
