@@ -61,4 +61,4 @@ jobs:
           bundler-cache: true
       - run: gem install kamal
       - run: kamal lock release
-      - run: kamal redeploy --skip-push
+      - run: kamal deploy --skip-push
