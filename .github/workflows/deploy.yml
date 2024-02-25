@@ -4,8 +4,37 @@ on:
     branches:
       - main
 jobs:
+  brakeman:
+    uses: dorianmariecom/code/.github/workflows/brakeman.yml
+
+  bundler-audit:
+    uses: dorianmariecom/code/.github/workflows/bundler-audit.yml
+
+  importmap-audit:
+    uses: dorianmariecom/code/.github/workflows/importmap-audit.yml
+
+  importmap-outdated:
+    uses: dorianmariecom/code/.github/workflows/importmap-outdated.yml
+
+  rspec:
+    uses: dorianmariecom/code/.github/workflows/rspec.yml
+
+  rubocop:
+    uses: dorianmariecom/code/.github/workflows/rubocop.yml
+
+  yarn-audit:
+    uses: dorianmariecom/code/.github/workflows/yarn-audit.yml
+
   deploy:
     runs-on: ubuntu-latest
+    needs:
+      - brakeman
+      - bundler-audit
+      - importmap-audit
+      - importmap-outdated
+      - rspec
+      - rubocop
+      - yarn-audit
     steps:
       - uses: actions/checkout@v4
       - uses: webfactory/ssh-agent@v0.9.0
