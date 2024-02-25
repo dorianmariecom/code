@@ -37,8 +37,6 @@ RUN ruby-install -p https://github.com/ruby/ruby/pull/9371.diff ruby "${RUBY_VER
 
 WORKDIR /rails
 
-FROM base as build
-
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/
 RUN /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node
 RUN npm install -g "yarn@${YARN_VERSION}"
@@ -59,11 +57,6 @@ RUN HOST=example.com \
     RAILS_MASTER_KEY_DUMMY=1 \
     SECRET_KEY_BASE_DUMMY=1 \
     ./bin/rails assets:precompile
-
-FROM base
-
-COPY --from=build /usr/local/bundle /usr/local/bundle
-COPY --from=build /rails /rails
 
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
