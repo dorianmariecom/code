@@ -1,6 +1,7 @@
 name: Yarn Audit
-on: [push]
-
+on:
+  push:
+  workflow_call:
 jobs:
   yarn-audit:
     name: Yarn Audit

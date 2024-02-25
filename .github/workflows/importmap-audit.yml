@@ -1,6 +1,7 @@
 name: Importmap Audit
-on: [push]
-
+on:
+  push:
+  workflow_call:
 jobs:
   importmap-audit:
     name: Importmap Audit

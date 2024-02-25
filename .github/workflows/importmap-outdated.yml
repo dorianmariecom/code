@@ -1,6 +1,7 @@
 name: Importmap Outdated
-on: [push]
-
+on:
+  push:
+  workflow_call:
 jobs:
   importmap-outdated:
     name: Importmap Outdated
