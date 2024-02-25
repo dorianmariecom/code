@@ -18,7 +18,7 @@ jobs:
 
   rspec:
     uses: dorianmariecom/code/.github/workflows/rspec.yml@main
-    with:
+    secrets:
       RAILS_MASTER_KEY: ${{secrets.RAILS_MASTER_KEY}}
 
   rubocop:
