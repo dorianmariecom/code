@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/fractaledmind/solid_errors
-  revision: 6e23ceea68932423863976e2392f370da182c16a
+  revision: 74e9137aa0b217d3fd7a4bde59d4775774ec4b3a
   specs:
     solid_errors (0.3.5)
       rails (~> 7.0)
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 85c58ffa364414d74ab1f442218959818225d708
+  revision: f0864e34d6ca069a442c75da49bbf67a3ad4626c
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -124,7 +124,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    code-ruby (0.8.1)
+    code-ruby (0.8.2)
       activesupport (~> 7)
       bigdecimal (~> 3)
       language-ruby (~> 0)
@@ -137,13 +137,14 @@ GEM
     crass (1.0.6)
     date (3.3.4)
     diff-lcs (1.5.1)
-    dorian (0.5.2)
+    dorian (0.5.3)
       dorian-all (~> 0)
       dorian-dot (~> 0)
       dorian-each (~> 0)
       dorian-git-ls-ruby-files (~> 0)
       dorian-git-tree (~> 0)
       dorian-pretty (~> 0)
+      dorian-release (~> 0)
       dorian-replace (~> 0)
       dorian-shuffle (~> 0)
       dorian-sort-json (~> 0)
@@ -152,7 +153,7 @@ GEM
       dorian-yaml-compare (~> 0)
       dorian-yaml-read-write (~> 0)
     dorian-all (0.5.3)
-    dorian-dot (0.4.0)
+    dorian-dot (0.4.1)
       git (~> 1)
     dorian-each (0.3.2)
     dorian-git-ls-ruby-files (0.1.1)
@@ -161,6 +162,7 @@ GEM
     dorian-pretty (0.2.0)
       git (~> 1)
       syntax_tree (~> 6)
+    dorian-release (0.1.0)
     dorian-replace (0.3.1)
     dorian-shuffle (0.2.1)
     dorian-sort-json (0.4.1)
@@ -297,7 +299,7 @@ GEM
     redis-client (0.20.0)
       connection_pool
     regexp_parser (2.9.0)
-    reline (0.4.2)
+    reline (0.4.3)
       io-console (~> 0.5)
     rexml (3.2.6)
     rspec-core (3.13.0)
@@ -316,7 +318,7 @@ GEM
       rspec-expectations (~> 3.12)
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
-    rspec-support (3.13.0)
+    rspec-support (3.13.1)
     rubocop (1.60.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -407,7 +409,7 @@ GEM
     unicode-display_width (2.5.0)
     uri (0.13.0)
     useragent (0.16.10)
-    webmock (3.22.0)
+    webmock (3.23.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
