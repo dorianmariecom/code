@@ -19,6 +19,10 @@ class PhoneNumber < ApplicationRecord
 
   validate :valid_phone_number
 
+  before_update do
+    unverify! if phone_number_changed? && (verified? || verifying?)
+  end
+
   def primary?
     !!primary
   end
@@ -86,6 +90,15 @@ class PhoneNumber < ApplicationRecord
   def valid_phone_number
     errors.add(:phone_number, :invalid) if phonelib.invalid?
     errors.add(:phone_number, :impossible) if phonelib.impossible?
+  end
+
+  def unverify!
+    cancel_verification! if verification_code_sent?
+    update!(verified: false, nexmo_request_id: "")
+  end
+
+  def verifying?
+    verification_code_sent?
   end
 
   def api_key

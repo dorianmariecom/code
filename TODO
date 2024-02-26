@@ -1,11 +1,3 @@
-### code
-
-- verification code page reload
-- new slack account in user show page
-- unverify email address if email address changes
-- unverify smtp account if address, port, user_name, password or enable_starttls_auto changes
-- unverify phone_number if phone number changes
-
 ### Code
 
 - Meetup::Group.new

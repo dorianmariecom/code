@@ -340,6 +340,10 @@ en:
     form:
       remove: Remove
       slack_account: Slack account
+    new:
+      eg: e.g.
+      submit: New slack account
+      title: New slack account
     index:
       eg: e.g.
       new: New slack account

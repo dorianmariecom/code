@@ -24,6 +24,16 @@ class SmtpAccount < ApplicationRecord
   validates :password, presence: true
   validates :authentication, presence: true
 
+  before_update do
+    next if not_verified?
+
+    if address_changed? || port_changed? || user_name_changed? ||
+         password_changed? || authentication_changed? ||
+         enable_starttls_auto_changed?
+      unverify!
+    end
+  end
+
   def email_address_with_name
     ActionMailer::Base.email_address_with_name(user_name, display_name)
   end
@@ -42,6 +52,14 @@ class SmtpAccount < ApplicationRecord
 
   def not_verified?
     !verified?
+  end
+
+  def unverify!
+    update!(verified: false)
+  end
+
+  def verifying?
+    false
   end
 
   def send_verification_code!

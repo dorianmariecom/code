@@ -15,6 +15,10 @@ class SlackAccountPolicy < ApplicationPolicy
     current_user?
   end
 
+  def new?
+    current_user?
+  end
+
   def show?
     owner? || admin?
   end

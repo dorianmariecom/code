@@ -18,6 +18,10 @@ class SlackAccountsController < ApplicationController
   def show
   end
 
+  def new
+    @slack_account = authorize policy_scope(SlackAccount).new
+  end
+
   def edit
   end
 

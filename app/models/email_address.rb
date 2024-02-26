@@ -20,7 +20,7 @@ class EmailAddress < ApplicationRecord
   scope :verified, -> { where(verified: true) }
   scope :not_verified, -> { where(verified: false) }
 
-  before_save do
+  before_update do
     unverify! if email_address_changed? && (verified? || verifying?)
   end
 
