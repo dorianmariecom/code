@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require_relative "meetup/group"
+require_relative "meetup/event"
+
 class Code
   class Object
     class Meetup < Object

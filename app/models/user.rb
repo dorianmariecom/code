@@ -39,6 +39,10 @@ class User < ApplicationRecord
 
   validates :time_zone, inclusion: { in: TIME_ZONES, allow_blank: true }
 
+  def storage
+    Storage.new(self)
+  end
+
   def to_s
     name.presence || "User##{id}"
   end

@@ -48,6 +48,7 @@ class Code
               a.css("time").text.present?
             end.map do |a|
               Event.new(
+                id: Integer.new(a["href"].to_s.scan(/[0-9]+/).last),
                 title: String.new(a.css(".ds-font-title-3").text),
                 time: Time.new(a.css("time").text),
                 group: self

@@ -29,8 +29,17 @@ class Current < ActiveSupport::CurrentAttributes
     user || raise(Code::Error, "No user")
   end
 
+  def user?
+    !!user
+  end
+
+  def storage
+    return unless user?
+    user.storage
+  end
+
   def email_addresses
-    return unless user
+    return unless user?
     user.email_addresses.verified
   end
 
@@ -41,7 +50,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_email_address
-    return unless user
+    return unless user?
     email_addresses.verified.primary.first || email_addresses.verified.first
   end
 
@@ -51,7 +60,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def phone_numbers
-    return unless user
+    return unless user?
     user.phone_numbers.verified
   end
 
@@ -62,7 +71,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_phone_number
-    return unless user
+    return unless user?
     phone_numbers.verified.primary.first || phone_numbers.verified.first
   end
 
@@ -71,7 +80,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def slack_accounts
-    return unless user
+    return unless user?
     user.slack_accounts.verified
   end
 
@@ -82,7 +91,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_slack_account
-    return unless user
+    return unless user?
     slack_accounts.verified.primary.first || slack_accounts.verified.first
   end
 
@@ -92,7 +101,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def passwords
-    return unless user
+    return unless user?
     user.passwords
   end
 
@@ -103,7 +112,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_password
-    return unless user
+    return unless user?
     passwords.first
   end
 
@@ -112,7 +121,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def programs
-    return unless user
+    return unless user?
     user.programs
   end
 
@@ -123,7 +132,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_program
-    return unless user
+    return unless user?
     programs.first
   end
 
@@ -132,7 +141,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def smtp_accounts
-    return unless user
+    return unless user?
     user.smtp_accounts.verified
   end
 
@@ -143,7 +152,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_smtp_account
-    return unless user
+    return unless user?
     smtp_accounts.verified.primary.first || smtp_accounts.verified.first
   end
 

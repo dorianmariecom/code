@@ -30,6 +30,9 @@ class Code
         when "Stripe"
           sig(args)
           Class.new(Stripe)
+        when "Storage"
+          sig(args)
+          Class.new(Storage)
         else
           original_call(**args)
         end

@@ -38,25 +38,27 @@ RSpec.describe Code, type: :model do
   end
 
   it "sends reminders" do
-    Current.user = create(:user, :dorian)
+    Timecop.freeze("2024-02-26 17:09") do
+      Current.user = create(:user, :dorian)
 
-    Code.evaluate(<<~CODE)
-      Meetup::Group.new("paris_rb").events.each do |event|
-        if event.time.before?(1.day.from_now)
-          unless Storage.exists?(id: event.id, type: :one_day_reminder)
-            Sms.send(body: "{event.group.name}: {event.name} in one day {event.url}")
-            Storage.create!(id: event.id, type: :one_day_reminder)
+      Code.evaluate(<<~CODE)
+        Meetup::Group.new("paris_rb").events.each do |event|
+          if event.time.before?(1.day.from_now)
+            unless Storage.exists?(id: event.id, type: :one_day_reminder)
+              Sms.send(body: "{event.group.name}: {event.name} in one day {event.url}")
+              Storage.create!(id: event.id, type: :one_day_reminder)
+            end
+          end
+
+          if event.time.before?(2.hours.from_now)
+            unless Storage.exists?(id: event.id, type: :two_hours_reminder)
+              Sms.send(body: "{event.group.name}: {event.name} in two hours {event.url}")
+              Storage.create!(id: event.id, type: :two_hours_reminder)
+            end
           end
         end
-
-        if event.time.before?(2.hours.from_now)
-          unless Storage.exists?(id: event.id, type: :two_hours_reminder)
-            Sms.send(body: "{event.group.name}: {event.name} in two hours {event.url}")
-            Storage.create!(id: event.id, type: :two_hours_reminder)
-          end
-        end
-      end
-    CODE
+      CODE
+    end
   end
 =begin
 
