@@ -13,3 +13,4 @@
 - Twitter.send
 - Discord.send
 - Mail.send(reply_to: ...)
+- Meetup.new

@@ -41,7 +41,7 @@ RSpec.describe Code, type: :model do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
-      Meetup::Group.new("parisrb").events.each do |event|
+      Meetup::Group.new("paris_rb").events.each do |event|
         if event.time.before?(1.day.from_now)
           unless Storage.exists?(id: event.id, type: :one_day_reminder)
             Sms.send(body: "{event.group.name}: {event.name} in one day {event.url}")
