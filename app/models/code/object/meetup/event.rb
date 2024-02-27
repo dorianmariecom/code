@@ -15,7 +15,7 @@ class Code
         end
 
         def self.name
-          "Meetup::Group::Event"
+          "Meetup::Event"
         end
 
         def call(**args)
@@ -34,6 +34,9 @@ class Code
           when "group"
             sig(args)
             code_group
+          when "url"
+            sig(args)
+            code_url
           else
             super
           end
@@ -48,11 +51,15 @@ class Code
         end
 
         def code_title
-          String.new(code_title)
+          String.new(title)
         end
 
-        def group
-          Group.new(code_group)
+        def code_group
+          Group.new(group)
+        end
+
+        def code_url
+          String.new("https://www.meetup.com/#{group.slug}/events/#{id}/")
         end
 
         def to_s

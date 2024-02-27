@@ -7,7 +7,8 @@ class Code
         attr_reader :raw
 
         def initialize(group)
-          @raw = group
+          group = group.raw if group.is_a?(Group)
+          @raw = group.to_s
         end
 
         def self.name
@@ -35,6 +36,9 @@ class Code
           when "events"
             sig(args)
             code_events
+          when "name"
+            sig(args)
+            code_name
           else
             super
           end
@@ -45,7 +49,7 @@ class Code
             page
               .css("a")
               .select do |a|
-                a["href"] =~ %r{https://www.meetup.com/#{raw}/events/[0-9]+/}
+                a["href"] =~ %r{https://www.meetup.com/#{slug}/events/[0-9]+/}
               end
               .select { |a| a.css("time").text.present? }
               .map do |a|
@@ -59,12 +63,20 @@ class Code
           )
         end
 
+        def code_name
+          String.new(page.css(".ds-font-title-1").text)
+        end
+
         def page
           @page ||= Nokogiri.HTML(URI.open(url))
         end
 
         def url
-          "https://www.meetup.com/#{raw}"
+          "https://www.meetup.com/#{slug}"
+        end
+
+        def slug
+          raw
         end
 
         def to_s

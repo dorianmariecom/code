@@ -25,8 +25,19 @@ class Code
       end
 
       def self.code_exists?(value)
-        return Boolean.new(false) unless Current.user?
-        Boolean.new(Current.storage.exists?(value))
+        Boolean.new(
+          Current
+            .user!
+            .data
+            .where("data @> ?", value.to_json)
+            .or(Current.user!.data.where(data: value.as_json))
+            .any?
+        )
+      end
+
+      def self.code_create!(value)
+        Current.user!.data.create!(data: value.as_json)
+        Boolean.new(true)
       end
     end
   end

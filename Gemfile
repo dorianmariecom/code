@@ -21,6 +21,7 @@ gem "jbuilder"
 gem "mission_control-jobs"
 gem "net-http"
 gem "open-uri"
+gem "optparse"
 gem "pandoc-ruby"
 gem "pg"
 gem "phonelib"
@@ -45,6 +46,9 @@ end
 
 group :development do
   gem "rubocop-rails-omakase", require: false
+  gem "spring"
+  gem "spring-commands-rspec"
+  gem "spring-commands-rubocop"
 end
 
 group :test do

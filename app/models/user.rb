@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :programs, dependent: :destroy
   has_many :slack_accounts, dependent: :destroy
   has_many :smtp_accounts, dependent: :destroy
+  has_many :data, dependent: :destroy
 
   accepts_nested_attributes_for(
     :email_addresses,
@@ -38,10 +39,6 @@ class User < ApplicationRecord
   )
 
   validates :time_zone, inclusion: { in: TIME_ZONES, allow_blank: true }
-
-  def storage
-    Storage.new(self)
-  end
 
   def to_s
     name.presence || "User##{id}"

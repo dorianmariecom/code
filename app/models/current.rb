@@ -33,11 +33,6 @@ class Current < ActiveSupport::CurrentAttributes
     !!user
   end
 
-  def storage
-    return unless user?
-    user.storage
-  end
-
   def email_addresses
     return unless user?
     user.email_addresses.verified

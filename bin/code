@@ -1,77 +1,81 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require "optparse"
 require_relative "../config/environment"
+require "optparse"
 
 options = {
-  timeout: 0,
+  input: "",
+  parse: false,
   profile: false,
   profiler: "text",
-  user_id: nil,
-  input: "",
-  context: "",
-  parse: false
+  timeout: 0,
+  user_id: nil
 }
 
-OptionParser
-  .new do |opts|
-    opts.banner = "Usage: bin/code [options]"
+argv =
+  OptionParser
+    .new do |opts|
+      opts.banner = "Usage: code INPUT\n\n"
 
-    opts.on("-v", "--version", "Version of template") do |_input|
-      puts Code::Version
-      exit
+      opts.on("-v", "--version", "Version of Code") do |_input|
+        puts Code::Version
+        exit
+      end
+
+      opts.on(
+        "-i INPUT",
+        "--input INPUT",
+        "Input in the Code language (String or File)"
+      ) do |input|
+        input = File.read(input) if File.exist?(input)
+
+        options[:input] = input
+      end
+
+      opts.on("-p", "--parse", "Parser tree for input") do |parse|
+        options[:parse] = parse
+      end
+
+      opts.on(
+        "-t TIMEOUT",
+        "--timeout TIMEOUT",
+        "Set timeout in seconds"
+      ) { |timeout| options[:timeout] = timeout.to_f }
+
+      opts.on("--profile", "Profile Ruby code") do |_timeout|
+        require "ruby-prof"
+        options[:profile] = true
+      end
+
+      opts.on(
+        "--profiler TYPE",
+        "Profiler output type (text (default) or html)"
+      ) do |profiler|
+        require "ruby-prof"
+        options[:profile] = true
+        options[:profiler] = profiler
+      end
+
+      opts.on("--user-id USER_ID", "The ID of the User") do |user_id|
+        options[:user_id] = user_id
+      end
     end
+    .parse!
 
-    opts.on(
-      "-i INPUT",
-      "--input=INPUT",
-      "Input in the code language (String or File)"
-    ) do |input|
-      input = File.read(input) if File.exist?(input)
+options[:input] = argv.join(" ") if options[:input].empty?
 
-      options[:input] = input
-    end
+abort <<~HELP if options[:input].empty?
+    Usage: code INPUT
 
-    opts.on(
-      "-c CONTEXT",
-      "--context=CONTEXT",
-      "Context in the code language (String or File)"
-    ) do |context|
-      context = File.read(context) if File.exist?(context)
-
-      options[:context] = context
-    end
-
-    opts.on("-p", "--parse", "Get parser results for input") do |parse|
-      options[:parse] = parse
-    end
-
-    opts.on(
-      "-t TIMEOUT",
-      "--timeout=TIMEOUT",
-      "Set timeout in seconds"
-    ) { |timeout| options[:timeout] = timeout.to_f }
-
-    opts.on("--profile", "Profile Ruby code") do |_timeout|
-      require "ruby-prof"
-      options[:profile] = true
-    end
-
-    opts.on(
-      "--profiler TYPE",
-      "Profiler output type (text (default) or html)"
-    ) do |profiler|
-      require "ruby-prof"
-      options[:profile] = true
-      options[:profiler] = profiler
-    end
-
-    opts.on("--user-id USER_ID", "The ID of the User") do |user_id|
-      options[:user_id] = user_id
-    end
-  end
-  .parse!
+      -v, --version                    Version of Code
+      -i, --input INPUT                Input in the Code language (String or File)
+      -p, --parse                      Parser tree for input
+      -t, --timeout TIMEOUT            Set timeout in seconds
+          --profile                    Profile Ruby code
+          --profiler TYPE              Profiler output type (text (default) or html)
+          --user-id USER_ID            The ID of the User
+  HELP
 
 RubyProf.start if options[:profile]
 
@@ -82,7 +86,6 @@ if options[:parse]
 else
   print Code.evaluate(
           options[:input],
-          options[:context],
           output: $stdout,
           error: $stderr,
           timeout: options[:timeout]
@@ -91,6 +94,7 @@ end
 
 if options[:profile]
   result = RubyProf.stop
+
   if options[:profiler] == "text"
     printer = RubyProf::FlatPrinter.new(result)
     printer.print($stdout)

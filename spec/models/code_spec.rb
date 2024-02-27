@@ -45,14 +45,14 @@ RSpec.describe Code, type: :model do
         Meetup::Group.new("paris_rb").events.each do |event|
           if event.time.before?(1.day.from_now)
             unless Storage.exists?(id: event.id, type: :one_day_reminder)
-              Sms.send(body: "{event.group.name}: {event.name} in one day {event.url}")
+              Sms.send(body: "{event.group.name}: {event.title} in one day {event.url}")
               Storage.create!(id: event.id, type: :one_day_reminder)
             end
           end
 
           if event.time.before?(2.hours.from_now)
             unless Storage.exists?(id: event.id, type: :two_hours_reminder)
-              Sms.send(body: "{event.group.name}: {event.name} in two hours {event.url}")
+              Sms.send(body: "{event.group.name}: {event.title} in two hours {event.url}")
               Storage.create!(id: event.id, type: :two_hours_reminder)
             end
           end
