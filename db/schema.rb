@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_02_22_061215) do
+ActiveRecord::Schema[7.2].define(version: 2024_02_26_162217) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "data", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.jsonb "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_data_on_user_id"
+  end
 
   create_table "email_addresses", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -243,6 +251,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_02_22_061215) do
     t.string "longitude", default: "", null: false
   end
 
+  add_foreign_key "data", "users"
   add_foreign_key "email_addresses", "users"
   add_foreign_key "passwords", "users"
   add_foreign_key "phone_numbers", "users"

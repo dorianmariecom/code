@@ -103,9 +103,10 @@ GIT
 PATH
   remote: ../code-ruby
   specs:
-    code-ruby (0.8.5)
+    code-ruby (0.8.6)
       activesupport (~> 7)
       bigdecimal (~> 3)
+      json (~> 2)
       language-ruby (~> 0)
       zeitwerk (~> 2)
 

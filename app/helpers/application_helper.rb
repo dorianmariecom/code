@@ -98,12 +98,7 @@ module ApplicationHelper
   end
 
   def fake_smtp_authentications
-    [
-      "plain",
-      "login",
-      "cram_md5",
-      "none"
-    ]
+    %w[plain login cram_md5 none]
   end
 
   def time_zone_options

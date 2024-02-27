@@ -2,7 +2,8 @@ require "rails_helper"
 
 RSpec.describe SmtpAccount do
   it "unverifies if the address changes" do
-    smtp_account = create(:smtp_account, verified: true, address: "smtp.gmail.com")
+    smtp_account =
+      create(:smtp_account, verified: true, address: "smtp.gmail.com")
     expect(smtp_account).to be_verified
     smtp_account.update!(address: "smtp.mailchimp.com")
     expect(smtp_account).to_not be_verified
@@ -16,14 +17,16 @@ RSpec.describe SmtpAccount do
   end
 
   it "unverifies if the user_name changes" do
-    smtp_account = create(:smtp_account, verified: true, user_name: "old-user-name")
+    smtp_account =
+      create(:smtp_account, verified: true, user_name: "old-user-name")
     expect(smtp_account).to be_verified
     smtp_account.update!(user_name: "new-user-name")
     expect(smtp_account).to_not be_verified
   end
 
   it "unverifies if the password changes" do
-    smtp_account = create(:smtp_account, verified: true, password: "old-password")
+    smtp_account =
+      create(:smtp_account, verified: true, password: "old-password")
     expect(smtp_account).to be_verified
     smtp_account.update!(password: "new-password")
     expect(smtp_account).to_not be_verified
@@ -37,7 +40,8 @@ RSpec.describe SmtpAccount do
   end
 
   it "unverifies if the enable_starttls_auto changes" do
-    smtp_account = create(:smtp_account, verified: true, enable_starttls_auto: true)
+    smtp_account =
+      create(:smtp_account, verified: true, enable_starttls_auto: true)
     expect(smtp_account).to be_verified
     smtp_account.update!(enable_starttls_auto: false)
     expect(smtp_account).to_not be_verified

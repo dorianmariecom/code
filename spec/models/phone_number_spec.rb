@@ -2,7 +2,8 @@ require "rails_helper"
 
 RSpec.describe PhoneNumber do
   it "unverifies if the phone number changes" do
-    phone_number = create(:phone_number, verified: true, phone_number: "+33 7 67 23 95 73")
+    phone_number =
+      create(:phone_number, verified: true, phone_number: "+33 7 67 23 95 73")
     expect(phone_number).to be_verified
     phone_number.update!(phone_number: "+33 3 44 46 87 66")
     expect(phone_number).to_not be_verified

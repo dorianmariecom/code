@@ -42,23 +42,25 @@ class Code
 
         def code_events
           List.new(
-            page.css("a").select do |a|
-              a["href"] =~ %r{https://www.meetup.com/#{raw}/events/[0-9]+/}
-            end.select do |a|
-              a.css("time").text.present?
-            end.map do |a|
-              Event.new(
-                id: Integer.new(a["href"].to_s.scan(/[0-9]+/).last),
-                title: String.new(a.css(".ds-font-title-3").text),
-                time: Time.new(a.css("time").text),
-                group: self
-              )
-            end
+            page
+              .css("a")
+              .select do |a|
+                a["href"] =~ %r{https://www.meetup.com/#{raw}/events/[0-9]+/}
+              end
+              .select { |a| a.css("time").text.present? }
+              .map do |a|
+                Event.new(
+                  id: Integer.new(a["href"].to_s.scan(/[0-9]+/).last),
+                  title: String.new(a.css(".ds-font-title-3").text),
+                  time: Time.new(a.css("time").text),
+                  group: self
+                )
+              end
           )
         end
 
         def page
-          @page ||= Nokogiri::HTML(URI.open(url))
+          @page ||= Nokogiri.HTML(URI.open(url))
         end
 
         def url
