@@ -3,3 +3,6 @@ inherit_gem:
 
 Layout/SpaceInsideArrayLiteralBrackets:
   Enabled: false
+
+Performance/UnfreezeString:
+  Enabled: false
