@@ -45,10 +45,7 @@ group :production do
 end
 
 group :development do
-  gem "rubocop-rails-omakase", require: false
-  gem "spring"
-  gem "spring-commands-rspec"
-  gem "spring-commands-rubocop"
+  gem "rubocop-rails-omakase"
 end
 
 group :test do
