@@ -20,7 +20,7 @@ html
       window.constants.GOOGLE_MAPS_API_KEY = #{raw google_maps_api_key.to_json};
       window.translations = #{raw I18n.t(".js").to_json};
 
-  body.prose.max-w-lg.mx-auto.p-8
+  body.prose.max-w-3xl.mx-auto.p-8
     .p
       => link_to t(".title"), root_path
 

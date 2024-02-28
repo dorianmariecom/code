@@ -38,11 +38,13 @@ RSpec.describe Code, type: :model do
   end
 
   it "sends reminders" do
-    Timecop.freeze("2024-02-26 17:09") do
+    Timecop.freeze("2024-03-05 18:00:00 +0100") do
       Current.user = create(:user, :dorian)
 
       Code.evaluate(<<~CODE)
         Meetup::Group.new("paris_rb").events.each do |event|
+          next if event.past?
+
           if event.time.before?(1.day.from_now)
             unless Storage.exists?(id: event.id, type: :one_day_reminder)
               Sms.send(body: "{event.group.name}: {event.title} in one day {event.url}")

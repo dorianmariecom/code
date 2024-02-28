@@ -7,11 +7,14 @@ class Code
         attr_reader :raw, :id, :title, :time, :group
 
         def initialize(id:, title:, time:, group:)
-          @raw = Dictionary.new(id:, title:, time:, group:)
-          @id = id
-          @title = title
-          @time = time
-          @group = group
+          id = id.raw if id.is_a?(Integer)
+          title = title.raw if title.is_a?(String)
+          time = time.raw if time.is_a?(Time)
+          group = group.raw if group.is_a?(Group)
+          @id = Integer.new(id)
+          @title = String.new(title)
+          @time = Time.new(time)
+          @group = Group.new(group)
         end
 
         def self.name
@@ -37,6 +40,12 @@ class Code
           when "url"
             sig(args)
             code_url
+          when "past?"
+            sig(args)
+            code_past?
+          when "future?"
+            sig(args)
+            code_future?
           else
             super
           end
@@ -62,12 +71,20 @@ class Code
           String.new("https://www.meetup.com/#{group.slug}/events/#{id}/")
         end
 
+        def code_past?
+          time.code_past?
+        end
+
+        def code_future?
+          time.code_future?
+        end
+
         def to_s
-          raw.to_s
+          "#{self.class.name}##{id}"
         end
 
         def inspect
-          raw.inspect
+          to_s.inspect
         end
       end
     end

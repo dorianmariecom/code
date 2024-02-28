@@ -1,4 +1,4 @@
-div(class="[&_p]:mb-0 [&_pre]:mt-0 [&_.sourceCode]:mt-0 [&_.dt]:no-underline [&_.dt]:text-orange-400")
+div(class="[&_p]:mb-0")
   markdown:
     ## Hello World
 
@@ -202,4 +202,57 @@ div(class="[&_p]:mb-0 [&_pre]:mt-0 [&_.sourceCode]:mt-0 [&_.dt]:no-underline [&_
     else
       Slack.send(body: "It's not going to be raining tomorrow", channel: "#weather")
     end
+    ```
+
+    ## Meetup::Group.new(handle)
+
+    **handle**: Same as what's in the URL of the group on meetup.com, e.g. "paris_rb", :paris_rb, 'paris_rb'
+
+    input
+    ```ruby
+    Meetup::Group.new(:paris_rb)
+    ```
+
+    output
+    ```
+    paris_rb
+    ```
+
+    ## Meetup::Group#events
+
+    ### Get the events from the meetup group paris_rb
+
+    input
+    ```ruby
+    Meetup::Group.new("paris_rb").events
+    ```
+
+    output
+    ```
+    ["Meetup::Event#297791280", "Meetup::Event#299466405", "Meetup::Event#297791270"]
+    ```
+
+    ### Send a reminder by SMS if meetups from the group ParisRb.new are going to happen in less than 1 day and in less than 2 hours
+
+    input
+    ```ruby
+    Meetup::Group.new("paris_rb").events.each do |event|
+      next if event.past?
+
+      if event.time.before?(1.day.from_now)
+        unless Storage.exists?(id: event.id, type: :one_day_reminder)
+          Sms.send(body: "{event.group.name}: {event.title} in one day {event.url}")
+          Storage.create!(id: event.id, type: :one_day_reminder)
+        end
+      end
+
+      if event.time.before?(2.hours.from_now)
+        unless Storage.exists?(id: event.id, type: :two_hours_reminder)
+          Sms.send(body: "{event.group.name}: {event.title} in two hours {event.url}")
+          Storage.create!(id: event.id, type: :two_hours_reminder)
+        end
+      end
+    end
+
+    nothing
     ```

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Program < ApplicationRecord
-  belongs_to :user, default: -> { Current.user }
+  belongs_to :user, default: -> { Current.user || User.new }
 
   accepts_nested_attributes_for :user
 

@@ -7,8 +7,8 @@
   @apply break-words;
 }
 
-pre {
-  @apply whitespace-pre-wrap;
+pre, code {
+  @apply whitespace-pre-wrap mt-0;
 }
 
 .p {
@@ -30,4 +30,13 @@ pre {
 
 .font-bold > a {
   font-weight: 700;
+}
+
+.sourceCode {
+  @apply !mt-0;
+  background-color: var(--tw-prose-pre-bg) !important;
+}
+
+.dt {
+  @apply !no-underline text-orange-400;
 }

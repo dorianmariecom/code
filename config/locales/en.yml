@@ -259,8 +259,6 @@ en:
       error: error
       id: ID
       input: input
-      new_email_address: New email address
-      new_password: New password
       output: output
       result: result
       submit: Re-evaluate

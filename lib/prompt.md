@@ -1,4 +1,8 @@
-## Hello World
+Documentation
+=============
+
+Hello World
+-----------
 
 input:
 
@@ -8,9 +12,10 @@ result:
 
     Hello World
 
----
+* * *
 
-## Printing Hello World
+Printing Hello World
+--------------------
 
 input:
 
@@ -20,9 +25,10 @@ output:
 
     Hello World
 
----
+* * *
 
-## Maths
+Maths
+-----
 
 input:
 
@@ -32,9 +38,10 @@ result:
 
     2
 
----
+* * *
 
-## Integer#times
+Integer#times
+-------------
 
 input:
 
@@ -50,17 +57,18 @@ result:
 
     3
 
----
+* * *
 
-## Mail.send(from:, to:, subject:, body:)
+Mail.send(from:, to:, subject:, body:)
+--------------------------------------
 
-**from**: The email address(es) you send from, e.g. "jeremy@koch.example", "Daryl Weimann <bruno@cummerata-streich.example>", default: your primary email address
+**from**: The email address(es) you send from, e.g. "dominga\_nolan@hirthe.example", "Karly Hamill DDS <art\_balistreri@streich.example>", default: your primary email address
 
-**to**: The email address(es) you send to, e.g. "corrine\_marks@klocko.test", "Monroe Heathcote <andre@murazik-bartell.test>", default: your primary email address
+**to**: The email address(es) you send to, e.g. "david@labadie-reilly.test", "Fr. Nerissa Romaguera <elvin@feest.test>", default: your primary email address
 
-**subject**: The subject of the email, e.g. "A Farewell to Arms", default: ""
+**subject**: The subject of the email, e.g. "The Man Within", default: ""
 
-**body**: The body of the email, e.g. "Ameliorated bandwidth-monitored moratorium", default: ""
+**body**: The body of the email, e.g. "Re-contextualized contextually-based policy", default: ""
 
 ### Send an empty email to yourself
 
@@ -73,20 +81,21 @@ input:
 input:
 
     [
-      "emerita.okeefe@carter.test",
-      "lavonna@reichel.example",
-      "reginald.casper@hahn-lehner.test",
-      "ivonne_leffler@denesik-mosciski.example",
-      "victor@schamberger-stroman.example",
+      "isidro_hackett@abernathy.test",
+      "terence.prosacco@champlin.test",
+      "ernie.schumm@ratke.example",
+      "clarice@walsh.test",
+      "jerald@hessel.test",
     ].each do |to|
       Mail.send(to: to, subject: "Hello")
     end
 
----
+* * *
 
-## Sms.send(body:)
+Sms.send(body:)
+---------------
 
-**body**: The body of the text message, e.g. "I Will Fear No Evil", default: ""
+**body**: The body of the text message, e.g. "A Many-Splendoured Thing", default: ""
 
 ### Send an empty SMS to yourself
 
@@ -108,13 +117,14 @@ input
       Sms.send(body: "It will be raining tomorrow")
     end
 
----
+* * *
 
-## Weather.raining?(query:, date:)
+Weather.raining?(query:, date:)
+-------------------------------
 
-**query**: The location of the weather, e.g. "5316 Champlin Key, East Eddie, MA 21777-1431", "-22.284798477041647,45.12454353961925", default: Your location
+**query**: The location of the weather, e.g. "657 Kindra Extension, West Sheron, RI 31642", "-35.48643855535515,-10.863481369711963", default: Your location
 
-**date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from_now, 1.hour.ago, 2.hours.from_now, 2.hours.ago, default: Date.now
+**date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from\_now, 1.hour.ago, 2.hours.from\_now, 2.hours.ago, default: Date.now
 
 ### Check if it's raining
 
@@ -134,7 +144,7 @@ input
 
 output
 
-    true
+    false
 
 ### Check if it's raining in Paris, France tomorrow
 
@@ -146,15 +156,16 @@ output
 
     true
 
----
+* * *
 
-## Slack.send(team:, channel:, body:)
+Slack.send(team:, channel:, body:)
+----------------------------------
 
-**team**: Your team ID or team name, e.g. "A00AA0AAAAA" or "Schmeler, Wunsch and Zemlak", default: Your primary slack account team
+**team**: Your team ID or team name, e.g. "A00AA0AAAAA" or "Lockman LLC", default: Your primary slack account team
 
-**channel**: The channel you want to send to, e.g. "#general", "#random", "#carol_turner", default: "#general"
+**channel**: The channel you want to send to, e.g. "#general", "#random", "#isaiah", default: "#general"
 
-**body**: The body of the text message, e.g. "Fear and Trembling", default: ""
+**body**: The body of the text message, e.g. "I Sing the Body Electric", default: ""
 
 ### Send an empty Slack message to #general in your primary slack account
 
@@ -177,3 +188,53 @@ input
     else
       Slack.send(body: "It's not going to be raining tomorrow", channel: "#weather")
     end
+
+Meetup::Group.new(handle)
+-------------------------
+
+**handle**: Same as what's in the URL of the group on meetup.com, e.g. "paris\_rb", :paris\_rb, 'paris\_rb'
+
+input
+
+    Meetup::Group.new(:paris_rb)
+
+output
+
+    paris_rb
+
+Meetup::Group#events
+--------------------
+
+### Get the events from the meetup group paris\_rb
+
+input
+
+    Meetup::Group.new("paris_rb").events
+
+output
+
+    ["Meetup::Event#297791280", "Meetup::Event#299466405", "Meetup::Event#297791270"]
+
+### Send a reminder by SMS if meetups from the group ParisRb.new are going to happen in less than 1 day and in less than 2 hours
+
+input
+
+    Meetup::Group.new("paris_rb").events.each do |event|
+      next if event.past?
+    
+      if event.time.before?(1.day.from_now)
+        unless Storage.exists?(id: event.id, type: :one_day_reminder)
+          Sms.send(body: "{event.group.name}: {event.title} in one day {event.url}")
+          Storage.create!(id: event.id, type: :one_day_reminder)
+        end
+      end
+    
+      if event.time.before?(2.hours.from_now)
+        unless Storage.exists?(id: event.id, type: :two_hours_reminder)
+          Sms.send(body: "{event.group.name}: {event.title} in two hours {event.url}")
+          Storage.create!(id: event.id, type: :two_hours_reminder)
+        end
+      end
+    end
+    
+    nothing
