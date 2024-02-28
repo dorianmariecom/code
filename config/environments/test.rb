@@ -13,6 +13,7 @@ Rails.application.configure do
   config.active_support.deprecation = :stderr
   config.active_support.disallowed_deprecation = :raise
   config.active_support.disallowed_deprecation_warnings = []
+  config.cache_classes = false
   config.cache_store = :null_store
   config.consider_all_requests_local = true
   config.eager_load = ENV["CI"].present?
