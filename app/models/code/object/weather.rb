@@ -18,8 +18,8 @@ class Code
         when "raining?"
           sig(args) { { query: String.maybe, date: Date.maybe } }
           code_raining?(
-            query: value&.code_get(+"query"),
-            date: value&.code_get(+"date")
+            query: value&.code_get(String.new("query")),
+            date: value&.code_get(String.new("date"))
           )
         else
           super

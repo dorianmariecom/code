@@ -18,9 +18,9 @@ class Code
             { team: String.maybe, channel: String.maybe, body: String.maybe }
           end
           code_send(
-            team: value&.code_get(+"team"),
-            channel: value&.code_get(+"channel"),
-            body: value&.code_get(+"body")
+            team: value&.code_get(String.new("team")),
+            channel: value&.code_get(String.new("channel")),
+            body: value&.code_get(String.new("body"))
           )
         end
       end

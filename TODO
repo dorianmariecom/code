@@ -1,11 +1,5 @@
-### Code
-
-- Meetup::Group.new
-- Meetup::Group#events
-- event.time
-- time.before?
-- Storage.exists?
-- Storage.create!
+- cron field
+- Landing page
 - Twitter.search
 - Twitter.mentions
 - Stripe::Webhook.event
