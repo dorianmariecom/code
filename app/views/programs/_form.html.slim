@@ -19,8 +19,9 @@
       = render "shared/field", f: f, field: :name, type: :string, fake: fake_program_names, data: { prompt_target: :name }
       = render "shared/field", f: f, field: :input, type: :text, fake: fake_inputs, data: { prompt_target: :input }
 
-    .hidden
-      = f.fields_for :user do |user_f|
-        = render "users/form", f: user_f
+    - unless current_user?
+      .hidden
+        = f.fields_for :user do |user_f|
+          = render "users/form", f: user_f
 
     = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 3ecc26981476d6a8c4f1ba5bd33bfdeef1659a0f
+  revision: bf8e0f5f611dc67581d35772b773c14e1bae0fb3
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -124,7 +124,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    code-ruby (0.10.1)
+    code-ruby (0.10.2)
       activesupport (~> 7)
       bigdecimal (~> 3)
       json (~> 2)
@@ -180,8 +180,7 @@ GEM
     dotenv-rails (3.1.0)
       dotenv (= 3.1.0)
       railties (>= 6.1)
-    drb (2.2.0)
-      ruby2_keywords
+    drb (2.2.1)
     erubi (1.12.0)
     factory_bot (6.4.6)
       activesupport (>= 5.0.0)
@@ -223,7 +222,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.0.3)
+    marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.21.2)
@@ -268,7 +267,7 @@ GEM
     parser (3.3.0.5)
       ast (~> 2.4.1)
       racc
-    pg (1.5.5)
+    pg (1.5.6)
     phonelib (0.8.7)
     prettier_print (1.2.1)
     propshaft (0.8.0)
@@ -335,7 +334,7 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.13.1)
-    rubocop (1.60.2)
+    rubocop (1.61.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -346,8 +345,8 @@ GEM
       rubocop-ast (>= 1.30.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.30.0)
-      parser (>= 3.2.1.0)
+    rubocop-ast (1.31.1)
+      parser (>= 3.3.0.4)
     rubocop-minitest (0.34.5)
       rubocop (>= 1.39, < 2.0)
       rubocop-ast (>= 1.30.0, < 2.0)

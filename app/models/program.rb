@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Program < ApplicationRecord
+  TIMEOUT = 1
   belongs_to :user, default: -> { Current.user || User.new }
 
   accepts_nested_attributes_for :user
@@ -8,7 +9,14 @@ class Program < ApplicationRecord
   def evaluate!
     output = StringIO.new
     error = StringIO.new
-    result = Current.with(user:) { Code.evaluate(input, output:, error:) }
+    result = Current.with(user:) do
+      Code.evaluate(
+        input,
+        output:,
+        error:,
+        timeout: TIMEOUT
+      )
+    end
     update!(result:, output: output.string, error: error.string)
   rescue Code::Error => e
     update!(result: "", output: "", error: "#{e.class}: #{e.message}")
