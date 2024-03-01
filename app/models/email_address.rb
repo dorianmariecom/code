@@ -86,16 +86,16 @@ class EmailAddress < ApplicationRecord
   def verify!(code)
     return if code.blank? || verification_code.blank?
     code = code.gsub(/\D/, "")
-    self.verification_code = self.verification_code.gsub(/\D/, "")
+    self.verification_code = verification_code.gsub(/\D/, "")
     if code == self.verification_code
       update!(verified: true, verification_code: "")
     else
-      update!(verification_code: "")
+      update!(verified: false, verification_code: "")
     end
   end
 
   def cancel_verification!
-    update!(verification_code: "")
+    update!(verified: false, verification_code: "")
   end
 
   def to_s

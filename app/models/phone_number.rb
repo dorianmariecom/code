@@ -52,39 +52,36 @@ class PhoneNumber < ApplicationRecord
   end
 
   def verification_code_sent?
-    nexmo_request_id.present?
+    verification_code.present?
+  end
+
+  def reset_verification_code!
+    update!(
+      verification_code: rand(1_000_000).to_s.rjust(6, "0"),
+      verified: false
+    )
   end
 
   def send_verification_code!
-    query = { api_key:, api_secret:, number: e164, brand: BRAND }.to_query
-    uri = URI.parse("https://api.nexmo.com/verify/json?#{query}")
-    response = Net::HTTP.get_response(uri)
-    json = JSON.parse(response.body)
-    update!(nexmo_request_id: json["request_id"]) if json["status"] == "0"
+    reset_verification_code!
+    query = { api_key:, api_secret:, to: e164, from: BRAND, text: }.to_query
+    uri = URI.parse("https://rest.nexmo.com/sms/json?#{query}")
+    Net::HTTP.get_response(uri)
   end
 
   def verify!(code)
-    return if nexmo_request_id.blank?
+    return if code.blank? || verification_code.blank?
     code = code.gsub(/\D/, "")
-    return if code.blank?
-    query = { api_key:, api_secret:, request_id:, code: }.to_query
-    uri = URI.parse("https://api.nexmo.com/verify/check/json?#{query}")
-    response = Net::HTTP.get_response(uri)
-    json = JSON.parse(response.body)
-
-    if json["status"] == "0"
-      update!(verified: true, nexmo_request_id: "")
+    self.verification_code = verification_code.gsub(/\D/, "")
+    if code == verification_code
+      update!(verified: true, verification_code: "")
     else
-      update!(nexmo_request_id: "")
+      update!(verified: false, verification_code: "")
     end
   end
 
   def cancel_verification!
-    return if nexmo_request_id.blank?
-    query = { api_key:, api_secret:, request_id:, cmd: :cancel }.to_query
-    update!(nexmo_request_id: "")
-    uri = URI.parse("https://api.nexmo.com/verify/control/json?#{query}")
-    Net::HTTP.get_response(uri)
+    update!(verified: false, verification_code: "")
   end
 
   def valid_phone_number
@@ -93,8 +90,7 @@ class PhoneNumber < ApplicationRecord
   end
 
   def unverify!
-    cancel_verification! if verification_code_sent?
-    update!(verified: false, nexmo_request_id: "")
+    update!(verified: false, verification_code: "")
   end
 
   def verifying?
@@ -111,6 +107,10 @@ class PhoneNumber < ApplicationRecord
 
   def request_id
     nexmo_request_id
+  end
+
+  def text
+    "Your #{ENV.fetch("HOST")} verification code is #{verification_code}"
   end
 
   def to_s
