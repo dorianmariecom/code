@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Program < ApplicationRecord
-  TIMEOUT = 1
+  TIMEOUT = 1.second
   belongs_to :user, default: -> { Current.user || User.new }
 
   accepts_nested_attributes_for :user
@@ -18,7 +18,7 @@ class Program < ApplicationRecord
       )
     end
     update!(result:, output: output.string, error: error.string)
-  rescue Code::Error => e
+  rescue Code::Error, Timeout::Error => e
     update!(result: "", output: "", error: "#{e.class}: #{e.message}")
   end
 
