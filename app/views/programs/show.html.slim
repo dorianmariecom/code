@@ -7,6 +7,11 @@
 .text-sm= t(".id")
 .mb-5= @program.id
 
+- if @program.prompt.present?
+  .text-sm=> t(".prompt")
+  pre.mt-0
+    = @program.prompt
+
 - if @program.input.present?
   .text-sm=> t(".input")
   pre.mt-0

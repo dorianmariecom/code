@@ -259,6 +259,7 @@ en:
       error: error
       id: ID
       input: input
+      prompt: prompt
       output: output
       result: result
       submit: Re-evaluate
