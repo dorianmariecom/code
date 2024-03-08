@@ -1,0 +1,17 @@
+- content_for(:title, @twitter_account.to_s)
+
+- if admin?
+  .text-sm= t(".belongs_to")
+  .mb-5= link_to @twitter_account.user
+
+.text-sm= t(".id")
+.mb-5= @twitter_account.id
+
+.text-sm= t(".primary")
+.mb-5= @twitter_account.primary?
+
+.text-sm= t(".verified")
+.mb-5= @twitter_account.verified?
+
+.p= link_to t(".edit"), [:edit, @twitter_account]
+.p= button_to t(".delete"), @twitter_account, method: :delete, class: "a text-red-600"

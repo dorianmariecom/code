@@ -1,17 +1,11 @@
-- f = local_assigns.fetch(:f)
-- removable = local_assigns.fetch(:removable, false)
+- slack_account = local_assigns.fetch(:slack_account)
+- submit = local_assigns.fetch(:submit)
 
-.slack-account.border-l-2.border-black.pl-4.mb-5(data-new-record="#{f.object.new_record?}")
-  .font-bold.italic= t(".slack_account")
-
+= form_for slack_account do |f|
   - if admin?
     = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
     = render "shared/field", f: f, field: :verified, type: :checkbox
 
   = render "shared/field", f: f, field: :primary, type: :checkbox
 
-  - if removable
-    = f.hidden_field :_destroy
-
-    button.text-red-600.underline(type="button" data-action="slack-accounts#remove")
-      = t(".remove")
+  = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

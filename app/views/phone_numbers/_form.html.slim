@@ -1,9 +1,7 @@
-- f = local_assigns.fetch(:f)
-- removable = local_assigns.fetch(:removable, false)
+- phone_number = local_assigns.fetch(:phone_number)
+- submit = local_assigns.fetch(:submit)
 
-.phone-number.border-l-2.border-black.pl-4.mb-5(data-new-record="#{f.object.new_record?}")
-  .font-bold.italic= t(".phone_number")
-
+= form_for phone_number do |f|
   - if admin?
     = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
     = render "shared/field", f: f, field: :verified, type: :checkbox
@@ -11,9 +9,4 @@
   = render "shared/field", f: f, field: :primary, type: :checkbox
   = render "shared/field", f: f, field: :phone_number, type: :phone_number, autocomplete: :phone, required: true, fake: fake_phone_numbers, value: f.object.formatted
 
-  - if removable
-    = f.hidden_field :_destroy
-
-    button.text-red-600.underline(type="button" data-action="phone-numbers#remove")
-      = t(".remove")
-
+  = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

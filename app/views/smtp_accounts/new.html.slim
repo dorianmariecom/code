@@ -1,3 +1,1 @@
-= form_for @smtp_account do |f|
-  = render "form", f: f
-  = f.submit t(".submit"), class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+= render "form", smtp_account: @smtp_account, submit: t(".submit")

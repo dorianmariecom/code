@@ -44,6 +44,7 @@ html
         => link_to t(".programs", count: policy_scope(Program).size), programs_path
         => link_to t(".slack_accounts", count: policy_scope(SlackAccount).size), slack_accounts_path
         => link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).size), smtp_accounts_path
+        => link_to t(".twitter_accounts", count: policy_scope(TwitterAccount).size), twitter_accounts_path
         => link_to t(".up"), up_path
         => link_to t(".users", count: policy_scope(User).size), users_path
 

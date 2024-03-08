@@ -25,12 +25,9 @@ en:
       title: Edit email address
     form:
       email_address: Email address
-      remove: Remove
     index:
       new: New email address
       title: Email addresses
-    nested:
-      add_email_address: Add email address
     new:
       submit: Create email address
       title: New email address
@@ -141,6 +138,10 @@ en:
         one: 1 slack account
         other: "%{count} slack accounts"
         zero: 0 slack accounts
+      twitter_accounts:
+        one: 1 twitter account
+        other: "%{count} twitter accounts"
+        zero: 0 twitter accounts
       smtp_accounts:
         one: 1 SMTP account
         other: "%{count} SMTP accounts"
@@ -180,12 +181,9 @@ en:
       title: Edit password
     form:
       password: Password
-      remove: Remove
     index:
       new: New password
       title: Passwords
-    nested:
-      add_password: Add password
     new:
       submit: Create password
       title: New password
@@ -207,12 +205,9 @@ en:
       title: Edit phone number
     form:
       phone_number: Phone number
-      remove: Remove
     index:
       new: New phone number
       title: Phone numbers
-    nested:
-      add_phone_number: Add phone number
     new:
       submit: Create phone number
       title: New phone number
@@ -337,7 +332,6 @@ en:
       submit: Update slack account
       title: Edit slack account
     form:
-      remove: Remove
       slack_account: Slack account
     new:
       eg: e.g.
@@ -367,13 +361,10 @@ en:
       submit: Update SMTP account
       title: Edit SMTP account
     form:
-      remove: Remove
       smtp_account: SMTP account
     index:
       new: New SMTP account
       title: SMTP accounts
-    nested:
-      add_smtp_account: Add SMTP account
     new:
       submit: Create SMTP account
       title: New SMTP account
@@ -460,3 +451,26 @@ en:
       time_zone: Time zone
     update:
       notice: User updated
+  twitter_accounts:
+    destroy:
+      notice: Twitter account deleted
+    edit:
+      submit: Update twitter account
+      title: Edit twitter account
+    form:
+      twitter_account: Twitter account
+    new:
+      submit: New twitter account
+      title: New twitter account
+    index:
+      new: New twitter account
+      title: Twitter accounts
+    show:
+      belongs_to: belongs to
+      delete: Delete twitter account
+      edit: Edit twitter account
+      id: ID
+      primary: primary
+      verified: verified
+    update:
+      notice: Twitter account updated

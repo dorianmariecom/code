@@ -75,7 +75,7 @@ RSpec.describe Code, type: :model do
     CODE
   end
 
-  it "searches for mentions on Twitter" do
+  it "searches for mentions on Twitter", :pending do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)

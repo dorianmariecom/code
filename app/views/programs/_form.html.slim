@@ -1,21 +1,19 @@
 = form_for program do |f|
-  .border-black.border-l-2.pl-4
-    .font-bold.italic= t(".program")
+  - if admin?
+    = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
 
-    - if admin?
-      = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
+  div(data-controller="prompt")
+    .font-bold= f.label :prompt, t(".prompt")
+    = f.text_area :prompt, autocomplete: "off", class: "w-full", data: { form_type: "other", prompt_target: "prompt" }
+    button.bg-black.text-white.rounded.px-2.py-1.cursor-pointer(data-action="prompt#generate:prevent")
+      = t(".generate")
+    .text-sm.text-gray-600.italic
+      => t(".eg")
+      = fake_prompts
 
-    div(data-controller="prompt")
-      .font-bold= f.label :prompt, t(".prompt")
-      = f.text_area :prompt, autocomplete: "off", class: "w-full", data: { form_type: "other", prompt_target: "prompt" }
-      button.bg-black.text-white.rounded.px-2.py-1.cursor-pointer(data-action="prompt#generate:prevent")
-        = t(".generate")
-      .text-sm.text-gray-600.italic
-        => t(".eg")
-        = fake_prompts
+    .hidden(data-prompt-target="loading")= t(".loading")
 
-      .hidden(data-prompt-target="loading")= t(".loading")
+    = render "shared/field", f: f, field: :name, type: :string, fake: fake_program_names, data: { prompt_target: :name }
+    = render "shared/field", f: f, field: :input, type: :text, fake: fake_inputs, data: { prompt_target: :input }
 
-      = render "shared/field", f: f, field: :name, type: :string, fake: fake_program_names, data: { prompt_target: :name }
-      = render "shared/field", f: f, field: :input, type: :text, fake: fake_inputs, data: { prompt_target: :input }
-    = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+  = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

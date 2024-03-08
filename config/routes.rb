@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       resource :verification_code
     end
     resources :slack_accounts
+    resources :twitter_accounts
     resources :passwords
     resources :programs
   end
@@ -45,10 +46,13 @@ Rails.application.routes.draw do
     resource :verification_code
   end
   resources :slack_accounts
+  resources :twitter_accounts
   resources :passwords
   resources :programs
 
   match "/auth/slack/callback" => "slack_accounts#callback",
+        :via => %i[get post]
+  match "/auth/twitter/callback" => "twitter_accounts#callback",
         :via => %i[get post]
   get "up" => "pages#up"
   get "documentation" => "pages#documentation"

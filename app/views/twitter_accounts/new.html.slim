@@ -1,0 +1,8 @@
+div(data-controller="twitter-authorize-url")
+  div= label_tag :team
+  div= text_field_tag :team, "", data: { twitter_authorize_url_target: "input", action: "twitter-authorize-url#input" }
+  .text-red-600(data-twitter-authorize-url-target="error")
+  .text-sm.text-gray-600.italic
+    => t(".eg")
+    = fake_twitter_teams
+  p= link_to t(".submit"), TwitterAccount.authorize_url, class: "no-underline inline-block bg-black text-white rounded px-4 py-2 cursor-pointer", data: { twitter_authorize_url_target: "link" }

@@ -1,17 +1,11 @@
-- f = local_assigns.fetch(:f)
-- removable = local_assigns.fetch(:removable, false)
+- password = local_assigns.fetch(:password)
+- submit = local_assigns.fetch(:submit)
 
-.password.border-l-2.border-black.pl-4.mb-5(data-new-record="#{f.object.new_record?}")
-  .font-bold.italic= t(".password")
-
+= form_for password do |f|
   - if admin?
     = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
 
   = render "shared/field", f: f, field: :hint, type: :string
   = render "shared/field", f: f, field: :password, type: :password, required: f.object.new_record?, autocomplete: f.object.new_record? ? "new-password" : "current-password", fake: fake_passwords
 
-  - if removable
-    = f.hidden_field :_destroy
-    button.text-red-600.underline(type="button" data-action="passwords#remove")
-      = t(".remove")
-
+  = f.submit submit,class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
