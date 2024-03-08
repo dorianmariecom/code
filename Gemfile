@@ -3,7 +3,6 @@
 source "https://rubygems.org"
 
 git_source(:github) { |name| "https://github.com/#{name}" }
-git_source(:rails) { |name| "https://github.com/rails/#{name}" }
 
 ruby "3.3.0"
 
@@ -28,7 +27,7 @@ gem "phonelib"
 gem "puma"
 gem "pundit"
 gem "rack-attack"
-gem "rails", rails: :rails
+gem "rails"
 gem "redis"
 gem "rubocop"
 gem "slim-rails"

@@ -43,11 +43,11 @@ class SlackAccount < ApplicationRecord
   end
 
   def self.client_id
-    Rails.application.credentials.slack.com.client_id
+    Rails.application.credentials.slack_com.client_id
   end
 
   def self.client_secret
-    Rails.application.credentials.slack.com.client_secret
+    Rails.application.credentials.slack_com.client_secret
   end
 
   def self.redirect_uri

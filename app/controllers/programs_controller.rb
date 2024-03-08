@@ -21,14 +21,14 @@ class ProgramsController < ApplicationController
   end
 
   def create
+    unless current_user
+      Current.user = User.create!
+      session[:user_id] = Current.user.id
+    end
+
     @program = authorize scope.new(program_params)
 
     if @program.save
-      unless current_user
-        Current.user = @program.user
-        session[:user_id] = Current.user.id
-      end
-
       @program.evaluate!
       redirect_to @program, notice: t(".notice")
     else
@@ -80,98 +80,9 @@ class ProgramsController < ApplicationController
 
   def program_params
     if admin?
-      params.require(:program).permit(
-        :user_id,
-        :input,
-        :name,
-        :prompt,
-        user_attributes: [
-          :admin,
-          :name,
-          :time_zone,
-          :location,
-          :city,
-          :street_number,
-          :route,
-          :county,
-          :state,
-          :postal_code,
-          :country,
-          :latitude,
-          :longitude,
-          {
-            email_addresses_attributes: %i[
-              user_id
-              verified
-              id
-              _destroy
-              primary
-              email_address
-            ],
-            phone_numbers_attributes: %i[
-              user_id
-              id
-              _destroy
-              primary
-              phone_number
-            ],
-            passwords_attributes: %i[user_id id _destroy password hint],
-            smtp_accounts_attributes: %i[
-              user_id
-              verified
-              id
-              _destroy
-              primary
-              display_name
-              address
-              port
-              user_name
-              password
-              authentication
-              enable_starttls_auto
-            ],
-            slack_accounts_attributes: %i[user_id verified id _destroy primary]
-          }
-        ]
-      )
+      params.require(:program).permit(:user_id, :input, :name, :prompt)
     else
-      params.require(:program).permit(
-        :input,
-        :name,
-        :prompt,
-        user_attributes: [
-          :name,
-          :time_zone,
-          :location,
-          :city,
-          :street_number,
-          :route,
-          :county,
-          :state,
-          :postal_code,
-          :country,
-          :latitude,
-          :longitude,
-          {
-            email_addresses_attributes: %i[id _destroy primary email_address],
-            phone_numbers_attributes: %i[id _destroy primary phone_number],
-            passwords_attributes: %i[id _destroy password hint],
-            smtp_accounts_attributes: %i[
-              id
-              _destroy
-              primary
-              display_name
-              address
-              port
-              user_name
-              password
-              authentication
-              enable_starttls_auto
-            ],
-            slack_accounts_attributes: %i[id _destroy primary]
-          }
-        ]
-      )
+      params.require(:program).permit(:input, :name, :prompt)
     end
   end
 end

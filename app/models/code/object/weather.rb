@@ -42,7 +42,7 @@ class Code
         uri = URI.parse("https://api.weatherapi.com/v1/forecast.json")
         request = Net::HTTP::Post.new(uri)
         request.set_form_data(
-          key: Rails.application.credentials.api.weatherapi.com.api_key,
+          key: Rails.application.credentials.api_weatherapi_com.api_key,
           q: query,
           days: MAX_FORECAST_DAYS
         )

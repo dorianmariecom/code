@@ -14,7 +14,7 @@ module ApplicationHelper
   end
 
   def google_maps_api_key
-    Rails.application.credentials.console.cloud.google.com.api_key
+    Rails.application.credentials.console_cloud_google_com.api_key
   end
 
   def fake_locations

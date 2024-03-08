@@ -98,11 +98,11 @@ class PhoneNumber < ApplicationRecord
   end
 
   def api_key
-    Rails.application.credentials.rest.nexmo.com.api_key
+    Rails.application.credentials.rest_nexmo_com.api_key
   end
 
   def api_secret
-    Rails.application.credentials.rest.nexmo.com.api_secret
+    Rails.application.credentials.rest_nexmo_com.api_secret
   end
 
   def request_id

@@ -41,7 +41,7 @@ class Prompt
   end
 
   def authorization
-    "Bearer #{Rails.application.credentials.api.openai.com.api_key}"
+    "Bearer #{Rails.application.credentials.api_openai_com.api_key}"
   end
 
   def model

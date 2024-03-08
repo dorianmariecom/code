@@ -154,4 +154,25 @@ class Current < ActiveSupport::CurrentAttributes
   def primary_smtp_account!
     primary_smtp_account || raise(Code::Error, "No verified smtp account found")
   end
+
+  def twitter_accounts
+    return unless user?
+    user.twitter_accounts.verified
+  end
+
+  def twitter_accounts!
+    user!
+    raise(Code::Error, "No twitter accounts found") if twitter_accounts.none?
+    twitter_accounts
+  end
+
+  def primary_twitter_account
+    return unless user?
+    twitter_accounts.verified.primary.first || twitter_accounts.verified.first
+  end
+
+  def primary_twitter_account!
+    primary_twitter_account ||
+      raise(Code::Error, "No verified twitter account found")
+  end
 end

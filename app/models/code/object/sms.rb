@@ -36,8 +36,8 @@ class Code
           from:,
           to:,
           text: body,
-          api_key: Rails.application.credentials.rest.nexmo.com.api_key,
-          api_secret: Rails.application.credentials.rest.nexmo.com.api_secret
+          api_key: Rails.application.credentials.rest_nexmo_com.api_key,
+          api_secret: Rails.application.credentials.rest_nexmo_com.api_secret
         }.to_query
 
         Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|

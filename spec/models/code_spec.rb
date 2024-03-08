@@ -62,9 +62,8 @@ RSpec.describe Code, type: :model do
       CODE
     end
   end
-=begin
 
-  it "searches for tweets" do
+  it "searches for tweets", :pending do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
@@ -88,7 +87,7 @@ RSpec.describe Code, type: :model do
     CODE
   end
 
-  it "sends payment notifications" do
+  it "sends payment notifications", :pending do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
@@ -99,7 +98,6 @@ RSpec.describe Code, type: :model do
       end
     CODE
   end
-=end
 
   it "sends slack messages" do
     Current.user = create(:user, :dorian)
@@ -112,9 +110,9 @@ RSpec.describe Code, type: :model do
     CODE
   end
 
-=begin
-  it "send messages" do
+  it "send messages", :pending do
     Current.user = create(:user, :dorian)
+
     Code.evaluate(<<~CODE)
       Slack.send(body: "Who is leading the syncs?", channel: "#team-template")
 
@@ -133,5 +131,4 @@ RSpec.describe Code, type: :model do
       )
     CODE
   end
-=end
 end

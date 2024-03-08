@@ -9,14 +9,10 @@ class Program < ApplicationRecord
   def evaluate!
     output = StringIO.new
     error = StringIO.new
-    result = Current.with(user:) do
-      Code.evaluate(
-        input,
-        output:,
-        error:,
-        timeout: TIMEOUT
-      )
-    end
+    result =
+      Current.with(user:) do
+        Code.evaluate(input, output:, error:, timeout: TIMEOUT)
+      end
     update!(result:, output: output.string, error: error.string)
   rescue Code::Error, Timeout::Error => e
     update!(result: "", output: "", error: "#{e.class}: #{e.message}")
