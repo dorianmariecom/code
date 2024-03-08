@@ -1,0 +1,5 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+  - package-ecosystem: "npm"
+  - package-ecosystem: "bundler"
