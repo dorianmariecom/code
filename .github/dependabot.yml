@@ -1,8 +1,11 @@
 version: 2
 updates:
   - package-ecosystem: github-actions
-    schedule: daily
+    schedule:
+      interval: daily
   - package-ecosystem: npm
-    schedule: daily
+    schedule:
+      interval: daily
   - package-ecosystem: bundler
-    schedule: daily
+    schedule:
+      interval: daily
