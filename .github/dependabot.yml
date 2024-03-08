@@ -1,5 +1,8 @@
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
-  - package-ecosystem: "npm"
-  - package-ecosystem: "bundler"
+  - package-ecosystem: github-actions
+    schedule: daily
+  - package-ecosystem: npm
+    schedule: daily
+  - package-ecosystem: bundler
+    schedule: daily
