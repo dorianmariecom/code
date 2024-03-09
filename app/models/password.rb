@@ -6,6 +6,6 @@ class Password < ApplicationRecord
   has_secure_password
 
   def to_s
-    hint.presence || "Password##{id}"
+    hint.presence || "password##{id}"
   end
 end

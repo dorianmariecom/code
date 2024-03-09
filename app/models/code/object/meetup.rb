@@ -17,6 +17,9 @@ class Code
         when "Group"
           sig(args)
           Class.new(Group)
+        when "Event"
+          sig(args)
+          Class.new(Event)
         else
           super
         end

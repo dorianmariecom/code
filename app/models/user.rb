@@ -13,40 +13,9 @@ class User < ApplicationRecord
   has_many :smtp_accounts, dependent: :destroy
   has_many :twitter_accounts, dependent: :destroy
 
-  accepts_nested_attributes_for(
-    :email_addresses,
-    reject_if: :all_blank,
-    allow_destroy: true
-  )
-  accepts_nested_attributes_for(
-    :passwords,
-    reject_if: :all_blank,
-    allow_destroy: true
-  )
-  accepts_nested_attributes_for(
-    :phone_numbers,
-    reject_if: :all_blank,
-    allow_destroy: true
-  )
-  accepts_nested_attributes_for(
-    :slack_accounts,
-    reject_if: :all_blank,
-    allow_destroy: true
-  )
-  accepts_nested_attributes_for(
-    :smtp_accounts,
-    reject_if: :all_blank,
-    allow_destroy: true
-  )
-  accepts_nested_attributes_for(
-    :twitter_accounts,
-    reject_if: :all_blank,
-    allow_destroy: true
-  )
-
   validates :time_zone, inclusion: { in: TIME_ZONES, allow_blank: true }
 
   def to_s
-    name.presence || "User##{id}"
+    name.presence || "user##{id}"
   end
 end

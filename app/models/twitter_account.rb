@@ -41,6 +41,6 @@ class TwitterAccount < ApplicationRecord
   end
 
   def to_s
-    "TwitterAccount##{id}"
+    "twitter_account##{id}"
   end
 end

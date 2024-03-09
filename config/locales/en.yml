@@ -10,67 +10,67 @@ en:
               invalid: is invalid
   email_address_mailer:
     verification_code_email:
-      dorian: Dorian
-      hi: Hi,
-      intro: "Here is your verification code for %{host}:"
-      subject: Your %{host} verification code is %{verification_code}
-      thanks: Thanks,
+      dorian: dorian
+      hi: hi,
+      intro: "here is your verification code for %{host}:"
+      subject: your %{host} verification code is %{verification_code}
+      thanks: thanks,
   email_addresses:
     create:
-      notice: Email address created
+      notice: email address created
     destroy:
-      notice: Email address deleted
+      notice: email address deleted
     edit:
-      submit: Update email address
-      title: Edit email address
+      submit: update email address
+      title: edit email address
     form:
-      email_address: Email address
+      email_address: email address
     index:
-      new: New email address
-      title: Email addresses
+      new: new email address
+      title: email addresses
     new:
-      submit: Create email address
-      title: New email address
+      submit: create email address
+      title: new email address
     show:
       belongs_to: belongs to
-      cancel: Cancel
-      delete: Delete email address
-      edit: Edit email address
+      cancel: cancel
+      delete: delete email address
+      edit: edit email address
       email_address: email address
-      id: ID
+      id: id
       primary: primary
-      send_verification_code: Send verification code
+      send_verification_code: send verification code
       verified: verified
-      verify: Verify
+      verify: verify
     update:
-      notice: Email address updated
+      notice: email address updated
   js:
     domain:
-      not_present: Not present
-      not_valid: Not valid
+      not_present: not present
+      not_valid: not valid
     email_address:
-      not_present: Not present
-      not_valid: Not valid
+      not_present: not present
+      not_valid: not valid
     name:
-      not_present: Not present
+      not_present: not present
     password:
-      not_present: Not present
+      not_present: not present
     phone_number:
-      invalid_country_code: Invalid country code
-      invalid_length: Invalid length
-      invalid_phone_number: Invalid phone number
-      is_possible: Is possible
-      is_possible_local_only: Is possible local only
-      is_taken: Is taken
-      not_present: Not present
-      too_long: Too long
-      too_short: Too short
+      invalid_country_code: invalid country code
+      invalid_length: invalid length
+      invalid_phone_number: invalid phone number
+      is_possible: is possible
+      is_possible_local_only: is possible local only
+      is_taken: is taken
+      not_present: not present
+      too_long: too long
+      too_short: too short
     slack_authorize_url:
-      not_present: Not present
-      not_valid: Not valid
+      not_present: not present
+      not_valid: not valid
     verification_code:
-      not_present: Not present
-      not_valid: Not valid
+      not_present: not present
+      not_valid: not valid
   layouts:
     application:
       blocked_jobs:
@@ -81,7 +81,7 @@ en:
         one: 1 claimed job
         other: "%{count} claimed jobs"
         zero: 0 claimed jobs
-      documentation: Documentation
+      documentation: documentation
       email_addresses:
         one: 1 email address
         other: "%{count} email addresses"
@@ -110,9 +110,9 @@ en:
         one: 1 job
         other: "%{count} jobs"
         zero: 0 jobs
-      log_in: Log in
-      log_out: Log out
-      mailers: Mailers
+      log_in: log in
+      log_out: log out
+      mailers: mailers
       passwords:
         one: 1 password
         other: "%{count} passwords"
@@ -129,7 +129,7 @@ en:
         one: 1 ready job
         other: "%{count} ready jobs"
         zero: 0 ready jobs
-      register: Register
+      register: register
       scheduled_jobs:
         one: 1 scheduled job
         other: "%{count} scheduled jobs"
@@ -143,10 +143,10 @@ en:
         other: "%{count} twitter accounts"
         zero: 0 twitter accounts
       smtp_accounts:
-        one: 1 SMTP account
-        other: "%{count} SMTP accounts"
-        zero: 0 SMTP accounts
-      title: Code
+        one: 1 smtp account
+        other: "%{count} smtp accounts"
+        zero: 0 smtp accounts
+      title: code
       up: "/up"
       users:
         one: 1 user
@@ -154,276 +154,276 @@ en:
         zero: 0 users
   pages:
     documentation:
-      title: Documentation
+      title: documentation
     home:
-      submit: Evaluate
-      title: Code
+      submit: evaluate
+      title: code
     up:
       title: "/up"
   password_validator:
     model:
       sequence:
-        bruteforce: Add another word or two, preferably uncommon
-        date: Avoid dates and years that are associated with you
-        dictionary: Add another word or two, preferably uncommon
-        digits: Avoid digits
-        repeat: Avoid repeated words or characters
-        sequence: Avoid sequences
-        spatial: Use longer keyboard patterns with more turns
-        year: Avoid recent years, especially if they are associated with you
+        bruteforce: add another word or two, preferably uncommon
+        date: avoid dates and years that are associated with you
+        dictionary: add another word or two, preferably uncommon
+        digits: avoid digits
+        repeat: avoid repeated words or characters
+        sequence: avoid sequences
+        spatial: use longer keyboard patterns with more turns
+        year: avoid recent years, especially if they are associated with you
   passwords:
     create:
-      notice: Password created
+      notice: password created
     destroy:
-      notice: Password deleted
+      notice: password deleted
     edit:
-      submit: Update password
-      title: Edit password
+      submit: update password
+      title: edit password
     form:
-      password: Password
+      password: password
     index:
-      new: New password
-      title: Passwords
+      new: new password
+      title: passwords
     new:
-      submit: Create password
-      title: New password
+      submit: create password
+      title: new password
     show:
       belongs_to: belongs to
-      delete: Delete password
-      edit: Edit password
-      id: ID
+      delete: delete password
+      edit: edit password
+      id: id
       password: password
     update:
-      notice: Password updated
+      notice: password updated
   phone_numbers:
     create:
-      notice: Phone number created
+      notice: phone number created
     destroy:
-      notice: Phone number deleted
+      notice: phone number deleted
     edit:
-      submit: Update phone number
-      title: Edit phone number
+      submit: update phone number
+      title: edit phone number
     form:
-      phone_number: Phone number
+      phone_number: phone number
     index:
-      new: New phone number
-      title: Phone numbers
+      new: new phone number
+      title: phone numbers
     new:
-      submit: Create phone number
-      title: New phone number
+      submit: create phone number
+      title: new phone number
     show:
       belongs_to: belongs to
-      call: Call
-      cancel: Cancel
-      delete: Delete phone number
-      edit: Edit phone number
-      id: ID
+      call: call
+      cancel: cancel
+      delete: delete phone number
+      edit: edit phone number
+      id: id
       phone_number: phone number
       primary: primary
-      send_verification_code: Send verification code
-      sms: SMS
+      send_verification_code: send verification code
+      sms: sms
       verified: verified
-      verify: Verify
-      whatsapp: WhatsApp
+      verify: verify
+      whatsapp: whatsapp
     update:
-      notice: Phone number updated
+      notice: phone number updated
   programs:
     create:
-      notice: Program created
+      notice: program created
     destroy:
-      notice: Program deleted
+      notice: program deleted
     edit:
-      submit: Re-evaluate
-      title: Edit program
+      submit: re-evaluate
+      title: edit program
     form:
       eg: e.g.
-      generate: Generate
-      loading: Generating...
-      program: Program
-      prompt: Prompt
+      generate: generate
+      loading: generating...
+      program: program
+      prompt: prompt
     index:
-      new: New program
-      title: Programs
+      new: new program
+      title: programs
     new:
-      submit: Evaluate
-      title: New program
+      submit: evaluate
+      title: new program
     show:
       belongs_to: belongs to
-      delete: Delete program
-      edit: Edit program
+      delete: delete program
+      edit: edit program
       error: error
-      id: ID
+      id: id
       input: input
       prompt: prompt
       output: output
       result: result
-      submit: Re-evaluate
+      submit: re-evaluate
     update:
-      notice: Program updated
+      notice: program updated
   sessions:
     create:
-      notice: Logged in
-      wrong_email_address: Wrong email address
-      wrong_password: Wrong password
+      notice: logged in
+      wrong_email_address: wrong email address
+      wrong_password: wrong password
     destroy:
-      notice: Logged out
+      notice: logged out
     new:
-      submit: Log in
-      title: Log in
+      submit: log in
+      title: log in
   shared:
     field:
       eg: e.g.
       email_address:
-        display_name: Display name
-        email_address: Email address
-        primary: Primary?
-        smtp_address: SMTP address
-        smtp_authentication: SMTP authentication
-        smtp_enable_starttls_auto: SMTP enable StartTLS auto
-        smtp_password: SMTP password
-        smtp_port: SMTP port
-        smtp_user_name: SMTP user name
-        user_id: User
-        verification_code: Verification code
-        verified: Verified?
+        display_name: display name
+        email_address: email address
+        primary: primary?
+        smtp_address: smtp address
+        smtp_authentication: smtp authentication
+        smtp_enable_starttls_auto: smtp enable starttls auto
+        smtp_password: smtp password
+        smtp_port: smtp port
+        smtp_user_name: smtp user name
+        user_id: user
+        verification_code: verification code
+        verified: verified?
       or: or
       password:
-        hide_password: Hide password
-        hint: Hint
-        password: Password
-        show_password: Show password
-        user_id: User
+        hide_password: hide password
+        hint: hint
+        password: password
+        show_password: show password
+        user_id: user
       phone_number:
-        phone_number: Phone number
-        primary: Primary?
-        user_id: User
-        verification_code: Verification code
-        verified: Verified?
+        phone_number: phone number
+        primary: primary?
+        user_id: user
+        verification_code: verification code
+        verified: verified?
       program:
-        input: Input
-        name: Name
-        user_id: User
+        input: input
+        name: name
+        user_id: user
       session:
-        email_address: Email address
-        password: Password
+        email_address: email address
+        password: password
       slack_account:
-        primary: Primary?
-        user_id: User
-        verified: Verified?
+        primary: primary?
+        user_id: user
+        verified: verified?
       smtp_account:
-        address: Address
-        authentication: Authentication
-        display_name: Display name
-        enable_starttls_auto: Enable StartTLS auto
-        password: Password
-        port: Port
-        primary: Primary?
-        user_id: User
-        user_name: User name
-        verified: Verified?
+        address: address
+        authentication: authentication
+        display_name: display name
+        enable_starttls_auto: enable starttls auto
+        password: password
+        port: port
+        primary: primary?
+        user_id: user
+        user_name: user name
+        verified: verified?
       user:
-        location: Location
-        name: Name
-        time_zone: Time zone
+        location: location
+        name: name
+        time_zone: time zone
   slack_accounts:
     destroy:
-      notice: Slack account deleted
+      notice: slack account deleted
     edit:
-      submit: Update slack account
-      title: Edit slack account
+      submit: update slack account
+      title: edit slack account
     form:
-      slack_account: Slack account
+      slack_account: slack account
     new:
       eg: e.g.
-      submit: New slack account
-      title: New slack account
+      submit: new slack account
+      title: new slack account
     index:
       eg: e.g.
-      new: New slack account
-      title: Slack accounts
+      new: new slack account
+      title: slack accounts
     show:
       belongs_to: belongs to
       channels: channels
-      delete: Delete slack account
-      edit: Edit slack account
-      id: ID
+      delete: delete slack account
+      edit: edit slack account
+      id: id
       primary: primary
       token: token
       verified: verified
     update:
-      notice: Slack account updated
+      notice: slack account updated
   smtp_accounts:
     create:
-      notice: SMTP account created
+      notice: smtp account created
     destroy:
-      notice: SMTP account deleted
+      notice: smtp account deleted
     edit:
-      submit: Update SMTP account
-      title: Edit SMTP account
+      submit: update smtp account
+      title: edit smtp account
     form:
-      smtp_account: SMTP account
+      smtp_account: smtp account
     index:
-      new: New SMTP account
-      title: SMTP accounts
+      new: new smtp account
+      title: smtp accounts
     new:
-      submit: Create SMTP account
-      title: New SMTP account
+      submit: create smtp account
+      title: new smtp account
     show:
-      verify: Verify
+      verify: verify
       address: address
       authentication: authentication
       belongs_to: belongs to
-      delete: Delete SMTP account
+      delete: delete smtp account
       display_name: display name
-      edit: Edit SMTP account
-      enable_starttls_auto: enable StartTLS auto
-      id: ID
+      edit: edit smtp account
+      enable_starttls_auto: enable starttls auto
+      id: id
       password: password
       port: port
       primary: primary
-      smtp_account: SMTP account
+      smtp_account: smtp account
       user_name: user name
       verified: verified
     update:
-      notice: SMTP account updated
+      notice: smtp account updated
   users:
     create:
-      notice: Registered
+      notice: registered
     destroy:
-      notice: User deleted
+      notice: user deleted
     edit:
-      submit: Update
-      title: Edit user
+      submit: update
+      title: edit user
     form:
-      user: User
+      user: user
     index:
-      new: New user
-      title: Users
+      new: new user
+      title: users
     new:
-      submit: Register
-      title: Registration
+      submit: register
+      title: registration
     show:
-      admin: Admin
+      admin: admin
       city: city
-      confirm: Are you sure you want to delete this user?
+      confirm: are you sure you want to delete this user?
       country: country
       county: county
-      destroy: Delete user
-      edit: Edit user
+      destroy: delete user
+      edit: edit user
       email_addresses:
         one: 1 email address
         other: "%{count} email addresses"
         zero: 0 email addresses
-      id: ID
+      id: id
       latitude: latitude
       location: location
       longitude: longitude
-      new_email_address: New email address
-      new_password: New password
-      new_phone_number: New phone number
-      new_program: New program
-      new_slack_account: New slack account
-      new_smtp_account: New SMTP account
+      new_email_address: new email address
+      new_password: new password
+      new_phone_number: new phone number
+      new_program: new program
+      new_slack_account: new slack account
+      new_smtp_account: new smtp account
       passwords:
         one: 1 password
         other: "%{count} passwords"
@@ -443,34 +443,34 @@ en:
         other: "%{count} slack accounts"
         zero: 0 slack accounts
       smtp_accounts:
-        one: 1 SMTP account
-        other: "%{count} SMTP accounts"
-        zero: 0 SMTP accounts
+        one: 1 smtp account
+        other: "%{count} smtp accounts"
+        zero: 0 smtp accounts
       state: state
       street_number: street number
-      time_zone: Time zone
+      time_zone: time zone
     update:
-      notice: User updated
+      notice: user updated
   twitter_accounts:
     destroy:
-      notice: Twitter account deleted
+      notice: twitter account deleted
     edit:
-      submit: Update twitter account
-      title: Edit twitter account
+      submit: update twitter account
+      title: edit twitter account
     form:
-      twitter_account: Twitter account
+      twitter_account: twitter account
     new:
-      submit: New twitter account
-      title: New twitter account
+      submit: new twitter account
+      title: new twitter account
     index:
-      new: New twitter account
-      title: Twitter accounts
+      new: new twitter account
+      title: twitter accounts
     show:
       belongs_to: belongs to
-      delete: Delete twitter account
-      edit: Edit twitter account
-      id: ID
+      delete: delete twitter account
+      edit: edit twitter account
+      id: id
       primary: primary
       verified: verified
     update:
-      notice: Twitter account updated
+      notice: twitter account updated

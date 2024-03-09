@@ -110,10 +110,10 @@ class PhoneNumber < ApplicationRecord
   end
 
   def text
-    "Your #{ENV.fetch("HOST")} verification code is #{verification_code}"
+    "your #{ENV.fetch("HOST")} verification code is #{verification_code}"
   end
 
   def to_s
-    formatted.presence || "PhoneNumber##{id}"
+    formatted.presence || "phone_number##{id}"
   end
 end

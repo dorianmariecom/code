@@ -4,21 +4,10 @@ class Code
   class Object
     class Meetup < Object
       class Event < Object
-        attr_reader :raw, :id, :title, :time, :group
+        attr_reader :raw
 
-        def initialize(id:, title:, time:, group:)
-          id = id.raw if id.is_a?(Integer)
-          title = title.raw if title.is_a?(String)
-          time = time.raw if time.is_a?(Time)
-          group = group.raw if group.is_a?(Group)
-          @id = Integer.new(id)
-          @title = String.new(title)
-          @time = Time.new(time)
-          @group = Group.new(group)
-        end
-
-        def self.name
-          "Meetup::Event"
+        def initialize(*args, **_kargs, &_block)
+          @raw = Dictionary.new(args.first.presence || {})
         end
 
         def call(**args)
@@ -52,39 +41,31 @@ class Code
         end
 
         def code_id
-          Integer.new(id)
+          Integer.new(raw.code_get(String.new(:id)))
         end
 
         def code_time
-          Time.new(time)
+          Time.new(raw.code_get(String.new(:time)))
         end
 
         def code_title
-          String.new(title)
+          String.new(raw.code_get(String.new(:title)))
         end
 
         def code_group
-          Group.new(group)
+          Group.new(raw.code_get(String.new(:group)))
         end
 
         def code_url
-          String.new("https://www.meetup.com/#{group.slug}/events/#{id}/")
+          String.new("https://www.meetup.com/#{code_group.code_slug}/events/#{code_id}")
         end
 
         def code_past?
-          time.code_past?
+          code_time.code_past?
         end
 
         def code_future?
-          time.code_future?
-        end
-
-        def to_s
-          "#{self.class.name}##{id}"
-        end
-
-        def inspect
-          to_s.inspect
+          code_time.code_future?
         end
       end
     end

@@ -8,7 +8,7 @@ class Code
 
         def initialize(group)
           group = group.raw if group.is_a?(Group)
-          @raw = group.to_s
+          @raw = String.new(group.to_s)
         end
 
         def self.name
@@ -49,7 +49,7 @@ class Code
             page
               .css("a")
               .select do |a|
-                a["href"] =~ %r{https://www.meetup.com/#{slug}/events/[0-9]+/}
+                a["href"] =~ %r{https://www.meetup.com/#{code_slug}/events/[0-9]+/}
               end
               .select { |a| a.css("time").text.present? }
               .map do |a|
@@ -68,23 +68,15 @@ class Code
         end
 
         def page
-          @page ||= Nokogiri.HTML(URI.open(url))
+          @page ||= Nokogiri.HTML(URI.open(code_url.raw))
         end
 
-        def url
-          "https://www.meetup.com/#{slug}"
+        def code_url
+          String.new("https://www.meetup.com/#{code_slug}")
         end
 
-        def slug
-          raw
-        end
-
-        def to_s
-          raw.to_s
-        end
-
-        def inspect
-          raw.inspect
+        def code_slug
+          String.new(raw)
         end
       end
     end

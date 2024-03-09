@@ -104,6 +104,6 @@ class SlackAccount < ApplicationRecord
   end
 
   def to_s
-    team_name.presence || "SlackAccount##{id}"
+    team_name.presence || "slack_account##{id}"
   end
 end

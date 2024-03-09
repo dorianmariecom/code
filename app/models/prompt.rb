@@ -19,8 +19,8 @@ class Prompt
     request.content_type = content_type
     request["Authorization"] = authorization
     request.body = body
-    @input = json_content["input"]
-    @name = json_content["name"]
+    @input = json_content&.dig("input") || ""
+    @name = json_content&.dig("name") || ""
     self
   end
 
@@ -89,19 +89,19 @@ class Prompt
   end
 
   def choices
-    json["choices"]
+    json&.dig("choices")
   end
 
   def choice
-    choices.first
+    choices&.first
   end
 
   def message
-    choice["message"]
+    choice&.dig("message")
   end
 
   def content
-    message["content"]
+    message&.dig("content") || ""
   end
 
   def json_content

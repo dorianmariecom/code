@@ -88,6 +88,6 @@ class SmtpAccount < ApplicationRecord
   end
 
   def to_s
-    user_name.presence || "SmtpAccount##{id}"
+    user_name.presence || "smtp_account##{id}"
   end
 end

@@ -26,7 +26,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def user!
-    user || raise(Code::Error, "No user")
+    user || raise(Code::Error, "no user")
   end
 
   def user?
@@ -40,7 +40,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def email_addresses!
     user!
-    raise(Code::Error, "No email addresses found") if email_addresses.none?
+    raise(Code::Error, "no email addresses found") if email_addresses.none?
     email_addresses
   end
 
@@ -51,7 +51,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def primary_email_address!
     primary_email_address ||
-      raise(Code::Error, "No verified email address found")
+      raise(Code::Error, "no verified email address found")
   end
 
   def phone_numbers
@@ -61,7 +61,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def phone_numbers!
     user!
-    raise(Code::Error, "No phone numbers found") if phone_numbers.none?
+    raise(Code::Error, "no phone numbers found") if phone_numbers.none?
     phone_numbers
   end
 
@@ -71,7 +71,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_phone_number!
-    primary_phone_number || raise(Code::Error, "No verified phone number found")
+    primary_phone_number || raise(Code::Error, "no verified phone number found")
   end
 
   def slack_accounts
@@ -81,7 +81,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def slack_accounts!
     user!
-    raise(Code::Error, "No slack accounts found") if slack_accounts.none?
+    raise(Code::Error, "no slack accounts found") if slack_accounts.none?
     slack_accounts
   end
 
@@ -92,7 +92,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def primary_slack_account!
     primary_slack_account ||
-      raise(Code::Error, "No verified slack account found")
+      raise(Code::Error, "no verified slack account found")
   end
 
   def passwords
@@ -102,7 +102,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def passwords!
     user!
-    raise(Code::Error, "No passwords found") if passwords.none?
+    raise(Code::Error, "no passwords found") if passwords.none?
     passwords
   end
 
@@ -112,7 +112,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_password!
-    primary_password || raise(Code::Error, "No password found")
+    primary_password || raise(Code::Error, "no password found")
   end
 
   def programs
@@ -122,7 +122,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def programs!
     user!
-    raise(Code::Error, "No programs found") if programs.none?
+    raise(Code::Error, "no programs found") if programs.none?
     programs
   end
 
@@ -132,7 +132,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_program!
-    primary_program || raise(Code::Error, "No program found")
+    primary_program || raise(Code::Error, "no program found")
   end
 
   def smtp_accounts
@@ -142,7 +142,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def smtp_accounts!
     user!
-    raise(Code::Error, "No smtp accounts found") if smtp_accounts.none?
+    raise(Code::Error, "no smtp accounts found") if smtp_accounts.none?
     smtp_accounts
   end
 
@@ -152,7 +152,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_smtp_account!
-    primary_smtp_account || raise(Code::Error, "No verified smtp account found")
+    primary_smtp_account || raise(Code::Error, "no verified smtp account found")
   end
 
   def twitter_accounts
@@ -162,7 +162,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def twitter_accounts!
     user!
-    raise(Code::Error, "No twitter accounts found") if twitter_accounts.none?
+    raise(Code::Error, "no twitter accounts found") if twitter_accounts.none?
     twitter_accounts
   end
 
@@ -173,6 +173,6 @@ class Current < ActiveSupport::CurrentAttributes
 
   def primary_twitter_account!
     primary_twitter_account ||
-      raise(Code::Error, "No verified twitter account found")
+      raise(Code::Error, "no verified twitter account found")
   end
 end
