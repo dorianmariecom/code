@@ -4,29 +4,8 @@ class Code
   class Object
     class Meetup < Object
       class Group < Object
-        attr_reader :raw
-
-        def initialize(group)
-          group = group.raw if group.is_a?(Group)
-          @raw = String.new(group.to_s)
-        end
-
-        def self.name
-          "Meetup::Group"
-        end
-
-        def self.call(**args)
-          operator = args.fetch(:operator, nil)
-          arguments = args.fetch(:arguments, [])
-          value = arguments.first&.value
-
-          case operator.to_s
-          when "new"
-            sig(args) { String }
-            Group.new(value)
-          else
-            super
-          end
+        def initialize(raw = nil, ...)
+          @raw = String.new(raw.to_s)
         end
 
         def call(**args)
@@ -49,7 +28,8 @@ class Code
             page
               .css("a")
               .select do |a|
-                a["href"] =~ %r{https://www.meetup.com/#{code_slug}/events/[0-9]+/}
+                a["href"] =~
+                  %r{https://www.meetup.com/#{code_slug}/events/[0-9]+/}
               end
               .select { |a| a.css("time").text.present? }
               .map do |a|

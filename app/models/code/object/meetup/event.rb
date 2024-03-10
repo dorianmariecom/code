@@ -4,8 +4,6 @@ class Code
   class Object
     class Meetup < Object
       class Event < Object
-        attr_reader :raw
-
         def initialize(*args, **_kargs, &_block)
           @raw = Dictionary.new(args.first.presence || {})
         end
@@ -57,7 +55,9 @@ class Code
         end
 
         def code_url
-          String.new("https://www.meetup.com/#{code_group.code_slug}/events/#{code_id}")
+          String.new(
+            "https://www.meetup.com/#{code_group.code_slug}/events/#{code_id}"
+          )
         end
 
         def code_past?

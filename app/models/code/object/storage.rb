@@ -3,10 +3,6 @@
 class Code
   class Object
     class Storage < Object
-      def self.name
-        "Storage"
-      end
-
       def self.call(**args)
         operator = args.fetch(:operator, nil)
         arguments = args.fetch(:arguments, [])

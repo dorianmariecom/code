@@ -6,20 +6,19 @@ require_relative "meetup/event"
 class Code
   class Object
     class Meetup < Object
-      def self.name
-        "Meetup"
-      end
-
       def self.call(**args)
         operator = args.fetch(:operator, nil)
+        arguments = args.fetch(:arguments, [])
+        value = arguments.first&.value
+        values = arguments.map(&:value)
 
         case operator.to_s
         when "Group"
           sig(args)
-          Class.new(Group)
+          value ? Group.new(*values) : Class.new(Group)
         when "Event"
           sig(args)
-          Class.new(Event)
+          value ? Event.new(*values) : Class.new(Event)
         else
           super
         end

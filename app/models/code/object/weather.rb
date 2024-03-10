@@ -3,12 +3,6 @@
 class Code
   class Object
     class Weather < Object
-      MAX_FORECAST_DAYS = 14
-
-      def self.name
-        "Weather"
-      end
-
       def self.call(**args)
         operator = args.fetch(:operator, nil)
         arguments = args.fetch(:arguments, [])
@@ -16,6 +10,7 @@ class Code
 
         case operator.to_s
         when "raining?"
+          binding.irb
           sig(args) { { query: String.maybe, date: Date.maybe } }
           code_raining?(
             query: value&.code_get(String.new("query")),
@@ -38,14 +33,11 @@ class Code
           end
 
         date = date.truthy? ? date.raw : ::Date.current
-
+        days = 14
+        q = query
         uri = URI.parse("https://api.weatherapi.com/v1/forecast.json")
         request = Net::HTTP::Post.new(uri)
-        request.set_form_data(
-          key: Rails.application.credentials.api_weatherapi_com.api_key,
-          q: query,
-          days: MAX_FORECAST_DAYS
-        )
+        request.set_form_data(key:, q:, days:)
 
         response =
           Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
@@ -59,6 +51,10 @@ class Code
         return Nothing.new if day.nil?
 
         Boolean.new(day.dig("day", "daily_will_it_rain") == 1)
+      end
+
+      def self.key
+        Rails.application.credentials.api_weatherapi_com.api_key
       end
     end
   end

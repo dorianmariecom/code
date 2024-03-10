@@ -11,7 +11,11 @@ class Program < ApplicationRecord
       output = StringIO.new
       error = StringIO.new
       result = Code.evaluate(input, output:, error:, timeout: TIMEOUT)
-      update!(result: result.as_json, output: output.string, error: error.string)
+      update!(
+        result: result.as_json,
+        output: output.string,
+        error: error.string
+      )
     end
   rescue Code::Error, Timeout::Error => e
     update!(result: "", output: "", error: "#{e.class}: #{e.message}")

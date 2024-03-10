@@ -3,10 +3,6 @@
 class Code
   class Object
     class Slack < Object
-      def self.name
-        "Slack"
-      end
-
       def self.call(**args)
         operator = args.fetch(:operator, nil)
         arguments = args.fetch(:arguments, [])

@@ -3,10 +3,6 @@
 class Code
   class Object
     class Mail < Object
-      def self.name
-        "Mail"
-      end
-
       def self.call(**args)
         operator = args.fetch(:operator, nil)
         arguments = args.fetch(:arguments, [])
@@ -58,17 +54,18 @@ class Code
 
         from.addresses.each do |from_address|
           to.addresses.each do |to_address|
-            Current
-              .smtp_accounts!
-              .find_by!(user_name: from_address.address)
-              .deliver!(
-                from: from_address,
-                to: to_address,
-                subject: subject&.raw || "",
-                body: body&.raw || ""
-              )
+            smtp_accounts = Current.smtp_accounts!
+            smtp_account =
+              smtp_accounts.find_by(user_name: from_address.address)
+            smtp_account ||= Current.primary_smtp_account!
+            smtp_account.deliver!(
+              from: from_address,
+              to: to_address,
+              subject: subject&.raw || "",
+              body: body&.raw || ""
+            )
           rescue ::Net::SMTPAuthenticationError
-            raise ::Code::Error, "Wrong SMTP username or SMTP password"
+            raise Error, "Wrong SMTP username or SMTP password"
           end
         end
 

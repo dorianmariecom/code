@@ -3,10 +3,6 @@
 class Code
   class Object
     class Twitter < Object
-      def self.name
-        "Twitter"
-      end
-
       def self.call(**args)
         operator = args.fetch(:operator, nil)
         arguments = args.fetch(:arguments, [])
@@ -30,7 +26,6 @@ class Code
         Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
           http.request(request)
         end
-
         Nothing.new
       end
 
