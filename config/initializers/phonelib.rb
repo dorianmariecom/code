@@ -1,1 +1,1 @@
-Phonelib.extension_separate_symbols = %w(ext x # ;)
+Phonelib.extension_separate_symbols = %w[ext x # ;]
