@@ -1,6 +1,8 @@
 /.bundle
 /.env
 /.env.*.local
+/.env.prod
+/.env.staging
 /app/assets/builds
 /config/*.key
 /config/credentials/*.key

@@ -423,6 +423,7 @@ en:
       new_phone_number: new phone number
       new_program: new program
       new_slack_account: new slack account
+      new_twitter_account: new twitter account
       new_smtp_account: new smtp account
       passwords:
         one: 1 password
@@ -442,6 +443,10 @@ en:
         one: 1 slack account
         other: "%{count} slack accounts"
         zero: 0 slack accounts
+      twitter_accounts:
+        one: 1 twitter account
+        other: "%{count} twitter accounts"
+        zero: 0 twitter accounts
       smtp_accounts:
         one: 1 smtp account
         other: "%{count} smtp accounts"
