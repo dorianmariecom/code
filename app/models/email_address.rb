@@ -87,7 +87,7 @@ class EmailAddress < ApplicationRecord
     return if code.blank? || verification_code.blank?
     code = code.gsub(/\D/, "")
     self.verification_code = verification_code.gsub(/\D/, "")
-    if code == self.verification_code
+    if code == verification_code
       update!(verified: true, verification_code: "")
     else
       update!(verified: false, verification_code: "")

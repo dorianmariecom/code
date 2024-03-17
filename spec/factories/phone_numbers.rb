@@ -4,11 +4,11 @@ FactoryBot.define do
   factory :phone_number do
     user
     phone_number do
-      begin
+      loop do
         phone_number = Faker::PhoneNumber.phone_number_with_country_code
         phonelib = Phonelib.parse(phone_number)
-      end until phonelib.valid? && phonelib.possible?
-      phone_number
+        break phone_number if phonelib.valid? && phonelib.possible?
+      end
     end
     primary { false }
     verified { true }

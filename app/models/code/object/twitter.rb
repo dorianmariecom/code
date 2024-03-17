@@ -5,23 +5,15 @@ class Code
     class Twitter < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
-        arguments = args.fetch(:arguments, List.new)
-        value = arguments.code_first
 
         case operator.to_s
         when "mentions"
-          sig(args) { { user: (String | Integer | Decimal).maybe } }
-          if arguments.any?
-            code_mentions(user: value.code_get(String.new("user")))
-          else
-            code_mentions
-          end
+          sig(args)
+          code_mentions
         end
       end
 
-      def self.code_mentions(user: nil)
-        user ||= Nothing.new
-
+      def self.code_mentions
         user_id = Current.primary_twitter_account!.twitter_user_id
 
         uri = URI.parse("https://api.twitter.com/2/users/#{user_id}/mentions")
