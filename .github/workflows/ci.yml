@@ -126,9 +126,9 @@ jobs:
           ruby-version: 3.3.0
           bundler-cache: true
       - run: gem install kamal
-      - run: kamal lock release -d prod
+      - run: kamal lock release --destination staging
         if: github.ref == 'refs/heads/main'
-      - run: kamal deploy -d staging --skip-push
+      - run: kamal deploy --skip-push --destination staging
         env:
           KAMAL_REGISTRY_USERNAME: ${{secrets.STAGING_KAMAL_REGISTRY_USERNAME}}
           KAMAL_REGISTRY_PASSWORD: ${{secrets.STAGING_KAMAL_REGISTRY_PASSWORD}}
@@ -169,9 +169,9 @@ jobs:
           ruby-version: 3.3.0
           bundler-cache: true
       - run: gem install kamal
-      - run: kamal lock release -d prod
+      - run: kamal lock release --destination prod
         if: github.ref == 'refs/heads/main'
-      - run: kamal deploy -d prod --skip-push
+      - run: kamal deploy --skip-push --destination prod
         env:
           KAMAL_REGISTRY_USERNAME: ${{secrets.PRODUCTION_KAMAL_REGISTRY_USERNAME}}
           KAMAL_REGISTRY_PASSWORD: ${{secrets.PRODUCTION_KAMAL_REGISTRY_PASSWORD}}
