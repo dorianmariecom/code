@@ -7,14 +7,12 @@ class Code
     class Stripe < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
-        arguments = args.fetch(:arguments, [])
-        value = arguments.first&.value
-        values = arguments.map(&:value)
+        arguments = args.fetch(:arguments, List.new)
 
         case operator.to_s
         when "Webhook"
           sig(args) { Object.repeat }
-          value ? Webhook.new(*values) : Class.new(Webhook)
+          arguments.any? ? Webhook.new(*arguments.raw) : Class.new(Webhook)
         else
           super
         end

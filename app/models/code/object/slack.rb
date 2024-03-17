@@ -5,19 +5,23 @@ class Code
     class Slack < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
-        arguments = args.fetch(:arguments, [])
-        value = arguments.first&.value
+        arguments = args.fetch(:arguments, List.new)
+        value = arguments.code_first
 
         case operator.to_s
         when "send"
           sig(args) do
             { team: String.maybe, channel: String.maybe, body: String.maybe }
           end
-          code_send(
-            team: value&.code_get(String.new("team")),
-            channel: value&.code_get(String.new("channel")),
-            body: value&.code_get(String.new("body"))
-          )
+          if arguments.any?
+            code_send(
+              team: value.code_get(String.new("team")),
+              channel: value.code_get(String.new("channel")),
+              body: value.code_get(String.new("body"))
+            )
+          else
+            code_send
+          end
         end
       end
 

@@ -5,13 +5,17 @@ class Code
     class Twitter < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
-        arguments = args.fetch(:arguments, [])
-        value = arguments.first&.value
+        arguments = args.fetch(:arguments, List.new)
+        value = arguments.code_first
 
         case operator.to_s
         when "mentions"
           sig(args) { { user: (String | Integer | Decimal).maybe } }
-          code_mentions(user: value&.code_get(String.new("user")))
+          if arguments.any?
+            code_mentions(user: value.code_get(String.new("user")))
+          else
+            code_mentions
+          end
         end
       end
 

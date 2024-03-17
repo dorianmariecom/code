@@ -5,8 +5,8 @@ class Code
     class Storage < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
-        arguments = args.fetch(:arguments, [])
-        value = arguments.first&.value
+        arguments = args.fetch(:arguments, List.new)
+        value = arguments.code_first
 
         case operator.to_s
         when "exists?", "exist?"

@@ -5,13 +5,17 @@ class Code
     class Sms < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
-        arguments = args.fetch(:arguments, [])
-        value = arguments.first&.value
+        arguments = args.fetch(:arguments, List.new)
+        value = arguments.code_first
 
         case operator.to_s
         when "send"
           sig(args) { { body: String.maybe } }
-          code_send(body: value&.code_get(String.new("body")))
+          if arguments.any?
+            code_send(body: value.code_get(String.new("body")))
+          else
+            code_send
+          end
         else
           super
         end

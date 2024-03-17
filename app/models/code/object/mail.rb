@@ -5,8 +5,8 @@ class Code
     class Mail < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
-        arguments = args.fetch(:arguments, [])
-        value = arguments.first&.value
+        arguments = args.fetch(:arguments, List.new)
+        value = arguments.code_first
 
         case operator.to_s
         when "send"
@@ -18,12 +18,16 @@ class Code
               body: String.maybe
             }
           end
-          code_send(
-            from: value&.code_get(String.new("from")),
-            to: value&.code_get(String.new("to")),
-            subject: value&.code_get(String.new("subject")),
-            body: value&.code_get(String.new("body"))
-          )
+          if arguments.any?
+            code_send(
+              from: value.code_get(String.new("from")),
+              to: value.code_get(String.new("to")),
+              subject: value.code_get(String.new("subject")),
+              body: value.code_get(String.new("body"))
+            )
+          else
+            code_send
+          end
         else
           super
         end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FakeWwwMeetupCom < Sinatra::Base
-  get "/:id" do
+  get "/*" do
     File.read("spec/files/www.meetup.com/paris_rb/index.html")
   end
 end

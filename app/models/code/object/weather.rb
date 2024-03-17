@@ -5,17 +5,20 @@ class Code
     class Weather < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
-        arguments = args.fetch(:arguments, [])
-        value = arguments.first&.value
+        arguments = args.fetch(:arguments, List.new)
+        value = arguments.code_first
 
         case operator.to_s
         when "raining?"
-          binding.irb
           sig(args) { { query: String.maybe, date: Date.maybe } }
-          code_raining?(
-            query: value&.code_get(String.new("query")),
-            date: value&.code_get(String.new("date"))
-          )
+          if arguments.any?
+            code_raining?(
+              query: value.code_get(String.new("query")),
+              date: value.code_get(String.new("date"))
+            )
+          else
+            code_raining?
+          end
         else
           super
         end

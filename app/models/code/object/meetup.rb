@@ -8,17 +8,15 @@ class Code
     class Meetup < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
-        arguments = args.fetch(:arguments, [])
-        value = arguments.first&.value
-        values = arguments.map(&:value)
+        arguments = args.fetch(:arguments, List.new)
 
         case operator.to_s
         when "Group"
           sig(args)
-          value ? Group.new(*values) : Class.new(Group)
+          arguments.any? ? Group.new(*arguments.raw) : Class.new(Group)
         when "Event"
           sig(args)
-          value ? Event.new(*values) : Class.new(Event)
+          arguments.any? ? Event.new(*arguments.raw) : Class.new(Event)
         else
           super
         end
