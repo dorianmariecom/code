@@ -14,19 +14,43 @@ class Code
       end
 
       def self.code_mentions
-        user_id = Current.primary_twitter_account!.twitter_user_id
-
-        uri = URI.parse("https://api.twitter.com/2/users/#{user_id}/mentions")
+        twitter_account = Current.primary_twitter_account!
+        id = twitter_account.twitter_id
+        access_token = twitter_account.access_token
+        uri =
+          URI.parse("https://api.twitter.com/2/users/#{id}/mentions?#{query}")
         request = Net::HTTP::Get.new(uri)
-        request["Authorization"] = "Bearer #{bearer_token}"
-        Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-          http.request(request)
-        end
-        Nothing.new
+        request["Authorization"] = "Bearer #{access_token}"
+        response =
+          Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+            http.request(request)
+          end
+        String.new(response.body)
       end
 
-      def self.bearer_token
-        Rails.application.credentials.api_twitter_com.bearer_token
+      def self.query
+        {
+          "tweet.fields" => tweet_fields.join(","),
+          "expansions" => expansions.join(","),
+          "user.fields" => user_fields.join(","),
+          "media.fields" => media_fields.join(",")
+        }.to_query
+      end
+
+      def self.tweet_fields
+        %w[created_at text author_id]
+      end
+
+      def self.expansions
+        %w[author_id attachments.media_keys]
+      end
+
+      def self.user_fields
+        %w[name username profile_image_url]
+      end
+
+      def self.media_fields
+        %w[url type media_key]
       end
     end
   end

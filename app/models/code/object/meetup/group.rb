@@ -48,7 +48,8 @@ class Code
         end
 
         def page
-          @page ||= Nokogiri.HTML(URI.open(code_url.raw))
+          @page ||=
+            Nokogiri.HTML(Net::HTTP.get_response(URI.parse(code_url.raw)).body)
         end
 
         def code_url

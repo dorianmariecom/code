@@ -11,6 +11,12 @@ class TwitterAccountsController < ApplicationController
   end
 
   def callback
+    Current.user =
+      User.find_signed!(
+        Base64.decode64(params[:state]),
+        purpose: TwitterAccount.purpose
+      )
+    session[:user_id] = Current.user.id
     authorize TwitterAccount
     redirect_to policy_scope(TwitterAccount).verify!(code: params[:code])
   end

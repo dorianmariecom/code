@@ -39,19 +39,11 @@ module ApplicationHelper
     3.times.map { Faker::Internet.email }
   end
 
-  def fake_smtp_user_names
-    3.times.map { Faker::Internet.email }
-  end
-
   def fake_phone_numbers
     3.times.map { Faker::PhoneNumber.phone_number_with_country_code }
   end
 
   def fake_passwords
-    3.times.map { Faker::Internet.password }
-  end
-
-  def fake_smtp_passwords
     3.times.map { Faker::Internet.password }
   end
 

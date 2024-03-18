@@ -30,7 +30,7 @@ class SlackAccount < ApplicationRecord
         http.request(request)
       end
 
-    SlackAccount.create!(
+    create!(
       primary: Current.slack_accounts.none?,
       verified: true,
       auth: JSON.parse(response.body)

@@ -9,17 +9,29 @@ class TwitterAccount < ApplicationRecord
   def self.verify!(code:)
     uri = URI.parse("https://api.twitter.com/2/oauth2/token")
     request = Net::HTTP::Post.new(uri)
-    request.set_form_data(client_id:, grant_type:, refresh_token:)
+    request[:Authorization] = "Basic #{encoded_credentials}"
+    request.set_form_data(
+      client_id:,
+      code:,
+      code_verifier:,
+      grant_type:,
+      redirect_uri:
+    )
 
-    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-      http.request(request)
-    end
+    response =
+      Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(request)
+      end
 
-    binding.irb
+    create!(
+      primary: Current.twitter_accounts.none?,
+      verified: true,
+      auth: JSON.parse(response.body)
+    ).tap(&:fetch_me!)
   end
 
   def self.grant_type
-    :refresh_token
+    :authorization_code
   end
 
   def self.authorize_url
@@ -27,9 +39,11 @@ class TwitterAccount < ApplicationRecord
   end
 
   def self.encoded_params
-    params.map do |key, value|
-      "#{ERB::Util.url_encode(key.to_s)}=#{ERB::Util.url_encode(value.to_s)}"
-    end.join("&")
+    params
+      .map do |key, value|
+        "#{ERB::Util.url_encode(key.to_s)}=#{ERB::Util.url_encode(value.to_s)}"
+      end
+      .join("&")
   end
 
   def self.params
@@ -37,7 +51,6 @@ class TwitterAccount < ApplicationRecord
       client_id:,
       code_challenge:,
       code_challenge_method:,
-      code_verifier:,
       redirect_uri:,
       response_type:,
       scope:,
@@ -50,36 +63,47 @@ class TwitterAccount < ApplicationRecord
   end
 
   def self.state
-    Base64.urlsafe_encode64(
-      SecureRandom.random_bytes(16),
-      padding: false
-    )
+    encode(Current.user!.signed_id(purpose:, expires_in: 1.day))
+  end
+
+  def self.purpose
+    :twitter_account_authorize_uri
+  end
+
+  def self.encode(string)
+    Base64.urlsafe_encode64(string, padding: false)
   end
 
   def self.code_verifier
-    Base64.urlsafe_encode64(
-      SecureRandom.random_bytes(32),
-      padding: false
-    )
+    encode(Current.user!.to_signed_global_id(purpose:, expires_in: nil).to_s)
   end
 
   def self.code_challenge
-    Base64.urlsafe_encode64(
-      OpenSSL::Digest::SHA256.digest(code_verifier),
-      padding: false
-    )
+    encode(OpenSSL::Digest::SHA256.digest(code_verifier))
   end
 
   def self.code_challenge_method
     :s256
   end
 
+  def self.encoded_client_id
+    URI.encode_www_form_component(client_id)
+  end
+
+  def self.encoded_client_secret
+    URI.encode_www_form_component(client_secret)
+  end
+
+  def self.encoded_credentials
+    Base64.strict_encode64("#{encoded_client_id}:#{encoded_client_secret}")
+  end
+
   def self.client_id
-    Rails.application.credentials.api_twitter_com.api_key
+    Rails.application.credentials.api_twitter_com.client_id
   end
 
   def self.client_secret
-    Rails.application.credentials.api_twitter_com.api_key_secret
+    Rails.application.credentials.api_twitter_com.client_secret
   end
 
   def self.redirect_uri
@@ -87,25 +111,25 @@ class TwitterAccount < ApplicationRecord
   end
 
   def self.scope
-    [
-      "tweet.read",
-      "tweet.write",
-      "tweet.moderate.write",
-      "users.read",
-      "follows.read",
-      "follows.write",
-      "offline.access",
-      "space.read",
-      "mute.read",
-      "mute.write",
-      "like.read",
-      "like.write",
-      "list.read",
-      "list.write",
-      "block.read",
-      "block.write",
-      "bookmark.read",
-      "bookmark.write"
+    %w[
+      tweet.read
+      tweet.write
+      tweet.moderate.write
+      users.read
+      follows.read
+      follows.write
+      offline.access
+      space.read
+      mute.read
+      mute.write
+      like.read
+      like.write
+      list.read
+      list.write
+      block.read
+      block.write
+      bookmark.read
+      bookmark.write
     ].join(" ")
   end
 
@@ -123,6 +147,52 @@ class TwitterAccount < ApplicationRecord
 
   def not_verified?
     !verified?
+  end
+
+  def user_fields
+    %w[
+      id
+      name
+      username
+      created_at
+      description
+      entities
+      location
+      pinned_tweet_id
+      profile_image_url
+      protected
+      public_metrics
+      url
+      verified
+      withheld
+    ]
+  end
+
+  def me_query
+    { "user.fields" => user_fields.join(",") }.to_query
+  end
+
+  def username
+    me.fetch("username")
+  end
+
+  def twitter_id
+    me.fetch("id")
+  end
+
+  def access_token
+    auth.fetch("access_token")
+  end
+
+  def fetch_me!
+    uri = URI.parse("https://api.twitter.com/2/users/me?#{me_query}")
+    request = Net::HTTP::Get.new(uri)
+    request["Authorization"] = "Bearer #{access_token}"
+    response =
+      Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(request)
+      end
+    update!(me: JSON.parse(response.body).fetch("data"))
   end
 
   def to_s
