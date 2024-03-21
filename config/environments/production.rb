@@ -13,8 +13,6 @@ Rails.application.configure do
   config.eager_load = true
   config.enable_reloading = false
   config.force_ssl = true
-  config.hosts << "localhost:3000"
-  config.hosts << ENV.fetch("HOST")
   config.i18n.fallbacks = true
   config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
   config.log_tags = [:request_id]
