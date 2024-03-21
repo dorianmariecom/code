@@ -3,11 +3,11 @@ image: dorianmariecom/code
 builder:
   remote:
     arch: amd64
-    ssh: root@64.23.187.171
+    ssh: root@159.89.2.5
 servers:
   web:
     hosts:
-      - 64.23.187.171
+      - 159.89.2.5
     labels:
       traefik.http.routers.code.rule: Host(`code-staging.dorianmarie.com`)
       traefik.http.routers.code_secure.entrypoints: websecure
@@ -46,7 +46,7 @@ traefik:
 accessories:
   db:
     image: postgres:16.1
-    host: 64.23.187.171
+    host: 159.89.2.5
     port: 5432
     env:
       clear:
