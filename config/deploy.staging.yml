@@ -1,7 +1,5 @@
 service: code
 image: dorianmariecom/code
-healthcheck:
-  cmd: /bin/true
 builder:
   remote:
     arch: amd64
