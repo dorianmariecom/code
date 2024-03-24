@@ -25,7 +25,17 @@ class Code
           Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
             http.request(request)
           end
-        String.new(response.body)
+        json = JSON.parse(response.body)
+
+        json["data"] = json["data"].map do |tweet|
+          tweet.tap do |tweet|
+            tweet["author"] = json.dig("includes", "users").detect do |user|
+              user["id"] == tweet["author_id"]
+            end
+          end
+        end
+
+        List.new(json["data"].map { |tweet| Tweet.new(tweet) })
       end
 
       def self.query

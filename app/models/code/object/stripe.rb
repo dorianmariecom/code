@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "stripe/webhook"
-
 class Code
   class Object
     class Stripe < Object

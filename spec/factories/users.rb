@@ -11,6 +11,7 @@ FactoryBot.define do
       phone_numbers { [association(:phone_number, :dorian_fr)] }
       email_addresses { [association(:email_address, :dorian_com)] }
       slack_accounts { [association(:slack_account, :dorianmariecom)] }
+      twitter_accounts { [association(:twitter_account, :dorianmariecom)] }
       smtp_accounts { [association(:smtp_account, :dorian_com)] }
       passwords { [association(:password)] }
     end

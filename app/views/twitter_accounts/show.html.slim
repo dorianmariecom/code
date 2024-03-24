@@ -13,5 +13,8 @@
 .text-sm= t(".verified")
 .mb-5= @twitter_account.verified?
 
+- if !@twitter_account.verified?
+  pre= JSON.pretty_generate(@twitter_account.auth)
+
 .p= link_to t(".edit"), [:edit, @twitter_account]
 .p= button_to t(".delete"), @twitter_account, method: :delete, class: "a text-red-600"

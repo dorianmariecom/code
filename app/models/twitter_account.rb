@@ -173,29 +173,33 @@ class TwitterAccount < ApplicationRecord
   end
 
   def username
-    me.fetch("username")
+    me.fetch("username", nil)
   end
 
   def twitter_id
-    me.fetch("id")
+    me.fetch("id", nil)
   end
 
   def access_token
-    auth.fetch("access_token")
+    auth.fetch("access_token", nil)
   end
 
   def fetch_me!
-    uri = URI.parse("https://api.twitter.com/2/users/me?#{me_query}")
-    request = Net::HTTP::Get.new(uri)
-    request["Authorization"] = "Bearer #{access_token}"
-    response =
-      Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-        http.request(request)
-      end
-    update!(me: JSON.parse(response.body).fetch("data"))
+    if access_token.blank?
+      update!(verified: false)
+    else
+      uri = URI.parse("https://api.twitter.com/2/users/me?#{me_query}")
+      request = Net::HTTP::Get.new(uri)
+      request["Authorization"] = "Bearer #{access_token}"
+      response =
+        Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+          http.request(request)
+        end
+      update!(me: JSON.parse(response.body).fetch("data"))
+    end
   end
 
   def to_s
-    "twitter_account##{id}"
+    username.presence || "twitter_account##{id}"
   end
 end
