@@ -12,7 +12,7 @@ class Program < ApplicationRecord
       error = StringIO.new
       result = Code.evaluate(input, output:, error:, timeout: TIMEOUT)
       update!(
-        result: result.as_json,
+        result: result.to_s,
         output: output.string,
         error: error.string
       )

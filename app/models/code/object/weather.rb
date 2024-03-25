@@ -50,8 +50,9 @@ class Code
         json = JSON.parse(response.body)
 
         days = json.dig("forecast", "forecastday")
+        return Nothing.new if days.blank?
         day = days.detect { |day| day["date"] == date.to_s }
-        return Nothing.new if day.nil?
+        return Nothing.new if day.blank?
 
         Boolean.new(day.dig("day", "daily_will_it_rain") == 1)
       end
