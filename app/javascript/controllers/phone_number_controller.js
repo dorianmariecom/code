@@ -30,7 +30,7 @@ export default class extends Controller {
             headers: { Accept: "application/json" },
           });
           const json = await response.json();
-          success(json || DEFAULT_COUNTRY_CODE);
+          success(json.country_code || DEFAULT_COUNTRY_CODE);
         } catch {
           success(DEFAULT_COUNTRY_CODE);
         }

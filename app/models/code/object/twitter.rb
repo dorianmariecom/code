@@ -29,9 +29,9 @@ class Code
 
         json["data"] = json["data"].map do |tweet|
           tweet.tap do |tweet|
-            tweet["author"] = json.dig("includes", "users").detect do |user|
-              user["id"] == tweet["author_id"]
-            end
+            tweet["author"] = json
+              .dig("includes", "users")
+              .detect { |user| user["id"] == tweet["author_id"] }
           end
         end
 

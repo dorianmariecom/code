@@ -8,17 +8,17 @@ FactoryBot.define do
 
     auth do
       {
-        "scope":
+        scope:
           "aaaa.aaaaa aaaaa.aaaaaaaa.aaaaa aaaaa.aaaa aaaaaaa.aaaa aaaaaaa.aaaaaa " \
             "aaaa.aaaaa aaaaaaaa.aaaa aaaa.aaaa aaaaa.aaaaa aaaaa.aaaa aaaaa.aaaaa " \
             "aaaa.aaaaa aaaa.aaaa aaaaa.aaaa aaaaa.aaaa aaaaaaaa.aaaaa aaaa.aaaa " \
             "aaaaaaa.aaaaa",
-        "expires_in": 0,
-        "token_type": "aaaaaa",
-        "access_token":
+        expires_in: 0,
+        token_type: "aaaaaa",
+        access_token:
           "A0AAa0AAAAAaaAAAAA00AAAaAaAaAa0aAa0aAaa0A0AaaA0AAAAAAaAAAAAAA" \
             "aA0AAAaAAA0AAA0AAa0AAaaAaA0AaA",
-        "refresh_token":
+        refresh_token:
           "aA0aA00Aa0aaAaaAAA0aAa0AAaAaAAAaaaA0A0AaAAaAaAAaA0aAa0AAAAAAA" \
             "aA0AAAaAAA0AAA0AAa0AAaaAaA0AaA"
       }
@@ -26,37 +26,38 @@ FactoryBot.define do
 
     me do
       {
-        "id": "0000000000000000000",
-        "url": "aaaaa://a.aa/AaAAaA0aaa",
-        "name": "Aaaaaa Aaaaé",
-        "entities": {
-          "url": {
-            "urls": [
+        id: "0000000000000000000",
+        url: "aaaaa://a.aa/AaAAaA0aaa",
+        name: "Aaaaaa Aaaaé",
+        entities: {
+          url: {
+            urls: [
               {
-                "end": 0,
-                "url": "aaaaa://a.aa/AaAAaA0aaa",
-                "start": 0,
-                "display_url": "aaaaaaaaaaa.aa",
-                "expanded_url": "aaaaa://aaaaaaaaaaa.aa"
+                end: 0,
+                url: "aaaaa://a.aa/AaAAaA0aaa",
+                start: 0,
+                display_url: "aaaaaaaaaaa.aa",
+                expanded_url: "aaaaa://aaaaaaaaaaa.aa"
               }
             ]
           }
         },
-        "location": "Aaaaa",
-        "username": "aaaaaaaaaaaaaa",
-        "verified": false,
-        "protected": false,
-        "created_at": "0000-00-00A00:00:00.000A",
-        "description": "Aaaaaaaaaa. Aaaaaaaaaa aaaaaaaaaa, " \
-          "Aaaaaaaa, Aaaaaaa, Aaaaaaa Aaaa",
-        "public_metrics": {
-          "like_count": 0,
-          "tweet_count": 0,
-          "listed_count": 0,
-          "followers_count": 0,
-          "following_count": 0
+        location: "Aaaaa",
+        username: "aaaaaaaaaaaaaa",
+        verified: false,
+        protected: false,
+        created_at: "0000-00-00A00:00:00.000A",
+        description:
+          "Aaaaaaaaaa. Aaaaaaaaaa aaaaaaaaaa, " \
+            "Aaaaaaaa, Aaaaaaa, Aaaaaaa Aaaa",
+        public_metrics: {
+          like_count: 0,
+          tweet_count: 0,
+          listed_count: 0,
+          followers_count: 0,
+          following_count: 0
         },
-        "profile_image_url":
+        profile_image_url:
           "aaaaa://aaa.aaaaa.aaa/aaaaaaa_aaaaaa/" \
             "0000000000000000000/0a0A_aaA_aaaaaa.aaa"
       }

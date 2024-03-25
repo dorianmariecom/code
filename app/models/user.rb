@@ -15,6 +15,10 @@ class User < ApplicationRecord
 
   validates :time_zone, inclusion: { in: TIME_ZONES, allow_blank: true }
 
+  def admin!
+    update!(admin: true)
+  end
+
   def to_s
     name.presence || "user##{id}"
   end

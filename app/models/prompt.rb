@@ -1,9 +1,21 @@
 # frozen_string_literal: true
 
 class Prompt
-  attr_reader :prompt, :name, :input
+  MODEL = "ft:gpt-3.5-turbo-1106:personal::96W3xV3h"
 
-  DOCUMENTATION = File.read("lib/prompt.md")
+  DOCUMENTATION = File.read(Rails.root.join("lib/prompt.md"))
+
+  SYSTEM_PROMPT = <<~PROMPT
+    Generate a JSON object with two fields: name and input
+
+    `name` is the name of the program
+
+    `input` is the code generated from the prompt in the Code language
+
+    #{DOCUMENTATION}
+  PROMPT
+
+  attr_reader :prompt, :name, :input
 
   def initialize(prompt)
     @prompt = prompt
@@ -45,7 +57,7 @@ class Prompt
   end
 
   def model
-    "gpt-4-1106-preview"
+    MODEL
   end
 
   def body
@@ -53,24 +65,10 @@ class Prompt
       model:,
       response_format:,
       messages: [
-        { role: "system", content: system_prompt },
+        { role: "system", content: SYSTEM_PROMPT },
         { role: "user", content: prompt }
       ]
     )
-  end
-
-  def system_prompt
-    <<~PROMPT
-      Generate a JSON object with two fields: input and name.
-
-      "input" is the code generated from the prompt in the Code language
-
-      "name" is the name of the program
-
-      Here is some documentation about Code in markdown:
-
-      #{DOCUMENTATION}
-    PROMPT
   end
 
   def response_format
