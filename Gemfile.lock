@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/fractaledmind/solid_errors
-  revision: 74e9137aa0b217d3fd7a4bde59d4775774ec4b3a
+  revision: 2f3a0949eccc21b5fe6d53ef4cdcbcbeb22debbb
   specs:
     solid_errors (0.3.5)
       rails (~> 7.0)
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 68b20b6513fe56ca80e4966628c231b4d6113bea
+  revision: 8e46af8c9396e731aaf5269182138c22621a7aa0
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -194,7 +194,7 @@ GEM
     factory_bot_rails (6.4.3)
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
-    faker (3.2.3)
+    faker (3.3.0)
       i18n (>= 1.8.11, < 2)
     fugit (1.9.0)
       et-orbi (~> 1, >= 1.2.7)
@@ -253,7 +253,7 @@ GEM
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.4.0.1)
+    net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.1)
     nokogiri (1.16.3-aarch64-linux)
@@ -326,7 +326,7 @@ GEM
     redis-client (0.21.1)
       connection_pool
     regexp_parser (2.9.0)
-    reline (0.4.3)
+    reline (0.5.0)
       io-console (~> 0.5)
     rexml (3.2.6)
     rspec-core (3.13.0)
@@ -365,7 +365,7 @@ GEM
     rubocop-performance (1.20.2)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.30.0, < 2.0)
-    rubocop-rails (2.24.0)
+    rubocop-rails (2.24.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
@@ -378,7 +378,7 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    selenium-webdriver (4.18.1)
+    selenium-webdriver (4.19.0)
       base64 (~> 0.2)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
