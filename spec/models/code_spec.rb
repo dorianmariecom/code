@@ -63,13 +63,13 @@ RSpec.describe Code, type: :model do
     end
   end
 
-  it "searches for tweets", :pending do
+  it "searches for tweets" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
       Twitter.search(query: "to:dorianmariecom", type: :recent).each do |tweet|
         next if Storage.exists?(id: tweet.id)
-        Sms.send(body: "New mention: {tweet.user.screen_name}: {tweet.text}")
+        Sms.send(body: "New mention: @{tweet.author.username}: {tweet.text}")
         Storage.create!(id: tweet.id)
       end
     CODE

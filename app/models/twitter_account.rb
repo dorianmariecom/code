@@ -184,6 +184,10 @@ class TwitterAccount < ApplicationRecord
     auth.fetch("access_token", nil)
   end
 
+  def refresh_token
+    auth.fetch("refresh_token", nil)
+  end
+
   def fetch_me!
     if access_token.blank?
       update!(verified: false)

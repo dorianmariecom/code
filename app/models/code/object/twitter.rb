@@ -5,11 +5,25 @@ class Code
     class Twitter < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
+        arguments = args.fetch(:arguments, List.new)
+        value = arguments.code_first
 
         case operator.to_s
         when "mentions"
           sig(args)
           code_mentions
+        when "search"
+          sig(args) { { query: String.maybe, type: String.maybe } }
+          if arguments.any?
+            code_search(
+              query: value.code_get(String.new(:query)),
+              type: value.code_get(String.new(:type))
+            )
+          else
+            code_search
+          end
+        else
+          super
         end
       end
 
@@ -36,6 +50,18 @@ class Code
         end
 
         List.new(json["data"].map { |tweet| Tweet.new(tweet) })
+      end
+
+      def self.code_search(query: nil, type: nil)
+        query ||= Nothing.new
+        type ||= Nothing.new
+
+        query = query.truthy? ? query.raw : ""
+        type = type.truthy? ? type.raw : "recent"
+
+        twitter_account = Current.primary_twitter_account!
+        access_token = twitter_account.access_token
+        Nothing.new
       end
 
       def self.query
