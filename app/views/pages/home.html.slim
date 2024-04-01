@@ -1,2 +1,12 @@
-div(data-turbo="false")
-  = render "programs/form", program: @program, submit: t(".submit")
+markdown:
+  ## what is code?
+
+  code is a safe programming language written in ruby for the web
+
+  - `code`, also named code-ruby is the programming language
+  - `safe` is because the code can only do what is allowed
+  - `programming language`: loops, conditions, functions, objects, etc.
+  - `ruby` is another programming language code is inspired from
+  - `for the web`: code is built to connect multiple services together easily
+
+= render "programs/form", program: @program, submit: t(".submit")
