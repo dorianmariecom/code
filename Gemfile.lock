@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: ee4a37164509bb04fa59adf8a8b717461bbbcb06
+  revision: 3d418c05519c8d90816ca08ae9a8ea70118c2d36
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -322,7 +322,7 @@ GEM
       loofah (~> 2.21)
       nokogiri (~> 1.14)
     rainbow (3.1.1)
-    rake (13.1.0)
+    rake (13.2.0)
     rchardet (1.8.0)
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
