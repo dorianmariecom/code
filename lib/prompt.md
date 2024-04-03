@@ -1,8 +1,6 @@
-Documentation
-=============
+# Documentation
 
-Hello World
------------
+## Hello World
 
 input:
 
@@ -12,10 +10,9 @@ result:
 
     Hello World
 
-* * *
+---
 
-Printing Hello World
---------------------
+## Printing Hello World
 
 input:
 
@@ -25,10 +22,9 @@ output:
 
     Hello World
 
-* * *
+---
 
-Maths
------
+## Maths
 
 input:
 
@@ -38,10 +34,9 @@ result:
 
     2
 
-* * *
+---
 
-Integer#times
--------------
+## Integer#times
 
 input:
 
@@ -57,10 +52,9 @@ result:
 
     3
 
-* * *
+---
 
-Mail.send(from:, to:, subject:, body:)
---------------------------------------
+## Mail.send(from:, to:, subject:, body:)
 
 **from**: The email address(es) you send from, e.g. "dominga\_nolan@hirthe.example", "Karly Hamill DDS <art\_balistreri@streich.example>", default: your primary email address
 
@@ -90,10 +84,9 @@ input:
       Mail.send(to: to, subject: "Hello")
     end
 
-* * *
+---
 
-Sms.send(body:)
----------------
+## Sms.send(body:)
 
 **body**: The body of the text message, e.g. "A Many-Splendoured Thing", default: ""
 
@@ -117,14 +110,13 @@ input
       Sms.send(body: "It will be raining tomorrow")
     end
 
-* * *
+---
 
-Weather.raining?(query:, date:)
--------------------------------
+## Weather.raining?(query:, date:)
 
 **query**: The location of the weather, e.g. "657 Kindra Extension, West Sheron, RI 31642", "-35.48643855535515,-10.863481369711963", default: Your location
 
-**date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from\_now, 1.hour.ago, 2.hours.from\_now, 2.hours.ago, default: Date.now
+**date**: The date of the weather, e.g. Date.tomorrow, Date.today, Date.yesterday, 1.hour.from_now, 1.hour.ago, 2.hours.from_now, 2.hours.ago, default: Date.now
 
 ### Check if it's raining
 
@@ -156,10 +148,9 @@ output
 
     true
 
-* * *
+---
 
-Slack.send(team:, channel:, body:)
-----------------------------------
+## Slack.send(team:, channel:, body:)
 
 **team**: Your team ID or team name, e.g. "A00AA0AAAAA" or "Lockman LLC", default: Your primary slack account team
 
@@ -189,10 +180,9 @@ input
       Slack.send(body: "It's not going to be raining tomorrow", channel: "#weather")
     end
 
-Meetup::Group.new(handle)
--------------------------
+## Meetup::Group.new(handle)
 
-**handle**: Same as what's in the URL of the group on meetup.com, e.g. "paris\_rb", :paris\_rb, 'paris\_rb'
+**handle**: Same as what's in the URL of the group on meetup.com, e.g. "paris_rb", :paris_rb, 'paris_rb'
 
 input
 
@@ -202,10 +192,9 @@ output
 
     paris_rb
 
-Meetup::Group#events
---------------------
+## Meetup::Group#events
 
-### Get the events from the meetup group paris\_rb
+### Get the events from the meetup group paris_rb
 
 input
 
@@ -221,14 +210,14 @@ input
 
     Meetup::Group.new("paris_rb").events.each do |event|
       next if event.past?
-    
+
       if event.time.before?(1.day.from_now)
         unless Storage.exists?(id: event.id, type: :one_day_reminder)
           Sms.send(body: "{event.group.name}: {event.title} in one day {event.url}")
           Storage.create!(id: event.id, type: :one_day_reminder)
         end
       end
-    
+
       if event.time.before?(2.hours.from_now)
         unless Storage.exists?(id: event.id, type: :two_hours_reminder)
           Sms.send(body: "{event.group.name}: {event.title} in two hours {event.url}")
@@ -236,5 +225,5 @@ input
         end
       end
     end
-    
+
     nothing
