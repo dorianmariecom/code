@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: d4c40b6cf97f64803d9bf4ea6a76a08b73153975
+  revision: bad7ff1664fb05cc227d0386ee3cbe4c292efe05
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -141,11 +141,12 @@ GEM
     did-you-mean (0.1.1)
       levenshtein (>= 0.2.0)
     diff-lcs (1.5.1)
-    dorian (0.5.12)
+    dorian (0.6.1)
       dorian-all (~> 0)
       dorian-anonymize (~> 0)
       dorian-anonymize-json (~> 0)
       dorian-anonymize-yaml (~> 0)
+      dorian-dir (~> 0)
       dorian-dot (~> 0)
       dorian-each (~> 0)
       dorian-git-ls-ruby-files (~> 0)
@@ -161,11 +162,12 @@ GEM
       dorian-top (~> 0)
       dorian-yaml-compare (~> 0)
       dorian-yaml-read-write (~> 0)
-    dorian-all (0.5.8)
+    dorian-all (0.6.0)
     dorian-anonymize (0.1.4)
     dorian-anonymize-json (0.1.4)
       json (~> 2)
     dorian-anonymize-yaml (0.1.6)
+    dorian-dir (0.2.0)
     dorian-dot (0.5.4)
       git (~> 1)
     dorian-each (0.3.7)
@@ -323,7 +325,7 @@ GEM
       loofah (~> 2.21)
       nokogiri (~> 1.14)
     rainbow (3.1.1)
-    rake (13.2.0)
+    rake (13.2.1)
     rchardet (1.8.0)
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
