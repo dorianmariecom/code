@@ -22,10 +22,7 @@ class Code
         when "search"
           sig(args) { { query: String.maybe, type: String.maybe } }
           if arguments.any?
-            code_search(
-              query: value.code_get(String.new(:query)),
-              type: value.code_get(String.new(:type))
-            )
+            code_search(query: value.code_get(String.new(:query)))
           else
             code_search
           end
@@ -79,13 +76,12 @@ class Code
         List.new(json["data"].map { |tweet| Post.new(tweet) })
       end
 
-      def self.code_search(query: nil, type: nil)
+      def self.code_search(query: nil)
         query ||= Nothing.new
         type ||= Nothing.new
 
         query = query.truthy? ? query.raw : ""
-        query = {query:}.merge(twitter_query).to_query
-        type = type.truthy? ? type.raw : "recent"
+        query = { query: }.merge(twitter_query).to_query
 
         x_account = Current.primary_x_account!.tap(&:refresh_auth!)
         access_token = x_account.access_token

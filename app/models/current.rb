@@ -172,7 +172,6 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def primary_x_account!
-    primary_x_account ||
-      raise(Code::Error, "no verified x account found")
+    primary_x_account || raise(Code::Error, "no verified x account found")
   end
 end

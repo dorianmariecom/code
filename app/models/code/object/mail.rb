@@ -35,7 +35,13 @@ class Code
         end
       end
 
-      def self.code_send(from: nil, to: nil, subject: nil, body: nil, reply_to: nil)
+      def self.code_send(
+        from: nil,
+        to: nil,
+        subject: nil,
+        body: nil,
+        reply_to: nil
+      )
         from ||= Nothing.new
         to ||= Nothing.new
         subject ||= Nothing.new

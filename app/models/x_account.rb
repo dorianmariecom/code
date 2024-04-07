@@ -197,9 +197,10 @@ class XAccount < ApplicationRecord
       request["Authorization"] = authorization
       request.set_form_data(grant_type: :refresh_token, refresh_token:)
 
-      response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-        http.request(request)
-      end
+      response =
+        Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+          http.request(request)
+        end
 
       update!(auth: JSON.parse(response.body))
     end

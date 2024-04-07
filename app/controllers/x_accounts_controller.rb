@@ -70,11 +70,7 @@ class XAccountsController < ApplicationController
   end
 
   def scope
-    if @user
-      policy_scope(XAccount).where(user: @user)
-    else
-      policy_scope(XAccount)
-    end
+    @user ? policy_scope(XAccount).where(user: @user) : policy_scope(XAccount)
   end
 
   def id
