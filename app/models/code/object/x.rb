@@ -12,6 +12,13 @@ class Code
         when "mentions"
           sig(args)
           code_mentions
+        when "send"
+          sig(args) { { body: String.maybe } }
+          if arguments.any?
+            code_send(body: value.code_get(String.new(:body)))
+          else
+            code_send
+          end
         when "search"
           sig(args) { { query: String.maybe, type: String.maybe } }
           if arguments.any?
@@ -25,6 +32,25 @@ class Code
         else
           super
         end
+      end
+
+      def self.code_send(body: nil)
+        body ||= Nothing.new
+        body = body.truthy? ? body.raw : ""
+        x_account = Current.primary_x_account!.tap(&:refresh_auth!)
+        access_token = x_account.access_token
+
+        uri = URI.parse("https://api.twitter.com/2/tweets")
+        request = Net::HTTP::Post.new(uri)
+        request.content_type = "application/json"
+        request["Authorization"] = "Bearer #{access_token}"
+        request.body = { text: body }.to_json
+
+        Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+          http.request(request)
+        end
+
+        Nothing.new
       end
 
       def self.code_mentions
