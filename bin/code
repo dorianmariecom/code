@@ -63,7 +63,10 @@ argv =
     end
     .parse!
 
-options[:input] = argv.join(" ") if options[:input].empty?
+if options[:input].empty?
+  options[:input] = argv.join(" ")
+  options[:input] = File.read(options[:input]) if File.exist?(options[:input])
+end
 
 abort <<~HELP if options[:input].empty?
     Usage: code INPUT
