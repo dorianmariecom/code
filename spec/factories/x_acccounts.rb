@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :twitter_account do
+  factory :x_account do
     user
     primary { false }
     verified { true }

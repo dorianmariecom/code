@@ -2,8 +2,8 @@
 
 class Code
   class Object
-    class Twitter < Object
-      class Tweet < Object
+    class X < Object
+      class User < Object
         def initialize(*args, **_kargs, &_block)
           @raw = Dictionary.new(Json.to_code(args.first.presence || {}))
         end
@@ -12,18 +12,15 @@ class Code
           operator = args.fetch(:operator, nil)
 
           case operator.to_s
+          when "username"
+            sig(args)
+            code_username
           when "id"
             sig(args)
             code_id
-          when "text"
+          when "name"
             sig(args)
-            code_text
-          when "created_at"
-            sig(args)
-            code_created_at
-          when "author"
-            sig(args)
-            code_author
+            code_name
           end
         end
 
@@ -31,16 +28,12 @@ class Code
           Integer.new(raw.code_get(String.new(:id)))
         end
 
-        def code_text
-          String.new(raw.code_get(String.new(:text)))
+        def code_username
+          String.new(raw.code_get(String.new(:username)))
         end
 
-        def code_created_at
-          Time.new(raw.code_get(String.new(:created_at)))
-        end
-
-        def code_author
-          User.new(raw.code_get(String.new(:author)))
+        def code_name
+          String.new(raw.code_get(String.new(:name)))
         end
       end
     end

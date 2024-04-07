@@ -1,0 +1,3 @@
+div(data-controller="twitter-accounts")
+  = f.fields_for :x_accounts do |x_account_f|
+    = render "x_accounts/form", f: x_account_f, removable: true

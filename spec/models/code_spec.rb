@@ -76,26 +76,26 @@ RSpec.describe Code, type: :model do
     end
   end
 
-  it "searches for tweets", pending: true do
+  it "searches for posts on X" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
-      Twitter.search(query: "to:dorianmariecom", type: :recent).each do |tweet|
-        next if Storage.exists?(id: tweet.id)
-        Sms.send(body: "New mention: @{tweet.author.username}: {tweet.text}")
-        Storage.create!(id: tweet.id)
+      X.search(query: "to:dorianmariecom", type: :recent).each do |post|
+        next if Storage.exists?(id: post.id)
+        Sms.send(body: "New mention: @{post.author.username}: {post.text}")
+        Storage.create!(id: post.id)
       end
     CODE
   end
 
-  it "searches for mentions on Twitter" do
+  it "searches for mentions on X" do
     Current.user = create(:user, :dorian)
 
     Code.evaluate(<<~CODE)
-      Twitter.mentions.each do |tweet|
-        next if Storage.exists?(id: tweet.id)
-        Sms.send(body: "New mention: @{tweet.author.username}: {tweet.text}")
-        Storage.create!(id: tweet.id)
+      X.mentions.each do |post|
+        next if Storage.exists?(id: post.id)
+        Sms.send(body: "New mention: @{post.author.username}: {post.text}")
+        Storage.create!(id: post.id)
       end
     CODE
   end
@@ -129,7 +129,7 @@ RSpec.describe Code, type: :model do
     Code.evaluate(<<~CODE)
       Slack.send(body: "Who is leading the syncs?", channel: "#team-template")
 
-      Twitter.send(body: "What do you want to do this week?")
+      X.send(body: "What do you want to do this week?")
 
       Discord.send("Who will be the game master this week?")
 

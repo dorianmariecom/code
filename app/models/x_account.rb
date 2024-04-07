@@ -1,4 +1,4 @@
-class TwitterAccount < ApplicationRecord
+class XAccount < ApplicationRecord
   belongs_to :user, default: -> { Current.user }
 
   scope :primary, -> { where(primary: true) }
@@ -24,10 +24,10 @@ class TwitterAccount < ApplicationRecord
       end
 
     create!(
-      primary: Current.twitter_accounts.none?,
+      primary: Current.x_accounts.none?,
       verified: true,
       auth: JSON.parse(response.body)
-    ).tap(&:fetch_me!)
+    ).tap(&:refresh_auth!).tap(&:refresh_me!)
   end
 
   def self.grant_type
@@ -67,7 +67,7 @@ class TwitterAccount < ApplicationRecord
   end
 
   def self.purpose
-    :twitter_account_authorize_uri
+    :x_account_authorize_uri
   end
 
   def self.encode(string)
@@ -107,7 +107,7 @@ class TwitterAccount < ApplicationRecord
   end
 
   def self.redirect_uri
-    Rails.application.routes.url_helpers.auth_twitter_callback_url
+    Rails.application.routes.url_helpers.auth_x_callback_url
   end
 
   def self.scope
@@ -188,7 +188,36 @@ class TwitterAccount < ApplicationRecord
     auth.fetch("refresh_token", nil)
   end
 
-  def fetch_me!
+  def refresh_auth!
+    if refresh_token.blank?
+      update!(verified: false)
+    else
+      uri = URI.parse("https://api.twitter.com/2/oauth2/token")
+      request = Net::HTTP::Post.new(uri)
+      request["Authorization"] = authorization
+      request.set_form_data(grant_type: :refresh_token, refresh_token:)
+
+      response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(request)
+      end
+
+      update!(auth: JSON.parse(response.body))
+    end
+  end
+
+  def authorization
+    "Basic #{Base64.urlsafe_encode64("#{client_id}:#{client_secret}")}"
+  end
+
+  def client_id
+    self.class.client_id
+  end
+
+  def client_secret
+    self.class.client_secret
+  end
+
+  def refresh_me!
     if access_token.blank?
       update!(verified: false)
     else
@@ -204,6 +233,6 @@ class TwitterAccount < ApplicationRecord
   end
 
   def to_s
-    username.presence || "twitter_account##{id}"
+    username.presence || "x_account##{id}"
   end
 end

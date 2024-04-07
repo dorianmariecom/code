@@ -1,8 +1,16 @@
 # frozen_string_literal: true
 
 class FakeApiTwitterCom < Sinatra::Base
+  post "/2/oauth2/token" do
+    JSON.pretty_generate(FactoryBot.create(:x_account).auth)
+  end
+
   get "/2/users/:id/mentions" do
     File.read("spec/files/api.twitter.com/2/users/1205730701703819264/mentions")
+  end
+
+  get "/2/tweets/search/recent" do
+    File.read("spec/files/api.twitter.com/2/tweets/search/recent")
   end
 end
 

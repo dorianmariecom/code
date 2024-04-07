@@ -1,0 +1,11 @@
+- x_account = local_assigns.fetch(:x_account)
+- submit = local_assigns.fetch(:submit)
+
+= form_for x_account do |f|
+  - if admin?
+    = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
+    = render "shared/field", f: f, field: :verified, type: :checkbox
+
+  = render "shared/field", f: f, field: :primary, type: :checkbox
+
+  = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

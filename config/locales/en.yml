@@ -138,10 +138,10 @@ en:
         one: 1 slack account
         other: "%{count} slack accounts"
         zero: 0 slack accounts
-      twitter_accounts:
-        one: 1 twitter account
-        other: "%{count} twitter accounts"
-        zero: 0 twitter accounts
+      x_accounts:
+        one: 1 x account
+        other: "%{count} x accounts"
+        zero: 0 x accounts
       smtp_accounts:
         one: 1 smtp account
         other: "%{count} smtp accounts"
@@ -310,6 +310,10 @@ en:
         primary: primary?
         user_id: user
         verified: verified?
+      x_account:
+        primary: primary?
+        user_id: user
+        verified: verified?
       smtp_account:
         address: address
         authentication: authentication
@@ -423,7 +427,7 @@ en:
       new_phone_number: new phone number
       new_program: new program
       new_slack_account: new slack account
-      new_twitter_account: new twitter account
+      new_x_account: new x account
       new_smtp_account: new smtp account
       passwords:
         one: 1 password
@@ -443,10 +447,10 @@ en:
         one: 1 slack account
         other: "%{count} slack accounts"
         zero: 0 slack accounts
-      twitter_accounts:
-        one: 1 twitter account
-        other: "%{count} twitter accounts"
-        zero: 0 twitter accounts
+      x_accounts:
+        one: 1 x account
+        other: "%{count} x accounts"
+        zero: 0 x accounts
       smtp_accounts:
         one: 1 smtp account
         other: "%{count} smtp accounts"
@@ -456,26 +460,28 @@ en:
       time_zone: time zone
     update:
       notice: user updated
-  twitter_accounts:
+  x_accounts:
     destroy:
-      notice: twitter account deleted
+      notice: x account deleted
     edit:
-      submit: update twitter account
-      title: edit twitter account
-    form:
-      twitter_account: twitter account
+      submit: update x account
+      title: edit x account
     new:
-      submit: new twitter account
-      title: new twitter account
+      submit: new x account
+      title: new x account
     index:
-      new: new twitter account
-      title: twitter accounts
+      new: new x account
+      title: x accounts
     show:
       belongs_to: belongs to
-      delete: delete twitter account
-      edit: edit twitter account
+      delete: delete x account
+      edit: edit x account
       id: id
       primary: primary
       verified: verified
+      auth: auth
+      me: me
+      refresh_auth: refresh auth
+      refresh_me: refresh me
     update:
-      notice: twitter account updated
+      notice: x account updated

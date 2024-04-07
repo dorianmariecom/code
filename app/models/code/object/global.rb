@@ -22,9 +22,9 @@ class Code
         when "Meetup"
           sig(args) { Object.repeat }
           arguments.any? ? Meetup.new(*arguments.raw) : Class.new(Meetup)
-        when "Twitter"
+        when "X"
           sig(args) { Object.repeat }
-          arguments.any? ? Twitter.new(*arguments.raw) : Class.new(Twitter)
+          arguments.any? ? X.new(*arguments.raw) : Class.new(X)
         when "Slack"
           sig(args) { Object.repeat }
           arguments.any? ? Slack.new(*arguments.raw) : Class.new(Slack)

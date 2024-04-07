@@ -2,7 +2,7 @@
 
 class Code
   class Object
-    class Twitter < Object
+    class X < Object
       def self.call(**args)
         operator = args.fetch(:operator, nil)
         arguments = args.fetch(:arguments, List.new)
@@ -28,9 +28,10 @@ class Code
       end
 
       def self.code_mentions
-        twitter_account = Current.primary_twitter_account!
-        id = twitter_account.twitter_id
-        access_token = twitter_account.access_token
+        x_account = Current.primary_x_account!.tap(&:refresh_auth!)
+        id = x_account.twitter_id
+        access_token = x_account.access_token
+        query = twitter_query.to_query
         uri =
           URI.parse("https://api.twitter.com/2/users/#{id}/mentions?#{query}")
         request = Net::HTTP::Get.new(uri)
@@ -49,7 +50,7 @@ class Code
           end
         end
 
-        List.new(json["data"].map { |tweet| Tweet.new(tweet) })
+        List.new(json["data"].map { |tweet| Post.new(tweet) })
       end
 
       def self.code_search(query: nil, type: nil)
@@ -57,20 +58,39 @@ class Code
         type ||= Nothing.new
 
         query = query.truthy? ? query.raw : ""
+        query = {query:}.merge(twitter_query).to_query
         type = type.truthy? ? type.raw : "recent"
 
-        twitter_account = Current.primary_twitter_account!
-        access_token = twitter_account.access_token
-        Nothing.new
+        x_account = Current.primary_x_account!.tap(&:refresh_auth!)
+        access_token = x_account.access_token
+        uri =
+          URI.parse("https://api.twitter.com/2/tweets/search/recent?#{query}")
+        request = Net::HTTP::Get.new(uri)
+        request["Authorization"] = "Bearer #{access_token}"
+        response =
+          Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+            http.request(request)
+          end
+        json = JSON.parse(response.body)
+
+        json["data"] = json["data"].map do |tweet|
+          tweet.tap do |tweet|
+            tweet["author"] = json
+              .dig("includes", "users")
+              .detect { |user| user["id"] == tweet["author_id"] }
+          end
+        end
+
+        List.new(json["data"].map { |tweet| Post.new(tweet) })
       end
 
-      def self.query
+      def self.twitter_query
         {
           "tweet.fields" => tweet_fields.join(","),
           "expansions" => expansions.join(","),
           "user.fields" => user_fields.join(","),
           "media.fields" => media_fields.join(",")
-        }.to_query
+        }
       end
 
       def self.tweet_fields
@@ -82,7 +102,7 @@ class Code
       end
 
       def self.user_fields
-        %w[name username profile_image_url]
+        %w[id name username location profile_image_url]
       end
 
       def self.media_fields

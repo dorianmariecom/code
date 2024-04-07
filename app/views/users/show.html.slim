@@ -76,11 +76,11 @@
   = render partial: "slack_accounts/slack_account", collection: @slack_accounts, as: :slack_account
 
 .border-l-2.border-black.pl-4
-  p.font-bold= link_to t(".twitter_accounts", count: @twitter_accounts.size), [@user, :twitter_accounts]
+  p.font-bold= link_to t(".x_accounts", count: @x_accounts.size), [@user, :x_accounts]
 
-  .p= button_to t(".new_twitter_account"), new_twitter_account_path, method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
+  .p= button_to t(".new_x_account"), new_x_account_path, method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
-  = render partial: "twitter_accounts/twitter_account", collection: @twitter_accounts, as: :twitter_account
+  = render partial: "x_accounts/x_account", collection: @x_accounts, as: :x_account
 
 .border-l-2.border-black.pl-4
   p.font-bold= link_to t(".smtp_accounts", count: @smtp_accounts.size), [@user, :smtp_accounts]

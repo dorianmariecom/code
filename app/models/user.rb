@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :programs, dependent: :destroy
   has_many :slack_accounts, dependent: :destroy
   has_many :smtp_accounts, dependent: :destroy
-  has_many :twitter_accounts, dependent: :destroy
+  has_many :x_accounts, dependent: :destroy
 
   validates :time_zone, inclusion: { in: TIME_ZONES, allow_blank: true }
 

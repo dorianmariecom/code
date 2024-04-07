@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TwitterAccountPolicy < ApplicationPolicy
+class XAccountPolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     def resolve
       scope.where(user: policy_scope(User))
@@ -9,6 +9,14 @@ class TwitterAccountPolicy < ApplicationPolicy
 
   def index?
     current_user?
+  end
+
+  def refresh_auth?
+    owner? || admin?
+  end
+
+  def refresh_me?
+    owner? || admin?
   end
 
   def callback?

@@ -1,0 +1,159 @@
+{
+  "data": [
+    {
+      "created_at": "2024-04-07T18:21:58.000Z",
+      "author_id": "582608570",
+      "text": "RT @RubyCademy: What’s your go-to stack in 2024? #rubyonrails",
+      "id": "1777039126967075048",
+      "edit_history_tweet_ids": [
+        "1777039126967075048"
+      ]
+    },
+    {
+      "created_at": "2024-04-07T18:00:18.000Z",
+      "author_id": "1656150678375636998",
+      "text": "Thrilled to see that 'The Ruby on Rails Interview Bible' is a must-read in tech. Thank you for making it a success! #rubyonrails #ruby  @gumroad https://t.co/F5MgEAT10b",
+      "id": "1777033674900296095",
+      "edit_history_tweet_ids": [
+        "1777033674900296095"
+      ]
+    },
+    {
+      "created_at": "2024-04-07T18:00:12.000Z",
+      "author_id": "761664134224220160",
+      "text": "Notes on retrying all jobs with ActiveJob retry_on  (from 26/08/2021) #ruby #rubyonrails #programming #activejob https://t.co/qv7rbfU3wF",
+      "id": "1777033648367190076",
+      "edit_history_tweet_ids": [
+        "1777033648367190076"
+      ]
+    },
+    {
+      "created_at": "2024-04-07T17:18:18.000Z",
+      "author_id": "1261031541125328906",
+      "text": "RT @rails: This Week In Rails is out! Deferring jobs enqueueing to after the transaction commit, queries count in rendering logs and more h…",
+      "id": "1777023104184652008",
+      "edit_history_tweet_ids": [
+        "1777023104184652008"
+      ]
+    },
+    {
+      "created_at": "2024-04-07T17:11:50.000Z",
+      "author_id": "1283764799483060231",
+      "text": "RT @RubyCademy: ✨ RAILS PRO TIPS ✨\n\nUse the rails routes -c PATTERN option to filter routes by a specific controller or namespace ✨💫\n\n#ruby…",
+      "id": "1777021478954750244",
+      "edit_history_tweet_ids": [
+        "1777021478954750244"
+      ]
+    },
+    {
+      "created_at": "2024-04-07T16:44:08.000Z",
+      "author_id": "119852600",
+      "text": "RT @rails: This Week In Rails is out! Deferring jobs enqueueing to after the transaction commit, queries count in rendering logs and more h…",
+      "id": "1777014508482887717",
+      "edit_history_tweet_ids": [
+        "1777014508482887717"
+      ]
+    },
+    {
+      "created_at": "2024-04-07T16:40:04.000Z",
+      "author_id": "1776335020690407426",
+      "text": "I am back writing in my blog. Starting with a new Ruby on Rails tutorial https://t.co/V8O0Y3XLAM\n#rubyonrails #blog #developers",
+      "id": "1777013483847962887",
+      "edit_history_tweet_ids": [
+        "1777013483847962887"
+      ]
+    },
+    {
+      "created_at": "2024-04-07T16:36:07.000Z",
+      "author_id": "94732508",
+      "text": "RT @RubyCademy: ✨ RAILS TIPS ✨\n\nMake sure to remove trailing whitespaces before calling the pluralize method 😬\n\n#rails7 #rubyonrails https:…",
+      "id": "1777012489294930058",
+      "edit_history_tweet_ids": [
+        "1777012489294930058"
+      ]
+    },
+    {
+      "created_at": "2024-04-07T16:00:36.000Z",
+      "author_id": "761664134224220160",
+      "text": "How Ruby String Encoding Benefits Developers (from 16/08/2018) #ruby #rubyonrails #programming #developers https://t.co/bFoLb5DICa",
+      "id": "1777003551673225380",
+      "edit_history_tweet_ids": [
+        "1777003551673225380"
+      ]
+    },
+    {
+      "created_at": "2024-04-07T16:00:36.000Z",
+      "author_id": "761664134224220160",
+      "text": "VSCode   WSL makes Windows awesome for web development (from 08/03/2024) #ruby #rubyonrails #programming #development #web https://t.co/MWP0PoUADA",
+      "id": "1777003551006298553",
+      "edit_history_tweet_ids": [
+        "1777003551006298553"
+      ]
+    }
+  ],
+  "includes": {
+    "users": [
+      {
+        "name": "David Teren",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1713263833907650560/gItYsk4r_normal.jpg",
+        "username": "davidteren",
+        "id": "582608570",
+        "location": "Cape Town"
+      },
+      {
+        "name": "Interview Bible",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1656151046732001283/YI0GCp1s_normal.jpg",
+        "username": "interviewbible",
+        "id": "1656150678375636998",
+        "location": "London"
+      },
+      {
+        "name": "RubyOnRails.BA",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1712117765417713664/-LhFVVV0_normal.jpg",
+        "username": "RubyOnRailsBa",
+        "id": "761664134224220160"
+      },
+      {
+        "name": "Andrew Hodson",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1534211226313576449/wO8haPJU_normal.jpg",
+        "username": "MyBuddyAndrew",
+        "id": "1261031541125328906",
+        "location": "USA"
+      },
+      {
+        "name": "Ian Codes 🧑‍💻",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1676710779104493572/JGmvtc3E_normal.jpg",
+        "username": "Ian_KamauKE",
+        "id": "1283764799483060231",
+        "location": "Nairobi, Kenya"
+      },
+      {
+        "name": "Julien ANNE",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1262337396340899841/sRfcLwcX_normal.jpg",
+        "username": "Julien_ANNE",
+        "id": "119852600",
+        "location": "Caen, Basse-Normandie"
+      },
+      {
+        "name": "Gerardo Miranda",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1776335818614816768/t9i_Nqfl_normal.jpg",
+        "username": "Ger4rdoDev",
+        "id": "1776335020690407426",
+        "location": "The internet"
+      },
+      {
+        "name": "Khairi Adnan",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1727478758368755712/ffIKgf0t_normal.jpg",
+        "username": "kheri_ad6",
+        "id": "94732508",
+        "location": "Shah Alam"
+      }
+    ]
+  },
+  "meta": {
+    "newest_id": "1777039126967075048",
+    "oldest_id": "1777003551006298553",
+    "result_count": 10,
+    "next_token": "b26v89c19zqg8o3fr5wf9iqzlswuvyv3rd22lsgc776gt"
+  }
+}
