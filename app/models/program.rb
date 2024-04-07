@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Program < ApplicationRecord
-  TIMEOUT = 1.second
+  TIMEOUT = 5.second
   belongs_to :user, default: -> { Current.user || User.new }
 
   accepts_nested_attributes_for :user

@@ -6,13 +6,26 @@ RSpec.describe Code, type: :model do
   it "sends an email" do
     Current.user = create(:user, :dorian)
 
-    expect_any_instance_of(SmtpAccount).to receive(:deliver!)
+    expect_any_instance_of(SmtpAccount).to receive(:deliver!).once
 
     Code.evaluate(<<~CODE)
       Mail.send(
         to: "dorian@dorianmarie.com",
         subject: "Hello",
         body: "What's up?"
+      )
+    CODE
+  end
+
+  it "can use reply_to" do
+    Current.user = create(:user, :dorian)
+
+    expect_any_instance_of(SmtpAccount).to receive(:deliver!).once
+
+    Code.evaluate(<<~CODE)
+      Mail.send(
+        subject: "What did you do last week?",
+        reply_to: "adrienicohen@gmail.com"
       )
     CODE
   end

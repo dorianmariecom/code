@@ -69,12 +69,13 @@ class SmtpAccount < ApplicationRecord
     end
   end
 
-  def deliver!(from:, to:, subject:, body:)
+  def deliver!(from: "", to: "", subject: "", body: "", reply_to: "")
     mail = Mail.new
     mail.from = from
     mail.to = to
     mail.subject = subject
     mail.body = body
+    mail.reply_to = reply_to if reply_to.present?
     mail.delivery_method(
       :smtp,
       address:,

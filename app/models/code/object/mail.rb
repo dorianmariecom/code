@@ -15,7 +15,8 @@ class Code
               from: String.maybe,
               to: String.maybe,
               subject: String.maybe,
-              body: String.maybe
+              body: String.maybe,
+              reply_to: String.maybe
             }
           end
           if arguments.any?
@@ -23,7 +24,8 @@ class Code
               from: value.code_get(String.new("from")),
               to: value.code_get(String.new("to")),
               subject: value.code_get(String.new("subject")),
-              body: value.code_get(String.new("body"))
+              body: value.code_get(String.new("body")),
+              reply_to: value.code_get(String.new("reply_to"))
             )
           else
             code_send
@@ -33,11 +35,12 @@ class Code
         end
       end
 
-      def self.code_send(from: nil, to: nil, subject: nil, body: nil)
+      def self.code_send(from: nil, to: nil, subject: nil, body: nil, reply_to: nil)
         from ||= Nothing.new
         to ||= Nothing.new
         subject ||= Nothing.new
         body ||= Nothing.new
+        reply_to ||= Nothing.new
 
         from =
           if from.truthy?
@@ -66,7 +69,8 @@ class Code
               from: from_address,
               to: to_address,
               subject: subject&.raw || "",
-              body: body&.raw || ""
+              body: body&.raw || "",
+              reply_to: reply_to&.raw || ""
             )
           rescue ::Net::SMTPAuthenticationError
             raise Error, "Wrong SMTP username or SMTP password"
