@@ -1,10 +1,10 @@
 FROM debian:bullseye-slim as base
-ENV BUNDLER_VERSION="2.5.5" \
+ENV BUNDLER_VERSION="2.5.7" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development" \
-    NODE_VERSION="20.11.0" \
-    NPM_VERSION="10.4.0" \
+    NODE_VERSION="21.7.2" \
+    NPM_VERSION="10.5.1" \
     RAILS_ENV="production" \
     RUBY_INSTALL_VERSION="0.9.3" \
     RUBY_VERSION="3.3.0" \
