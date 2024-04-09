@@ -1,9 +1,14 @@
 GIT
   remote: https://github.com/fractaledmind/solid_errors
-  revision: 2f3a0949eccc21b5fe6d53ef4cdcbcbeb22debbb
+  revision: 8ab84452c3df62f781131f41e28fd053ccb84fc3
   specs:
-    solid_errors (0.3.5)
-      rails (~> 7.0)
+    solid_errors (0.4.0)
+      actionmailer (~> 7.0)
+      actionpack (~> 7.0)
+      actionview (~> 7.0)
+      activerecord (~> 7.0)
+      activesupport (~> 7.0)
+      railties (~> 7.0)
 
 GIT
   remote: https://github.com/rails/rails
