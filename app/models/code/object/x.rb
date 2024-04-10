@@ -78,7 +78,6 @@ class Code
 
       def self.code_search(query: nil)
         query ||= Nothing.new
-        type ||= Nothing.new
 
         query = query.truthy? ? query.raw : ""
         query = { query: }.merge(twitter_query).to_query
