@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fractaledmind/solid_errors
-  revision: 5827bad00afcc39f75690344420ba04a099709cc
+  revision: c9cb77c13baabad58619ab40721c4d15f0129948
   specs:
     solid_errors (0.4.1)
       actionmailer (~> 7.0)
