@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fractaledmind/solid_errors
-  revision: 5827bad00afcc39f75690344420ba04a099709cc
+  revision: c8439d8d7f6e3a84ecab74a7a126a4e7babbcc9c
   specs:
-    solid_errors (0.4.1)
+    solid_errors (0.4.2)
       actionmailer (~> 7.0)
       actionpack (~> 7.0)
       actionview (~> 7.0)
@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 61d78da043ae1c8c9552e1265ea47e065fdae4cf
+  revision: 84997578c59aa88fe114cef176115f1612b6de6b
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -269,17 +269,17 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.1)
-    nokogiri (1.16.3-aarch64-linux)
+    nokogiri (1.16.4-aarch64-linux)
       racc (~> 1.4)
-    nokogiri (1.16.3-arm-linux)
+    nokogiri (1.16.4-arm-linux)
       racc (~> 1.4)
-    nokogiri (1.16.3-arm64-darwin)
+    nokogiri (1.16.4-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.16.3-x86-linux)
+    nokogiri (1.16.4-x86-linux)
       racc (~> 1.4)
-    nokogiri (1.16.3-x86_64-darwin)
+    nokogiri (1.16.4-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.16.3-x86_64-linux)
+    nokogiri (1.16.4-x86_64-linux)
       racc (~> 1.4)
     open-uri (0.4.1)
       stringio
@@ -359,7 +359,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
-    rubocop (1.63.0)
+    rubocop (1.63.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
