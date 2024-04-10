@@ -1,13 +1,18 @@
 GIT
   remote: https://github.com/fractaledmind/solid_errors
-  revision: 2f3a0949eccc21b5fe6d53ef4cdcbcbeb22debbb
+  revision: 5827bad00afcc39f75690344420ba04a099709cc
   specs:
-    solid_errors (0.3.5)
-      rails (~> 7.0)
+    solid_errors (0.4.1)
+      actionmailer (~> 7.0)
+      actionpack (~> 7.0)
+      actionview (~> 7.0)
+      activerecord (~> 7.0)
+      activesupport (~> 7.0)
+      railties (~> 7.0)
 
 GIT
   remote: https://github.com/rails/rails
-  revision: bad7ff1664fb05cc227d0386ee3cbe4c292efe05
+  revision: 61d78da043ae1c8c9552e1265ea47e065fdae4cf
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -334,7 +339,7 @@ GEM
     redis-client (0.21.1)
       connection_pool
     regexp_parser (2.9.0)
-    reline (0.5.0)
+    reline (0.5.1)
       io-console (~> 0.5)
     rexml (3.2.6)
     rspec-core (3.13.0)
@@ -354,7 +359,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
-    rubocop (1.62.1)
+    rubocop (1.63.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -415,17 +420,17 @@ GEM
     stringio (3.1.0)
     syntax_tree (6.2.0)
       prettier_print (>= 1.2.0)
-    tailwindcss-rails (2.3.0)
+    tailwindcss-rails (2.4.0)
       railties (>= 6.0.0)
-    tailwindcss-rails (2.3.0-aarch64-linux)
+    tailwindcss-rails (2.4.0-aarch64-linux)
       railties (>= 6.0.0)
-    tailwindcss-rails (2.3.0-arm-linux)
+    tailwindcss-rails (2.4.0-arm-linux)
       railties (>= 6.0.0)
-    tailwindcss-rails (2.3.0-arm64-darwin)
+    tailwindcss-rails (2.4.0-arm64-darwin)
       railties (>= 6.0.0)
-    tailwindcss-rails (2.3.0-x86_64-darwin)
+    tailwindcss-rails (2.4.0-x86_64-darwin)
       railties (>= 6.0.0)
-    tailwindcss-rails (2.3.0-x86_64-linux)
+    tailwindcss-rails (2.4.0-x86_64-linux)
       railties (>= 6.0.0)
     temple (0.10.3)
     thor (1.3.1)
