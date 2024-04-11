@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 84997578c59aa88fe114cef176115f1612b6de6b
+  revision: 6ec4975c9fa56aadb414e74148b3d50553047199
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -517,4 +517,4 @@ RUBY VERSION
    ruby 3.3.0p0
 
 BUNDLED WITH
-   2.5.7
+   2.5.8
