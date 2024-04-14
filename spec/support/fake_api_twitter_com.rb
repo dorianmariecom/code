@@ -12,6 +12,10 @@ class FakeApiTwitterCom < Sinatra::Base
   get "/2/tweets/search/recent" do
     File.read("spec/files/api.twitter.com/2/tweets/search/recent")
   end
+
+  post '/2/tweets' do
+    File.read("spec/files/api.twitter.com/2/tweets.json")
+  end
 end
 
 RSpec.configure do |config|

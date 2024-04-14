@@ -100,6 +100,14 @@ RSpec.describe Code, type: :model do
     CODE
   end
 
+  it "send a post on X" do
+    Current.user = create(:user, :dorian)
+
+    Code.evaluate(<<~CODE)
+      X.send(body: :Hello)
+    CODE
+  end
+
   it "sends payment notifications", :pending do
     Current.user = create(:user, :dorian)
 
