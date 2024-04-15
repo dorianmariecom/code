@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: adfeb791c13c1a55f3b9a46342603638ae57c7cb
+  revision: 778039b896be1dcb3da606f761921d006cab67c9
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -190,7 +190,7 @@ GEM
     dorian-shuffle (0.4.3)
     dorian-sort-json (0.4.6)
     dorian-sort-yaml (0.3.4)
-    dorian-times (0.4.3)
+    dorian-times (0.4.4)
     dorian-top (0.1.4)
     dorian-yaml-compare (0.3.6)
     dorian-yaml-read-write (0.2.6)
@@ -285,7 +285,7 @@ GEM
       stringio
       time
       uri
-    optparse (0.4.0)
+    optparse (0.5.0)
     pandoc-ruby (2.1.10)
     parallel (1.24.0)
     parser (3.3.0.5)
