@@ -94,7 +94,7 @@ jobs:
       - uses: actions/setup-node@v4
       - run: yarn audit
   deploy-staging:
-    group: deploy-staging
+    group: deploy_staging
     cancel-in-progress: true
     name: Deploy staging
     runs-on: ubuntu-latest
@@ -139,7 +139,7 @@ jobs:
           DATABASE_URL: ${{secrets.STAGING_DATABASE_URL}}
         if: github.ref == 'refs/heads/main'
   deploy-production:
-    group: deploy-production
+    group: deploy_production
     cancel-in-progress: true
     name: Deploy production
     runs-on: ubuntu-latest
