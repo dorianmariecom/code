@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: fee72c3aa0283f267d3fb1b88bd10349922fe127
+  revision: ab49c0a0b94b77e774bb3bea4fec52f4f1a264f5
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
