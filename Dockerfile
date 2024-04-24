@@ -1,4 +1,4 @@
-ENV BUNDLER_VERSION="2.5.7" \
+ARG BUNDLER_VERSION="2.5.7" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development" \
