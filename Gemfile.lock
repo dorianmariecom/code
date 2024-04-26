@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: f04c59b9ff96a5b7b5b3c498e758055081d3bc08
+  revision: 0a9e39d14e960c8db447e21aa02f685b74da1839
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -288,7 +288,7 @@ GEM
     optparse (0.5.0)
     pandoc-ruby (2.1.10)
     parallel (1.24.0)
-    parser (3.3.0.5)
+    parser (3.3.1.0)
       ast (~> 2.4.1)
       racc
     pg (1.5.6)
