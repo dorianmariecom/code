@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: fc4407eed00ed172e92798ae2a5d415b1134c26b
+  revision: a94938f10ce0f34c765028e518caed6527a31d11
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
@@ -230,7 +230,7 @@ GEM
     irb (1.12.0)
       rdoc
       reline (>= 0.4.2)
-    jbuilder (2.11.5)
+    jbuilder (2.12.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.7.2)
