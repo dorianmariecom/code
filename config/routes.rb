@@ -37,6 +37,7 @@ Rails.application.routes.draw do
     end
     resources :passwords
     resources :programs
+    resources :data
   end
 
   resources :email_addresses do
@@ -55,6 +56,7 @@ Rails.application.routes.draw do
   end
   resources :passwords
   resources :programs
+  resources :data
 
   match "/auth/slack/callback" => "slack_accounts#callback",
         :via => %i[get post]

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fractaledmind/solid_errors
-  revision: c8439d8d7f6e3a84ecab74a7a126a4e7babbcc9c
+  revision: 786e3c12cfdad59578b5541bfd6ff0dc93acf38e
   specs:
     solid_errors (0.4.2)
       actionmailer (~> 7.0)
@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 990432f2ea2d866b5d6c02eb2d3d8e7e85bfe2e7
+  revision: a27a1751cfd499f69499e943f12e3400b55a323e
   specs:
     actioncable (7.2.0.alpha)
       actionpack (= 7.2.0.alpha)
