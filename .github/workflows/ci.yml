@@ -114,7 +114,7 @@ jobs:
         with:
           username: ${{secrets.STAGING_KAMAL_REGISTRY_USERNAME}}
           password: ${{secrets.STAGING_KAMAL_REGISTRY_PASSWORD}}
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         with:
           context: .
           cache-from: type=gha
@@ -157,7 +157,7 @@ jobs:
         with:
           username: ${{secrets.PRODUCTION_KAMAL_REGISTRY_USERNAME}}
           password: ${{secrets.PRODUCTION_KAMAL_REGISTRY_PASSWORD}}
-      - uses: docker/build-push-action@v5
+      - uses: docker/build-push-action@v6
         with:
           context: .
           cache-from: type=gha
