@@ -1,9 +1,5 @@
 service: code
 image: dorianmariecom/code
-builder:
-  remote:
-    arch: amd64
-    ssh: root@164.92.135.114
 servers:
   web:
     hosts:

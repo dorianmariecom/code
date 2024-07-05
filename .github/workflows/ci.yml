@@ -122,7 +122,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: gem install kamal
       - run: kamal lock release --destination staging
         if: github.ref == 'refs/heads/main'
       - run: kamal deploy --skip-push --destination staging
@@ -164,7 +163,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: gem install kamal
       - run: kamal lock release --destination prod
         if: github.ref == 'refs/heads/main'
       - run: kamal deploy --skip-push --destination prod

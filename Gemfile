@@ -38,6 +38,7 @@ gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "turbo-rails"
 gem "zxcvbn-ruby", require: "zxcvbn"
+gem "kamal"
 
 group :production do
   gem "rack-timeout"
