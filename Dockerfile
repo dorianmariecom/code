@@ -2,13 +2,13 @@ ARG BUNDLER_VERSION="2.5.7" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development" \
-    NODE_VERSION="21.7.2" \
+    NODE_VERSION="22.4.0" \
     NPM_VERSION="10.5.1" \
     PATH="/usr/local/node/bin:${PATH}" \
     RAILS_ENV="production" \
     RUBY_INSTALL_VERSION="0.9.3" \
     RUBY_VERSION="3.3.1" \
-    YARN_VERSION="1.22.19"
+    YARN_VERSION="1.22.22"
 
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
