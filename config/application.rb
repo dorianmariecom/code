@@ -15,5 +15,6 @@ class Code
     config.active_job.queue_adapter = :solid_queue
     config.active_record.automatically_invert_plural_associations = true
     config.mission_control.jobs.show_console_help = false
+    config.active_support.to_time_preserves_timezone = :zone
   end
 end
