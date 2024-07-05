@@ -66,11 +66,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.3.1
           bundler-cache: true
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.11.0
           cache: "yarn"
       - run: yarn install --frozen-lockfile --immutable --ignore-engines
       - run: sudo apt-get -yqq install libpq-dev pandoc
@@ -123,7 +121,6 @@ jobs:
           tags: ${{github.repository}}:${{github.sha}}
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.3.1
           bundler-cache: true
       - run: gem install kamal
       - run: kamal lock release --destination staging
@@ -166,7 +163,6 @@ jobs:
           tags: ${{github.repository}}:${{github.sha}}
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.3.1
           bundler-cache: true
       - run: gem install kamal
       - run: kamal lock release --destination prod
