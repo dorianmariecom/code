@@ -2,9 +2,9 @@
 
 source "https://rubygems.org"
 
-git_source(:github) { |name| "https://github.com/#{name}" }
+git_source(:dorian) { |name| "https://github.com/dorianmariecom/#{name}" }
 
-ruby "3.3.1"
+ruby "3.3.3"
 
 gem "bcrypt"
 gem "brakeman"
@@ -17,7 +17,7 @@ gem "heroicon"
 gem "importmap-rails"
 gem "irb"
 gem "jbuilder"
-gem "mission_control-jobs"
+gem "mission_control-jobs", dorian: "mission_control-jobs"
 gem "net-http"
 gem "open-uri"
 gem "optparse"
@@ -31,7 +31,7 @@ gem "rails", github: "rails/rails"
 gem "redis"
 gem "rubocop"
 gem "slim-rails"
-gem "solid_errors", github: "fractaledmind/solid_errors"
+gem "solid_errors", dorian: "solid_errors"
 gem "solid_queue"
 gem "propshaft"
 gem "stimulus-rails"
