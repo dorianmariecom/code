@@ -10,7 +10,7 @@ require_relative "../app/models/code"
 
 class Code
   class Application < Rails::Application
-    config.load_defaults 7.1
+    config.load_defaults 7.2
     config.autoload_lib(ignore: %w[assets tasks])
     config.active_job.queue_adapter = :solid_queue
     config.active_record.automatically_invert_plural_associations = true
