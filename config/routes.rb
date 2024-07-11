@@ -37,7 +37,11 @@ Rails.application.routes.draw do
     end
     resources :passwords
     resources :programs
-    resources :data
+    resources :data do
+      collection do
+        delete "/" => "data#destroy_all"
+      end
+    end
   end
 
   resources :email_addresses do
@@ -56,7 +60,11 @@ Rails.application.routes.draw do
   end
   resources :passwords
   resources :programs
-  resources :data
+  resources :data do
+    collection do
+      delete "/" => "data#destroy_all"
+    end
+  end
 
   match "/auth/slack/callback" => "slack_accounts#callback",
         :via => %i[get post]

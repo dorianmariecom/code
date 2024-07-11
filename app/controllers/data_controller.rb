@@ -54,6 +54,14 @@ class DataController < ApplicationController
     redirect_to @datum.user, notice: t(".notice")
   end
 
+  def destroy_all
+    authorize Datum
+
+    scope.destroy_all
+
+    redirect_back_or_to(data_path)
+  end
+
   private
 
   def load_user

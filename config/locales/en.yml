@@ -500,6 +500,7 @@ en:
       submit: update
       title: edit datum
     index:
+      delete_all: delete all
       new: new datum
       title: data
     new:
