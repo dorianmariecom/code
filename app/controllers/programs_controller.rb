@@ -17,9 +17,6 @@ class ProgramsController < ApplicationController
     @program = authorize scope.new
   end
 
-  def redirect
-  end
-
   def create
     unless current_user
       Current.user = User.create!

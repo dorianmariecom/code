@@ -26,7 +26,6 @@ html
 
       - if current_user?
         => link_to current_user
-        => link_to t(".programs", count: policy_scope(Program).where(user: current_user).size), [current_user, :programs]
         => link_to t(".documentation"), documentation_path
         => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
       - else
@@ -34,19 +33,33 @@ html
         => link_to t(".register"), new_user_path
         => link_to t(".log_in"), new_session_path
 
+    - if current_user?
+      .p
+        => link_to t(".email_addresses", count: policy_scope(EmailAddress).size), [current_user, :email_addresses]
+        => link_to t(".passwords", count: policy_scope(Password).size), [current_user, :passwords]
+        => link_to t(".phone_numbers", count: policy_scope(PhoneNumber).size), [current_user, :phone_numbers]
+        => link_to t(".programs", count: policy_scope(Program).size), [current_user, :programs]
+        => link_to t(".slack_accounts", count: policy_scope(SlackAccount).size), [current_user, :slack_accounts]
+        => link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).size), [current_user, :smtp_accounts]
+        => link_to t(".x_accounts", count: policy_scope(XAccount).size), [current_user, :x_accounts]
+        => link_to t(".data", count: policy_scope(Datum).size), [current_user, :data]
+
     - if admin?
       .p
-        => link_to t(".email_addresses", count: policy_scope(EmailAddress).size), email_addresses_path
         => link_to t(".errors", count: policy_scope(SolidErrors::Error).unresolved.size), errors_path
         => link_to t(".mailers"), "/rails/mailers"
+        => link_to t(".up"), up_path
+
+    - if admin?
+        => link_to t(".email_addresses", count: policy_scope(EmailAddress).size), email_addresses_path
         => link_to t(".passwords", count: policy_scope(Password).size), passwords_path
         => link_to t(".phone_numbers", count: policy_scope(PhoneNumber).size), phone_numbers_path
         => link_to t(".programs", count: policy_scope(Program).size), programs_path
         => link_to t(".slack_accounts", count: policy_scope(SlackAccount).size), slack_accounts_path
         => link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).size), smtp_accounts_path
         => link_to t(".x_accounts", count: policy_scope(XAccount).size), x_accounts_path
-        => link_to t(".up"), up_path
         => link_to t(".users", count: policy_scope(User).size), users_path
+        => link_to t(".data", count: policy_scope(Datum).size), data_path
 
     - if admin?
       .p

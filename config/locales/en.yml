@@ -125,6 +125,10 @@ en:
         one: 1 program
         other: "%{count} programs"
         zero: 0 programs
+      data:
+        one: 1 datum
+        other: "%{count} data"
+        zero: 0 data
       ready_jobs:
         one: 1 ready job
         other: "%{count} ready jobs"
@@ -272,6 +276,8 @@ en:
       title: log in
   shared:
     field:
+      datum:
+        data: data
       eg: e.g.
       email_address:
         display_name: display name
@@ -485,3 +491,25 @@ en:
       refresh_me: refresh me
     update:
       notice: x account updated
+  data:
+    create:
+      notice: datum created
+    destroy:
+      notice: datum deleted
+    edit:
+      submit: update
+      title: edit datum
+    index:
+      new: new datum
+      title: data
+    new:
+      submit: evaluate
+      title: new datum
+    show:
+      belongs_to: belongs to
+      delete: delete datum
+      edit: edit datum
+      id: id
+      data: data
+    update:
+      notice: datum updated

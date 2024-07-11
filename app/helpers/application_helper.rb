@@ -93,6 +93,10 @@ module ApplicationHelper
     %w[plain login cram_md5 none]
   end
 
+  def fake_data
+    "1, true, { 123: false }, [1, 2, 3]"
+  end
+
   def time_zone_options
     User::TIME_ZONES
   end

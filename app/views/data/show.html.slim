@@ -1,0 +1,17 @@
+- content_for(:title, @datum.to_s)
+
+- if admin?
+  .text-sm= t(".belongs_to")
+  .mb-5= link_to @datum.user
+
+.text-sm= t(".id")
+.mb-5= @datum.id
+
+- if @datum.data.present?
+  .text-sm=> t(".data")
+  pre.mt-0
+    = JSON.pretty_generate(@datum.data)
+
+= link_to t(".edit"), [:edit, @datum]
+= button_to t(".delete"), @datum, method: :delete, class: "a text-red-600"
+
