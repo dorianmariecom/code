@@ -7,6 +7,8 @@ class XAccountsController < ApplicationController
     only: %i[show edit update destroy refresh_auth refresh_me]
   )
 
+  helper_method :url
+
   def index
     authorize XAccount
 
@@ -59,6 +61,14 @@ class XAccountsController < ApplicationController
     redirect_to @x_account.user, notice: t(".notice")
   end
 
+  def destroy_all
+    authorize XAccount
+
+    scope.destroy_all
+
+    redirect_back_or_to(url)
+  end
+
   private
 
   def load_user
@@ -71,6 +81,10 @@ class XAccountsController < ApplicationController
 
   def scope
     @user ? policy_scope(XAccount).where(user: @user) : policy_scope(XAccount)
+  end
+
+  def url
+    @user ? [@user, :x_accounts] : x_accounts
   end
 
   def id

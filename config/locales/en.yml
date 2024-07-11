@@ -26,6 +26,7 @@ en:
     form:
       email_address: email address
     index:
+      delete_all: delete all
       new: new email address
       title: email addresses
     new:
@@ -186,6 +187,7 @@ en:
     form:
       password: password
     index:
+      delete_all: delete all
       new: new password
       title: passwords
     new:
@@ -210,6 +212,7 @@ en:
     form:
       phone_number: phone number
     index:
+      delete_all: delete all
       new: new phone number
       title: phone numbers
     new:
@@ -246,6 +249,7 @@ en:
       program: program
       prompt: prompt
     index:
+      delete_all: delete all
       new: new program
       title: programs
     new:
@@ -348,6 +352,7 @@ en:
       submit: new slack account
       title: new slack account
     index:
+      delete_all: delete all
       eg: e.g.
       new: new slack account
       title: slack accounts
@@ -373,6 +378,7 @@ en:
     form:
       smtp_account: smtp account
     index:
+      delete_all: delete all
       new: new smtp account
       title: smtp accounts
     new:
@@ -407,6 +413,7 @@ en:
     form:
       user: user
     index:
+      delete_all: delete all
       new: new user
       title: users
     new:
@@ -476,6 +483,7 @@ en:
       submit: new x account
       title: new x account
     index:
+      delete_all: delete all
       new: new x account
       title: x accounts
     show:

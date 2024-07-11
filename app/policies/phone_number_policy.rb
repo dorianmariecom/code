@@ -27,6 +27,10 @@ class PhoneNumberPolicy < ApplicationPolicy
     owner? || admin?
   end
 
+  def destroy_all?
+    current_user?
+  end
+
   private
 
   def user?

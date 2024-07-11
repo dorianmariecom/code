@@ -4,6 +4,8 @@ class ProgramsController < ApplicationController
   before_action :load_user
   before_action :load_program, only: %i[show edit update destroy]
 
+  helper_method :url
+
   def index
     authorize Program
 
@@ -53,6 +55,14 @@ class ProgramsController < ApplicationController
     redirect_to @program.user, notice: t(".notice")
   end
 
+  def destroy_all
+    authorize Program
+
+    scope.destroy_all
+
+    redirect_back_or_to(programs_path)
+  end
+
   private
 
   def load_user
@@ -65,6 +75,10 @@ class ProgramsController < ApplicationController
 
   def scope
     @user ? policy_scope(Program).where(user: @user) : policy_scope(Program)
+  end
+
+  def url
+    @user ? [@user, :programs] : programs_path
   end
 
   def id

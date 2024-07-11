@@ -53,6 +53,14 @@ class UsersController < ApplicationController
     redirect_to root_path, notice: t(".notice")
   end
 
+  def destroy_all
+    authorize
+
+    scope.destroy_all
+
+    redirect_back_or_to(root_path)
+  end
+
   private
 
   def load_user

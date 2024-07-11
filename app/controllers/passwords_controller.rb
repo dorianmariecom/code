@@ -4,6 +4,8 @@ class PasswordsController < ApplicationController
   before_action :load_user
   before_action :load_password, only: %i[show edit update destroy]
 
+  helper_method :url
+
   def index
     authorize Password
 
@@ -46,6 +48,14 @@ class PasswordsController < ApplicationController
     redirect_to @password.user, notice: t(".notice")
   end
 
+  def destroy_all
+    authorize Password
+
+    scope.destroy_all
+
+    redirect_back_or_to(url)
+  end
+
   private
 
   def load_user
@@ -58,6 +68,10 @@ class PasswordsController < ApplicationController
 
   def scope
     @user ? policy_scope(Password).where(user: @user) : policy_scope(Password)
+  end
+
+  def url
+    @user ? [@user, :passwords] : passwords_path
   end
 
   def id

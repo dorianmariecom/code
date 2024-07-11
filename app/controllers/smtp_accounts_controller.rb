@@ -4,6 +4,8 @@ class SmtpAccountsController < ApplicationController
   before_action :load_user
   before_action :load_smtp_account, only: %i[show edit update destroy]
 
+  helper_method :url
+
   def index
     authorize SmtpAccount
 
@@ -47,6 +49,14 @@ class SmtpAccountsController < ApplicationController
     redirect_to @smtp_account.user, notice: t(".notice")
   end
 
+  def destroy_all
+    authorize SmtpAccount
+
+    scope.destroy_all
+
+    redirect_back_or_to(url)
+  end
+
   private
 
   def load_user
@@ -63,6 +73,10 @@ class SmtpAccountsController < ApplicationController
     else
       policy_scope(SmtpAccount)
     end
+  end
+
+  def url
+    @user ? [@user, :smtp_accounts] : smtp_accounts_path
   end
 
   def id

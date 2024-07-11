@@ -3,6 +3,7 @@
 class DataController < ApplicationController
   before_action :load_user
   before_action :load_datum, only: %i[show edit update destroy]
+  helper_method :url
 
   def index
     authorize Datum
@@ -26,6 +27,8 @@ class DataController < ApplicationController
       session[:user_id] = Current.user.id
     end
 
+    datum_params[:data] = JSON.parse(datum_params[:data])
+
     @datum = authorize scope.new(datum_params)
 
     if @datum.save
@@ -40,6 +43,8 @@ class DataController < ApplicationController
   end
 
   def update
+    datum_params[:data] = JSON.parse(datum_params[:data])
+
     if @datum.update(datum_params)
       redirect_to @datum, notice: t(".notice")
     else
@@ -59,7 +64,7 @@ class DataController < ApplicationController
 
     scope.destroy_all
 
-    redirect_back_or_to(data_path)
+    redirect_back_or_to(url)
   end
 
   private
@@ -76,6 +81,10 @@ class DataController < ApplicationController
     @user ? policy_scope(Datum).where(user: @user) : policy_scope(Datum)
   end
 
+  def url
+    @user ? [@user, :data] : data_path
+  end
+
   def id
     params[:datum_id].presence || params[:id]
   end
@@ -85,10 +94,11 @@ class DataController < ApplicationController
   end
 
   def datum_params
-    if admin?
-      params.require(:datum).permit(:user_id, :data)
-    else
-      params.require(:datum).permit(:data)
-    end
+    @datum_params ||=
+      if admin?
+        params.require(:datum).permit(:user_id, :data)
+      else
+        params.require(:datum).permit(:data)
+      end
   end
 end

@@ -4,6 +4,8 @@ class PhoneNumbersController < ApplicationController
   before_action :load_user
   before_action :load_phone_number, only: %i[show edit update destroy]
 
+  helper_method :url
+
   def index
     authorize PhoneNumber
 
@@ -47,6 +49,14 @@ class PhoneNumbersController < ApplicationController
     redirect_to @phone_number.user, notice: t(".notice")
   end
 
+  def destroy_all
+    authorize PhoneNumber
+
+    scope.destroy_all
+
+    redirect_back_or_to(url)
+  end
+
   private
 
   def load_user
@@ -63,6 +73,10 @@ class PhoneNumbersController < ApplicationController
     else
       policy_scope(PhoneNumber)
     end
+  end
+
+  def url
+    @user ? [@user, :phone_numbers] : phone_numbers_path
   end
 
   def id

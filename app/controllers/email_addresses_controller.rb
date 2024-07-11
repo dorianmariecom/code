@@ -6,6 +6,7 @@ class EmailAddressesController < ApplicationController
 
   helper_method :verification_code_param
   helper_method :id
+  helper_method :url
 
   def index
     authorize EmailAddress
@@ -50,6 +51,14 @@ class EmailAddressesController < ApplicationController
     redirect_to @email_address.user, notice: t(".notice")
   end
 
+  def destroy_all
+    authorize EmailAddress
+
+    scope.destroy_all
+
+    redirect_back_or_to(url)
+  end
+
   private
 
   def load_user
@@ -70,6 +79,10 @@ class EmailAddressesController < ApplicationController
 
   def id
     params[:email_address_id].presence || params[:id]
+  end
+
+  def url
+    @user ? [@user, :email_addresses] : email_addresses_path
   end
 
   def load_email_address

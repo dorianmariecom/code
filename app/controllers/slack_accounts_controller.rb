@@ -4,6 +4,8 @@ class SlackAccountsController < ApplicationController
   before_action :load_user
   before_action :load_slack_account, only: %i[show edit update destroy]
 
+  helper_method :url
+
   def index
     authorize SlackAccount
 
@@ -12,6 +14,7 @@ class SlackAccountsController < ApplicationController
 
   def callback
     authorize SlackAccount
+
     redirect_to policy_scope(SlackAccount).verify!(code: params[:code])
   end
 
@@ -40,6 +43,14 @@ class SlackAccountsController < ApplicationController
     redirect_to @slack_account.user, notice: t(".notice")
   end
 
+  def destroy_all
+    authorize SlackAccount
+
+    scope.destroy_all
+
+    redirect_back_or_to(url)
+  end
+
   private
 
   def load_user
@@ -56,6 +67,10 @@ class SlackAccountsController < ApplicationController
     else
       policy_scope(SlackAccount)
     end
+  end
+
+  def url
+    @user ? [@user, :slack_accounts] : slack_accounts_path
   end
 
   def id
