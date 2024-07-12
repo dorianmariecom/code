@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_04_07_190228) do
+ActiveRecord::Schema[8.0].define(version: 2024_07_12_200829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_04_07_190228) do
     t.boolean "verified", default: false, null: false
     t.string "verification_code", default: "", null: false
     t.index ["user_id"], name: "index_email_addresses_on_user_id"
+  end
+
+  create_table "executions", force: :cascade do |t|
+    t.bigint "program_id", null: false
+    t.text "input"
+    t.text "output"
+    t.text "error"
+    t.text "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["program_id"], name: "index_executions_on_program_id"
   end
 
   create_table "passwords", force: :cascade do |t|
@@ -56,14 +67,21 @@ ActiveRecord::Schema[7.2].define(version: 2024_04_07_190228) do
   create_table "programs", force: :cascade do |t|
     t.bigint "user_id"
     t.text "input"
-    t.text "output"
-    t.text "error"
-    t.text "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name", default: "", null: false
     t.text "prompt", default: "", null: false
     t.index ["user_id"], name: "index_programs_on_user_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "program_id", null: false
+    t.time "at"
+    t.bigint "count"
+    t.string "per"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["program_id"], name: "index_schedules_on_program_id"
   end
 
   create_table "slack_accounts", force: :cascade do |t|
@@ -264,9 +282,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_04_07_190228) do
 
   add_foreign_key "data", "users"
   add_foreign_key "email_addresses", "users"
+  add_foreign_key "executions", "programs"
   add_foreign_key "passwords", "users"
   add_foreign_key "phone_numbers", "users"
   add_foreign_key "programs", "users"
+  add_foreign_key "schedules", "programs"
   add_foreign_key "slack_accounts", "users"
   add_foreign_key "smtp_accounts", "users"
   add_foreign_key "solid_errors_occurrences", "solid_errors", column: "error_id"

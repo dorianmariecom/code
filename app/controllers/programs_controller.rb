@@ -13,6 +13,8 @@ class ProgramsController < ApplicationController
   end
 
   def show
+    @executions =
+      policy_scope(Execution).where(program: @program).order(created_at: :desc)
   end
 
   def new

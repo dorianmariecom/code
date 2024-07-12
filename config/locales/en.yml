@@ -522,3 +522,10 @@ en:
       data: data
     update:
       notice: datum updated
+  executions:
+    execution:
+      execution: execution
+      input: input
+      output: output
+      result: result
+      error: error

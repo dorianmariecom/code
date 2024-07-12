@@ -9,28 +9,13 @@
 
 - if @program.prompt.present?
   .text-sm=> t(".prompt")
-  pre.mt-0
-    = @program.prompt
+  pre.mt-0= @program.prompt
 
 - if @program.input.present?
   .text-sm=> t(".input")
-  pre.mt-0
-    = @program.input
+  pre.mt-0= @program.input
 
-- if @program.output.present?
-  .text-sm=> t(".output")
-  pre.mt-0
-    = @program.output
-
-- if @program.error.present?
-  .text-sm=> t(".error")
-  pre.mt-0.text-red-600.bg-transparent
-    = @program.error
-
-- if @program.result.present?
-  .text-sm=> t(".result")
-  pre.mt-0
-    = @program.result
+= render @executions
 
 = link_to t(".edit"), [:edit, @program]
 = button_to t(".delete"), @program, method: :delete, class: "a text-red-600"
