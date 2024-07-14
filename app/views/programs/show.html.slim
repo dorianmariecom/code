@@ -20,6 +20,8 @@
   .text-sm=> t(".input")
   pre.mt-0= @program.input
 
+.p= button_to t(".schedule"), [@program, :schedule], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+
 .p= button_to t(".evaluate"), [@program, :evaluate], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
 
 p= link_to t(".schedules", count: @schedules.size), [@program, :schedules]

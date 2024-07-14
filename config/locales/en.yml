@@ -319,6 +319,7 @@ en:
       edit: edit program
       error: error
       evaluate: evaluate
+      schedule: schedule
       execution: execution
       executions:
         one: 1 execution

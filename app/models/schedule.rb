@@ -78,7 +78,7 @@ class Schedule < ApplicationRecord
 
     at = starts_at
 
-    at += duration while at < Time.zone.now
+    at += duration while at.past?
 
     at
   end

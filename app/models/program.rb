@@ -33,6 +33,12 @@ class Program < ApplicationRecord
     )
   end
 
+  def schedule!
+    next_at = schedules.map(&:next_at).select(&:future?).min
+    return unless next_at
+    EvaluateAndScheduleJob.set(wait_until: next_at).perform_later(program: self)
+  end
+
   def to_s
     input.presence || "program##{id}"
   end

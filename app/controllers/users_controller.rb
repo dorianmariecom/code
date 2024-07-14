@@ -48,15 +48,18 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy!
+
     reset_session
 
     redirect_to root_path, notice: t(".notice")
   end
 
   def destroy_all
-    authorize
+    authorize User
 
     scope.destroy_all
+
+    reset_session
 
     redirect_back_or_to(root_path)
   end
@@ -87,38 +90,6 @@ class UsersController < ApplicationController
         :country,
         :latitude,
         :longitude,
-        email_addresses_attributes: %i[
-          user_id
-          verified
-          id
-          _destroy
-          primary
-          email_address
-        ],
-        phone_numbers_attributes: %i[
-          user_id
-          verified
-          id
-          _destroy
-          primary
-          phone_number
-        ],
-        passwords_attributes: %i[user_id id _destroy password hint],
-        smtp_accounts_attributes: %i[
-          user_id
-          verified
-          id
-          _destroy
-          primary
-          display_name
-          address
-          port
-          user_name
-          password
-          authentication
-          enable_starttls_auto
-        ],
-        slack_accounts_attributes: %i[user_id verified id _destroy primary]
       )
     else
       params.require(:user).permit(
@@ -134,22 +105,6 @@ class UsersController < ApplicationController
         :country,
         :latitude,
         :longitude,
-        email_addresses_attributes: %i[id _destroy primary email_address],
-        phone_numbers_attributes: %i[id _destroy primary phone_number],
-        passwords_attributes: %i[id _destroy password hint],
-        smtp_accounts_attributes: %i[
-          id
-          _destroy
-          display_name
-          primary
-          address
-          port
-          user_name
-          password
-          authentication
-          enable_starttls_auto
-        ],
-        slack_accounts_attributes: %i[id _destroy primary]
       )
     end
   end
