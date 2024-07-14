@@ -2,7 +2,7 @@
 
 class ProgramsController < ApplicationController
   before_action :load_user
-  before_action :load_program, only: %i[show edit update destroy]
+  before_action :load_program, only: %i[show edit update destroy evaluate]
 
   helper_method :url
 
@@ -15,6 +15,14 @@ class ProgramsController < ApplicationController
   def show
     @executions =
       policy_scope(Execution).where(program: @program).order(created_at: :desc)
+    @schedules =
+      policy_scope(Schedule).where(program: @program).order(created_at: :desc)
+  end
+
+  def evaluate
+    @program.evaluate!
+
+    redirect_back_or_to(@program)
   end
 
   def new
@@ -30,7 +38,6 @@ class ProgramsController < ApplicationController
     @program = authorize scope.new(program_params)
 
     if @program.save
-      @program.evaluate!
       redirect_to @program, notice: t(".notice")
     else
       flash.now.alert = @program.alert
@@ -43,7 +50,6 @@ class ProgramsController < ApplicationController
 
   def update
     if @program.update(program_params)
-      @program.evaluate!
       redirect_to @program, notice: t(".notice")
     else
       flash.now.alert = @program.alert
@@ -93,9 +99,18 @@ class ProgramsController < ApplicationController
 
   def program_params
     if admin?
-      params.require(:program).permit(:user_id, :input, :name, :prompt)
+      params.require(:program).permit(
+        :user_id,
+        :input,
+        :prompt,
+        schedules_attributes: %i[id _destroy starts_at interval]
+      )
     else
-      params.require(:program).permit(:input, :name, :prompt)
+      params.require(:program).permit(
+        :input,
+        :prompt,
+        schedules_attributes: %i[id _destroy starts_at interval]
+      )
     end
   end
 end

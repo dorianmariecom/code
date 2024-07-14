@@ -78,6 +78,14 @@ en:
         one: 1 blocked job
         other: "%{count} blocked jobs"
         zero: 0 blocked jobs
+      executions:
+        one: 1 execution
+        other: "%{count} executions"
+        zero: 0 executions
+      schedules:
+        one: 1 schedule
+        other: "%{count} schedules"
+        zero: 0 schedules
       claimed_jobs:
         one: 1 claimed job
         other: "%{count} claimed jobs"
@@ -161,7 +169,7 @@ en:
     documentation:
       title: documentation
     home:
-      submit: evaluate
+      submit: create
       title: code
     up:
       title: "/up"
@@ -240,7 +248,7 @@ en:
     destroy:
       notice: program deleted
     edit:
-      submit: re-evaluate
+      submit: update
       title: edit program
     form:
       eg: e.g.
@@ -248,14 +256,23 @@ en:
       loading: generating...
       program: program
       prompt: prompt
+      add_schedule: add schedule
     index:
       delete_all: delete all
       new: new program
       title: programs
     new:
-      submit: evaluate
+      submit: create
       title: new program
     show:
+      executions:
+        one: 1 execution
+        other: "%{count} executions"
+        zero: 0 executions
+      schedules:
+        one: 1 schedule
+        other: "%{count} schedules"
+        zero: 0 schedules
       belongs_to: belongs to
       delete: delete program
       edit: edit program
@@ -265,7 +282,8 @@ en:
       prompt: prompt
       output: output
       result: result
-      submit: re-evaluate
+      execution: execution
+      evaluate: evaluate
     update:
       notice: program updated
   sessions:
@@ -280,6 +298,10 @@ en:
       title: log in
   shared:
     field:
+      schedule:
+        program_id: program
+        starts_at: starts at
+        interval: interval
       datum:
         data: data
       eg: e.g.
@@ -311,7 +333,6 @@ en:
         verified: verified?
       program:
         input: input
-        name: name
         user_id: user
       session:
         email_address: email address
@@ -512,7 +533,7 @@ en:
       new: new datum
       title: data
     new:
-      submit: evaluate
+      submit: create
       title: new datum
     show:
       belongs_to: belongs to
@@ -523,9 +544,45 @@ en:
     update:
       notice: datum updated
   executions:
-    execution:
-      execution: execution
+    destroy:
+      notice: execution deleted
+    index:
+      delete_all: delete all
+      title: executions
+    show:
+      belongs_to: belongs to
+      delete: delete execution
+      error: error
+      id: id
       input: input
       output: output
       result: result
+      execution: execution
+  schedules:
+    nested_form:
+      schedule: schedule
+      remove: remove
+    destroy:
+      notice: schedule deleted
+    show:
+      delete: delete schedule
       error: error
+      id: id
+      starts_at: starts at
+      interval: interval
+      schedule: schedule
+      edit: edit schedule
+    create:
+      notice: schedule created
+    edit:
+      submit: update
+      title: edit schedule
+    index:
+      delete_all: delete all
+      new: new schedule
+      title: schedules
+    new:
+      submit: create
+      title: new schedule
+    update:
+      notice: schedule updated

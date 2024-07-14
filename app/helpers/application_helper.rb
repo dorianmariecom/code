@@ -59,10 +59,6 @@ module ApplicationHelper
     3.times.map { Faker::Name.name }
   end
 
-  def fake_program_names
-    3.times.map { Faker::Book.title }
-  end
-
   def fake_smtp_addresses
     %w[
       smtp.gmail.com
@@ -101,9 +97,19 @@ module ApplicationHelper
     User::TIME_ZONES
   end
 
+  def schedule_interval_options
+    Schedule::INTERVALS
+  end
+
   def user_options(user_id: nil)
     ([nil] + policy_scope(User).order(:id).to_a).map do |user|
       [user&.to_s, user&.id, { selected: user_id == user&.id }]
+    end
+  end
+
+  def program_options(program_id: nil)
+    policy_scope(Program).order(:id).to_a.map do |program|
+      [program&.to_s, program&.id, { selected: program_id == program&.id }]
     end
   end
 

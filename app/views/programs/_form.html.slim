@@ -13,7 +13,18 @@
 
     .hidden(data-prompt-target="loading")= t(".loading")
 
-    = render "shared/field", f: f, field: :name, type: :string, fake: fake_program_names, data: { prompt_target: :name }
     = render "shared/field", f: f, field: :input, type: :text, fake: fake_inputs, data: { prompt_target: :input }
+
+  div(data-controller="schedules")
+    template(data-schedules-target="template")
+      = f.fields_for :schedules, Schedule.new, child_index: "NEW_RECORD" do |schedule_f|
+        = render "schedules/nested_form", f: schedule_f
+
+    = f.fields_for :schedules do |schedule_f|
+      = render "schedules/nested_form", f: schedule_f
+
+    div(data-schedules-target="target")
+
+    p= link_to t(".add_schedule"), schedules_path, data: { action: "schedules#add" }
 
   = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

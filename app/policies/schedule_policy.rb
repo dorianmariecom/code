@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ExecutionPolicy < ApplicationPolicy
+class SchedulePolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     def resolve
       scope.where(program: policy_scope(Program))
@@ -9,6 +9,14 @@ class ExecutionPolicy < ApplicationPolicy
 
   def index?
     can?(:index, Program)
+  end
+
+  def create?
+    can?(:create, Program)
+  end
+
+  def update?
+    can?(:update, program)
   end
 
   def show?

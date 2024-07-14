@@ -1,0 +1,18 @@
+- content_for(:title, @schedule.to_s)
+
+- if admin?
+  .text-sm= t(".program")
+  .mb-5= link_to @schedule.program
+
+.text-sm= t(".id")
+.mb-5= @schedule.id
+
+.text-sm= t(".starts_at")
+.mb-5= @schedule.starts_at
+
+.text-sm= t(".interval")
+.mb-5= @schedule.interval
+
+= link_to t(".edit"), [:edit, @schedule]
+= button_to t(".delete"), @schedule, method: :delete, class: "a text-red-600"
+

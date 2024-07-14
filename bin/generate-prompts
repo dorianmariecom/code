@@ -13,16 +13,13 @@ File
   .read(ARGV.first)
   .split(/^-.+/)
   .reject(&:empty?)
-  .each_slice(3) do |prompt, name, input|
+  .each_slice(2) do |prompt, input|
     puts(
       {
         messages: [
           SYSTEM,
           { role: :user, content: prompt.strip },
-          {
-            role: :assistant,
-            content: { name: name.strip, input: input.strip }.to_json
-          }
+          { role: :assistant, content: { input: input.strip }.to_json }
         ]
       }.to_json
     )

@@ -1,25 +1,22 @@
 # frozen_string_literal: true
 
 class Prompt
-  MODEL = "ft:gpt-3.5-turbo-1106:personal::96W3xV3h"
+  MODEL = "ft:gpt-3.5-turbo-1106:personal::9kRALHnW"
 
   DOCUMENTATION = File.read(Rails.root.join("lib/prompt.md"))
 
   SYSTEM_PROMPT = <<~PROMPT
-    Generate a JSON object with two fields: name and input
-
-    `name` is the name of the program
+    Generate a JSON object with one field: input
 
     `input` is the code generated from the prompt in the Code language
 
     #{DOCUMENTATION}
   PROMPT
 
-  attr_reader :prompt, :name, :input
+  attr_reader :prompt, :input
 
   def initialize(prompt)
     @prompt = prompt
-    @name = nil
     @input = nil
   end
 
@@ -32,12 +29,11 @@ class Prompt
     request["Authorization"] = authorization
     request.body = body
     @input = json_content&.dig("input") || ""
-    @name = json_content&.dig("name") || ""
     self
   end
 
   def as_json(...)
-    { name:, input: }.as_json(...)
+    { input: }.as_json(...)
   end
 
   def uri

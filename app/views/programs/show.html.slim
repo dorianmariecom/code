@@ -15,7 +15,34 @@
   .text-sm=> t(".input")
   pre.mt-0= @program.input
 
-= render @executions
+.p= button_to t(".evaluate"), [@program, :evaluate], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+
+p= link_to t(".schedules", count: @schedules.size), [@program, :schedules]
+
+- @schedules.each do |schedule|
+  .pl-4.border-l.border-black.mb-5.font-bold= link_to schedule
+
+p= link_to t(".executions", count: @executions.size), [@program, :executions]
+
+- @executions.each do |execution|
+  .pl-4.border-l.border-black.mb-5
+    .font-bold= link_to execution
+
+    - if execution.input.present?
+      .text-sm=> t(".input")
+      pre.mt-0= execution.input
+
+    - if execution.result.present?
+      .text-sm=> t(".result")
+      pre.mt-0= execution.result
+
+    - if execution.output.present?
+      .text-sm=> t(".output")
+      pre.mt-0= execution.output
+
+    - if execution.error.present?
+      .text-sm=> t(".error")
+      pre.mt-0= execution.error
 
 = link_to t(".edit"), [:edit, @program]
 = button_to t(".delete"), @program, method: :delete, class: "a text-red-600"

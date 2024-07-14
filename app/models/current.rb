@@ -4,6 +4,7 @@ class Current < ActiveSupport::CurrentAttributes
   attribute :user
 
   delegate(
+    :admin?,
     :location,
     :latitude,
     :longitude,

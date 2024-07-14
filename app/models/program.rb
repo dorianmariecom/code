@@ -6,8 +6,9 @@ class Program < ApplicationRecord
   belongs_to :user, default: -> { Current.user || User.new }
 
   has_many :executions, dependent: :destroy
+  has_many :schedules, dependent: :destroy
 
-  accepts_nested_attributes_for :user
+  accepts_nested_attributes_for :schedules
 
   def evaluate!
     Current.with(user:) do
@@ -31,6 +32,6 @@ class Program < ApplicationRecord
   end
 
   def to_s
-    name.presence || "program##{id}"
+    input.presence || "program##{id}"
   end
 end

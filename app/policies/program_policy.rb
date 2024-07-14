@@ -23,6 +23,10 @@ class ProgramPolicy < ApplicationPolicy
     owner? || admin?
   end
 
+  def evaluate?
+    owner? || admin?
+  end
+
   def destroy?
     owner? || admin?
   end
