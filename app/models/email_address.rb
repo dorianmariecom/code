@@ -14,6 +14,7 @@ class EmailAddress < ApplicationRecord
 
   validates :email_address, presence: true
   validates :email_address, format: { with: EMAIL_ADDRESS_REGEXP }
+  validate { can!(:update, user) }
 
   scope :primary, -> { where(primary: true) }
   scope :not_primary, -> { where(primary: false) }

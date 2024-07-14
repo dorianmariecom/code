@@ -1,11 +1,19 @@
 - content_for(:title, @execution.to_s)
 
-- if admin?
-  .text-sm= t(".program")
-  .mb-5= link_to @execution.program
+.text-sm= t(".user")
+.mb-5= link_to @execution.user
+
+.text-sm= t(".program")
+.mb-5= link_to @execution.program
 
 .text-sm= t(".id")
 .mb-5= @execution.id
+
+.text-sm= t(".created_at")
+.mb-5= @execution.created_at
+
+.text-sm= t(".updated_at")
+.mb-5= @execution.updated_at
 
 - if @execution.input.present?
   .text-sm=> t(".input")
@@ -23,6 +31,5 @@
   .text-sm=> t(".error")
   pre.mt-0= @execution.error
 
-= link_to t(".edit"), [:edit, @execution]
 = button_to t(".delete"), @execution, method: :delete, class: "a text-red-600"
 

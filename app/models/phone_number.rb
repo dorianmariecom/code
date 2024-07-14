@@ -17,7 +17,9 @@ class PhoneNumber < ApplicationRecord
     with: ->(phone_number) { Phonelib.parse(phone_number).e164 }
   )
 
-  validate :valid_phone_number
+  validate { can!(:update, user) }
+  validate { errors.add(:phone_number, :invalid) if phonelib.invalid? }
+  validate { errors.add(:phone_number, :impossible) if phonelib.impossible? }
 
   before_update do
     unverify! if phone_number_changed? && (verified? || verifying?)
@@ -82,11 +84,6 @@ class PhoneNumber < ApplicationRecord
 
   def cancel_verification!
     update!(verified: false, verification_code: "")
-  end
-
-  def valid_phone_number
-    errors.add(:phone_number, :invalid) if phonelib.invalid?
-    errors.add(:phone_number, :impossible) if phonelib.impossible?
   end
 
   def unverify!

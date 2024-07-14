@@ -1,11 +1,16 @@
 - content_for(:title, @smtp_account.to_s)
 
-- if admin?
-  .text-sm= t(".belongs_to")
-  .mb-5= link_to @smtp_account.user
+.text-sm= t(".user")
+.mb-5= link_to @smtp_account.user
 
 .text-sm= t(".id")
 .mb-5= @smtp_account.id
+
+.text-sm= t(".created_at")
+.mb-5= @smtp_account.created_at
+
+.text-sm= t(".updated_at")
+.mb-5= @smtp_account.updated_at
 
 .text-sm= t(".primary")
 .mb-5= @smtp_account.primary?

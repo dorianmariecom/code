@@ -4,4 +4,4 @@
   = render "shared/field", f: f, field: :starts_at, type: :time, value: f.object.starts_at || Time.zone.now
   = render "shared/field", f: f, field: :interval, type: :select, options: schedule_interval_options
 
-  p= link_to t(".remove"), schedule_path, data: { action: "schedule#remove" }
+  p= link_to t(".remove"), schedules_path, data: { action: "schedule#remove" }

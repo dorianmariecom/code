@@ -8,11 +8,36 @@ en:
             phone_number:
               impossible: is impossible
               invalid: is invalid
+  data:
+    create:
+      notice: datum created
+    destroy:
+      notice: datum deleted
+    edit:
+      submit: update
+      title: edit datum
+    index:
+      delete_all: delete all
+      new: new datum
+      title: data
+    new:
+      submit: create
+      title: new datum
+    show:
+      created_at: created at
+      data: data
+      delete: delete datum
+      edit: edit datum
+      id: id
+      updated_at: updated at
+      user: user
+    update:
+      notice: datum updated
   email_address_mailer:
     verification_code_email:
       dorian: dorian
       hi: hi,
-      intro: "here is your verification code for %{host}:"
+      intro: 'here is your verification code for %{host}:'
       subject: your %{host} verification code is %{verification_code}
       thanks: thanks,
   email_addresses:
@@ -33,18 +58,38 @@ en:
       submit: create email address
       title: new email address
     show:
-      belongs_to: belongs to
       cancel: cancel
+      created_at: created at
       delete: delete email address
       edit: edit email address
       email_address: email address
       id: id
       primary: primary
       send_verification_code: send verification code
+      updated_at: updated at
+      user: user
       verified: verified
       verify: verify
     update:
       notice: email address updated
+  executions:
+    destroy:
+      notice: execution deleted
+    index:
+      delete_all: delete all
+      title: executions
+    show:
+      created_at: created at
+      delete: delete execution
+      error: error
+      execution: execution
+      id: id
+      input: input
+      output: output
+      program: program
+      result: result
+      updated_at: updated at
+      user: user
   js:
     domain:
       not_present: not present
@@ -78,18 +123,14 @@ en:
         one: 1 blocked job
         other: "%{count} blocked jobs"
         zero: 0 blocked jobs
-      executions:
-        one: 1 execution
-        other: "%{count} executions"
-        zero: 0 executions
-      schedules:
-        one: 1 schedule
-        other: "%{count} schedules"
-        zero: 0 schedules
       claimed_jobs:
         one: 1 claimed job
         other: "%{count} claimed jobs"
         zero: 0 claimed jobs
+      data:
+        one: 1 datum
+        other: "%{count} data"
+        zero: 0 data
       documentation: documentation
       email_addresses:
         one: 1 email address
@@ -99,6 +140,10 @@ en:
         one: 1 error
         other: "%{count} errors"
         zero: 0 errors
+      executions:
+        one: 1 execution
+        other: "%{count} executions"
+        zero: 0 executions
       failed_jobs:
         one: 1 failed job
         other: "%{count} failed jobs"
@@ -134,10 +179,6 @@ en:
         one: 1 program
         other: "%{count} programs"
         zero: 0 programs
-      data:
-        one: 1 datum
-        other: "%{count} data"
-        zero: 0 data
       ready_jobs:
         one: 1 ready job
         other: "%{count} ready jobs"
@@ -147,14 +188,14 @@ en:
         one: 1 scheduled job
         other: "%{count} scheduled jobs"
         zero: 0 scheduled jobs
+      schedules:
+        one: 1 schedule
+        other: "%{count} schedules"
+        zero: 0 schedules
       slack_accounts:
         one: 1 slack account
         other: "%{count} slack accounts"
         zero: 0 slack accounts
-      x_accounts:
-        one: 1 x account
-        other: "%{count} x accounts"
-        zero: 0 x accounts
       smtp_accounts:
         one: 1 smtp account
         other: "%{count} smtp accounts"
@@ -165,6 +206,10 @@ en:
         one: 1 user
         other: "%{count} users"
         zero: 0 users
+      x_accounts:
+        one: 1 x account
+        other: "%{count} x accounts"
+        zero: 0 x accounts
   pages:
     documentation:
       title: documentation
@@ -202,11 +247,13 @@ en:
       submit: create password
       title: new password
     show:
-      belongs_to: belongs to
+      created_at: created at
       delete: delete password
       edit: edit password
       id: id
       password: password
+      updated_at: updated at
+      user: user
     update:
       notice: password updated
   phone_numbers:
@@ -227,9 +274,9 @@ en:
       submit: create phone number
       title: new phone number
     show:
-      belongs_to: belongs to
       call: call
       cancel: cancel
+      created_at: created at
       delete: delete phone number
       edit: edit phone number
       id: id
@@ -237,6 +284,8 @@ en:
       primary: primary
       send_verification_code: send verification code
       sms: sms
+      updated_at: updated at
+      user: user
       verified: verified
       verify: verify
       whatsapp: whatsapp
@@ -251,12 +300,12 @@ en:
       submit: update
       title: edit program
     form:
+      add_schedule: add schedule
       eg: e.g.
       generate: generate
       loading: generating...
       program: program
       prompt: prompt
-      add_schedule: add schedule
     index:
       delete_all: delete all
       new: new program
@@ -265,27 +314,61 @@ en:
       submit: create
       title: new program
     show:
+      created_at: created at
+      delete: delete program
+      edit: edit program
+      error: error
+      evaluate: evaluate
+      execution: execution
       executions:
         one: 1 execution
         other: "%{count} executions"
         zero: 0 executions
+      id: id
+      input: input
+      output: output
+      prompt: prompt
+      result: result
       schedules:
         one: 1 schedule
         other: "%{count} schedules"
         zero: 0 schedules
-      belongs_to: belongs to
-      delete: delete program
-      edit: edit program
-      error: error
-      id: id
-      input: input
-      prompt: prompt
-      output: output
-      result: result
-      execution: execution
-      evaluate: evaluate
+      updated_at: updated at
+      user: user
     update:
       notice: program updated
+  schedules:
+    create:
+      notice: schedule created
+    destroy:
+      notice: schedule deleted
+    edit:
+      submit: update
+      title: edit schedule
+    index:
+      delete_all: delete all
+      new: new schedule
+      title: schedules
+    nested_form:
+      remove: remove
+      schedule: schedule
+    new:
+      submit: create
+      title: new schedule
+    show:
+      created_at: created at
+      delete: delete schedule
+      edit: edit schedule
+      error: error
+      id: id
+      interval: interval
+      program: program
+      schedule: schedule
+      starts_at: starts at
+      updated_at: updated at
+      user: user
+    update:
+      notice: schedule updated
   sessions:
     create:
       notice: logged in
@@ -298,10 +381,6 @@ en:
       title: log in
   shared:
     field:
-      schedule:
-        program_id: program
-        starts_at: starts at
-        interval: interval
       datum:
         data: data
       eg: e.g.
@@ -334,14 +413,14 @@ en:
       program:
         input: input
         user_id: user
+      schedule:
+        interval: interval
+        program_id: program
+        starts_at: starts at
       session:
         email_address: email address
         password: password
       slack_account:
-        primary: primary?
-        user_id: user
-        verified: verified?
-      x_account:
         primary: primary?
         user_id: user
         verified: verified?
@@ -360,6 +439,10 @@ en:
         location: location
         name: name
         time_zone: time zone
+      x_account:
+        primary: primary?
+        user_id: user
+        verified: verified?
   slack_accounts:
     destroy:
       notice: slack account deleted
@@ -368,23 +451,25 @@ en:
       title: edit slack account
     form:
       slack_account: slack account
-    new:
-      eg: e.g.
-      submit: new slack account
-      title: new slack account
     index:
       delete_all: delete all
       eg: e.g.
       new: new slack account
       title: slack accounts
+    new:
+      eg: e.g.
+      submit: new slack account
+      title: new slack account
     show:
-      belongs_to: belongs to
       channels: channels
+      created_at: created at
       delete: delete slack account
       edit: edit slack account
       id: id
       primary: primary
       token: token
+      updated_at: updated at
+      user: user
       verified: verified
     update:
       notice: slack account updated
@@ -406,10 +491,9 @@ en:
       submit: create smtp account
       title: new smtp account
     show:
-      verify: verify
       address: address
       authentication: authentication
-      belongs_to: belongs to
+      created_at: created at
       delete: delete smtp account
       display_name: display name
       edit: edit smtp account
@@ -419,8 +503,11 @@ en:
       port: port
       primary: primary
       smtp_account: smtp account
+      updated_at: updated at
+      user: user
       user_name: user name
       verified: verified
+      verify: verify
     update:
       notice: smtp account updated
   users:
@@ -446,6 +533,7 @@ en:
       confirm: are you sure you want to delete this user?
       country: country
       county: county
+      created_at: created at
       destroy: delete user
       edit: edit user
       email_addresses:
@@ -461,8 +549,8 @@ en:
       new_phone_number: new phone number
       new_program: new program
       new_slack_account: new slack account
-      new_x_account: new x account
       new_smtp_account: new smtp account
+      new_x_account: new x account
       passwords:
         one: 1 password
         other: "%{count} passwords"
@@ -481,10 +569,6 @@ en:
         one: 1 slack account
         other: "%{count} slack accounts"
         zero: 0 slack accounts
-      x_accounts:
-        one: 1 x account
-        other: "%{count} x accounts"
-        zero: 0 x accounts
       smtp_accounts:
         one: 1 smtp account
         other: "%{count} smtp accounts"
@@ -492,6 +576,11 @@ en:
       state: state
       street_number: street number
       time_zone: time zone
+      updated_at: updated at
+      x_accounts:
+        one: 1 x account
+        other: "%{count} x accounts"
+        zero: 0 x accounts
     update:
       notice: user updated
   x_accounts:
@@ -500,89 +589,25 @@ en:
     edit:
       submit: update x account
       title: edit x account
-    new:
-      submit: new x account
-      title: new x account
     index:
       delete_all: delete all
       new: new x account
       title: x accounts
+    new:
+      submit: new x account
+      title: new x account
     show:
-      belongs_to: belongs to
+      auth: auth
+      created_at: created at
       delete: delete x account
       edit: edit x account
       id: id
-      primary: primary
-      verified: verified
-      auth: auth
       me: me
+      primary: primary
       refresh_auth: refresh auth
       refresh_me: refresh me
+      updated_at: updated at
+      user: user
+      verified: verified
     update:
       notice: x account updated
-  data:
-    create:
-      notice: datum created
-    destroy:
-      notice: datum deleted
-    edit:
-      submit: update
-      title: edit datum
-    index:
-      delete_all: delete all
-      new: new datum
-      title: data
-    new:
-      submit: create
-      title: new datum
-    show:
-      belongs_to: belongs to
-      delete: delete datum
-      edit: edit datum
-      id: id
-      data: data
-    update:
-      notice: datum updated
-  executions:
-    destroy:
-      notice: execution deleted
-    index:
-      delete_all: delete all
-      title: executions
-    show:
-      belongs_to: belongs to
-      delete: delete execution
-      error: error
-      id: id
-      input: input
-      output: output
-      result: result
-      execution: execution
-  schedules:
-    nested_form:
-      schedule: schedule
-      remove: remove
-    destroy:
-      notice: schedule deleted
-    show:
-      delete: delete schedule
-      error: error
-      id: id
-      starts_at: starts at
-      interval: interval
-      schedule: schedule
-      edit: edit schedule
-    create:
-      notice: schedule created
-    edit:
-      submit: update
-      title: edit schedule
-    index:
-      delete_all: delete all
-      new: new schedule
-      title: schedules
-    new:
-      submit: create
-      title: new schedule
-    update:
-      notice: schedule updated

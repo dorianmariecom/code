@@ -10,4 +10,8 @@ module CanConcern
   def cannot?(...)
     !can?(...)
   end
+
+  def can!(action, record)
+    authorize(record, :"#{action}?")
+  end
 end

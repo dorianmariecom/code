@@ -10,6 +10,8 @@ class Program < ApplicationRecord
 
   accepts_nested_attributes_for :schedules
 
+  validate { can!(:update, user) }
+
   def evaluate!
     Current.with(user:) do
       output = StringIO.new

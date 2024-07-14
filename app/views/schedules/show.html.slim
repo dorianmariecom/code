@@ -1,11 +1,19 @@
 - content_for(:title, @schedule.to_s)
 
-- if admin?
-  .text-sm= t(".program")
-  .mb-5= link_to @schedule.program
+.text-sm= t(".user")
+.mb-5= link_to @schedule.user
+
+.text-sm= t(".program")
+.mb-5= link_to @schedule.program
 
 .text-sm= t(".id")
 .mb-5= @schedule.id
+
+.text-sm= t(".created_at")
+.mb-5= @schedule.created_at
+
+.text-sm= t(".updated_at")
+.mb-5= @schedule.updated_at
 
 .text-sm= t(".starts_at")
 .mb-5= @schedule.starts_at

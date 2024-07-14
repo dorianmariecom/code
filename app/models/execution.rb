@@ -3,6 +3,8 @@ class Execution < ApplicationRecord
 
   has_one :user, through: :program
 
+  validate { can!(:update, program) }
+
   def to_s
     "execution##{id}"
   end

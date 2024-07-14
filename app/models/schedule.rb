@@ -38,14 +38,11 @@ class Schedule < ApplicationRecord
 
   belongs_to :program
 
+  has_one :user, through: :program
+
   validates :interval, inclusion: { in: INTERVALS }
 
-  validate :user_owns_program
-
-  def user_owns_program
-    return if Current.admin?
-    raise Pundit::NotAuthorizedError if Current.programs.where(id: program).none?
-  end
+  validate { can!(:update, program) }
 
   def to_s
     "#{starts_at}: #{interval}"

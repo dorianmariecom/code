@@ -9,6 +9,8 @@ class SlackAccount < ApplicationRecord
   scope :verified, -> { where(verified: true) }
   scope :not_verified, -> { where(verified: false) }
 
+  validate { can!(:update, user) }
+
   def self.find_by_team(team)
     SlackAccount.where(
       "auth->'team'->>'id' = ? OR auth->'team'->>'name' = ?",

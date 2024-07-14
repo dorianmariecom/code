@@ -2,7 +2,9 @@
 
 class ApplicationRecord < ActiveRecord::Base
   include Pundit::Authorization
+  include CanConcern
   extend Pundit::Authorization
+  extend CanConcern
 
   primary_abstract_class
 

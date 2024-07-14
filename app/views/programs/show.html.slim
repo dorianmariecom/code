@@ -1,11 +1,16 @@
 - content_for(:title, @program.to_s)
 
-- if admin?
-  .text-sm= t(".belongs_to")
-  .mb-5= link_to @program.user
+.text-sm= t(".user")
+.mb-5= link_to @program.user
 
 .text-sm= t(".id")
 .mb-5= @program.id
+
+.text-sm= t(".created_at")
+.mb-5= @program.created_at
+
+.text-sm= t(".updated_at")
+.mb-5= @program.updated_at
 
 - if @program.prompt.present?
   .text-sm=> t(".prompt")

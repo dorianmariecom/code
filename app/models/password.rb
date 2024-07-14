@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class Password < ApplicationRecord
+  has_secure_password
+
   belongs_to :user, default: -> { Current.user }
 
-  has_secure_password
+  validate { can!(:update, user) }
 
   def to_s
     hint.presence || "password##{id}"
