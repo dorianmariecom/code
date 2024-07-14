@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_07_14_084003) do
+ActiveRecord::Schema[8.0].define(version: 2024_07_14_174407) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,10 +75,10 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_14_084003) do
 
   create_table "schedules", force: :cascade do |t|
     t.bigint "program_id", null: false
-    t.time "starts_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "interval"
+    t.datetime "starts_at"
     t.index ["program_id"], name: "index_schedules_on_program_id"
   end
 

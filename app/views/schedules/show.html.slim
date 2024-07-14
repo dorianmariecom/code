@@ -21,6 +21,12 @@
 .text-sm= t(".interval")
 .mb-5= @schedule.interval
 
+.text-sm= t(".duration")
+.mb-5= @schedule.duration
+
+.text-sm= t(".next_at")
+.mb-5= @schedule.next_at
+
 = link_to t(".edit"), [:edit, @schedule]
 = button_to t(".delete"), @schedule, method: :delete, class: "a text-red-600"
 

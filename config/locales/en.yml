@@ -367,6 +367,8 @@ en:
       starts_at: starts at
       updated_at: updated at
       user: user
+      duration: duration
+      next_at: next at
     update:
       notice: schedule updated
   sessions:

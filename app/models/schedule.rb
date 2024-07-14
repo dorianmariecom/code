@@ -36,6 +36,23 @@ class Schedule < ApplicationRecord
     "10 years",
   ]
 
+  PER = {
+    "second" => 1.second,
+    "seconds" => 1.second,
+    "minute" => 1.minute,
+    "minutes" => 1.minute,
+    "hour" => 1.hour,
+    "hours" => 1.hours,
+    "day" => 1.day,
+    "days" => 1.day,
+    "week" => 1.week,
+    "weeks" => 1.week,
+    "month" => 1.month,
+    "months" => 1.month,
+    "year" => 1.year,
+    "years" => 1.year
+  }
+
   belongs_to :program
 
   has_one :user, through: :program
@@ -43,6 +60,28 @@ class Schedule < ApplicationRecord
   validates :interval, inclusion: { in: INTERVALS }
 
   validate { can!(:update, program) }
+
+  def once?
+    interval == "once"
+  end
+
+  def duration
+    return 0 if once?
+
+    count, per = interval.split
+
+    count.to_i * PER.fetch(per)
+  end
+
+  def next_at
+    return starts_at if once?
+
+    at = starts_at
+
+    at += duration while at < Time.zone.now
+
+    at
+  end
 
   def to_s
     "#{starts_at}: #{interval}"
