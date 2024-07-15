@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :x_account do
-    user
+    user { Current.user }
     primary { false }
     verified { true }
 

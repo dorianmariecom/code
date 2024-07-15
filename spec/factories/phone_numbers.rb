@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :phone_number do
-    user
+    user { Current.user }
     phone_number do
       loop do
         phone_number = Faker::PhoneNumber.phone_number_with_country_code

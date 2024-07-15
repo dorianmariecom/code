@@ -5,6 +5,10 @@ FactoryBot.define do
     name { Faker::Name.name }
     time_zone { User::TIME_ZONES.sample }
 
+    trait :admin do
+      admin { true }
+    end
+
     trait :dorian do
       name { "Dorian Marié" }
       time_zone { "Europe/Paris" }

@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :email_address do
-    user
+    user { Current.user }
     primary { false }
     verified { true }
     email_address { Faker::Internet.email }

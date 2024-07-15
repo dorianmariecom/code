@@ -6,9 +6,11 @@ RSpec.feature "GenerateAndEvaluateProgram" do
   it "works" do
     visit root_path
 
-    fill_in "prompt", with: "Arithmetics" # input: 1 + 1
+    fill_in "prompt", with: "1 + 1"
 
     click_on "generate"
+
+    click_on "create"
 
     click_on "evaluate"
 

@@ -3,9 +3,9 @@
 require "rails_helper"
 
 RSpec.describe Code, type: :model do
-  it "sends an email" do
-    Current.user = create(:user, :dorian)
+  before { Current.user = create(:user, :dorian) }
 
+  it "sends an email" do
     expect_any_instance_of(SmtpAccount).to receive(:deliver!).once
 
     Code.evaluate(<<~CODE)
@@ -18,8 +18,6 @@ RSpec.describe Code, type: :model do
   end
 
   it "can use reply_to" do
-    Current.user = create(:user, :dorian)
-
     expect_any_instance_of(SmtpAccount).to receive(:deliver!).once
 
     Code.evaluate(<<~CODE)
@@ -32,8 +30,6 @@ RSpec.describe Code, type: :model do
 
   it "checks the weather" do
     Timecop.freeze("2024-02-13 11:52") do
-      Current.user = create(:user, :dorian)
-
       Code.evaluate(<<~CODE)
         if Weather.raining?(query: "Paris, France", date: Date.tomorrow)
           Sms.send(body: "It will be raining tomorrow in Paris, France")
@@ -52,8 +48,6 @@ RSpec.describe Code, type: :model do
 
   it "sends reminders" do
     Timecop.freeze("2024-03-05 18:00:00 +0100") do
-      Current.user = create(:user, :dorian)
-
       Code.evaluate(<<~CODE)
         Meetup::Group.new("paris_rb").events.each do |event|
           next if event.past?
@@ -77,8 +71,6 @@ RSpec.describe Code, type: :model do
   end
 
   it "searches for posts on X" do
-    Current.user = create(:user, :dorian)
-
     Code.evaluate(<<~CODE)
       X.search(query: "to:dorianmariecom", type: :recent).each do |post|
         next if Storage.exists?(id: post.id)
@@ -89,8 +81,6 @@ RSpec.describe Code, type: :model do
   end
 
   it "searches for mentions on X" do
-    Current.user = create(:user, :dorian)
-
     Code.evaluate(<<~CODE)
       X.mentions.each do |post|
         next if Storage.exists?(id: post.id)
@@ -101,16 +91,12 @@ RSpec.describe Code, type: :model do
   end
 
   it "send a post on X" do
-    Current.user = create(:user, :dorian)
-
     Code.evaluate(<<~CODE)
       X.send(body: :Hello)
     CODE
   end
 
   it "sends payment notifications", :pending do
-    Current.user = create(:user, :dorian)
-
     Code.evaluate(<<~CODE)
       event = Stripe::Webhook.event
 
@@ -121,8 +107,6 @@ RSpec.describe Code, type: :model do
   end
 
   it "sends slack messages" do
-    Current.user = create(:user, :dorian)
-
     Code.evaluate(<<~CODE)
       Slack.send(body: "Who is leading the syncs?", channel: "#team-template")
       Slack.send(body: "Who is leading the syncs?")
@@ -132,8 +116,6 @@ RSpec.describe Code, type: :model do
   end
 
   it "send messages", :pending do
-    Current.user = create(:user, :dorian)
-
     Code.evaluate(<<~CODE)
       Slack.send(body: "Who is leading the syncs?", channel: "#team-template")
 

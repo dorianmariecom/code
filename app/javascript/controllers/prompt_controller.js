@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["prompt", "name", "input", "loading"];
+  static targets = ["prompt", "input", "loading"];
 
   async generate() {
     this.loadingTarget.classList.remove("hidden");
@@ -19,9 +19,7 @@ export default class extends Controller {
 
     const json = await response.json();
 
-    this.nameTarget.value = json.name;
     this.inputTarget.value = json.input;
-
     this.loadingTarget.classList.add("hidden");
   }
 }

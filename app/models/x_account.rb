@@ -6,7 +6,7 @@ class XAccount < ApplicationRecord
   scope :verified, -> { where(verified: true) }
   scope :not_verified, -> { where(verified: false) }
 
-  validate { can(:update, user) }
+  validate { can!(:update, user) }
 
   def self.verify!(code:)
     uri = URI.parse("https://api.twitter.com/2/oauth2/token")

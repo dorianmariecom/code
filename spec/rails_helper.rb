@@ -30,6 +30,6 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   config.include FactoryBot::Syntax::Methods
 
-  config.before { Current.reset }
+  config.before { Current.user = create(:user, :admin) }
   config.after { Current.reset }
 end
