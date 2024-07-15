@@ -311,30 +311,14 @@ en:
       submit: create
       title: new program
     show:
+      schedule: schedule
       created_at: created at
       delete: delete program
       edit: edit program
-      error: error
       evaluate: evaluate
-      execution: execution
-      executions:
-        one: 1 execution
-        other: "%{count} executions"
-        zero: 0 executions
       id: id
       input: input
-      output: output
       prompt: prompt
-      prompts:
-        one: 1 prompt
-        other: "%{count} prompts"
-        zero: 0 prompts
-      result: result
-      schedule: schedule
-      schedules:
-        one: 1 schedule
-        other: "%{count} schedules"
-        zero: 0 schedules
       updated_at: updated at
       user: user
     update:
@@ -401,6 +385,57 @@ en:
       submit: log in
       title: log in
   shared:
+    models:
+      executions:
+        one: 1 execution
+        other: "%{count} executions"
+        zero: 0 executions
+      prompts:
+        one: 1 prompt
+        other: "%{count} prompts"
+        zero: 0 prompts
+      schedules:
+        one: 1 schedule
+        other: "%{count} schedules"
+        zero: 0 schedules
+      new_email_address: new email address
+      new_password: new password
+      new_phone_number: new phone number
+      new_program: new program
+      new_slack_account: new slack account
+      new_smtp_account: new smtp account
+      new_x_account: new x account
+      new_execution: new execution
+      new_prompt: new prompt
+      new_schedule: new schedule
+      email_addresses:
+        one: 1 email address
+        other: "%{count} email addresses"
+        zero: 0 email addresses
+      passwords:
+        one: 1 password
+        other: "%{count} passwords"
+        zero: 0 passwords
+      phone_numbers:
+        one: 1 phone number
+        other: "%{count} phone numbers"
+        zero: 0 phone numbers
+      programs:
+        one: 1 program
+        other: "%{count} programs"
+        zero: 0 programs
+      slack_accounts:
+        one: 1 slack account
+        other: "%{count} slack accounts"
+        zero: 0 slack accounts
+      smtp_accounts:
+        one: 1 smtp account
+        other: "%{count} smtp accounts"
+        zero: 0 smtp accounts
+      x_accounts:
+        one: 1 x account
+        other: "%{count} x accounts"
+        zero: 0 x accounts
     field:
       datum:
         data: data
@@ -558,51 +593,16 @@ en:
       created_at: created at
       destroy: delete user
       edit: edit user
-      email_addresses:
-        one: 1 email address
-        other: "%{count} email addresses"
-        zero: 0 email addresses
       id: id
       latitude: latitude
       location: location
       longitude: longitude
-      new_email_address: new email address
-      new_password: new password
-      new_phone_number: new phone number
-      new_program: new program
-      new_slack_account: new slack account
-      new_smtp_account: new smtp account
-      new_x_account: new x account
-      passwords:
-        one: 1 password
-        other: "%{count} passwords"
-        zero: 0 passwords
-      phone_numbers:
-        one: 1 phone number
-        other: "%{count} phone numbers"
-        zero: 0 phone numbers
       postal_code: postal code
-      programs:
-        one: 1 program
-        other: "%{count} programs"
-        zero: 0 programs
       route: route
-      slack_accounts:
-        one: 1 slack account
-        other: "%{count} slack accounts"
-        zero: 0 slack accounts
-      smtp_accounts:
-        one: 1 smtp account
-        other: "%{count} smtp accounts"
-        zero: 0 smtp accounts
       state: state
       street_number: street number
       time_zone: time zone
       updated_at: updated at
-      x_accounts:
-        one: 1 x account
-        other: "%{count} x accounts"
-        zero: 0 x accounts
     update:
       notice: user updated
   x_accounts:

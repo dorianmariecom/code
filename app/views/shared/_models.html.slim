@@ -1,0 +1,12 @@
+- model = local_assigns.fetch(:model).to_sym
+- plural = model.to_s.pluralize
+- singular = model.to_s.singularize
+- collection = local_assigns.fetch(:collection)
+- parent = local_assigns.fetch(:parent)
+
+.border-l-2.border-black.pl-4
+  p.font-bold= link_to t(".#{plural}", count: collection.size), [parent, plural.to_sym]
+
+  .p= button_to t(".new_#{singular}"), [:new, parent, model], method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
+
+  = render partial: "#{plural}/#{singular}", collection:, as: model

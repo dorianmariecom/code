@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     @smtp_accounts = policy_scope(SmtpAccount).where(user: @user)
     @passwords = policy_scope(Password).where(user: @user)
     @programs = policy_scope(Program).where(user: @user)
+    @data = policy_scope(Datum).where(user: @user)
+    @prompts = policy_scope(Prompt).where(user: @user)
   end
 
   def new
