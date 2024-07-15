@@ -24,25 +24,22 @@ html
     .p
       => link_to t(".title"), root_path
 
-      - if current_user?
-        => link_to current_user
-        => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
-      - else
-        => link_to t(".register"), new_user_path
-        => link_to t(".log_in"), new_session_path
+      => link_to current_user
+      => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
+      => link_to t(".register"), new_user_path
+      => link_to t(".log_in"), new_session_path
 
-    - if current_user?
-      .p
-        => link_to t(".data", count: policy_scope(Datum).where(user: current_user).size), [current_user, :data]
-        => link_to t(".email_addresses", count: policy_scope(EmailAddress).where(user: current_user).size), [current_user, :email_addresses]
-        => link_to t(".executions", count: policy_scope(Execution).joins(:program).where(programs: { user: current_user }).size), [current_user, :executions]
-        => link_to t(".passwords", count: policy_scope(Password).where(user: current_user).size), [current_user, :passwords]
-        => link_to t(".phone_numbers", count: policy_scope(PhoneNumber).where(user: current_user).size), [current_user, :phone_numbers]
-        => link_to t(".programs", count: policy_scope(Program).where(user: current_user).size), [current_user, :programs]
-        => link_to t(".schedules", count: policy_scope(Schedule).joins(:program).where(programs: { user: current_user }).size), [current_user, :schedules]
-        => link_to t(".slack_accounts", count: policy_scope(SlackAccount).where(user: current_user).size), [current_user, :slack_accounts]
-        => link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).where(user: current_user).size), [current_user, :smtp_accounts]
-        => link_to t(".x_accounts", count: policy_scope(XAccount).where(user: current_user).size), [current_user, :x_accounts]
+    .p
+      => link_to t(".data", count: policy_scope(Datum).where(user: current_user).size), [current_user, :data]
+      => link_to t(".email_addresses", count: policy_scope(EmailAddress).where(user: current_user).size), [current_user, :email_addresses]
+      => link_to t(".executions", count: policy_scope(Execution).joins(:program).where(programs: { user: current_user }).size), [current_user, :executions]
+      => link_to t(".passwords", count: policy_scope(Password).where(user: current_user).size), [current_user, :passwords]
+      => link_to t(".phone_numbers", count: policy_scope(PhoneNumber).where(user: current_user).size), [current_user, :phone_numbers]
+      => link_to t(".programs", count: policy_scope(Program).where(user: current_user).size), [current_user, :programs]
+      => link_to t(".schedules", count: policy_scope(Schedule).joins(:program).where(programs: { user: current_user }).size), [current_user, :schedules]
+      => link_to t(".slack_accounts", count: policy_scope(SlackAccount).where(user: current_user).size), [current_user, :slack_accounts]
+      => link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).where(user: current_user).size), [current_user, :smtp_accounts]
+      => link_to t(".x_accounts", count: policy_scope(XAccount).where(user: current_user).size), [current_user, :x_accounts]
 
     - if admin?
       .p

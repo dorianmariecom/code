@@ -14,7 +14,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def index?
-    admin?
+    current_user?
   end
 
   def show?

@@ -37,11 +37,6 @@ class ProgramsController < ApplicationController
   end
 
   def create
-    unless current_user
-      Current.user = User.create!
-      session[:user_id] = Current.user.id
-    end
-
     @program = authorize scope.new(program_params)
 
     if @program.save

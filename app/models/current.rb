@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Current < ActiveSupport::CurrentAttributes
-  attribute :user
-
   delegate(
     :admin?,
     :location,
@@ -20,10 +18,15 @@ class Current < ActiveSupport::CurrentAttributes
   )
 
   resets { Time.zone = nil }
+  resets { @user = nil }
+
+  def user
+    @user ||= User.create!
+  end
 
   def user=(user)
-    super
     Time.zone = user&.time_zone.presence
+    @user = user || User.create!
   end
 
   def user!

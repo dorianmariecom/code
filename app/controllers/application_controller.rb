@@ -41,11 +41,8 @@ class ApplicationController < ActionController::Base
   private
 
   def set_current_user
-    return if session[:user_id].blank?
-
-    Current.user = User.find_by(id: session[:user_id])
-
-    reset_session if Current.user.nil?
+    Current.user = User.find_by(id: session[:user_id]) || User.create!
+    session[:user_id] = Current.user.id
   end
 
   def delete_link_header

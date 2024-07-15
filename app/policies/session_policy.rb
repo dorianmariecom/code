@@ -2,7 +2,7 @@
 
 class SessionPolicy < ApplicationPolicy
   def create?
-    !current_user?
+    true
   end
 
   def destroy?
