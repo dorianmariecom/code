@@ -84,7 +84,7 @@ class XAccountsController < ApplicationController
   end
 
   def url
-    @user ? [@user, :x_accounts] : x_accounts
+    @user ? [@user, :x_accounts] : x_accounts_path
   end
 
   def id

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     authorize User
-    @users = policy_scope(User).order(:id)
+    @users = scope.order(:id)
   end
 
   def show
@@ -19,11 +19,11 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = authorize policy_scope(User).new
+    @user = authorize scope.new
   end
 
   def create
-    @user = authorize policy_scope(User).new(user_params)
+    @user = authorize scope.new(user_params)
 
     if @user.save
       session[:user_id] = @user.id unless admin?
@@ -71,8 +71,12 @@ class UsersController < ApplicationController
       if params[:id] == "me"
         authorize current_user
       else
-        authorize policy_scope(User).find(params[:id])
+        authorize scope.find(params[:id])
       end
+  end
+
+  def scope
+    policy_scope(User)
   end
 
   def user_params
