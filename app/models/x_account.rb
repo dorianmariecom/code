@@ -231,7 +231,8 @@ class XAccount < ApplicationRecord
         Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
           http.request(request)
         end
-      update!(me: JSON.parse(response.body).fetch("data"))
+      json_response = JSON.parse(response.body)
+      update!(me: json_response.fetch("data")) if json_response["data"]
     end
   end
 
