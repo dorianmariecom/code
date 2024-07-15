@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-pin "intl-tel-input" # @23.3.0
 pin "application"
 pin "i18n"
 pin "debounce"
@@ -13,5 +12,3 @@ pin "intl-tel-input", to: "intl-tel-input.js"
 pin "intl-tel-input/build/js/utils", to: "intl-tel-input--build--js--utils.js"
 pin "stimulus-places-autocomplete"
 pin "@googlemaps/js-api-loader", to: "@googlemaps--js-api-loader.js"
-pin "intl-tel-input/build/js/utils.js",
-    to: "intl-tel-input--build--js--utils.js.js"
