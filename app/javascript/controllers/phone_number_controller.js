@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
 import intlTelInput from "intl-tel-input";
-import utilsScript from "intl-tel-input/build/js/utils";
 import I18n from "i18n";
 import { VALID_CLASSES, INVALID_CLASSES } from "constants";
 
@@ -21,7 +20,7 @@ export default class extends Controller {
 
   connect() {
     this.iti = intlTelInput(this.inputTarget, {
-      utilsScript: utilsScript,
+      utilsScript: "intl-tel-input/build/js/utils.js",
       initialCountry: "auto",
       geoIpLookup: async function (success) {
         try {
