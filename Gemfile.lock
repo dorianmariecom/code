@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 56fbc632a378acc40d99f5b4be321f80a5d8b8c4
+  revision: 099776069c4be64be8be7e3fdb0232d7824a38a9
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -251,7 +251,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.7.2)
-    kamal (1.7.3)
+    kamal (1.8.0)
       activesupport (>= 7.0)
       base64 (~> 0.2)
       bcrypt_pbkdf (~> 1.0)
@@ -259,9 +259,8 @@ GEM
       dotenv (~> 2.8)
       ed25519 (~> 1.2)
       net-ssh (~> 7.0)
-      sshkit (>= 1.22.2, < 2.0)
+      sshkit (>= 1.23.0, < 2.0)
       thor (~> 1.2)
-      x25519 (~> 1.0, >= 1.0.10)
       zeitwerk (~> 2.5)
     language-ruby (0.9.0)
       zeitwerk
@@ -495,7 +494,6 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    x25519 (1.0.10)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.16)
