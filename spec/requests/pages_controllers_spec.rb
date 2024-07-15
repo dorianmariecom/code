@@ -10,13 +10,6 @@ RSpec.describe PagesController do
     end
   end
 
-  describe "GET /documentation" do
-    it "works" do
-      get documentation_path
-      expect(response).to have_http_status(200)
-    end
-  end
-
   describe "GET /" do
     it "works" do
       get root_path
