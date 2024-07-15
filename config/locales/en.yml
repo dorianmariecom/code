@@ -9,6 +9,8 @@ en:
               impossible: is impossible
               invalid: is invalid
   data:
+    datum:
+      datum: datum
     create:
       notice: datum created
     destroy:
@@ -41,6 +43,8 @@ en:
       subject: your %{host} verification code is %{verification_code}
       thanks: thanks,
   email_addresses:
+    email_address:
+      email_address: email address
     create:
       notice: email address created
     destroy:
@@ -73,6 +77,12 @@ en:
     update:
       notice: email address updated
   executions:
+    execution:
+      execution: execution
+      result: result
+      output: output
+      error: error
+      input: input
     destroy:
       notice: execution deleted
     index:
@@ -234,6 +244,8 @@ en:
         spatial: use longer keyboard patterns with more turns
         year: avoid recent years, especially if they are associated with you
   passwords:
+    password:
+      password: password
     create:
       notice: password created
     destroy:
@@ -261,6 +273,8 @@ en:
     update:
       notice: password updated
   phone_numbers:
+    phone_number:
+      phone_number: phone number
     create:
       notice: phone number created
     destroy:
@@ -296,6 +310,8 @@ en:
     update:
       notice: phone number updated
   programs:
+    program:
+      program: program
     create:
       notice: program created
     destroy:
@@ -324,6 +340,8 @@ en:
     update:
       notice: program updated
   prompts:
+    prompt:
+      prompt: prompt
     destroy:
       notice: prompt deleted
     index:
@@ -339,6 +357,8 @@ en:
       updated_at: updated at
       user: user
   schedules:
+    schedule:
+      schedule: schedule
     create:
       notice: schedule created
     destroy:
@@ -506,6 +526,8 @@ en:
         other: "%{count} x accounts"
         zero: 0 x accounts
   slack_accounts:
+    slack_account:
+      slack_account: slack account
     destroy:
       notice: slack account deleted
     edit:
@@ -536,6 +558,8 @@ en:
     update:
       notice: slack account updated
   smtp_accounts:
+    smtp_account:
+      smtp_account: smtp account
     create:
       notice: smtp account created
     destroy:
@@ -573,6 +597,8 @@ en:
     update:
       notice: smtp account updated
   users:
+    user:
+      user: user
     create:
       notice: registered
     destroy:
@@ -611,6 +637,8 @@ en:
     update:
       notice: user updated
   x_accounts:
+    x_account:
+      x_account: x account
     destroy:
       notice: x account deleted
     edit:

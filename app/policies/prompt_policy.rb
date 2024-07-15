@@ -18,7 +18,11 @@ class PromptPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    record.is_a?(Prompt)
+  end
+
+  def update?
+    false
   end
 
   def destroy?

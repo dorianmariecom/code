@@ -11,6 +11,14 @@ class ExecutionPolicy < ApplicationPolicy
     can?(:index, Program)
   end
 
+  def create?
+    false
+  end
+
+  def update?
+    false
+  end
+
   def show?
     can?(:show, program)
   end
