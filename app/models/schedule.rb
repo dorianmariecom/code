@@ -33,7 +33,7 @@ class Schedule < ApplicationRecord
     "3 years",
     "4 years",
     "5 years",
-    "10 years",
+    "10 years"
   ]
 
   PER = {

@@ -37,7 +37,7 @@ en:
     verification_code_email:
       dorian: dorian
       hi: hi,
-      intro: 'here is your verification code for %{host}:'
+      intro: "here is your verification code for %{host}:"
       subject: your %{host} verification code is %{verification_code}
       thanks: thanks,
   email_addresses:

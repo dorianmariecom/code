@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "intl-tel-input": "20.3.0",
+    "intl-tel-input": "*",
     "tailwindcss": "*"
   },
   "engines": {

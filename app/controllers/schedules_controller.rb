@@ -72,7 +72,8 @@ class SchedulesController < ApplicationController
   def load_program
     if params[:program_id].present?
       if @user
-        @program = policy_scope(Program).where(user: @user).find(params[:program_id])
+        @program =
+          policy_scope(Program).where(user: @user).find(params[:program_id])
       else
         @program = policy_scope(Program).find(params[:program_id])
       end
@@ -81,11 +82,18 @@ class SchedulesController < ApplicationController
 
   def scope
     if @user && @program
-      policy_scope(Schedule)
-        .joins(:program)
-        .where(program: { id: @program, user_id: @user.id })
+      policy_scope(Schedule).joins(:program).where(
+        program: {
+          id: @program,
+          user_id: @user.id
+        }
+      )
     elsif @user
-      policy_scope(Schedule).joins(:program).where(program: { user_id: @user.id })
+      policy_scope(Schedule).joins(:program).where(
+        program: {
+          user_id: @user.id
+        }
+      )
     elsif @program
       policy_scope(Schedule).where(program: @program)
     else

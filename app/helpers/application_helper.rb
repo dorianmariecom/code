@@ -108,9 +108,12 @@ module ApplicationHelper
   end
 
   def program_options(program_id: nil)
-    policy_scope(Program).order(:id).to_a.map do |program|
-      [program&.to_s, program&.id, { selected: program_id == program&.id }]
-    end
+    policy_scope(Program)
+      .order(:id)
+      .to_a
+      .map do |program|
+        [program&.to_s, program&.id, { selected: program_id == program&.id }]
+      end
   end
 
   def default_country_code

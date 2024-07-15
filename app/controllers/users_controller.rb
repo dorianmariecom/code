@@ -89,7 +89,7 @@ class UsersController < ApplicationController
         :postal_code,
         :country,
         :latitude,
-        :longitude,
+        :longitude
       )
     else
       params.require(:user).permit(
@@ -104,7 +104,7 @@ class UsersController < ApplicationController
         :postal_code,
         :country,
         :latitude,
-        :longitude,
+        :longitude
       )
     end
   end

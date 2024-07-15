@@ -2,7 +2,8 @@
 
 class ProgramsController < ApplicationController
   before_action :load_user
-  before_action :load_program, only: %i[show edit update destroy evaluate schedule]
+  before_action :load_program,
+                only: %i[show edit update destroy evaluate schedule]
 
   helper_method :url
 

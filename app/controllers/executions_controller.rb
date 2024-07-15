@@ -15,7 +15,9 @@ class ExecutionsController < ApplicationController
 
   def show
     @executions =
-      policy_scope(Execution).where(execution: @execution).order(created_at: :desc)
+      policy_scope(Execution).where(execution: @execution).order(
+        created_at: :desc
+      )
   end
 
   def destroy
@@ -45,7 +47,8 @@ class ExecutionsController < ApplicationController
   def load_program
     if params[:program_id].present?
       if @user
-        @program = policy_scope(Program).where(user: @user).find(params[:program_id])
+        @program =
+          policy_scope(Program).where(user: @user).find(params[:program_id])
       else
         @program = policy_scope(Program).find(params[:program_id])
       end
@@ -54,11 +57,18 @@ class ExecutionsController < ApplicationController
 
   def scope
     if @user && @program
-      policy_scope(Execution)
-        .joins(:program)
-        .where(program: { id: @program, user_id: @user.id })
+      policy_scope(Execution).joins(:program).where(
+        program: {
+          id: @program,
+          user_id: @user.id
+        }
+      )
     elsif @user
-      policy_scope(Execution).joins(:program).where(program: { user_id: @user.id })
+      policy_scope(Execution).joins(:program).where(
+        program: {
+          user_id: @user.id
+        }
+      )
     elsif @program
       policy_scope(Execution).where(program: @program)
     else
