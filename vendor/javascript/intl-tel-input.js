@@ -840,21 +840,29 @@ var t = {};
             { class: "iti__country-container" },
             u,
           );
-          this.selectedCountry = createEl(
-            "button",
-            {
-              type: "button",
-              class: "iti__selected-country",
-              ...(t && {
+          if (t) {
+            this.selectedCountry = createEl(
+              "button",
+              {
+                type: "button",
+                class: "iti__selected-country",
                 "aria-expanded": "false",
                 "aria-label": this.options.i18n.selectedCountryAriaLabel,
                 "aria-haspopup": "true",
                 "aria-controls": `iti-${this.id}__dropdown-content`,
                 role: "combobox",
-              }),
-            },
-            this.countryContainer,
-          );
+              },
+              this.countryContainer,
+            );
+            this.telInput.disabled
+              ? this.selectedCountry.setAttribute("aria-disabled", "true")
+              : this.selectedCountry.setAttribute("tabindex", "0");
+          } else
+            this.selectedCountry = createEl(
+              "div",
+              { class: "iti__selected-country" },
+              this.countryContainer,
+            );
           const i = createEl(
             "div",
             { class: "iti__selected-country-primary" },
@@ -866,9 +874,6 @@ var t = {};
             { class: "iti__a11y-text" },
             this.selectedCountryInner,
           );
-          this.telInput.disabled
-            ? this.selectedCountry.setAttribute("aria-disabled", "true")
-            : this.selectedCountry.setAttribute("tabindex", "0");
           t &&
             (this.dropdownArrow = createEl(
               "div",
@@ -1786,7 +1791,7 @@ var t = {};
         },
         instances: {},
         loadUtils: loadUtils,
-        version: "23.3.0",
+        version: "23.3.2",
       },
     );
     var C = y;

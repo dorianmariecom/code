@@ -22,11 +22,6 @@ class DataController < ApplicationController
   end
 
   def create
-    unless current_user
-      Current.user = User.create!
-      session[:user_id] = Current.user.id
-    end
-
     datum_params[:data] = JSON.parse(datum_params[:data])
 
     @datum = authorize scope.new(datum_params)

@@ -87,6 +87,73 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :guests do
+    collection { delete "/" => "guests#destroy_all" }
+
+    resources :email_addresses do
+      collection { delete "/" => "email_addresses#destroy_all" }
+      resource :verification_code
+    end
+
+    resources :phone_numbers do
+      collection { delete "/" => "phone_numbers#destroy_all" }
+      resource :verification_code
+    end
+
+    resources :smtp_accounts do
+      collection { delete "/" => "smtp_accounts#destroy_all" }
+      resource :verification_code
+    end
+
+    resources :slack_accounts do
+      collection { delete "/" => "slack_accounts#destroy_all" }
+    end
+
+    resources :x_accounts do
+      collection { delete "/" => "x_accounts#destroy_all" }
+      post "refresh_auth"
+      post "refresh_me"
+    end
+
+    resources :passwords do
+      collection { delete "/" => "passwords#destroy_all" }
+    end
+
+    resources :programs do
+      collection { delete "/" => "programs#destroy_all" }
+      post :evaluate
+      post :schedule
+
+      resources :executions do
+        collection { delete "/" => "executions#destroy_all" }
+      end
+
+      resources :schedules do
+        collection { delete "/" => "schedules#destroy_all" }
+      end
+
+      resources :prompts do
+        collection { delete "/" => "prompts#destroy_all" }
+      end
+    end
+
+    resources :data do
+      collection { delete "/" => "data#destroy_all" }
+    end
+
+    resources :executions do
+      collection { delete "/" => "executions#destroy_all" }
+    end
+
+    resources :schedules do
+      collection { delete "/" => "schedules#destroy_all" }
+    end
+
+    resources :prompts do
+      collection { delete "/" => "prompts#destroy_all" }
+    end
+  end
+
   resources :email_addresses do
     collection { delete "/" => "email_addresses#destroy_all" }
     resource :verification_code

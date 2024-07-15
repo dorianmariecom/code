@@ -145,4 +145,8 @@ module ApplicationHelper
         .gsub(/\s/, "")
     Regexp.new(str).source
   end
+
+  def registered?
+    current_user.is_an?(User)
+  end
 end

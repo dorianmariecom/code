@@ -21,12 +21,12 @@ class Current < ActiveSupport::CurrentAttributes
   resets { @user = nil }
 
   def user
-    @user ||= User.create!
+    @user ||= Guest.new
   end
 
   def user=(user)
     Time.zone = user&.time_zone.presence
-    @user = user || User.create!
+    @user = user || Guest.new
   end
 
   def user!

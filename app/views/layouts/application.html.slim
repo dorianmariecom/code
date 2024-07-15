@@ -23,9 +23,11 @@ html
   body.prose.max-w-3xl.mx-auto.p-8
     .p
       => link_to t(".title"), root_path
-
       => link_to current_user
-      => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
+
+      - if registered?
+        => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
+
       => link_to t(".register"), new_user_path
       => link_to t(".log_in"), new_session_path
 

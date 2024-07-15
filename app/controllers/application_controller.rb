@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_current_user
-    Current.user = User.find_by(id: session[:user_id]) || User.create!
+    Current.user = User.find_by(id: session[:user_id]) || Guest.new
     session[:user_id] = Current.user.id
   end
 
