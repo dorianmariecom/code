@@ -103,6 +103,7 @@ class SmtpAccountsController < ApplicationController
       )
     else
       params.require(:smtp_account).permit(
+        :user_id,
         :primary,
         :display_name,
         :address,

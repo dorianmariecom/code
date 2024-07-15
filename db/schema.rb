@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_07_14_174407) do
+ActiveRecord::Schema[8.0].define(version: 2024_07_15_134447) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,6 +71,17 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_14_174407) do
     t.datetime "updated_at", null: false
     t.text "prompt", default: "", null: false
     t.index ["user_id"], name: "index_programs_on_user_id"
+  end
+
+  create_table "prompts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "program_id"
+    t.text "prompt"
+    t.text "input"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["program_id"], name: "index_prompts_on_program_id"
+    t.index ["user_id"], name: "index_prompts_on_user_id"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -284,6 +295,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_14_174407) do
   add_foreign_key "passwords", "users"
   add_foreign_key "phone_numbers", "users"
   add_foreign_key "programs", "users"
+  add_foreign_key "prompts", "programs"
+  add_foreign_key "prompts", "users"
   add_foreign_key "schedules", "programs"
   add_foreign_key "slack_accounts", "users"
   add_foreign_key "smtp_accounts", "users"

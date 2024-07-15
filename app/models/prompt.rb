@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-class Prompt
+class Prompt < ApplicationRecord
   MODEL = "ft:gpt-3.5-turbo-1106:personal::9kRALHnW"
 
   DOCUMENTATION = File.read(Rails.root.join("lib/prompt.md"))
@@ -13,53 +11,36 @@ class Prompt
     #{DOCUMENTATION}
   PROMPT
 
-  attr_reader :prompt, :input
+  belongs_to :user, optional: true, default: -> { Current.user }
+  belongs_to :program, optional: true, default: -> { Current.program }
 
-  def initialize(prompt)
-    @prompt = prompt
-    @input = nil
-  end
+  validate { can!(:update, user) if user }
+  validate { can!(:update, program) if program }
 
-  def self.generate(prompt)
-    new(prompt).generate
-  end
-
-  def generate
-    request.content_type = content_type
+  def generate!
+    uri = URI.parse("https://api.openai.com/v1/chat/completions")
+    request = Net::HTTP::Post.new(uri)
+    request.content_type = "application/json"
     request["Authorization"] = authorization
     request.body = body
-    @input = json_content&.dig("input") || ""
-    self
-  end
-
-  def as_json(...)
-    { input: }.as_json(...)
-  end
-
-  def uri
-    URI.parse("https://api.openai.com/v1/chat/completions")
-  end
-
-  def request
-    @request ||= Net::HTTP::Post.new(uri)
-  end
-
-  def content_type
-    "application/json"
+    response =
+      Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(request)
+      end
+    content = JSON.parse(response.body).dig("choices", 0, "message", "content")
+    update!(input: JSON.parse(content).fetch("input"))
   end
 
   def authorization
     "Bearer #{Rails.application.credentials.api_openai_com.api_key}"
   end
 
-  def model
-    MODEL
-  end
-
   def body
     JSON.dump(
-      model:,
-      response_format:,
+      model: MODEL,
+      response_format: {
+        type: :json_object
+      },
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
         { role: "user", content: prompt }
@@ -67,38 +48,7 @@ class Prompt
     )
   end
 
-  def response_format
-    { type: :json_object }
-  end
-
-  def response
-    @response ||=
-      Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
-        http.request(request)
-      end
-  end
-
-  def json
-    JSON.parse(response.body)
-  end
-
-  def choices
-    json&.dig("choices")
-  end
-
-  def choice
-    choices&.first
-  end
-
-  def message
-    choice&.dig("message")
-  end
-
-  def content
-    message&.dig("content") || ""
-  end
-
-  def json_content
-    JSON.parse(content)
+  def to_s
+    prompt.presence || input.presence || "prompt##{id}"
   end
 end

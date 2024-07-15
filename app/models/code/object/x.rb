@@ -34,7 +34,7 @@ class Code
       def self.code_send(body: nil)
         body ||= Nothing.new
         body = body.truthy? ? body.raw : ""
-        x_account = Current.primary_x_account!.tap(&:refresh_auth!)
+        x_account = Current.x_account!.tap(&:refresh_auth!)
         access_token = x_account.access_token
 
         uri = URI.parse("https://api.twitter.com/2/tweets")
@@ -51,7 +51,7 @@ class Code
       end
 
       def self.code_mentions
-        x_account = Current.primary_x_account!.tap(&:refresh_auth!)
+        x_account = Current.x_account!.tap(&:refresh_auth!)
         id = x_account.twitter_id
         access_token = x_account.access_token
         query = twitter_query.to_query
@@ -82,7 +82,7 @@ class Code
         query = query.truthy? ? query.raw : ""
         query = { query: }.merge(twitter_query).to_query
 
-        x_account = Current.primary_x_account!.tap(&:refresh_auth!)
+        x_account = Current.x_account!.tap(&:refresh_auth!)
         access_token = x_account.access_token
         uri =
           URI.parse("https://api.twitter.com/2/tweets/search/recent?#{query}")

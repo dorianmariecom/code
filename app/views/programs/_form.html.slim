@@ -1,27 +1,7 @@
-= form_for program do |f|
-  - if admin?
-    = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
-
-  div(data-controller="prompt")
-    .font-bold= f.label :prompt, t(".prompt")
-    = f.text_area :prompt, autocomplete: "off", class: "w-full", data: { form_type: "other", prompt_target: "prompt" }
-    button.bg-black.text-white.rounded.px-2.py-1.cursor-pointer(data-action="prompt#generate")
-      = t(".generate")
-
-    .hidden(data-prompt-target="loading")= t(".loading")
-
-    = render "shared/field", f: f, field: :input, type: :text, data: { prompt_target: :input }
-
-  div(data-controller="schedules")
-    template(data-schedules-target="template")
-      = f.fields_for :schedules, Schedule.new, child_index: "NEW_RECORD" do |schedule_f|
-        = render "schedules/nested_form", f: schedule_f
-
-    = f.fields_for :schedules do |schedule_f|
-      = render "schedules/nested_form", f: schedule_f
-
-    div(data-schedules-target="target")
-
-    p= link_to t(".add_schedule"), schedules_path, data: { action: "schedules#add" }
-
+= form_for(program, data: { controller: "prompt" }) do |f|
+  = f.hidden_field :id, data: { prompt_target: "id" }
+  = render "shared/field", f: f, field: :prompt, type: :string, data: { prompt_target: :prompt }
+  button.bg-black.text-white.px-2.py-1.rounded.cursor-pointer(data-action="prompt#create") generate
+  = render "shared/field", f: f, field: :input, type: :text, data: { prompt_target: :input }
+  = render "schedules/nested", f: f
   = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

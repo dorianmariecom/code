@@ -99,7 +99,7 @@ class XAccountsController < ApplicationController
     if admin?
       params.require(:x_account).permit(:user_id, :verified, :primary)
     else
-      params.require(:x_account).permit(:primary)
+      params.require(:x_account).permit(:user_id, :primary)
     end
   end
 end

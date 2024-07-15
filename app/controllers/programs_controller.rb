@@ -18,6 +18,8 @@ class ProgramsController < ApplicationController
       policy_scope(Execution).where(program: @program).order(created_at: :desc)
     @schedules =
       policy_scope(Schedule).where(program: @program).order(created_at: :desc)
+    @prompts =
+      policy_scope(Prompt).where(program: @program).order(created_at: :desc)
   end
 
   def evaluate
@@ -100,19 +102,11 @@ class ProgramsController < ApplicationController
   end
 
   def program_params
-    if admin?
-      params.require(:program).permit(
-        :user_id,
-        :input,
-        :prompt,
-        schedules_attributes: %i[id _destroy starts_at interval]
-      )
-    else
-      params.require(:program).permit(
-        :input,
-        :prompt,
-        schedules_attributes: %i[id _destroy starts_at interval]
-      )
-    end
+    params.require(:program).permit(
+      :user_id,
+      :input,
+      :prompt,
+      schedules_attributes: %i[id _destroy starts_at interval]
+    )
   end
 end

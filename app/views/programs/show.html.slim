@@ -20,19 +20,29 @@
   .text-sm=> t(".input")
   pre.mt-0= @program.input
 
-.p= button_to t(".schedule"), [@program, :schedule], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+p= link_to t(".prompts", count: @prompts.size), [@program, :prompts]
 
-.p= button_to t(".evaluate"), [@program, :evaluate], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+- @prompts.each do |prompt|
+  .pl-4.border-l.border-black.mb-5
+    = t(".prompt")
+    .font-bold= link_to prompt
+
+.p= button_to t(".schedule"), [@program, :schedule], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
 
 p= link_to t(".schedules", count: @schedules.size), [@program, :schedules]
 
 - @schedules.each do |schedule|
-  .pl-4.border-l.border-black.mb-5.font-bold= link_to schedule
+  .pl-4.border-l.border-black.mb-5
+    = t(".schedule")
+    .font-bold= link_to schedule
+
+.p= button_to t(".evaluate"), [@program, :evaluate], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
 
 p= link_to t(".executions", count: @executions.size), [@program, :executions]
 
 - @executions.each do |execution|
   .pl-4.border-l.border-black.mb-5
+    = t(".execution")
     .font-bold= link_to execution
 
     - if execution.input.present?

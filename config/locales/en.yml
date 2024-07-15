@@ -179,6 +179,10 @@ en:
         one: 1 program
         other: "%{count} programs"
         zero: 0 programs
+      prompts:
+        one: 1 prompt
+        other: "%{count} prompts"
+        zero: 0 prompts
       ready_jobs:
         one: 1 ready job
         other: "%{count} ready jobs"
@@ -299,13 +303,6 @@ en:
     edit:
       submit: update
       title: edit program
-    form:
-      add_schedule: add schedule
-      eg: e.g.
-      generate: generate
-      loading: generating...
-      program: program
-      prompt: prompt
     index:
       delete_all: delete all
       new: new program
@@ -319,7 +316,6 @@ en:
       edit: edit program
       error: error
       evaluate: evaluate
-      schedule: schedule
       execution: execution
       executions:
         one: 1 execution
@@ -329,7 +325,12 @@ en:
       input: input
       output: output
       prompt: prompt
+      prompts:
+        one: 1 prompt
+        other: "%{count} prompts"
+        zero: 0 prompts
       result: result
+      schedule: schedule
       schedules:
         one: 1 schedule
         other: "%{count} schedules"
@@ -338,6 +339,21 @@ en:
       user: user
     update:
       notice: program updated
+  prompts:
+    destroy:
+      notice: prompt deleted
+    index:
+      delete_all: delete all
+      title: prompts
+    show:
+      created_at: created at
+      delete: delete prompt
+      id: id
+      input: input
+      program: program
+      prompt: prompt
+      updated_at: updated at
+      user: user
   schedules:
     create:
       notice: schedule created
@@ -350,6 +366,8 @@ en:
       delete_all: delete all
       new: new schedule
       title: schedules
+    nested:
+      add_schedule: add schedule
     nested_form:
       remove: remove
       schedule: schedule
@@ -359,17 +377,17 @@ en:
     show:
       created_at: created at
       delete: delete schedule
+      duration: duration
       edit: edit schedule
       error: error
       id: id
       interval: interval
+      next_at: next at
       program: program
       schedule: schedule
       starts_at: starts at
       updated_at: updated at
       user: user
-      duration: duration
-      next_at: next at
     update:
       notice: schedule updated
   sessions:
@@ -415,6 +433,7 @@ en:
         verified: verified?
       program:
         input: input
+        prompt: prompt
         user_id: user
       schedule:
         interval: interval

@@ -94,11 +94,6 @@ class DataController < ApplicationController
   end
 
   def datum_params
-    @datum_params ||=
-      if admin?
-        params.require(:datum).permit(:user_id, :data)
-      else
-        params.require(:datum).permit(:data)
-      end
+    @datum_params ||= params.require(:datum).permit(:user_id, :data)
   end
 end

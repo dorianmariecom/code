@@ -85,7 +85,7 @@ class SlackAccountsController < ApplicationController
     if admin?
       params.require(:slack_account).permit(:user_id, :verified, :primary)
     else
-      params.require(:slack_account).permit(:primary)
+      params.require(:slack_account).permit(:user_id, :primary)
     end
   end
 end

@@ -83,10 +83,6 @@ class PasswordsController < ApplicationController
   end
 
   def password_params
-    if admin?
-      params.require(:password).permit(:user_id, :password, :hint)
-    else
-      params.require(:password).permit(:password, :hint)
-    end
+    params.require(:password).permit(:user_id, :password, :hint)
   end
 end

@@ -25,7 +25,7 @@ class Code
         body ||= Nothing.new
 
         from = "CodeDorian"
-        to = Current.primary_phone_number!.phone_number
+        to = Current.phone_number!.phone_number
         text = body.truthy? ? body.raw : ""
 
         uri = URI.parse("https://rest.nexmo.com/sms/json")

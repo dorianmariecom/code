@@ -52,18 +52,17 @@ class Current < ActiveSupport::CurrentAttributes
     email_addresses
   end
 
-  def primary_email_address
+  def email_address
     return unless user?
     email_addresses.verified.primary.first || email_addresses.verified.first
   end
 
-  def primary_email_address!
-    primary_email_address ||
-      raise(Code::Error, "no verified email address found")
+  def email_address!
+    email_address || raise(Code::Error, "no verified email address found")
   end
 
-  def primary_email_address?
-    !!primary_email_address
+  def email_address?
+    !!email_address
   end
 
   def phone_numbers
@@ -81,17 +80,17 @@ class Current < ActiveSupport::CurrentAttributes
     phone_numbers
   end
 
-  def primary_phone_number
+  def phone_number
     return unless user?
     phone_numbers.verified.primary.first || phone_numbers.verified.first
   end
 
-  def primary_phone_number!
-    primary_phone_number || raise(Code::Error, "no verified phone number found")
+  def phone_number!
+    phone_number || raise(Code::Error, "no verified phone number found")
   end
 
-  def primary_phone_number?
-    !!primary_phone_number
+  def phone_number?
+    !!phone_number
   end
 
   def slack_accounts
@@ -109,18 +108,17 @@ class Current < ActiveSupport::CurrentAttributes
     slack_accounts.any?
   end
 
-  def primary_slack_account
+  def slack_account
     return unless user?
     slack_accounts.verified.primary.first || slack_accounts.verified.first
   end
 
-  def primary_slack_account!
-    primary_slack_account ||
-      raise(Code::Error, "no verified slack account found")
+  def slack_account!
+    slack_account || raise(Code::Error, "no verified slack account found")
   end
 
-  def primary_slack_account?
-    !!primary_slack_account
+  def slack_account?
+    !!slack_account
   end
 
   def passwords
@@ -138,17 +136,17 @@ class Current < ActiveSupport::CurrentAttributes
     passwords.any?
   end
 
-  def primary_password
+  def password
     return unless user?
     passwords.first
   end
 
-  def primary_password!
-    primary_password || raise(Code::Error, "no password found")
+  def password!
+    password || raise(Code::Error, "no password found")
   end
 
-  def primary_password?
-    !!primary_password
+  def password?
+    !!password
   end
 
   def programs
@@ -166,23 +164,23 @@ class Current < ActiveSupport::CurrentAttributes
     programs
   end
 
-  def primary_program
+  def program
     return unless user?
     programs.first
   end
 
-  def primary_program?
-    !!primary_program
+  def program?
+    !!program
   end
 
-  def primary_program!
-    primary_program || raise(Code::Error, "no program found")
+  def program!
+    program || raise(Code::Error, "no program found")
   end
 
   def schedules
     return [] unless user?
-    return [] unless primary_program?
-    primary_program.schedules
+    return [] unless program?
+    program.schedules
   end
 
   def schedules?
@@ -191,21 +189,21 @@ class Current < ActiveSupport::CurrentAttributes
 
   def schedules!
     user!
-    primary_program!
+    program!
     raise(Code::Error, "no schedules found") unless schedules?
     schedules
   end
 
-  def primary_schedule
+  def schedule
     schedules.first
   end
 
-  def primary_schedule!
-    primary_schedule || raise(Code::Error, "no schedule found")
+  def schedule!
+    schedule || raise(Code::Error, "no schedule found")
   end
 
-  def primary_schedule?
-    !!primary_schedule
+  def schedule?
+    !!schedule
   end
 
   def smtp_accounts
@@ -223,17 +221,17 @@ class Current < ActiveSupport::CurrentAttributes
     smtp_accounts.any?
   end
 
-  def primary_smtp_account
+  def smtp_account
     return unless user?
     smtp_accounts.verified.primary.first || smtp_accounts.verified.first
   end
 
-  def primary_smtp_account!
-    primary_smtp_account || raise(Code::Error, "no verified smtp account found")
+  def smtp_account!
+    smtp_account || raise(Code::Error, "no verified smtp account found")
   end
 
-  def primary_smtp_account?
-    !!primary_smtp_account
+  def smtp_account?
+    !!smtp_account
   end
 
   def x_accounts
@@ -251,16 +249,16 @@ class Current < ActiveSupport::CurrentAttributes
     x_accounts
   end
 
-  def primary_x_account
+  def x_account
     return unless user?
     x_accounts.verified.primary.first || x_accounts.verified.first
   end
 
-  def primary_x_account!
-    primary_x_account || raise(Code::Error, "no verified x account found")
+  def x_account!
+    x_account || raise(Code::Error, "no verified x account found")
   end
 
-  def primary_x_account?
-    !!primary_x_account
+  def x_account?
+    !!x_account
   end
 end

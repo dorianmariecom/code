@@ -9,6 +9,7 @@ pin "@hotwired/stimulus", to: "@hotwired--stimulus.js"
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "intl-tel-input", to: "intl-tel-input.js"
-pin "intl-tel-input/build/js/utils.js", to: "intl-tel-input--build--js--utils.js.js"
+pin "intl-tel-input/build/js/utils.js",
+    to: "intl-tel-input--build--js--utils.js.js"
 pin "stimulus-places-autocomplete"
 pin "@googlemaps/js-api-loader", to: "@googlemaps--js-api-loader.js"

@@ -1,13 +1,13 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["prompt", "input", "loading"];
+  static targets = ["id", "prompt", "input"];
 
-  async generate(e) {
+  async create(e) {
     e.preventDefault();
 
-    this.loadingTarget.classList.remove("hidden");
-
+    const id = this.idTarget.value;
+    const prompt = this.promptTarget.value;
     const csrfToken = document.querySelector("[name='csrf-token']")?.content;
 
     const response = await fetch("/prompts", {
@@ -16,12 +16,11 @@ export default class extends Controller {
         "X-CSRF-Token": csrfToken,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ prompt: this.promptTarget.value }),
+      body: JSON.stringify({ prompt: { program_id: id, prompt } }),
     });
 
     const json = await response.json();
 
-    this.inputTarget.value = json.input;
-    this.loadingTarget.classList.add("hidden");
+    this.inputTarget.value = json.prompt.input;
   }
 }

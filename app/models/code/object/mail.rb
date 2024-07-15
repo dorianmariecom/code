@@ -52,14 +52,14 @@ class Code
           if from.truthy?
             from.raw
           else
-            ::Current.primary_smtp_account!.email_address_with_name
+            ::Current.smtp_account!.email_address_with_name
           end
 
         to =
           if to.truthy?
             to.raw
           else
-            ::Current.primary_smtp_account!.email_address_with_name
+            ::Current.smtp_account!.email_address_with_name
           end
 
         from = ::Mail::AddressList.new(from)
@@ -70,7 +70,7 @@ class Code
             smtp_accounts = Current.smtp_accounts!
             smtp_account =
               smtp_accounts.find_by(user_name: from_address.address)
-            smtp_account ||= Current.primary_smtp_account!
+            smtp_account ||= Current.smtp_account!
             smtp_account.deliver!(
               from: from_address,
               to: to_address,

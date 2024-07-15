@@ -76,36 +76,19 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    if admin?
-      params.require(:user).permit(
-        :name,
-        :time_zone,
-        :location,
-        :city,
-        :street_number,
-        :route,
-        :county,
-        :state,
-        :postal_code,
-        :country,
-        :latitude,
-        :longitude
-      )
-    else
-      params.require(:user).permit(
-        :name,
-        :time_zone,
-        :location,
-        :city,
-        :street_number,
-        :route,
-        :county,
-        :state,
-        :postal_code,
-        :country,
-        :latitude,
-        :longitude
-      )
-    end
+    params.require(:user).permit(
+      :name,
+      :time_zone,
+      :location,
+      :city,
+      :street_number,
+      :route,
+      :county,
+      :state,
+      :postal_code,
+      :country,
+      :latitude,
+      :longitude
+    )
   end
 end

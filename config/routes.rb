@@ -64,6 +64,10 @@ Rails.application.routes.draw do
       resources :schedules do
         collection { delete "/" => "schedules#destroy_all" }
       end
+
+      resources :prompts do
+        collection { delete "/" => "prompts#destroy_all" }
+      end
     end
 
     resources :data do
@@ -76,6 +80,10 @@ Rails.application.routes.draw do
 
     resources :schedules do
       collection { delete "/" => "schedules#destroy_all" }
+    end
+
+    resources :prompts do
+      collection { delete "/" => "prompts#destroy_all" }
     end
   end
 
@@ -120,6 +128,10 @@ Rails.application.routes.draw do
     resources :schedules do
       collection { delete "/" => "schedules#destroy_all" }
     end
+
+    resources :prompts do
+      collection { delete "/" => "prompts#destroy_all" }
+    end
   end
 
   resources :data do
@@ -132,6 +144,10 @@ Rails.application.routes.draw do
 
   resources :schedules do
     collection { delete "/" => "schedules#destroy_all" }
+  end
+
+  resources :prompts do
+    collection { delete "/" => "prompts#destroy_all" }
   end
 
   match "/auth/slack/callback" => "slack_accounts#callback",
