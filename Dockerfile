@@ -22,7 +22,6 @@ RUN apt-get update && \
         git \
         libpq-dev \
         libvips \
-        pandoc \
         pkg-config \
         postgresql-client \
         vim \

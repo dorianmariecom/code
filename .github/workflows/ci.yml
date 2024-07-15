@@ -9,7 +9,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: sudo apt-get install -y pandoc
       - run: bin/brakeman -A -q --color
   bundler-audit:
     name: Bundler Audit
@@ -71,7 +70,6 @@ jobs:
         with:
           cache: "yarn"
       - run: yarn install --frozen-lockfile --immutable --ignore-engines
-      - run: sudo apt-get -yqq install libpq-dev pandoc
       - run: bin/rails db:create db:schema:load
       - run: bin/rails assets:precompile
       - run: bin/rspec
