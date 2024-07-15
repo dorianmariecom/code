@@ -19,6 +19,9 @@ class PromptsController < ApplicationController
   end
 
   def create
+    Current.user = User.create! if Current.guest?
+    session[:user_id] = Current.user.id
+
     @prompt = authorize policy_scope(Prompt).new(prompt_params)
 
     if @prompt.save

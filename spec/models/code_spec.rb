@@ -130,4 +130,16 @@ RSpec.describe Code, type: :model do
       )
     CODE
   end
+
+  it "sends twilio sms", :pending do
+    Code.evaluate(<<~CODE)
+      Twilio.send(body: "What do you want to do this week?")
+    CODE
+  end
+
+  it "sends vonage sms", :pending do
+    Code.evaluate(<<~CODE)
+      Vonage.send(body: "What do you want to do this week?")
+    CODE
+  end
 end

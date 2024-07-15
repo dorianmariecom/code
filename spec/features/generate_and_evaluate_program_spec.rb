@@ -10,6 +10,8 @@ RSpec.feature "GenerateAndEvaluateProgram" do
 
     click_on "generate"
 
+    sleep 1
+
     click_on "create"
 
     click_on "evaluate"
