@@ -21,16 +21,6 @@ module ApplicationHelper
     3.times.map { Faker::Address.full_address }
   end
 
-  def fake_prompts
-    "Do a math operation, " \
-      "Send an email to Elon Musk or " \
-      "Send a slack message if it will be raining tomorrow"
-  end
-
-  def fake_inputs
-    "1 + 1, :Hello * 10, Mail.send"
-  end
-
   def fake_verification_codes(n: 4)
     3.times.map { rand(10**n).to_s.rjust(n, "0") }
   end

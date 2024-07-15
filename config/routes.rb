@@ -138,7 +138,6 @@ Rails.application.routes.draw do
         :via => %i[get post]
   match "/auth/x/callback" => "x_accounts#callback", :via => %i[get post]
   get "up" => "pages#up"
-  get "documentation" => "pages#documentation"
 
   root to: "pages#home"
 end

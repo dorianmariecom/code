@@ -8,8 +8,4 @@ class PagePolicy < ApplicationPolicy
   def up?
     true
   end
-
-  def documentation?
-    true
-  end
 end

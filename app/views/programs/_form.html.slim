@@ -9,11 +9,10 @@
       = t(".generate")
     .text-sm.text-gray-600.italic
       => t(".eg")
-      = fake_prompts
 
     .hidden(data-prompt-target="loading")= t(".loading")
 
-    = render "shared/field", f: f, field: :input, type: :text, fake: fake_inputs, data: { prompt_target: :input }
+    = render "shared/field", f: f, field: :input, type: :text, data: { prompt_target: :input }
 
   div(data-controller="schedules")
     template(data-schedules-target="template")
