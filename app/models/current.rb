@@ -37,6 +37,10 @@ class Current < ActiveSupport::CurrentAttributes
     !!user
   end
 
+  def guest?
+    user.is_a?(Guest)
+  end
+
   def email_addresses
     return [] unless user?
     user.email_addresses.verified

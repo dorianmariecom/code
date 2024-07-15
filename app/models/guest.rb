@@ -43,6 +43,26 @@ class Guest
     XAccount.none
   end
 
+  def data
+    Datum.none
+  end
+
+  def passwords
+    Password.none
+  end
+
+  def programs
+    Program.none
+  end
+
+  def to_signed_global_id(purpose: nil, expires_in: nil)
+    ""
+  end
+
+  def signed_id(purpose: nil, expires_in: nil)
+    ""
+  end
+
   def to_s
     "guest"
   end
