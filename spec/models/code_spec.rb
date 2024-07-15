@@ -29,8 +29,7 @@ RSpec.describe Code, type: :model do
   end
 
   it "checks the weather" do
-    Timecop.freeze("2024-02-13 11:52") do
-      Code.evaluate(<<~CODE)
+    Timecop.freeze("2024-02-13 11:52") { Code.evaluate(<<~CODE) }
         if Weather.raining?(query: "Paris, France", date: Date.tomorrow)
           Sms.send(body: "It will be raining tomorrow in Paris, France")
         end
@@ -43,12 +42,10 @@ RSpec.describe Code, type: :model do
           Sms.send(body: "It's raining today")
         end
       CODE
-    end
   end
 
   it "sends reminders" do
-    Timecop.freeze("2024-03-05 18:00:00 +0100") do
-      Code.evaluate(<<~CODE)
+    Timecop.freeze("2024-03-05 18:00:00 +0100") { Code.evaluate(<<~CODE) }
         Meetup::Group.new("paris_rb").events.each do |event|
           next if event.past?
 
@@ -67,7 +64,6 @@ RSpec.describe Code, type: :model do
           end
         end
       CODE
-    end
   end
 
   it "searches for posts on X" do

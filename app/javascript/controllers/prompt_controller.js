@@ -3,7 +3,9 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["prompt", "input", "loading"];
 
-  async generate() {
+  async generate(e) {
+    e.preventDefault();
+
     this.loadingTarget.classList.remove("hidden");
 
     const csrfToken = document.querySelector("[name='csrf-token']")?.content;

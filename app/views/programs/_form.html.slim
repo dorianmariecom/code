@@ -5,10 +5,8 @@
   div(data-controller="prompt")
     .font-bold= f.label :prompt, t(".prompt")
     = f.text_area :prompt, autocomplete: "off", class: "w-full", data: { form_type: "other", prompt_target: "prompt" }
-    button.bg-black.text-white.rounded.px-2.py-1.cursor-pointer(data-action="prompt#generate:prevent")
+    button.bg-black.text-white.rounded.px-2.py-1.cursor-pointer(data-action="prompt#generate")
       = t(".generate")
-    .text-sm.text-gray-600.italic
-      => t(".eg")
 
     .hidden(data-prompt-target="loading")= t(".loading")
 
