@@ -1,5 +1,7 @@
 service: code
 image: dorianmariecom/code
+healthcheck:
+  max_attempts: 100
 servers:
   web:
     hosts:
