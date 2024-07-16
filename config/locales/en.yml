@@ -419,7 +419,23 @@ en:
       title: log in
   shared:
     field:
+      location:
+        primary: primary?
+        verified: verified?
+        user_id: user id
+        location: location
+      time_zone:
+        primary: primary?
+        verified: verified?
+        user_id: user id
+        time_zone: time zone
+      name:
+        primary: primary?
+        verified: verified?
+        user_id: user id
+        name: name
       datum:
+        user_id: user id
         data: data
       eg: e.g.
       email_address:
@@ -491,12 +507,27 @@ en:
         one: 1 email address
         other: "%{count} email addresses"
         zero: 0 email addresses
+      time_zones:
+        one: 1 time zone
+        other: "%{count} time zones"
+        zero: 0 time zones
       executions:
         one: 1 execution
         other: "%{count} executions"
         zero: 0 executions
+      locations:
+        one: 1 location
+        other: "%{count} locations"
+        zero: 0 locations
+      names:
+        one: 1 name
+        other: "%{count} names"
+        zero: 0 names
       new_datum: new datum
       new_email_address: new email address
+      new_time_zone: new time zone
+      new_location: new location
+      new_name: new name
       new_execution: new execution
       new_password: new password
       new_phone_number: new phone number
@@ -699,6 +730,8 @@ en:
       submit: create name
       title: new name
     show:
+      verified: verified
+      primary: primary
       created_at: created at
       delete: delete name
       edit: edit name
@@ -728,6 +761,8 @@ en:
       submit: create location
       title: new location
     show:
+      verified: verified
+      primary: primary
       created_at: created at
       delete: delete location
       edit: edit location
@@ -757,6 +792,8 @@ en:
       submit: create time zone
       title: new time zone
     show:
+      verified: verified
+      primary: primary
       created_at: created at
       delete: delete time zone
       edit: edit time zone

@@ -83,6 +83,10 @@ class NamesController < ApplicationController
   end
 
   def name_params
-    params.require(:name).permit(:user_id, :name, :hint)
+    if admin?
+      params.require(:name).permit(:user_id, :primary, :verified, :name)
+    else
+      params.require(:name).permit(:user_id, :primary, :name)
+    end
   end
 end

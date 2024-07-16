@@ -13,8 +13,13 @@
 .mb-5= @name.updated_at
 
 .text-sm=> t(".name")
-.mb-5
-  ' ***
+.mb-5= @name.name
+
+.text-sm=> t(".verified")
+.mb-5= @name.verified
+
+.text-sm=> t(".primary")
+.mb-5= @name.primary
 
 = link_to t(".edit"), [:edit, @name]
 = button_to t(".delete"), @name, method: :delete, class: "a text-red-600"

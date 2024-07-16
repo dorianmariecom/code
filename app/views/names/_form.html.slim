@@ -4,8 +4,9 @@
 = form_for name do |f|
   - if admin?
     = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
+    = render "shared/field", f: f, field: :verified, type: :checkbox
 
-  = render "shared/field", f: f, field: :hint, type: :string
-  = render "shared/field", f: f, field: :name, type: :name, required: f.object.new_record?, autocomplete: f.object.new_record? ? "new-name" : "current-name", fake: fake_names
+  = render "shared/field", f: f, field: :primary, type: :checkbox
+  = render "shared/field", f: f, field: :name, type: :string
 
-  = f.submit submit,class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+  = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

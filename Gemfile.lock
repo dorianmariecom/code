@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: f973075aa447dc77b0c4515aa3f6ff62dab49a4e
+  revision: 7b1ceb76595837f81248c7f634fe2abe653ecf7d
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -457,17 +457,17 @@ GEM
     strscan (3.1.0)
     syntax_tree (6.2.0)
       prettier_print (>= 1.2.0)
-    tailwindcss-rails (2.6.2)
+    tailwindcss-rails (2.6.3)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.6.2-aarch64-linux)
+    tailwindcss-rails (2.6.3-aarch64-linux)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.6.2-arm-linux)
+    tailwindcss-rails (2.6.3-arm-linux)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.6.2-arm64-darwin)
+    tailwindcss-rails (2.6.3-arm64-darwin)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.6.2-x86_64-darwin)
+    tailwindcss-rails (2.6.3-x86_64-darwin)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.6.2-x86_64-linux)
+    tailwindcss-rails (2.6.3-x86_64-linux)
       railties (>= 7.0.0)
     temple (0.10.3)
     thor (1.3.1)

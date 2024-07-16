@@ -83,6 +83,10 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-    params.require(:location).permit(:user_id, :location, :hint)
+    if admin?
+      params.require(:name).permit(:user_id, :primary, :verified, :location)
+    else
+      params.require(:name).permit(:user_id, :primary, :location)
+    end
   end
 end
