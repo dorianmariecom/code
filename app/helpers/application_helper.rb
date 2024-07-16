@@ -38,7 +38,7 @@ module ApplicationHelper
   end
 
   def fake_time_zones
-    User::TIME_ZONES.sample(3)
+    TimeZone::TIME_ZONES.sample(3)
   end
 
   def fake_names
@@ -84,7 +84,7 @@ module ApplicationHelper
   end
 
   def time_zone_options
-    User::TIME_ZONES
+    TimeZone::TIME_ZONES
   end
 
   def schedule_interval_options

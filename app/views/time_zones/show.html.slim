@@ -13,8 +13,13 @@
 .mb-5= @time_zone.updated_at
 
 .text-sm=> t(".time_zone")
-.mb-5
-  ' ***
+.mb-5= @time_zone.time_zone
+
+.text-sm=> t(".verified")
+.mb-5= @time_zone.verified
+
+.text-sm=> t(".primary")
+.mb-5= @time_zone.primary
 
 = link_to t(".edit"), [:edit, @time_zone]
 = button_to t(".delete"), @time_zone, method: :delete, class: "a text-red-600"

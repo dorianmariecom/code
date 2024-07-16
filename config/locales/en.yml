@@ -661,22 +661,11 @@ en:
       title: registration
     show:
       admin: admin
-      city: city
       confirm: are you sure you want to delete this user?
-      country: country
-      county: county
       created_at: created at
       destroy: delete user
       edit: edit user
       id: id
-      latitude: latitude
-      location: location
-      longitude: longitude
-      postal_code: postal code
-      route: route
-      state: state
-      street_number: street number
-      time_zone: time zone
       updated_at: updated at
     update:
       notice: user updated
@@ -770,6 +759,16 @@ en:
       location: location
       updated_at: updated at
       user: user
+      country: country
+      county: county
+      city: city
+      latitude: latitude
+      location: location
+      longitude: longitude
+      postal_code: postal code
+      route: route
+      state: state
+      street_number: street number
     update:
       notice: location updated
   time_zones:

@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = authorize scope.new(user_params)
+    @user = authorize scope.new
 
     if @user.save
       session[:user_id] = @user.id unless admin?
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
+    if @user.update({})
       redirect_to user_path(@user), notice: t(".notice")
     else
       flash.now.alert = @user.alert
@@ -82,22 +82,5 @@ class UsersController < ApplicationController
 
   def scope
     policy_scope(User)
-  end
-
-  def user_params
-    params.require(:user).permit(
-      :name,
-      :time_zone,
-      :location,
-      :city,
-      :street_number,
-      :route,
-      :county,
-      :state,
-      :postal_code,
-      :country,
-      :latitude,
-      :longitude
-    )
   end
 end
