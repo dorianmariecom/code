@@ -181,6 +181,18 @@ en:
         one: 1 password
         other: "%{count} passwords"
         zero: 0 passwords
+      names:
+        one: 1 name
+        other: "%{count} names"
+        zero: 0 names
+      locations:
+        one: 1 location
+        other: "%{count} locations"
+        zero: 0 locations
+      time_zones:
+        one: 1 time zone
+        other: "%{count} time zones"
+        zero: 0 time zones
       phone_numbers:
         one: 1 phone number
         other: "%{count} phone numbers"
@@ -667,3 +679,90 @@ en:
       verified: verified
     update:
       notice: x account updated
+  names:
+    name:
+      name: name
+    create:
+      notice: name created
+    destroy:
+      notice: name deleted
+    edit:
+      submit: update name
+      title: edit name
+    form:
+      name: name
+    index:
+      delete_all: delete all
+      new: new name
+      title: names
+    new:
+      submit: create name
+      title: new name
+    show:
+      created_at: created at
+      delete: delete name
+      edit: edit name
+      id: id
+      name: name
+      updated_at: updated at
+      user: user
+    update:
+      notice: name updated
+  locations:
+    location:
+      location: location
+    create:
+      notice: location created
+    destroy:
+      notice: location deleted
+    edit:
+      submit: update location
+      title: edit location
+    form:
+      location: location
+    index:
+      delete_all: delete all
+      new: new location
+      title: locations
+    new:
+      submit: create location
+      title: new location
+    show:
+      created_at: created at
+      delete: delete location
+      edit: edit location
+      id: id
+      location: location
+      updated_at: updated at
+      user: user
+    update:
+      notice: location updated
+  time_zones:
+    time_zone:
+      time_zone: time zone
+    create:
+      notice: time zone created
+    destroy:
+      notice: time zone deleted
+    edit:
+      submit: update time zone
+      title: edit time zone
+    form:
+      time_zone: time zone
+    index:
+      delete_all: delete all
+      new: new time zone
+      title: time zones
+    new:
+      submit: create time zone
+      title: new time zone
+    show:
+      created_at: created at
+      delete: delete time zone
+      edit: edit time zone
+      id: id
+      time_zone: time zone
+      updated_at: updated at
+      user: user
+    update:
+      notice: time zone updated

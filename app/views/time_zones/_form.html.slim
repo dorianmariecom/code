@@ -1,0 +1,11 @@
+- time_zone = local_assigns.fetch(:time_zone)
+- submit = local_assigns.fetch(:submit)
+
+= form_for time_zone do |f|
+  - if admin?
+    = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
+
+  = render "shared/field", f: f, field: :hint, type: :string
+  = render "shared/field", f: f, field: :time_zone, type: :time_zone, required: f.object.new_record?, autocomplete: f.object.new_record? ? "new-time_zone" : "current-time_zone", fake: fake_time_zones
+
+  = f.submit submit,class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

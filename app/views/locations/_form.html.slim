@@ -1,0 +1,11 @@
+- location = local_assigns.fetch(:location)
+- submit = local_assigns.fetch(:submit)
+
+= form_for location do |f|
+  - if admin?
+    = render "shared/field", f: f, field: :user_id, type: :select, options: user_options(user_id: f.object.user_id)
+
+  = render "shared/field", f: f, field: :hint, type: :string
+  = render "shared/field", f: f, field: :location, type: :location, required: f.object.new_record?, autocomplete: f.object.new_record? ? "new-location" : "current-location", fake: fake_locations
+
+  = f.submit submit,class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

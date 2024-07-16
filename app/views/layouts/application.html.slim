@@ -36,14 +36,17 @@ html
         => link_to t(".data", count: policy_scope(Datum).where(user: current_user).size), [current_user, :data]
         => link_to t(".email_addresses", count: policy_scope(EmailAddress).where(user: current_user).size), [current_user, :email_addresses]
         => link_to t(".executions", count: policy_scope(Execution).joins(:program).where(programs: { user: current_user }).size), [current_user, :executions]
+        => link_to t(".locations", count: policy_scope(Location).where(user: current_user).size), [current_user, :locations]
+        => link_to t(".names", count: policy_scope(Name).where(user: current_user).size), [current_user, :names]
         => link_to t(".passwords", count: policy_scope(Password).where(user: current_user).size), [current_user, :passwords]
         => link_to t(".phone_numbers", count: policy_scope(PhoneNumber).where(user: current_user).size), [current_user, :phone_numbers]
         => link_to t(".programs", count: policy_scope(Program).where(user: current_user).size), [current_user, :programs]
+        => link_to t(".prompts", count: policy_scope(Prompt).where(user: current_user).size), [current_user, :prompts]
         => link_to t(".schedules", count: policy_scope(Schedule).joins(:program).where(programs: { user: current_user }).size), [current_user, :schedules]
         => link_to t(".slack_accounts", count: policy_scope(SlackAccount).where(user: current_user).size), [current_user, :slack_accounts]
         => link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).where(user: current_user).size), [current_user, :smtp_accounts]
+        => link_to t(".time_zones", count: policy_scope(TimeZone).where(user: current_user).size), [current_user, :time_zones]
         => link_to t(".x_accounts", count: policy_scope(XAccount).where(user: current_user).size), [current_user, :x_accounts]
-        => link_to t(".prompts", count: policy_scope(Prompt).where(user: current_user).size), [current_user, :prompts]
 
     - if admin?
       .p
@@ -56,15 +59,18 @@ html
         => link_to t(".data", count: policy_scope(Datum).size), data_path
         => link_to t(".email_addresses", count: policy_scope(EmailAddress).size), email_addresses_path
         => link_to t(".executions", count: policy_scope(Execution).size), executions_path
+        => link_to t(".locations", count: policy_scope(Location).size), [current_user, :locations]
+        => link_to t(".names", count: policy_scope(Name).size), [current_user, :names]
         => link_to t(".passwords", count: policy_scope(Password).size), passwords_path
         => link_to t(".phone_numbers", count: policy_scope(PhoneNumber).size), phone_numbers_path
         => link_to t(".programs", count: policy_scope(Program).size), programs_path
+        => link_to t(".prompts", count: policy_scope(Prompt).size), prompts_path
         => link_to t(".schedules", count: policy_scope(Schedule).size), schedules_path
         => link_to t(".slack_accounts", count: policy_scope(SlackAccount).size), slack_accounts_path
         => link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).size), smtp_accounts_path
+        => link_to t(".time_zones", count: policy_scope(TimeZone).size), [current_user, :time_zones]
         => link_to t(".users", count: policy_scope(User).size), users_path
         => link_to t(".x_accounts", count: policy_scope(XAccount).size), x_accounts_path
-        => link_to t(".prompts", count: policy_scope(Prompt).size), prompts_path
 
     - if admin?
       .p

@@ -85,6 +85,18 @@ Rails.application.routes.draw do
     resources :prompts do
       collection { delete "/" => "prompts#destroy_all" }
     end
+
+    resources :locations do
+      collection { delete "/" => "locations#destroy_all" }
+    end
+
+    resources :time_zones do
+      collection { delete "/" => "time_zones#destroy_all" }
+    end
+
+    resources :names do
+      collection { delete "/" => "names#destroy_all" }
+    end
   end
 
   resources :guests do
@@ -117,6 +129,18 @@ Rails.application.routes.draw do
 
     resources :passwords do
       collection { delete "/" => "passwords#destroy_all" }
+    end
+
+    resources :locations do
+      collection { delete "/" => "locations#destroy_all" }
+    end
+
+    resources :time_zones do
+      collection { delete "/" => "time_zones#destroy_all" }
+    end
+
+    resources :names do
+      collection { delete "/" => "names#destroy_all" }
     end
 
     resources :programs do
@@ -215,6 +239,18 @@ Rails.application.routes.draw do
 
   resources :prompts do
     collection { delete "/" => "prompts#destroy_all" }
+  end
+
+  resources :locations do
+    collection { delete "/" => "locations#destroy_all" }
+  end
+
+  resources :time_zones do
+    collection { delete "/" => "time_zones#destroy_all" }
+  end
+
+  resources :names do
+    collection { delete "/" => "names#destroy_all" }
   end
 
   match "/auth/slack/callback" => "slack_accounts#callback",

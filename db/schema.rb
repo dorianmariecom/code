@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_07_16_133833) do
+ActiveRecord::Schema[8.0].define(version: 2024_07_16_134647) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +61,16 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_16_133833) do
     t.boolean "primary", default: false, null: false
     t.boolean "verified", default: false, null: false
     t.index ["user_id"], name: "index_locations_on_user_id"
+  end
+
+  create_table "names", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.boolean "primary", default: false, null: false
+    t.boolean "verified", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_names_on_user_id"
   end
 
   create_table "passwords", force: :cascade do |t|
@@ -293,6 +303,16 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_16_133833) do
     t.index ["key"], name: "index_solid_queue_semaphores_on_key", unique: true
   end
 
+  create_table "time_zones", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "time_zone"
+    t.boolean "primary", default: false, null: false
+    t.boolean "verified", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_time_zones_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -316,6 +336,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_16_133833) do
   add_foreign_key "email_addresses", "users"
   add_foreign_key "executions", "programs"
   add_foreign_key "locations", "users"
+  add_foreign_key "names", "users"
   add_foreign_key "passwords", "users"
   add_foreign_key "phone_numbers", "users"
   add_foreign_key "programs", "users"
@@ -349,5 +370,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_16_133833) do
                   "solid_queue_jobs",
                   column: "job_id",
                   on_delete: :cascade
+  add_foreign_key "time_zones", "users"
   add_foreign_key "x_accounts", "users"
 end

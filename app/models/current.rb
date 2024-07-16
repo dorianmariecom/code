@@ -1,24 +1,12 @@
 # frozen_string_literal: true
 
 class Current < ActiveSupport::CurrentAttributes
-  delegate(
-    :admin?,
-    :location,
-    :latitude,
-    :longitude,
-    :city,
-    :street_number,
-    :route,
-    :county,
-    :state,
-    :postal_code,
-    :country,
-    to: :user,
-    allow_nil: true
-  )
-
   resets { Time.zone = nil }
   resets { @user = nil }
+
+  def admin?
+    user.admin?
+  end
 
   def user
     @user ||= Guest.new
@@ -264,5 +252,89 @@ class Current < ActiveSupport::CurrentAttributes
 
   def x_account?
     !!x_account
+  end
+
+  def names
+    return [] unless user?
+    user.names.verified
+  end
+
+  def names?
+    names.any?
+  end
+
+  def names!
+    user!
+    raise(Code::Error, "no name found") unless names?
+    names
+  end
+
+  def name
+    return unless user?
+    names.verified.primary.first || names.verified.first
+  end
+
+  def name!
+    name || raise(Code::Error, "no verified name found")
+  end
+
+  def name?
+    !!name
+  end
+
+  def time_zones
+    return [] unless user?
+    user.time_zones.verified
+  end
+
+  def time_zones?
+    time_zones.any?
+  end
+
+  def time_zones!
+    user!
+    raise(Code::Error, "no time zone found") unless time_zones?
+    time_zones
+  end
+
+  def time_zone
+    return unless user?
+    time_zones.verified.primary.first || time_zones.verified.first
+  end
+
+  def time_zone!
+    time_zone || raise(Code::Error, "no verified time zone found")
+  end
+
+  def time_zone?
+    !!time_zone
+  end
+
+  def locations
+    return [] unless user?
+    user.locations.verified
+  end
+
+  def locations?
+    locations.any?
+  end
+
+  def locations!
+    user!
+    raise(Code::Error, "no location found") unless locations?
+    locations
+  end
+
+  def location
+    return unless user?
+    locations.verified.primary.first || locations.verified.first
+  end
+
+  def location!
+    location || raise(Code::Error, "no verified location found")
+  end
+
+  def location?
+    !!location
   end
 end
