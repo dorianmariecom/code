@@ -12,7 +12,7 @@ class Prompt < ApplicationRecord
   PROMPT
 
   belongs_to :user, optional: true, default: -> { Current.user }
-  belongs_to :program, optional: true, default: -> { Current.program }
+  belongs_to :program, optional: true
 
   validate { can!(:update, user) if user }
   validate { can!(:update, program) if program }
