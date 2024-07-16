@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 26575aa19c04e81ef196ff5bd97d9aa2d3ed8417
+  revision: f973075aa447dc77b0c4515aa3f6ff62dab49a4e
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -139,7 +139,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    code-ruby (0.15.2)
+    code-ruby (0.15.3)
       activesupport
       bigdecimal
       did-you-mean
