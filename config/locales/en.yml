@@ -327,6 +327,7 @@ en:
       submit: create
       title: new program
     show:
+      next_at: next at
       created_at: created at
       delete: delete program
       edit: edit program
