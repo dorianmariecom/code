@@ -37,6 +37,11 @@ class VerificationCodesController < ApplicationController
               skip_policy_scope
               skip_authorization
             end
+
+        Current.user = @verifiable.user
+        session[:user_id] = Current.user.id
+
+        @verifiable
       rescue ActiveSupport::MessageVerifier::InvalidSignature
         @verifiable = authorize policy_scope(EmailAddress).find(id)
       end

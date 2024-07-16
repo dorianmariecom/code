@@ -93,6 +93,11 @@ class EmailAddressesController < ApplicationController
           skip_policy_scope
           skip_authorization
         end
+
+    Current.user = @email_address.user
+    session[:user_id] = Current.user.id
+
+    @email_address
   rescue ActiveSupport::MessageVerifier::InvalidSignature
     @email_address = authorize scope.find(id)
   end
