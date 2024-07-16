@@ -86,7 +86,7 @@ class Code
             end
 
             if from_smtp_account && (to_email_address || to_smtp_account)
-              smtp_account.deliver!(
+              from_smtp_account.deliver!(
                 from: from_address.to_s,
                 to: to_address.to_s,
                 subject: subject&.raw || "",
