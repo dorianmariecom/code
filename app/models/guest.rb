@@ -55,6 +55,10 @@ class Guest
     Program.none
   end
 
+  def locations
+    Location.none
+  end
+
   def to_signed_global_id(purpose: nil, expires_in: nil)
     ""
   end

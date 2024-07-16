@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_07_15_160218) do
+ActiveRecord::Schema[8.0].define(version: 2024_07_16_133833) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,25 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_15_160218) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["program_id"], name: "index_executions_on_program_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "location"
+    t.string "city"
+    t.string "street_number"
+    t.string "route"
+    t.string "county"
+    t.string "state"
+    t.string "postal_code"
+    t.string "country"
+    t.string "latitude"
+    t.string "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "primary", default: false, null: false
+    t.boolean "verified", default: false, null: false
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "passwords", force: :cascade do |t|
@@ -280,16 +299,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_15_160218) do
     t.string "time_zone"
     t.boolean "admin", default: false, null: false
     t.string "name", default: "", null: false
-    t.string "location", default: "", null: false
-    t.string "city", default: "", null: false
-    t.string "street_number", default: "", null: false
-    t.string "route", default: "", null: false
-    t.string "county", default: "", null: false
-    t.string "state", default: "", null: false
-    t.string "postal_code", default: "", null: false
-    t.string "country", default: "", null: false
-    t.string "latitude", default: "", null: false
-    t.string "longitude", default: "", null: false
   end
 
   create_table "x_accounts", force: :cascade do |t|
@@ -306,6 +315,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_15_160218) do
   add_foreign_key "data", "users"
   add_foreign_key "email_addresses", "users"
   add_foreign_key "executions", "programs"
+  add_foreign_key "locations", "users"
   add_foreign_key "passwords", "users"
   add_foreign_key "phone_numbers", "users"
   add_foreign_key "programs", "users"
