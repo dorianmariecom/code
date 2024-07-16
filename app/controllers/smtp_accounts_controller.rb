@@ -46,7 +46,7 @@ class SmtpAccountsController < ApplicationController
   def destroy
     @smtp_account.destroy!
 
-    redirect_to @smtp_account.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all

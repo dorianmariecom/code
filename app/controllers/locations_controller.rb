@@ -45,7 +45,7 @@ class LocationsController < ApplicationController
   def destroy
     @location.destroy!
 
-    redirect_to @location.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all

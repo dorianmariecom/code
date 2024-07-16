@@ -45,7 +45,7 @@ class TimeZonesController < ApplicationController
   def destroy
     @time_zone.destroy!
 
-    redirect_to @time_zone.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all

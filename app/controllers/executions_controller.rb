@@ -23,7 +23,7 @@ class ExecutionsController < ApplicationController
   def destroy
     @execution.destroy!
 
-    redirect_to @execution.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all

@@ -67,7 +67,7 @@ class ProgramsController < ApplicationController
   def destroy
     @program.destroy!
 
-    redirect_to @program.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all

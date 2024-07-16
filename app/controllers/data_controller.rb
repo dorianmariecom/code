@@ -51,7 +51,7 @@ class DataController < ApplicationController
   def destroy
     @datum.destroy!
 
-    redirect_to @datum.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all

@@ -36,7 +36,7 @@ class PromptsController < ApplicationController
   def destroy
     @prompt.destroy!
 
-    redirect_to @prompt.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all

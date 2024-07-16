@@ -45,7 +45,7 @@ class PasswordsController < ApplicationController
   def destroy
     @password.destroy!
 
-    redirect_to @password.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all

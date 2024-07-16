@@ -48,7 +48,7 @@ class SchedulesController < ApplicationController
   def destroy
     @schedule.destroy!
 
-    redirect_to @schedule.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all

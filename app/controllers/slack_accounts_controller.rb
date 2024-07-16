@@ -40,7 +40,7 @@ class SlackAccountsController < ApplicationController
   def destroy
     @slack_account.destroy!
 
-    redirect_to @slack_account.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all

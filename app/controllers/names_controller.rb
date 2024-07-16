@@ -45,7 +45,7 @@ class NamesController < ApplicationController
   def destroy
     @name.destroy!
 
-    redirect_to @name.user, notice: t(".notice")
+    redirect_to url, notice: t(".notice")
   end
 
   def destroy_all
