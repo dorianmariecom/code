@@ -53,10 +53,10 @@
   .mb-5= @location.longitude
 
 .text-sm=> t(".verified")
-.mb-5= @name.verified
+.mb-5= @location.verified
 
 .text-sm=> t(".primary")
-.mb-5= @name.primary
+.mb-5= @location.primary
 
 = link_to t(".edit"), [:edit, @location]
 = button_to t(".delete"), @location, method: :delete, class: "a text-red-600"

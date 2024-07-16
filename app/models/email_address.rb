@@ -29,6 +29,10 @@ class EmailAddress < ApplicationRecord
     find_signed!(id, purpose: VERIFICATION_CODE_PURPOSE)
   end
 
+  def email_address_with_name
+    ActionMailer::Base.email_address_with_name(email_address, user.name)
+  end
+
   def primary?
     !!primary
   end

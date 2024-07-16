@@ -32,13 +32,15 @@ class Code
           if query.truthy?
             query.raw
           else
-            "#{Current.latitude},#{Current.longitude}"
+            "#{Current.location!.latitude},#{Current.location!.longitude}"
           end
 
         date = date.truthy? ? date.raw : ::Date.current
         days = 14
         q = query
+
         uri = URI.parse("https://api.weatherapi.com/v1/forecast.json")
+
         request = Net::HTTP::Post.new(uri)
         request.set_form_data(key:, q:, days:)
 
