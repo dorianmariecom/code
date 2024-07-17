@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: e6ca80ee0d3db6d0d78a2e54119076d02213c6a7
+  revision: 1a9a4b0f510fa27f0b17bc965429f8efbcbdb693
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -139,7 +139,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
-    code-ruby (0.15.3)
+    code-ruby (0.15.5)
       activesupport
       bigdecimal
       did-you-mean
@@ -320,7 +320,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.6)
-    phonelib (0.9.0)
+    phonelib (0.9.1)
     prettier_print (1.2.1)
     process_executer (1.1.0)
     propshaft (0.9.0)
