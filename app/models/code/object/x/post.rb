@@ -18,6 +18,9 @@ class Code
           when "text"
             sig(args)
             code_text
+          when "retweet"
+            sig(args)
+            code_retweet
           when "created_at"
             sig(args)
             code_created_at
@@ -32,7 +35,11 @@ class Code
         end
 
         def code_text
-          String.new(raw.code_get(String.new(:text)))
+          if tweet
+            String.new(tweet["text"])
+          else
+            String.new(raw.code_get(String.new(:text)))
+          end
         end
 
         def code_created_at
@@ -40,11 +47,61 @@ class Code
         end
 
         def code_author
-          User.new(
-            raw.as_json["json"]["includes"]["users"].detect do |user|
-              user["id"] == raw.as_json["author_id"]
-            end
-          )
+          if author
+            User.new(author)
+          else
+            Nothing.new
+          end
+        end
+
+        def id
+          as_json["id"].to_s
+        end
+
+        def author_id
+          as_json["author_id"].to_s
+        end
+
+        def json
+          as_json["json"]
+        end
+
+        def includes
+          json["includes"]
+        end
+
+        def author
+          includes["users"].detect do |user|
+            user["id"].to_s == author_id.to_s
+          end
+        end
+
+        def retweet_id
+          (as_json["referenced_tweets"] || [])
+            .select { |tweet| tweet["type"] == "retweeted" }
+            .map { |tweet| tweet["id"].to_s }
+            .first
+            .to_s
+        end
+
+        def code_retweet
+          if retweet
+            Post.new(retweet.merge("json" => json))
+          else
+            Nothing.new
+          end
+        end
+
+        def retweet
+          includes["tweets"].detect do |tweet|
+            tweet["id"].to_s == retweet_id.to_s
+          end
+        end
+
+        def tweet
+          includes["tweets"].detect do |tweet|
+            tweet["id"].to_s == id.to_s
+          end
         end
       end
     end
