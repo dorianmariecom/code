@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 7b1ceb76595837f81248c7f634fe2abe653ecf7d
+  revision: e6ca80ee0d3db6d0d78a2e54119076d02213c6a7
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -222,7 +222,7 @@ GEM
     factory_bot_rails (6.4.3)
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
-    faker (3.4.1)
+    faker (3.4.2)
       i18n (>= 1.8.11, < 2)
     fugit (1.11.0)
       et-orbi (~> 1, >= 1.2.11)
@@ -320,7 +320,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.6)
-    phonelib (0.8.9)
+    phonelib (0.9.0)
     prettier_print (1.2.1)
     process_executer (1.1.0)
     propshaft (0.9.0)
