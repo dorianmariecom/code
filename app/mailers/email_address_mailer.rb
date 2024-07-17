@@ -2,7 +2,9 @@ class EmailAddressMailer < ApplicationMailer
   include ActionView::Helpers::SanitizeHelper
 
   def code_mail
-    text = params[:body].presence || params[:text].presence || params[:html].presence.to_s
+    text =
+      params[:body].presence || params[:text].presence ||
+        params[:html].presence.to_s
     text = strip_tags(text)
     html = params[:html].presence.to_s.html_safe
 

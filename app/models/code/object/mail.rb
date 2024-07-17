@@ -31,7 +31,7 @@ class Code
               subject: value.code_get(String.new("subject")),
               body: value.code_get(String.new("body")),
               text: value.code_get(String.new("text")),
-              html: value.code_get(String.new("html")),
+              html: value.code_get(String.new("html"))
             )
           else
             code_send
@@ -87,17 +87,20 @@ class Code
 
         from.addresses.each do |from_address|
           to.addresses.each do |to_address|
-            from_smtp_account = Current.smtp_accounts.detect do |smtp_account|
-              smtp_account.user_name == from_address.address
-            end
+            from_smtp_account =
+              Current.smtp_accounts.detect do |smtp_account|
+                smtp_account.user_name == from_address.address
+              end
 
-            to_smtp_account = Current.smtp_accounts.detect do |smtp_account|
-              smtp_account.user_name == to_address.address
-            end
+            to_smtp_account =
+              Current.smtp_accounts.detect do |smtp_account|
+                smtp_account.user_name == to_address.address
+              end
 
-            to_email_address = Current.email_addresses.detect do |email_address|
-              email_address.email_address == to_address.address
-            end
+            to_email_address =
+              Current.email_addresses.detect do |email_address|
+                email_address.email_address == to_address.address
+              end
 
             if from_smtp_account && (to_email_address || to_smtp_account)
               from_smtp_account.deliver!(

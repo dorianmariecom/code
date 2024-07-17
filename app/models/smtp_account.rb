@@ -72,7 +72,15 @@ class SmtpAccount < ApplicationRecord
     end
   end
 
-  def deliver!(from: "", to: "", subject: "", body: "", reply_to: "", text: "", html: "")
+  def deliver!(
+    from: "",
+    to: "",
+    subject: "",
+    body: "",
+    reply_to: "",
+    text: "",
+    html: ""
+  )
     text = text.presence || body.presence || html.presence || ""
     text = strip_tags(text)
 
@@ -83,7 +91,8 @@ class SmtpAccount < ApplicationRecord
     mail.to = to
     mail.subject = subject
     mail.text_part = Mail::Part.new(body: text)
-    mail.html_part = Mail::Part.new(content_type: 'text/html; charset=UTF-8', body: html)
+    mail.html_part =
+      Mail::Part.new(content_type: "text/html; charset=UTF-8", body: html)
     mail.reply_to = reply_to if reply_to.present?
     mail.delivery_method(
       :smtp,

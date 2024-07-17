@@ -15,8 +15,7 @@ class User < ApplicationRecord
   has_many :x_accounts, dependent: :destroy
 
   def name
-    names.verified.primary.first&.name ||
-      names.verified.first&.name
+    names.verified.primary.first&.name || names.verified.first&.name
   end
 
   def email_address
@@ -30,6 +29,7 @@ class User < ApplicationRecord
   end
 
   def to_s
-    name.presence || email_address.presence || phone_number.presence || "user##{id}"
+    name.presence || email_address.presence || phone_number.presence ||
+      "user##{id}"
   end
 end

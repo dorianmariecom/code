@@ -93,41 +93,109 @@ class Code
             http.request(request)
           end
         json = JSON.parse(response.body)
-
-        json["data"] = json["data"].map do |tweet|
-          tweet.tap do |tweet|
-            tweet["author"] = json
-              .dig("includes", "users")
-              .detect { |user| user["id"] == tweet["author_id"] }
-          end
-        end
-
+        original_json = json.dup
+        json["data"] = json["data"].map { |data| data.merge(json: original_json) }
         List.new(json["data"].map { |tweet| Post.new(tweet) })
       end
 
       def self.twitter_query
         {
-          "tweet.fields" => tweet_fields.join(","),
           "expansions" => expansions.join(","),
-          "user.fields" => user_fields.join(","),
-          "media.fields" => media_fields.join(",")
+          "media.fields" => media_fields.join(","),
+          "place.fields" => place_fields.join(","),
+          "poll.fields" => poll_fields.join(","),
+          "tweet.fields" => tweet_fields.join(","),
+          "user.fields" => user_fields.join(",")
         }
       end
 
       def self.tweet_fields
-        %w[created_at text author_id]
+        %w[
+          attachments
+          author_id
+          context_annotations
+          conversation_id
+          created_at
+          edit_controls
+          edit_history_tweet_ids
+          entities
+          geo
+          id
+          in_reply_to_user_id
+          lang
+          possibly_sensitive
+          public_metrics
+          referenced_tweets
+          reply_settings
+          source
+          text
+          withheld
+        ]
       end
 
       def self.expansions
-        %w[author_id attachments.media_keys]
+        %w[
+          attachments.media_keys
+          attachments.poll_ids
+          author_id
+          entities.mentions.username
+          geo.place_id
+          in_reply_to_user_id
+          referenced_tweets.id
+          referenced_tweets.id.author_id
+        ]
       end
 
       def self.user_fields
-        %w[id name username location profile_image_url]
+        %w[
+          created_at
+          description
+          entities
+          id
+          location
+          name
+          pinned_tweet_id
+          profile_image_url
+          protected
+          public_metrics
+          url
+          username
+          verified
+          withheld
+        ]
       end
 
       def self.media_fields
-        %w[url type media_key]
+        %w[
+          duration_ms
+          height
+          media_key
+          non_public_metrics
+          organic_metrics
+          preview_image_url
+          promoted_metrics
+          public_metrics
+          type
+          url
+          width
+        ]
+      end
+
+      def self.place_fields
+        %w[
+          contained_within
+          country
+          country_code
+          full_name
+          geo
+          id
+          name
+          place_type
+        ]
+      end
+
+      def self.poll_fields
+        %w[duration_minutes end_datetime id options voting_status]
       end
     end
   end

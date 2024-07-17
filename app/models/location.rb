@@ -8,9 +8,7 @@ class Location < ApplicationRecord
 
   validate { can!(:update, user) }
 
-  before_update do
-    unverify! if location_changed? && verified?
-  end
+  before_update { unverify! if location_changed? && verified? }
 
   def unverify!
     update!(verified: false)

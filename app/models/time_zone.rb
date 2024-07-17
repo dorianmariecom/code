@@ -12,9 +12,7 @@ class TimeZone < ApplicationRecord
   validates :time_zone, inclusion: { in: TIME_ZONES, allow_blank: true }
   validate { can!(:update, user) }
 
-  before_update do
-    unverify! if time_zone_changed? && verified?
-  end
+  before_update { unverify! if time_zone_changed? && verified? }
 
   def unverify!
     update!(verified: false)

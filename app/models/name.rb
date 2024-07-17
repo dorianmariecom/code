@@ -8,9 +8,7 @@ class Name < ApplicationRecord
 
   validate { can!(:update, user) }
 
-  before_update do
-    unverify! if name_changed? && verified?
-  end
+  before_update { unverify! if name_changed? && verified? }
 
   def unverify!
     update!(verified: false)
