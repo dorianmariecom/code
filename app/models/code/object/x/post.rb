@@ -15,6 +15,9 @@ class Code
           when "id"
             sig(args)
             code_id
+          when "url"
+            sig(args)
+            code_url
           when "text"
             sig(args)
             code_text
@@ -27,6 +30,8 @@ class Code
           when "author"
             sig(args)
             code_author
+          else
+            super
           end
         end
 
@@ -52,6 +57,14 @@ class Code
           else
             Nothing.new
           end
+        end
+
+        def code_url
+          String.new("https://x.com/#{username}/status/#{id}")
+        end
+
+        def username
+          author&.dig("username") || ""
         end
 
         def id
