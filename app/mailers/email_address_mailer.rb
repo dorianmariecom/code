@@ -1,12 +1,20 @@
 class EmailAddressMailer < ApplicationMailer
+  include ActionView::Helpers::SanitizeHelper
+
   def code_mail
+    text = params[:body].presence || params[:text].presence || params[:html].presence.to_s
+    text = strip_tags(text)
+    html = params[:html].presence.to_s.html_safe
+
     mail(
       from: params[:from],
       to: params[:to],
       subject: params[:subject],
-      body: params[:body],
       reply_to: params[:reply_to]
-    )
+    ) do |format|
+      format.text { render(plain: text) if text.present? }
+      format.html { render(html: html) if html.present? }
+    end
   end
 
   def verification_code_email

@@ -16,18 +16,22 @@ class Code
             {
               from: String.maybe,
               to: String.maybe,
+              reply_to: String.maybe,
               subject: String.maybe,
               body: String.maybe,
-              reply_to: String.maybe
+              text: String.maybe,
+              html: String.maybe
             }
           end
           if arguments.any?
             code_send(
               from: value.code_get(String.new("from")),
               to: value.code_get(String.new("to")),
+              reply_to: value.code_get(String.new("reply_to")),
               subject: value.code_get(String.new("subject")),
               body: value.code_get(String.new("body")),
-              reply_to: value.code_get(String.new("reply_to"))
+              text: value.code_get(String.new("text")),
+              html: value.code_get(String.new("html")),
             )
           else
             code_send
@@ -40,15 +44,19 @@ class Code
       def self.code_send(
         from: nil,
         to: nil,
+        reply_to: nil,
         subject: nil,
         body: nil,
-        reply_to: nil
+        text: nil,
+        html: nil
       )
         from ||= Nothing.new
         to ||= Nothing.new
+        reply_to ||= Nothing.new
         subject ||= Nothing.new
         body ||= Nothing.new
-        reply_to ||= Nothing.new
+        text ||= Nothing.new
+        html ||= Nothing.new
 
         from =
           if from.truthy?
@@ -71,6 +79,12 @@ class Code
         from = ::Mail::AddressList.new(from)
         to = ::Mail::AddressList.new(to)
 
+        subject = subject.raw || ""
+        body = body.raw || ""
+        reply_to = reply_to&.raw || ""
+        text = text&.raw || ""
+        html = html&.raw || ""
+
         from.addresses.each do |from_address|
           to.addresses.each do |to_address|
             from_smtp_account = Current.smtp_accounts.detect do |smtp_account|
@@ -89,18 +103,22 @@ class Code
               from_smtp_account.deliver!(
                 from: from_address.to_s,
                 to: to_address.to_s,
-                subject: subject&.raw || "",
-                body: body&.raw || "",
-                reply_to: reply_to&.raw || ""
+                reply_to:,
+                subject:,
+                body:,
+                text:,
+                html:
               )
             elsif to_email_address || to_smtp_account
               EmailAddressMailer
                 .with(
                   from: from_address.to_s,
                   to: to_address.to_s,
-                  subject: subject&.raw || "",
-                  body: body&.raw || "",
-                  reply_to: reply_to&.raw || ""
+                  reply_to:,
+                  subject:,
+                  body:,
+                  text:,
+                  html:
                 )
                 .code_mail
                 .deliver_later

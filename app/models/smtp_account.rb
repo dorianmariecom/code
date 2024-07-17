@@ -1,4 +1,6 @@
 class SmtpAccount < ApplicationRecord
+  include ActionView::Helpers::SanitizeHelper
+
   EMAIL_ADDRESS_REGEXP = URI::MailTo::EMAIL_REGEXP
   DOMAIN_REGEXP = /\A[a-zA-Z0-9]+([-.]{1}[a-zA-Z0-9]+)*\.[a-zA-Z]{2,5}\z/
 
@@ -70,12 +72,18 @@ class SmtpAccount < ApplicationRecord
     end
   end
 
-  def deliver!(from: "", to: "", subject: "", body: "", reply_to: "")
+  def deliver!(from: "", to: "", subject: "", body: "", reply_to: "", text: "", html: "")
+    text = text.presence || body.presence || html.presence || ""
+    text = strip_tags(text)
+
+    html = html.presence.to_s.html_safe
+
     mail = Mail.new
     mail.from = from
     mail.to = to
     mail.subject = subject
-    mail.body = body
+    mail.text_part = Mail::Part.new(body: text)
+    mail.html_part = Mail::Part.new(content_type: 'text/html; charset=UTF-8', body: html)
     mail.reply_to = reply_to if reply_to.present?
     mail.delivery_method(
       :smtp,
