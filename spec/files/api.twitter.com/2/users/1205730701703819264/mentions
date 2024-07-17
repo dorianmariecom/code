@@ -1,155 +1,1459 @@
 {
   "data": [
     {
-      "id": "1771823472122954019",
-      "text": "@dorianmariecom “Teams should be like a sports team and like not families”, is the best way I heard it said.",
-      "edit_history_tweet_ids": [
-        "1771823472122954019"
+      "created_at": "2024-07-15T19:32:58.000Z",
+      "text": "@dorianmariecom @shl I doubt that you can hold focus for so long.",
+      "in_reply_to_user_id": "1205730701703819264",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1812920478908227874"
+        }
       ],
-      "created_at": "2024-03-24T08:56:49.000Z",
-      "author_id": "34227391"
-    },
-    {
-      "attachments": {
-        "media_keys": [
-          "3_1771669006916726784"
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 159
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 15,
+            "username": "dorianmariecom",
+            "id": "1205730701703819264"
+          },
+          {
+            "start": 16,
+            "end": 20,
+            "username": "shl",
+            "id": "16347964"
+          }
         ]
       },
-      "id": "1771669069038535029",
-      "text": "@dorianmariecom It looks legit! https://t.co/NAFivZFomN",
+      "possibly_sensitive": false,
+      "reply_settings": "everyone",
+      "conversation_id": "1812823286344020279",
+      "lang": "en",
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-15T20:32:58.000Z"
+      },
       "edit_history_tweet_ids": [
-        "1771669069038535029"
+        "1812933395938484319"
       ],
-      "created_at": "2024-03-23T22:43:16.000Z",
-      "author_id": "1241204990"
+      "author_id": "907690626271117312",
+      "id": "1812933395938484319"
     },
     {
-      "id": "1770011461902836138",
-      "text": "@dorianmariecom Yay, I think like the most interested people are the ex-Doctoliber haha\nSUM seems like a ritual",
-      "edit_history_tweet_ids": [
-        "1770011461902836138"
+      "created_at": "2024-07-10T12:12:08.000Z",
+      "text": "@dorianmariecom Showing my age on here. This Friday will be the 18th birthday of my account on this site 😅",
+      "in_reply_to_user_id": "1205730701703819264",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1811008303750606915"
+        }
       ],
-      "created_at": "2024-03-19T08:56:32.000Z",
-      "author_id": "123923067"
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 3,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 109
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 15,
+            "username": "dorianmariecom",
+            "id": "1205730701703819264"
+          }
+        ]
+      },
+      "possibly_sensitive": false,
+      "reply_settings": "everyone",
+      "conversation_id": "1810955768121659428",
+      "lang": "en",
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-10T13:12:08.000Z"
+      },
+      "edit_history_tweet_ids": [
+        "1811010517072236725"
+      ],
+      "author_id": "506",
+      "id": "1811010517072236725"
     },
     {
-      "id": "1769678840744268160",
-      "text": "@dorianmariecom @fortuneo Ah d'accord c'est bizarre",
-      "edit_history_tweet_ids": [
-        "1769678840744268160"
+      "created_at": "2024-07-09T17:57:09.000Z",
+      "text": "@dorianmariecom You have to bundle exec ruby for that one?",
+      "in_reply_to_user_id": "1205730701703819264",
+      "entities": {
+        "annotations": [
+          {
+            "start": 40,
+            "end": 43,
+            "probability": 0.4552,
+            "type": "Other",
+            "normalized_text": "ruby"
+          }
+        ],
+        "mentions": [
+          {
+            "start": 0,
+            "end": 15,
+            "username": "dorianmariecom",
+            "id": "1205730701703819264"
+          }
+        ]
+      },
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1810732042059177990"
+        }
       ],
-      "created_at": "2024-03-18T10:54:49.000Z",
-      "author_id": "1099704075296428032"
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 155
+      },
+      "possibly_sensitive": false,
+      "reply_settings": "everyone",
+      "conversation_id": "1810657601358590365",
+      "lang": "en",
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-09T18:57:09.000Z"
+      },
+      "edit_history_tweet_ids": [
+        "1810734952528429110"
+      ],
+      "author_id": "11253302",
+      "id": "1810734952528429110"
     },
     {
-      "id": "1769121917988933748",
-      "text": "@dorianmariecom Interesting how it is slowly being integrated in my lifestyle. Just a matter of persistence. It's being a very rewarding experience.",
-      "edit_history_tweet_ids": [
-        "1769121917988933748"
+      "created_at": "2024-07-09T17:55:39.000Z",
+      "text": "@dorianmariecom Thank you :)",
+      "in_reply_to_user_id": "1205730701703819264",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1810728692336750937"
+        }
       ],
-      "created_at": "2024-03-16T22:01:48.000Z",
-      "author_id": "103878514"
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 23
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 15,
+            "username": "dorianmariecom",
+            "id": "1205730701703819264"
+          }
+        ]
+      },
+      "possibly_sensitive": false,
+      "reply_settings": "everyone",
+      "conversation_id": "1810463870785593564",
+      "lang": "en",
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-09T18:55:39.000Z"
+      },
+      "edit_history_tweet_ids": [
+        "1810734575238430916"
+      ],
+      "author_id": "649783",
+      "id": "1810734575238430916"
     },
     {
-      "id": "1769059815878262845",
-      "text": "@dorianmariecom @fortuneo Si pour clôturer le compte il faut que tu télécharge leurs formulaire de clôture de compte sur le site est que tu le remplis en tu leurs envoi par mail ensuite",
-      "edit_history_tweet_ids": [
-        "1769059815878262845"
+      "created_at": "2024-07-07T12:14:13.000Z",
+      "text": "@dorianmariecom If you mean redirect_forward_or_to, it's meant to evoke Rails' built-in redirect_back_or_to",
+      "in_reply_to_user_id": "38452139",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1809919857808249269"
+        }
       ],
-      "created_at": "2024-03-16T17:55:02.000Z",
-      "author_id": "1099704075296428032"
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 127
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 15,
+            "username": "dorianmariecom",
+            "id": "1205730701703819264"
+          }
+        ]
+      },
+      "possibly_sensitive": false,
+      "reply_settings": "everyone",
+      "conversation_id": "1809620656356520101",
+      "lang": "en",
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-07T13:14:13.000Z"
+      },
+      "edit_history_tweet_ids": [
+        "1809923874722574681"
+      ],
+      "author_id": "38452139",
+      "id": "1809923874722574681"
     },
     {
-      "id": "1769059541856190956",
-      "text": "@dorianmariecom It’s “priced to sell”.  My usual rate, if compared to hours is $150, so minimum hours for this gives a 50% discount at least.\n\nOnce I have more customers I’ll raise my rates again, to slow growth and ensure quality.",
-      "edit_history_tweet_ids": [
-        "1769059541856190956"
+      "created_at": "2024-07-07T11:58:15.000Z",
+      "text": "@dorianmariecom Huh, what's the joke?",
+      "in_reply_to_user_id": "1205730701703819264",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1809916641993539633"
+        }
       ],
-      "created_at": "2024-03-16T17:53:56.000Z",
-      "author_id": "322694936"
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 146
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 15,
+            "username": "dorianmariecom",
+            "id": "1205730701703819264"
+          }
+        ]
+      },
+      "possibly_sensitive": false,
+      "reply_settings": "everyone",
+      "conversation_id": "1809620656356520101",
+      "lang": "en",
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-07T12:58:15.000Z"
+      },
+      "edit_history_tweet_ids": [
+        "1809919857808249269"
+      ],
+      "author_id": "38452139",
+      "id": "1809919857808249269"
     },
     {
-      "id": "1769051147904712923",
-      "text": "@dorianmariecom Yep, Ruby has everything to compete with Python",
-      "edit_history_tweet_ids": [
-        "1769051147904712923"
+      "created_at": "2024-07-03T02:59:46.000Z",
+      "text": "@dorianmariecom I recently built my own for &lt; 800 usd. It has 36 cores, 64 GB ram, a small gpu for running ml experiments, 24 TB in raid 5 using zfs. Happy to tell you how I did it. I use this thing for all sorts of stuff.",
+      "in_reply_to_user_id": "1205730701703819264",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1808113783606272033"
+        }
       ],
-      "created_at": "2024-03-16T17:20:35.000Z",
-      "author_id": "28444901"
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 23
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 15,
+            "username": "dorianmariecom",
+            "id": "1205730701703819264"
+          }
+        ]
+      },
+      "possibly_sensitive": false,
+      "reply_settings": "everyone",
+      "conversation_id": "1808113783606272033",
+      "lang": "en",
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-03T03:59:46.000Z"
+      },
+      "edit_history_tweet_ids": [
+        "1808334790959288726"
+      ],
+      "author_id": "80255105",
+      "id": "1808334790959288726"
     },
     {
-      "id": "1768740290045595946",
-      "text": "Cheers to @dorianmariecom! \n\nNice contribution to Sequel gem, https://t.co/znT7dkN2Qx \n\nadding .select(:z).select_prepend(:x, :y)\n\nDorian recently picked up using Sequel gem as a dev on one of our projects.",
-      "edit_history_tweet_ids": [
-        "1768740290045595946"
+      "created_at": "2024-06-26T21:10:27.000Z",
+      "text": "@dorianmariecom Blocked that nonsense a while ago. Nothing of substance when it comes to the field.",
+      "in_reply_to_user_id": "1205730701703819264",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1805849724911591447"
+        }
       ],
-      "created_at": "2024-03-15T20:45:21.000Z",
-      "author_id": "13440"
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 32
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 15,
+            "username": "dorianmariecom",
+            "id": "1205730701703819264"
+          }
+        ]
+      },
+      "possibly_sensitive": false,
+      "reply_settings": "everyone",
+      "conversation_id": "1805849724911591447",
+      "lang": "en",
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-06-26T22:10:27.000Z"
+      },
+      "edit_history_tweet_ids": [
+        "1806072555196895627"
+      ],
+      "author_id": "14841894",
+      "id": "1806072555196895627"
+    },
+    {
+      "created_at": "2024-06-26T17:53:00.000Z",
+      "text": "@_williamkennedy @dorianmariecom @strzibnyj If you're caught up to date with the Dark Viper drama I think that gives quite a clear picture of Theo 🙂",
+      "in_reply_to_user_id": "1131873395988140032",
+      "entities": {
+        "annotations": [
+          {
+            "start": 81,
+            "end": 90,
+            "probability": 0.9208,
+            "type": "Other",
+            "normalized_text": "Dark Viper"
+          },
+          {
+            "start": 142,
+            "end": 145,
+            "probability": 0.6695,
+            "type": "Other",
+            "normalized_text": "Theo"
+          }
+        ],
+        "mentions": [
+          {
+            "start": 0,
+            "end": 16,
+            "username": "_williamkennedy",
+            "id": "1131873395988140032"
+          },
+          {
+            "start": 17,
+            "end": 32,
+            "username": "dorianmariecom",
+            "id": "1205730701703819264"
+          },
+          {
+            "start": 33,
+            "end": 43,
+            "username": "strzibnyj",
+            "id": "291660254"
+          }
+        ]
+      },
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1805900589378806032"
+        }
+      ],
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 36
+      },
+      "possibly_sensitive": false,
+      "reply_settings": "everyone",
+      "conversation_id": "1805501679548195192",
+      "lang": "en",
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-06-26T18:53:00.000Z"
+      },
+      "edit_history_tweet_ids": [
+        "1806022869027299802"
+      ],
+      "author_id": "1259820064246808582",
+      "id": "1806022869027299802"
+    },
+    {
+      "created_at": "2024-06-26T09:47:07.000Z",
+      "text": "@dorianmariecom @strzibnyj I wonder what he's like in person. \n\nIn a way, I admire his ability to generate discussion/arguments.",
+      "in_reply_to_user_id": "1205730701703819264",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1805630651191677374"
+        }
+      ],
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 146
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 15,
+            "username": "dorianmariecom",
+            "id": "1205730701703819264"
+          },
+          {
+            "start": 16,
+            "end": 26,
+            "username": "strzibnyj",
+            "id": "291660254"
+          }
+        ]
+      },
+      "possibly_sensitive": false,
+      "reply_settings": "everyone",
+      "conversation_id": "1805501679548195192",
+      "lang": "en",
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-06-26T10:47:07.000Z"
+      },
+      "edit_history_tweet_ids": [
+        "1805900589378806032"
+      ],
+      "author_id": "1131873395988140032",
+      "id": "1805900589378806032"
     }
   ],
   "includes": {
     "users": [
       {
-        "username": "samkhawase",
-        "id": "34227391",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1756228113128632320/Q_FtCkTz_normal.jpg",
-        "name": "Sam Khawasé"
+        "location": "Zagreb, Croatia",
+        "url": "https://t.co/wpsJVYjDTt",
+        "created_at": "2017-09-12T19:41:24.000Z",
+        "id": "907690626271117312",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1759594100716716032/RZ0jCiKv_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/wpsJVYjDTt",
+                "expanded_url": "https://www.codeofus.com",
+                "display_url": "codeofus.com"
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "start": 49,
+                "end": 72,
+                "url": "https://t.co/wpsJVYjDTt",
+                "expanded_url": "https://www.codeofus.com",
+                "display_url": "codeofus.com"
+              }
+            ]
+          }
+        },
+        "description": "Building software that optimizes your business 👉 https://t.co/wpsJVYjDTt",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 381,
+          "following_count": 147,
+          "tweet_count": 2070,
+          "listed_count": 5,
+          "like_count": 127
+        },
+        "name": "Sandi Slonjšak",
+        "username": "sandislonjsak"
       },
       {
-        "username": "GregMolnar",
-        "id": "1241204990",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/613677798876688385/qxSIDsWX_normal.jpg",
-        "name": "Greg Molnar"
+        "location": "Paris",
+        "url": "https://t.co/TdIMjZ6qep",
+        "created_at": "2019-12-14T06:06:24.000Z",
+        "id": "1205730701703819264",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1591116978101551104/5u9Y_gqS_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/TdIMjZ6qep",
+                "expanded_url": "https://dorianmarie.fr",
+                "display_url": "dorianmarie.fr"
+              }
+            ]
+          }
+        },
+        "description": "Programmer. Previously thoughtbot, Doctolib, Trusted, Bespoke Post",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 784,
+          "following_count": 734,
+          "tweet_count": 4594,
+          "listed_count": 24,
+          "like_count": 5654
+        },
+        "name": "Dorian Marié",
+        "username": "dorianmariecom"
       },
       {
-        "username": "yann120",
-        "id": "123923067",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1325494836846358529/zIJnEjgY_normal.jpg",
-        "name": "Yann PETITJEAN"
+        "location": "DUMBO, NYC, USA",
+        "url": "https://t.co/2wl7l6kPvl",
+        "created_at": "2008-09-18T15:23:00.000Z",
+        "pinned_tweet_id": "1792564640926310843",
+        "id": "16347964",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1764285408135753728/pYT7qoCb_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/2wl7l6kPvl",
+                "expanded_url": "http://sahillavingia.com",
+                "display_url": "sahillavingia.com"
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "start": 21,
+                "end": 44,
+                "url": "https://t.co/BF1qAId3AO",
+                "expanded_url": "http://antiwork.com",
+                "display_url": "antiwork.com"
+              }
+            ]
+          }
+        },
+        "description": "Builder of products: https://t.co/BF1qAId3AO",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 337159,
+          "following_count": 603,
+          "tweet_count": 35078,
+          "listed_count": 4840,
+          "like_count": 47797
+        },
+        "name": "Sahil Lavingia",
+        "username": "shl"
       },
       {
-        "username": "Jordangaming202",
-        "id": "1099704075296428032",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1380885956690083840/jz0sPyYN_normal.jpg",
-        "name": "Jordan D"
+        "location": "Sussex, UK",
+        "url": "https://t.co/5Y1XuAEzBw",
+        "created_at": "2006-07-12T18:20:43.000Z",
+        "pinned_tweet_id": "1384492144900001792",
+        "id": "506",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1273605330312847362/ReZWi2eH_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/5Y1XuAEzBw",
+                "expanded_url": "https://brightondynamic.com",
+                "display_url": "brightondynamic.com"
+              }
+            ]
+          },
+          "description": {
+            "mentions": [
+              {
+                "start": 11,
+                "end": 20,
+                "username": "UrlboxHQ"
+              },
+              {
+                "start": 75,
+                "end": 82,
+                "username": "CoGrid"
+              },
+              {
+                "start": 105,
+                "end": 114,
+                "username": "TheSkiff"
+              }
+            ]
+          }
+        },
+        "description": "Product at @UrlboxHQ\nAdvisor & Supporter of B2B SaaS in Sussex\nDeveloping: @CoGrid (on Rails)\nCoworking: @TheSkiff\nNewsletter: Brighton Dynamic",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 4931,
+          "following_count": 2408,
+          "tweet_count": 12004,
+          "listed_count": 319,
+          "like_count": 7702
+        },
+        "name": "Jonathan Markwell 🇺🇦",
+        "username": "jot"
       },
       {
-        "username": "CelsoDeSa",
-        "id": "103878514",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1554630101077221388/80XbsTmZ_normal.jpg",
-        "name": "Celso on Rails"
+        "location": "Barcelona",
+        "url": "https://t.co/QUndZZmlC2",
+        "created_at": "2007-12-17T16:53:11.000Z",
+        "id": "11253302",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1777350946231619584/Y0-F6bRV_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/QUndZZmlC2",
+                "expanded_url": "https://hashref.com",
+                "display_url": "hashref.com"
+              }
+            ]
+          }
+        },
+        "description": "Everlasting student · Rails Core · Zeitwerk · Freelance · Life lover",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 11147,
+          "following_count": 549,
+          "tweet_count": 31003,
+          "listed_count": 411,
+          "like_count": 15787
+        },
+        "name": "Xavier Noria",
+        "username": "fxn"
       },
       {
-        "username": "kowfm",
-        "id": "322694936",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1611436470870618113/Z-eA358p_normal.jpg",
-        "name": "KOW (Karl Weber)"
+        "location": "California",
+        "url": "https://t.co/giotEefJHJ",
+        "created_at": "2007-01-16T22:37:38.000Z",
+        "id": "649783",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1572945683556212739/nCqn7xU4_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/giotEefJHJ",
+                "expanded_url": "https://www.jesper.dev",
+                "display_url": "jesper.dev"
+              }
+            ]
+          },
+          "description": {
+            "mentions": [
+              {
+                "start": 53,
+                "end": 65,
+                "username": "formbackend"
+              }
+            ]
+          }
+        },
+        "description": "Ruby, JS, and other fun stuff! Side projects include @formbackend. Cats are awesome!",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 1335,
+          "following_count": 1661,
+          "tweet_count": 5947,
+          "listed_count": 48,
+          "like_count": 5381
+        },
+        "name": "Jesper Christiansen",
+        "username": "jespr"
       },
       {
-        "username": "capripot",
-        "id": "28444901",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1061068142661767168/RQggkTsv_normal.jpg",
-        "name": "Ronan"
+        "url": "https://t.co/xlWFKEMYuD",
+        "created_at": "2009-05-07T15:31:09.000Z",
+        "pinned_tweet_id": "1805601664272851014",
+        "id": "38452139",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/996841697777725441/1dQXy58O_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/xlWFKEMYuD",
+                "expanded_url": "http://discord.gg/NNN3TAD5jQ",
+                "display_url": "discord.gg/NNN3TAD5jQ"
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "start": 95,
+                "end": 118,
+                "url": "https://t.co/nYpJGtdB5F",
+                "expanded_url": "http://ruby.social/@kaspth",
+                "display_url": "ruby.social/@kaspth"
+              }
+            ]
+          }
+        },
+        "description": "On the Rails core team 2016-2022, now helping Rails shops upgrade their code quality — also on https://t.co/nYpJGtdB5F",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 3890,
+          "following_count": 276,
+          "tweet_count": 3700,
+          "listed_count": 114,
+          "like_count": 9082
+        },
+        "name": "Kasper Timm Hansen",
+        "username": "kaspth"
       },
       {
-        "username": "mikepmunroe",
-        "id": "13440",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/448165937041010688/Yk21eCX__normal.jpeg",
-        "name": "Mike Munroe"
+        "location": "Bangkok, Thailand",
+        "url": "https://t.co/AM08eDg3hL",
+        "created_at": "2009-10-06T08:50:38.000Z",
+        "pinned_tweet_id": "1812033069588885794",
+        "id": "80255105",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1638764493005287424/q3UB6-c1_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/AM08eDg3hL",
+                "expanded_url": "https://opsmaru.com",
+                "display_url": "opsmaru.com"
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "start": 2,
+                "end": 25,
+                "url": "https://t.co/oz1oIavGiU",
+                "expanded_url": "http://opsmaru.com",
+                "display_url": "opsmaru.com"
+              },
+              {
+                "start": 31,
+                "end": 54,
+                "url": "https://t.co/zwj8ty8EOP",
+                "expanded_url": "http://zacksiri.dev",
+                "display_url": "zacksiri.dev"
+              }
+            ],
+            "mentions": [
+              {
+                "start": 66,
+                "end": 77,
+                "username": "OpsMaruDev"
+              }
+            ]
+          }
+        },
+        "description": "🚀 https://t.co/oz1oIavGiU 👨🏻‍💻 https://t.co/zwj8ty8EOP\n\nCheck out @OpsMaruDev",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 815,
+          "following_count": 491,
+          "tweet_count": 2101,
+          "listed_count": 82,
+          "like_count": 2278
+        },
+        "name": "Zack Siri",
+        "username": "zacksiri"
+      },
+      {
+        "location": "planet.earth",
+        "url": "https://t.co/mHL1Y9X42R",
+        "created_at": "2008-05-20T04:19:23.000Z",
+        "pinned_tweet_id": "1285445355165884416",
+        "id": "14841894",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1712126594695802880/IkZKAamI_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/mHL1Y9X42R",
+                "expanded_url": "https://github.com/kod3000",
+                "display_url": "github.com/kod3000"
+              }
+            ]
+          }
+        },
+        "description": "for currency exchange i tell the internets how to behave w/humans.. 🇵🇷🇵🇷🇵🇷",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 430,
+          "following_count": 643,
+          "tweet_count": 9657,
+          "listed_count": 12,
+          "like_count": 10219
+        },
+        "name": "dany.codes",
+        "username": "kod3000"
+      },
+      {
+        "url": "https://t.co/BZ2ZHengam",
+        "created_at": "2020-05-11T12:18:17.000Z",
+        "pinned_tweet_id": "1576966415059660800",
+        "id": "1259820064246808582",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1736864589176786944/coy8dqty_normal.png",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/BZ2ZHengam",
+                "expanded_url": "https://en.pronouns.page/@Salmons",
+                "display_url": "en.pronouns.page/@Salmons"
+              }
+            ]
+          }
+        },
+        "description": "21, sweden, gamedev",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 93,
+          "following_count": 44,
+          "tweet_count": 496,
+          "listed_count": 5,
+          "like_count": 2730
+        },
+        "name": "sofia 🎀 🍉",
+        "username": "SmileForSalmon"
+      },
+      {
+        "url": "https://t.co/4vUBAsmrRB",
+        "created_at": "2019-05-24T10:43:41.000Z",
+        "id": "1131873395988140032",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1177167337063104513/CQQ6-IS4_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/4vUBAsmrRB",
+                "expanded_url": "https://www.williamkennedy.ninja",
+                "display_url": "williamkennedy.ninja"
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "start": 72,
+                "end": 95,
+                "url": "https://t.co/vqz6l6xmOI",
+                "expanded_url": "http://smartstrengthapp.com",
+                "display_url": "smartstrengthapp.com"
+              }
+            ]
+          }
+        },
+        "description": "I tweet from the toilet. Take me seriously at your own risk. Working on https://t.co/vqz6l6xmOI and my consulting business.",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 499,
+          "following_count": 303,
+          "tweet_count": 3880,
+          "listed_count": 13,
+          "like_count": 4948
+        },
+        "name": "William Kennedy",
+        "username": "_williamkennedy"
+      },
+      {
+        "location": "My Rails template →",
+        "url": "https://t.co/WchoqllB89",
+        "created_at": "2011-05-02T12:10:36.000Z",
+        "pinned_tweet_id": "1772969080854925527",
+        "id": "291660254",
+        "verified": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1601678139935145984/5PT4qdR6_normal.jpg",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/WchoqllB89",
+                "expanded_url": "https://businessclasskit.com",
+                "display_url": "businessclasskit.com"
+              }
+            ]
+          },
+          "description": {
+            "mentions": [
+              {
+                "start": 9,
+                "end": 22,
+                "username": "tubeandchill"
+              }
+            ]
+          }
+        },
+        "description": "Building @tubeandchill over summer. Author of Deployment from Scratch, Kamal Handbook, and Business Class starter kit.",
+        "protected": false,
+        "public_metrics": {
+          "followers_count": 3367,
+          "following_count": 396,
+          "tweet_count": 13316,
+          "listed_count": 102,
+          "like_count": 16447
+        },
+        "name": "Josef Strzibny",
+        "username": "strzibnyj"
       }
     ],
-    "media": [
+    "tweets": [
       {
-        "media_key": "3_1771669006916726784",
-        "type": "photo",
-        "url": "https://pbs.twimg.com/media/GJY7kzjXMAANpNF.jpg"
+        "created_at": "2024-07-15T18:41:39.000Z",
+        "text": "@shl @sandislonjsak on road to doing 11 hours of focus work today ;)",
+        "in_reply_to_user_id": "16347964",
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1812825194500591963"
+          }
+        ],
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 1,
+          "like_count": 0,
+          "quote_count": 0,
+          "bookmark_count": 0,
+          "impression_count": 227
+        },
+        "entities": {
+          "mentions": [
+            {
+              "start": 0,
+              "end": 4,
+              "username": "shl",
+              "id": "16347964"
+            },
+            {
+              "start": 5,
+              "end": 19,
+              "username": "sandislonjsak",
+              "id": "907690626271117312"
+            }
+          ]
+        },
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "conversation_id": "1812823286344020279",
+        "lang": "en",
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-07-15T19:41:39.000Z"
+        },
+        "edit_history_tweet_ids": [
+          "1812920478908227874"
+        ],
+        "author_id": "1205730701703819264",
+        "id": "1812920478908227874"
+      },
+      {
+        "created_at": "2024-07-10T12:03:21.000Z",
+        "text": "@jot Twitter :)",
+        "in_reply_to_user_id": "506",
+        "entities": {
+          "annotations": [
+            {
+              "start": 5,
+              "end": 11,
+              "probability": 0.9785,
+              "type": "Other",
+              "normalized_text": "Twitter"
+            }
+          ],
+          "mentions": [
+            {
+              "start": 0,
+              "end": 4,
+              "username": "jot",
+              "id": "506"
+            }
+          ]
+        },
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1810955768121659428"
+          }
+        ],
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 1,
+          "like_count": 2,
+          "quote_count": 0,
+          "bookmark_count": 0,
+          "impression_count": 99
+        },
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "conversation_id": "1810955768121659428",
+        "lang": "en",
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-07-10T13:03:21.000Z"
+        },
+        "edit_history_tweet_ids": [
+          "1811008303750606915"
+        ],
+        "author_id": "1205730701703819264",
+        "id": "1811008303750606915",
+        "context_annotations": [
+          {
+            "domain": {
+              "id": "47",
+              "name": "Brand",
+              "description": "Brands and Companies"
+            },
+            "entity": {
+              "id": "10045225402",
+              "name": "X"
+            }
+          }
+        ]
+      },
+      {
+        "created_at": "2024-07-09T17:45:35.000Z",
+        "text": "@fxn require_relative \"../config/environment\" also works",
+        "in_reply_to_user_id": "11253302",
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1810657601358590365"
+          }
+        ],
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 1,
+          "like_count": 2,
+          "quote_count": 0,
+          "bookmark_count": 0,
+          "impression_count": 136
+        },
+        "entities": {
+          "mentions": [
+            {
+              "start": 0,
+              "end": 4,
+              "username": "fxn",
+              "id": "11253302"
+            }
+          ]
+        },
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "conversation_id": "1810657601358590365",
+        "lang": "en",
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-07-09T18:45:35.000Z"
+        },
+        "edit_history_tweet_ids": [
+          "1810732042059177990"
+        ],
+        "author_id": "1205730701703819264",
+        "id": "1810732042059177990"
+      },
+      {
+        "created_at": "2024-07-09T17:32:16.000Z",
+        "text": "@jespr Congrats 🥂",
+        "in_reply_to_user_id": "649783",
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1810463870785593564"
+          }
+        ],
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 1,
+          "like_count": 1,
+          "quote_count": 0,
+          "bookmark_count": 0,
+          "impression_count": 16
+        },
+        "entities": {
+          "mentions": [
+            {
+              "start": 0,
+              "end": 6,
+              "username": "jespr",
+              "id": "649783"
+            }
+          ]
+        },
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "conversation_id": "1810463870785593564",
+        "lang": "en",
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-07-09T18:32:16.000Z"
+        },
+        "edit_history_tweet_ids": [
+          "1810728692336750937"
+        ],
+        "author_id": "1205730701703819264",
+        "id": "1810728692336750937"
+      },
+      {
+        "created_at": "2024-07-07T11:58:15.000Z",
+        "text": "@dorianmariecom Huh, what's the joke?",
+        "in_reply_to_user_id": "1205730701703819264",
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1809916641993539633"
+          }
+        ],
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 1,
+          "like_count": 1,
+          "quote_count": 0,
+          "bookmark_count": 0,
+          "impression_count": 146
+        },
+        "entities": {
+          "mentions": [
+            {
+              "start": 0,
+              "end": 15,
+              "username": "dorianmariecom",
+              "id": "1205730701703819264"
+            }
+          ]
+        },
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "conversation_id": "1809620656356520101",
+        "lang": "en",
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-07-07T12:58:15.000Z"
+        },
+        "edit_history_tweet_ids": [
+          "1809919857808249269"
+        ],
+        "author_id": "38452139",
+        "id": "1809919857808249269"
+      },
+      {
+        "created_at": "2024-07-07T11:45:28.000Z",
+        "text": "@kaspth @excid3 I thought it was a joke. I think it’s very confusing",
+        "in_reply_to_user_id": "38452139",
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1809620656356520101"
+          }
+        ],
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 1,
+          "like_count": 0,
+          "quote_count": 0,
+          "bookmark_count": 0,
+          "impression_count": 235
+        },
+        "entities": {
+          "mentions": [
+            {
+              "start": 0,
+              "end": 7,
+              "username": "kaspth",
+              "id": "38452139"
+            },
+            {
+              "start": 8,
+              "end": 15,
+              "username": "excid3",
+              "id": "14057736"
+            }
+          ]
+        },
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "conversation_id": "1809620656356520101",
+        "lang": "en",
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-07-07T12:45:28.000Z"
+        },
+        "edit_history_tweet_ids": [
+          "1809916641993539633"
+        ],
+        "author_id": "1205730701703819264",
+        "id": "1809916641993539633"
+      },
+      {
+        "created_at": "2024-07-02T12:21:33.000Z",
+        "text": "i had no idea raids were so expensive https://t.co/DZETgBULpN",
+        "attachments": {
+          "media_keys": [
+            "3_1808113717160062976"
+          ]
+        },
+        "entities": {
+          "urls": [
+            {
+              "start": 38,
+              "end": 61,
+              "url": "https://t.co/DZETgBULpN",
+              "expanded_url": "https://twitter.com/dorianmariecom/status/1808113783606272033/photo/1",
+              "display_url": "pic.twitter.com/DZETgBULpN",
+              "media_key": "3_1808113717160062976"
+            }
+          ]
+        },
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 1,
+          "like_count": 0,
+          "quote_count": 0,
+          "bookmark_count": 0,
+          "impression_count": 86
+        },
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "conversation_id": "1808113783606272033",
+        "lang": "en",
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": true,
+          "editable_until": "2024-07-02T13:21:33.000Z"
+        },
+        "edit_history_tweet_ids": [
+          "1808113783606272033"
+        ],
+        "author_id": "1205730701703819264",
+        "id": "1808113783606272033"
+      },
+      {
+        "created_at": "2024-06-26T06:25:00.000Z",
+        "text": "i guess a lot of people don't like this guy, makes sense https://t.co/iYe7m2Ztj6",
+        "attachments": {
+          "media_keys": [
+            "3_1805849602651783168"
+          ]
+        },
+        "entities": {
+          "urls": [
+            {
+              "start": 57,
+              "end": 80,
+              "url": "https://t.co/iYe7m2Ztj6",
+              "expanded_url": "https://twitter.com/dorianmariecom/status/1805849724911591447/photo/1",
+              "display_url": "pic.twitter.com/iYe7m2Ztj6",
+              "media_key": "3_1805849602651783168"
+            }
+          ]
+        },
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 2,
+          "like_count": 7,
+          "quote_count": 0,
+          "bookmark_count": 0,
+          "impression_count": 1511
+        },
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "conversation_id": "1805849724911591447",
+        "lang": "en",
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": true,
+          "editable_until": "2024-06-26T07:25:00.000Z"
+        },
+        "edit_history_tweet_ids": [
+          "1805849724911591447"
+        ],
+        "author_id": "1205730701703819264",
+        "id": "1805849724911591447"
+      },
+      {
+        "created_at": "2024-06-26T09:47:07.000Z",
+        "text": "@dorianmariecom @strzibnyj I wonder what he's like in person. \n\nIn a way, I admire his ability to generate discussion/arguments.",
+        "in_reply_to_user_id": "1205730701703819264",
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1805630651191677374"
+          }
+        ],
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 1,
+          "like_count": 1,
+          "quote_count": 0,
+          "bookmark_count": 0,
+          "impression_count": 146
+        },
+        "entities": {
+          "mentions": [
+            {
+              "start": 0,
+              "end": 15,
+              "username": "dorianmariecom",
+              "id": "1205730701703819264"
+            },
+            {
+              "start": 16,
+              "end": 26,
+              "username": "strzibnyj",
+              "id": "291660254"
+            }
+          ]
+        },
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "conversation_id": "1805501679548195192",
+        "lang": "en",
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-06-26T10:47:07.000Z"
+        },
+        "edit_history_tweet_ids": [
+          "1805900589378806032"
+        ],
+        "author_id": "1131873395988140032",
+        "id": "1805900589378806032"
+      },
+      {
+        "created_at": "2024-06-25T15:54:28.000Z",
+        "text": "@strzibnyj I blocked this guy and he still manages to end up on my feed :D",
+        "in_reply_to_user_id": "291660254",
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1805501679548195192"
+          }
+        ],
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 4,
+          "like_count": 159,
+          "quote_count": 0,
+          "bookmark_count": 1,
+          "impression_count": 6542
+        },
+        "entities": {
+          "mentions": [
+            {
+              "start": 0,
+              "end": 10,
+              "username": "strzibnyj",
+              "id": "291660254"
+            }
+          ]
+        },
+        "possibly_sensitive": false,
+        "reply_settings": "everyone",
+        "conversation_id": "1805501679548195192",
+        "lang": "en",
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-06-25T16:54:28.000Z"
+        },
+        "edit_history_tweet_ids": [
+          "1805630651191677374"
+        ],
+        "author_id": "1205730701703819264",
+        "id": "1805630651191677374"
       }
     ]
   },
   "meta": {
-    "next_token": "7140dibdnow9c7btw482mqa00l680cqpyymqy5nwc7ol2",
-    "result_count": 9,
-    "newest_id": "1771823472122954019",
-    "oldest_id": "1768740290045595946"
+    "result_count": 10,
+    "newest_id": "1812933395938484319",
+    "oldest_id": "1805900589378806032",
+    "next_token": "7140dibdnow9c7btw4azvi9yj9e12edyz9v6apcxu7ak2"
   }
 }

@@ -64,15 +64,10 @@ class Code
             http.request(request)
           end
         json = JSON.parse(response.body)
-
-        json["data"] = json["data"].map do |tweet|
-          tweet.tap do |tweet|
-            tweet["author"] = json
-              .dig("includes", "users")
-              .detect { |user| user["id"] == tweet["author_id"] }
-          end
+        original_json = json.dup
+        json["data"] = json["data"].map do |data|
+          data.merge("json" => original_json)
         end
-
         List.new(json["data"].map { |tweet| Post.new(tweet) })
       end
 
@@ -94,7 +89,9 @@ class Code
           end
         json = JSON.parse(response.body)
         original_json = json.dup
-        json["data"] = json["data"].map { |data| data.merge(json: original_json) }
+        json["data"] = json["data"].map do |data|
+          data.merge("json" => original_json)
+        end
         List.new(json["data"].map { |tweet| Post.new(tweet) })
       end
 

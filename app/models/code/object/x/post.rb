@@ -40,7 +40,11 @@ class Code
         end
 
         def code_author
-          User.new(raw.code_get(String.new(:author)))
+          User.new(
+            raw.as_json["json"]["includes"]["users"].detect do |user|
+              user["id"] == raw.as_json["author_id"]
+            end
+          )
         end
       end
     end

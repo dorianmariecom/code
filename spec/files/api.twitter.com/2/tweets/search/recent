@@ -1,159 +1,1745 @@
 {
   "data": [
     {
-      "created_at": "2024-04-07T18:21:58.000Z",
-      "author_id": "582608570",
-      "text": "RT @RubyCademy: What’s your go-to stack in 2024? #rubyonrails",
-      "id": "1777039126967075048",
+      "referenced_tweets": [
+        {
+          "type": "retweeted",
+          "id": "1813150472171073591"
+        }
+      ],
+      "id": "1813487188803248514",
+      "created_at": "2024-07-17T08:13:33.000Z",
+      "possibly_sensitive": false,
+      "text": "RT @darylginn: still think about this https://t.co/QdGryyiFlw",
+      "author_id": "1205730701703819264",
+      "reply_settings": "everyone",
+      "conversation_id": "1813487188803248514",
+      "entities": {
+        "urls": [
+          {
+            "start": 38,
+            "end": 61,
+            "url": "https://t.co/QdGryyiFlw",
+            "expanded_url": "https://twitter.com/darylginn/status/1813150472171073591/photo/1",
+            "display_url": "pic.twitter.com/QdGryyiFlw",
+            "media_key": "3_1813150442010079232"
+          }
+        ],
+        "mentions": [
+          {
+            "start": 3,
+            "end": 13,
+            "username": "darylginn",
+            "id": "348429830"
+          }
+        ]
+      },
+      "public_metrics": {
+        "retweet_count": 769,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 0
+      },
+      "lang": "en",
+      "attachments": {
+        "media_keys": [
+          "3_1813150442010079232"
+        ],
+        "media_source_tweet_id": [
+          "1813150472171073591"
+        ]
+      },
       "edit_history_tweet_ids": [
-        "1777039126967075048"
-      ]
+        "1813487188803248514"
+      ],
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-17T09:13:33.000Z"
+      }
     },
     {
-      "created_at": "2024-04-07T18:00:18.000Z",
-      "author_id": "1656150678375636998",
-      "text": "Thrilled to see that 'The Ruby on Rails Interview Bible' is a must-read in tech. Thank you for making it a success! #rubyonrails #ruby  @gumroad https://t.co/F5MgEAT10b",
-      "id": "1777033674900296095",
+      "referenced_tweets": [
+        {
+          "type": "retweeted",
+          "id": "1813438787407483364"
+        }
+      ],
+      "id": "1813484794942025948",
+      "created_at": "2024-07-17T08:04:02.000Z",
+      "possibly_sensitive": false,
+      "text": "RT @KristianKlok: @camerongarvie @levelsio I see a lot of hotels with dedicated staff networks. I guess they need good connectivity to work…",
+      "author_id": "1205730701703819264",
+      "reply_settings": "everyone",
+      "conversation_id": "1813484794942025948",
+      "public_metrics": {
+        "retweet_count": 3,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 0
+      },
+      "lang": "en",
       "edit_history_tweet_ids": [
-        "1777033674900296095"
-      ]
+        "1813484794942025948"
+      ],
+      "entities": {
+        "mentions": [
+          {
+            "start": 3,
+            "end": 16,
+            "username": "KristianKlok",
+            "id": "406158128"
+          },
+          {
+            "start": 18,
+            "end": 32,
+            "username": "camerongarvie",
+            "id": "133784639"
+          },
+          {
+            "start": 33,
+            "end": 42,
+            "username": "levelsio",
+            "id": "1577241403"
+          }
+        ]
+      },
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-17T09:04:02.000Z"
+      }
     },
     {
-      "created_at": "2024-04-07T18:00:12.000Z",
-      "author_id": "761664134224220160",
-      "text": "Notes on retrying all jobs with ActiveJob retry_on  (from 26/08/2021) #ruby #rubyonrails #programming #activejob https://t.co/qv7rbfU3wF",
-      "id": "1777033648367190076",
+      "id": "1813312099352818167",
+      "created_at": "2024-07-16T20:37:48.000Z",
+      "possibly_sensitive": false,
+      "text": "no idea why staging is deploying much faster than prod",
+      "author_id": "1205730701703819264",
+      "reply_settings": "everyone",
+      "conversation_id": "1813312099352818167",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 53
+      },
+      "lang": "en",
       "edit_history_tweet_ids": [
-        "1777033648367190076"
-      ]
+        "1813312099352818167"
+      ],
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": true,
+        "editable_until": "2024-07-16T21:37:48.000Z"
+      }
     },
     {
-      "created_at": "2024-04-07T17:18:18.000Z",
-      "author_id": "1261031541125328906",
-      "text": "RT @rails: This Week In Rails is out! Deferring jobs enqueueing to after the transaction commit, queries count in rendering logs and more h…",
-      "id": "1777023104184652008",
+      "id": "1813197747937268185",
+      "created_at": "2024-07-16T13:03:25.000Z",
+      "possibly_sensitive": false,
+      "in_reply_to_user_id": "291660254",
+      "text": "@strzibnyj hey, where is the best place to ask kamal related questions?\n\n(i read the book)\n\ne.g.\n\n- how to speed up my deployment process?\n- how to have concurrent deploys?\n- how to have zero-downtime deploys?\n- how to destroy and recreate only the database?\n- more?",
+      "author_id": "1205730701703819264",
+      "entities": {
+        "annotations": [
+          {
+            "start": 47,
+            "end": 51,
+            "probability": 0.4957,
+            "type": "Other",
+            "normalized_text": "kamal"
+          }
+        ],
+        "mentions": [
+          {
+            "start": 0,
+            "end": 10,
+            "username": "strzibnyj",
+            "id": "291660254"
+          }
+        ]
+      },
+      "reply_settings": "everyone",
+      "conversation_id": "1813197747937268185",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 59
+      },
+      "lang": "en",
       "edit_history_tweet_ids": [
-        "1777023104184652008"
-      ]
+        "1813197747937268185"
+      ],
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": true,
+        "editable_until": "2024-07-16T14:03:25.000Z"
+      }
     },
     {
-      "created_at": "2024-04-07T17:11:50.000Z",
-      "author_id": "1283764799483060231",
-      "text": "RT @RubyCademy: ✨ RAILS PRO TIPS ✨\n\nUse the rails routes -c PATTERN option to filter routes by a specific controller or namespace ✨💫\n\n#ruby…",
-      "id": "1777021478954750244",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1812933395938484319"
+        }
+      ],
+      "id": "1813167661129355331",
+      "created_at": "2024-07-16T11:03:52.000Z",
+      "possibly_sensitive": false,
+      "in_reply_to_user_id": "907690626271117312",
+      "text": "@sandislonjsak @shl 9.5 hours yesterday https://t.co/VJJDslAuo0",
+      "author_id": "1205730701703819264",
+      "reply_settings": "everyone",
+      "conversation_id": "1812823286344020279",
+      "entities": {
+        "urls": [
+          {
+            "start": 40,
+            "end": 63,
+            "url": "https://t.co/VJJDslAuo0",
+            "expanded_url": "https://twitter.com/dorianmariecom/status/1813167661129355331/photo/1",
+            "display_url": "pic.twitter.com/VJJDslAuo0",
+            "media_key": "3_1813167656494632960"
+          },
+          {
+            "start": 40,
+            "end": 63,
+            "url": "https://t.co/VJJDslAuo0",
+            "expanded_url": "https://twitter.com/dorianmariecom/status/1813167661129355331/photo/1",
+            "display_url": "pic.twitter.com/VJJDslAuo0",
+            "media_key": "3_1813167656498806784"
+          },
+          {
+            "start": 40,
+            "end": 63,
+            "url": "https://t.co/VJJDslAuo0",
+            "expanded_url": "https://twitter.com/dorianmariecom/status/1813167661129355331/photo/1",
+            "display_url": "pic.twitter.com/VJJDslAuo0",
+            "media_key": "3_1813167656503001088"
+          },
+          {
+            "start": 40,
+            "end": 63,
+            "url": "https://t.co/VJJDslAuo0",
+            "expanded_url": "https://twitter.com/dorianmariecom/status/1813167661129355331/photo/1",
+            "display_url": "pic.twitter.com/VJJDslAuo0",
+            "media_key": "3_1813167656486227968"
+          }
+        ],
+        "mentions": [
+          {
+            "start": 0,
+            "end": 14,
+            "username": "sandislonjsak",
+            "id": "907690626271117312"
+          },
+          {
+            "start": 15,
+            "end": 19,
+            "username": "shl",
+            "id": "16347964"
+          }
+        ]
+      },
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 27
+      },
+      "lang": "en",
+      "attachments": {
+        "media_keys": [
+          "3_1813167656494632960",
+          "3_1813167656498806784",
+          "3_1813167656503001088",
+          "3_1813167656486227968"
+        ]
+      },
       "edit_history_tweet_ids": [
-        "1777021478954750244"
-      ]
+        "1813167661129355331"
+      ],
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-16T12:03:52.000Z"
+      }
     },
     {
-      "created_at": "2024-04-07T16:44:08.000Z",
-      "author_id": "119852600",
-      "text": "RT @rails: This Week In Rails is out! Deferring jobs enqueueing to after the transaction commit, queries count in rendering logs and more h…",
-      "id": "1777014508482887717",
+      "referenced_tweets": [
+        {
+          "type": "retweeted",
+          "id": "1812520004950057225"
+        }
+      ],
+      "id": "1813166385725329714",
+      "created_at": "2024-07-16T10:58:48.000Z",
+      "possibly_sensitive": false,
+      "text": "RT @TonyTheLion2500: 💀 https://t.co/SRafilPvRy",
+      "author_id": "1205730701703819264",
+      "reply_settings": "everyone",
+      "conversation_id": "1813166385725329714",
+      "entities": {
+        "urls": [
+          {
+            "start": 23,
+            "end": 46,
+            "url": "https://t.co/SRafilPvRy",
+            "expanded_url": "https://twitter.com/TonyTheLion2500/status/1812520004950057225/photo/1",
+            "display_url": "pic.twitter.com/SRafilPvRy",
+            "media_key": "3_1812520002542579713"
+          }
+        ],
+        "mentions": [
+          {
+            "start": 3,
+            "end": 19,
+            "username": "TonyTheLion2500",
+            "id": "802543466207203328"
+          }
+        ]
+      },
+      "public_metrics": {
+        "retweet_count": 1837,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 0
+      },
+      "lang": "qme",
+      "attachments": {
+        "media_keys": [
+          "3_1812520002542579713"
+        ],
+        "media_source_tweet_id": [
+          "1812520004950057225"
+        ]
+      },
       "edit_history_tweet_ids": [
-        "1777014508482887717"
-      ]
+        "1813166385725329714"
+      ],
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-16T11:58:48.000Z"
+      }
     },
     {
-      "created_at": "2024-04-07T16:40:04.000Z",
-      "author_id": "1776335020690407426",
-      "text": "I am back writing in my blog. Starting with a new Ruby on Rails tutorial https://t.co/V8O0Y3XLAM\n#rubyonrails #blog #developers",
-      "id": "1777013483847962887",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1812883932490211359"
+        }
+      ],
+      "id": "1813165907981558244",
+      "created_at": "2024-07-16T10:56:54.000Z",
+      "possibly_sensitive": false,
+      "in_reply_to_user_id": "1697573185787510784",
+      "text": "@OngDevLab French :)",
+      "author_id": "1205730701703819264",
+      "reply_settings": "everyone",
+      "conversation_id": "1812883932490211359",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 26
+      },
+      "lang": "en",
       "edit_history_tweet_ids": [
-        "1777013483847962887"
-      ]
+        "1813165907981558244"
+      ],
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 10,
+            "username": "OngDevLab",
+            "id": "1697573185787510784"
+          }
+        ]
+      },
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-16T11:56:54.000Z"
+      }
     },
     {
-      "created_at": "2024-04-07T16:36:07.000Z",
-      "author_id": "94732508",
-      "text": "RT @RubyCademy: ✨ RAILS TIPS ✨\n\nMake sure to remove trailing whitespaces before calling the pluralize method 😬\n\n#rails7 #rubyonrails https:…",
-      "id": "1777012489294930058",
+      "referenced_tweets": [
+        {
+          "type": "retweeted",
+          "id": "1812925660857266202"
+        }
+      ],
+      "id": "1813165424864866542",
+      "created_at": "2024-07-16T10:54:58.000Z",
+      "possibly_sensitive": false,
+      "text": "RT @pgessays: \"Defaults are enormously powerful, precisely because they operate without any conscious choice.\" — @paulg",
+      "author_id": "1205730701703819264",
+      "reply_settings": "everyone",
+      "conversation_id": "1813165424864866542",
+      "public_metrics": {
+        "retweet_count": 3,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 0
+      },
+      "lang": "en",
       "edit_history_tweet_ids": [
-        "1777012489294930058"
-      ]
+        "1813165424864866542"
+      ],
+      "entities": {
+        "mentions": [
+          {
+            "start": 3,
+            "end": 12,
+            "username": "pgessays",
+            "id": "1766643751819395072"
+          },
+          {
+            "start": 113,
+            "end": 119,
+            "username": "paulg",
+            "id": "183749519"
+          }
+        ]
+      },
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-16T11:54:58.000Z"
+      }
     },
     {
-      "created_at": "2024-04-07T16:00:36.000Z",
-      "author_id": "761664134224220160",
-      "text": "How Ruby String Encoding Benefits Developers (from 16/08/2018) #ruby #rubyonrails #programming #developers https://t.co/bFoLb5DICa",
-      "id": "1777003551673225380",
+      "referenced_tweets": [
+        {
+          "type": "retweeted",
+          "id": "1812743643972894961"
+        }
+      ],
+      "id": "1813164972626567192",
+      "created_at": "2024-07-16T10:53:11.000Z",
+      "possibly_sensitive": false,
+      "text": "RT @teslaownersSV: Would you vote for Elon Musk to be president of the USA? https://t.co/qRzyI5NMPs",
+      "author_id": "1205730701703819264",
+      "entities": {
+        "annotations": [
+          {
+            "start": 38,
+            "end": 46,
+            "probability": 0.9796,
+            "type": "Person",
+            "normalized_text": "Elon Musk"
+          },
+          {
+            "start": 71,
+            "end": 73,
+            "probability": 0.9728,
+            "type": "Place",
+            "normalized_text": "USA"
+          }
+        ],
+        "urls": [
+          {
+            "start": 76,
+            "end": 99,
+            "url": "https://t.co/qRzyI5NMPs",
+            "expanded_url": "https://twitter.com/teslaownersSV/status/1812743643972894961/photo/1",
+            "display_url": "pic.twitter.com/qRzyI5NMPs",
+            "media_key": "3_1812743638234931200"
+          }
+        ],
+        "mentions": [
+          {
+            "start": 3,
+            "end": 17,
+            "username": "teslaownersSV",
+            "id": "1016059981907386368"
+          }
+        ]
+      },
+      "reply_settings": "everyone",
+      "conversation_id": "1813164972626567192",
+      "context_annotations": [
+        {
+          "domain": {
+            "id": "46",
+            "name": "Business Taxonomy",
+            "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+          },
+          "entity": {
+            "id": "1557696848252391426",
+            "name": "Financial Services Business",
+            "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks "
+          }
+        },
+        {
+          "domain": {
+            "id": "46",
+            "name": "Business Taxonomy",
+            "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+          },
+          "entity": {
+            "id": "1557697333571112960",
+            "name": "Technology Business",
+            "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares"
+          }
+        },
+        {
+          "domain": {
+            "id": "10",
+            "name": "Person",
+            "description": "Named people in the world like Nelson Mandela"
+          },
+          "entity": {
+            "id": "808713037230157824",
+            "name": "Elon Musk",
+            "description": "Elon Musk"
+          }
+        },
+        {
+          "domain": {
+            "id": "65",
+            "name": "Interests and Hobbies Vertical",
+            "description": "Top level interests and hobbies groupings, like Food or Travel"
+          },
+          "entity": {
+            "id": "781974596148793345",
+            "name": "Business & finance"
+          }
+        },
+        {
+          "domain": {
+            "id": "66",
+            "name": "Interests and Hobbies Category",
+            "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+          },
+          "entity": {
+            "id": "857878777191211008",
+            "name": "Leadership",
+            "description": "Leadership"
+          }
+        },
+        {
+          "domain": {
+            "id": "131",
+            "name": "Unified Twitter Taxonomy",
+            "description": "A taxonomy of user interests. "
+          },
+          "entity": {
+            "id": "808713037230157824",
+            "name": "Elon Musk",
+            "description": "Elon Musk"
+          }
+        },
+        {
+          "domain": {
+            "id": "131",
+            "name": "Unified Twitter Taxonomy",
+            "description": "A taxonomy of user interests. "
+          },
+          "entity": {
+            "id": "1091420346660470784",
+            "name": "Tech personalities",
+            "description": "Tech Professionals"
+          }
+        },
+        {
+          "domain": {
+            "id": "131",
+            "name": "Unified Twitter Taxonomy",
+            "description": "A taxonomy of user interests. "
+          },
+          "entity": {
+            "id": "1166406108623163392",
+            "name": "Business personalities"
+          }
+        }
+      ],
+      "public_metrics": {
+        "retweet_count": 3357,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 0
+      },
+      "lang": "en",
+      "attachments": {
+        "media_keys": [
+          "3_1812743638234931200"
+        ],
+        "media_source_tweet_id": [
+          "1812743643972894961"
+        ]
+      },
       "edit_history_tweet_ids": [
-        "1777003551673225380"
-      ]
+        "1813164972626567192"
+      ],
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-16T11:53:11.000Z"
+      }
     },
     {
-      "created_at": "2024-04-07T16:00:36.000Z",
-      "author_id": "761664134224220160",
-      "text": "VSCode   WSL makes Windows awesome for web development (from 08/03/2024) #ruby #rubyonrails #programming #development #web https://t.co/MWP0PoUADA",
-      "id": "1777003551006298553",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1812825194500591963"
+        }
+      ],
+      "id": "1812920478908227874",
+      "created_at": "2024-07-15T18:41:39.000Z",
+      "possibly_sensitive": false,
+      "in_reply_to_user_id": "16347964",
+      "text": "@shl @sandislonjsak on road to doing 11 hours of focus work today ;)",
+      "author_id": "1205730701703819264",
+      "reply_settings": "everyone",
+      "conversation_id": "1812823286344020279",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 227
+      },
+      "lang": "en",
       "edit_history_tweet_ids": [
-        "1777003551006298553"
-      ]
+        "1812920478908227874"
+      ],
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 4,
+            "username": "shl",
+            "id": "16347964"
+          },
+          {
+            "start": 5,
+            "end": 19,
+            "username": "sandislonjsak",
+            "id": "907690626271117312"
+          }
+        ]
+      },
+      "edit_controls": {
+        "edits_remaining": 5,
+        "is_edit_eligible": false,
+        "editable_until": "2024-07-15T19:41:39.000Z"
+      }
     }
   ],
   "includes": {
+    "media": [
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/GSmauHRacAArnVV.png",
+        "height": 637,
+        "width": 509,
+        "media_key": "3_1813150442010079232"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/GSmqYIOXEAAYI4k.jpg",
+        "height": 2048,
+        "width": 945,
+        "media_key": "3_1813167656494632960"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/GSmqYIPWwAAGDLs.jpg",
+        "height": 2048,
+        "width": 945,
+        "media_key": "3_1813167656498806784"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/GSmqYIQWwAAg3TD.jpg",
+        "height": 2048,
+        "width": 945,
+        "media_key": "3_1813167656503001088"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/GSmqYIMW0AAwyzT.jpg",
+        "height": 2048,
+        "width": 945,
+        "media_key": "3_1813167656486227968"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/GSddVtPXMAEQjoC.jpg",
+        "height": 657,
+        "width": 777,
+        "media_key": "3_1812520002542579713"
+      },
+      {
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/GSgovBHXoAAlbFj.jpg",
+        "height": 1401,
+        "width": 1070,
+        "media_key": "3_1812743638234931200"
+      }
+    ],
     "users": [
       {
-        "name": "David Teren",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1713263833907650560/gItYsk4r_normal.jpg",
-        "username": "davidteren",
-        "id": "582608570",
-        "location": "Cape Town"
+        "verified": false,
+        "url": "https://t.co/TdIMjZ6qep",
+        "name": "Dorian Marié",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/TdIMjZ6qep",
+                "expanded_url": "https://dorianmarie.fr",
+                "display_url": "dorianmarie.fr"
+              }
+            ]
+          }
+        },
+        "id": "1205730701703819264",
+        "location": "Paris",
+        "public_metrics": {
+          "followers_count": 784,
+          "following_count": 734,
+          "tweet_count": 4594,
+          "listed_count": 24,
+          "like_count": 5654
+        },
+        "description": "Programmer. Previously thoughtbot, Doctolib, Trusted, Bespoke Post",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1591116978101551104/5u9Y_gqS_normal.jpg",
+        "created_at": "2019-12-14T06:06:24.000Z",
+        "username": "dorianmariecom"
       },
       {
-        "name": "Interview Bible",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1656151046732001283/YI0GCp1s_normal.jpg",
-        "username": "interviewbible",
-        "id": "1656150678375636998",
-        "location": "London"
+        "verified": false,
+        "pinned_tweet_id": "1729106166272405516",
+        "url": "https://t.co/wXucjYCuGs",
+        "name": "daryl ginn",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/wXucjYCuGs",
+                "expanded_url": "https://endless.design",
+                "display_url": "endless.design"
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "start": 8,
+                "end": 31,
+                "url": "https://t.co/pOUzW1gQyj",
+                "expanded_url": "http://endless.design",
+                "display_url": "endless.design"
+              },
+              {
+                "start": 37,
+                "end": 60,
+                "url": "https://t.co/pOUzW1gQyj",
+                "expanded_url": "http://endless.design",
+                "display_url": "endless.design"
+              },
+              {
+                "start": 63,
+                "end": 86,
+                "url": "https://t.co/1U70ksrtj8",
+                "expanded_url": "http://recent.design",
+                "display_url": "recent.design"
+              },
+              {
+                "start": 89,
+                "end": 112,
+                "url": "https://t.co/gd3ma4Z0iO",
+                "expanded_url": "http://godly.website",
+                "display_url": "godly.website"
+              }
+            ]
+          }
+        },
+        "id": "348429830",
+        "location": "Western Australia",
+        "public_metrics": {
+          "followers_count": 92677,
+          "following_count": 304,
+          "tweet_count": 5816,
+          "listed_count": 1029,
+          "like_count": 33161
+        },
+        "description": "scaling https://t.co/pOUzW1gQyj ✨\n\n◆ https://t.co/pOUzW1gQyj\n◆ https://t.co/1U70ksrtj8\n◆ https://t.co/gd3ma4Z0iO",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1803454428663676928/484Wj0yg_normal.jpg",
+        "created_at": "2011-08-04T12:23:43.000Z",
+        "username": "darylginn"
       },
       {
-        "name": "RubyOnRails.BA",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1712117765417713664/-LhFVVV0_normal.jpg",
-        "username": "RubyOnRailsBa",
-        "id": "761664134224220160"
+        "verified": false,
+        "name": "Kristian Klok",
+        "id": "406158128",
+        "location": "Copenhagen",
+        "public_metrics": {
+          "followers_count": 73,
+          "following_count": 390,
+          "tweet_count": 88,
+          "listed_count": 2,
+          "like_count": 237
+        },
+        "description": "CEO at Zeta Diagnostics. Product and engineering leader, glider pilot and generally interested in anything that makes sense. Views my own.",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/527905635891806208/t8-AFFn2_normal.jpeg",
+        "created_at": "2011-11-06T10:00:00.000Z",
+        "username": "KristianKlok"
       },
       {
-        "name": "Andrew Hodson",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1534211226313576449/wO8haPJU_normal.jpg",
-        "username": "MyBuddyAndrew",
-        "id": "1261031541125328906",
-        "location": "USA"
+        "verified": false,
+        "name": "Cam",
+        "entities": {
+          "description": {
+            "urls": [
+              {
+                "start": 41,
+                "end": 64,
+                "url": "https://t.co/1jfHvS9AIV",
+                "expanded_url": "http://seedisclaimer.com",
+                "display_url": "seedisclaimer.com"
+              }
+            ]
+          }
+        },
+        "id": "133784639",
+        "location": "Singapore",
+        "public_metrics": {
+          "followers_count": 188,
+          "following_count": 422,
+          "tweet_count": 2417,
+          "listed_count": 2,
+          "like_count": 18005
+        },
+        "description": "Entrepreneur, LK-99 truther. Please read https://t.co/1jfHvS9AIV",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1755995317655552000/wGZxMZr6_normal.jpg",
+        "created_at": "2010-04-16T16:29:09.000Z",
+        "username": "camerongarvie"
       },
       {
-        "name": "Ian Codes 🧑‍💻",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1676710779104493572/JGmvtc3E_normal.jpg",
-        "username": "Ian_KamauKE",
-        "id": "1283764799483060231",
-        "location": "Nairobi, Kenya"
+        "verified": false,
+        "pinned_tweet_id": "1457315274466594817",
+        "url": "https://t.co/IFRqZDK2Lw",
+        "name": "@levelsio",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/IFRqZDK2Lw",
+                "expanded_url": "http://readMAKE.com",
+                "display_url": "readMAKE.com"
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "start": 1,
+                "end": 24,
+                "url": "https://t.co/RyXpqGuFM3",
+                "expanded_url": "http://levelsio.com",
+                "display_url": "levelsio.com"
+              },
+              {
+                "start": 32,
+                "end": 55,
+                "url": "https://t.co/lAyoqmSBRX",
+                "expanded_url": "http://PhotoAI.com",
+                "display_url": "PhotoAI.com"
+              },
+              {
+                "start": 64,
+                "end": 87,
+                "url": "https://t.co/ZHSvI2wjyW",
+                "expanded_url": "http://RemoteOK.com",
+                "display_url": "RemoteOK.com"
+              },
+              {
+                "start": 96,
+                "end": 119,
+                "url": "https://t.co/1oqUgfD6CZ",
+                "expanded_url": "http://InteriorAI.com",
+                "display_url": "InteriorAI.com"
+              },
+              {
+                "start": 128,
+                "end": 151,
+                "url": "https://t.co/BjTozWAXwG",
+                "expanded_url": "http://NomadList.com",
+                "display_url": "NomadList.com"
+              },
+              {
+                "start": 160,
+                "end": 183,
+                "url": "https://t.co/AoNP9BW2Dp",
+                "expanded_url": "http://TherapistAI.com",
+                "display_url": "TherapistAI.com"
+              },
+              {
+                "start": 191,
+                "end": 214,
+                "url": "https://t.co/BmbkrX4Zyf",
+                "expanded_url": "http://ApplicantAI.com",
+                "display_url": "ApplicantAI.com"
+              }
+            ]
+          }
+        },
+        "id": "1577241403",
+        "location": "📕 My book $12K/mo 👉",
+        "public_metrics": {
+          "followers_count": 448642,
+          "following_count": 1239,
+          "tweet_count": 132420,
+          "listed_count": 5493,
+          "like_count": 105591
+        },
+        "description": "🎁https://t.co/RyXpqGuFM3 $4K/m\n📸https://t.co/lAyoqmSBRX $55K/m\n🛰https://t.co/ZHSvI2wjyW $45K/m\n🏡https://t.co/1oqUgfD6CZ $42K/m\n🌍https://t.co/BjTozWAXwG $35K/m\n💆https://t.co/AoNP9BW2Dp $2K/m\n📥https://t.co/BmbkrX4Zyf $1K/m",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1589756412078555136/YlXMBzhp_normal.jpg",
+        "created_at": "2013-07-08T09:31:59.000Z",
+        "username": "levelsio"
       },
       {
-        "name": "Julien ANNE",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1262337396340899841/sRfcLwcX_normal.jpg",
-        "username": "Julien_ANNE",
-        "id": "119852600",
-        "location": "Caen, Basse-Normandie"
+        "verified": false,
+        "pinned_tweet_id": "1772969080854925527",
+        "url": "https://t.co/WchoqllB89",
+        "name": "Josef Strzibny",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/WchoqllB89",
+                "expanded_url": "https://businessclasskit.com",
+                "display_url": "businessclasskit.com"
+              }
+            ]
+          },
+          "description": {
+            "mentions": [
+              {
+                "start": 9,
+                "end": 22,
+                "username": "tubeandchill"
+              }
+            ]
+          }
+        },
+        "id": "291660254",
+        "location": "My Rails template →",
+        "public_metrics": {
+          "followers_count": 3367,
+          "following_count": 396,
+          "tweet_count": 13316,
+          "listed_count": 102,
+          "like_count": 16447
+        },
+        "description": "Building @tubeandchill over summer. Author of Deployment from Scratch, Kamal Handbook, and Business Class starter kit.",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1601678139935145984/5PT4qdR6_normal.jpg",
+        "created_at": "2011-05-02T12:10:36.000Z",
+        "username": "strzibnyj"
       },
       {
-        "name": "Gerardo Miranda",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1776335818614816768/t9i_Nqfl_normal.jpg",
-        "username": "Ger4rdoDev",
-        "id": "1776335020690407426",
-        "location": "The internet"
+        "verified": false,
+        "url": "https://t.co/wpsJVYjDTt",
+        "name": "Sandi Slonjšak",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/wpsJVYjDTt",
+                "expanded_url": "https://www.codeofus.com",
+                "display_url": "codeofus.com"
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "start": 49,
+                "end": 72,
+                "url": "https://t.co/wpsJVYjDTt",
+                "expanded_url": "https://www.codeofus.com",
+                "display_url": "codeofus.com"
+              }
+            ]
+          }
+        },
+        "id": "907690626271117312",
+        "location": "Zagreb, Croatia",
+        "public_metrics": {
+          "followers_count": 381,
+          "following_count": 147,
+          "tweet_count": 2070,
+          "listed_count": 5,
+          "like_count": 127
+        },
+        "description": "Building software that optimizes your business 👉 https://t.co/wpsJVYjDTt",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1759594100716716032/RZ0jCiKv_normal.jpg",
+        "created_at": "2017-09-12T19:41:24.000Z",
+        "username": "sandislonjsak"
       },
       {
-        "name": "Khairi Adnan",
-        "profile_image_url": "https://pbs.twimg.com/profile_images/1727478758368755712/ffIKgf0t_normal.jpg",
-        "username": "kheri_ad6",
-        "id": "94732508",
-        "location": "Shah Alam"
+        "verified": false,
+        "pinned_tweet_id": "1792564640926310843",
+        "url": "https://t.co/2wl7l6kPvl",
+        "name": "Sahil Lavingia",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/2wl7l6kPvl",
+                "expanded_url": "http://sahillavingia.com",
+                "display_url": "sahillavingia.com"
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "start": 21,
+                "end": 44,
+                "url": "https://t.co/BF1qAId3AO",
+                "expanded_url": "http://antiwork.com",
+                "display_url": "antiwork.com"
+              }
+            ]
+          }
+        },
+        "id": "16347964",
+        "location": "DUMBO, NYC, USA",
+        "public_metrics": {
+          "followers_count": 337160,
+          "following_count": 603,
+          "tweet_count": 35078,
+          "listed_count": 4841,
+          "like_count": 47799
+        },
+        "description": "Builder of products: https://t.co/BF1qAId3AO",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1764285408135753728/pYT7qoCb_normal.jpg",
+        "created_at": "2008-09-18T15:23:00.000Z",
+        "username": "shl"
+      },
+      {
+        "verified": false,
+        "name": "Absolutely Chaotic Math Lion Arc 🤯😱👀",
+        "id": "802543466207203328",
+        "location": "Planet Earth",
+        "public_metrics": {
+          "followers_count": 4264,
+          "following_count": 587,
+          "tweet_count": 6105,
+          "listed_count": 17,
+          "like_count": 23064
+        },
+        "description": "I like math, physics, and programming. Mostly confused about math.",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1437759224294125569/o7nV9T7r_normal.jpg",
+        "created_at": "2016-11-26T16:04:07.000Z",
+        "username": "TonyTheLion2500"
+      },
+      {
+        "verified": false,
+        "pinned_tweet_id": "1811895407875666189",
+        "url": "https://t.co/FSpTTjm0nL",
+        "name": "Ong",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/FSpTTjm0nL",
+                "expanded_url": "https://linktr.ee/ongdevlab",
+                "display_url": "linktr.ee/ongdevlab"
+              }
+            ]
+          }
+        },
+        "id": "1697573185787510784",
+        "location": "The Proof ===",
+        "public_metrics": {
+          "followers_count": 13803,
+          "following_count": 12740,
+          "tweet_count": 39096,
+          "listed_count": 22,
+          "like_count": 40835
+        },
+        "description": "Developer, Data Scientist, TikToker with 2,000,000+ followers and now having fun with Twitter (10k) and YouTube (81) and Six Pack Status: Currently in Stealth",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1718103428382040064/rSUolhxG_normal.jpg",
+        "created_at": "2023-09-01T11:32:50.000Z",
+        "username": "OngDevLab"
+      },
+      {
+        "verified": false,
+        "pinned_tweet_id": "1783843198063784075",
+        "url": "https://t.co/woOYEw9cxn",
+        "name": "Paul Graham Essays 📝",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/woOYEw9cxn",
+                "expanded_url": "https://paulgrahamessays.substack.com",
+                "display_url": "paulgrahamessays.substack.com"
+              }
+            ]
+          },
+          "description": {
+            "mentions": [
+              {
+                "start": 18,
+                "end": 24,
+                "username": "paulg"
+              }
+            ]
+          }
+        },
+        "id": "1766643751819395072",
+        "location": "never miss an essay 📩👇 ",
+        "public_metrics": {
+          "followers_count": 1098,
+          "following_count": 1,
+          "tweet_count": 453,
+          "listed_count": 4,
+          "like_count": 4179
+        },
+        "description": "Daily wisdom from @paulg’s essays, interviews and lectures to help you think clearer, build better and make smarter decisions.",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1780762955346583552/tH2mkJgu_normal.jpg",
+        "created_at": "2024-03-10T01:54:56.000Z",
+        "username": "pgessays"
+      },
+      {
+        "verified": false,
+        "url": "https://t.co/99lamCujcc",
+        "name": "Paul Graham",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/99lamCujcc",
+                "expanded_url": "http://paulgraham.com",
+                "display_url": "paulgraham.com"
+              }
+            ]
+          }
+        },
+        "id": "183749519",
+        "public_metrics": {
+          "followers_count": 1884861,
+          "following_count": 766,
+          "tweet_count": 43033,
+          "listed_count": 17940,
+          "like_count": 103868
+        },
+        "description": "",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1824002576/pg-railsconf_normal.jpg",
+        "created_at": "2010-08-27T20:13:59.000Z",
+        "username": "paulg"
+      },
+      {
+        "verified": true,
+        "pinned_tweet_id": "1813076715469738256",
+        "url": "https://t.co/jL2WrOcJqz",
+        "name": "Tesla Owners Silicon Valley",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "start": 0,
+                "end": 23,
+                "url": "https://t.co/jL2WrOcJqz",
+                "expanded_url": "https://linktr.ee/Teslaownerssv",
+                "display_url": "linktr.ee/Teslaownerssv"
+              }
+            ]
+          },
+          "description": {
+            "hashtags": [
+              {
+                "start": 102,
+                "end": 116,
+                "tag": "teslatakeover"
+              }
+            ],
+            "mentions": [
+              {
+                "start": 55,
+                "end": 68,
+                "username": "thextakeover"
+              },
+              {
+                "start": 77,
+                "end": 93,
+                "username": "tslabeatpodcast"
+              }
+            ]
+          }
+        },
+        "id": "1016059981907386368",
+        "location": "Silicon Valley",
+        "public_metrics": {
+          "followers_count": 945015,
+          "following_count": 697,
+          "tweet_count": 147095,
+          "listed_count": 2746,
+          "like_count": 138823
+        },
+        "description": "The most notorious Tesla club in the world. Creator of @thextakeover and run @tslabeatpodcast. Taking #teslatakeover global. Reposts aren’t endorsements.",
+        "protected": false,
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1813087894204260353/cOEDYRn-_normal.jpg",
+        "created_at": "2018-07-08T20:42:31.000Z",
+        "username": "teslaownersSV"
+      }
+    ],
+    "tweets": [
+      {
+        "id": "1813150472171073591",
+        "created_at": "2024-07-16T09:55:33.000Z",
+        "possibly_sensitive": false,
+        "text": "still think about this https://t.co/QdGryyiFlw",
+        "author_id": "348429830",
+        "reply_settings": "everyone",
+        "conversation_id": "1813150472171073591",
+        "entities": {
+          "urls": [
+            {
+              "start": 23,
+              "end": 46,
+              "url": "https://t.co/QdGryyiFlw",
+              "expanded_url": "https://twitter.com/darylginn/status/1813150472171073591/photo/1",
+              "display_url": "pic.twitter.com/QdGryyiFlw",
+              "media_key": "3_1813150442010079232"
+            }
+          ]
+        },
+        "public_metrics": {
+          "retweet_count": 769,
+          "reply_count": 98,
+          "like_count": 7288,
+          "quote_count": 77,
+          "bookmark_count": 802,
+          "impression_count": 439797
+        },
+        "lang": "en",
+        "attachments": {
+          "media_keys": [
+            "3_1813150442010079232"
+          ]
+        },
+        "edit_history_tweet_ids": [
+          "1813150472171073591"
+        ],
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-07-16T10:55:33.000Z"
+        }
+      },
+      {
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1813435068079288770"
+          }
+        ],
+        "id": "1813438787407483364",
+        "created_at": "2024-07-17T05:01:13.000Z",
+        "possibly_sensitive": false,
+        "in_reply_to_user_id": "133784639",
+        "text": "@camerongarvie @levelsio I see a lot of hotels with dedicated staff networks. I guess they need good connectivity to work - unlike their guests 🤷",
+        "author_id": "406158128",
+        "reply_settings": "everyone",
+        "conversation_id": "1813431203393130788",
+        "public_metrics": {
+          "retweet_count": 3,
+          "reply_count": 1,
+          "like_count": 21,
+          "quote_count": 0,
+          "bookmark_count": 1,
+          "impression_count": 10664
+        },
+        "lang": "en",
+        "edit_history_tweet_ids": [
+          "1813438787407483364"
+        ],
+        "entities": {
+          "mentions": [
+            {
+              "start": 0,
+              "end": 14,
+              "username": "camerongarvie",
+              "id": "133784639"
+            },
+            {
+              "start": 15,
+              "end": 24,
+              "username": "levelsio",
+              "id": "1577241403"
+            }
+          ]
+        },
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-07-17T06:01:13.000Z"
+        }
+      },
+      {
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1812920478908227874"
+          }
+        ],
+        "id": "1812933395938484319",
+        "created_at": "2024-07-15T19:32:58.000Z",
+        "possibly_sensitive": false,
+        "in_reply_to_user_id": "1205730701703819264",
+        "text": "@dorianmariecom @shl I doubt that you can hold focus for so long.",
+        "author_id": "907690626271117312",
+        "reply_settings": "everyone",
+        "conversation_id": "1812823286344020279",
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 1,
+          "like_count": 0,
+          "quote_count": 0,
+          "bookmark_count": 0,
+          "impression_count": 159
+        },
+        "lang": "en",
+        "edit_history_tweet_ids": [
+          "1812933395938484319"
+        ],
+        "entities": {
+          "mentions": [
+            {
+              "start": 0,
+              "end": 15,
+              "username": "dorianmariecom",
+              "id": "1205730701703819264"
+            },
+            {
+              "start": 16,
+              "end": 20,
+              "username": "shl",
+              "id": "16347964"
+            }
+          ]
+        },
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-07-15T20:32:58.000Z"
+        }
+      },
+      {
+        "id": "1812520004950057225",
+        "created_at": "2024-07-14T16:10:18.000Z",
+        "possibly_sensitive": false,
+        "text": "💀 https://t.co/SRafilPvRy",
+        "author_id": "802543466207203328",
+        "reply_settings": "everyone",
+        "conversation_id": "1812520004950057225",
+        "entities": {
+          "urls": [
+            {
+              "start": 2,
+              "end": 25,
+              "url": "https://t.co/SRafilPvRy",
+              "expanded_url": "https://twitter.com/TonyTheLion2500/status/1812520004950057225/photo/1",
+              "display_url": "pic.twitter.com/SRafilPvRy",
+              "media_key": "3_1812520002542579713"
+            }
+          ]
+        },
+        "public_metrics": {
+          "retweet_count": 1837,
+          "reply_count": 191,
+          "like_count": 26407,
+          "quote_count": 235,
+          "bookmark_count": 3017,
+          "impression_count": 1421706
+        },
+        "lang": "qme",
+        "attachments": {
+          "media_keys": [
+            "3_1812520002542579713"
+          ]
+        },
+        "edit_history_tweet_ids": [
+          "1812520004950057225"
+        ],
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": true,
+          "editable_until": "2024-07-14T17:10:18.000Z"
+        }
+      },
+      {
+        "id": "1812883932490211359",
+        "created_at": "2024-07-15T16:16:25.000Z",
+        "possibly_sensitive": false,
+        "text": "what language are you the most proficient in?",
+        "author_id": "1697573185787510784",
+        "reply_settings": "everyone",
+        "conversation_id": "1812883932490211359",
+        "public_metrics": {
+          "retweet_count": 7,
+          "reply_count": 193,
+          "like_count": 125,
+          "quote_count": 6,
+          "bookmark_count": 4,
+          "impression_count": 22688
+        },
+        "lang": "en",
+        "edit_history_tweet_ids": [
+          "1812883932490211359"
+        ],
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": true,
+          "editable_until": "2024-07-15T17:16:25.000Z"
+        }
+      },
+      {
+        "id": "1812925660857266202",
+        "created_at": "2024-07-15T19:02:14.000Z",
+        "possibly_sensitive": false,
+        "text": "\"Defaults are enormously powerful, precisely because they operate without any conscious choice.\" — @paulg",
+        "author_id": "1766643751819395072",
+        "reply_settings": "everyone",
+        "conversation_id": "1812925660857266202",
+        "public_metrics": {
+          "retweet_count": 3,
+          "reply_count": 0,
+          "like_count": 11,
+          "quote_count": 0,
+          "bookmark_count": 1,
+          "impression_count": 322
+        },
+        "lang": "en",
+        "edit_history_tweet_ids": [
+          "1812925660857266202"
+        ],
+        "entities": {
+          "mentions": [
+            {
+              "start": 99,
+              "end": 105,
+              "username": "paulg",
+              "id": "183749519"
+            }
+          ]
+        },
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": true,
+          "editable_until": "2024-07-15T20:02:14.000Z"
+        }
+      },
+      {
+        "id": "1812743643972894961",
+        "created_at": "2024-07-15T06:58:58.000Z",
+        "possibly_sensitive": false,
+        "text": "Would you vote for Elon Musk to be president of the USA? https://t.co/qRzyI5NMPs",
+        "author_id": "1016059981907386368",
+        "entities": {
+          "annotations": [
+            {
+              "start": 19,
+              "end": 27,
+              "probability": 0.9804,
+              "type": "Person",
+              "normalized_text": "Elon Musk"
+            },
+            {
+              "start": 52,
+              "end": 54,
+              "probability": 0.9733,
+              "type": "Place",
+              "normalized_text": "USA"
+            }
+          ],
+          "urls": [
+            {
+              "start": 57,
+              "end": 80,
+              "url": "https://t.co/qRzyI5NMPs",
+              "expanded_url": "https://twitter.com/teslaownersSV/status/1812743643972894961/photo/1",
+              "display_url": "pic.twitter.com/qRzyI5NMPs",
+              "media_key": "3_1812743638234931200"
+            }
+          ]
+        },
+        "reply_settings": "everyone",
+        "conversation_id": "1812743643972894961",
+        "context_annotations": [
+          {
+            "domain": {
+              "id": "45",
+              "name": "Brand Vertical",
+              "description": "Top level entities that describe a Brands industry"
+            },
+            "entity": {
+              "id": "781974597302226944",
+              "name": "Transportation"
+            }
+          },
+          {
+            "domain": {
+              "id": "46",
+              "name": "Business Taxonomy",
+              "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+            },
+            "entity": {
+              "id": "1557696848252391426",
+              "name": "Financial Services Business",
+              "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to Banks, Credit cards, Insurance, Investments, Stocks "
+            }
+          },
+          {
+            "domain": {
+              "id": "46",
+              "name": "Business Taxonomy",
+              "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+            },
+            "entity": {
+              "id": "1557697333571112960",
+              "name": "Technology Business",
+              "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to softwares, apps, communication equipments, hardwares"
+            }
+          },
+          {
+            "domain": {
+              "id": "46",
+              "name": "Business Taxonomy",
+              "description": "Categories within Brand Verticals that narrow down the scope of Brands"
+            },
+            "entity": {
+              "id": "1557697439489880065",
+              "name": "Travel & Transportation Business",
+              "description": "Brands, companies, advertisers and every non-person handle with the profit intent related to travel as airlines, travel agencies, hotels"
+            }
+          },
+          {
+            "domain": {
+              "id": "131",
+              "name": "Unified Twitter Taxonomy",
+              "description": "A taxonomy of user interests. "
+            },
+            "entity": {
+              "id": "781974597302226944",
+              "name": "Transportation"
+            }
+          },
+          {
+            "domain": {
+              "id": "131",
+              "name": "Unified Twitter Taxonomy",
+              "description": "A taxonomy of user interests. "
+            },
+            "entity": {
+              "id": "839159814991167489",
+              "name": "Travel",
+              "description": "Travel"
+            }
+          },
+          {
+            "domain": {
+              "id": "10",
+              "name": "Person",
+              "description": "Named people in the world like Nelson Mandela"
+            },
+            "entity": {
+              "id": "808713037230157824",
+              "name": "Elon Musk",
+              "description": "Elon Musk"
+            }
+          },
+          {
+            "domain": {
+              "id": "65",
+              "name": "Interests and Hobbies Vertical",
+              "description": "Top level interests and hobbies groupings, like Food or Travel"
+            },
+            "entity": {
+              "id": "781974596148793345",
+              "name": "Business & finance"
+            }
+          },
+          {
+            "domain": {
+              "id": "66",
+              "name": "Interests and Hobbies Category",
+              "description": "A grouping of interests and hobbies entities, like Novelty Food or Destinations"
+            },
+            "entity": {
+              "id": "857878777191211008",
+              "name": "Leadership",
+              "description": "Leadership"
+            }
+          },
+          {
+            "domain": {
+              "id": "131",
+              "name": "Unified Twitter Taxonomy",
+              "description": "A taxonomy of user interests. "
+            },
+            "entity": {
+              "id": "808713037230157824",
+              "name": "Elon Musk",
+              "description": "Elon Musk"
+            }
+          },
+          {
+            "domain": {
+              "id": "131",
+              "name": "Unified Twitter Taxonomy",
+              "description": "A taxonomy of user interests. "
+            },
+            "entity": {
+              "id": "1091420346660470784",
+              "name": "Tech personalities",
+              "description": "Tech Professionals"
+            }
+          },
+          {
+            "domain": {
+              "id": "131",
+              "name": "Unified Twitter Taxonomy",
+              "description": "A taxonomy of user interests. "
+            },
+            "entity": {
+              "id": "1166406108623163392",
+              "name": "Business personalities"
+            }
+          }
+        ],
+        "public_metrics": {
+          "retweet_count": 3357,
+          "reply_count": 11836,
+          "like_count": 50031,
+          "quote_count": 580,
+          "bookmark_count": 341,
+          "impression_count": 1667114
+        },
+        "lang": "en",
+        "attachments": {
+          "media_keys": [
+            "3_1812743638234931200"
+          ]
+        },
+        "edit_history_tweet_ids": [
+          "1812743643972894961"
+        ],
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": true,
+          "editable_until": "2024-07-15T07:58:58.000Z"
+        }
+      },
+      {
+        "referenced_tweets": [
+          {
+            "type": "replied_to",
+            "id": "1812824925318590938"
+          }
+        ],
+        "id": "1812825194500591963",
+        "created_at": "2024-07-15T12:23:01.000Z",
+        "possibly_sensitive": false,
+        "in_reply_to_user_id": "907690626271117312",
+        "text": "@sandislonjsak Creative works that requires 100% focus 10-20+ hours a week",
+        "author_id": "16347964",
+        "reply_settings": "everyone",
+        "conversation_id": "1812823286344020279",
+        "public_metrics": {
+          "retweet_count": 0,
+          "reply_count": 8,
+          "like_count": 53,
+          "quote_count": 0,
+          "bookmark_count": 11,
+          "impression_count": 2927
+        },
+        "lang": "en",
+        "edit_history_tweet_ids": [
+          "1812825194500591963"
+        ],
+        "entities": {
+          "mentions": [
+            {
+              "start": 0,
+              "end": 14,
+              "username": "sandislonjsak",
+              "id": "907690626271117312"
+            }
+          ]
+        },
+        "edit_controls": {
+          "edits_remaining": 5,
+          "is_edit_eligible": false,
+          "editable_until": "2024-07-15T13:23:01.000Z"
+        }
       }
     ]
   },
   "meta": {
-    "newest_id": "1777039126967075048",
-    "oldest_id": "1777003551006298553",
+    "newest_id": "1813487188803248514",
+    "oldest_id": "1812920478908227874",
     "result_count": 10,
-    "next_token": "b26v89c19zqg8o3fr5wf9iqzlswuvyv3rd22lsgc776gt"
+    "next_token": "b26v89c19zqg8o3frqosuq7g77os5in3jh8pand4n7vy5"
   }
 }
