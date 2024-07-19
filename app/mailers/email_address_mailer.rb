@@ -14,8 +14,8 @@ class EmailAddressMailer < ApplicationMailer
       subject: params[:subject],
       reply_to: params[:reply_to]
     ) do |format|
-      format.text { render(plain: text) if text.present? }
-      format.html { render(html: html) if html.present? }
+      format.text { render(plain: text) }
+      format.html { render(html: html) } if html.present?
     end
   end
 
