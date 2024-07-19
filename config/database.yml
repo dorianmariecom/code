@@ -1,7 +1,10 @@
 ---
 development:
   url: <%= ENV.fetch("DATABASE_URL") %>
+  gssencmode: disable
 production:
   url: <%= ENV.fetch("DATABASE_URL") %>
+  gssencmode: disable
 test:
   url: <%= ENV.fetch("DATABASE_URL") %>
+  gssencmode: disable
