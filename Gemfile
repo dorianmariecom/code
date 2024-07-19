@@ -3,6 +3,7 @@
 source "https://rubygems.org"
 
 git_source(:dorian) { |name| "https://github.com/dorianmariecom/#{name}" }
+git_source(:rails) { |name| "https://github.com/rails/#{name}" }
 
 ruby "3.3.3"
 
@@ -14,7 +15,7 @@ gem "dorian"
 gem "dotenv-rails"
 gem "faker"
 gem "heroicon"
-gem "importmap-rails"
+gem "importmap-rails", dorian: "importmap-rails"
 gem "irb"
 gem "jbuilder"
 gem "mission_control-jobs", dorian: "mission_control-jobs"
@@ -26,11 +27,11 @@ gem "phonelib"
 gem "puma"
 gem "pundit"
 gem "rack-attack"
-gem "rails", github: "rails/rails"
+gem "rails", rails: :rails
 gem "redis"
 gem "rubocop"
 gem "slim-rails"
-gem "solid_errors", dorian: "solid_errors"
+gem "solid_errors", dorian: :solid_errors
 gem "solid_queue"
 gem "propshaft"
 gem "stimulus-rails"
