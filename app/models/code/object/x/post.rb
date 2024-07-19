@@ -47,7 +47,7 @@ class Code
         end
 
         def code_html
-          html = code_text.raw
+          html = code_text.raw.dup
 
           mentions.each do |mention|
             html.gsub!(
