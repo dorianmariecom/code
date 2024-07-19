@@ -52,11 +52,7 @@ class Code
         end
 
         def code_author
-          if author
-            User.new(author)
-          else
-            Nothing.new
-          end
+          author ? User.new(author) : Nothing.new
         end
 
         def code_url
@@ -84,9 +80,7 @@ class Code
         end
 
         def author
-          includes["users"].detect do |user|
-            user["id"].to_s == author_id.to_s
-          end
+          includes["users"].detect { |user| user["id"].to_s == author_id.to_s }
         end
 
         def retweet_id
@@ -98,11 +92,7 @@ class Code
         end
 
         def code_retweet
-          if retweet
-            Post.new(retweet.merge("json" => json))
-          else
-            Nothing.new
-          end
+          retweet ? Post.new(retweet.merge("json" => json)) : Nothing.new
         end
 
         def retweet
@@ -112,9 +102,7 @@ class Code
         end
 
         def tweet
-          includes["tweets"].detect do |tweet|
-            tweet["id"].to_s == id.to_s
-          end
+          includes["tweets"].detect { |tweet| tweet["id"].to_s == id.to_s }
         end
       end
     end

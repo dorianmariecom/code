@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/dorianmariecom/importmap-rails
-  revision: f8a6691598bfdd09c0b6d813374953394f3d69a2
+  revision: 525ba810bf5b3cc47cdaf3e7af56c1e6addfc885
   specs:
     importmap-rails (2.0.1)
       actionpack (>= 6.0.0)
@@ -559,4 +559,4 @@ RUBY VERSION
    ruby 3.3.3p89
 
 BUNDLED WITH
-   2.5.15
+   2.5.16

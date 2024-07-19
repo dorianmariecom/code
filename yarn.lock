@@ -294,9 +294,9 @@ hasown@^2.0.2:
     function-bind "^1.1.2"
 
 intl-tel-input@*:
-  version "23.4.0"
-  resolved "https://registry.yarnpkg.com/intl-tel-input/-/intl-tel-input-23.4.0.tgz#2fc99792b55ea91e041082a58d80af9f953e73f8"
-  integrity sha512-z0bOKleka03R3GouK/U1wyKNnCCjbaRjjVOfMU3sQpujXbew57hQmJqnmp9HaxllPzwL4Cdo7ArPYZvKbQHfRA==
+  version "23.5.0"
+  resolved "https://registry.yarnpkg.com/intl-tel-input/-/intl-tel-input-23.5.0.tgz#65f434fabfaae25641da6357b88a394a08259e70"
+  integrity sha512-1Ck2jIiyJaMlM6qRYKfICinY12cASIiHGiV6sXTFrLDYuEzo/quHg7yny7KUhGiO/fMRtnll/oJcJ9U8rIK0oQ==
 
 is-binary-path@~2.1.0:
   version "2.1.0"
@@ -306,9 +306,9 @@ is-binary-path@~2.1.0:
     binary-extensions "^2.0.0"
 
 is-core-module@^2.13.0:
-  version "2.14.0"
-  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.14.0.tgz#43b8ef9f46a6a08888db67b1ffd4ec9e3dfd59d1"
-  integrity sha512-a5dFJih5ZLYlRtDc0dZWP7RiKr6xIKzmn/oAYCDvdLThadVgyJwlaoQPmRtMSpz+rk0OGAgIu+TcM9HUF0fk1A==
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.15.0.tgz#71c72ec5442ace7e76b306e9d48db361f22699ea"
+  integrity sha512-Dd+Lb2/zvk9SKy1TGCt1wFJFo/MWBPMX5x7KcvLajWTGuomczdQX61PvY5yK6SVACwpoexWo81IfFyoKY2QnTA==
   dependencies:
     hasown "^2.0.2"
 
