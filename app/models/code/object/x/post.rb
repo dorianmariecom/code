@@ -43,11 +43,7 @@ class Code
         end
 
         def code_text
-          if tweet
-            String.new(tweet["text"])
-          else
-            String.new(as_json["text"])
-          end
+          tweet ? String.new(tweet["text"]) : String.new(as_json["text"])
         end
 
         def code_html
@@ -70,7 +66,8 @@ class Code
           urls.each do |url|
             html.gsub!(
               /( |^)(#{url["url"]})( |$)/,
-              '\1<a href="' + url["expanded_url"] + '">' + url["expanded_url"] + '</a>\3'
+              '\1<a href="' + url["expanded_url"] + '">' + url["expanded_url"] +
+                '</a>\3'
             )
           end
 
@@ -93,7 +90,8 @@ class Code
           end
 
           videos.each do |video|
-            html += "<a href=\"#{url}\"><img src=\"#{video["preview_image_url"]}\" /></a>"
+            html +=
+              "<a href=\"#{url}\"><img src=\"#{video["preview_image_url"]}\" /></a>"
           end
 
           String.new(html)
@@ -196,9 +194,11 @@ class Code
         end
 
         def tweet_media
-          urls.map do |url|
-            media.detect { |media| media["media_key"] == url["media_key"] }
-          end.compact
+          urls
+            .map do |url|
+              media.detect { |media| media["media_key"] == url["media_key"] }
+            end
+            .compact
         end
 
         def photos
