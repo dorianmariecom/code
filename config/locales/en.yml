@@ -129,6 +129,8 @@ en:
       not_valid: not valid
   layouts:
     application:
+      menu: menu
+      admin: admin
       blocked_jobs:
         one: 1 blocked job
         other: "%{count} blocked jobs"
