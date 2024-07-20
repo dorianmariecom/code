@@ -24,14 +24,14 @@ class Program < ApplicationRecord
         output: output.string,
         error: error.string
       )
+    rescue Code::Error, Timeout::Error => e
+      executions.create!(
+        input:,
+        result: nil,
+        output: nil,
+        error: "#{e.class}: #{e.message}"
+      )
     end
-  rescue Code::Error, Timeout::Error => e
-    executions.create!(
-      input:,
-      result: nil,
-      output: nil,
-      error: "#{e.class}: #{e.message}"
-    )
   end
 
   def next_at
