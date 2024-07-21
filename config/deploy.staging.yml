@@ -25,6 +25,7 @@ env:
     - RAILS_MASTER_KEY
     - POSTGRES_PASSWORD
     - DATABASE_URL
+    - REDIS_URL
 traefik:
   options:
     publish:
