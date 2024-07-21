@@ -2,5 +2,6 @@
 
 .p= button_to t(".delete_all"), url, method: :delete, class: "a text-red-600"
 
+= paginate @email_addresses
 = render @email_addresses
 = paginate @email_addresses
