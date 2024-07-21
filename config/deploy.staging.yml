@@ -54,3 +54,10 @@ accessories:
         - POSTGRES_PASSWORD
     directories:
       - data:/var/lib/postgresql/data
+  redis:
+    image: redis:7
+    host: 159.89.2.5
+    directories:
+      - data:/data
+    options:
+      network: private
