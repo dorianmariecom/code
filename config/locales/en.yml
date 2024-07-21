@@ -129,7 +129,6 @@ en:
       not_valid: not valid
   layouts:
     application:
-      menu: menu
       admin: admin
       blocked_jobs:
         one: 1 blocked job
@@ -183,6 +182,7 @@ en:
       log_in: log in
       log_out: log out
       mailers: mailers
+      menu: menu
       names:
         one: 1 name
         other: "%{count} names"
@@ -207,6 +207,10 @@ en:
         one: 1 ready job
         other: "%{count} ready jobs"
         zero: 0 ready jobs
+      recurring_jobs:
+        one: 1 recurring job
+        other: "%{count} recurring jobs"
+        zero: 0 recurring jobs
       register: register
       scheduled_jobs:
         one: 1 scheduled job
