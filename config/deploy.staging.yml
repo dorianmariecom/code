@@ -59,5 +59,3 @@ accessories:
     host: 159.89.2.5
     directories:
       - data:/data
-    options:
-      network: private

@@ -59,5 +59,3 @@ accessories:
     host: 164.92.135.114
     directories:
       - data:/data
-    options:
-      network: private
