@@ -15,11 +15,20 @@ class ProgramsController < ApplicationController
 
   def show
     @executions =
-      policy_scope(Execution).where(program: @program).order(created_at: :desc).page(params[:page])
+      policy_scope(Execution)
+        .where(program: @program)
+        .order(created_at: :desc)
+        .page(params[:page])
     @schedules =
-      policy_scope(Schedule).where(program: @program).order(created_at: :desc).page(params[:page])
+      policy_scope(Schedule)
+        .where(program: @program)
+        .order(created_at: :desc)
+        .page(params[:page])
     @prompts =
-      policy_scope(Prompt).where(program: @program).order(created_at: :desc).page(params[:page])
+      policy_scope(Prompt)
+        .where(program: @program)
+        .order(created_at: :desc)
+        .page(params[:page])
   end
 
   def evaluate

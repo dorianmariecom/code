@@ -10,15 +10,19 @@ class UsersController < ApplicationController
 
   def show
     @data = policy_scope(Datum).where(user: @user).page(params[:page])
-    @email_addresses = policy_scope(EmailAddress).where(user: @user).page(params[:page])
+    @email_addresses =
+      policy_scope(EmailAddress).where(user: @user).page(params[:page])
     @locations = policy_scope(Location).where(user: @user).page(params[:page])
     @names = policy_scope(Name).where(user: @user).page(params[:page])
     @passwords = policy_scope(Password).where(user: @user).page(params[:page])
-    @phone_numbers = policy_scope(PhoneNumber).where(user: @user).page(params[:page])
+    @phone_numbers =
+      policy_scope(PhoneNumber).where(user: @user).page(params[:page])
     @programs = policy_scope(Program).where(user: @user).page(params[:page])
     @prompts = policy_scope(Prompt).where(user: @user).page(params[:page])
-    @slack_accounts = policy_scope(SlackAccount).where(user: @user).page(params[:page])
-    @smtp_accounts = policy_scope(SmtpAccount).where(user: @user).page(params[:page])
+    @slack_accounts =
+      policy_scope(SlackAccount).where(user: @user).page(params[:page])
+    @smtp_accounts =
+      policy_scope(SmtpAccount).where(user: @user).page(params[:page])
     @time_zones = policy_scope(TimeZone).where(user: @user).page(params[:page])
     @x_accounts = policy_scope(XAccount).where(user: @user).page(params[:page])
   end
