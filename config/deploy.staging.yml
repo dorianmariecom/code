@@ -58,5 +58,6 @@ accessories:
     image: redis:7
     host: 159.89.2.5
     port: 6379
+    cmd: 'redis-server --requirepass <%= File.read(".env.staging")[/REDIS_PASSWORD="(.?)"/, 1] %>'
     directories:
       - data:/data
