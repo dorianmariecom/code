@@ -83,12 +83,16 @@ module ApplicationHelper
     "1, true, { 123: false }, [1, 2, 3]"
   end
 
-  def time_zone_options
-    TimeZone::TIME_ZONES
+  def time_zone_options(time_zone: nil)
+    TimeZone::TIME_ZONES.map do |option_time_zone|
+      [option_time_zone, option_time_zone, { selected: option_time_zone == time_zone }]
+    end
   end
 
-  def schedule_interval_options
-    Schedule::INTERVALS
+  def schedule_interval_options(interval: nil)
+    Schedule::INTERVALS.map do |option_interval|
+      [option_interval, option_interval, { selected: option_interval == interval }]
+    end
   end
 
   def user_options(user_id: nil)
