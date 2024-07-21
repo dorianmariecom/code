@@ -9,7 +9,7 @@ class SlackAccountsController < ApplicationController
   def index
     authorize SlackAccount
 
-    @slack_accounts = scope
+    @slack_accounts = scope.page(params[:page])
   end
 
   def callback

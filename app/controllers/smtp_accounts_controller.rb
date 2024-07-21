@@ -9,7 +9,7 @@ class SmtpAccountsController < ApplicationController
   def index
     authorize SmtpAccount
 
-    @smtp_accounts = scope
+    @smtp_accounts = scope.page(params[:page])
   end
 
   def show

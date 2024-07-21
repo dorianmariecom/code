@@ -12,7 +12,7 @@ class XAccountsController < ApplicationController
   def index
     authorize XAccount
 
-    @x_accounts = scope
+    @x_accounts = scope.page(params[:page])
   end
 
   def refresh_auth

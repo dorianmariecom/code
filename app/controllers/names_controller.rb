@@ -9,7 +9,7 @@ class NamesController < ApplicationController
   def index
     authorize Name
 
-    @names = scope
+    @names = scope.page(params[:page])
   end
 
   def show

@@ -9,7 +9,7 @@ class PasswordsController < ApplicationController
   def index
     authorize Password
 
-    @passwords = scope
+    @passwords = scope.page(params[:page])
   end
 
   def show

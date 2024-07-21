@@ -3,3 +3,4 @@ p= link_to t(".new"), XAccount.authorize_url, class: "no-underline inline-block 
 .p= button_to t(".delete_all"), url, method: :delete, class: "a text-red-600"
 
 = render @x_accounts
+= paginate @x_accounts

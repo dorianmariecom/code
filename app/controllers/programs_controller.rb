@@ -10,16 +10,16 @@ class ProgramsController < ApplicationController
   def index
     authorize Program
 
-    @programs = scope
+    @programs = scope.page(params[:page])
   end
 
   def show
     @executions =
-      policy_scope(Execution).where(program: @program).order(created_at: :desc)
+      policy_scope(Execution).where(program: @program).order(created_at: :desc).page(params[:page])
     @schedules =
-      policy_scope(Schedule).where(program: @program).order(created_at: :desc)
+      policy_scope(Schedule).where(program: @program).order(created_at: :desc).page(params[:page])
     @prompts =
-      policy_scope(Prompt).where(program: @program).order(created_at: :desc)
+      policy_scope(Prompt).where(program: @program).order(created_at: :desc).page(params[:page])
   end
 
   def evaluate

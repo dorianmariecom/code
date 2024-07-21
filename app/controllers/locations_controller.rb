@@ -9,7 +9,7 @@ class LocationsController < ApplicationController
   def index
     authorize Location
 
-    @locations = scope
+    @locations = scope.page(params[:page])
   end
 
   def show

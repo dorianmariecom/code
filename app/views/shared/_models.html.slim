@@ -11,3 +11,4 @@ p.font-bold= link_to t(".#{plural}", count: collection.size), [parent, plural.to
   .p= button_to t(".new_#{singular}"), [:new, parent, model], method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
 = render partial: "#{plural}/#{singular}", collection:, as: model
+= paginate collection

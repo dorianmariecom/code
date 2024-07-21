@@ -267,6 +267,18 @@ GEM
       sshkit (>= 1.23.0, < 2.0)
       thor (~> 1.2)
       zeitwerk (~> 2.5)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     language-ruby (0.9.0)
       zeitwerk
     language_server-protocol (3.17.0.3)
@@ -527,6 +539,7 @@ DEPENDENCIES
   irb
   jbuilder
   kamal
+  kaminari
   mission_control-jobs!
   net-http
   open-uri

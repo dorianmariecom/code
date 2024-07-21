@@ -11,7 +11,7 @@ class EmailAddressesController < ApplicationController
   def index
     authorize EmailAddress
 
-    @email_addresses = scope
+    @email_addresses = scope.page(params[:page])
   end
 
   def show

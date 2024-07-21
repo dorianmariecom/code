@@ -9,7 +9,7 @@ class PhoneNumbersController < ApplicationController
   def index
     authorize PhoneNumber
 
-    @phone_numbers = scope
+    @phone_numbers = scope.page(params[:page])
   end
 
   def show

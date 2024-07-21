@@ -10,12 +10,10 @@ class SchedulesController < ApplicationController
   def index
     authorize Schedule
 
-    @schedules = scope
+    @schedules = scope.page(params[:page])
   end
 
   def show
-    @schedules =
-      policy_scope(Schedule).where(schedule: @schedule).order(created_at: :desc)
   end
 
   def new

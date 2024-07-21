@@ -10,3 +10,4 @@ div(data-controller="slack-authorize-url")
 .p= button_to t(".delete_all"), url, method: :delete, class: "a text-red-600"
 
 = render @slack_accounts
+= paginate@slack_accounts

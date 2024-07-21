@@ -10,12 +10,10 @@ class PromptsController < ApplicationController
   def index
     authorize Prompt
 
-    @prompts = scope
+    @prompts = scope.page(params[:page])
   end
 
   def show
-    @prompts =
-      policy_scope(Prompt).where(prompt: @prompt).order(created_at: :desc)
   end
 
   def create
