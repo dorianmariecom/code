@@ -129,6 +129,7 @@ en:
       not_valid: not valid
   layouts:
     application:
+      jobs_title: jobs
       admin: admin
       blocked_jobs:
         one: 1 blocked job
