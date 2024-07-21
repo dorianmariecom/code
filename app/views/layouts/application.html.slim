@@ -71,16 +71,16 @@ html
 
           .font-bold= t(".jobs_title")
 
-          div=> link_to t(".blocked_jobs", count: policy_scope(SolidQueue::BlockedExecution).size), jobs_path
+          div=> link_to t(".blocked_jobs", count: policy_scope(SolidQueue::BlockedExecution).size), "/jobs/applications/code/blocked/jobs"
           div=> link_to t(".claimed_jobs", count: policy_scope(SolidQueue::ClaimedExecution).size), jobs_path
-          div=> link_to t(".failed_jobs", count: policy_scope(SolidQueue::FailedExecution).size), jobs_path
+          div=> link_to t(".failed_jobs", count: policy_scope(SolidQueue::FailedExecution).size), "/jobs/applications/code/failed/jobs"
           div=> link_to t(".job_pauses", count: policy_scope(SolidQueue::Pause).size), jobs_path
           div=> link_to t(".job_processes", count: policy_scope(SolidQueue::Process).size), jobs_path
           div=> link_to t(".job_semaphores", count: policy_scope(SolidQueue::Semaphore).size), jobs_path
           div=> link_to t(".jobs", count: policy_scope(SolidQueue::Job).size), "/jobs/applications/code/finished/jobs"
           div=> link_to t(".ready_jobs", count: policy_scope(SolidQueue::ReadyExecution).size), jobs_path
-          div=> link_to t(".recurring_jobs", count: policy_scope(SolidQueue::RecurringExecution).size), jobs_path
-          div=> link_to t(".scheduled_jobs", count: policy_scope(SolidQueue::ScheduledExecution).size), jobs_path
+          div=> link_to t(".recurring_jobs", count: policy_scope(SolidQueue::RecurringExecution).size), "/jobs/applications/code/recurring_tasks"
+          div=> link_to t(".scheduled_jobs", count: policy_scope(SolidQueue::ScheduledExecution).size), "/jobs/applications/code/scheduled/jobs"
 
       .w-full
         - if notice.present?
@@ -138,15 +138,15 @@ html
 
             .font-bold= t(".jobs")
 
-            div=> link_to t(".blocked_jobs", count: policy_scope(SolidQueue::BlockedExecution).size), jobs_path
+            div=> link_to t(".blocked_jobs", count: policy_scope(SolidQueue::BlockedExecution).size), "/jobs/applications/code/blocked/jobs"
             div=> link_to t(".claimed_jobs", count: policy_scope(SolidQueue::ClaimedExecution).size), jobs_path
-            div=> link_to t(".failed_jobs", count: policy_scope(SolidQueue::FailedExecution).size), jobs_path
+            div=> link_to t(".failed_jobs", count: policy_scope(SolidQueue::FailedExecution).size), "/jobs/applications/code/failed/jobs"
             div=> link_to t(".job_pauses", count: policy_scope(SolidQueue::Pause).size), jobs_path
             div=> link_to t(".job_processes", count: policy_scope(SolidQueue::Process).size), jobs_path
             div=> link_to t(".job_semaphores", count: policy_scope(SolidQueue::Semaphore).size), jobs_path
             div=> link_to t(".jobs", count: policy_scope(SolidQueue::Job).size), "/jobs/applications/code/finished/jobs"
             div=> link_to t(".ready_jobs", count: policy_scope(SolidQueue::ReadyExecution).size), jobs_path
-            div=> link_to t(".recurring_jobs", count: policy_scope(SolidQueue::RecurringExecution).size), jobs_path
-            div=> link_to t(".scheduled_jobs", count: policy_scope(SolidQueue::ScheduledExecution).size), jobs_path
+            div=> link_to t(".recurring_jobs", count: policy_scope(SolidQueue::RecurringExecution).size), "/jobs/applications/code/recurring_tasks"
+            div=> link_to t(".scheduled_jobs", count: policy_scope(SolidQueue::ScheduledExecution).size), "/jobs/applications/code/scheduled/jobs"
 
         = yield
