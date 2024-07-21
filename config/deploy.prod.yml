@@ -59,6 +59,6 @@ accessories:
     image: redis:7
     host: 164.92.135.114
     port: 6379
-    cmd: 'redis-server 164.92.135.114:6379 --requirepass <%= File.read(".env.prod")[/REDIS_PASSWORD="(.?)"/, 1] %>'
+    cmd: 'redis-server --requirepass <%= File.read(".env.prod")[/REDIS_PASSWORD="(.?)"/, 1] %>'
     directories:
       - data:/data
