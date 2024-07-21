@@ -57,5 +57,6 @@ accessories:
   redis:
     image: redis:7
     host: 164.92.135.114
+    port: 6379
     directories:
       - data:/data
