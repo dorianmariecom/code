@@ -5,7 +5,7 @@ class EmailAddress < ApplicationRecord
   VERIFICATION_CODE_PURPOSE = :verification_code
   VERIFICATION_CODE_EXPIRES_IN = 1.hour
 
-  belongs_to :user, default: -> { Current.user }
+  belongs_to :user, default: -> { Current.user }, touch: true
 
   normalizes(
     :email_address,

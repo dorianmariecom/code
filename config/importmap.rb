@@ -13,3 +13,4 @@ pin "intl-tel-input/build/js/utils.js",
     to: "intl-tel-input--build--js--utils.js.js" # @23.3.2
 pin "stimulus-places-autocomplete" # @0.5.0
 pin "@googlemaps/js-api-loader", to: "@googlemaps--js-api-loader.js" # @1.16.6
+pin "@hotwired/turbo", to: "@hotwired--turbo.js" # @8.0.5

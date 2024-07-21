@@ -1,5 +1,7 @@
 - content_for(:title, @time_zone.to_s)
 
+= turbo_stream_from @time_zone
+
 .text-sm= t(".user")
 .mb-5= link_to @time_zone.user
 

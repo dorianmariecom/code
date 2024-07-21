@@ -53,7 +53,7 @@ class Schedule < ApplicationRecord
     "years" => 1.year
   }
 
-  belongs_to :program
+  belongs_to :program, touch: true
 
   has_one :user, through: :program
 

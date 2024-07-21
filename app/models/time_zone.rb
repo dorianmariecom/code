@@ -2,7 +2,7 @@ class TimeZone < ApplicationRecord
   TIME_ZONES =
     ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:canonical_identifier)
 
-  belongs_to :user, default: -> { Current.user }
+  belongs_to :user, default: -> { Current.user }, touch: true
 
   scope :primary, -> { where(primary: true) }
   scope :not_primary, -> { where(primary: false) }

@@ -13,8 +13,8 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def user=(user)
-    Time.zone = user&.time_zone.presence
     @user = user || Guest.new
+    Time.zone = time_zone&.time_zone
   end
 
   def user!

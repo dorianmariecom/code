@@ -6,6 +6,7 @@ class ApplicationRecord < ActiveRecord::Base
   extend Pundit::Authorization
   extend CanConcern
 
+  broadcasts_refreshes
   primary_abstract_class
 
   def self.current_user

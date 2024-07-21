@@ -6,7 +6,7 @@ class SmtpAccount < ApplicationRecord
 
   encrypts :password
 
-  belongs_to :user, default: -> { Current.user }
+  belongs_to :user, default: -> { Current.user }, touch: true
 
   scope :primary, -> { where(primary: true) }
   scope :not_primary, -> { where(primary: false) }

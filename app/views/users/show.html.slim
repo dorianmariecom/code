@@ -1,5 +1,7 @@
 - content_for(:title, @user)
 
+= turbo_stream_from @user
+
 .text-sm= t(".admin")
 .mb-5= @user.admin
 

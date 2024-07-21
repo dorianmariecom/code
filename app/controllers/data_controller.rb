@@ -22,7 +22,7 @@ class DataController < ApplicationController
   end
 
   def create
-    datum_params[:data] = JSON.parse(datum_params[:data])
+    datum_params[:data] = JSON.parse(data_param) if data_param.present?
 
     @datum = authorize scope.new(datum_params)
 
@@ -38,7 +38,7 @@ class DataController < ApplicationController
   end
 
   def update
-    datum_params[:data] = JSON.parse(datum_params[:data])
+    datum_params[:data] = JSON.parse(data_param) if data_param.present?
 
     if @datum.update(datum_params)
       redirect_to @datum, notice: t(".notice")
@@ -90,5 +90,9 @@ class DataController < ApplicationController
 
   def datum_params
     @datum_params ||= params.require(:datum).permit(:user_id, :data)
+  end
+
+  def data_param
+    datum_params[:data]
   end
 end

@@ -1,5 +1,7 @@
 - content_for(:title, @email_address.to_s)
 
+= turbo_stream_from @email_address
+
 .text-sm= t(".user")
 .mb-5= link_to @email_address.user
 

@@ -11,8 +11,8 @@ class Prompt < ApplicationRecord
     #{DOCUMENTATION}
   PROMPT
 
-  belongs_to :user, optional: true, default: -> { Current.user }
-  belongs_to :program, optional: true
+  belongs_to :user, optional: true, default: -> { Current.user }, touch: true
+  belongs_to :program, optional: true, touch: true
 
   validate { can!(:update, user) if user }
   validate { can!(:update, program) if program }

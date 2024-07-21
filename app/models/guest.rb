@@ -59,6 +59,14 @@ class Guest
     Location.none
   end
 
+  def time_zones
+    TimeZone.none
+  end
+
+  def names
+    Name.none
+  end
+
   def to_signed_global_id(purpose: nil, expires_in: nil)
     ""
   end

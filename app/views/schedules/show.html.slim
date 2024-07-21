@@ -1,5 +1,7 @@
 - content_for(:title, @schedule.to_s)
 
+= turbo_stream_from @schedule
+
 .text-sm= t(".user")
 .mb-5= link_to @schedule.user
 

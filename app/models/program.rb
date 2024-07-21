@@ -3,7 +3,7 @@
 class Program < ApplicationRecord
   TIMEOUT = 5.second
 
-  belongs_to :user, default: -> { Current.user || User.new }
+  belongs_to :user, default: -> { Current.user || User.new }, touch: true
 
   has_many :executions, dependent: :destroy
   has_many :schedules, dependent: :destroy

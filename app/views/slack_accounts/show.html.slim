@@ -1,5 +1,7 @@
 - content_for(:title, @slack_account.to_s)
 
+= turbo_stream_from @slack_account
+
 .text-sm= t(".user")
 .mb-5= link_to @slack_account.user
 
