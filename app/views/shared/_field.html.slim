@@ -47,7 +47,7 @@
   - elsif type.string?
     = f.text_field field, required: required, autocomplete: autocomplete, class: "w-full", value: value, data: data
   - elsif type.time?
-    = f.datetime_local_field field, required: required, autocomplete: autocomplete, class: "w-full", value: value, data: data
+    = f.datetime_local_field field, required: required, autocomplete: autocomplete, class: "w-full", value: value, data: data, step: 1
   - elsif type.select?
     = f.select field, options_for_select(options), {}, required: required, autocomplete: autocomplete, class: "w-full", value: value, data: data
   - elsif type.text?
