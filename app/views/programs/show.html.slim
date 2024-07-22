@@ -26,6 +26,9 @@
   .text-sm= t(".next_at")
   .mb-5= @program.next_at
 
+.text-sm= t(".scheduled")
+.mb-5= @program.scheduled?
+
 .p= button_to t(".schedule"), [@program, :schedule], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
 
 .p= button_to t(".evaluate"), [@program, :evaluate], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

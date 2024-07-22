@@ -417,6 +417,7 @@ en:
     program:
       program: program
     show:
+      scheduled: scheduled?
       created_at: created at
       delete: delete program
       edit: edit program

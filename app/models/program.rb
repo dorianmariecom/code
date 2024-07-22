@@ -38,9 +38,31 @@ class Program < ApplicationRecord
     schedules.map(&:next_at).select(&:future?).min
   end
 
+  def scheduled?
+    scheduled_jobs.any?
+  end
+
   def schedule!
+    scheduled_jobs.destroy_all
     return unless next_at
     EvaluateAndScheduleJob.set(wait_until: next_at).perform_later(program: self)
+  end
+
+  def scheduled_jobs
+    SolidQueue::Job
+      .where(class_name: "EvaluateAndScheduleJob")
+      .where(
+        "arguments::jsonb @> ?",
+        {
+          arguments: [
+            {
+              program: {
+                _aj_globalid: to_global_id
+              }
+            }
+          ]
+        }.to_json
+      )
   end
 
   def to_s
