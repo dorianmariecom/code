@@ -21,7 +21,7 @@ class EmailAddress < ApplicationRecord
   validates :email_address, format: { with: EMAIL_ADDRESS_REGEXP }
   validate { can!(:update, user) }
 
-  before_validation { self.user ||= User.create! }
+  before_validation { log_in(self.user ||= User.create!) }
 
   before_update do
     unverify! if email_address_changed? && (verified? || verifying?)

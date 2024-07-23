@@ -21,7 +21,7 @@ class PhoneNumber < ApplicationRecord
   validate { errors.add(:phone_number, :invalid) if phonelib.invalid? }
   validate { errors.add(:phone_number, :impossible) if phonelib.impossible? }
 
-  before_validation { self.user ||= User.create! }
+  before_validation { log_in(self.user ||= User.create!) }
 
   before_update do
     unverify! if phone_number_changed? && (verified? || verifying?)

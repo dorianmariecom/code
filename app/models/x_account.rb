@@ -8,7 +8,7 @@ class XAccount < ApplicationRecord
 
   validate { can!(:update, user) }
 
-  before_validation { self.user ||= User.create! }
+  before_validation { log_in(self.user ||= User.create!) }
 
   def self.verify!(code:)
     uri = URI.parse("https://api.twitter.com/2/oauth2/token")
@@ -28,7 +28,7 @@ class XAccount < ApplicationRecord
       end
 
     create!(
-      primary: Current.x_accounts.none?,
+      primary: Current.x_accounts?,
       verified: true,
       auth: JSON.parse(response.body)
     ).tap(&:refresh_auth!).tap(&:refresh_me!)
@@ -67,7 +67,7 @@ class XAccount < ApplicationRecord
   end
 
   def self.state
-    encode(Current.user!.signed_id(purpose:, expires_in: 1.day))
+    encode((Current.user || log_in(User.create!)).signed_id(purpose:, expires_in: 1.day))
   end
 
   def self.purpose
@@ -79,7 +79,10 @@ class XAccount < ApplicationRecord
   end
 
   def self.code_verifier
-    encode(Current.user!.to_signed_global_id(purpose:, expires_in: nil).to_s)
+    encode(
+      (Current.user || log_in(User.create!))
+        .to_signed_global_id(purpose:, expires_in: nil).to_s
+    )
   end
 
   def self.code_challenge

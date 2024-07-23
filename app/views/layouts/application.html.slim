@@ -28,7 +28,10 @@ html
     .flex.gap-5
       div.hidden.sm:block(class="min-w-[15em]")
         .font-bold=> link_to t(".title"), root_path
-        div=> link_to current_user
+        - if guest?
+          div=> current_user
+        - else
+          div=> link_to current_user
         div=> button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block" if registered?
         div=> link_to t(".log_in"), new_session_path
         div=> link_to t(".register"), new_user_path
@@ -95,7 +98,10 @@ html
           summary= t(".menu")
 
           .font-bold=> link_to t(".title"), root_path
-          div=> link_to current_user
+          - if guest?
+            div=> current_user
+          - else
+            div=> link_to current_user
           div=> button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block" if registered?
           div=> link_to t(".log_in"), new_session_path
           div=> link_to t(".register"), new_user_path

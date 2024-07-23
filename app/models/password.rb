@@ -7,7 +7,7 @@ class Password < ApplicationRecord
 
   validate { can!(:update, user) }
 
-  before_validation { self.user ||= User.create! }
+  before_validation { log_in(self.user ||= User.create!) }
 
   def to_s
     hint.presence || "password##{id}"

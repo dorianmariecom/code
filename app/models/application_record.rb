@@ -13,11 +13,19 @@ class ApplicationRecord < ActiveRecord::Base
     Current.user_or_guest
   end
 
+  def self.log_in(user)
+    Current.user = user unless Current.user?
+  end
+
   def alert
     errors.full_messages.to_sentence
   end
 
   def current_user
     Current.user_or_guest
+  end
+
+  def log_in(user)
+    Current.user = user unless Current.user?
   end
 end

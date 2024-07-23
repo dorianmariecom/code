@@ -17,7 +17,7 @@ class Prompt < ApplicationRecord
   validate { can!(:update, user) if user }
   validate { can!(:update, program) if program }
 
-  before_validation { self.user ||= User.create! }
+  before_validation { log_in(self.user ||= User.create!) }
 
   def generate!
     uri = URI.parse("https://api.openai.com/v1/chat/completions")

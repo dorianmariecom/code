@@ -31,41 +31,18 @@ class Guest
     false
   end
 
-  def phone_numbers
-    PhoneNumber.none
-  end
-
-  def slack_accounts
-    SlackAccount.none
-  end
-
-  def x_accounts
-    XAccount.none
-  end
-
-  def data
-    Datum.none
-  end
-
-  def passwords
-    Password.none
-  end
-
-  def programs
-    Program.none
-  end
-
-  def locations
-    Location.none
-  end
-
-  def time_zones
-    TimeZone.none
-  end
-
-  def names
-    Name.none
-  end
+  def data = Datum.none
+  def email_addresses = EmailAddress.none
+  def locations = Location.none
+  def names = Name.none
+  def passwords = Password.none
+  def phone_numbers = PhoneNumber.none
+  def programs = Program.none
+  def prompts = Prompt.none
+  def slack_accounts = SlackAccount.none
+  def smtp_accounts = SmtpAccount.none
+  def time_zones = TimeZone.none
+  def x_accounts = XAcount.none
 
   def to_signed_global_id(purpose: nil, expires_in: nil)
     ""

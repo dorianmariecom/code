@@ -11,7 +11,7 @@ class SlackAccount < ApplicationRecord
 
   validate { can!(:update, user) }
 
-  before_validation { self.user ||= User.create! }
+  before_validation { log_in(self.user ||= User.create!) }
 
   def self.find_by_team(team)
     SlackAccount.where(
