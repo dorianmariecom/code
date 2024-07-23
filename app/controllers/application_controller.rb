@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_current_user
-    log_in(User.find_by(id: session[:user_id])
+    log_in(User.find_by(id: session[:user_id]))
   end
 
   def log_in(user)
