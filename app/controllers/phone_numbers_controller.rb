@@ -24,6 +24,7 @@ class PhoneNumbersController < ApplicationController
     @phone_number = authorize scope.new(phone_number_params)
 
     if @phone_number.save
+      log_in(@phone_number.user)
       redirect_to @phone_number, notice: t(".notice")
     else
       flash.now.alert = @phone_number.alert
@@ -36,6 +37,7 @@ class PhoneNumbersController < ApplicationController
 
   def update
     if @phone_number.update(phone_number_params)
+      log_in(@phone_number.user)
       redirect_to @phone_number, notice: t(".notice")
     else
       flash.now.alert = @phone_number.alert

@@ -23,6 +23,7 @@ class TimeZonesController < ApplicationController
     @time_zone = authorize scope.new(time_zone_params)
 
     if @time_zone.save
+      log_in(@time_zone.user)
       redirect_to @time_zone, notice: t(".notice")
     else
       flash.now.alert = @time_zone.alert
@@ -35,6 +36,7 @@ class TimeZonesController < ApplicationController
 
   def update
     if @time_zone.update(time_zone_params)
+      log_in(@time_zone.user)
       redirect_to @time_zone, notice: t(".notice")
     else
       flash.now.alert = @time_zone.alert

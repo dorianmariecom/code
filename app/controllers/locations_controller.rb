@@ -23,6 +23,7 @@ class LocationsController < ApplicationController
     @location = authorize scope.new(location_params)
 
     if @location.save
+      log_in(@location.user)
       redirect_to @location, notice: t(".notice")
     else
       flash.now.alert = @location.alert
@@ -35,6 +36,7 @@ class LocationsController < ApplicationController
 
   def update
     if @location.update(location_params)
+      log_in(@location.user)
       redirect_to @location, notice: t(".notice")
     else
       flash.now.alert = @location.alert

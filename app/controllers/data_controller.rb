@@ -27,6 +27,7 @@ class DataController < ApplicationController
     @datum = authorize scope.new(datum_params)
 
     if @datum.save
+      log_in(@datum.user)
       redirect_to @datum, notice: t(".notice")
     else
       flash.now.alert = @datum.alert
@@ -41,6 +42,7 @@ class DataController < ApplicationController
     datum_params[:data] = JSON.parse(data_param) if data_param.present?
 
     if @datum.update(datum_params)
+      log_in(@datum.user)
       redirect_to @datum, notice: t(".notice")
     else
       flash.now.alert = @datum.alert

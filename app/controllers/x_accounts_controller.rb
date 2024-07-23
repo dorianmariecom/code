@@ -26,12 +26,12 @@ class XAccountsController < ApplicationController
   end
 
   def callback
-    Current.user =
+    log_in(
       User.find_signed!(
         Base64.decode64(params[:state]),
         purpose: XAccount.purpose
       )
-    session[:user_id] = Current.user.id
+    )
     authorize XAccount
     redirect_to policy_scope(XAccount).verify!(code: params[:code])
   end
@@ -48,6 +48,7 @@ class XAccountsController < ApplicationController
 
   def update
     if @x_account.update(x_account_params)
+      log_in(@x_account.user)
       redirect_to @x_account, notice: t(".notice")
     else
       flash.now.alert = @x_account.alert

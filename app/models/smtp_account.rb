@@ -27,6 +27,8 @@ class SmtpAccount < ApplicationRecord
   validates :authentication, presence: true
   validate { can!(:update, user) }
 
+  before_validation { self.user ||= User.create! }
+
   before_update do
     next if not_verified?
 

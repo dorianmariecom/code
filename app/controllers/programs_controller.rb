@@ -48,12 +48,10 @@ class ProgramsController < ApplicationController
   end
 
   def create
-    Current.user = User.create! if Current.guest?
-    session[:user_id] = Current.user.id
-
     @program = authorize scope.new(program_params)
 
     if @program.save
+      log_in(@program.user)
       redirect_to @program, notice: t(".notice")
     else
       flash.now.alert = @program.alert
@@ -66,6 +64,7 @@ class ProgramsController < ApplicationController
 
   def update
     if @program.update(program_params)
+      log_in(@program.user)
       redirect_to @program, notice: t(".notice")
     else
       flash.now.alert = @program.alert

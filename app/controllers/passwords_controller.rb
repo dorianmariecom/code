@@ -23,6 +23,7 @@ class PasswordsController < ApplicationController
     @password = authorize scope.new(password_params)
 
     if @password.save
+      log_in(@password.user)
       redirect_to @password, notice: t(".notice")
     else
       flash.now.alert = @password.alert
@@ -35,6 +36,7 @@ class PasswordsController < ApplicationController
 
   def update
     if @password.update(password_params)
+      log_in(@password.user)
       redirect_to @password, notice: t(".notice")
     else
       flash.now.alert = @password.alert

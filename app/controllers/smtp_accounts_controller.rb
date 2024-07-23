@@ -24,6 +24,7 @@ class SmtpAccountsController < ApplicationController
     @smtp_account = authorize scope.new(smtp_account_params)
 
     if @smtp_account.save
+      log_in(@smtp_account.user)
       redirect_to @smtp_account, notice: t(".notice")
     else
       flash.now.alert = @smtp_account.alert
@@ -36,6 +37,7 @@ class SmtpAccountsController < ApplicationController
 
   def update
     if @smtp_account.update(smtp_account_params)
+      log_in(@smtp_account.user)
       redirect_to @smtp_account, notice: t(".notice")
     else
       flash.now.alert = @smtp_account.alert

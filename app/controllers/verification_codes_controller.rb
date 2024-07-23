@@ -5,16 +5,19 @@ class VerificationCodesController < ApplicationController
 
   def create
     @verifiable.send_verification_code!
+    log_in(@verifiable.user)
     redirect_back_or_to @verifiable
   end
 
   def update
     @verifiable.verify!(verification_code_param)
+    log_in(@verifiable.user)
     redirect_back_or_to @verifiable
   end
 
   def destroy
     @verifiable.cancel_verification!
+    log_in(@verifiable.user)
     redirect_back_or_to @verifiable
   end
 
@@ -38,8 +41,7 @@ class VerificationCodesController < ApplicationController
               skip_authorization
             end
 
-        Current.user = @verifiable.user
-        session[:user_id] = Current.user.id
+        log_in(@verifiable.user)
 
         @verifiable
       rescue ActiveSupport::MessageVerifier::InvalidSignature

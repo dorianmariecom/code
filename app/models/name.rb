@@ -8,6 +8,8 @@ class Name < ApplicationRecord
 
   validate { can!(:update, user) }
 
+  before_validation { self.user ||= User.create! }
+
   before_update { unverify! if name_changed? && verified? }
 
   def unverify!

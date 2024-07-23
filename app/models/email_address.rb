@@ -7,6 +7,11 @@ class EmailAddress < ApplicationRecord
 
   belongs_to :user, default: -> { Current.user }, touch: true
 
+  scope :primary, -> { where(primary: true) }
+  scope :not_primary, -> { where(primary: false) }
+  scope :verified, -> { where(verified: true) }
+  scope :not_verified, -> { where(verified: false) }
+
   normalizes(
     :email_address,
     with: ->(email_address) { email_address.to_s.downcase.strip }
@@ -16,10 +21,7 @@ class EmailAddress < ApplicationRecord
   validates :email_address, format: { with: EMAIL_ADDRESS_REGEXP }
   validate { can!(:update, user) }
 
-  scope :primary, -> { where(primary: true) }
-  scope :not_primary, -> { where(primary: false) }
-  scope :verified, -> { where(verified: true) }
-  scope :not_verified, -> { where(verified: false) }
+  before_validation { self.user ||= User.create! }
 
   before_update do
     unverify! if email_address_changed? && (verified? || verifying?)

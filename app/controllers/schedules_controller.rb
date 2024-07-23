@@ -24,6 +24,7 @@ class SchedulesController < ApplicationController
     @schedule = authorize scope.new(schedule_params)
 
     if @schedule.save
+      log_in(@schedule.user)
       redirect_to @schedule, notice: t(".notice")
     else
       flash.now.alert = @schedule.alert
@@ -36,6 +37,7 @@ class SchedulesController < ApplicationController
 
   def update
     if @schedule.update(schedule_params)
+      log_in(@schedule.user)
       redirect_to @schedule, notice: t(".notice")
     else
       flash.now.alert = @schedule.alert

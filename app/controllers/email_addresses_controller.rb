@@ -26,6 +26,7 @@ class EmailAddressesController < ApplicationController
     @email_address = authorize scope.new(email_address_params)
 
     if @email_address.save
+      log_in(@email_address.user)
       redirect_to @email_address, notice: t(".notice")
     else
       flash.now.alert = @email_address.alert
@@ -38,6 +39,7 @@ class EmailAddressesController < ApplicationController
 
   def update
     if @email_address.update(email_address_params)
+      log_in(@email_address.user)
       redirect_to @email_address, notice: t(".notice")
     else
       flash.now.alert = @email_address.alert
@@ -94,8 +96,7 @@ class EmailAddressesController < ApplicationController
           skip_authorization
         end
 
-    Current.user = @email_address.user
-    session[:user_id] = Current.user.id
+    log_in(@email_address.user)
 
     @email_address
   rescue ActiveSupport::MessageVerifier::InvalidSignature

@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
       flash.now.alert = t(".wrong_password")
       render :new, status: :unprocessable_entity
     else
-      session[:user_id] = @user.id
+      log_in(@user)
       redirect_to @user, notice: t(".notice")
     end
   end

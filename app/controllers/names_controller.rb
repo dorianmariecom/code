@@ -23,6 +23,7 @@ class NamesController < ApplicationController
     @name = authorize scope.new(name_params)
 
     if @name.save
+      log_in(@name.user)
       redirect_to @name, notice: t(".notice")
     else
       flash.now.alert = @name.alert
@@ -35,6 +36,7 @@ class NamesController < ApplicationController
 
   def update
     if @name.update(name_params)
+      log_in(@name.user)
       redirect_to @name, notice: t(".notice")
     else
       flash.now.alert = @name.alert

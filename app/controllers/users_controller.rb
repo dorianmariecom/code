@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = authorize scope.new
 
     if @user.save
-      session[:user_id] = @user.id unless admin?
+      log_in(@user)
       redirect_to @user, notice: t(".notice")
     else
       flash.now.alert = @user.alert
@@ -47,7 +47,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update({})
+    if @user.touch
+      log_in(@user)
       redirect_to user_path(@user), notice: t(".notice")
     else
       flash.now.alert = @user.alert

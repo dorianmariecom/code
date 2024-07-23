@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    Current.user
+    Current.user_or_guest
   end
 
   def current_user?
@@ -41,8 +41,19 @@ class ApplicationController < ActionController::Base
   private
 
   def set_current_user
-    Current.user = User.find_by(id: session[:user_id]) || Guest.new
-    session[:user_id] = Current.user.id
+    log_in(User.find_by(id: session[:user_id])
+  end
+
+  def log_in(user)
+    if Current.user && session[:user_id].present?
+      # leave it as is
+    elsif user && user.id
+      Current.user = user
+      session[:user_id] = user.id
+    else
+      Current.user = nil
+      session[:user_id] = nil
+    end
   end
 
   def delete_link_header

@@ -4,21 +4,23 @@ class Current < ActiveSupport::CurrentAttributes
   resets { Time.zone = nil }
   resets { @user = nil }
 
-  def admin?
-    user.admin?
+  attribute :user
+
+  def user_or_guest
+    user || guest
   end
 
-  def user
-    @user ||= Guest.new
+  def admin?
+    (user || guest).admin?
   end
 
   def user=(user)
-    @user = user || Guest.new
+    super(user)
     Time.zone = time_zone&.time_zone
   end
 
   def user!
-    user || raise(Code::Error, "no user")
+    user || raise(Code::Error, "no user found")
   end
 
   def user?
@@ -26,12 +28,19 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def guest?
-    user.is_a?(Guest)
+    user.blank?
+  end
+
+  def guest
+    Guest.new
+  end
+
+  def registered?
+    user.present?
   end
 
   def email_addresses
-    return [] unless user?
-    user.email_addresses.verified
+    (user || guest).email_addresses.verified
   end
 
   def email_addresses?
@@ -39,13 +48,11 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def email_addresses!
-    user!
-    raise(Code::Error, "no email addresses found") unless email_addresses?
+    raise(Code::Error, "no verified email addresses found") unless email_addresses?
     email_addresses
   end
 
   def email_address
-    return unless user?
     email_addresses.verified.primary.first || email_addresses.verified.first
   end
 
@@ -58,8 +65,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def phone_numbers
-    return [] unless user?
-    user.phone_numbers.verified
+    (user || guest).phone_numbers.verified
   end
 
   def phone_numbers?
@@ -67,13 +73,11 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def phone_numbers!
-    user!
-    raise(Code::Error, "no phone numbers found") unless phone_numbers?
+    raise(Code::Error, "no verified phone numbers found") unless phone_numbers?
     phone_numbers
   end
 
   def phone_number
-    return unless user?
     phone_numbers.verified.primary.first || phone_numbers.verified.first
   end
 
@@ -86,13 +90,11 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def slack_accounts
-    return [] unless user?
-    user.slack_accounts.verified
+    (user || guest).slack_accounts.verified
   end
 
   def slack_accounts!
-    user!
-    raise(Code::Error, "no slack accounts found") unless slack_accounts?
+    raise(Code::Error, "no verified slack accounts found") unless slack_accounts?
     slack_accounts
   end
 
@@ -101,7 +103,6 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def slack_account
-    return unless user?
     slack_accounts.verified.primary.first || slack_accounts.verified.first
   end
 
@@ -114,12 +115,10 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def passwords
-    return [] unless user?
-    user.passwords
+    (user || guest).passwords
   end
 
   def passwords!
-    user!
     raise(Code::Error, "no passwords found") unless passwords?
     passwords
   end
@@ -129,7 +128,6 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def password
-    return unless user?
     passwords.first
   end
 
@@ -142,8 +140,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def programs
-    return [] unless user?
-    user.programs
+    (user || guest).programs
   end
 
   def programs?
@@ -151,13 +148,11 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def programs!
-    user!
     raise(Code::Error, "no programs found") unless programs?
     programs
   end
 
   def program
-    return unless user?
     programs.first
   end
 
@@ -170,9 +165,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def schedules
-    return [] unless user?
-    return [] unless program?
-    program.schedules
+    program&.schedules || Schedule.none
   end
 
   def schedules?
@@ -180,8 +173,6 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def schedules!
-    user!
-    program!
     raise(Code::Error, "no schedules found") unless schedules?
     schedules
   end
@@ -199,13 +190,11 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def smtp_accounts
-    return [] unless user?
-    user.smtp_accounts.verified
+    (user || guest).smtp_accounts.verified
   end
 
   def smtp_accounts!
-    user!
-    raise(Code::Error, "no smtp accounts found") unless smtp_accounts?
+    raise(Code::Error, "no verified smtp accounts found") unless smtp_accounts?
     smtp_accounts
   end
 
@@ -214,7 +203,6 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def smtp_account
-    return unless user?
     smtp_accounts.verified.primary.first || smtp_accounts.verified.first
   end
 
@@ -227,8 +215,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def x_accounts
-    return [] unless user?
-    user.x_accounts.verified
+    (user || guest).x_accounts.verified
   end
 
   def x_accounts?
@@ -236,13 +223,11 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def x_accounts!
-    user!
-    raise(Code::Error, "no x accounts found") unless x_accounts?
+    raise(Code::Error, "no verified x accounts found") unless x_accounts?
     x_accounts
   end
 
   def x_account
-    return unless user?
     x_accounts.verified.primary.first || x_accounts.verified.first
   end
 
@@ -255,8 +240,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def names
-    return [] unless user?
-    user.names.verified
+    (user || guest).names.verified
   end
 
   def names?
@@ -264,13 +248,11 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def names!
-    user!
-    raise(Code::Error, "no name found") unless names?
+    raise(Code::Error, "no verified name found") unless names?
     names
   end
 
   def name
-    return unless user?
     names.verified.primary.first || names.verified.first
   end
 
@@ -283,8 +265,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def time_zones
-    return [] unless user?
-    user.time_zones.verified
+    (user || guest).time_zones.verified
   end
 
   def time_zones?
@@ -292,13 +273,11 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def time_zones!
-    user!
-    raise(Code::Error, "no time zone found") unless time_zones?
+    raise(Code::Error, "no verified time zone found") unless time_zones?
     time_zones
   end
 
   def time_zone
-    return unless user?
     time_zones.verified.primary.first || time_zones.verified.first
   end
 
@@ -311,8 +290,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def locations
-    return [] unless user?
-    user.locations.verified
+    (user || guest).locations.verified
   end
 
   def locations?
@@ -320,13 +298,11 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def locations!
-    user!
-    raise(Code::Error, "no location found") unless locations?
+    raise(Code::Error, "no verified location found") unless locations?
     locations
   end
 
   def location
-    return unless user?
     locations.verified.primary.first || locations.verified.first
   end
 

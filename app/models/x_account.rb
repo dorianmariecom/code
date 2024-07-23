@@ -8,6 +8,8 @@ class XAccount < ApplicationRecord
 
   validate { can!(:update, user) }
 
+  before_validation { self.user ||= User.create! }
+
   def self.verify!(code:)
     uri = URI.parse("https://api.twitter.com/2/oauth2/token")
     request = Net::HTTP::Post.new(uri)

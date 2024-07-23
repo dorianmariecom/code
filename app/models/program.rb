@@ -3,7 +3,7 @@
 class Program < ApplicationRecord
   TIMEOUT = 5.second
 
-  belongs_to :user, default: -> { Current.user || User.new }, touch: true
+  belongs_to :user, default: -> { Current.user }, touch: true
 
   has_many :executions, dependent: :destroy
   has_many :schedules, dependent: :destroy
@@ -12,6 +12,8 @@ class Program < ApplicationRecord
   accepts_nested_attributes_for :schedules
 
   validate { can!(:update, user) }
+
+  before_validation { self.user ||= User.create! }
 
   def evaluate!
     Current.with(user:) do

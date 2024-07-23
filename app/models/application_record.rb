@@ -10,7 +10,7 @@ class ApplicationRecord < ActiveRecord::Base
   primary_abstract_class
 
   def self.current_user
-    Current.user
+    Current.user_or_guest
   end
 
   def alert
@@ -18,6 +18,6 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   def current_user
-    Current.user
+    Current.user_or_guest
   end
 end

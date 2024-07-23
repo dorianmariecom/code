@@ -23,16 +23,15 @@ class Code
       def self.code_exists?(value)
         Boolean.new(
           Current
-            .user!
             .data
             .where("data @> ?", value.to_json)
-            .or(Current.user!.data.where(data: value.as_json))
+            .or(Current.data.where(data: value.as_json))
             .any?
         )
       end
 
       def self.code_create!(value)
-        Current.user!.data.create!(data: value.as_json)
+        Current.data.create!(data: value.as_json)
         Boolean.new(true)
       end
     end

@@ -15,7 +15,11 @@ class SlackAccountsController < ApplicationController
   def callback
     authorize SlackAccount
 
-    redirect_to policy_scope(SlackAccount).verify!(code: params[:code])
+    @slack_account = policy_scope(SlackAccount).verify!(code: params[:code])
+
+    log_in(@slack_account.user)
+
+    redirect_to @slack_account
   end
 
   def show
@@ -30,6 +34,7 @@ class SlackAccountsController < ApplicationController
 
   def update
     if @slack_account.update(slack_account_params)
+      log_in(@slack_account.user)
       redirect_to @slack_account, notice: t(".notice")
     else
       flash.now.alert = @slack_account.alert
