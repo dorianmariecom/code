@@ -48,7 +48,9 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def email_addresses!
-    raise(Code::Error, "no verified email addresses found") unless email_addresses?
+    unless email_addresses?
+      raise(Code::Error, "no verified email addresses found")
+    end
     email_addresses
   end
 
@@ -94,7 +96,9 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def slack_accounts!
-    raise(Code::Error, "no verified slack accounts found") unless slack_accounts?
+    unless slack_accounts?
+      raise(Code::Error, "no verified slack accounts found")
+    end
     slack_accounts
   end
 
