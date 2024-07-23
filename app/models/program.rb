@@ -27,19 +27,23 @@ class Program < ApplicationRecord
         error: error.string
       )
     rescue Code::Error, Timeout::Error => e
-      execution = executions.create!(
-        input:,
-        result: nil,
-        output: nil,
-        error: "#{e.class}: #{e.message}"
-      )
+      execution =
+        executions.create!(
+          input:,
+          result: nil,
+          output: nil,
+          error: "#{e.class}: #{e.message}"
+        )
 
-      EmailAddressMailer.with(
-        from: "dorian@dorianmarie.com",
-        to: "dorian@dorianmarie.com",
-        subject: execution.error,
-        text: "#{user}\n\n#{self}"
-      ).code_mail.deliver_later
+      EmailAddressMailer
+        .with(
+          from: "dorian@dorianmarie.com",
+          to: "dorian@dorianmarie.com",
+          subject: execution.error,
+          text: "#{user}\n\n#{self}"
+        )
+        .code_mail
+        .deliver_later
 
       execution
     end
