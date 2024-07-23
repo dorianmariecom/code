@@ -38,7 +38,7 @@ class Program < ApplicationRecord
         from: "dorian@dorianmarie.com",
         to: "dorian@dorianmarie.com",
         subject: execution.error,
-        text: "#{user}\n\n#{program}"
+        text: "#{user}\n\n#{self}"
       ).code_mail.deliver_later
 
       execution
