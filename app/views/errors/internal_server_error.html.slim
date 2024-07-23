@@ -1,0 +1,4 @@
+- content_for(:title, t(".internal_server_error"))
+
+- if admin?
+  pre= @exception.message

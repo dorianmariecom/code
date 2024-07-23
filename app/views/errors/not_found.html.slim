@@ -1,0 +1,4 @@
+- content_for(:title, t(".not_found"))
+
+- if admin?
+  pre= @exception.message

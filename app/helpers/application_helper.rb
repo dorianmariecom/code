@@ -161,4 +161,8 @@ module ApplicationHelper
   def registered?
     current_user.is_an?(User)
   end
+
+  def guest?
+    current_user.is_a?(Guest)
+  end
 end

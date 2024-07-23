@@ -1,0 +1,4 @@
+- content_for(:title, t(".unprocessable_entity"))
+
+- if admin?
+  pre= @exception.message
