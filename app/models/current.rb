@@ -268,6 +268,31 @@ class Current < ActiveSupport::CurrentAttributes
     !!name
   end
 
+  def data
+    (user || guest).data
+  end
+
+  def data?
+    data.any?
+  end
+
+  def data!
+    raise(Code::Error, "no datum found") unless data?
+    data
+  end
+
+  def datum
+    data.first
+  end
+
+  def datum!
+    datum || raise(Code::Error, "no datum found")
+  end
+
+  def datum?
+    !!datum
+  end
+
   def time_zones
     (user || guest).time_zones.verified
   end
