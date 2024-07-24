@@ -1,6 +1,6 @@
 .p= button_to t(".new"), new_datum_path, method: :get, class: "bg-black text-white rounded px-4 py-2 cursor-pointer"
 
-.p= button_to t(".delete_all"), url, method: :delete, class: "a text-red-600"
+.p= button_to t(".delete_all"), url, method: :delete, class: "a text-red-600" if @datums.any?
 
 = paginate @datums
 = render @datums

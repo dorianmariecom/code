@@ -136,6 +136,7 @@ en:
       not_valid: not valid
   layouts:
     application:
+      new_program: new program
       admin: admin
       blocked_jobs:
         one: 1 blocked job
@@ -240,7 +241,8 @@ en:
         one: 1 time zone
         other: "%{count} time zones"
         zero: 0 time zones
-      title: code
+      title: home
+      more: more
       up: "/up"
       users:
         one: 1 user

@@ -7,7 +7,7 @@ div(data-controller="slack-authorize-url")
     = fake_slack_teams
   p= link_to t(".new"), SlackAccount.authorize_url, class: "no-underline inline-block bg-black text-white rounded px-4 py-2 cursor-pointer", data: { slack_authorize_url_target: "link" }
 
-.p= button_to t(".delete_all"), url, method: :delete, class: "a text-red-600"
+.p= button_to t(".delete_all"), url, method: :delete, class: "a text-red-600" if @slack_accounts.any?
 
 = paginate @slack_accounts
 = render @slack_accounts
