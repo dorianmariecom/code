@@ -7,9 +7,9 @@ servers:
     hosts:
       - 164.92.135.114
     labels:
-      traefik.http.routers.code.rule: Host(`code.dorianmarie.com`)
+      traefik.http.routers.code.rule: Host(`codedorian.com`)
       traefik.http.routers.code_secure.entrypoints: websecure
-      traefik.http.routers.code_secure.rule: Host(`code.dorianmarie.com`)
+      traefik.http.routers.code_secure.rule: Host(`codedorian.com`)
       traefik.http.routers.code_secure.tls.certresolver: letsencrypt
       traefik.http.routers.code_secure.tls: true
 registry:
@@ -18,14 +18,13 @@ registry:
   password:
     - KAMAL_REGISTRY_PASSWORD
 env:
-  clear:
-    HOST: code.dorianmarie.com
-    BASE_URL: https://code.dorianmarie.com
   secret:
     - RAILS_MASTER_KEY
     - POSTGRES_PASSWORD
     - DATABASE_URL
     - REDIS_URL
+    - HOST
+    - BASE_URL
 traefik:
   options:
     publish:
