@@ -1,4 +1,4 @@
-service: code
+service: code-staging
 image: dorianmariecom/code
 healthcheck:
   max_attempts: 100
