@@ -49,6 +49,7 @@ env:
     - DATABASE_URL
     - REDIS_URL
     - HOST
+    - HOSTS
     - BASE_URL
 traefik:
   options:
