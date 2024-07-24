@@ -12,6 +12,31 @@ servers:
       traefik.http.routers.code_secure.rule: Host(`staging.codedorian.com`)
       traefik.http.routers.code_secure.tls.certresolver: letsencrypt
       traefik.http.routers.code_secure.tls: true
+      traefik.http.routers.code_net.rule: Host(`staging.codedorian.net`)
+      traefik.http.routers.code_net_secure.entrypoints: websecure
+      traefik.http.routers.code_net_secure.rule: Host(`staging.codedorian.com`)
+      traefik.http.routers.code_net_secure.tls.certresolver: letsencrypt
+      traefik.http.routers.code_net_secure.tls: true
+      traefik.http.routers.code_org.rule: Host(`staging.codedorian.org`)
+      traefik.http.routers.code_org_secure.entrypoints: websecure
+      traefik.http.routers.code_org_secure.rule: Host(`staging.codedorian.com`)
+      traefik.http.routers.code_org_secure.tls.certresolver: letsencrypt
+      traefik.http.routers.code_org_secure.tls: true
+      traefik.http.routers.code_dash.rule: Host(`staging.code-dorian.com`)
+      traefik.http.routers.code_dash_secure.entrypoints: websecure
+      traefik.http.routers.code_dash_secure.rule: Host(`staging.codedorian.com`)
+      traefik.http.routers.code_dash_secure.tls.certresolver: letsencrypt
+      traefik.http.routers.code_dash_secure.tls: true
+      traefik.http.routers.code_co.rule: Host(`staging.codedorian.co`)
+      traefik.http.routers.code_co_secure.entrypoints: websecure
+      traefik.http.routers.code_co_secure.rule: Host(`staging.codedorian.com`)
+      traefik.http.routers.code_co_secure.tls.certresolver: letsencrypt
+      traefik.http.routers.code_co_secure.tls: true
+      traefik.http.routers.code_dorian.rule: host(`code-staging.dorianmarie.com`)
+      traefik.http.routers.code_dorian_secure.entrypoints: websecure
+      traefik.http.routers.code_dorian_secure.rule: host(`code-staging.dorianmarie.com`)
+      traefik.http.routers.code_dorian_secure.tls.certresolver: letsencrypt
+      traefik.http.routers.code_dorian_secure.tls: true
 registry:
   username:
     - KAMAL_REGISTRY_USERNAME
