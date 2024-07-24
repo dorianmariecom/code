@@ -20,8 +20,6 @@ Rails.application.configure do
   config.consider_all_requests_local = true
   config.eager_load = false
   config.enable_reloading = true
-  config.hosts << "localhost:3000"
-  config.hosts << ENV.fetch("HOST")
   config.i18n.raise_on_missing_translations = true
   config.server_timing = true
   config.action_mailer.smtp_settings =

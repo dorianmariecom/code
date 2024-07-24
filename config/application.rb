@@ -17,5 +17,6 @@ class Code
     config.mission_control.jobs.show_console_help = false
     config.active_support.to_time_preserves_timezone = :zone
     config.exceptions_app = self.routes
+    config.hosts += ENV.fetch("HOSTS").split(",")
   end
 end
