@@ -257,6 +257,7 @@ Rails.application.routes.draw do
         :via => %i[get post]
   match "/auth/x/callback" => "x_accounts#callback", :via => %i[get post]
   get "up" => "pages#up"
+  get "more" => "pages#more"
 
   match "/404", to: "errors#not_found", via: :all
   match "/422", to: "errors#unprocessable_entity", via: :all

@@ -136,7 +136,82 @@ en:
       not_valid: not valid
   layouts:
     application:
-      new_program: new program
+      title: home
+      more: more
+  locations:
+    create:
+      notice: location created
+    destroy:
+      notice: location deleted
+    edit:
+      submit: update location
+      title: edit location
+    form:
+      location: location
+    index:
+      delete_all: delete all
+      new: new location
+      title: locations
+    location:
+      location: location
+    new:
+      submit: create location
+      title: new location
+    show:
+      city: city
+      country: country
+      county: county
+      created_at: created at
+      delete: delete location
+      edit: edit location
+      id: id
+      latitude: latitude
+      location: location
+      longitude: longitude
+      postal_code: postal code
+      primary: primary
+      route: route
+      state: state
+      street_number: street number
+      updated_at: updated at
+      user: user
+      verified: verified
+    update:
+      notice: location updated
+  names:
+    create:
+      notice: name created
+    destroy:
+      notice: name deleted
+    edit:
+      submit: update name
+      title: edit name
+    form:
+      name: name
+    index:
+      delete_all: delete all
+      new: new name
+      title: names
+    name:
+      name: name
+    new:
+      submit: create name
+      title: new name
+    show:
+      created_at: created at
+      delete: delete name
+      edit: edit name
+      id: id
+      name: name
+      primary: primary
+      updated_at: updated at
+      user: user
+      verified: verified
+    update:
+      notice: name updated
+  pages:
+    more:
+      title: more
       admin: admin
       blocked_jobs:
         one: 1 blocked job
@@ -241,8 +316,6 @@ en:
         one: 1 time zone
         other: "%{count} time zones"
         zero: 0 time zones
-      title: home
-      more: more
       up: "/up"
       users:
         one: 1 user
@@ -252,78 +325,6 @@ en:
         one: 1 x account
         other: "%{count} x accounts"
         zero: 0 x accounts
-  locations:
-    create:
-      notice: location created
-    destroy:
-      notice: location deleted
-    edit:
-      submit: update location
-      title: edit location
-    form:
-      location: location
-    index:
-      delete_all: delete all
-      new: new location
-      title: locations
-    location:
-      location: location
-    new:
-      submit: create location
-      title: new location
-    show:
-      city: city
-      country: country
-      county: county
-      created_at: created at
-      delete: delete location
-      edit: edit location
-      id: id
-      latitude: latitude
-      location: location
-      longitude: longitude
-      postal_code: postal code
-      primary: primary
-      route: route
-      state: state
-      street_number: street number
-      updated_at: updated at
-      user: user
-      verified: verified
-    update:
-      notice: location updated
-  names:
-    create:
-      notice: name created
-    destroy:
-      notice: name deleted
-    edit:
-      submit: update name
-      title: edit name
-    form:
-      name: name
-    index:
-      delete_all: delete all
-      new: new name
-      title: names
-    name:
-      name: name
-    new:
-      submit: create name
-      title: new name
-    show:
-      created_at: created at
-      delete: delete name
-      edit: edit name
-      id: id
-      name: name
-      primary: primary
-      updated_at: updated at
-      user: user
-      verified: verified
-    update:
-      notice: name updated
-  pages:
     documentation:
       title: documentation
     home:

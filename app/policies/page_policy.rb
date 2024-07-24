@@ -8,4 +8,8 @@ class PagePolicy < ApplicationPolicy
   def up?
     true
   end
+
+  def more?
+    true
+  end
 end

@@ -23,73 +23,10 @@ html
       window.translations = #{raw I18n.t(".js").to_json};
 
   body.prose.max-w-5xl.mx-auto.p-8
-    .flex.gap-4.mb-5.relative
-      = link_to t(".title"), root_path
-      = link_to t(".new_program"), new_program_path
-      = link_to t(".programs", count: policy_scope(Program).where(user: current_user).size), [current_user, :programs]
-      = link_to current_user
-
-      details
-        summary= t(".more")
-
-        .absolute.left-0.w-fit.bg-white.border.m-4
-          = link_to t(".register"), new_user_path, class: "px-4 py-2 block"
-          = link_to t(".log_in"), new_session_path, class: "px-4 py-2 block"
-          = button_to t(".log_out"), session_path, method: :delete, class: "a px-4 py-2" if registered?
-          = link_to t(".data", count: policy_scope(Datum).where(user: current_user).size), [current_user, :data], class: "px-4 py-2 block"
-          = link_to t(".email_addresses", count: policy_scope(EmailAddress).where(user: current_user).size), [current_user, :email_addresses], class: "px-4 py-2 block"
-          = link_to t(".executions", count: policy_scope(Execution).joins(:program).where(programs: { user: current_user }).size), [current_user, :executions], class: "px-4 py-2 block"
-          = link_to t(".locations", count: policy_scope(Location).where(user: current_user).size), [current_user, :locations], class: "px-4 py-2 block"
-          = link_to t(".names", count: policy_scope(Name).where(user: current_user).size), [current_user, :names], class: "px-4 py-2 block"
-          = link_to t(".passwords", count: policy_scope(Password).where(user: current_user).size), [current_user, :passwords], class: "px-4 py-2 block"
-          = link_to t(".phone_numbers", count: policy_scope(PhoneNumber).where(user: current_user).size), [current_user, :phone_numbers], class: "px-4 py-2 block"
-          = link_to t(".programs", count: policy_scope(Program).where(user: current_user).size), [current_user, :programs], class: "px-4 py-2 block"
-          = link_to t(".prompts", count: policy_scope(Prompt).where(user: current_user).size), [current_user, :prompts], class: "px-4 py-2 block"
-          = link_to t(".schedules", count: policy_scope(Schedule).joins(:program).where(programs: { user: current_user }).size), [current_user, :schedules], class: "px-4 py-2 block"
-          = link_to t(".slack_accounts", count: policy_scope(SlackAccount).where(user: current_user).size), [current_user, :slack_accounts], class: "px-4 py-2 block"
-          = link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).where(user: current_user).size), [current_user, :smtp_accounts], class: "px-4 py-2 block"
-          = link_to t(".time_zones", count: policy_scope(TimeZone).where(user: current_user).size), [current_user, :time_zones], class: "px-4 py-2 block"
-          = link_to t(".x_accounts", count: policy_scope(XAccount).where(user: current_user).size), [current_user, :x_accounts], class: "px-4 py-2 block"
-
-
-      - if admin?
-        details
-          summary= t(".admin")
-
-          .absolute.left-0.w-fit.bg-white.border.m-4
-            = link_to t(".data", count: policy_scope(Datum).size), data_path, class: "px-4 py-2 block"
-            = link_to t(".email_addresses", count: policy_scope(EmailAddress).size), email_addresses_path, class: "px-4 py-2 block"
-            = link_to t(".errors", count: policy_scope(SolidErrors::Error).unresolved.size), errors_path, class: "px-4 py-2 block"
-            = link_to t(".executions", count: policy_scope(Execution).size), executions_path, class: "px-4 py-2 block"
-            = link_to t(".locations", count: policy_scope(Location).size), [current_user, :locations], class: "px-4 py-2 block"
-            = link_to t(".mailers"), "/rails/mailers", class: "px-4 py-2 block"
-            = link_to t(".names", count: policy_scope(Name).size), [current_user, :names], class: "px-4 py-2 block"
-            = link_to t(".passwords", count: policy_scope(Password).size), passwords_path, class: "px-4 py-2 block"
-            = link_to t(".phone_numbers", count: policy_scope(PhoneNumber).size), phone_numbers_path, class: "px-4 py-2 block"
-            = link_to t(".programs", count: policy_scope(Program).size), programs_path, class: "px-4 py-2 block"
-            = link_to t(".prompts", count: policy_scope(Prompt).size), prompts_path, class: "px-4 py-2 block"
-            = link_to t(".schedules", count: policy_scope(Schedule).size), schedules_path, class: "px-4 py-2 block"
-            = link_to t(".slack_accounts", count: policy_scope(SlackAccount).size), slack_accounts_path, class: "px-4 py-2 block"
-            = link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).size), smtp_accounts_path, class: "px-4 py-2 block"
-            = link_to t(".time_zones", count: policy_scope(TimeZone).size), [current_user, :time_zones], class: "px-4 py-2 block"
-            = link_to t(".up"), up_path, class: "px-4 py-2 block"
-            = link_to t(".users", count: policy_scope(User).size), users_path, class: "px-4 py-2 block"
-            = link_to t(".x_accounts", count: policy_scope(XAccount).size), x_accounts_path, class: "px-4 py-2 block"
-
-        details
-          summary= t(".jobs_title")
-
-          .absolute.left-0.w-fit.bg-white.border.m-4
-            = link_to t(".blocked_jobs", count: policy_scope(SolidQueue::BlockedExecution).size), "/jobs/applications/code/blocked/jobs", class: "px-4 py-2 block"
-            = link_to t(".claimed_jobs", count: policy_scope(SolidQueue::ClaimedExecution).size), jobs_path, class: "px-4 py-2 block"
-            = link_to t(".failed_jobs", count: policy_scope(SolidQueue::FailedExecution).size), "/jobs/applications/code/failed/jobs", class: "px-4 py-2 block"
-            = link_to t(".job_pauses", count: policy_scope(SolidQueue::Pause).size), jobs_path, class: "px-4 py-2 block"
-            = link_to t(".job_processes", count: policy_scope(SolidQueue::Process).size), jobs_path, class: "px-4 py-2 block"
-            = link_to t(".job_semaphores", count: policy_scope(SolidQueue::Semaphore).size), jobs_path, class: "px-4 py-2 block"
-            = link_to t(".jobs", count: policy_scope(SolidQueue::Job).size), "/jobs/applications/code/finished/jobs", class: "px-4 py-2 block"
-            = link_to t(".ready_jobs", count: policy_scope(SolidQueue::ReadyExecution).size), jobs_path, class: "px-4 py-2 block"
-            = link_to t(".recurring_jobs", count: policy_scope(SolidQueue::RecurringExecution).size), "/jobs/applications/code/recurring_tasks", class: "px-4 py-2 block"
-            = link_to t(".scheduled_jobs", count: policy_scope(SolidQueue::ScheduledExecution).size), "/jobs/applications/code/scheduled/jobs", class: "px-4 py-2 block"
+    nav.fixed.left-0.right-0.bg-white.border-t.bottom-0.flex.gap-4.mx-auto.max-w-5xl
+      = link_to t(".title"), root_path, class: "block flex-1 text-center"
+      = link_to current_user, current_user, class: "block flex-1 text-center"
+      = link_to t(".more"), more_path, class: "block flex-1 text-center"
 
     - if notice.present?
       p.text-green-600= notice
@@ -99,4 +36,4 @@ html
 
     h1= title
 
-  = yield
+  .pb-5= yield

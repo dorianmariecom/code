@@ -1,0 +1,52 @@
+p= link_to t(".register"), new_user_path
+p= link_to t(".log_in"), new_session_path
+p= button_to t(".log_out"), session_path, method: :delete, class: "a"
+p= link_to t(".data", count: policy_scope(Datum).where(user: current_user).size), [current_user, :data]
+p= link_to t(".email_addresses", count: policy_scope(EmailAddress).where(user: current_user).size), [current_user, :email_addresses]
+p= link_to t(".executions", count: policy_scope(Execution).joins(:program).where(programs: { user: current_user }).size), [current_user, :executions]
+p= link_to t(".locations", count: policy_scope(Location).where(user: current_user).size), [current_user, :locations]
+p= link_to t(".names", count: policy_scope(Name).where(user: current_user).size), [current_user, :names]
+p= link_to t(".passwords", count: policy_scope(Password).where(user: current_user).size), [current_user, :passwords]
+p= link_to t(".phone_numbers", count: policy_scope(PhoneNumber).where(user: current_user).size), [current_user, :phone_numbers]
+p= link_to t(".programs", count: policy_scope(Program).where(user: current_user).size), [current_user, :programs]
+p= link_to t(".prompts", count: policy_scope(Prompt).where(user: current_user).size), [current_user, :prompts]
+p= link_to t(".schedules", count: policy_scope(Schedule).joins(:program).where(programs: { user: current_user }).size), [current_user, :schedules]
+p= link_to t(".slack_accounts", count: policy_scope(SlackAccount).where(user: current_user).size), [current_user, :slack_accounts]
+p= link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).where(user: current_user).size), [current_user, :smtp_accounts]
+p= link_to t(".time_zones", count: policy_scope(TimeZone).where(user: current_user).size), [current_user, :time_zones]
+p= link_to t(".x_accounts", count: policy_scope(XAccount).where(user: current_user).size), [current_user, :x_accounts]
+
+- if admin?
+  p.font-bold= t(".admin")
+
+  p= link_to t(".data", count: policy_scope(Datum).size), data_path
+  p= link_to t(".email_addresses", count: policy_scope(EmailAddress).size), email_addresses_path
+  p= link_to t(".errors", count: policy_scope(SolidErrors::Error).unresolved.size), errors_path
+  p= link_to t(".executions", count: policy_scope(Execution).size), executions_path
+  p= link_to t(".locations", count: policy_scope(Location).size), [current_user, :locations]
+  p= link_to t(".mailers"), "/rails/mailers"
+  p= link_to t(".names", count: policy_scope(Name).size), [current_user, :names]
+  p= link_to t(".passwords", count: policy_scope(Password).size), passwords_path
+  p= link_to t(".phone_numbers", count: policy_scope(PhoneNumber).size), phone_numbers_path
+  p= link_to t(".programs", count: policy_scope(Program).size), programs_path
+  p= link_to t(".prompts", count: policy_scope(Prompt).size), prompts_path
+  p= link_to t(".schedules", count: policy_scope(Schedule).size), schedules_path
+  p= link_to t(".slack_accounts", count: policy_scope(SlackAccount).size), slack_accounts_path
+  p= link_to t(".smtp_accounts", count: policy_scope(SmtpAccount).size), smtp_accounts_path
+  p= link_to t(".time_zones", count: policy_scope(TimeZone).size), [current_user, :time_zones]
+  p= link_to t(".up"), up_path
+  p= link_to t(".users", count: policy_scope(User).size), users_path
+  p= link_to t(".x_accounts", count: policy_scope(XAccount).size), x_accounts_path
+
+  p.font-bold= t(".jobs_title")
+
+  p= link_to t(".blocked_jobs", count: policy_scope(SolidQueue::BlockedExecution).size), "/jobs/applications/code/blocked/jobs"
+  p= link_to t(".claimed_jobs", count: policy_scope(SolidQueue::ClaimedExecution).size), jobs_path
+  p= link_to t(".failed_jobs", count: policy_scope(SolidQueue::FailedExecution).size), "/jobs/applications/code/failed/jobs"
+  p= link_to t(".job_pauses", count: policy_scope(SolidQueue::Pause).size), jobs_path
+  p= link_to t(".job_processes", count: policy_scope(SolidQueue::Process).size), jobs_path
+  p= link_to t(".job_semaphores", count: policy_scope(SolidQueue::Semaphore).size), jobs_path
+  p= link_to t(".jobs", count: policy_scope(SolidQueue::Job).size), "/jobs/applications/code/finished/jobs"
+  p= link_to t(".ready_jobs", count: policy_scope(SolidQueue::ReadyExecution).size), jobs_path
+  p= link_to t(".recurring_jobs", count: policy_scope(SolidQueue::RecurringExecution).size), "/jobs/applications/code/recurring_tasks"
+  p= link_to t(".scheduled_jobs", count: policy_scope(SolidQueue::ScheduledExecution).size), "/jobs/applications/code/scheduled/jobs"

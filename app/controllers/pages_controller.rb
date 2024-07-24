@@ -12,4 +12,7 @@ class PagesController < ApplicationController
 
   def up
   end
+
+  def more
+  end
 end
