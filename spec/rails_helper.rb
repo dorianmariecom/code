@@ -21,6 +21,9 @@ end
 WebMock.disable_net_connect!(allow_localhost: true)
 
 Capybara.server = :puma, { Silent: true }
+Capybara.app_host = ENV.fetch("BASE_URL")
+Capybara.server_host = ENV.fetch("HOST").split(":").first
+Capybara.server_port = ENV.fetch("HOST").split(":").last
 
 Capybara.current_driver =
   (ENV["HEADFULL"] ? :selenium_chrome : :selenium_chrome_headless)

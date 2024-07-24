@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     authorize User
-    @users = scope.order(:id).page(params[:page])
+    @users = scope.page(params[:page])
   end
 
   def show

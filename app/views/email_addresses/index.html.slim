@@ -3,5 +3,5 @@
 .p= button_to t(".delete_all"), url, method: :delete, class: "a text-red-600" if @email_addresses.any?
 
 = paginate @email_addresses
-= render @email_addresses
+= render partial: "email_addresses/email_address", collection: @email_addresses
 = paginate @email_addresses

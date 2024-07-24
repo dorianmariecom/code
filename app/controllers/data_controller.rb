@@ -8,7 +8,7 @@ class DataController < ApplicationController
   def index
     authorize Datum
 
-    @datums = scope.page(params[:page])
+    @data = scope.page(params[:page])
   end
 
   def show
