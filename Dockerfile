@@ -45,6 +45,7 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 RUN HOST=example.com \
+    HOSTS=example.com \
     BASE_URL=https://example.com \
     RAILS_MASTER_KEY_DUMMY=1 \
     SECRET_KEY_BASE_DUMMY=1 \
