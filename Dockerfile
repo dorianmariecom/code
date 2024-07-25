@@ -49,7 +49,7 @@ RUN HOST=example.com \
     BASE_URL=https://example.com \
     RAILS_MASTER_KEY_DUMMY=1 \
     SECRET_KEY_BASE_DUMMY=1 \
-    POSTGRES_URL=postgresql://localhost/code_production \
+    DATABASE_URL=postgresql://localhost/code_production \
     ./bin/rails assets:precompile
 
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
