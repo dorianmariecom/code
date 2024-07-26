@@ -58,7 +58,7 @@ class Program < ApplicationRecord
   end
 
   def schedule!
-    SolidQueue::Schedule.discard_all_from_jobs(scheduled_jobs)
+    SolidQueue::Execution.discard_all_from_jobs(scheduled_jobs)
     return unless next_at
     EvaluateAndScheduleJob.set(wait_until: next_at).perform_later(program: self)
   end
