@@ -35,7 +35,7 @@ gem "redis"
 gem "rubocop"
 gem "slim-rails"
 gem "solid_errors", dorian: :solid_errors
-gem "solid_queue", rails: :solid_queue
+gem "solid_queue"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
 gem "turbo-rails"
