@@ -56,7 +56,7 @@ Rails.application.routes.draw do
       collection { delete "/" => "programs#destroy_all" }
       post :evaluate
       post :schedule
-      delete schedule: => "programs#unschedule"
+      delete schedule: "programs#unschedule"
 
       resources :executions do
         collection { delete "/" => "executions#destroy_all" }
@@ -148,7 +148,7 @@ Rails.application.routes.draw do
       collection { delete "/" => "programs#destroy_all" }
       post :evaluate
       post :schedule
-      delete schedule: => "programs#unschedule"
+      delete schedule: "programs#unschedule"
 
       resources :executions do
         collection { delete "/" => "executions#destroy_all" }
@@ -213,7 +213,7 @@ Rails.application.routes.draw do
     collection { delete "/" => "programs#destroy_all" }
     post :evaluate
     post :schedule
-    delete schedule: => "programs#unschedule"
+    delete schedule: "programs#unschedule"
 
     resources :executions do
       collection { delete "/" => "executions#destroy_all" }
