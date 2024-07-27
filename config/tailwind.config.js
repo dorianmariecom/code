@@ -2,11 +2,14 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
-    "./public/*.html",
     "./app/helpers/**/*.rb",
     "./app/javascript/**/*.js",
-    "./app/views/**/*.{erb,haml,html,slim}",
+    "./app/views/**/*.html",
+    "./app/views/**/*.html.erb",
+    "./app/views/**/*.html.haml",
+    "./app/views/**/*.html.slim",
     "./config/initializers/*.rb",
+    "./public/*.html",
   ],
   theme: {
     extend: {
@@ -16,9 +19,9 @@ module.exports = {
     },
   },
   plugins: [
-    require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/typography"),
     require("@tailwindcss/container-queries"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
   ],
 };

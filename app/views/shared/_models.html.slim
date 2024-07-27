@@ -5,10 +5,12 @@
 - collection = local_assigns.fetch(:collection)
 - parent = local_assigns.fetch(:parent)
 
-p.font-bold= link_to t(".#{plural}", count: collection.size), [parent, plural.to_sym]
+.p-4.border-l.border-black.mb-5
+  p.font-bold= link_to t(".#{plural}", count: collection.size), [parent, plural.to_sym]
 
-- if can?(:create, clazz)
-  .p= button_to t(".new_#{singular}"), [:new, parent, model], method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
+  - if can?(:create, clazz)
+    .p= button_to t(".new_#{singular}"), [:new, parent, model], method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
-= render partial: "#{plural}/#{singular}", collection:, as: model
-= paginate collection
+  = paginate collection
+  = render partial: "#{plural}/#{singular}", collection:
+  = paginate collection
