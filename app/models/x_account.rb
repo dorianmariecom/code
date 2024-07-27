@@ -66,13 +66,12 @@ class XAccount < ApplicationRecord
     :code
   end
 
+  def self.user
+    Current.user || log_in(User.create!)
+  end
+
   def self.state
-    encode(
-      (Current.user || log_in(User.create!)).signed_id(
-        purpose:,
-        expires_in: 1.day
-      )
-    )
+    encode(user.signed_id(purpose:, expires_in: 1.day))
   end
 
   def self.purpose
@@ -84,12 +83,7 @@ class XAccount < ApplicationRecord
   end
 
   def self.code_verifier
-    encode(
-      (Current.user || log_in(User.create!)).to_signed_global_id(
-        purpose:,
-        expires_in: nil
-      ).to_s
-    )
+    encode(user.to_signed_global_id(purpose:, expires_in: nil).to_s)
   end
 
   def self.code_challenge
