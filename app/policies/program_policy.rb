@@ -31,6 +31,10 @@ class ProgramPolicy < ApplicationPolicy
     owner? || admin?
   end
 
+  def unschedule?
+    owner? || admin?
+  end
+
   def destroy?
     owner? || admin?
   end
