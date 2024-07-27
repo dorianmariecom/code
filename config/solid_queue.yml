@@ -4,4 +4,4 @@ dispatchers:
     recurring_tasks:
       schedule_all:
         class: ScheduleAllJob
-        schedule: every second
+        schedule: every hour
