@@ -6,7 +6,7 @@
 - parent = local_assigns.fetch(:parent)
 
 .pl-4.border-l.border-black.mb-5
-  p.font-bold= link_to t(".#{plural}", count: collection.size), [parent, plural.to_sym]
+  p.font-bold= link_to t(".#{plural}", count: collection.total_count), [parent, plural.to_sym]
 
   - if can?(:create, clazz)
     .p= button_to t(".new_#{singular}"), [:new, parent, model], method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
