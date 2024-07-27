@@ -3,7 +3,7 @@
 class ProgramsController < ApplicationController
   before_action :load_user
   before_action :load_program,
-                only: %i[show edit update destroy evaluate schedule]
+                only: %i[show edit update destroy evaluate schedule unschedule]
 
   helper_method :url
 
@@ -39,6 +39,12 @@ class ProgramsController < ApplicationController
 
   def schedule
     @program.schedule!
+
+    redirect_back_or_to(@program)
+  end
+
+  def unschedule
+    @program.unschedule!
 
     redirect_back_or_to(@program)
   end

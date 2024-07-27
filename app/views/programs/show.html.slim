@@ -29,7 +29,10 @@
 .text-sm= t(".scheduled")
 .mb-5= @program.scheduled?
 
-.p= button_to t(".schedule"), [@program, :schedule], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+- if @program.scheduled?
+  .p= button_to t(".unschedule"), [@program, :schedule], method: :delete, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
+- elsif @program.next_at?
+  .p= button_to t(".schedule"), [@program, :schedule], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
 
 .p= button_to t(".evaluate"), [@program, :evaluate], class: "bg-black text-white px-4 py-2 rounded cursor-pointer"
 

@@ -436,6 +436,7 @@ en:
       next_at: next at
       prompt: prompt
       schedule: schedule
+      unschedule: unschedule
       scheduled: scheduled?
       updated_at: updated at
       user: user

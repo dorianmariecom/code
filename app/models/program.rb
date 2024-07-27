@@ -53,12 +53,20 @@ class Program < ApplicationRecord
     schedules.map(&:next_at).select(&:future?).min
   end
 
+  def next_at?
+    next_at.present?
+  end
+
   def scheduled?
     scheduled_jobs.any?
   end
 
-  def schedule!
+  def unschedule!
     SolidQueue::ScheduledExecution.discard_all_from_jobs(scheduled_jobs)
+  end
+
+  def schedule!
+    unschedule!
     return unless next_at
     EvaluateAndScheduleJob.set(wait_until: next_at).perform_later(program: self)
   end
