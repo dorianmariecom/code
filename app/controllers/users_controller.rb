@@ -27,8 +27,10 @@ class UsersController < ApplicationController
     @time_zones = policy_scope(TimeZone).where(user: @user).page(params[:page])
     @x_accounts = policy_scope(XAccount).where(user: @user).page(params[:page])
     # programs
-    @executions = policy_scope(Execution).where(program: @programs).page(params[:page])
-    @schedules = policy_scope(Schedule).where(program: @programs).page(params[:page])
+    @executions =
+      policy_scope(Execution).where(program: @programs).page(params[:page])
+    @schedules =
+      policy_scope(Schedule).where(program: @programs).page(params[:page])
   end
 
   def new

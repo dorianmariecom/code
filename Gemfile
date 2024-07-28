@@ -5,7 +5,7 @@ source "https://rubygems.org"
 git_source(:dorian) { |name| "https://github.com/dorianmariecom/#{name}" }
 git_source(:rails) { |name| "https://github.com/rails/#{name}" }
 
-ruby "3.3.3"
+ruby "3.3.4"
 
 gem "bcrypt"
 gem "brakeman"
