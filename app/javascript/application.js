@@ -4,4 +4,4 @@ import "controllers";
 
 window.addEventListener("message", (event) => {
   alert(event.data);
-};
+});

@@ -45,14 +45,13 @@ group :production do
   gem "rack-timeout"
 end
 
-group :development do
-  gem "rubocop-rails-omakase"
-end
-
-group :test do
+group :development, :test do
   gem "capybara"
   gem "factory_bot_rails"
+  gem "pry-rescue"
+  gem "pry-stack_explorer"
   gem "rspec-rails"
+  gem "rubocop-rails-omakase"
   gem "selenium-webdriver"
   gem "sinatra"
   gem "timecop"
