@@ -4,7 +4,7 @@ import I18n from "i18n";
 import { VALID_CLASSES, INVALID_CLASSES } from "constants";
 
 const t = I18n("phone_number");
-const DEFAULT_COUNTRY_CODE = window.constants.DEFAULT_COUNTRY_CODE;
+const DEFAULT_COUNTRY_CODE = window.code.constants.DEFAULT_COUNTRY_CODE;
 const ERRORS = {
   0: t("is_possible"),
   1: t("invalid_country_code"),

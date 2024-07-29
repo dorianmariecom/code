@@ -4,7 +4,7 @@ import { VALID_CLASSES, INVALID_CLASSES } from "constants";
 
 const t = I18n("verification_code");
 
-const VERIFICATION_CODE_REGEXP = window.constants.VERIFICATION_CODE_REGEXP;
+const VERIFICATION_CODE_REGEXP = window.code.constants.VERIFICATION_CODE_REGEXP;
 
 export default class extends Controller {
   static targets = ["input", "error"];

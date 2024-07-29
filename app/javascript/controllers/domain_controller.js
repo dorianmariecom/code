@@ -4,7 +4,7 @@ import { VALID_CLASSES, INVALID_CLASSES } from "constants";
 
 const t = I18n("domain");
 
-const DOMAIN_REGEXP = window.constants.DOMAIN_REGEXP;
+const DOMAIN_REGEXP = window.code.constants.DOMAIN_REGEXP;
 
 export default class extends Controller {
   static targets = ["input", "error"];

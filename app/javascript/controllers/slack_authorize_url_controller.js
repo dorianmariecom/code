@@ -4,7 +4,7 @@ import { VALID_CLASSES, INVALID_CLASSES } from "constants";
 
 const t = I18n("slack_authorize_url");
 
-const SLACK_TEAM_REGEXP = window.constants.SLACK_TEAM_REGEXP;
+const SLACK_TEAM_REGEXP = window.code.constants.SLACK_TEAM_REGEXP;
 
 export default class extends Controller {
   static targets = ["input", "link", "error"];

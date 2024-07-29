@@ -1,1 +1,1 @@
-export default (scope) => (key) => window.translations[scope][key];
+export default (scope) => (key) => window.code.translations[scope][key];
