@@ -165,4 +165,16 @@ module ApplicationHelper
   def guest?
     current_user.is_a?(Guest)
   end
+
+  def code_env
+    if request.host == "localhost"
+      "local"
+    elsif request.host == "dev.codedorian.com"
+      "dev"
+    elsif request.host == "staging.codedorian.com"
+      "staging"
+    else
+      "production"
+    end
+  end
 end

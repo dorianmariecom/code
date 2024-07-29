@@ -134,10 +134,6 @@ en:
     verification_code:
       not_present: not present
       not_valid: not valid
-  layouts:
-    application:
-      title: home
-      more: more
   locations:
     create:
       notice: location created
@@ -210,121 +206,6 @@ en:
     update:
       notice: name updated
   pages:
-    more:
-      title: more
-      admin: admin
-      blocked_jobs:
-        one: 1 blocked job
-        other: "%{count} blocked jobs"
-        zero: 0 blocked jobs
-      claimed_jobs:
-        one: 1 claimed job
-        other: "%{count} claimed jobs"
-        zero: 0 claimed jobs
-      data:
-        one: 1 datum
-        other: "%{count} data"
-        zero: 0 data
-      documentation: documentation
-      email_addresses:
-        one: 1 email address
-        other: "%{count} email addresses"
-        zero: 0 email addresses
-      errors:
-        one: 1 error
-        other: "%{count} errors"
-        zero: 0 errors
-      executions:
-        one: 1 execution
-        other: "%{count} executions"
-        zero: 0 executions
-      failed_jobs:
-        one: 1 failed job
-        other: "%{count} failed jobs"
-        zero: 0 failed jobs
-      job_pauses:
-        one: 1 job pause
-        other: "%{count} job pauses"
-        zero: 0 job pauses
-      job_processes:
-        one: 1 job process
-        other: "%{count} job processes"
-        zero: 0 job processes
-      job_semaphores:
-        one: 1 job semaphore
-        other: "%{count} job semaphores"
-        zero: 0 job semaphores
-      jobs:
-        one: 1 job
-        other: "%{count} jobs"
-        zero: 0 jobs
-      jobs_title: jobs
-      locations:
-        one: 1 location
-        other: "%{count} locations"
-        zero: 0 locations
-      log_in: log in
-      log_out: log out
-      mailers: mailers
-      menu: menu
-      names:
-        one: 1 name
-        other: "%{count} names"
-        zero: 0 names
-      passwords:
-        one: 1 password
-        other: "%{count} passwords"
-        zero: 0 passwords
-      phone_numbers:
-        one: 1 phone number
-        other: "%{count} phone numbers"
-        zero: 0 phone numbers
-      programs:
-        one: 1 program
-        other: "%{count} programs"
-        zero: 0 programs
-      prompts:
-        one: 1 prompt
-        other: "%{count} prompts"
-        zero: 0 prompts
-      ready_jobs:
-        one: 1 ready job
-        other: "%{count} ready jobs"
-        zero: 0 ready jobs
-      recurring_jobs:
-        one: 1 recurring job
-        other: "%{count} recurring jobs"
-        zero: 0 recurring jobs
-      register: register
-      scheduled_jobs:
-        one: 1 scheduled job
-        other: "%{count} scheduled jobs"
-        zero: 0 scheduled jobs
-      schedules:
-        one: 1 schedule
-        other: "%{count} schedules"
-        zero: 0 schedules
-      slack_accounts:
-        one: 1 slack account
-        other: "%{count} slack accounts"
-        zero: 0 slack accounts
-      smtp_accounts:
-        one: 1 smtp account
-        other: "%{count} smtp accounts"
-        zero: 0 smtp accounts
-      time_zones:
-        one: 1 time zone
-        other: "%{count} time zones"
-        zero: 0 time zones
-      up: "/up"
-      users:
-        one: 1 user
-        other: "%{count} users"
-        zero: 0 users
-      x_accounts:
-        one: 1 x account
-        other: "%{count} x accounts"
-        zero: 0 x accounts
     documentation:
       title: documentation
     home:

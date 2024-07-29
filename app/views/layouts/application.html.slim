@@ -20,14 +20,11 @@ html
       window.constants.SLACK_TEAM_REGEXP = #{raw slack_team_regexp.to_json};
       window.constants.VERIFICATION_CODE_REGEXP = #{raw verification_code_regexp.to_json};
       window.constants.GOOGLE_MAPS_API_KEY = #{raw google_maps_api_key.to_json};
+      window.constants.CODE_ENV = #{raw code_env.to_json};
       window.translations = #{raw I18n.t(".js").to_json};
 
-  body.prose.max-w-5xl.mx-auto.p-8
-    nav.fixed.left-0.right-0.bg-white.border-t.bottom-0.flex.gap-4.mx-auto.max-w-5xl
-      = link_to t(".title"), root_path, class: "block flex-1 text-center"
-      = link_to current_user, current_user, class: "block flex-1 text-center"
-      = link_to t(".more"), more_path, class: "block flex-1 text-center"
-
+  body.prose.max-w-5xl.mx-auto.p-8.border-t-4(class="code code:#{code_env}")
+    h1= code_env
     - if notice.present?
       p.text-green-600= notice
 
@@ -36,4 +33,4 @@ html
 
     h1= title
 
-  .pb-5= yield
+  = yield

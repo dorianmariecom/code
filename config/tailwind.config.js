@@ -8,7 +8,7 @@ module.exports = {
     "./app/views/**/*.html.erb",
     "./app/views/**/*.html.haml",
     "./app/views/**/*.html.slim",
-    "./config/initializers/*.rb",
+    "./config/initializers/**/*.rb",
     "./public/*.html",
   ],
   theme: {

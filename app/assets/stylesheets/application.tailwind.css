@@ -41,3 +41,19 @@ code {
 .dt {
   @apply !no-underline text-orange-400;
 }
+
+.code.code\:local {
+  @apply border-green-500;
+}
+
+.code.code\:dev {
+  @apply border-yellow-500;
+}
+
+.code.code\:staging {
+  @apply border-orange-500;
+}
+
+.code.code\:production {
+  @apply border-black;
+}
