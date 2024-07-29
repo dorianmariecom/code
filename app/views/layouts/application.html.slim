@@ -24,13 +24,22 @@ html
       window.translations = #{raw I18n.t(".js").to_json};
 
   body.prose.max-w-5xl.mx-auto.p-8.border-t-4(class="code code:#{code_env}")
-    h1= code_env
+    .flex.gap-2.mb-5
+      = link_to t(".home"), root_path
+      = link_to t(".programs"), [current_user, :programs]
+      - if guest?
+        = link_to t(".register"), new_user_path
+        = link_to t(".log_in"), new_session_path
+      - else
+        = link_to current_user
+        = button_to t(".log_out"), session_path, method: :delete, class: "a"
+
     - if notice.present?
       p.text-green-600= notice
 
     - if alert.present?
       p.text-red-600= alert
 
-    h1= title
+    h2= title
 
   = yield

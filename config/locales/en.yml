@@ -1,5 +1,12 @@
 ---
 en:
+  layouts:
+    application:
+      home: home
+      programs: programs
+      register: register
+      log_in: log in
+      log_out: log out
   activerecord:
     errors:
       models:
