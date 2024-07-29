@@ -13,15 +13,16 @@ html
     = stylesheet_link_tag "tailwind", "data-turbo-track": "reload"
 
     javascript:
-      window.constants = {}
-      window.constants.DEFAULT_COUNTRY_CODE = #{raw default_country_code.to_json};
-      window.constants.DOMAIN_REGEXP = #{raw domain_regexp.to_json};
-      window.constants.EMAIL_ADDRESS_REGEXP = #{raw email_address_regexp.to_json};
-      window.constants.SLACK_TEAM_REGEXP = #{raw slack_team_regexp.to_json};
-      window.constants.VERIFICATION_CODE_REGEXP = #{raw verification_code_regexp.to_json};
-      window.constants.GOOGLE_MAPS_API_KEY = #{raw google_maps_api_key.to_json};
-      window.constants.CODE_ENV = #{raw code_env.to_json};
-      window.translations = #{raw I18n.t(".js").to_json};
+      window.code = {}
+      window.code.constants = {}
+      window.code.constants.DEFAULT_COUNTRY_CODE = #{raw default_country_code.to_json};
+      window.code.constants.DOMAIN_REGEXP = #{raw domain_regexp.to_json};
+      window.code.constants.EMAIL_ADDRESS_REGEXP = #{raw email_address_regexp.to_json};
+      window.code.constants.SLACK_TEAM_REGEXP = #{raw slack_team_regexp.to_json};
+      window.code.constants.VERIFICATION_CODE_REGEXP = #{raw verification_code_regexp.to_json};
+      window.code.constants.GOOGLE_MAPS_API_KEY = #{raw google_maps_api_key.to_json};
+      window.code.constants.CODE_ENV = #{raw code_env.to_json};
+      window.code.translations = #{raw I18n.t(".js").to_json};
 
   body.prose.max-w-5xl.mx-auto.p-8.border-t-4(class="code code:#{code_env}")
     .flex.gap-2.mb-5
