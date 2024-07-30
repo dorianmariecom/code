@@ -9,7 +9,7 @@ class PagePolicy < ApplicationPolicy
     true
   end
 
-  def more?
+  def about?
     true
   end
 end

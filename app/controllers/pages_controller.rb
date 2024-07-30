@@ -13,6 +13,6 @@ class PagesController < ApplicationController
   def up
   end
 
-  def more
+  def about
   end
 end

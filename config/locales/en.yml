@@ -7,6 +7,7 @@ en:
       register: register
       log_in: log in
       log_out: log out
+      about: about
   activerecord:
     errors:
       models:
@@ -213,8 +214,11 @@ en:
     update:
       notice: name updated
   pages:
-    documentation:
-      title: documentation
+    about:
+      hi_html: hi
+      me_html: this is <a href="https://dorianmarie.com">dorian marié</a>, the maker of code.
+      code_html: code is a programming language for the internet that you can use on mobile.
+      contact_html: you can read out to me at <a href="mailto:dorian@codedorian.com">dorian@codedorian.com</a>.
     home:
       submit: create
       title: code
