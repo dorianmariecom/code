@@ -33,7 +33,7 @@ html
         => link_to t(".log_in"), new_session_path
       - else
         => link_to current_user
-        => button_to t(".log_out"), session_path, method: :delete, class: "a"
+        => button_to t(".log_out"), session_path, method: :delete, class: "a inline-block"
 
     - if notice.present?
       p.text-green-600= notice
