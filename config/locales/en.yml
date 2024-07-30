@@ -10,6 +10,7 @@ en:
       about: about
       terms: terms
       privacy: privacy
+      source: source
   activerecord:
     errors:
       models:
@@ -216,6 +217,8 @@ en:
     update:
       notice: name updated
   pages:
+    source:
+      title: source
     terms:
       title: terms
     privacy:

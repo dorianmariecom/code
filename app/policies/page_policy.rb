@@ -20,4 +20,8 @@ class PagePolicy < ApplicationPolicy
   def privacy?
     true
   end
+
+  def source?
+    true
+  end
 end
