@@ -4,10 +4,9 @@ import "controllers";
 
 const updateBorderTopWidth = () => {
   if (localStorage.getItem("codeStatusBarHeight")) {
-    document.body.style.borderTopWidth =
-      `${localStorage.getItem("codeStatusBarHeight")}px`;
+    document.body.style.borderTopWidth = `${localStorage.getItem("codeStatusBarHeight")}px`;
   }
-}
+};
 
 window.addEventListener("message", (event) => {
   const data = JSON.parse(event.data);
@@ -18,9 +17,9 @@ window.addEventListener("message", (event) => {
 
   if (data.statusBarHeight) {
     localStorage.setItem("codeStatusBarHeight", data.statusBarHeight);
-    updateBorderTopWidth()
+    updateBorderTopWidth();
   }
 });
 
-window.addEventListener("load", updateBorderTopWidth)
-window.addEventListener("turbo:load", updateBorderTopWidth)
+window.addEventListener("load", updateBorderTopWidth);
+window.addEventListener("turbo:load", updateBorderTopWidth);
