@@ -12,4 +12,12 @@ class PagePolicy < ApplicationPolicy
   def about?
     true
   end
+
+  def terms?
+    true
+  end
+
+  def privacy?
+    true
+  end
 end

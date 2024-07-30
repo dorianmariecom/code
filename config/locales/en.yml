@@ -8,6 +8,8 @@ en:
       log_in: log in
       log_out: log out
       about: about
+      terms: terms
+      privacy: privacy
   activerecord:
     errors:
       models:
@@ -214,7 +216,12 @@ en:
     update:
       notice: name updated
   pages:
+    terms:
+      title: terms
+    privacy:
+      title: privacy
     about:
+      title: about
       hi_html: hi
       me_html: this is <a href="https://dorianmarie.com">dorian marié</a>, the maker of code.
       code_html: code is a programming language for the internet that you can use on mobile.
