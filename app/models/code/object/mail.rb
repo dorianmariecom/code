@@ -3,7 +3,7 @@
 class Code
   class Object
     class Mail < Object
-      DEFAULT_FROM = "Dorian Marié <dorian@dorianmarie.com>"
+      DEFAULT_FROM = "Dorian Marié <dorian@codedorian.com>"
 
       def self.call(**args)
         operator = args.fetch(:operator, nil)
