@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_many :data, dependent: :destroy
+  has_many :devices, dependent: :destroy
   has_many :email_addresses, dependent: :destroy
   has_many :locations, dependent: :destroy
   has_many :names, dependent: :destroy

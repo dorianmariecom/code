@@ -52,6 +52,10 @@ Rails.application.routes.draw do
       collection { delete "/" => "passwords#destroy_all" }
     end
 
+    resources :devices do
+      collection { delete "/" => "devices#destroy_all" }
+    end
+
     resources :programs do
       collection { delete "/" => "programs#destroy_all" }
       post :evaluate
@@ -254,6 +258,10 @@ Rails.application.routes.draw do
 
   resources :names do
     collection { delete "/" => "names#destroy_all" }
+  end
+
+  resources :devices do
+    collection { delete "/" => "devices#destroy_all" }
   end
 
   match "/auth/slack/callback" => "slack_accounts#callback",

@@ -250,6 +250,9 @@ GEM
     hashdiff (1.1.0)
     heroicon (1.0.0)
       rails (>= 5.2)
+    hkdf (0.3.0)
+    http-2 (0.12.0)
+      base64
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     interception (0.5)
@@ -261,6 +264,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.7.2)
+    jwt (2.8.2)
+      base64
     kamal (1.8.1)
       activesupport (>= 7.0)
       base64 (~> 0.2)
@@ -302,10 +307,15 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.24.1)
+    multi_json (1.15.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     net-http (0.4.1)
       uri
+    net-http-persistent (4.0.2)
+      connection_pool (~> 2.2)
+    net-http2 (0.18.5)
+      http-2 (~> 0.11)
     net-imap (0.4.14)
       date
       net-protocol
@@ -404,6 +414,16 @@ GEM
       io-console (~> 0.5)
     rexml (3.3.2)
       strscan
+    rpush (7.0.1)
+      activesupport (>= 5.2)
+      jwt (>= 1.5.6)
+      multi_json (~> 1.0)
+      net-http-persistent
+      net-http2 (~> 0.18, >= 0.18.3)
+      railties
+      rainbow
+      thor (>= 0.18.1, < 2.0)
+      webpush (~> 1.0)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.1)
@@ -521,6 +541,9 @@ GEM
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
+    webpush (1.1.0)
+      hkdf (~> 0.2)
+      jwt (~> 2.0)
     webrick (1.8.1)
     websocket (1.2.11)
     websocket-driver (0.7.6)
@@ -570,6 +593,7 @@ DEPENDENCIES
   rack-timeout
   rails!
   redis
+  rpush
   rspec-rails
   rubocop
   rubocop-rails-omakase

@@ -18,5 +18,6 @@ class Code
     config.active_support.to_time_preserves_timezone = :zone
     config.exceptions_app = self.routes
     config.hosts += ENV.fetch("HOSTS").split(",")
+    config.active_record.default_column_serializer = JSON
   end
 end

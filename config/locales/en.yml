@@ -1,16 +1,5 @@
 ---
 en:
-  layouts:
-    application:
-      home: home
-      programs: programs
-      register: register
-      log_in: log in
-      log_out: log out
-      about: about
-      terms: terms
-      privacy: privacy
-      source: source
   activerecord:
     errors:
       models:
@@ -46,6 +35,36 @@ en:
       user: user
     update:
       notice: datum updated
+  devices:
+    create:
+      notice: device created
+    destroy:
+      notice: device deleted
+    device:
+      device: device
+    edit:
+      submit: update device
+      title: edit device
+    form:
+      device: device
+    index:
+      delete_all: delete all
+      new: new device
+      title: devices
+    new:
+      submit: create device
+      title: new device
+    show:
+      created_at: created at
+      delete: delete device
+      edit: edit device
+      id: id
+      platform: platform
+      token: token
+      updated_at: updated at
+      user: user
+    update:
+      notice: device updated
   email_address_mailer:
     verification_code_email:
       dorian: dorian
@@ -145,6 +164,17 @@ en:
     verification_code:
       not_present: not present
       not_valid: not valid
+  layouts:
+    application:
+      about: about
+      home: home
+      log_in: log in
+      log_out: log out
+      privacy: privacy
+      programs: programs
+      register: register
+      source: source
+      terms: terms
   locations:
     create:
       notice: location created
@@ -217,21 +247,25 @@ en:
     update:
       notice: name updated
   pages:
+    about:
+      code_html:
+        code is a programming language for the internet that you can use
+        on mobile.
+      contact_html: you can read out to me at <a href="mailto:dorian@codedorian.com">dorian@codedorian.com</a>.
+      hi_html: hi
+      me_html:
+        this is <a href="https://dorianmarie.com">dorian marié</a>, the maker
+        of code.
+      title: about
+    home:
+      submit: create
+      title: code
+    privacy:
+      title: privacy
     source:
       title: source
     terms:
       title: terms
-    privacy:
-      title: privacy
-    about:
-      title: about
-      hi_html: hi
-      me_html: this is <a href="https://dorianmarie.com">dorian marié</a>, the maker of code.
-      code_html: code is a programming language for the internet that you can use on mobile.
-      contact_html: you can read out to me at <a href="mailto:dorian@codedorian.com">dorian@codedorian.com</a>.
-    home:
-      submit: create
-      title: code
     up:
       title: "/up"
   password_validator:
@@ -338,8 +372,8 @@ en:
       next_at: next at
       prompt: prompt
       schedule: schedule
-      unschedule: unschedule
       scheduled: scheduled?
+      unschedule: unschedule
       updated_at: updated at
       user: user
     update:
@@ -413,6 +447,10 @@ en:
     field:
       datum:
         data: data
+        user_id: user id
+      device:
+        platform: platform
+        token: token
         user_id: user id
       eg: e.g.
       email_address:
@@ -495,6 +533,10 @@ en:
         one: 1 datum
         other: "%{count} data"
         zero: 0 data
+      devices:
+        one: 1 device
+        other: "%{count} devices"
+        zero: 0 devices
       email_addresses:
         one: 1 email address
         other: "%{count} email addresses"
@@ -512,6 +554,7 @@ en:
         other: "%{count} names"
         zero: 0 names
       new_datum: new datum
+      new_device: new device
       new_email_address: new email address
       new_execution: new execution
       new_location: new location

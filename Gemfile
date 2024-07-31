@@ -32,6 +32,7 @@ gem "pundit"
 gem "rack-attack"
 gem "rails", rails: :rails
 gem "redis"
+gem "rpush"
 gem "rubocop"
 gem "slim-rails"
 gem "solid_errors", dorian: :solid_errors

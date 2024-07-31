@@ -32,6 +32,7 @@ class Guest
   end
 
   def data = Datum.none
+  def devices = Device.none
   def email_addresses = EmailAddress.none
   def locations = Location.none
   def names = Name.none
