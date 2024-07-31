@@ -43,6 +43,7 @@ class Guest
   def slack_accounts = SlackAccount.none
   def smtp_accounts = SmtpAccount.none
   def time_zones = TimeZone.none
+  def tokens = Token.none
   def x_accounts = XAcount.none
 
   def to_signed_global_id(purpose: nil, expires_in: nil)
