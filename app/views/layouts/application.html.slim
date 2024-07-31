@@ -23,6 +23,7 @@ html
       window.code.constants.GOOGLE_MAPS_API_KEY = #{raw google_maps_api_key.to_json};
       window.code.constants.CODE_ENV = #{raw code_env.to_json};
       window.code.translations = #{raw I18n.t(".js").to_json};
+      window.code.tokens = #{raw tokens.to_json};
 
   body.prose.max-w-5xl.mx-auto.p-8.border-t-4(class="code code:#{code_env}")
     .p

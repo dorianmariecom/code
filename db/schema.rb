@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_07_30_193034) do
+ActiveRecord::Schema[8.0].define(version: 2024_07_31_192958) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -393,6 +393,14 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_30_193034) do
     t.index ["user_id"], name: "index_time_zones_on_user_id"
   end
 
+  create_table "tokens", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "token", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tokens_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -452,5 +460,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_07_30_193034) do
                   column: "job_id",
                   on_delete: :cascade
   add_foreign_key "time_zones", "users"
+  add_foreign_key "tokens", "users"
   add_foreign_key "x_accounts", "users"
 end

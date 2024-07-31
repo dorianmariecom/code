@@ -306,6 +306,7 @@ en:
       password: password
       updated_at: updated at
       user: user
+      hint: hint
     update:
       notice: password updated
   phone_numbers:
@@ -445,6 +446,9 @@ en:
       title: log in
   shared:
     field:
+      token:
+        user_id: user id
+        token: token
       datum:
         data: data
         user_id: user id
@@ -560,6 +564,7 @@ en:
       new_location: new location
       new_name: new name
       new_password: new password
+      new_token: new token
       new_phone_number: new phone number
       new_program: new program
       new_prompt: new prompt
@@ -572,6 +577,10 @@ en:
         one: 1 password
         other: "%{count} passwords"
         zero: 0 passwords
+      tokens:
+        one: 1 token
+        other: "%{count} tokens"
+        zero: 0 tokens
       phone_numbers:
         one: 1 phone number
         other: "%{count} phone numbers"
@@ -765,3 +774,32 @@ en:
       notice: x account updated
     x_account:
       x_account: x account
+  tokens:
+    create:
+      notice: token created
+    destroy:
+      notice: token deleted
+    edit:
+      submit: update token
+      title: edit token
+    form:
+      token: token
+    index:
+      delete_all: delete all
+      new: new token
+      title: tokens
+    new:
+      submit: create token
+      title: new token
+    token:
+      token: token
+    show:
+      created_at: created at
+      delete: delete token
+      edit: edit token
+      id: id
+      token: token
+      updated_at: updated at
+      user: user
+    update:
+      notice: token updated

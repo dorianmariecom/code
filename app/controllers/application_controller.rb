@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_current_user
-    log_in(User.find_by(id: session[:user_id]))
+    log_in(current_user_from_session || current_token&.user)
   end
 
   def log_in(user)
@@ -62,5 +62,13 @@ class ApplicationController < ActionController::Base
 
   def mission_control_controller?
     is_a?(::MissionControl::Jobs::ApplicationController)
+  end
+
+  def current_user_from_session
+    session[:user_id].present? ? User.find_by(id: session[:user_id]) : nil
+  end
+
+  def current_token
+    headers[:token].present? ? Token.find_by(token: headers[:token]) : nil
   end
 end

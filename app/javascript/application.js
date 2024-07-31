@@ -23,3 +23,12 @@ window.addEventListener("message", (event) => {
 
 window.addEventListener("load", updateBorderTopWidth);
 window.addEventListener("turbo:load", updateBorderTopWidth);
+
+const sendTokens = () => {
+  window.ReactNativeWebView.postMessage(
+    JSON.stringify({ tokens: window.code.tokens }),
+  );
+};
+
+window.addEventListener("load", sendTokens);
+window.addEventListener("turbo:load", sendTokens);

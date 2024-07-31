@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     @smtp_accounts =
       policy_scope(SmtpAccount).where(user: @user).page(params[:page])
     @time_zones = policy_scope(TimeZone).where(user: @user).page(params[:page])
+    @tokens = policy_scope(Token).where(user: @user).page(params[:page])
     @x_accounts = policy_scope(XAccount).where(user: @user).page(params[:page])
     # programs
     @executions =
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = authorize scope.new
+    @user = authorize scope.new(user_params)
 
     if @user.save
       log_in(@user)
@@ -54,7 +55,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.touch
+    if @user.update(user_params)
       log_in(@user)
       redirect_to user_path(@user), notice: t(".notice")
     else
@@ -94,5 +95,9 @@ class UsersController < ApplicationController
 
   def scope
     policy_scope(User)
+  end
+
+  def user_params
+    {}
   end
 end

@@ -166,6 +166,10 @@ module ApplicationHelper
     current_user.is_a?(Guest)
   end
 
+  def tokens
+    current_user.tokens.map(&:token)
+  end
+
   def code_env
     if request.host == "localhost"
       "local"

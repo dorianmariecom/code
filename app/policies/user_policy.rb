@@ -22,7 +22,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    current_user.is_a?(Guest)
   end
 
   def update?

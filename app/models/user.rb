@@ -13,7 +13,10 @@ class User < ApplicationRecord
   has_many :slack_accounts, dependent: :destroy
   has_many :smtp_accounts, dependent: :destroy
   has_many :time_zones, dependent: :destroy
+  has_many :tokens, dependent: :destroy
   has_many :x_accounts, dependent: :destroy
+
+  after_create { tokens.create! }
 
   def name
     names.verified.primary.first&.name || names.verified.first&.name

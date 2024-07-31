@@ -7,6 +7,78 @@ class AdminConstraints
 end
 
 Rails.application.routes.draw do
+  define = -> do
+    resources :programs do
+      collection { delete "/" => "programs#destroy_all" }
+      post :evaluate
+      post :schedule
+      delete "schedule" => "programs#unschedule"
+
+      resources(:executions) do
+        collection { delete "/" => "executions#destroy_all" }
+      end
+
+      resources(:schedules) do
+        collection { delete "/" => "schedules#destroy_all" }
+      end
+
+      resources(:prompts) { collection { delete "/" => "prompts#destroy_all" } }
+    end
+
+    resources :email_addresses do
+      collection { delete "/" => "email_addresses#destroy_all" }
+      resource :verification_code
+    end
+
+    resources :phone_numbers do
+      collection { delete "/" => "phone_numbers#destroy_all" }
+      resource :verification_code
+    end
+
+    resources :smtp_accounts do
+      collection { delete "/" => "smtp_accounts#destroy_all" }
+      resource :verification_code
+    end
+
+    resources :x_accounts do
+      collection { delete "/" => "x_accounts#destroy_all" }
+      post "refresh_auth"
+      post "refresh_me"
+    end
+
+    resources(:executions) do
+      collection { delete "/" => "executions#destroy_all" }
+    end
+
+    resources(:slack_accounts) do
+      collection { delete "/" => "slack_accounts#destroy_all" }
+    end
+
+    resources(:time_zones) do
+      collection { delete "/" => "time_zones#destroy_all" }
+    end
+
+    resources(:locations) do
+      collection { delete "/" => "locations#destroy_all" }
+    end
+
+    resources(:passwords) do
+      collection { delete "/" => "passwords#destroy_all" }
+    end
+
+    resources(:schedules) do
+      collection { delete "/" => "schedules#destroy_all" }
+    end
+
+    resources(:data) { collection { delete "/" => "data#destroy_all" } }
+    resources(:devices) { collection { delete "/" => "devices#destroy_all" } }
+    resources(:names) { collection { delete "/" => "names#destroy_all" } }
+    resources(:prompts) { collection { delete "/" => "prompts#destroy_all" } }
+    resources(:tokens) { collection { delete "/" => "tokens#destroy_all" } }
+    resources(:users) { collection { delete "/" => "users#destroy_all" } }
+    resources(:guests) { collection { delete "/" => "guests#destroy_all" } }
+  end
+
   default_url_options(host: ENV.fetch("BASE_URL"))
 
   constraints AdminConstraints.new do
@@ -14,255 +86,13 @@ Rails.application.routes.draw do
     mount MissionControl::Jobs::Engine, at: "/jobs", as: :jobs
   end
 
+  resources(:guests, &define)
+  resources(:users, &define)
+  define.call
+
   resources :country_codes
   resources :password_validations
-  resources :prompts
-
   resource :session
-
-  resources :users do
-    collection { delete "/" => "users#destroy_all" }
-
-    resources :email_addresses do
-      collection { delete "/" => "email_addresses#destroy_all" }
-      resource :verification_code
-    end
-
-    resources :phone_numbers do
-      collection { delete "/" => "phone_numbers#destroy_all" }
-      resource :verification_code
-    end
-
-    resources :smtp_accounts do
-      collection { delete "/" => "smtp_accounts#destroy_all" }
-      resource :verification_code
-    end
-
-    resources :slack_accounts do
-      collection { delete "/" => "slack_accounts#destroy_all" }
-    end
-
-    resources :x_accounts do
-      collection { delete "/" => "x_accounts#destroy_all" }
-      post "refresh_auth"
-      post "refresh_me"
-    end
-
-    resources :passwords do
-      collection { delete "/" => "passwords#destroy_all" }
-    end
-
-    resources :devices do
-      collection { delete "/" => "devices#destroy_all" }
-    end
-
-    resources :programs do
-      collection { delete "/" => "programs#destroy_all" }
-      post :evaluate
-      post :schedule
-      delete "schedule" => "programs#unschedule"
-
-      resources :executions do
-        collection { delete "/" => "executions#destroy_all" }
-      end
-
-      resources :schedules do
-        collection { delete "/" => "schedules#destroy_all" }
-      end
-
-      resources :prompts do
-        collection { delete "/" => "prompts#destroy_all" }
-      end
-    end
-
-    resources :data do
-      collection { delete "/" => "data#destroy_all" }
-    end
-
-    resources :executions do
-      collection { delete "/" => "executions#destroy_all" }
-    end
-
-    resources :schedules do
-      collection { delete "/" => "schedules#destroy_all" }
-    end
-
-    resources :prompts do
-      collection { delete "/" => "prompts#destroy_all" }
-    end
-
-    resources :locations do
-      collection { delete "/" => "locations#destroy_all" }
-    end
-
-    resources :time_zones do
-      collection { delete "/" => "time_zones#destroy_all" }
-    end
-
-    resources :names do
-      collection { delete "/" => "names#destroy_all" }
-    end
-  end
-
-  resources :guests do
-    collection { delete "/" => "guests#destroy_all" }
-
-    resources :email_addresses do
-      collection { delete "/" => "email_addresses#destroy_all" }
-      resource :verification_code
-    end
-
-    resources :phone_numbers do
-      collection { delete "/" => "phone_numbers#destroy_all" }
-      resource :verification_code
-    end
-
-    resources :smtp_accounts do
-      collection { delete "/" => "smtp_accounts#destroy_all" }
-      resource :verification_code
-    end
-
-    resources :slack_accounts do
-      collection { delete "/" => "slack_accounts#destroy_all" }
-    end
-
-    resources :x_accounts do
-      collection { delete "/" => "x_accounts#destroy_all" }
-      post "refresh_auth"
-      post "refresh_me"
-    end
-
-    resources :passwords do
-      collection { delete "/" => "passwords#destroy_all" }
-    end
-
-    resources :locations do
-      collection { delete "/" => "locations#destroy_all" }
-    end
-
-    resources :time_zones do
-      collection { delete "/" => "time_zones#destroy_all" }
-    end
-
-    resources :names do
-      collection { delete "/" => "names#destroy_all" }
-    end
-
-    resources :programs do
-      collection { delete "/" => "programs#destroy_all" }
-      post :evaluate
-      post :schedule
-      delete "schedule" => "programs#unschedule"
-
-      resources :executions do
-        collection { delete "/" => "executions#destroy_all" }
-      end
-
-      resources :schedules do
-        collection { delete "/" => "schedules#destroy_all" }
-      end
-
-      resources :prompts do
-        collection { delete "/" => "prompts#destroy_all" }
-      end
-    end
-
-    resources :data do
-      collection { delete "/" => "data#destroy_all" }
-    end
-
-    resources :executions do
-      collection { delete "/" => "executions#destroy_all" }
-    end
-
-    resources :schedules do
-      collection { delete "/" => "schedules#destroy_all" }
-    end
-
-    resources :prompts do
-      collection { delete "/" => "prompts#destroy_all" }
-    end
-  end
-
-  resources :email_addresses do
-    collection { delete "/" => "email_addresses#destroy_all" }
-    resource :verification_code
-  end
-
-  resources :phone_numbers do
-    collection { delete "/" => "phone_numbers#destroy_all" }
-    resource :verification_code
-  end
-
-  resources :smtp_accounts do
-    collection { delete "/" => "smtp_accounts#destroy_all" }
-    resource :verification_code
-  end
-
-  resources :slack_accounts do
-    collection { delete "/" => "slack_accounts#destroy_all" }
-  end
-
-  resources :x_accounts do
-    collection { delete "/" => "x_accounts#destroy_all" }
-    post "refresh_auth"
-    post "refresh_me"
-  end
-
-  resources :passwords do
-    collection { delete "/" => "passwords#destroy_all" }
-  end
-
-  resources :programs do
-    collection { delete "/" => "programs#destroy_all" }
-    post :evaluate
-    post :schedule
-    delete "schedule" => "programs#unschedule"
-
-    resources :executions do
-      collection { delete "/" => "executions#destroy_all" }
-    end
-
-    resources :schedules do
-      collection { delete "/" => "schedules#destroy_all" }
-    end
-
-    resources :prompts do
-      collection { delete "/" => "prompts#destroy_all" }
-    end
-  end
-
-  resources :data do
-    collection { delete "/" => "data#destroy_all" }
-  end
-
-  resources :executions do
-    collection { delete "/" => "executions#destroy_all" }
-  end
-
-  resources :schedules do
-    collection { delete "/" => "schedules#destroy_all" }
-  end
-
-  resources :prompts do
-    collection { delete "/" => "prompts#destroy_all" }
-  end
-
-  resources :locations do
-    collection { delete "/" => "locations#destroy_all" }
-  end
-
-  resources :time_zones do
-    collection { delete "/" => "time_zones#destroy_all" }
-  end
-
-  resources :names do
-    collection { delete "/" => "names#destroy_all" }
-  end
-
-  resources :devices do
-    collection { delete "/" => "devices#destroy_all" }
-  end
 
   match "/auth/slack/callback" => "slack_accounts#callback",
         :via => %i[get post]
