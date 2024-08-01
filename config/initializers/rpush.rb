@@ -22,7 +22,7 @@ Rpush.configure do |config|
 
   config.log_level =
     (
-      if (defined?(Rails) && Rails.logger)
+      if defined?(Rails) && Rails.logger
         Rails.logger.level
       else
         ::Logger::Severity::INFO
