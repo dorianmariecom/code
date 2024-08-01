@@ -2,7 +2,7 @@ ARG RUBY_VERSION="3.3.4"
 
 FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
-ENV BUNDLER_VERSION="2.5.7" \
+ENV BUNDLER_VERSION="2.5.16" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development" \
