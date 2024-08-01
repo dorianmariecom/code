@@ -3,6 +3,10 @@ image: dorianmariecom/code
 healthcheck:
   max_attempts: 100
 servers:
+  push:
+    hosts:
+      - 146.190.28.38
+    cmd: bin/rpush start -f
   web:
     hosts:
       - 146.190.28.38
