@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   include CanConcern
 
   protect_from_forgery with: :exception
+  skip_forgery_protection if: :current_token?
 
   before_action :set_current_user
   after_action :verify_authorized
@@ -69,6 +70,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_token
-    headers[:token].present? ? Token.find_by(token: headers[:token]) : nil
+    request.headers[:Token].present? ? Token.find_by(token: request.headers[:Token]) : nil
+  end
+
+  def current_token?
+    !!current_token
   end
 end
