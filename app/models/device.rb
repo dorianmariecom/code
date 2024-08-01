@@ -1,5 +1,5 @@
 class Device < ApplicationRecord
-  PLATFORMS = ["ios", "android"]
+  PLATFORMS = %w[ios android]
 
   belongs_to :user, default: -> { Current.user }
 

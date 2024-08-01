@@ -70,7 +70,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_token
-    request.headers[:Token].present? ? Token.find_by(token: request.headers[:Token]) : nil
+    if request.headers[:Token].present?
+      Token.find_by(token: request.headers[:Token])
+    else
+      nil
+    end
   end
 
   def current_token?

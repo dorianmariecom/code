@@ -5,7 +5,10 @@
   .each do |application|
   config.environments.each do |environment|
     print "#{application[:name]} | #{application[:bundle_id]} | #{environment}... "
-    if Rpush::Apnsp8::App.find_by(name: application[:name], environment: environment)
+    if Rpush::Apnsp8::App.find_by(
+         name: application[:name],
+         environment: environment
+       )
       puts "skipping"
     else
       app = Rpush::Apnsp8::App.new
