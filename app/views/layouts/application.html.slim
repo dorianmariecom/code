@@ -12,6 +12,7 @@ html
     = stylesheet_link_tag "espresso", "data-turbo-track": "reload"
     = stylesheet_link_tag "tailwind", "data-turbo-track": "reload"
 
+  body.prose.max-w-5xl.mx-auto.p-8.border-t-4(class="code code:#{code_env}")
     javascript:
       window.code = {}
       window.code.constants = {}
@@ -25,7 +26,6 @@ html
       window.code.translations = #{raw I18n.t(".js").to_json};
       window.code.tokens = #{raw tokens.to_json};
 
-  body.prose.max-w-5xl.mx-auto.p-8.border-t-4(class="code code:#{code_env}")
     .p
       => link_to t(".home"), root_path
       => link_to t(".programs"), [current_user, :programs]
