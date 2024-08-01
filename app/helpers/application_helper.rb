@@ -103,6 +103,16 @@ module ApplicationHelper
     end
   end
 
+  def device_platform_options(platform: nil)
+    Device::PLATFORMS.map do |device_platform|
+      [
+        device_platform,
+        device_platform,
+        { selected: device_platform == platform }
+      ]
+    end
+  end
+
   def user_options(user_id: nil)
     ([nil] + policy_scope(User).order(:id).to_a).map do |user|
       [user&.to_s, user&.id, { selected: user_id == user&.id }]
