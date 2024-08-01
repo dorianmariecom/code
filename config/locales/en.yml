@@ -1,5 +1,38 @@
 ---
 en:
+  attributes:
+    address: address
+    authentication: authentication
+    data: data
+    display_name: display name
+    email_address: email address
+    enable_starttls_auto: enable starttls auto
+    hint: hint
+    input: input
+    interval: interval
+    location: location
+    name: name
+    password: password
+    phone_number: phone number
+    platform: platform
+    port: port
+    primary: primary?
+    program_id: program
+    prompt: prompt
+    smtp_address: smtp address
+    smtp_authentication: smtp authentication
+    smtp_enable_starttls_auto: smtp enable starttls auto
+    smtp_password: smtp password
+    smtp_port: smtp port
+    smtp_user_name: smtp user name
+    starts_at: starts at
+    time_zone: time zone
+    token: token
+    user_id: user
+    user_id: user id
+    user_name: user name
+    verification_code: verification code
+    verified: verified?
   activerecord:
     errors:
       models:
