@@ -2,7 +2,9 @@
 
 require_relative "../config/environment"
 
-(config = Rails.application.credentials.apple).applications.each do |application|
+(config = Rails.application.credentials.apple)
+  .applications
+  .each do |application|
   config.environments.each do |environment|
     puts "#{application[:name]} | #{application[:bundle_id]} | #{environment}"
     app = Rpush::Apnsp8::App.new
