@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_08_01_182034) do
+ActiveRecord::Schema[8.0].define(version: 2024_08_01_183333) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,7 +28,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_08_01_182034) do
     t.string "platform"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["token"], name: "index_devices_on_token", unique: true
+    t.index %w[token user_id],
+            name: "index_devices_on_token_and_user_id",
+            unique: true
     t.index ["user_id"], name: "index_devices_on_user_id"
   end
 
