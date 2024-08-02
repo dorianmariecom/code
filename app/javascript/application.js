@@ -1,6 +1,7 @@
 import "@hotwired/turbo-rails";
 import "@hotwired/turbo";
 import "controllers";
+import PullToRefresh from "pulltorefreshjs";
 
 const updateBorderTopWidth = () => {
   if (localStorage.getItem("codeStatusBarHeight")) {
@@ -9,7 +10,7 @@ const updateBorderTopWidth = () => {
 };
 
 const sendTokens = () => {
-  window.ReactNativeWebView.postMessage(
+  window.ReactNativeWebView?.postMessage(
     JSON.stringify({ tokens: window.code.tokens }),
   );
 };
@@ -23,6 +24,7 @@ window.addEventListener("message", async (event) => {
   const deviceToken = data.device?.token;
   const deviceTokens = window.code.deviceTokens;
   const isRegistered = window.code.isRegistered;
+  const csrfToken = document.querySelector("[name='csrf-token']")?.content;
 
   if (data.config) {
     document.body.classList.add("code-app", `code-app:${data.config.CODE_ENV}`);
@@ -33,9 +35,7 @@ window.addEventListener("message", async (event) => {
     updateBorderTopWidth();
   }
 
-  if (isRegistered && deviceToken && !deviceTokens.includes(deviceToken))
-    const csrfToken = document.querySelector("[name='csrf-token']")?.content;
-
+  if (isRegistered && deviceToken && !deviceTokens.includes(deviceToken)) {
     await fetch("/devices", {
       method: "POST",
       headers: {
@@ -44,7 +44,12 @@ window.addEventListener("message", async (event) => {
       },
       body: JSON.stringify({ device: data.device }),
     });
-
-    window.location.reload();
   }
+});
+
+PullToRefresh.init({
+  mainElement: "body",
+  onRefresh() {
+    window.location.reload();
+  },
 });

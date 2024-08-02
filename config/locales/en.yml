@@ -1,5 +1,13 @@
 ---
 en:
+  activerecord:
+    errors:
+      models:
+        phone_number:
+          attributes:
+            phone_number:
+              impossible: is impossible
+              invalid: is invalid
   attributes:
     address: address
     authentication: authentication
@@ -28,19 +36,10 @@ en:
     starts_at: starts at
     time_zone: time zone
     token: token
-    user_id: user
     user_id: user id
     user_name: user name
     verification_code: verification code
     verified: verified?
-  activerecord:
-    errors:
-      models:
-        phone_number:
-          attributes:
-            phone_number:
-              impossible: is impossible
-              invalid: is invalid
   data:
     create:
       notice: datum created
@@ -335,11 +334,11 @@ en:
       created_at: created at
       delete: delete password
       edit: edit password
+      hint: hint
       id: id
       password: password
       updated_at: updated at
       user: user
-      hint: hint
     update:
       notice: password updated
   phone_numbers:
@@ -479,9 +478,6 @@ en:
       title: log in
   shared:
     field:
-      token:
-        user_id: user id
-        token: token
       datum:
         data: data
         user_id: user id
@@ -557,6 +553,9 @@ en:
         time_zone: time zone
         user_id: user id
         verified: verified?
+      token:
+        token: token
+        user_id: user id
       user:
         location: location
         name: name
@@ -597,7 +596,6 @@ en:
       new_location: new location
       new_name: new name
       new_password: new password
-      new_token: new token
       new_phone_number: new phone number
       new_program: new program
       new_prompt: new prompt
@@ -605,15 +603,12 @@ en:
       new_slack_account: new slack account
       new_smtp_account: new smtp account
       new_time_zone: new time zone
+      new_token: new token
       new_x_account: new x account
       passwords:
         one: 1 password
         other: "%{count} passwords"
         zero: 0 passwords
-      tokens:
-        one: 1 token
-        other: "%{count} tokens"
-        zero: 0 tokens
       phone_numbers:
         one: 1 phone number
         other: "%{count} phone numbers"
@@ -642,6 +637,10 @@ en:
         one: 1 time zone
         other: "%{count} time zones"
         zero: 0 time zones
+      tokens:
+        one: 1 token
+        other: "%{count} tokens"
+        zero: 0 tokens
       x_accounts:
         one: 1 x account
         other: "%{count} x accounts"
@@ -748,6 +747,35 @@ en:
       time_zone: time zone
     update:
       notice: time zone updated
+  tokens:
+    create:
+      notice: token created
+    destroy:
+      notice: token deleted
+    edit:
+      submit: update token
+      title: edit token
+    form:
+      token: token
+    index:
+      delete_all: delete all
+      new: new token
+      title: tokens
+    new:
+      submit: create token
+      title: new token
+    show:
+      created_at: created at
+      delete: delete token
+      edit: edit token
+      id: id
+      token: token
+      updated_at: updated at
+      user: user
+    token:
+      token: token
+    update:
+      notice: token updated
   users:
     create:
       notice: registered
@@ -807,32 +835,3 @@ en:
       notice: x account updated
     x_account:
       x_account: x account
-  tokens:
-    create:
-      notice: token created
-    destroy:
-      notice: token deleted
-    edit:
-      submit: update token
-      title: edit token
-    form:
-      token: token
-    index:
-      delete_all: delete all
-      new: new token
-      title: tokens
-    new:
-      submit: create token
-      title: new token
-    token:
-      token: token
-    show:
-      created_at: created at
-      delete: delete token
-      edit: edit token
-      id: id
-      token: token
-      updated_at: updated at
-      user: user
-    update:
-      notice: token updated

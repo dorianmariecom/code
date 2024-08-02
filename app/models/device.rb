@@ -1,7 +1,7 @@
 class Device < ApplicationRecord
   PLATFORMS = %w[ios android]
 
-  belongs_to :user, default: -> { Current.user }
+  belongs_to :user, default: -> { Current.user }, touch: true
 
   validate { can!(:update, user) }
   validates :token, presence: true, uniqueness: { scope: :user_id }
