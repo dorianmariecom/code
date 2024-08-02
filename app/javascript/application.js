@@ -30,7 +30,7 @@ window.addEventListener("message", (event) => {
     updateBorderTopWidth();
   }
 
-  if (data.device && !window.code.deviceTokens.includes(data.device.token)) {
+  if (data.device && data.device.token && !window.code.deviceTokens.includes(data.device.token)) {
     const csrfToken = document.querySelector("[name='csrf-token']")?.content;
 
     fetch("/devicees", {
