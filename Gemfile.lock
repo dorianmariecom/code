@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 4a45f3144c680f86655a24d21a9e014f694cca74
+  revision: a5ffec5291442b38188e987e32844a6a8d260e4c
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -248,7 +248,7 @@ GEM
       rchardet (~> 1.8)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    hashdiff (1.1.0)
+    hashdiff (1.1.1)
     heroicon (1.0.0)
       rails (>= 5.2)
     hkdf (0.3.0)
@@ -615,4 +615,4 @@ RUBY VERSION
    ruby 3.3.4p94
 
 BUNDLED WITH
-   2.5.16
+   2.5.17
