@@ -33,7 +33,7 @@ window.addEventListener("message", (event) => {
   if (data.device && data.device.token && !window.code.deviceTokens.includes(data.device.token)) {
     const csrfToken = document.querySelector("[name='csrf-token']")?.content;
 
-    fetch("/devicees", {
+    fetch("/devices", {
       method: "POST",
       headers: {
         "X-CSRF-Token": csrfToken,
