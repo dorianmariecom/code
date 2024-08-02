@@ -18,8 +18,11 @@ window.addEventListener("load", sendTokens);
 window.addEventListener("load", updateBorderTopWidth);
 window.addEventListener("turbo:load", sendTokens);
 window.addEventListener("turbo:load", updateBorderTopWidth);
-window.addEventListener("message", (event) => {
+window.addEventListener("message", async (event) => {
   const data = JSON.parse(event.data);
+  const deviceToken = data.device?.token;
+  const deviceTokens = window.code.deviceTokens;
+  const isRegistered = window.code.isRegistered;
 
   if (data.config) {
     document.body.classList.add("code-app", `code-app:${data.config.CODE_ENV}`);
@@ -30,10 +33,10 @@ window.addEventListener("message", (event) => {
     updateBorderTopWidth();
   }
 
-  if (data.device && data.device.token && !window.code.deviceTokens.includes(data.device.token)) {
+  if (isRegistered && deviceToken && !deviceTokens.includes(deviceToken))
     const csrfToken = document.querySelector("[name='csrf-token']")?.content;
 
-    fetch("/devices", {
+    await fetch("/devices", {
       method: "POST",
       headers: {
         "X-CSRF-Token": csrfToken,

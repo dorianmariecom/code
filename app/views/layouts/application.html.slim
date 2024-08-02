@@ -22,6 +22,8 @@ html
       window.code.VERIFICATION_CODE_REGEXP = #{raw verification_code_regexp.to_json};
       window.code.GOOGLE_MAPS_API_KEY = #{raw google_maps_api_key.to_json};
       window.code.CODE_ENV = #{raw code_env.to_json};
+      window.code.isRegistered = #{raw registered?.to_json};
+      window.code.isGuest = #{raw guest?.to_json};
       window.code.translations = #{raw I18n.t(".js").to_json};
       window.code.tokens = #{raw tokens.to_json};
       window.code.deviceTokens = #{raw device_tokens.to_json};
