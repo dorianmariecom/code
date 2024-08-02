@@ -29,6 +29,8 @@ html
       window.code.deviceTokens = #{raw device_tokens.to_json};
 
     .p
+      - unless current_page?(root_url)
+        .hidden.code-app:inline-block=> link_to "<", root_url, data: { controller: :back, action: "back#back" }
       => link_to t(".home"), root_path
       => link_to t(".programs"), [current_user, :programs]
       - if guest?
