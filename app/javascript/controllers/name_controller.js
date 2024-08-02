@@ -4,7 +4,7 @@ import { VALID_CLASSES, INVALID_CLASSES } from "constants";
 
 const t = I18n("name");
 
-const EMAIL_ADDRESS_REGEXP = window.code.constants.EMAIL_ADDRESS_REGEXP;
+const EMAIL_ADDRESS_REGEXP = window.code.EMAIL_ADDRESS_REGEXP;
 
 export default class extends Controller {
   static targets = ["input", "error"];

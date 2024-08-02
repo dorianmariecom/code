@@ -15,16 +15,16 @@ html
   body.prose.max-w-5xl.mx-auto.p-8.border-t-4(class="code code:#{code_env}")
     javascript:
       window.code = {}
-      window.code.constants = {}
-      window.code.constants.DEFAULT_COUNTRY_CODE = #{raw default_country_code.to_json};
-      window.code.constants.DOMAIN_REGEXP = #{raw domain_regexp.to_json};
-      window.code.constants.EMAIL_ADDRESS_REGEXP = #{raw email_address_regexp.to_json};
-      window.code.constants.SLACK_TEAM_REGEXP = #{raw slack_team_regexp.to_json};
-      window.code.constants.VERIFICATION_CODE_REGEXP = #{raw verification_code_regexp.to_json};
-      window.code.constants.GOOGLE_MAPS_API_KEY = #{raw google_maps_api_key.to_json};
-      window.code.constants.CODE_ENV = #{raw code_env.to_json};
+      window.code.DEFAULT_COUNTRY_CODE = #{raw default_country_code.to_json};
+      window.code.DOMAIN_REGEXP = #{raw domain_regexp.to_json};
+      window.code.EMAIL_ADDRESS_REGEXP = #{raw email_address_regexp.to_json};
+      window.code.SLACK_TEAM_REGEXP = #{raw slack_team_regexp.to_json};
+      window.code.VERIFICATION_CODE_REGEXP = #{raw verification_code_regexp.to_json};
+      window.code.GOOGLE_MAPS_API_KEY = #{raw google_maps_api_key.to_json};
+      window.code.CODE_ENV = #{raw code_env.to_json};
       window.code.translations = #{raw I18n.t(".js").to_json};
       window.code.tokens = #{raw tokens.to_json};
+      window.code.deviceTokens = #{raw device_tokens.to_json};
 
     .p
       => link_to t(".home"), root_path

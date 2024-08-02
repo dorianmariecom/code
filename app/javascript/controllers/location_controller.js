@@ -2,7 +2,7 @@ import PlacesAutocomplete from "stimulus-places-autocomplete";
 import { Loader } from "@googlemaps/js-api-loader";
 
 const loader = new Loader({
-  apiKey: window.constants.GOOGLE_MAPS_API_KEY,
+  apiKey: window.GOOGLE_MAPS_API_KEY,
   version: "weekly",
   libraries: ["places"],
 });

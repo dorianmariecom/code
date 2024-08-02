@@ -8,6 +8,16 @@ const updateBorderTopWidth = () => {
   }
 };
 
+const sendTokens = () => {
+  window.ReactNativeWebView.postMessage(
+    JSON.stringify({ tokens: window.code.tokens }),
+  );
+};
+
+window.addEventListener("load", sendTokens);
+window.addEventListener("load", updateBorderTopWidth);
+window.addEventListener("turbo:load", sendTokens);
+window.addEventListener("turbo:load", updateBorderTopWidth);
 window.addEventListener("message", (event) => {
   const data = JSON.parse(event.data);
 
@@ -19,16 +29,19 @@ window.addEventListener("message", (event) => {
     localStorage.setItem("codeStatusBarHeight", data.statusBarHeight);
     updateBorderTopWidth();
   }
+
+  if (data.device && !window.code.deviceTokens.includes(data.device.token)) {
+    const csrfToken = document.querySelector("[name='csrf-token']")?.content;
+
+    fetch("/devicees", {
+      method: "POST",
+      headers: {
+        "X-CSRF-Token": csrfToken,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ device: data.device }),
+    });
+
+    window.location.reload();
+  }
 });
-
-window.addEventListener("load", updateBorderTopWidth);
-window.addEventListener("turbo:load", updateBorderTopWidth);
-
-const sendTokens = () => {
-  window.ReactNativeWebView.postMessage(
-    JSON.stringify({ tokens: window.code.tokens }),
-  );
-};
-
-window.addEventListener("load", sendTokens);
-window.addEventListener("turbo:load", sendTokens);

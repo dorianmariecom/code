@@ -180,6 +180,10 @@ module ApplicationHelper
     current_user.tokens.map(&:token)
   end
 
+  def device_tokens
+    current_user.devices.map(&:token)
+  end
+
   def code_env
     if request.host == "localhost"
       "local"
