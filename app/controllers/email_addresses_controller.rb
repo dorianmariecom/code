@@ -12,14 +12,17 @@ class EmailAddressesController < ApplicationController
     authorize EmailAddress
 
     @email_addresses = scope.page(params[:page])
+    @breadcrumbs = [@user, :email_addresses]
   end
 
   def show
+    @breadcrumbs = [@user, @email_address]
   end
 
   def new
     @email_address =
       authorize scope.new(primary: current_user.email_addresses.none?)
+    @breadcrumbs = [@user, @email_address, :new]
   end
 
   def create
@@ -35,6 +38,7 @@ class EmailAddressesController < ApplicationController
   end
 
   def edit
+    @breadcrumbs = [@user, @email_address, :edit]
   end
 
   def update

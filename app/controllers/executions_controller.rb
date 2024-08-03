@@ -11,13 +11,11 @@ class ExecutionsController < ApplicationController
     authorize Execution
 
     @executions = scope.page(params[:page])
+    @breadcrumbs = [@user, @program, :executions]
   end
 
   def show
-    @executions =
-      policy_scope(Execution).where(execution: @execution).order(
-        created_at: :desc
-      )
+    @breadcrumbs = [@user, @program, @execution]
   end
 
   def destroy

@@ -10,13 +10,16 @@ class TokensController < ApplicationController
     authorize Token
 
     @tokens = scope.page(params[:page])
+    @breadcrumbs = [@user, :tokens]
   end
 
   def show
+    @breadcrumbs = [@user, @token]
   end
 
   def new
     @token = authorize scope.new
+    @breadcrumbs = [@user, @token, :new]
   end
 
   def create
@@ -32,6 +35,7 @@ class TokensController < ApplicationController
   end
 
   def edit
+    @breadcrumbs = [@user, @token, :edit]
   end
 
   def update

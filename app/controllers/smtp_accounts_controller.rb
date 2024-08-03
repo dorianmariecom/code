@@ -10,14 +10,17 @@ class SmtpAccountsController < ApplicationController
     authorize SmtpAccount
 
     @smtp_accounts = scope.page(params[:page])
+    @breadcrumbs = [@user, :smtp_accounts]
   end
 
   def show
+    @breadcrumbs = [@user, @smtp_account]
   end
 
   def new
     @smtp_account =
       authorize scope.new(primary: current_user.smtp_accounts.none?)
+    @breadcrumbs = [@user, @smtp_account, :new]
   end
 
   def create
@@ -33,6 +36,7 @@ class SmtpAccountsController < ApplicationController
   end
 
   def edit
+    @breadcrumbs = [@user, @smtp_account, :edit]
   end
 
   def update

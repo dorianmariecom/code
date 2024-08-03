@@ -11,9 +11,11 @@ class PromptsController < ApplicationController
     authorize Prompt
 
     @prompts = scope.page(params[:page])
+    @breadcrumbs = [@user, @program, :prompts]
   end
 
   def show
+    @breadcrumbs = [@user, @program, @prompt]
   end
 
   def create

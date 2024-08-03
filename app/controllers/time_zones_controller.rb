@@ -10,13 +10,16 @@ class TimeZonesController < ApplicationController
     authorize TimeZone
 
     @time_zones = scope.page(params[:page])
+    @breadcrumbs = [@user, :time_zones]
   end
 
   def show
+    @breadcrumbs = [@user, @time_zone]
   end
 
   def new
     @time_zone = authorize scope.new
+    @breadcrumbs = [@user, @time_zone, :new]
   end
 
   def create
@@ -32,6 +35,7 @@ class TimeZonesController < ApplicationController
   end
 
   def edit
+    @breadcrumbs = [@user, @time_zone, :edit]
   end
 
   def update

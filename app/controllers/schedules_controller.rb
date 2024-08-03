@@ -11,13 +11,16 @@ class SchedulesController < ApplicationController
     authorize Schedule
 
     @schedules = scope.page(params[:page])
+    @breadcrumbs = [@user, @program, :schedules]
   end
 
   def show
+    @breadcrumbs = [@user, @program, @schedule]
   end
 
   def new
     @schedule = authorize scope.new
+    @breadcrumbs = [@user, @program, @schedule, :new]
   end
 
   def create
@@ -33,6 +36,7 @@ class SchedulesController < ApplicationController
   end
 
   def edit
+    @breadcrumbs = [@user, @program, @schedule, :edit]
   end
 
   def update

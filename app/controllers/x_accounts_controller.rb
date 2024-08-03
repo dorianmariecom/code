@@ -13,6 +13,7 @@ class XAccountsController < ApplicationController
     authorize XAccount
 
     @x_accounts = scope.page(params[:page])
+    @breadcrumbs = [@user, :x_accounts]
   end
 
   def refresh_auth
@@ -37,13 +38,16 @@ class XAccountsController < ApplicationController
   end
 
   def show
+    @breadcrumbs = [@user, @x_account]
   end
 
   def new
     @x_account = authorize policy_scope(XAccount).new
+    @breadcrumbs = [@user, @x_account, :new]
   end
 
   def edit
+    @breadcrumbs = [@user, @x_account, :edit]
   end
 
   def update

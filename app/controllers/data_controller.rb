@@ -9,16 +9,16 @@ class DataController < ApplicationController
     authorize Datum
 
     @data = scope.page(params[:page])
+    @breadcrumbs = [@user, :data]
   end
 
   def show
+    @breadcrumbs = [@user, @datum]
   end
 
   def new
     @datum = authorize scope.new
-  end
-
-  def redirect
+    @breadcrumbs = [@user, @datum, :new]
   end
 
   def create
@@ -36,6 +36,7 @@ class DataController < ApplicationController
   end
 
   def edit
+    @breadcrumbs = [@user, @datum, :edit]
   end
 
   def update

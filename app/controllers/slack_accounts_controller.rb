@@ -10,6 +10,7 @@ class SlackAccountsController < ApplicationController
     authorize SlackAccount
 
     @slack_accounts = scope.page(params[:page])
+    @breadcrumbs = [@user, :slack_accounts]
   end
 
   def callback
@@ -23,13 +24,16 @@ class SlackAccountsController < ApplicationController
   end
 
   def show
+    @breadcrumbs = [@user, @slack_account]
   end
 
   def new
     @slack_account = authorize policy_scope(SlackAccount).new
+    @breadcrumbs = [@user, @slack_account, :new]
   end
 
   def edit
+    @breadcrumbs = [@user, @slack_account, :edit]
   end
 
   def update

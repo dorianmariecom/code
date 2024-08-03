@@ -11,6 +11,7 @@ class ProgramsController < ApplicationController
     authorize Program
 
     @programs = scope.page(params[:page])
+    @breadcrumbs = [@user, :programs]
   end
 
   def show
@@ -29,6 +30,7 @@ class ProgramsController < ApplicationController
         .where(program: @program)
         .order(created_at: :desc)
         .page(params[:page])
+    @breadcrumbs = [@user, @program]
   end
 
   def evaluate
@@ -51,6 +53,7 @@ class ProgramsController < ApplicationController
 
   def new
     @program = authorize scope.new
+    @breadcrumbs = [@user, @program, :new]
   end
 
   def create
@@ -66,6 +69,7 @@ class ProgramsController < ApplicationController
   end
 
   def edit
+    @breadcrumbs = [@user, @program, :edit]
   end
 
   def update
