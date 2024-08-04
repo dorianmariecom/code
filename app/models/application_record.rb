@@ -28,4 +28,12 @@ class ApplicationRecord < ActiveRecord::Base
   def log_in(user)
     Current.user = user unless Current.user?
   end
+
+  def model_singular
+    self.class.name.underscore.singularize.to_sym
+  end
+
+  def model_plural
+    self.class.name.underscore.pluralize.to_sym
+  end
 end

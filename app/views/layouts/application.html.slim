@@ -40,6 +40,8 @@ html
         => link_to current_user
         => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
 
+    = breadcrumbs
+
     - if notice.present?
       p.text-green-600= notice
 

@@ -5,6 +5,7 @@ class SmtpAccountsController < ApplicationController
   before_action :load_smtp_account, only: %i[show edit update destroy]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize SmtpAccount
@@ -83,6 +84,10 @@ class SmtpAccountsController < ApplicationController
 
   def url
     @user ? [@user, :smtp_accounts] : smtp_accounts_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :smtp_account] : new_smtp_account_path
   end
 
   def id

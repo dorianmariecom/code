@@ -5,6 +5,7 @@ class NamesController < ApplicationController
   before_action :load_name, only: %i[show edit update destroy]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize Name
@@ -78,6 +79,10 @@ class NamesController < ApplicationController
 
   def url
     @user ? [@user, :names] : names_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :name] : new_name_path
   end
 
   def id

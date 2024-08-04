@@ -4,6 +4,7 @@ class DataController < ApplicationController
   before_action :load_user
   before_action :load_datum, only: %i[show edit update destroy]
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize Datum
@@ -81,6 +82,10 @@ class DataController < ApplicationController
 
   def url
     @user ? [@user, :data] : data_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :datum] : [:new, :datum]
   end
 
   def id

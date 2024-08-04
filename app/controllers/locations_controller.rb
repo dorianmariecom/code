@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
   before_action :load_location, only: %i[show edit update destroy]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize Location
@@ -78,6 +79,10 @@ class LocationsController < ApplicationController
 
   def url
     @user ? [@user, :locations] : locations_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :location] : new_location_path
   end
 
   def id

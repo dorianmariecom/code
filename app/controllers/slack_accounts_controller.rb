@@ -5,6 +5,7 @@ class SlackAccountsController < ApplicationController
   before_action :load_slack_account, only: %i[show edit update destroy]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize SlackAccount
@@ -80,6 +81,10 @@ class SlackAccountsController < ApplicationController
 
   def url
     @user ? [@user, :slack_accounts] : slack_accounts_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :slack_account] : new_slack_account_path
   end
 
   def id

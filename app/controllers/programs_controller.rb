@@ -6,6 +6,7 @@ class ProgramsController < ApplicationController
                 only: %i[show edit update destroy evaluate schedule unschedule]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize Program
@@ -112,6 +113,10 @@ class ProgramsController < ApplicationController
 
   def url
     @user ? [@user, :programs] : programs_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :program] : new_program_path
   end
 
   def id

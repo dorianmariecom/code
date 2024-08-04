@@ -11,6 +11,11 @@
   - if can?(:create, clazz)
     .p= button_to t(".new_#{singular}"), [:new, parent, model], method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
-  = paginate collection
-  = render partial: "#{plural}/#{singular}", collection:
-  = paginate collection
+  - if collection.any?
+    details
+      summary= t(".more")
+
+      .mt-5
+        = paginate collection
+        = render partial: "#{plural}/#{singular}", collection:
+        = paginate collection

@@ -5,6 +5,7 @@ class PhoneNumbersController < ApplicationController
   before_action :load_phone_number, only: %i[show edit update destroy]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize PhoneNumber
@@ -83,6 +84,10 @@ class PhoneNumbersController < ApplicationController
 
   def url
     @user ? [@user, :phone_numbers] : phone_numbers_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :phone_number] : new_phone_number_path
   end
 
   def id

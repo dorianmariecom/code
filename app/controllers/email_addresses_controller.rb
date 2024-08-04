@@ -7,6 +7,7 @@ class EmailAddressesController < ApplicationController
   helper_method :verification_code_param
   helper_method :id
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize EmailAddress
@@ -89,6 +90,10 @@ class EmailAddressesController < ApplicationController
 
   def url
     @user ? [@user, :email_addresses] : email_addresses_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :email_address] : new_email_address_path
   end
 
   def load_email_address

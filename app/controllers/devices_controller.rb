@@ -5,6 +5,7 @@ class DevicesController < ApplicationController
   before_action :load_device, only: %i[show edit update destroy]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize Device
@@ -78,6 +79,10 @@ class DevicesController < ApplicationController
 
   def url
     @user ? [@user, :devices] : devices_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :device] : new_device_path
   end
 
   def id

@@ -5,6 +5,7 @@ class TokensController < ApplicationController
   before_action :load_token, only: %i[show edit update destroy]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize Token
@@ -78,6 +79,10 @@ class TokensController < ApplicationController
 
   def url
     @user ? [@user, :tokens] : tokens_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :token] : new_token_path
   end
 
   def id

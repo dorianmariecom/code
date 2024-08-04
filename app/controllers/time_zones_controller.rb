@@ -5,6 +5,7 @@ class TimeZonesController < ApplicationController
   before_action :load_time_zone, only: %i[show edit update destroy]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize TimeZone
@@ -78,6 +79,10 @@ class TimeZonesController < ApplicationController
 
   def url
     @user ? [@user, :time_zones] : time_zones_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :time_zone] : new_time_zone_path
   end
 
   def id

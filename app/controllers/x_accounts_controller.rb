@@ -92,6 +92,10 @@ class XAccountsController < ApplicationController
     @user ? [@user, :x_accounts] : x_accounts_path
   end
 
+  def new_url
+    @user ? [:new, @user, :x_account] : new_x_account_path
+  end
+
   def id
     params[:x_account_id].presence || params[:id]
   end

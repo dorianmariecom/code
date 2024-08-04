@@ -5,6 +5,7 @@ class PasswordsController < ApplicationController
   before_action :load_password, only: %i[show edit update destroy]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize Password
@@ -78,6 +79,10 @@ class PasswordsController < ApplicationController
 
   def url
     @user ? [@user, :passwords] : passwords_path
+  end
+
+  def new_url
+    @user ? [:new, @user, :password] : new_password_path
   end
 
   def id

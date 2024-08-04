@@ -6,6 +6,7 @@ class SchedulesController < ApplicationController
   before_action :load_schedule, only: %i[show edit update destroy]
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize Schedule
@@ -114,6 +115,18 @@ class SchedulesController < ApplicationController
       [@program, :schedules]
     else
       schedules_path
+    end
+  end
+
+  def new_url
+    if @user && @program
+      [:new, @user, @program, :schedule]
+    elsif @user
+      [:new, @user, :schedule]
+    elsif @program
+      [:new, @program, :schedule]
+    else
+      new_schedule_path
     end
   end
 

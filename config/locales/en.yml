@@ -1,5 +1,45 @@
 ---
 en:
+  breadcrumbs:
+    data: data
+    datum: datum
+    device: device
+    devices: devices
+    edit: edit
+    email_address: email_address
+    email_addresses: email_addresses
+    execution: execution
+    executions: executions
+    guest: guest
+    guests: guests
+    home: home
+    location: location
+    locations: locations
+    name: name
+    names: names
+    new: new
+    password: password
+    passwords: passwords
+    phone_number: phone_number
+    phone_numbers: phone_numbers
+    program: program
+    programs: programs
+    prompt: prompt
+    prompts: prompts
+    schedule: schedule
+    schedules: schedules
+    slack_account: slack_account
+    slack_accounts: slack_accounts
+    smtp_account: smtp_account
+    smtp_accounts: smtp_accounts
+    time_zone: time_zone
+    time_zones: time_zones
+    token: token
+    tokens: tokens
+    user: user
+    users: users
+    x_account: x_account
+    x_accounts: x_accounts
   activerecord:
     errors:
       models:
@@ -565,6 +605,7 @@ en:
         user_id: user
         verified: verified?
     models:
+      more: more
       data:
         one: 1 datum
         other: "%{count} data"
