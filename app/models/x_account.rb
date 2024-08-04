@@ -196,6 +196,22 @@ class XAccount < ApplicationRecord
     auth.fetch("refresh_token", nil)
   end
 
+  def auth_expires_in
+    auth.fetch("expires_in", nil)
+  end
+
+  def auth_expires_in?
+    !!auth_expires_in
+  end
+
+  def auth_expired?
+    if auth_expires_in?
+      updated_at + auth_expires_in.to_i.seconds < Time.zone.now
+    else
+      false
+    end
+  end
+
   def refresh_auth!
     if refresh_token.blank?
       update!(verified: false)
