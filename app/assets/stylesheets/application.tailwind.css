@@ -55,7 +55,7 @@ code {
 }
 
 .code.code\:production {
-  @apply border-black;
+  @apply border-white;
 }
 
 .code-app .code-app\:inline-block {
