@@ -23,3 +23,31 @@
     end
   end
 end
+
+Page::DOCUMENTATION.each do |parent|
+  parent_slug = parent["slug"] || parent["title"].parameterize
+  parent_page =
+    Page.create!(title: parent["title"], slug: parent_slug, body: parent["body"])
+  puts "new page: #{parent["title"]}"
+
+  parent["children"].each do |child|
+    child_slug = child["slug"] || child["title"].parameterize
+    child_body = "<p>#{child["body"]}</p>"
+    child["arguments"].each do |name, argument|
+      child_body += "<p><b>#{name}</b> (#{argument["type"]}): "
+      child_body += "optional, " if argument["optional"]
+      child_body += "required, " if argument["required"]
+      child_body +=
+        "#{argument["description"]}, defaults to #{argument["default"]}"
+      child_body += "</p>"
+    end
+    child_body += "<p>returns: #{child["return"]}</p>"
+    Page.create!(
+      title: "#{parent["title"]}##{child["title"]}",
+      slug: "#{parent_slug}_#{child_slug}",
+      body: child_body,
+      page: parent_page
+    )
+    puts "new page #{parent["title"]}##{child["title"]}"
+  end
+end

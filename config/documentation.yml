@@ -1,0 +1,48 @@
+---
+- body: class
+  children:
+    - arguments:
+        body:
+          default: nothing
+          description: body of the email as text
+          optional: true
+          type: String
+        from:
+          default: your primary verified smtp account or dorian@codedorian.com
+          description: list of emails with or without names to send from
+          optional: true
+          type: String
+        html:
+          default: nothing
+          description: body of the email as html
+          optional: true
+          type: String
+        reply_to:
+          default: nothing
+          description: list of emails with or without names to reply to
+          optional: true
+          type: String
+        subject:
+          default: nothing
+          description: subject of the email
+          optional: true
+          type: String
+        text:
+          default: nothing
+          description: body of the email as text
+          optional: true
+          type: String
+        to:
+          default: your primary verified smtp account or primary verified email address
+          description: list of emails with or without names to send to
+          optional: true
+          type: String
+      body: function
+      return: nothing
+      title: send
+      examples:
+        - prompt: send an empty email to myself
+          input: Mail.send
+        - prompt: send an email to dorian
+          input: 'Mail.send(to: "dorian@dorianmarie.com", subject: "Hi", body: "How are you?")'
+  title: Mail

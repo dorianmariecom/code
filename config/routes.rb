@@ -72,11 +72,12 @@ Rails.application.routes.draw do
 
     resources(:data) { collection { delete "/" => "data#destroy_all" } }
     resources(:devices) { collection { delete "/" => "devices#destroy_all" } }
+    resources(:guests) { collection { delete "/" => "guests#destroy_all" } }
     resources(:names) { collection { delete "/" => "names#destroy_all" } }
+    resources(:pages) { collection { delete "/" => "pages#destroy_all" } }
     resources(:prompts) { collection { delete "/" => "prompts#destroy_all" } }
     resources(:tokens) { collection { delete "/" => "tokens#destroy_all" } }
     resources(:users) { collection { delete "/" => "users#destroy_all" } }
-    resources(:guests) { collection { delete "/" => "guests#destroy_all" } }
   end
 
   default_url_options(host: ENV.fetch("BASE_URL"))
@@ -97,15 +98,15 @@ Rails.application.routes.draw do
   match "/auth/slack/callback" => "slack_accounts#callback",
         :via => %i[get post]
   match "/auth/x/callback" => "x_accounts#callback", :via => %i[get post]
-  get "up" => "pages#up"
-  get "about" => "pages#about"
-  get "terms" => "pages#terms"
-  get "privacy" => "pages#privacy"
-  get "source" => "pages#source"
+  get "up" => "static#up"
+  get "about" => "static#about"
+  get "terms" => "static#terms"
+  get "privacy" => "static#privacy"
+  get "source" => "static#source"
 
   match "/404", to: "errors#not_found", via: :all
   match "/422", to: "errors#unprocessable_entity", via: :all
   match "/500", to: "errors#internal_server_error", via: :all
 
-  root to: "pages#home"
+  root to: "static#home"
 end

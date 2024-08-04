@@ -1,27 +1,33 @@
 # frozen_string_literal: true
 
 class PagePolicy < ApplicationPolicy
-  def home?
+  class Scope < ApplicationPolicy::Scope
+    def resolve
+      scope.all
+    end
+  end
+
+  def index?
     true
   end
 
-  def up?
+  def show?
     true
   end
 
-  def about?
-    true
+  def create?
+    admin?
   end
 
-  def terms?
-    true
+  def update?
+    admin?
   end
 
-  def privacy?
-    true
+  def destroy?
+    admin?
   end
 
-  def source?
-    true
+  def destroy_all?
+    admin?
   end
 end

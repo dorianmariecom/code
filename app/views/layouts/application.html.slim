@@ -28,6 +28,8 @@ html
       window.code.tokens = #{raw tokens.to_json};
       window.code.deviceTokens = #{raw device_tokens.to_json};
 
+    h1 code
+
     .p
       - unless current_page?(root_url)
         .hidden.code-app:inline-block=> link_to "<", root_url, data: { controller: :back, action: "back#back" }
@@ -39,6 +41,10 @@ html
       - else
         => link_to current_user
         => button_to t(".log_out"), session_path, method: :delete, class: "a", form_class: "inline-block"
+
+    .p
+      = policy_scope(Page).where(page: nil).find_each do |page|
+        => link_to page
 
     = breadcrumbs
 

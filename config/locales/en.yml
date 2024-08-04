@@ -1,6 +1,8 @@
 ---
 en:
   breadcrumbs:
+    page: page
+    pages: pages
     data: data
     datum: datum
     device: device
@@ -80,6 +82,10 @@ en:
     user_name: user name
     verification_code: verification code
     verified: verified?
+    page: page
+    title: title
+    body: body
+    slug: slug
   data:
     create:
       notice: datum created
@@ -318,7 +324,7 @@ en:
       verified: verified
     update:
       notice: name updated
-  pages:
+  static:
     about:
       code_html:
         code is a programming language for the internet that you can use
@@ -330,8 +336,7 @@ en:
         of code.
       title: about
     home:
-      submit: create
-      title: code
+      title: the programming language for the internet
     privacy:
       title: privacy
     source:
@@ -876,3 +881,33 @@ en:
       notice: x account updated
     x_account:
       x_account: x account
+  pages:
+    create:
+      notice: page created
+    destroy:
+      notice: page deleted
+    edit:
+      submit: update
+      title: edit page
+    form:
+      page: page
+    index:
+      delete_all: delete all
+      new: new page
+      title: pages
+    new:
+      submit: register
+      title: registration
+    show:
+      created_at: created at
+      destroy: delete page
+      edit: edit page
+      id: id
+      updated_at: updated at
+      title: title
+      body: body
+      slug: slug
+    update:
+      notice: page updated
+    page:
+      page: page
