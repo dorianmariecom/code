@@ -1,4 +1,6 @@
 class XAccount < ApplicationRecord
+  UPDATE_DELAY = 5.minutes
+
   belongs_to :user, default: -> { Current.user }, touch: true
 
   scope :primary, -> { where(primary: true) }
@@ -206,7 +208,7 @@ class XAccount < ApplicationRecord
 
   def auth_expired?
     if auth_expires_in?
-      updated_at + auth_expires_in.to_i.seconds < Time.zone.now
+      updated_at + auth_expires_in.to_i.seconds - UPDATE_DELAY < Time.zone.now
     else
       false
     end
