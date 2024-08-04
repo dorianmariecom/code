@@ -85,7 +85,7 @@ class DataController < ApplicationController
   end
 
   def new_url
-    @user ? [:new, @user, :datum] : [:new, :datum]
+    @user ? [:new, @user, :datum] : %i[new datum]
   end
 
   def id

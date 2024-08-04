@@ -224,21 +224,12 @@ module ApplicationHelper
       [
         [
           breadcrumbs_t(breadcrumb),
-          [
-            breadcrumb,
-            *previous[...-1],
-            previous[-1].model_singular
-          ]
+          [breadcrumb, *previous[...-1], previous[-1].model_singular]
         ]
       ]
     else
       # @user, :data
-      [
-        [
-          breadcrumbs_t(breadcrumb),
-          previous + [breadcrumb]
-        ]
-      ]
+      [[breadcrumbs_t(breadcrumb), previous + [breadcrumb]]]
     end
   end
 

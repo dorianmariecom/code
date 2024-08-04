@@ -27,7 +27,11 @@ end
 Page::DOCUMENTATION.each do |parent|
   parent_slug = parent["slug"] || parent["title"].parameterize
   parent_page =
-    Page.create!(title: parent["title"], slug: parent_slug, body: parent["body"])
+    Page.create!(
+      title: parent["title"],
+      slug: parent_slug,
+      body: parent["body"]
+    )
   puts "new page: #{parent["title"]}"
 
   parent["children"].each do |child|
