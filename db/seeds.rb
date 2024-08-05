@@ -24,34 +24,50 @@
   end
 end
 
-Page::DOCUMENTATION.each do |parent|
-  parent_slug = parent["slug"] || parent["title"].parameterize
-  parent_page =
-    Page.create!(
-      title: parent["title"],
-      slug: parent_slug,
-      body: parent["body"]
-    )
-  puts "new page: #{parent["title"]}"
-
-  parent["children"].each do |child|
-    child_slug = child["slug"] || child["title"].parameterize
-    child_body = "<p>#{child["body"]}</p>"
-    child["arguments"].each do |name, argument|
-      child_body += "<p><b>#{name}</b> (#{argument["type"]}): "
-      child_body += "optional, " if argument["optional"]
-      child_body += "required, " if argument["required"]
-      child_body +=
-        "#{argument["description"]}, defaults to #{argument["default"]}"
-      child_body += "</p>"
+def create_pages(doc, parent: nil, type: nil)
+  if doc[:type] == "class"
+    if parent
+      page =
+        Page.create!(
+          page: parent,
+          title: "#{parent.title}::#{doc[:name]}",
+          body: "class"
+        )
+    else
+      page = Page.create!(title: doc[:name], body: "class")
     end
-    child_body += "<p>returns: #{child["return"]}</p>"
+
+    doc
+      .fetch(:class_functions, [])
+      .each do |instance_doc|
+        create_pages(instance_doc, parent: page, type: :class_function)
+      end
+
+    doc
+      .fetch(:instance_functions, [])
+      .each do |instance_doc|
+        create_pages(instance_doc, parent: page, type: :instance_function)
+      end
+  elsif parent && doc[:type] == "function" && type == :instance_function
     Page.create!(
-      title: "#{parent["title"]}##{child["title"]}",
-      slug: "#{parent_slug}_#{child_slug}",
-      body: child_body,
-      page: parent_page
+      page: parent,
+      title: "#{parent.title}##{doc[:name]}",
+      body: "instance function"
     )
-    puts "new page #{parent["title"]}##{child["title"]}"
+  elsif parent && doc[:type] == "function" && type == :class_function
+    Page.create!(
+      page: parent,
+      title: "#{parent.title}.#{doc[:name]}",
+      body: "class function"
+    )
+  elsif parent && doc[:type] == "function"
+    Page.create!(page: parent, title: doc[:name], body: "function")
+  elsif doc[:type] == "function"
+    Page.create!(title: doc[:name], body: "function", slug: "global-function-#{doc[:name]}")
+  else
+    raise NotImplementedError
   end
 end
+
+Page.destroy_all
+Page::DOCUMENTATION.each { |doc| create_pages(doc.deep_symbolize_keys) }
