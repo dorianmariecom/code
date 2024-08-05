@@ -32,7 +32,7 @@ class Code
 
       def self.code_create!(value)
         Current.data.create!(data: value.as_json)
-        Boolean.new(true)
+        Nothing.new
       end
     end
   end

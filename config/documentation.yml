@@ -1,5 +1,6 @@
 ---
-- body: class
+- title: Mail
+  body: class
   children:
     - arguments:
         body:
@@ -45,4 +46,119 @@
           input: Mail.send
         - prompt: send an email to dorian
           input: 'Mail.send(to: "dorian@dorianmarie.com", subject: "Hi", body: "How are you?")'
-  title: Mail
+- title: Weather
+  body: class
+  functions:
+  - raining?
+- title: Sms
+  body: class
+  functions:
+  - send
+- title: Meetup
+  body: class
+- title: Meetup::Event
+  body: class
+  functions:
+  - id
+  - title
+  - time
+  - group
+  - url
+  - past?
+  - future?
+- title: Meetup::Group
+  body: class
+  functions:
+  - events
+  - name
+- title: X
+  body: class
+  functions:
+  - mentions
+  - search
+  - send
+- title: X::Post
+  body: class
+  functions:
+  - id
+  - url
+  - text
+  - html
+  - retweet
+  - created_at
+  - author
+- title: X::User
+  body: class
+  functions:
+  - username
+  - id
+  - name
+  - url
+- title: Slack
+  body: class
+  functions:
+  - send
+- title: Stripe
+  body: class
+- title: Stripe::Webhook
+  body: class
+- title: Storage
+  body: class
+  functions:
+  - exists?
+  - exist?
+  - create!
+- title: String
+  body: class
+- title: Boolean
+  body: class
+- title: break
+  body: function
+- title: next
+  body: function
+- title: Class
+  body: class
+- title: Date
+  body: class
+- title: Decimal
+  body: class
+- title: Dictionary
+  body: class
+- title: Duration
+  body: class
+- title: Function
+  body: class
+- title: Integer
+  body: class
+- title: List
+  body: class
+- title: Nothing
+  body: class
+- title: context
+  body: function
+- title: Object
+  body: class
+- title: Range
+  body: class
+- title: String
+  body: class
+- title: Time
+  body: class
+- title: Context
+  body: class
+- title: Code
+  body: class
+- title: Parameter
+  body: class
+- title: IdentifierList
+  body: class
+- title: Html
+  body: class
+- title: evaluate
+  body: function
+- title: p
+  body: function
+- title: print
+  body: function
+- title: puts
+  body: function
