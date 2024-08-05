@@ -63,7 +63,11 @@ def create_pages(doc, parent: nil, type: nil)
   elsif parent && doc[:type] == "function"
     Page.create!(page: parent, title: doc[:name], body: "function")
   elsif doc[:type] == "function"
-    Page.create!(title: doc[:name], body: "function", slug: "global-function-#{doc[:name]}")
+    Page.create!(
+      title: doc[:name],
+      body: "function",
+      slug: "global-function-#{doc[:name]}"
+    )
   else
     raise NotImplementedError
   end
