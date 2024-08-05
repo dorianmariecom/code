@@ -7,6 +7,10 @@ servers:
     hosts:
       - 164.92.135.114
     cmd: bin/rpush start -f
+  jobs:
+    hosts:
+      - 164.92.135.114
+    cmd: bin/rake solid_queue:start
   web:
     hosts:
       - 164.92.135.114
