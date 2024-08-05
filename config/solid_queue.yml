@@ -1,5 +1,6 @@
 dispatchers:
-  - recurring_tasks:
+  - polling_interval: 1
+    recurring_tasks:
       schedule_all_job:
         class: ScheduleAllJob
         schedule: every minute
