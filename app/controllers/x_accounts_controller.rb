@@ -8,6 +8,7 @@ class XAccountsController < ApplicationController
   )
 
   helper_method :url
+  helper_method :new_url
 
   def index
     authorize XAccount
