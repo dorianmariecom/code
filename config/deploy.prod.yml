@@ -1,7 +1,7 @@
 service: code
 image: dorianmariecom/code
 healthcheck:
-  max_attempts: 100
+  max_attempts: 20
 servers:
   push:
     hosts:
