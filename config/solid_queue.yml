@@ -8,3 +8,7 @@ dispatchers:
       x_accounts_refresh_auth_job:
         class: XAccountsRefreshAuthJob
         schedule: every minute
+workers:
+  - queues: "*"
+    threads: 3
+    polling_interval: 2
