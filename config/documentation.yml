@@ -49,55 +49,55 @@
 - title: Weather
   body: class
   functions:
-  - raining?
+    - raining?
 - title: Sms
   body: class
   functions:
-  - send
+    - send
 - title: Meetup
   body: class
 - title: Meetup::Event
   body: class
   functions:
-  - id
-  - title
-  - time
-  - group
-  - url
-  - past?
-  - future?
+    - id
+    - title
+    - time
+    - group
+    - url
+    - past?
+    - future?
 - title: Meetup::Group
   body: class
   functions:
-  - events
-  - name
+    - events
+    - name
 - title: X
   body: class
   functions:
-  - mentions
-  - search
-  - send
+    - mentions
+    - search
+    - send
 - title: X::Post
   body: class
   functions:
-  - id
-  - url
-  - text
-  - html
-  - retweet
-  - created_at
-  - author
+    - id
+    - url
+    - text
+    - html
+    - retweet
+    - created_at
+    - author
 - title: X::User
   body: class
   functions:
-  - username
-  - id
-  - name
-  - url
+    - username
+    - id
+    - name
+    - url
 - title: Slack
   body: class
   functions:
-  - send
+    - send
 - title: Stripe
   body: class
 - title: Stripe::Webhook
@@ -105,9 +105,9 @@
 - title: Storage
   body: class
   functions:
-  - exists?
-  - exist?
-  - create!
+    - exists?
+    - exist?
+    - create!
 - title: String
   body: class
 - title: Boolean
