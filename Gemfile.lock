@@ -8,8 +8,15 @@ GIT
       railties (>= 6.0.0)
 
 GIT
-  remote: https://github.com/dorianmariecom/mission_control-jobs
-  revision: 4448ac02a676a5be083136764c92ea3fba892eb9
+  remote: https://github.com/dorianmariecom/solid_errors
+  revision: e94ada54c3c67e24620ed30b71e1df38551f3a21
+  specs:
+    solid_errors (0.4.3)
+      rails
+
+GIT
+  remote: https://github.com/rails/mission_control-jobs
+  revision: 70c84580828b1de68663c18b49d93fe6b8324547
   specs:
     mission_control-jobs (0.2.1)
       importmap-rails
@@ -19,15 +26,8 @@ GIT
       turbo-rails
 
 GIT
-  remote: https://github.com/dorianmariecom/solid_errors
-  revision: e94ada54c3c67e24620ed30b71e1df38551f3a21
-  specs:
-    solid_errors (0.4.3)
-      rails
-
-GIT
   remote: https://github.com/rails/rails
-  revision: a80001ec21523eea985a6e3d789c06e3106e3ab6
+  revision: 9ba208c16835f4a174ae9fd385ebc18972d758a4
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -453,7 +453,7 @@ GEM
       rubocop-ast (>= 1.31.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.31.3)
+    rubocop-ast (1.32.0)
       parser (>= 3.3.1.0)
     rubocop-minitest (0.35.1)
       rubocop (>= 1.61, < 2.0)
@@ -494,7 +494,7 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (>= 3.0, < 6.0, != 5.0.0)
-    solid_queue (0.4.0)
+    solid_queue (0.4.1)
       activejob (>= 7.1)
       activerecord (>= 7.1)
       concurrent-ruby (>= 1.3.1)
@@ -511,17 +511,17 @@ GEM
     strscan (3.1.0)
     syntax_tree (6.2.0)
       prettier_print (>= 1.2.0)
-    tailwindcss-rails (2.6.5)
+    tailwindcss-rails (2.7.0)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.6.5-aarch64-linux)
+    tailwindcss-rails (2.7.0-aarch64-linux)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.6.5-arm-linux)
+    tailwindcss-rails (2.7.0-arm-linux)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.6.5-arm64-darwin)
+    tailwindcss-rails (2.7.0-arm64-darwin)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.6.5-x86_64-darwin)
+    tailwindcss-rails (2.7.0-x86_64-darwin)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.6.5-x86_64-linux)
+    tailwindcss-rails (2.7.0-x86_64-linux)
       railties (>= 7.0.0)
     temple (0.10.3)
     thor (1.3.1)
