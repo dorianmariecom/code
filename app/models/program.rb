@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Program < ApplicationRecord
-  TIMEOUT = 5.second
-
   belongs_to :user, default: -> { Current.user }, touch: true
 
   has_many :executions, dependent: :destroy
@@ -19,7 +17,7 @@ class Program < ApplicationRecord
     Current.with(user:) do
       output = StringIO.new
       error = StringIO.new
-      result = Code.evaluate(input, output:, error:, timeout: TIMEOUT)
+      result = Code.evaluate(input, output:, error:)
       executions.create!(
         input:,
         result: result.to_s,
