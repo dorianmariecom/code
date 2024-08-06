@@ -16,18 +16,18 @@ GIT
 
 GIT
   remote: https://github.com/rails/mission_control-jobs
-  revision: 70c84580828b1de68663c18b49d93fe6b8324547
+  revision: 56ddbe17898bf17c2e09328c062094f316cc0ffa
   specs:
-    mission_control-jobs (0.2.1)
+    mission_control-jobs (0.3.0)
       importmap-rails
       irb (~> 1.13)
-      rails
+      rails (>= 7.1)
       stimulus-rails
       turbo-rails
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 9ba208c16835f4a174ae9fd385ebc18972d758a4
+  revision: bbe099f37710481edfea59cf97667c255147f860
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
