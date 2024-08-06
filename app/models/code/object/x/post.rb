@@ -24,6 +24,12 @@ class Code
           when "html"
             sig(args)
             code_html
+          when "photos"
+            sig(args)
+            code_photos
+          when "videos"
+            sig(args)
+            code_videos
           when "retweet"
             sig(args)
             code_retweet
@@ -94,7 +100,23 @@ class Code
               "<a href=\"#{url}\"><img src=\"#{video["preview_image_url"]}\" /></a>"
           end
 
-          String.new(html)
+          before = "<p>"
+          before += Html.code_link_to(code_author.code_username, code_author.code_url).raw
+          before += ":<br>"
+
+          after = "<br>"
+          after += Html.code_link_to(code_created_at, code_url).raw
+          after += "</p>"
+
+          String.new(before + html + after)
+        end
+
+        def code_photos
+          Json.to_code(photos)
+        end
+
+        def code_videos
+          Json.to_code(videos)
         end
 
         def code_created_at

@@ -716,6 +716,10 @@
           type: function
         - name: url
           type: function
+        - name: images
+          type: function
+        - name: videos
+          type: function
       name: Post
       type: class
     - instance_functions:
