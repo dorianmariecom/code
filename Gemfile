@@ -35,7 +35,7 @@ gem "redis"
 gem "rpush"
 gem "rubocop"
 gem "slim-rails"
-gem "solid_errors", dorian: :solid_errors
+gem "solid_errors", dorian: :solid_errors # https://github.com/fractaledmind/solid_errors/pull/49
 gem "solid_queue"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
