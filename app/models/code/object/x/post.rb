@@ -101,7 +101,11 @@ class Code
           end
 
           before = "<p>"
-          before += Html.code_link_to(code_author.code_username, code_author.code_url).raw
+          before +=
+            Html.code_link_to(
+              code_author.code_username,
+              code_author.code_url
+            ).raw
           before += ":<br>"
 
           after = "<br>"
