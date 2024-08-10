@@ -26,7 +26,7 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
   def log_in(user)
-    Current.user = user unless Current.user?
+    Current.user ||= user
   end
 
   def model_singular
