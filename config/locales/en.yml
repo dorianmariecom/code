@@ -610,7 +610,6 @@ en:
         user_id: user
         verified: verified?
     models:
-      more: more
       data:
         one: 1 datum
         other: "%{count} data"
