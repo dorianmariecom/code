@@ -81,8 +81,6 @@ class UsersController < ApplicationController
 
     scope.destroy_all
 
-    reset_session
-
     redirect_back_or_to(root_path)
   end
 
