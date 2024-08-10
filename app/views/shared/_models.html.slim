@@ -12,10 +12,7 @@
     .p= button_to t(".new_#{singular}"), [:new, parent, model], method: :get, class: "bg-black text-white rounded px-2 py-1 cursor:pointer"
 
   - if collection.any?
-    details
-      summary= t(".more")
-
-      .mt-5
-        = paginate collection
-        = render partial: "#{plural}/#{singular}", collection:
-        = paginate collection
+    .mt-5
+      = paginate collection
+      = render partial: "#{plural}/#{singular}", collection:
+      = paginate collection

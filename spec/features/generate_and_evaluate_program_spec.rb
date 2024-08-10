@@ -6,6 +6,10 @@ RSpec.feature "GenerateAndEvaluateProgram" do
   it "works" do
     visit root_path
 
+    click_on "programs"
+
+    click_on "new program"
+
     fill_in "prompt", with: "1 + 1"
 
     click_on "generate"
