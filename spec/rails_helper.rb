@@ -27,8 +27,8 @@ Capybara.server_port = ENV.fetch("HOST").split(":").last
 
 Capybara.register_driver :chrome do |app|
   chrome_options = Selenium::WebDriver::Chrome::Options.new
-  chrome_options.add_argument('--disable-search-engine-choice-screen')
-  chrome_options.add_argument('--headless') if ENV["HEADFULL"].blank?
+  chrome_options.add_argument("--disable-search-engine-choice-screen")
+  chrome_options.add_argument("--headless") if ENV["HEADFULL"].blank?
   Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
 end
 
