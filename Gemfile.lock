@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: a63bef556547fd7effb1ff84e56680c05d6ae3cf
+  revision: d7f93473682d9b64ab268a6736d5af2853e97ce2
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -159,7 +159,7 @@ GEM
       language-ruby
       zeitwerk
     coderay (1.1.3)
-    concurrent-ruby (1.3.3)
+    concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     crack (1.0.0)
       bigdecimal
