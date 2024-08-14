@@ -427,6 +427,8 @@
       type: function
     - name: map
       type: function
+    - name: map!
+      type: function
     - name: max
       type: function
     - name: max_by
@@ -440,6 +442,10 @@
     - name: select
       type: function
     - name: select!
+      type: function
+    - name: reject
+      type: function
+    - name: reject!
       type: function
     - name: size
       type: function
