@@ -16,9 +16,9 @@ GIT
 
 GIT
   remote: https://github.com/rails/mission_control-jobs
-  revision: ec05d2c8496537a405fa253b05d144ef86cd08d2
+  revision: 7875a55bfd118f7d27b1f8892cca6bc9c1ac54a0
   specs:
-    mission_control-jobs (0.3.0)
+    mission_control-jobs (0.3.1)
       importmap-rails
       irb (~> 1.13)
       rails (>= 7.1)
