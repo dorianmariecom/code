@@ -170,13 +170,14 @@ GEM
     did-you-mean (0.1.1)
       levenshtein (>= 0.2.0)
     diff-lcs (1.5.1)
-    dorian (0.7.3)
+    dorian (0.7.4)
       dorian-all
       dorian-anonymize
       dorian-anonymize-json
       dorian-anonymize-yaml
       dorian-csv-all
       dorian-csv-each
+      dorian-csv-merge
       dorian-dir
       dorian-dir-and-self
       dorian-dot
@@ -204,6 +205,8 @@ GEM
       csv
     dorian-csv-each (0.4.2)
       activesupport
+      csv
+    dorian-csv-merge (0.0.1)
       csv
     dorian-dir (0.5.0)
       git
