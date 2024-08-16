@@ -16,9 +16,9 @@ GIT
 
 GIT
   remote: https://github.com/rails/mission_control-jobs
-  revision: ec05d2c8496537a405fa253b05d144ef86cd08d2
+  revision: 7875a55bfd118f7d27b1f8892cca6bc9c1ac54a0
   specs:
-    mission_control-jobs (0.3.0)
+    mission_control-jobs (0.3.1)
       importmap-rails
       irb (~> 1.13)
       rails (>= 7.1)
@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 9f9deaf6c14e3fdb3134261a9d52c57208c750ee
+  revision: ea585d63864d9908a88c45c87d550b6eaa1ac64a
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -170,13 +170,15 @@ GEM
     did-you-mean (0.1.1)
       levenshtein (>= 0.2.0)
     diff-lcs (1.5.1)
-    dorian (0.7.3)
+    dorian (0.7.7)
       dorian-all
       dorian-anonymize
       dorian-anonymize-json
       dorian-anonymize-yaml
       dorian-csv-all
       dorian-csv-each
+      dorian-csv-merge
+      dorian-csv-pluck
       dorian-dir
       dorian-dir-and-self
       dorian-dot
@@ -186,12 +188,14 @@ GEM
       dorian-parallel
       dorian-pretty
       dorian-release
+      dorian-rename
       dorian-replace
       dorian-shuffle
       dorian-sort-json
       dorian-sort-yaml
       dorian-times
       dorian-top
+      dorian-write
       dorian-yaml-compare
       dorian-yaml-read-write
     dorian-all (0.7.0)
@@ -203,6 +207,11 @@ GEM
       activesupport
       csv
     dorian-csv-each (0.4.2)
+      activesupport
+      csv
+    dorian-csv-merge (0.0.1)
+      csv
+    dorian-csv-pluck (0.0.1)
       activesupport
       csv
     dorian-dir (0.5.0)
@@ -222,12 +231,14 @@ GEM
       git
       syntax_tree
     dorian-release (0.2.0)
+    dorian-rename (0.0.1)
     dorian-replace (0.5.0)
     dorian-shuffle (0.5.0)
     dorian-sort-json (0.5.0)
     dorian-sort-yaml (0.4.0)
     dorian-times (0.5.0)
     dorian-top (0.2.0)
+    dorian-write (0.0.1)
     dorian-yaml-compare (0.4.0)
     dorian-yaml-read-write (0.3.0)
     dotenv (2.8.1)
@@ -315,7 +326,7 @@ GEM
     matrix (0.4.2)
     method_source (1.1.0)
     mini_mime (1.1.5)
-    minitest (5.25.0)
+    minitest (5.25.1)
     multi_json (1.15.0)
     mustermann (3.0.2)
       ruby2_keywords (~> 0.0.1)
@@ -357,7 +368,7 @@ GEM
       time
       uri
     optparse (0.5.0)
-    parallel (1.26.2)
+    parallel (1.26.3)
     parser (3.3.4.2)
       ast (~> 2.4.1)
       racc
