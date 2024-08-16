@@ -294,9 +294,9 @@ hasown@^2.0.2:
     function-bind "^1.1.2"
 
 intl-tel-input@*:
-  version "23.8.2"
-  resolved "https://registry.yarnpkg.com/intl-tel-input/-/intl-tel-input-23.8.2.tgz#fdb3638f24b58e4c713d2cf5b6e7833f446c954f"
-  integrity sha512-LKxI2ZXdBZYckF3R5jeEaucPdOtiQwV8wtF0pAo7G5ExCHW35D5DMVKmiD47PHbITVsC8aLX3tW26hImctPCAQ==
+  version "23.9.0"
+  resolved "https://registry.yarnpkg.com/intl-tel-input/-/intl-tel-input-23.9.0.tgz#4e89d073b3d6c423316b8ec6a2004c76f8d49c9e"
+  integrity sha512-sYiMaKYi94E9D9Fh4l3zkjTLDjEelBIXZoYP9O2kBsoWj99R4Un0th4sBWkaptv6KeWtDHqjzJGmolRqb3DapQ==
 
 is-binary-path@~2.1.0:
   version "2.1.0"
