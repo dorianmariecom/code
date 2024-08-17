@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: ea585d63864d9908a88c45c87d550b6eaa1ac64a
+  revision: b26a9fd2551a2e65e8deef10f4b5ca6b99d666fb
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -170,13 +170,16 @@ GEM
     did-you-mean (0.1.1)
       levenshtein (>= 0.2.0)
     diff-lcs (1.5.1)
-    dorian (0.7.7)
+    dorian (0.8.1)
       dorian-all
       dorian-anonymize
       dorian-anonymize-json
       dorian-anonymize-yaml
+      dorian-chat
+      dorian-commit
       dorian-csv-all
       dorian-csv-each
+      dorian-csv-map
       dorian-csv-merge
       dorian-csv-pluck
       dorian-dir
@@ -203,10 +206,17 @@ GEM
     dorian-anonymize-json (0.2.0)
       json
     dorian-anonymize-yaml (0.2.0)
+    dorian-chat (0.0.1)
+      git
+    dorian-commit (0.4.1)
+      git
     dorian-csv-all (0.0.1)
       activesupport
       csv
     dorian-csv-each (0.4.2)
+      activesupport
+      csv
+    dorian-csv-map (0.0.1)
       activesupport
       csv
     dorian-csv-merge (0.0.1)
@@ -524,7 +534,7 @@ GEM
       net-scp (>= 1.1.2)
       net-sftp (>= 2.1.2)
       net-ssh (>= 2.8.0)
-    stimulus-rails (1.3.3)
+    stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.1)
     strscan (3.1.0)
