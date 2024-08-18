@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: cffb642a0c32949da6454c5fb1f7283846d9ed98
+  revision: 16882b886e245f363cd61f5ea553fe2bc525d070
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -170,7 +170,7 @@ GEM
     did-you-mean (0.1.1)
       levenshtein (>= 0.2.0)
     diff-lcs (1.5.1)
-    dorian (0.9.0)
+    dorian (0.9.1)
       dorian-all
       dorian-anonymize
       dorian-anonymize-json
@@ -205,6 +205,7 @@ GEM
       dorian-rename
       dorian-replace
       dorian-shuffle
+      dorian-sort-csv
       dorian-sort-json
       dorian-sort-yaml
       dorian-times
@@ -229,9 +230,9 @@ GEM
       git
     dorian-commit (0.4.1)
       git
-    dorian-csv-all (0.0.1)
-      activesupport
+    dorian-csv-all (0.1.0)
       csv
+      dorian-to_struct
     dorian-csv-each (0.4.2)
       activesupport
       csv
@@ -243,7 +244,8 @@ GEM
     dorian-csv-pluck (0.0.1)
       activesupport
       csv
-    dorian-csv-uniq (0.0.1)
+    dorian-csv-uniq (0.1.0)
+      csv
     dorian-dir (0.5.0)
       git
     dorian-dir-and-self (0.3.0)
@@ -255,7 +257,8 @@ GEM
       git
     dorian-git-tree (0.5.0)
       git
-    dorian-json-all (0.0.1)
+    dorian-json-all (0.1.0)
+      dorian-to_struct
     dorian-json-compare (0.0.1)
     dorian-json-deep-each (0.0.1)
     dorian-json-deep-map (0.0.1)
@@ -274,11 +277,13 @@ GEM
     dorian-rename (0.0.1)
     dorian-replace (0.5.0)
     dorian-shuffle (0.5.0)
+    dorian-sort-csv (0.0.1)
     dorian-sort-json (0.5.0)
     dorian-sort-yaml (0.4.0)
     dorian-times (0.5.0)
+    dorian-to_struct (0.4.0)
     dorian-top (0.2.0)
-    dorian-write (0.0.1)
+    dorian-write (0.1.0)
     dorian-yaml-all (0.0.1)
     dorian-yaml-compare (0.4.0)
     dorian-yaml-deep-each (0.0.1)
@@ -520,7 +525,7 @@ GEM
       rubocop-ast (>= 1.31.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.32.0)
+    rubocop-ast (1.32.1)
       parser (>= 3.3.1.0)
     rubocop-minitest (0.35.1)
       rubocop (>= 1.61, < 2.0)
