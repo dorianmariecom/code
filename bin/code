@@ -34,7 +34,6 @@ parsed =
 abort Code::Version.to_s if parsed.options.version
 abort parsed.help if parsed.options.help
 
-
 input = parsed.options.input.to_s
 input = File.read(input) if File.exist?(input)
 input += parsed.arguments.join(" ")
