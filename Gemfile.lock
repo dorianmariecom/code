@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 36a4edc1170d1090ed7d94346590036ae5c9708c
+  revision: d8d5554f089712e92b7ef2458b464704e6a01fa3
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -227,7 +227,7 @@ GEM
     dorian-anonymize-json (0.2.2)
       json
     dorian-anonymize-yaml (0.2.2)
-    dorian-arguments (0.2.0)
+    dorian-arguments (0.3.0)
       activesupport
       bigdecimal
       dorian-to_struct
