@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: ac104520ee8518441bb4f8c2c7835d0bb8fd6800
+  revision: 36a4edc1170d1090ed7d94346590036ae5c9708c
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -530,7 +530,7 @@ GEM
       webpush (~> 1.0)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.1)
+    rspec-expectations (3.13.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-mocks (3.13.1)
