@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative "../config/environment"
+require "dorian/arguments"
+require "code-ruby"
 
 parsed =
   Dorian::Arguments.parse(
@@ -30,8 +31,9 @@ parsed =
     }
   )
 
-abort Code::Version if parsed.options.version
+abort Code::Version.to_s if parsed.options.version
 abort parsed.help if parsed.options.help
+
 
 input = parsed.options.input.to_s
 input = File.read(input) if File.exist?(input)
@@ -39,6 +41,8 @@ input += parsed.arguments.join(" ")
 input += parsed.files.map { |file| File.read(file) }.join
 
 abort parsed.help if input.empty?
+
+require_relative "../config/environment"
 
 profile = parsed.options.profile || parsed.options.profiler
 require "ruby-prof" if profile
