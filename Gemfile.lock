@@ -227,6 +227,10 @@ GEM
     dorian-anonymize-json (0.2.2)
       json
     dorian-anonymize-yaml (0.2.2)
+    dorian-arguments (0.2.0)
+      activesupport
+      bigdecimal
+      dorian-to_struct
     dorian-chat (0.0.2)
     dorian-commit (0.4.2)
       git
@@ -675,6 +679,7 @@ DEPENDENCIES
   capybara
   code-ruby
   dorian
+  dorian-arguments
   dotenv-rails
   factory_bot_rails
   faker
