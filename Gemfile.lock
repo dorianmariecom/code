@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: d8d5554f089712e92b7ef2458b464704e6a01fa3
+  revision: 888d28460f5bd1444eeb171cb827cd91739c3759
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -513,7 +513,7 @@ GEM
     rchardet (1.8.0)
     rdoc (6.7.0)
       psych (>= 4.0.0)
-    redis (5.2.0)
+    redis (5.3.0)
       redis-client (>= 0.22.0)
     redis-client (0.22.2)
       connection_pool
