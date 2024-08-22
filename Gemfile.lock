@@ -227,7 +227,7 @@ GEM
     dorian-anonymize-json (0.2.2)
       json
     dorian-anonymize-yaml (0.2.2)
-    dorian-arguments (0.3.0)
+    dorian-arguments (0.3.1)
       activesupport
       bigdecimal
       dorian-to_struct
