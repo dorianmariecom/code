@@ -294,9 +294,9 @@ hasown@^2.0.2:
     function-bind "^1.1.2"
 
 intl-tel-input@*:
-  version "24.3.1"
-  resolved "https://registry.yarnpkg.com/intl-tel-input/-/intl-tel-input-24.3.1.tgz#ea2b28033c961b206fdbf83455bf04037ff9c133"
-  integrity sha512-CGlKpvVjKGdVd2Nlsb6ALDk6oIPCgcS3PGAgHtbZM1DFyolea4HDyV8dXN3ageoDd+rnaEgr/FJeE1VRNHc/AQ==
+  version "24.3.2"
+  resolved "https://registry.yarnpkg.com/intl-tel-input/-/intl-tel-input-24.3.2.tgz#5291da97c395ffca42f44651ff747cd874213df4"
+  integrity sha512-suZO0n4hv3gLZ38t8FdWJ+iFnh3rJQAoLr0fcEmy6ZnFxDUCvo33TIx6Q13WMoQnydBGpUoDENfArtPLEHNVzQ==
 
 is-binary-path@~2.1.0:
   version "2.1.0"
@@ -379,9 +379,9 @@ merge2@^1.3.0:
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
 micromatch@^4.0.4, micromatch@^4.0.5:
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.7.tgz#33e8190d9fe474a9895525f5618eee136d46c2e5"
-  integrity sha512-LPP/3KorzCwBxfeUuZmaR6bG2kdeHSbe0P2tY3FLRU4vYrjYz5hI4QZwV0njUx3jeuKe67YukQ1LSPZBKDqO/Q==
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.8.tgz#d66fa18f3a47076789320b9b1af32bd86d9fa202"
+  integrity sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==
   dependencies:
     braces "^3.0.3"
     picomatch "^2.3.1"
