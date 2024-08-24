@@ -274,7 +274,7 @@ GEM
     dorian-dot (1.0.0)
       dorian-arguments
       git
-    dorian-each (1.1.0)
+    dorian-each (1.1.1)
       dorian-arguments
       dorian-eval
       dorian-progress
@@ -320,7 +320,7 @@ GEM
     dorian-json-uniq (1.0.0)
       dorian-arguments
       json
-    dorian-parallel (1.1.0)
+    dorian-parallel (1.1.1)
       dorian-arguments
       parallel
     dorian-pretty (1.0.0)
