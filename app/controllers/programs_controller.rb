@@ -57,6 +57,10 @@ class ProgramsController < ApplicationController
     @breadcrumbs = [@user, @program, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @program, :edit]
+  end
+
   def create
     @program = authorize scope.new(program_params)
 
@@ -67,10 +71,6 @@ class ProgramsController < ApplicationController
       flash.now.alert = @program.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @program, :edit]
   end
 
   def update

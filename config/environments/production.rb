@@ -26,6 +26,6 @@ Rails.application.configure do
   config.logger =
     ActiveSupport::Logger
       .new($stdout)
-      .tap { |logger| logger.formatter = ::Logger::Formatter.new }
+      .tap { |logger| logger.formatter = Logger::Formatter.new }
       .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
 end

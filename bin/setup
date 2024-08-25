@@ -1,11 +1,13 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require "fileutils"
 
 APP_ROOT = File.expand_path("..", __dir__)
 APP_NAME = "code"
 
-def system!(*args)
-  system(*args, exception: true)
+def system!(*)
+  system(*, exception: true)
 end
 
 FileUtils.chdir APP_ROOT do

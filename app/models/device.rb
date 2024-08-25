@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Device < ApplicationRecord
-  PLATFORMS = %w[ios android]
+  PLATFORMS = %w[ios android].freeze
 
   belongs_to :user, default: -> { Current.user }, touch: true
 

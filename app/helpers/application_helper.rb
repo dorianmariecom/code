@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def fake_slack_teams
-    3.times.map { Faker::Internet.username(separators: []) }.join(", ")
+    Array.new(3) { Faker::Internet.username(separators: []) }.join(", ")
   end
 
   def google_maps_api_key
@@ -18,23 +18,23 @@ module ApplicationHelper
   end
 
   def fake_locations
-    3.times.map { Faker::Address.full_address }
+    Array.new(3) { Faker::Address.full_address }
   end
 
-  def fake_verification_codes(n: 4)
-    3.times.map { rand(10**n).to_s.rjust(n, "0") }
+  def fake_verification_codes(length: 4)
+    Array.new(3) { rand(10**length).to_s.rjust(n, "0") }
   end
 
   def fake_email_addresses
-    3.times.map { Faker::Internet.email }
+    Array.new(3) { Faker::Internet.email }
   end
 
   def fake_phone_numbers
-    3.times.map { Faker::PhoneNumber.phone_number_with_country_code }
+    Array.new(3) { Faker::PhoneNumber.phone_number_with_country_code }
   end
 
   def fake_passwords
-    3.times.map { Faker::Internet.password }
+    Array.new(3) { Faker::Internet.password }
   end
 
   def fake_time_zones
@@ -42,11 +42,11 @@ module ApplicationHelper
   end
 
   def fake_names
-    3.times.map { Faker::Name.name }
+    Array.new(3) { Faker::Name.name }
   end
 
   def fake_smtp_display_names
-    3.times.map { Faker::Name.name }
+    Array.new(3) { Faker::Name.name }
   end
 
   def fake_smtp_addresses
@@ -68,11 +68,11 @@ module ApplicationHelper
   end
 
   def fake_smtp_user_names
-    3.times.map { Faker::Internet.email }
+    Array.new(3) { Faker::Internet.email }
   end
 
   def fake_smtp_passwords
-    3.times.map { Faker::Internet.password }
+    Array.new(3) { Faker::Internet.password }
   end
 
   def fake_smtp_authentications
@@ -185,11 +185,12 @@ module ApplicationHelper
   end
 
   def code_env
-    if request.host == "localhost"
+    case request.host
+    when "localhost"
       "local"
-    elsif request.host == "dev.codedorian.com"
+    when "dev.codedorian.com"
       "dev"
-    elsif request.host == "staging.codedorian.com"
+    when "staging.codedorian.com"
       "staging"
     else
       "production"
@@ -219,7 +220,7 @@ module ApplicationHelper
           ]
         ]
       end
-    elsif breadcrumb == :new || breadcrumb == :edit
+    elsif %i[new edit].include?(breadcrumb)
       # :new, @user, :datum
       [
         [

@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
   def log_in(user)
     if Current.user && session[:user_id].present?
       # leave it as is
-    elsif user && user.id
+    elsif user&.id
       Current.user = user
       session[:user_id] = user.id
     else
@@ -70,11 +70,9 @@ class ApplicationController < ActionController::Base
   end
 
   def current_token
-    if request.headers[:Token].present?
-      Token.find_by(token: request.headers[:Token])
-    else
-      nil
-    end
+    return if request.headers[:Token].blank?
+
+    Token.find_by(token: request.headers[:Token])
   end
 
   def current_token?

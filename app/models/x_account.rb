@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class XAccount < ApplicationRecord
   UPDATE_DELAY = 5.minutes
 

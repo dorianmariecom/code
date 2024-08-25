@@ -23,6 +23,10 @@ class TimeZonesController < ApplicationController
     @breadcrumbs = [@user, @time_zone, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @time_zone, :edit]
+  end
+
   def create
     @time_zone = authorize scope.new(time_zone_params)
 
@@ -33,10 +37,6 @@ class TimeZonesController < ApplicationController
       flash.now.alert = @time_zone.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @time_zone, :edit]
   end
 
   def update

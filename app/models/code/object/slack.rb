@@ -15,9 +15,9 @@ class Code
           end
           if arguments.any?
             code_send(
-              team: value.code_get(String.new("team")),
-              channel: value.code_get(String.new("channel")),
-              body: value.code_get(String.new("body"))
+              team: value.code_get(+"team"),
+              channel: value.code_get(+"channel"),
+              body: value.code_get(+"body")
             )
           else
             code_send

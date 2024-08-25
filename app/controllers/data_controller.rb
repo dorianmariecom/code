@@ -22,6 +22,10 @@ class DataController < ApplicationController
     @breadcrumbs = [@user, @datum, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @datum, :edit]
+  end
+
   def create
     datum_params[:data] = JSON.parse(data_param) if data_param.present?
 
@@ -34,10 +38,6 @@ class DataController < ApplicationController
       flash.now.alert = @datum.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @datum, :edit]
   end
 
   def update

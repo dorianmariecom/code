@@ -66,6 +66,7 @@ class Program < ApplicationRecord
   def schedule!
     unschedule!
     return unless next_at
+
     EvaluateAndScheduleJob.set(wait_until: next_at).perform_later(program: self)
   end
 

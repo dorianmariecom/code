@@ -24,6 +24,10 @@ class PhoneNumbersController < ApplicationController
     @breadcrumbs = [@user, @phone_number, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @phone_number, :edit]
+  end
+
   def create
     @phone_number = authorize scope.new(phone_number_params)
 
@@ -34,10 +38,6 @@ class PhoneNumbersController < ApplicationController
       flash.now.alert = @phone_number.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @phone_number, :edit]
   end
 
   def update

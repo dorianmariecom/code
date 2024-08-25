@@ -24,6 +24,10 @@ class SmtpAccountsController < ApplicationController
     @breadcrumbs = [@user, @smtp_account, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @smtp_account, :edit]
+  end
+
   def create
     @smtp_account = authorize scope.new(smtp_account_params)
 
@@ -34,10 +38,6 @@ class SmtpAccountsController < ApplicationController
       flash.now.alert = @smtp_account.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @smtp_account, :edit]
   end
 
   def update

@@ -23,6 +23,10 @@ class LocationsController < ApplicationController
     @breadcrumbs = [@user, @location, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @location, :edit]
+  end
+
   def create
     @location = authorize scope.new(location_params)
 
@@ -33,10 +37,6 @@ class LocationsController < ApplicationController
       flash.now.alert = @location.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @location, :edit]
   end
 
   def update

@@ -59,10 +59,6 @@ class EmailAddress < ApplicationRecord
     update!(verified: false, verification_code: "")
   end
 
-  def email_address_with_name
-    ActionMailer::Base.email_address_with_name(email_address, user.name)
-  end
-
   def verification_code_signed_id
     signed_id(
       purpose: VERIFICATION_CODE_PURPOSE,
@@ -92,6 +88,7 @@ class EmailAddress < ApplicationRecord
 
   def verify!(code)
     return if code.blank? || verification_code.blank?
+
     code = code.gsub(/\D/, "")
     self.verification_code = verification_code.gsub(/\D/, "")
     if code == verification_code

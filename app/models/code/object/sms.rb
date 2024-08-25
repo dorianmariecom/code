@@ -11,11 +11,7 @@ class Code
         case operator.to_s
         when "send"
           sig(args) { { body: String.maybe } }
-          if arguments.any?
-            code_send(body: value.code_get(String.new("body")))
-          else
-            code_send
-          end
+          arguments.any? ? code_send(body: value.code_get(+"body")) : code_send
         else
           super
         end

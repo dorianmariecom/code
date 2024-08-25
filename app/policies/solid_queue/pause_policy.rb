@@ -1,2 +1,6 @@
-class SolidQueue::PausePolicy < SolidQueue::ApplicationPolicy
+# frozen_string_literal: true
+
+module SolidQueue
+  class PausePolicy < SolidQueue::ApplicationPolicy
+  end
 end

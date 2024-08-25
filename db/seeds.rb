@@ -1,15 +1,15 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 (config = Rails.application.credentials.apple)
   .applications
   .each do |application|
   config.environments.each do |environment|
-    print "#{application[:name]} | #{application[:bundle_id]} | #{environment}... "
-    if Rpush::Apnsp8::App.find_by(
-         name: application[:name],
-         environment: environment
-       )
-      puts "skipping"
+    Rails.logger.debug do
+      "#{application[:name]} | #{application[:bundle_id]} | #{environment}... "
+    end
+    if Rpush::Apnsp8::App.find_by(name: application[:name], environment:)
+      Rails.logger.debug "skipping"
     else
       app = Rpush::Apnsp8::App.new
       app.name = application[:name]
@@ -19,23 +19,23 @@
       app.team_id = config.team_id
       app.bundle_id = application[:bundle_id]
       app.save!
-      puts "done"
+      Rails.logger.debug "done"
     end
   end
 end
 
 def create_pages(doc, parent: nil, type: nil)
   if doc[:type] == "class"
-    if parent
-      page =
+    page =
+      if parent
         Page.create!(
           page: parent,
           title: "#{parent.title}::#{doc[:name]}",
           body: "class"
         )
-    else
-      page = Page.create!(title: doc[:name], body: "class")
-    end
+      else
+        Page.create!(title: doc[:name], body: "class")
+      end
 
     doc
       .fetch(:class_functions, [])

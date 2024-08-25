@@ -24,6 +24,10 @@ class SchedulesController < ApplicationController
     @breadcrumbs = [@user, @program, @schedule, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @program, @schedule, :edit]
+  end
+
   def create
     @schedule = authorize scope.new(schedule_params)
 
@@ -34,10 +38,6 @@ class SchedulesController < ApplicationController
       flash.now.alert = @schedule.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @program, @schedule, :edit]
   end
 
   def update
@@ -75,14 +75,14 @@ class SchedulesController < ApplicationController
   end
 
   def load_program
-    if params[:program_id].present?
+    return if params[:program_id].blank?
+
+    @program =
       if @user
-        @program =
-          policy_scope(Program).where(user: @user).find(params[:program_id])
+        policy_scope(Program).where(user: @user).find(params[:program_id])
       else
-        @program = policy_scope(Program).find(params[:program_id])
+        policy_scope(Program).find(params[:program_id])
       end
-    end
   end
 
   def scope

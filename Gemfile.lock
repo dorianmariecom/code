@@ -9,10 +9,24 @@ GIT
 
 GIT
   remote: https://github.com/dorianmariecom/solid_errors
-  revision: e94ada54c3c67e24620ed30b71e1df38551f3a21
+  revision: 9d06ad7de450af7175b17dfa045b50ef0246cb83
   specs:
-    solid_errors (0.4.3)
-      rails
+    solid_errors (0.5.0)
+      actionmailer (>= 7.0)
+      actionpack (>= 7.0)
+      actionview (>= 7.0)
+      activerecord (>= 7.0)
+      activesupport (>= 7.0)
+      railties (>= 7.0)
+
+GIT
+  remote: https://github.com/hotwired/turbo-rails
+  revision: 01ff576bff617af7685e3988a5f8cb2ec553992a
+  specs:
+    turbo-rails (2.0.6)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
 
 GIT
   remote: https://github.com/rails/mission_control-jobs
@@ -621,9 +635,10 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.32.1)
       parser (>= 3.3.1.0)
-    rubocop-minitest (0.35.1)
-      rubocop (>= 1.61, < 2.0)
-      rubocop-ast (>= 1.31.1, < 2.0)
+    rubocop-capybara (2.21.0)
+      rubocop (~> 1.41)
+    rubocop-factory_bot (2.26.1)
+      rubocop (~> 1.61)
     rubocop-performance (1.21.1)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
@@ -632,11 +647,13 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.52.0, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-rails-omakase (1.0.0)
-      rubocop
-      rubocop-minitest
-      rubocop-performance
-      rubocop-rails
+    rubocop-rake (0.6.0)
+      rubocop (~> 1.0)
+    rubocop-rspec (3.0.4)
+      rubocop (~> 1.61)
+    rubocop-rspec_rails (2.30.0)
+      rubocop (~> 1.61)
+      rubocop-rspec (~> 3, >= 3.0.1)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
@@ -703,10 +720,6 @@ GEM
       date
     timecop (0.9.10)
     timeout (0.4.1)
-    turbo-rails (2.0.6)
-      actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
-      railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
@@ -773,7 +786,13 @@ DEPENDENCIES
   rpush
   rspec-rails
   rubocop
-  rubocop-rails-omakase
+  rubocop-capybara
+  rubocop-factory_bot
+  rubocop-performance
+  rubocop-rails
+  rubocop-rake
+  rubocop-rspec
+  rubocop-rspec_rails
   selenium-webdriver
   sinatra
   slim-rails
@@ -782,7 +801,7 @@ DEPENDENCIES
   stimulus-rails
   tailwindcss-rails
   timecop
-  turbo-rails
+  turbo-rails!
   webmock
   zxcvbn-ruby
 

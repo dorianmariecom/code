@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Schedule < ApplicationRecord
   INTERVALS = [
     "once",
@@ -34,7 +36,7 @@ class Schedule < ApplicationRecord
     "4 years",
     "5 years",
     "10 years"
-  ]
+  ].freeze
 
   PER = {
     "second" => 1.second,
@@ -42,7 +44,7 @@ class Schedule < ApplicationRecord
     "minute" => 1.minute,
     "minutes" => 1.minute,
     "hour" => 1.hour,
-    "hours" => 1.hours,
+    "hours" => 1.hour,
     "day" => 1.day,
     "days" => 1.day,
     "week" => 1.week,
@@ -51,7 +53,7 @@ class Schedule < ApplicationRecord
     "months" => 1.month,
     "year" => 1.year,
     "years" => 1.year
-  }
+  }.freeze
 
   belongs_to :program, touch: true
 

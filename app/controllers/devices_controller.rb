@@ -23,6 +23,10 @@ class DevicesController < ApplicationController
     @breadcrumbs = [@user, @device, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @device, :edit]
+  end
+
   def create
     @device = authorize scope.new(device_params)
 
@@ -33,10 +37,6 @@ class DevicesController < ApplicationController
       flash.now.alert = @device.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @device, :edit]
   end
 
   def update

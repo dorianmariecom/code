@@ -65,6 +65,7 @@ class Code
           end
         json = JSON.parse(response.body)
         return List.new if json.blank? || json["data"].blank?
+
         original_json = json.dup
         json["data"] = json["data"].map do |data|
           data.merge("json" => original_json)
@@ -90,6 +91,7 @@ class Code
           end
         json = JSON.parse(response.body)
         return List.new if json.blank? || json["data"].blank?
+
         original_json = json.dup
         json["data"] = json["data"].map do |data|
           data.merge("json" => original_json)

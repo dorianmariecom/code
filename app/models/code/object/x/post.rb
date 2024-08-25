@@ -4,7 +4,7 @@ class Code
   class Object
     class X < Object
       class Post < Object
-        def initialize(*args, **_kargs, &_block)
+        def initialize(*args, **_kargs, &)
           @raw = Dictionary.new(Json.to_code(args.first.presence || {}))
         end
 
@@ -72,12 +72,11 @@ class Code
           urls.each do |url|
             html.gsub!(
               /( |^)(#{url["url"]})( |$)/,
-              '\1<a href="' + url["expanded_url"] + '">' + url["expanded_url"] +
-                '</a>\3'
+              "\\1<a href=\"#{url["expanded_url"]}\">#{url["expanded_url"]}</a>\\3"
             )
           end
 
-          cashtags.each do |cashag|
+          cashtags.each do |_cashag|
             html.gsub!(
               /( |^)(\$#{cashtag["tag"]})( |$)/,
               '\1<a href="https://x.com/search?q=\2">\2</a>\3'
@@ -124,7 +123,7 @@ class Code
         end
 
         def code_created_at
-          Time.new(raw.code_get(String.new(:created_at)))
+          Time.zone.local(raw.code_get(String.new(:created_at)))
         end
 
         def code_author
@@ -220,11 +219,9 @@ class Code
         end
 
         def tweet_media
-          urls
-            .map do |url|
-              media.detect { |media| media["media_key"] == url["media_key"] }
-            end
-            .compact
+          urls.filter_map do |url|
+            media.detect { |media| media["media_key"] == url["media_key"] }
+          end
         end
 
         def photos

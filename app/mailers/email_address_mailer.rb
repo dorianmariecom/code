@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EmailAddressMailer < ApplicationMailer
   include ActionView::Helpers::SanitizeHelper
 
@@ -6,7 +8,7 @@ class EmailAddressMailer < ApplicationMailer
       params[:body].presence || params[:text].presence ||
         params[:html].presence.to_s
     text = strip_tags(text)
-    html = params[:html].presence.to_s.html_safe
+    html = params[:html].presence.to_s
 
     mail(
       from: params[:from],
@@ -15,7 +17,7 @@ class EmailAddressMailer < ApplicationMailer
       reply_to: params[:reply_to]
     ) do |format|
       format.text { render(plain: text) }
-      format.html { render(html: html) } if html.present?
+      format.html { render(html:) } if html.present?
     end
   end
 

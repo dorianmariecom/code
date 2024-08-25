@@ -26,6 +26,10 @@ class EmailAddressesController < ApplicationController
     @breadcrumbs = [@user, @email_address, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @email_address, :edit]
+  end
+
   def create
     @email_address = authorize scope.new(email_address_params)
 
@@ -36,10 +40,6 @@ class EmailAddressesController < ApplicationController
       flash.now.alert = @email_address.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @email_address, :edit]
   end
 
   def update

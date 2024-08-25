@@ -23,6 +23,10 @@ class TokensController < ApplicationController
     @breadcrumbs = [@user, @token, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @token, :edit]
+  end
+
   def create
     @token = authorize scope.new(token_params)
 
@@ -33,10 +37,6 @@ class TokensController < ApplicationController
       flash.now.alert = @token.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @token, :edit]
   end
 
   def update

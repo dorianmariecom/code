@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Guest
   def self.singular_route_key
     :guest
@@ -46,11 +48,11 @@ class Guest
   def tokens = Token.none
   def x_accounts = XAcount.none
 
-  def to_signed_global_id(purpose: nil, expires_in: nil)
+  def to_signed_global_id(_purpose: nil, _expires_in: nil)
     ""
   end
 
-  def signed_id(purpose: nil, expires_in: nil)
+  def signed_id(_purpose: nil, _expires_in: nil)
     ""
   end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rpush.configure do |config|
   # Supported clients are :active_record and :redis
   config.client = :active_record
@@ -25,7 +27,7 @@ Rpush.configure do |config|
       if defined?(Rails) && Rails.logger
         Rails.logger.level
       else
-        ::Logger::Severity::INFO
+        Logger::Severity::INFO
       end
     )
 

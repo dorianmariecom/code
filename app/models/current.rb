@@ -15,7 +15,7 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def user=(user)
-    super(user)
+    super
     Time.zone = time_zone&.time_zone
   end
 
@@ -51,6 +51,7 @@ class Current < ActiveSupport::CurrentAttributes
     unless email_addresses?
       raise(Code::Error, "no verified email addresses found")
     end
+
     email_addresses
   end
 
@@ -76,6 +77,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def phone_numbers!
     raise(Code::Error, "no verified phone numbers found") unless phone_numbers?
+
     phone_numbers
   end
 
@@ -99,6 +101,7 @@ class Current < ActiveSupport::CurrentAttributes
     unless slack_accounts?
       raise(Code::Error, "no verified slack accounts found")
     end
+
     slack_accounts
   end
 
@@ -124,6 +127,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def passwords!
     raise(Code::Error, "no passwords found") unless passwords?
+
     passwords
   end
 
@@ -153,6 +157,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def programs!
     raise(Code::Error, "no programs found") unless programs?
+
     programs
   end
 
@@ -178,6 +183,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def schedules!
     raise(Code::Error, "no schedules found") unless schedules?
+
     schedules
   end
 
@@ -199,6 +205,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def smtp_accounts!
     raise(Code::Error, "no verified smtp accounts found") unless smtp_accounts?
+
     smtp_accounts
   end
 
@@ -228,6 +235,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def x_accounts!
     raise(Code::Error, "no verified x accounts found") unless x_accounts?
+
     x_accounts
   end
 
@@ -253,6 +261,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def names!
     raise(Code::Error, "no verified name found") unless names?
+
     names
   end
 
@@ -278,6 +287,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def data!
     raise(Code::Error, "no datum found") unless data?
+
     data
   end
 
@@ -303,6 +313,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def time_zones!
     raise(Code::Error, "no verified time zone found") unless time_zones?
+
     time_zones
   end
 
@@ -328,6 +339,7 @@ class Current < ActiveSupport::CurrentAttributes
 
   def locations!
     raise(Code::Error, "no verified location found") unless locations?
+
     locations
   end
 

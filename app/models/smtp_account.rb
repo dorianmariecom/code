@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SmtpAccount < ApplicationRecord
   include ActionView::Helpers::SanitizeHelper
 
@@ -86,7 +88,7 @@ class SmtpAccount < ApplicationRecord
     text = text.presence || body.presence || html.presence || ""
     text = strip_tags(text)
 
-    html = html.presence.to_s.html_safe
+    html = html.presence.to_s
 
     mail = Mail.new
     mail.from = from

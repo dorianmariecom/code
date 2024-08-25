@@ -4,7 +4,7 @@ class Code
   class Object
     class X < Object
       class User < Object
-        def initialize(*args, **_kargs, &_block)
+        def initialize(*args, **_kargs, &)
           @raw = Dictionary.new(Json.to_code(args.first.presence || {}))
         end
 
@@ -54,7 +54,7 @@ class Code
         end
 
         def code_url
-          String.new("https://x.com/#{username}")
+          +"https://x.com/#{username}"
         end
 
         def url

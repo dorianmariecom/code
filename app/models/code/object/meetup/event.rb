@@ -4,7 +4,7 @@ class Code
   class Object
     class Meetup < Object
       class Event < Object
-        def initialize(*args, **_kargs, &_block)
+        def initialize(*args, **_kargs, &)
           @raw = Dictionary.new(args.first.presence || {})
         end
 
@@ -55,18 +55,12 @@ class Code
         end
 
         def code_url
-          String.new(
-            "https://www.meetup.com/#{code_group.code_slug}/events/#{code_id}"
-          )
+          +"https://www.meetup.com/#{code_group.code_slug}/events/#{code_id}"
         end
 
-        def code_past?
-          code_time.code_past?
-        end
+        delegate :code_past?, to: :code_time
 
-        def code_future?
-          code_time.code_future?
-        end
+        delegate :code_future?, to: :code_time
       end
     end
   end

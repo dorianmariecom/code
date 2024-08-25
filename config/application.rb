@@ -16,7 +16,7 @@ class Code
     config.active_record.automatically_invert_plural_associations = true
     config.mission_control.jobs.show_console_help = false
     config.active_support.to_time_preserves_timezone = :zone
-    config.exceptions_app = self.routes
+    config.exceptions_app = routes
     config.hosts += ENV.fetch("HOSTS").split(",")
     config.active_record.default_column_serializer = JSON
     config.session_store :cookie_store, expire_after: 1.year

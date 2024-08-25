@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
 class TimeZone < ApplicationRecord
   TIME_ZONES =
-    ActiveSupport::TimeZone.all.map(&:tzinfo).map(&:canonical_identifier)
+    ActiveSupport::TimeZone.all.map do |time_zone|
+      time_zone.tzinfo.canonical_identifier
+    end
 
   belongs_to :user, default: -> { Current.user }, touch: true
 

@@ -25,13 +25,13 @@ class Code
           end
           if arguments.any?
             code_send(
-              from: value.code_get(String.new("from")),
-              to: value.code_get(String.new("to")),
-              reply_to: value.code_get(String.new("reply_to")),
-              subject: value.code_get(String.new("subject")),
-              body: value.code_get(String.new("body")),
-              text: value.code_get(String.new("text")),
-              html: value.code_get(String.new("html"))
+              from: value.code_get(+"from"),
+              to: value.code_get(+"to"),
+              reply_to: value.code_get(+"reply_to"),
+              subject: value.code_get(+"subject"),
+              body: value.code_get(+"body"),
+              text: value.code_get(+"text"),
+              html: value.code_get(+"html")
             )
           else
             code_send

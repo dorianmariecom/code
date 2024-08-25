@@ -42,6 +42,10 @@ class UsersController < ApplicationController
     @breadcrumbs = [@user, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, :edit]
+  end
+
   def create
     @user = authorize scope.new(user_params)
 
@@ -52,10 +56,6 @@ class UsersController < ApplicationController
       flash.now.alert = @user.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, :edit]
   end
 
   def update

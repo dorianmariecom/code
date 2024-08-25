@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EmailAddressMailerPreview < ActionMailer::Preview
   def verification_code_email
     EmailAddressMailer.with(

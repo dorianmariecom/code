@@ -23,6 +23,10 @@ class PasswordsController < ApplicationController
     @breadcrumbs = [@user, @password, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @password, :edit]
+  end
+
   def create
     @password = authorize scope.new(password_params)
 
@@ -33,10 +37,6 @@ class PasswordsController < ApplicationController
       flash.now.alert = @password.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @password, :edit]
   end
 
   def update

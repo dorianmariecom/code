@@ -23,6 +23,10 @@ class NamesController < ApplicationController
     @breadcrumbs = [@user, @name, :new]
   end
 
+  def edit
+    @breadcrumbs = [@user, @name, :edit]
+  end
+
   def create
     @name = authorize scope.new(name_params)
 
@@ -33,10 +37,6 @@ class NamesController < ApplicationController
       flash.now.alert = @name.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@user, @name, :edit]
   end
 
   def update

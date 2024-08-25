@@ -13,8 +13,8 @@ class Code
           sig(args) { { query: String.maybe, date: Date.maybe } }
           if arguments.any?
             code_raining?(
-              query: value.code_get(String.new("query")),
-              date: value.code_get(String.new("date"))
+              query: value.code_get(+"query"),
+              date: value.code_get(+"date")
             )
           else
             code_raining?
@@ -53,6 +53,7 @@ class Code
 
         days = json.dig("forecast", "forecastday")
         return Nothing.new if days.blank?
+
         day = days.detect { |day| day["date"] == date.to_s }
         return Nothing.new if day.blank?
 

@@ -47,9 +47,7 @@ class PhoneNumber < ApplicationRecord
     Phonelib.parse(phone_number)
   end
 
-  def e164
-    phonelib.e164
-  end
+  delegate :e164, to: :phonelib
 
   def formatted
     phonelib.international
@@ -75,6 +73,7 @@ class PhoneNumber < ApplicationRecord
 
   def verify!(code)
     return if code.blank? || verification_code.blank?
+
     code = code.gsub(/\D/, "")
     self.verification_code = verification_code.gsub(/\D/, "")
     if code == verification_code

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class Prompt < ApplicationRecord
   MODEL = "ft:gpt-3.5-turbo-1106:personal::9kRALHnW"
 
-  DOCUMENTATION = File.read(Rails.root.join("lib/prompt.md"))
+  DOCUMENTATION = Rails.root.join("lib/prompt.md").read
 
-  SYSTEM_PROMPT = <<~PROMPT
+  SYSTEM_PROMPT = <<~PROMPT.freeze
     Generate a JSON object with one field: input
 
     `input` is the code generated from the prompt in the Code language

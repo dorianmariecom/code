@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SlackAccount < ApplicationRecord
   BASE_URL = "https://slack.com"
   TEAM_REGEXP = /\A[a-zA-Z0-9_-]+\z/

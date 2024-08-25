@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Page < ApplicationRecord
   DOCUMENTATION =
-    YAML.safe_load(File.read(Rails.root.join("config/documentation.yml")))
+    YAML.safe_load_file(Rails.root.join("config/documentation.yml"))
 
   SPECIAL_CHARACTERS = {
     "." => "dot",
@@ -28,12 +30,12 @@ class Page < ApplicationRecord
     ">" => "greater_than",
     "?" => "question_mark",
     "/" => "forward_slash",
-    "\\" => "backslash",
+    '\\' => "backslash",
     "|" => "vertical_bar",
     "`" => "backtick",
     "~" => "tilde",
     "!" => "exclamation_mark"
-  }
+  }.freeze
 
   belongs_to :page, touch: true, optional: true
 
@@ -49,7 +51,7 @@ class Page < ApplicationRecord
       self.slug.gsub!(special, "-special-#{word}-")
     end
 
-    self.slug.gsub!(/-+/, "-")
+    self.slug.squeeze!("-")
 
     self.slug = slug.parameterize
   end

@@ -1,11 +1,15 @@
-class Rack::Attack
-  throttle("request/ip", limit: 300, period: 5.minutes) { |request| request.ip }
+# frozen_string_literal: true
 
-  throttle("sessions/ip", limit: 5, period: 20.seconds) do |request|
-    request.ip if /session/.match?(request.path)
-  end
+module Rack
+  class Attack
+    throttle("request/ip", limit: 300, period: 5.minutes, &:ip)
 
-  throttle("verification_codes/ip", limit: 5, period: 20.seconds) do |request|
-    request.ip if /verification_code/.match?(request.path)
+    throttle("sessions/ip", limit: 5, period: 20.seconds) do |request|
+      request.ip if request.path.include?("session")
+    end
+
+    throttle("verification_codes/ip", limit: 5, period: 20.seconds) do |request|
+      request.ip if request.path.include?("verification_code")
+    end
   end
 end

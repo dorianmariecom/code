@@ -19,6 +19,10 @@ class PagesController < ApplicationController
     @breadcrumbs = [@page, :new]
   end
 
+  def edit
+    @breadcrumbs = [@page, :edit]
+  end
+
   def create
     @page = authorize scope.new(page_params)
 
@@ -28,10 +32,6 @@ class PagesController < ApplicationController
       flash.now.alert = @page.alert
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @breadcrumbs = [@page, :edit]
   end
 
   def update

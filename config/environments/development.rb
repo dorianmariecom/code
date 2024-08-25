@@ -5,7 +5,10 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
   config.action_mailer.perform_caching = false
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.preview_paths << "#{Rails.root}/spec/mailers/previews"
+  config.action_mailer.preview_paths << Rails
+    .root
+    .join("spec/mailers/previews")
+    .to_s
   config.action_mailer.raise_delivery_errors = true
   config.action_view.annotate_rendered_view_with_filenames = true
   config.active_job.verbose_enqueue_logs = true

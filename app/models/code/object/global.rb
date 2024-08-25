@@ -3,7 +3,7 @@
 class Code
   class Object
     class Global < Object
-      alias_method :original_call, :call
+      alias original_call call
 
       def call(**args)
         operator = args.fetch(:operator, nil)

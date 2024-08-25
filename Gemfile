@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 git_source(:dorian) { |name| "https://github.com/dorianmariecom/#{name}" }
 git_source(:rails) { |name| "https://github.com/rails/#{name}" }
+git_source(:hotwired) { |name| "https://github.com/hotwired/#{name}" }
 
 ruby "3.3.4"
 
@@ -35,12 +36,18 @@ gem "rails", rails: :rails
 gem "redis"
 gem "rpush"
 gem "rubocop"
+gem "rubocop-factory_bot"
+gem "rubocop-performance"
+gem "rubocop-rails"
+gem "rubocop-rake"
+gem "rubocop-rspec"
+gem "rubocop-rspec_rails"
 gem "slim-rails"
-gem "solid_errors", dorian: :solid_errors # https://github.com/fractaledmind/solid_errors/pull/49
+gem "solid_errors", dorian: :solid_errors
 gem "solid_queue"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
-gem "turbo-rails"
+gem "turbo-rails", hotwired: "turbo-rails"
 gem "zxcvbn-ruby", require: "zxcvbn"
 
 group :production do
@@ -53,9 +60,10 @@ group :development, :test do
   gem "pry-rescue"
   gem "pry-stack_explorer"
   gem "rspec-rails"
-  gem "rubocop-rails-omakase"
   gem "selenium-webdriver"
   gem "sinatra"
   gem "timecop"
   gem "webmock"
 end
+
+gem "rubocop-capybara"
