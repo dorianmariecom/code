@@ -10,8 +10,7 @@ ENV BUNDLER_VERSION="2.5.16" \
     NPM_VERSION="10.8.2" \
     PATH="/usr/local/node/bin:${PATH}" \
     RAILS_ENV="production" \
-    RUBY_INSTALL_VERSION="0.9.3" \
-    YARN_VERSION="1.22.22"
+    RUBY_INSTALL_VERSION="0.9.3"
 
 RUN apt-get update && \
     apt-get install -y \
@@ -40,7 +39,7 @@ RUN bundle install
 
 COPY package.json yarn.lock ./
 
-RUN yarn install --frozen-lockfile
+RUN npm ci
 
 COPY . .
 
