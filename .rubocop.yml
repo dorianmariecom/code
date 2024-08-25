@@ -1,10 +1,10 @@
 ---
 AllCops:
   Exclude:
-  - "*/node_modules/**/*"
-  - "*/vendor/**/*"
-  - node_modules/**/*
-  - vendor/**/*
+    - "*/node_modules/**/*"
+    - "*/vendor/**/*"
+    - node_modules/**/*
+    - vendor/**/*
   NewCops: enable
 Layout/ClosingHeredocIndentation:
   Enabled: false
@@ -79,10 +79,10 @@ Style/StringLiterals:
 Style/StringLiteralsInInterpolation:
   Enabled: false
 require:
-- rubocop-factory_bot
-- rubocop-performance
-- rubocop-rails
-- rubocop-rake
-- rubocop-rspec
-- rubocop-rspec_rails
-- rubocop-capybara
+  - rubocop-factory_bot
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-rspec_rails
+  - rubocop-capybara

@@ -74,11 +74,15 @@ Rails.application.routes.draw do
       end
 
       resources(:data) { collection { delete "/", to: "data#destroy_all" } }
-      resources(:devices) { collection { delete "/", to: "devices#destroy_all" } }
+      resources(:devices) do
+        collection { delete "/", to: "devices#destroy_all" }
+      end
       resources(:guests) { collection { delete "/", to: "guests#destroy_all" } }
       resources(:names) { collection { delete "/", to: "names#destroy_all" } }
       resources(:pages) { collection { delete "/", to: "pages#destroy_all" } }
-      resources(:prompts) { collection { delete "/", to: "prompts#destroy_all" } }
+      resources(:prompts) do
+        collection { delete "/", to: "prompts#destroy_all" }
+      end
       resources(:tokens) { collection { delete "/", to: "tokens#destroy_all" } }
       resources(:users) { collection { delete "/", to: "users#destroy_all" } }
     end
@@ -98,8 +102,7 @@ Rails.application.routes.draw do
   resources :password_validations
   resource :session
 
-  match "/auth/slack/callback", to: "slack_accounts#callback",
-        via: %i[get post]
+  match "/auth/slack/callback", to: "slack_accounts#callback", via: %i[get post]
   match "/auth/x/callback", to: "x_accounts#callback", via: %i[get post]
   get "up", to: "static#up"
   get "about", to: "static#about"
