@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: ec667e5f114df58087493096253541f1034815af
+  revision: c6e3336cfdec5ae9c7fb98b03d0196aa56ab30f9
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -234,10 +234,8 @@ GEM
       json
     dorian-anonymize-yaml (1.0.0)
       dorian-arguments
-    dorian-arguments (1.0.1)
-      activesupport
+    dorian-arguments (1.1.0)
       bigdecimal
-      dorian-to_struct
     dorian-chat (1.0.0)
       dorian-arguments
     dorian-commit (1.0.0)
@@ -296,7 +294,7 @@ GEM
       dorian-arguments
       dorian-to_struct
       json
-    dorian-json-deep-map (1.0.0)
+    dorian-json-deep-map (1.1.0)
       dorian-arguments
       dorian-to_struct
       json
@@ -307,7 +305,7 @@ GEM
       dorian-arguments
       dorian-to_struct
       json
-    dorian-json-map (1.0.0)
+    dorian-json-map (1.1.0)
       dorian-arguments
       dorian-to_struct
       json
@@ -347,7 +345,7 @@ GEM
       yaml
     dorian-times (1.0.0)
       dorian-arguments
-    dorian-to_struct (1.0.1)
+    dorian-to_struct (1.1.0)
     dorian-top (1.0.0)
       dorian-arguments
     dorian-write (1.0.0)
