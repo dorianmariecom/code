@@ -68,8 +68,8 @@ jobs:
           bundler-cache: true
       - uses: actions/setup-node@v4
         with:
-          cache: "yarn"
-      - run: yarn install --frozen-lockfile --immutable --ignore-engines
+          cache: "npm"
+      - run: npm install --frozen-lockfile --immutable --ignore-engines
       - run: bin/rails db:create db:schema:load
       - run: bin/rails assets:precompile
       - run: bin/rspec
@@ -82,13 +82,13 @@ jobs:
         with:
           bundler-cache: true
       - run: bin/rubocop
-  yarn-audit:
+  npm-audit:
     name: Yarn Audit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: yarn audit
+      - run: npm audit
   deploy-staging:
     name: Deploy staging
     runs-on: ubuntu-latest
@@ -99,7 +99,7 @@ jobs:
       - importmap-outdated
       - rspec
       - rubocop
-      - yarn-audit
+      - npm-audit
     steps:
       - uses: actions/checkout@v4
       - uses: webfactory/ssh-agent@v0.9.0
@@ -141,7 +141,7 @@ jobs:
       - importmap-outdated
       - rspec
       - rubocop
-      - yarn-audit
+      - npm-audit
     steps:
       - uses: actions/checkout@v4
       - uses: webfactory/ssh-agent@v0.9.0
