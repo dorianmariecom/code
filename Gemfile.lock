@@ -30,7 +30,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: c6e3336cfdec5ae9c7fb98b03d0196aa56ab30f9
+  revision: 534b4ab2a65048c5eb558af2ef8ddcd93ff8d88d
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -549,7 +549,7 @@ GEM
     public_suffix (6.0.1)
     puma (6.4.2)
       nio4r (~> 2.0)
-    pundit (2.3.2)
+    pundit (2.4.0)
       activesupport (>= 3.0.0)
     raabro (1.4.0)
     racc (1.8.1)
@@ -803,4 +803,4 @@ RUBY VERSION
    ruby 3.3.4p94
 
 BUNDLED WITH
-   2.5.17
+   2.5.18
