@@ -8,7 +8,7 @@ GIT
       railties (>= 6.0.0)
 
 GIT
-  remote: https://github.com/dorianmariecom/solid_errors
+  remote: https://github.com/fractaledmind/solid_errors
   revision: 01a19652acf19fa237b96e63a434a9b735a60c7f
   specs:
     solid_errors (0.5.0)
@@ -27,18 +27,6 @@ GIT
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
-
-GIT
-  remote: https://github.com/rails/mission_control-jobs
-  revision: 7f71ec89b6213361e29dbc985495b5b8f473d995
-  specs:
-    mission_control-jobs (0.3.1)
-      importmap-rails
-      irb (~> 1.13)
-      propshaft
-      rails (>= 7.1)
-      stimulus-rails
-      turbo-rails
 
 GIT
   remote: https://github.com/rails/rails
@@ -487,6 +475,12 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.1)
+    mission_control-jobs (0.3.1)
+      importmap-rails
+      irb (~> 1.13)
+      rails (>= 7.1)
+      stimulus-rails
+      turbo-rails
     multi_json (1.15.0)
     mustermann (3.0.2)
       ruby2_keywords (~> 0.0.1)
@@ -768,7 +762,7 @@ DEPENDENCIES
   jbuilder
   kamal
   kaminari
-  mission_control-jobs!
+  mission_control-jobs
   net-http
   open-uri
   optparse

@@ -5,6 +5,7 @@ source "https://rubygems.org"
 git_source(:dorian) { |name| "https://github.com/dorianmariecom/#{name}" }
 git_source(:rails) { |name| "https://github.com/rails/#{name}" }
 git_source(:hotwired) { |name| "https://github.com/hotwired/#{name}" }
+git_source(:fractaledmind) { |name| "https://github.com/fractaledmind/#{name}" }
 
 ruby "3.3.4"
 
@@ -22,7 +23,7 @@ gem "irb"
 gem "jbuilder"
 gem "kamal"
 gem "kaminari"
-gem "mission_control-jobs", rails: "mission_control-jobs" # https://github.com/rails/mission_control-jobs/pull/138#issuecomment-2269828646
+gem "mission_control-jobs"
 gem "net-http"
 gem "open-uri"
 gem "optparse"
@@ -43,7 +44,7 @@ gem "rubocop-rake"
 gem "rubocop-rspec"
 gem "rubocop-rspec_rails"
 gem "slim-rails"
-gem "solid_errors", dorian: :solid_errors
+gem "solid_errors", fractaledmind: :solid_errors # https://github.com/fractaledmind/solid_errors/pull/59
 gem "solid_queue"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
