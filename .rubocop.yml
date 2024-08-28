@@ -24,6 +24,8 @@ Layout/MultilineOperationIndentation:
   Enabled: false
 Lint/EmptyClass:
   Enabled: false
+Lint/PercentStringArray:
+  Enabled: false
 Lint/ShadowingOuterLocalVariable:
   Enabled: false
 Metrics/AbcSize:
@@ -59,6 +61,8 @@ RSpec/PendingWithoutReason:
 Rails/DynamicFindBy:
   Enabled: false
 Rails/HelperInstanceVariable:
+  Enabled: false
+Rails/Present:
   Enabled: false
 Rails/ThreeStateBooleanColumn:
   Enabled: false

@@ -30,7 +30,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 534b4ab2a65048c5eb558af2ef8ddcd93ff8d88d
+  revision: 171c4e4d377d9653a79d38c94bdfadf1a2c4c312
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -407,7 +407,7 @@ GEM
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
-    git (2.1.1)
+    git (2.2.0)
       activesupport (>= 5.0)
       addressable (~> 2.8)
       process_executer (~> 1.1)
@@ -433,7 +433,7 @@ GEM
     json (2.7.2)
     jwt (2.8.2)
       base64
-    kamal (1.8.1)
+    kamal (1.8.2)
       activesupport (>= 7.0)
       base64 (~> 0.2)
       bcrypt_pbkdf (~> 1.0)
@@ -490,7 +490,7 @@ GEM
       connection_pool (~> 2.2)
     net-http2 (0.18.5)
       http-2 (~> 0.11)
-    net-imap (0.4.14)
+    net-imap (0.4.15)
       date
       net-protocol
     net-pop (0.1.2)
@@ -652,7 +652,7 @@ GEM
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     securerandom (0.3.1)
-    selenium-webdriver (4.23.0)
+    selenium-webdriver (4.24.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -717,7 +717,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
-    uri (0.13.0)
+    uri (0.13.1)
     useragent (0.16.10)
     webmock (3.23.1)
       addressable (>= 2.8.0)
