@@ -44,9 +44,15 @@ Metrics/ParameterLists:
   Enabled: false
 Metrics/PerceivedComplexity:
   Enabled: false
+Naming/FileName:
+  Enabled: false
+Naming/MethodParameterName:
+  Enabled: false
 Performance/UnfreezeString:
   Enabled: false
 RSpec/AnyInstance:
+  Enabled: false
+RSpec/DescribeClass:
   Enabled: false
 RSpec/ExampleLength:
   Enabled: false
@@ -62,13 +68,13 @@ Rails/DynamicFindBy:
   Enabled: false
 Rails/HelperInstanceVariable:
   Enabled: false
-Rails/Present:
-  Enabled: false
 Rails/ThreeStateBooleanColumn:
   Enabled: false
 Rails/TimeZone:
   Enabled: false
 Style/Documentation:
+  Enabled: false
+Style/DoubleNegation:
   Enabled: false
 Style/EmptyMethod:
   Enabled: false
