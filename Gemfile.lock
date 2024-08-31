@@ -279,7 +279,7 @@ GEM
       dorian-arguments
       dorian-eval
       dorian-progress
-    dorian-eval (1.3.0)
+    dorian-eval (1.4.0)
       yaml
     dorian-git-ls-ruby-files (1.1.0)
       dorian-arguments
