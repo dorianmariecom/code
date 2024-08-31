@@ -55,7 +55,7 @@ class Code
         end
 
         def code_url
-          +"https://www.meetup.com/#{code_group.code_slug}/events/#{code_id}"
+          "https://www.meetup.com/#{code_group.code_slug}/events/#{code_id}"
         end
 
         delegate :code_past?, to: :code_time

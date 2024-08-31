@@ -54,7 +54,7 @@ class Code
         end
 
         def code_url
-          +"https://x.com/#{username}"
+          "https://x.com/#{username}"
         end
 
         def url
