@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
-  revision: 01ff576bff617af7685e3988a5f8cb2ec553992a
+  revision: e9ed0a2d8746475d3dd643057ec6d2d793709cb8
   specs:
     turbo-rails (2.0.6)
       actionpack (>= 6.0.0)
@@ -174,223 +174,22 @@ GEM
     did-you-mean (0.1.1)
       levenshtein (>= 0.2.0)
     diff-lcs (1.5.1)
-    dorian (1.1.0)
-      dorian-all
-      dorian-anonymize
-      dorian-anonymize-json
-      dorian-anonymize-yaml
+    dorian (2.0.2)
+      csv
       dorian-arguments
-      dorian-chat
-      dorian-commit
-      dorian-csv-all
-      dorian-csv-each
-      dorian-csv-map
-      dorian-csv-merge
-      dorian-csv-pluck
-      dorian-csv-uniq
-      dorian-dir
-      dorian-dir-and-self
-      dorian-dot
-      dorian-each
-      dorian-git-ls-ruby-files
-      dorian-git-tree
-      dorian-json-all
-      dorian-json-compare
-      dorian-json-deep-each
-      dorian-json-deep-map
-      dorian-json-deep-pluck
-      dorian-json-each
-      dorian-json-map
-      dorian-json-pluck
-      dorian-json-read-write
-      dorian-json-uniq
-      dorian-parallel
-      dorian-pretty
-      dorian-release
-      dorian-rename
-      dorian-replace
-      dorian-shuffle
-      dorian-sort-csv
-      dorian-sort-json
-      dorian-sort-yaml
-      dorian-times
+      dorian-eval
+      dorian-progress
       dorian-to_struct
-      dorian-top
-      dorian-write
-      dorian-yaml-all
-      dorian-yaml-compare
-      dorian-yaml-deep-each
-      dorian-yaml-deep-map
-      dorian-yaml-deep-pluck
-      dorian-yaml-each
-      dorian-yaml-map
-      dorian-yaml-pluck
-      dorian-yaml-read-write
-      dorian-yaml-uniq
-    dorian-all (1.1.0)
-      dorian-arguments
-    dorian-anonymize (1.1.0)
-      dorian-arguments
-    dorian-anonymize-json (1.1.0)
-      dorian-arguments
       json
-    dorian-anonymize-yaml (1.1.0)
-      dorian-arguments
+      parallel
+      yaml
     dorian-arguments (1.2.0)
       bigdecimal
-    dorian-chat (1.1.0)
-      dorian-arguments
-    dorian-commit (1.2.0)
-      dorian-arguments
-      git
-      tiktoken_ruby
-    dorian-csv-all (1.1.0)
-      csv
-      dorian-arguments
-      dorian-to_struct
-    dorian-csv-each (1.1.0)
-      csv
-      dorian-arguments
-      dorian-to_struct
-    dorian-csv-map (1.1.0)
-      csv
-      dorian-arguments
-      dorian-to_struct
-    dorian-csv-merge (1.1.0)
-      csv
-      dorian-arguments
-    dorian-csv-pluck (1.1.0)
-      csv
-      dorian-arguments
-      dorian-to_struct
-    dorian-csv-uniq (1.1.0)
-      csv
-      dorian-arguments
-    dorian-dir (1.1.0)
-      dorian-arguments
-      git
-    dorian-dir-and-self (1.1.0)
-      dorian-arguments
-      git
-    dorian-dot (1.1.0)
-      dorian-arguments
-      git
-    dorian-each (1.2.0)
-      dorian-arguments
-      dorian-eval
-      dorian-progress
-    dorian-eval (1.4.0)
+    dorian-eval (1.4.1)
       yaml
-    dorian-git-ls-ruby-files (1.1.0)
-      dorian-arguments
-      git
-    dorian-git-tree (1.1.0)
-      dorian-arguments
-      git
-    dorian-json-all (1.1.0)
-      dorian-arguments
-      dorian-to_struct
-      json
-    dorian-json-compare (1.1.0)
-      dorian-arguments
-      json
-    dorian-json-deep-each (1.1.0)
-      dorian-arguments
-      dorian-to_struct
-      json
-    dorian-json-deep-map (1.2.0)
-      dorian-arguments
-      dorian-to_struct
-      json
-    dorian-json-deep-pluck (1.1.0)
-      dorian-arguments
-      json
-    dorian-json-each (1.1.0)
-      dorian-arguments
-      dorian-to_struct
-      json
-    dorian-json-map (1.2.0)
-      dorian-arguments
-      dorian-to_struct
-      json
-    dorian-json-pluck (1.1.0)
-      dorian-arguments
-      json
-    dorian-json-read-write (1.1.0)
-      dorian-arguments
-      json
-    dorian-json-uniq (1.1.0)
-      dorian-arguments
-      json
-    dorian-parallel (1.2.0)
-      dorian-arguments
-      dorian-eval
-      dorian-progress
-      parallel
-    dorian-pretty (1.1.0)
-      dorian-arguments
-      git
-      syntax_tree
     dorian-progress (1.1.0)
       ruby-progressbar
-    dorian-release (1.1.0)
-      dorian-arguments
-    dorian-rename (1.1.0)
-      dorian-arguments
-    dorian-replace (1.1.0)
-      dorian-arguments
-    dorian-shuffle (1.1.0)
-      dorian-arguments
-    dorian-sort-csv (1.1.0)
-      csv
-      dorian-arguments
-    dorian-sort-json (1.1.0)
-      dorian-arguments
-    dorian-sort-yaml (1.1.0)
-      dorian-arguments
-      yaml
-    dorian-times (1.1.0)
-      dorian-arguments
     dorian-to_struct (1.2.0)
-    dorian-top (1.1.0)
-      dorian-arguments
-    dorian-write (1.1.0)
-      dorian-arguments
-    dorian-yaml-all (1.1.0)
-      dorian-arguments
-      dorian-to_struct
-      yaml
-    dorian-yaml-compare (1.1.0)
-      dorian-arguments
-      yaml
-    dorian-yaml-deep-each (1.1.0)
-      dorian-arguments
-      dorian-to_struct
-      yaml
-    dorian-yaml-deep-map (1.1.0)
-      dorian-arguments
-      dorian-to_struct
-      yaml
-    dorian-yaml-deep-pluck (1.1.0)
-      dorian-arguments
-      yaml
-    dorian-yaml-each (1.1.0)
-      dorian-arguments
-      dorian-to_struct
-      yaml
-    dorian-yaml-map (1.1.0)
-      dorian-arguments
-      dorian-to_struct
-      yaml
-    dorian-yaml-pluck (1.1.0)
-      dorian-arguments
-      yaml
-    dorian-yaml-read-write (1.1.0)
-      dorian-arguments
-      yaml
-    dorian-yaml-uniq (1.1.0)
-      dorian-arguments
-      yaml
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -410,11 +209,6 @@ GEM
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
-    git (2.2.0)
-      activesupport (>= 5.0)
-      addressable (~> 2.8)
-      process_executer (~> 1.1)
-      rchardet (~> 1.8)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashdiff (1.1.1)
@@ -531,8 +325,6 @@ GEM
       racc
     pg (1.5.7)
     phonelib (0.9.1)
-    prettier_print (1.2.1)
-    process_executer (1.1.0)
     propshaft (0.9.1)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -579,8 +371,6 @@ GEM
       nokogiri (~> 1.14)
     rainbow (3.1.1)
     rake (13.2.1)
-    rb_sys (0.9.87)
-    rchardet (1.8.0)
     rdoc (6.7.0)
       psych (>= 4.0.0)
     redis (5.3.0)
@@ -688,8 +478,6 @@ GEM
       railties (>= 6.0.0)
     stringio (3.1.1)
     strscan (3.1.0)
-    syntax_tree (6.2.0)
-      prettier_print (>= 1.2.0)
     tailwindcss-rails (2.7.3)
       railties (>= 7.0.0)
     tailwindcss-rails (2.7.3-aarch64-linux)
@@ -704,13 +492,6 @@ GEM
       railties (>= 7.0.0)
     temple (0.10.3)
     thor (1.3.2)
-    tiktoken_ruby (0.0.9)
-      rb_sys (= 0.9.87)
-    tiktoken_ruby (0.0.9-aarch64-linux)
-    tiktoken_ruby (0.0.9-arm-linux)
-    tiktoken_ruby (0.0.9-arm64-darwin)
-    tiktoken_ruby (0.0.9-x86_64-darwin)
-    tiktoken_ruby (0.0.9-x86_64-linux)
     tilt (2.4.0)
     time (0.3.0)
       date
