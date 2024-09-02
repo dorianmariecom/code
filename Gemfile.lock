@@ -30,7 +30,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 5c0b7496ab32c25c80f6d1bdc8b32ec6f75ce1e4
+  revision: 8bac99ad7a403ef52a5c97e7afa73c7bbcc67110
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -258,7 +258,7 @@ GEM
       zeitwerk
     language_server-protocol (3.17.0.3)
     levenshtein (0.2.2)
-    logger (1.6.0)
+    logger (1.6.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -517,7 +517,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     yaml (0.3.0)
-    zeitwerk (2.6.17)
+    zeitwerk (2.6.18)
     zxcvbn-ruby (1.2.0)
 
 PLATFORMS
