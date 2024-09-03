@@ -174,7 +174,7 @@ GEM
     did-you-mean (0.1.1)
       levenshtein (>= 0.2.0)
     diff-lcs (1.5.1)
-    dorian (2.0.2)
+    dorian (2.1.0)
       csv
       dorian-arguments
       dorian-eval
