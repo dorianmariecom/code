@@ -174,12 +174,13 @@ GEM
     did-you-mean (0.1.1)
       levenshtein (>= 0.2.0)
     diff-lcs (1.5.1)
-    dorian (2.0.2)
+    dorian (2.2.0)
       csv
       dorian-arguments
       dorian-eval
       dorian-progress
       dorian-to_struct
+      git
       json
       parallel
       yaml
@@ -209,6 +210,11 @@ GEM
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
+    git (2.3.0)
+      activesupport (>= 5.0)
+      addressable (~> 2.8)
+      process_executer (~> 1.1)
+      rchardet (~> 1.8)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashdiff (1.1.1)
@@ -325,6 +331,7 @@ GEM
       racc
     pg (1.5.7)
     phonelib (0.9.1)
+    process_executer (1.1.0)
     propshaft (0.9.1)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -371,6 +378,7 @@ GEM
       nokogiri (~> 1.14)
     rainbow (3.1.1)
     rake (13.2.1)
+    rchardet (1.8.0)
     rdoc (6.7.0)
       psych (>= 4.0.0)
     redis (5.3.0)
