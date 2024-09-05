@@ -7,7 +7,7 @@ git_source(:rails) { |name| "https://github.com/rails/#{name}" }
 git_source(:hotwired) { |name| "https://github.com/hotwired/#{name}" }
 git_source(:fractaledmind) { |name| "https://github.com/fractaledmind/#{name}" }
 
-ruby "3.3.4"
+ruby "3.3.5"
 
 gem "bcrypt"
 gem "brakeman"
