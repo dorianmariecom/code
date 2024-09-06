@@ -231,9 +231,6 @@ GEM
     irb (1.14.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
-    jbuilder (2.12.0)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     json (2.7.2)
     jwt (2.8.2)
       base64
@@ -550,7 +547,6 @@ DEPENDENCIES
   heroicon
   importmap-rails!
   irb
-  jbuilder
   kamal
   kaminari
   mission_control-jobs

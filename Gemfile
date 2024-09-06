@@ -20,7 +20,6 @@ gem "faker"
 gem "heroicon"
 gem "importmap-rails", dorian: "importmap-rails" # https://github.com/rails/importmap-rails/pull/257, https://github.com/rails/importmap-rails/pull/256
 gem "irb"
-gem "jbuilder"
 gem "kamal"
 gem "kaminari"
 gem "mission_control-jobs"
