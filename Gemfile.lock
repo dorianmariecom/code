@@ -1,4 +1,20 @@
 GIT
+  remote: https://github.com/basecamp/kamal
+  revision: 0b5506f6f293d645246894af20bf9536d8cde7b0
+  specs:
+    kamal (2.0.0.alpha)
+      activesupport (>= 7.0)
+      base64 (~> 0.2)
+      bcrypt_pbkdf (~> 1.0)
+      concurrent-ruby (~> 1.2)
+      dotenv (~> 2.8)
+      ed25519 (~> 1.2)
+      net-ssh (~> 7.0)
+      sshkit (>= 1.23.0, < 2.0)
+      thor (~> 1.3)
+      zeitwerk (~> 2.5)
+
+GIT
   remote: https://github.com/dorianmariecom/importmap-rails
   revision: 525ba810bf5b3cc47cdaf3e7af56c1e6addfc885
   specs:
@@ -235,17 +251,6 @@ GEM
     json (2.7.2)
     jwt (2.8.2)
       base64
-    kamal (1.8.3)
-      activesupport (>= 7.0)
-      base64 (~> 0.2)
-      bcrypt_pbkdf (~> 1.0)
-      concurrent-ruby (~> 1.2)
-      dotenv (~> 2.8)
-      ed25519 (~> 1.2)
-      net-ssh (~> 7.0)
-      sshkit (>= 1.23.0, < 2.0)
-      thor (~> 1.2)
-      zeitwerk (~> 2.5)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -550,7 +555,7 @@ DEPENDENCIES
   heroicon
   importmap-rails!
   irb
-  kamal
+  kamal!
   kaminari
   mission_control-jobs
   net-http
