@@ -5,8 +5,6 @@ source "https://rubygems.org"
 git_source(:dorian) { |name| "https://github.com/dorianmariecom/#{name}" }
 git_source(:rails) { |name| "https://github.com/rails/#{name}" }
 git_source(:hotwired) { |name| "https://github.com/hotwired/#{name}" }
-git_source(:fractaledmind) { |name| "https://github.com/fractaledmind/#{name}" }
-git_source(:basecamp) { |name| "https://github.com/basecamp/#{name}" }
 
 ruby "3.3.5"
 
@@ -21,7 +19,7 @@ gem "faker"
 gem "heroicon"
 gem "importmap-rails", dorian: "importmap-rails" # https://github.com/rails/importmap-rails/pull/257, https://github.com/rails/importmap-rails/pull/256
 gem "irb"
-gem "kamal", basecamp: :kamal
+gem "kamal"
 gem "kaminari"
 gem "mission_control-jobs"
 gem "net-http"
@@ -44,7 +42,7 @@ gem "rubocop-rake"
 gem "rubocop-rspec"
 gem "rubocop-rspec_rails"
 gem "slim-rails"
-gem "solid_errors", fractaledmind: :solid_errors # https://github.com/fractaledmind/solid_errors/pull/59
+gem "solid_errors"
 gem "solid_queue"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
