@@ -1,20 +1,4 @@
 GIT
-  remote: https://github.com/basecamp/kamal
-  revision: 63d0b5ddfa0a3f7c5b900f8130fa7bb2fe2d22c9
-  specs:
-    kamal (2.0.0.alpha)
-      activesupport (>= 7.0)
-      base64 (~> 0.2)
-      bcrypt_pbkdf (~> 1.0)
-      concurrent-ruby (~> 1.2)
-      dotenv (~> 3.1)
-      ed25519 (~> 1.2)
-      net-ssh (~> 7.0)
-      sshkit (>= 1.23.0, < 2.0)
-      thor (~> 1.3)
-      zeitwerk (~> 2.5)
-
-GIT
   remote: https://github.com/dorianmariecom/importmap-rails
   revision: 525ba810bf5b3cc47cdaf3e7af56c1e6addfc885
   specs:
@@ -22,18 +6,6 @@ GIT
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
-
-GIT
-  remote: https://github.com/fractaledmind/solid_errors
-  revision: 98b86cd6736e40ecbd03581c9e3b42876ebbf40f
-  specs:
-    solid_errors (0.6.0)
-      actionmailer (>= 7.0)
-      actionpack (>= 7.0)
-      actionview (>= 7.0)
-      activerecord (>= 7.0)
-      activesupport (>= 7.0)
-      railties (>= 7.0)
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
@@ -209,10 +181,10 @@ GEM
     dorian-progress (1.1.2)
       ruby-progressbar
     dorian-to_struct (2.0.2)
-    dotenv (3.1.2)
-    dotenv-rails (3.1.2)
-      dotenv (= 3.1.2)
-      railties (>= 6.1)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     drb (2.2.1)
     ed25519 (1.3.0)
     erubi (1.13.0)
@@ -251,6 +223,17 @@ GEM
     json (2.7.2)
     jwt (2.8.2)
       base64
+    kamal (1.8.3)
+      activesupport (>= 7.0)
+      base64 (~> 0.2)
+      bcrypt_pbkdf (~> 1.0)
+      concurrent-ruby (~> 1.2)
+      dotenv (~> 2.8)
+      ed25519 (~> 1.2)
+      net-ssh (~> 7.0)
+      sshkit (>= 1.23.0, < 2.0)
+      thor (~> 1.2)
+      zeitwerk (~> 2.5)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -475,6 +458,13 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (>= 3.0, < 6.0, != 5.0.0)
+    solid_errors (0.6.0)
+      actionmailer (>= 7.0)
+      actionpack (>= 7.0)
+      actionview (>= 7.0)
+      activerecord (>= 7.0)
+      activesupport (>= 7.0)
+      railties (>= 7.0)
     solid_queue (0.8.2)
       activejob (>= 7.1)
       activerecord (>= 7.1)
@@ -555,7 +545,7 @@ DEPENDENCIES
   heroicon
   importmap-rails!
   irb
-  kamal!
+  kamal
   kaminari
   mission_control-jobs
   net-http
@@ -585,7 +575,7 @@ DEPENDENCIES
   selenium-webdriver
   sinatra
   slim-rails
-  solid_errors!
+  solid_errors
   solid_queue
   stimulus-rails
   tailwindcss-rails
