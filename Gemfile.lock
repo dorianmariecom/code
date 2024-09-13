@@ -9,16 +9,16 @@ GIT
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
-  revision: e9ed0a2d8746475d3dd643057ec6d2d793709cb8
+  revision: 163661555e3c6f2eaf60e0b6efde4cae02217be2
   specs:
-    turbo-rails (2.0.6)
+    turbo-rails (2.0.7)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 7f660a700d828cd9d472b0a57b1e32d7918cd88e
+  revision: 79f34b97129669e6769423066e15cdb3c55246cb
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -504,7 +504,7 @@ GEM
     timeout (0.4.1)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (2.5.0)
+    unicode-display_width (2.6.0)
     uri (0.13.1)
     useragent (0.16.10)
     webmock (3.23.1)
