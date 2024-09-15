@@ -1,44 +1,42 @@
 {
-  "ok": true,
   "channel": "C06K2CAS6QL",
-  "ts": "1708189048.678099",
   "message": {
-    "bot_id": "B06K0BD850T",
-    "type": "message",
-    "text": "Hi I am a bot that can post *_fancy_* messages to any public channel.",
-    "user": "U06K2U1PJUC",
-    "ts": "1708189048.678099",
     "app_id": "A06KD4JQ2QZ",
     "blocks": [
       {
-        "type": "section",
         "block_id": "Wd+Ng",
         "text": {
-          "type": "mrkdwn",
           "text": "Hi I am a bot that can post *_fancy_* messages to any public channel.",
+          "type": "mrkdwn",
           "verbatim": false
-        }
+        },
+        "type": "section"
       }
     ],
-    "team": "T06JT9MPCVC",
+    "bot_id": "B06K0BD850T",
     "bot_profile": {
-      "id": "B06K0BD850T",
       "app_id": "A06KD4JQ2QZ",
-      "name": "my-powerful-app",
+      "deleted": false,
       "icons": {
         "image_36": "https://a.slack-edge.com/80588/img/plugins/app/bot_36.png",
         "image_48": "https://a.slack-edge.com/80588/img/plugins/app/bot_48.png",
         "image_72": "https://a.slack-edge.com/80588/img/plugins/app/service_72.png"
       },
-      "deleted": false,
-      "updated": 1708011656,
-      "team_id": "T06JT9MPCVC"
-    }
+      "id": "B06K0BD850T",
+      "name": "my-powerful-app",
+      "team_id": "T06JT9MPCVC",
+      "updated": 1708011656
+    },
+    "team": "T06JT9MPCVC",
+    "text": "Hi I am a bot that can post *_fancy_* messages to any public channel.",
+    "ts": "1708189048.678099",
+    "type": "message",
+    "user": "U06K2U1PJUC"
   },
-  "warning": "missing_charset",
+  "ok": true,
   "response_metadata": {
-    "warnings": [
-      "missing_charset"
-    ]
-  }
+    "warnings": ["missing_charset"]
+  },
+  "ts": "1708189048.678099",
+  "warning": "missing_charset"
 }

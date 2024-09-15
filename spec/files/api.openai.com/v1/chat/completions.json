@@ -1,23 +1,23 @@
 {
-  "id": "chatcmpl-8sFM5aopzRfKtmV3yJUL6JGSD2xrD",
-  "object": "chat.completion",
-  "created": 1707939429,
-  "model": "gpt-4-1106-preview",
   "choices": [
     {
+      "finish_reason": "stop",
       "index": 0,
-      "message": {
-        "role": "assistant",
-        "content": "{\n  \"input\": \"1 + 1\",\n  \"name\": \"Arithmetics\"\n}"
-      },
       "logprobs": null,
-      "finish_reason": "stop"
+      "message": {
+        "content": "{\n  \"input\": \"1 + 1\",\n  \"name\": \"Arithmetics\"\n}",
+        "role": "assistant"
+      }
     }
   ],
+  "created": 1707939429,
+  "id": "chatcmpl-8sFM5aopzRfKtmV3yJUL6JGSD2xrD",
+  "model": "gpt-4-1106-preview",
+  "object": "chat.completion",
+  "system_fingerprint": "fp_c3e45ce344",
   "usage": {
-    "prompt_tokens": 419,
     "completion_tokens": 21,
+    "prompt_tokens": 419,
     "total_tokens": 440
-  },
-  "system_fingerprint": "fp_c3e45ce344"
+  }
 }

@@ -2,12 +2,12 @@
   "message-count": "1",
   "messages": [
     {
-      "to": "33767239573",
       "message-id": "3ba80ce3-d8bf-470f-ad96-c01ddb453e68",
-      "status": "0",
-      "remaining-balance": "437.32595000",
       "message-price": "0.06590000",
-      "network": "20815"
+      "network": "20815",
+      "remaining-balance": "437.32595000",
+      "status": "0",
+      "to": "33767239573"
     }
   ]
 }
