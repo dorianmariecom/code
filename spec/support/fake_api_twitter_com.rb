@@ -6,11 +6,13 @@ class FakeApiTwitterCom < Sinatra::Base
   end
 
   get "/2/users/:id/mentions" do
-    File.read("spec/files/api.twitter.com/2/users/1205730701703819264/mentions")
+    File.read(
+      "spec/files/api.twitter.com/2/users/1205730701703819264/mentions.json"
+    )
   end
 
   get "/2/tweets/search/recent" do
-    File.read("spec/files/api.twitter.com/2/tweets/search/recent")
+    File.read("spec/files/api.twitter.com/2/tweets/search/recent.json")
   end
 
   post "/2/tweets" do

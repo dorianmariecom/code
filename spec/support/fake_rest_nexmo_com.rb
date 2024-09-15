@@ -4,7 +4,7 @@ class FakeRestNexmoCom < Sinatra::Base
   post "/sms/json" do
     content_type :json
 
-    File.read("spec/files/rest.nexmo.com/sms/json")
+    File.read("spec/files/rest.nexmo.com/sms/json.json")
   end
 end
 

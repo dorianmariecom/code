@@ -1,5 +1,4 @@
 {
-  "private": true,
   "dependencies": {
     "intl-tel-input": "*",
     "tailwindcss": "*"
@@ -8,5 +7,6 @@
     "node": "22.5.1",
     "npm": "10.8.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "private": true
 }

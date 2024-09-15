@@ -1,8 +1,50 @@
 ---
 en:
-  breadcrumbs:
+  activerecord:
+    errors:
+      models:
+        phone_number:
+          attributes:
+            phone_number:
+              impossible: is impossible
+              invalid: is invalid
+  attributes:
+    address: address
+    authentication: authentication
+    body: body
+    data: data
+    display_name: display name
+    email_address: email address
+    enable_starttls_auto: enable starttls auto
+    hint: hint
+    input: input
+    interval: interval
+    location: location
+    name: name
     page: page
-    pages: pages
+    password: password
+    phone_number: phone number
+    platform: platform
+    port: port
+    primary: primary?
+    program_id: program
+    prompt: prompt
+    slug: slug
+    smtp_address: smtp address
+    smtp_authentication: smtp authentication
+    smtp_enable_starttls_auto: smtp enable starttls auto
+    smtp_password: smtp password
+    smtp_port: smtp port
+    smtp_user_name: smtp user name
+    starts_at: starts at
+    time_zone: time zone
+    title: title
+    token: token
+    user_id: user id
+    user_name: user name
+    verification_code: verification code
+    verified: verified?
+  breadcrumbs:
     data: data
     datum: datum
     device: device
@@ -20,6 +62,8 @@ en:
     name: name
     names: names
     new: new
+    page: page
+    pages: pages
     password: password
     passwords: passwords
     phone_number: phone_number
@@ -42,50 +86,6 @@ en:
     users: users
     x_account: x_account
     x_accounts: x_accounts
-  activerecord:
-    errors:
-      models:
-        phone_number:
-          attributes:
-            phone_number:
-              impossible: is impossible
-              invalid: is invalid
-  attributes:
-    address: address
-    authentication: authentication
-    data: data
-    display_name: display name
-    email_address: email address
-    enable_starttls_auto: enable starttls auto
-    hint: hint
-    input: input
-    interval: interval
-    location: location
-    name: name
-    password: password
-    phone_number: phone number
-    platform: platform
-    port: port
-    primary: primary?
-    program_id: program
-    prompt: prompt
-    smtp_address: smtp address
-    smtp_authentication: smtp authentication
-    smtp_enable_starttls_auto: smtp enable starttls auto
-    smtp_password: smtp password
-    smtp_port: smtp port
-    smtp_user_name: smtp user name
-    starts_at: starts at
-    time_zone: time zone
-    token: token
-    user_id: user id
-    user_name: user name
-    verification_code: verification code
-    verified: verified?
-    page: page
-    title: title
-    body: body
-    slug: slug
   data:
     create:
       notice: datum created
@@ -147,7 +147,7 @@ en:
     verification_code_email:
       dorian: dorian
       hi: hi,
-      intro: "here is your verification code for %{host}:"
+      intro: 'here is your verification code for %{host}:'
       subject: your %{host} verification code is %{verification_code}
       thanks: thanks,
   email_addresses:
@@ -324,27 +324,36 @@ en:
       verified: verified
     update:
       notice: name updated
-  static:
-    about:
-      code_html:
-        code is a programming language for the internet that you can use
-        on mobile.
-      contact_html: you can read out to me at <a href="mailto:dorian@codedorian.com">dorian@codedorian.com</a>.
-      hi_html: hi
-      me_html:
-        this is <a href="https://dorianmarie.com">dorian marié</a>, the maker
-        of code.
-      title: about
-    home:
-      title: the programming language for the internet
-    privacy:
-      title: privacy
-    source:
-      title: source
-    terms:
-      title: terms
-    up:
-      title: "/up"
+  pages:
+    create:
+      notice: page created
+    destroy:
+      notice: page deleted
+    edit:
+      submit: update
+      title: edit page
+    form:
+      page: page
+    index:
+      delete_all: delete all
+      new: new page
+      title: pages
+    new:
+      submit: register
+      title: registration
+    page:
+      page: page
+    show:
+      body: body
+      created_at: created at
+      destroy: delete page
+      edit: edit page
+      id: id
+      slug: slug
+      title: title
+      updated_at: updated at
+    update:
+      notice: page updated
   password_validator:
     model:
       sequence:
@@ -761,6 +770,25 @@ en:
       smtp_account: smtp account
     update:
       notice: smtp account updated
+  static:
+    about:
+      code_html: code is a programming language for the internet that you can use
+        on mobile.
+      contact_html: you can read out to me at <a href="mailto:dorian@codedorian.com">dorian@codedorian.com</a>.
+      hi_html: hi
+      me_html: this is <a href="https://dorianmarie.com">dorian marié</a>, the maker
+        of code.
+      title: about
+    home:
+      title: the programming language for the internet
+    privacy:
+      title: privacy
+    source:
+      title: source
+    terms:
+      title: terms
+    up:
+      title: "/up"
   time_zones:
     create:
       notice: time zone created
@@ -880,33 +908,3 @@ en:
       notice: x account updated
     x_account:
       x_account: x account
-  pages:
-    create:
-      notice: page created
-    destroy:
-      notice: page deleted
-    edit:
-      submit: update
-      title: edit page
-    form:
-      page: page
-    index:
-      delete_all: delete all
-      new: new page
-      title: pages
-    new:
-      submit: register
-      title: registration
-    show:
-      created_at: created at
-      destroy: delete page
-      edit: edit page
-      id: id
-      updated_at: updated at
-      title: title
-      body: body
-      slug: slug
-    update:
-      notice: page updated
-    page:
-      page: page

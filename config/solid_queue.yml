@@ -1,14 +1,15 @@
+---
 dispatchers:
-  - polling_interval: 1
-    batch_size: 500
-    recurring_tasks:
-      schedule_all_job:
-        class: ScheduleAllJob
-        schedule: every minute
-      x_accounts_refresh_auth_job:
-        class: XAccountsRefreshAuthJob
-        schedule: every minute
+- batch_size: 500
+  polling_interval: 1
+  recurring_tasks:
+    schedule_all_job:
+      class: ScheduleAllJob
+      schedule: every minute
+    x_accounts_refresh_auth_job:
+      class: XAccountsRefreshAuthJob
+      schedule: every minute
 workers:
-  - queues: "*"
-    threads: 3
-    polling_interval: 2
+- polling_interval: 2
+  queues: "*"
+  threads: 3

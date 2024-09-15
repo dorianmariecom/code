@@ -4,7 +4,7 @@ class FakeApiOpenaiCom < Sinatra::Base
   post "/v1/chat/completions" do
     content_type :json
 
-    File.read("spec/files/api.openai.com/v1/chat/completions")
+    File.read("spec/files/api.openai.com/v1/chat/completions.json")
   end
 end
 

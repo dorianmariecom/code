@@ -4,7 +4,7 @@ class FakeSlackCom < Sinatra::Base
   post "/api/chat.postMessage" do
     content_type :json
 
-    File.read("spec/files/slack.com/api/chat.postMessage")
+    File.read("spec/files/slack.com/api/chat.postMessage.json")
   end
 end
 

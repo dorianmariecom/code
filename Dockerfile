@@ -12,7 +12,7 @@ ENV BUNDLER_VERSION="2.5.16" \
     RAILS_ENV="production" \
     RUBY_INSTALL_VERSION="0.9.3"
 
-RUN apt-get update && \
+RUN apt-get update &&
     apt-get install -y \
         autoconf \
         build-essential \
@@ -30,7 +30,6 @@ WORKDIR /rails
 
 RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/
 RUN /tmp/node-build-master/bin/node-build $NODE_VERSION /usr/local/node
-RUN npm install -g "yarn@$YARN_VERSION"
 
 COPY Gemfile Gemfile.lock ./
 
