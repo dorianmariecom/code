@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 81ad0351819322b9842f05a550688cad54e54176
+  revision: 87bee3640b2a135a360c9af13f0e610bef8df131
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -215,7 +215,7 @@ GEM
     hkdf (0.3.0)
     http-2 (0.12.0)
       base64
-    i18n (1.14.5)
+    i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     interception (0.5)
     io-console (0.7.2)
