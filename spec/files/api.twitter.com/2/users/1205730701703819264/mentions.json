@@ -9,7 +9,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1812933395938484319"],
+      "edit_history_tweet_ids": [
+        "1812933395938484319"
+      ],
       "entities": {
         "mentions": [
           {
@@ -56,7 +58,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1811010517072236725"],
+      "edit_history_tweet_ids": [
+        "1811010517072236725"
+      ],
       "entities": {
         "mentions": [
           {
@@ -97,7 +101,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1810734952528429110"],
+      "edit_history_tweet_ids": [
+        "1810734952528429110"
+      ],
       "entities": {
         "annotations": [
           {
@@ -147,7 +153,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1810734575238430916"],
+      "edit_history_tweet_ids": [
+        "1810734575238430916"
+      ],
       "entities": {
         "mentions": [
           {
@@ -188,7 +196,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1809923874722574681"],
+      "edit_history_tweet_ids": [
+        "1809923874722574681"
+      ],
       "entities": {
         "mentions": [
           {
@@ -229,7 +239,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1809919857808249269"],
+      "edit_history_tweet_ids": [
+        "1809919857808249269"
+      ],
       "entities": {
         "mentions": [
           {
@@ -270,7 +282,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1808334790959288726"],
+      "edit_history_tweet_ids": [
+        "1808334790959288726"
+      ],
       "entities": {
         "mentions": [
           {
@@ -311,7 +325,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1806072555196895627"],
+      "edit_history_tweet_ids": [
+        "1806072555196895627"
+      ],
       "entities": {
         "mentions": [
           {
@@ -352,7 +368,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1806022869027299802"],
+      "edit_history_tweet_ids": [
+        "1806022869027299802"
+      ],
       "entities": {
         "annotations": [
           {
@@ -421,7 +439,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1805900589378806032"],
+      "edit_history_tweet_ids": [
+        "1805900589378806032"
+      ],
       "entities": {
         "mentions": [
           {
@@ -471,7 +491,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1812920478908227874"],
+        "edit_history_tweet_ids": [
+          "1812920478908227874"
+        ],
         "entities": {
           "mentions": [
             {
@@ -531,7 +553,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1811008303750606915"],
+        "edit_history_tweet_ids": [
+          "1811008303750606915"
+        ],
         "entities": {
           "annotations": [
             {
@@ -581,7 +605,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1810732042059177990"],
+        "edit_history_tweet_ids": [
+          "1810732042059177990"
+        ],
         "entities": {
           "mentions": [
             {
@@ -622,7 +648,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1810728692336750937"],
+        "edit_history_tweet_ids": [
+          "1810728692336750937"
+        ],
         "entities": {
           "mentions": [
             {
@@ -663,7 +691,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1809919857808249269"],
+        "edit_history_tweet_ids": [
+          "1809919857808249269"
+        ],
         "entities": {
           "mentions": [
             {
@@ -704,7 +734,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1809916641993539633"],
+        "edit_history_tweet_ids": [
+          "1809916641993539633"
+        ],
         "entities": {
           "mentions": [
             {
@@ -744,7 +776,9 @@
       },
       {
         "attachments": {
-          "media_keys": ["3_1808113717160062976"]
+          "media_keys": [
+            "3_1808113717160062976"
+          ]
         },
         "author_id": "1205730701703819264",
         "conversation_id": "1808113783606272033",
@@ -754,7 +788,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": true
         },
-        "edit_history_tweet_ids": ["1808113783606272033"],
+        "edit_history_tweet_ids": [
+          "1808113783606272033"
+        ],
         "entities": {
           "urls": [
             {
@@ -783,7 +819,9 @@
       },
       {
         "attachments": {
-          "media_keys": ["3_1805849602651783168"]
+          "media_keys": [
+            "3_1805849602651783168"
+          ]
         },
         "author_id": "1205730701703819264",
         "conversation_id": "1805849724911591447",
@@ -793,7 +831,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": true
         },
-        "edit_history_tweet_ids": ["1805849724911591447"],
+        "edit_history_tweet_ids": [
+          "1805849724911591447"
+        ],
         "entities": {
           "urls": [
             {
@@ -829,7 +869,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1805900589378806032"],
+        "edit_history_tweet_ids": [
+          "1805900589378806032"
+        ],
         "entities": {
           "mentions": [
             {
@@ -876,7 +918,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1805630651191677374"],
+        "edit_history_tweet_ids": [
+          "1805630651191677374"
+        ],
         "entities": {
           "mentions": [
             {

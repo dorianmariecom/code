@@ -21,15 +21,23 @@
       "name_normalized": "general",
       "num_members": 1,
       "parent_conversation": null,
-      "pending_connected_team_ids": [],
-      "pending_shared": [],
-      "previous_names": [],
+      "pending_connected_team_ids": [
+
+      ],
+      "pending_shared": [
+
+      ],
+      "previous_names": [
+
+      ],
       "purpose": {
         "creator": "U06JZUA6BL2",
         "last_set": 1708007503,
         "value": "This is the one channel that will always include everyone. It’s a great spot for announcements and team-wide conversations."
       },
-      "shared_team_ids": ["T06JT9MPCVC"],
+      "shared_team_ids": [
+        "T06JT9MPCVC"
+      ],
       "topic": {
         "creator": "",
         "last_set": 0,
@@ -59,15 +67,23 @@
       "name_normalized": "code",
       "num_members": 1,
       "parent_conversation": null,
-      "pending_connected_team_ids": [],
-      "pending_shared": [],
-      "previous_names": [],
+      "pending_connected_team_ids": [
+
+      ],
+      "pending_shared": [
+
+      ],
+      "previous_names": [
+
+      ],
       "purpose": {
         "creator": "U06JZUA6BL2",
         "last_set": 1708007579,
         "value": "This channel is for everything #code. Hold meetings, share docs and make decisions together with your team."
       },
-      "shared_team_ids": ["T06JT9MPCVC"],
+      "shared_team_ids": [
+        "T06JT9MPCVC"
+      ],
       "topic": {
         "creator": "",
         "last_set": 0,
@@ -97,15 +113,23 @@
       "name_normalized": "random",
       "num_members": 1,
       "parent_conversation": null,
-      "pending_connected_team_ids": [],
-      "pending_shared": [],
-      "previous_names": [],
+      "pending_connected_team_ids": [
+
+      ],
+      "pending_shared": [
+
+      ],
+      "previous_names": [
+
+      ],
       "purpose": {
         "creator": "U06JZUA6BL2",
         "last_set": 1708007503,
         "value": "This channel is for... well, everything else. It’s a place for team jokes, spur-of-the-moment ideas and funny GIFs. Go wild!"
       },
-      "shared_team_ids": ["T06JT9MPCVC"],
+      "shared_team_ids": [
+        "T06JT9MPCVC"
+      ],
       "topic": {
         "creator": "",
         "last_set": 0,

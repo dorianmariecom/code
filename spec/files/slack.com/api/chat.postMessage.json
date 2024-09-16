@@ -35,7 +35,9 @@
   },
   "ok": true,
   "response_metadata": {
-    "warnings": ["missing_charset"]
+    "warnings": [
+      "missing_charset"
+    ]
   },
   "ts": "1708189048.678099",
   "warning": "missing_charset"

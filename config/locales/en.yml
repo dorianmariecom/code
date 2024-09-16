@@ -147,7 +147,7 @@ en:
     verification_code_email:
       dorian: dorian
       hi: hi,
-      intro: "here is your verification code for %{host}:"
+      intro: 'here is your verification code for %{host}:'
       subject: your %{host} verification code is %{verification_code}
       thanks: thanks,
   email_addresses:
@@ -772,13 +772,11 @@ en:
       notice: smtp account updated
   static:
     about:
-      code_html:
-        code is a programming language for the internet that you can use
+      code_html: code is a programming language for the internet that you can use
         on mobile.
       contact_html: you can read out to me at <a href="mailto:dorian@codedorian.com">dorian@codedorian.com</a>.
       hi_html: hi
-      me_html:
-        this is <a href="https://dorianmarie.com">dorian marié</a>, the maker
+      me_html: this is <a href="https://dorianmarie.com">dorian marié</a>, the maker
         of code.
       title: about
     home:

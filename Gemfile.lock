@@ -9,16 +9,15 @@ GIT
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
-  revision: 163661555e3c6f2eaf60e0b6efde4cae02217be2
+  revision: 33019f38131793c7f59ce652509f2c3342af6178
   specs:
     turbo-rails (2.0.7)
       actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
       railties (>= 6.0.0)
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 81ad0351819322b9842f05a550688cad54e54176
+  revision: 87bee3640b2a135a360c9af13f0e610bef8df131
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -215,7 +214,7 @@ GEM
     hkdf (0.3.0)
     http-2 (0.12.0)
       base64
-    i18n (1.14.5)
+    i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     interception (0.5)
     io-console (0.7.2)
@@ -422,7 +421,7 @@ GEM
       rubocop (~> 1.41)
     rubocop-factory_bot (2.26.1)
       rubocop (~> 1.61)
-    rubocop-performance (1.21.1)
+    rubocop-performance (1.22.0)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     rubocop-rails (2.26.1)

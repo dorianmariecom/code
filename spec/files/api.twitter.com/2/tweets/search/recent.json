@@ -2,8 +2,12 @@
   "data": [
     {
       "attachments": {
-        "media_keys": ["3_1813150442010079232"],
-        "media_source_tweet_id": ["1813150472171073591"]
+        "media_keys": [
+          "3_1813150442010079232"
+        ],
+        "media_source_tweet_id": [
+          "1813150472171073591"
+        ]
       },
       "author_id": "1205730701703819264",
       "conversation_id": "1813487188803248514",
@@ -13,7 +17,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1813487188803248514"],
+      "edit_history_tweet_ids": [
+        "1813487188803248514"
+      ],
       "entities": {
         "mentions": [
           {
@@ -63,7 +69,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1813484794942025948"],
+      "edit_history_tweet_ids": [
+        "1813484794942025948"
+      ],
       "entities": {
         "mentions": [
           {
@@ -115,7 +123,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": true
       },
-      "edit_history_tweet_ids": ["1813312099352818167"],
+      "edit_history_tweet_ids": [
+        "1813312099352818167"
+      ],
       "id": "1813312099352818167",
       "lang": "en",
       "possibly_sensitive": false,
@@ -139,7 +149,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": true
       },
-      "edit_history_tweet_ids": ["1813197747937268185"],
+      "edit_history_tweet_ids": [
+        "1813197747937268185"
+      ],
       "entities": {
         "annotations": [
           {
@@ -191,7 +203,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1813167661129355331"],
+      "edit_history_tweet_ids": [
+        "1813167661129355331"
+      ],
       "entities": {
         "mentions": [
           {
@@ -265,8 +279,12 @@
     },
     {
       "attachments": {
-        "media_keys": ["3_1812520002542579713"],
-        "media_source_tweet_id": ["1812520004950057225"]
+        "media_keys": [
+          "3_1812520002542579713"
+        ],
+        "media_source_tweet_id": [
+          "1812520004950057225"
+        ]
       },
       "author_id": "1205730701703819264",
       "conversation_id": "1813166385725329714",
@@ -276,7 +294,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1813166385725329714"],
+      "edit_history_tweet_ids": [
+        "1813166385725329714"
+      ],
       "entities": {
         "mentions": [
           {
@@ -326,7 +346,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1813165907981558244"],
+      "edit_history_tweet_ids": [
+        "1813165907981558244"
+      ],
       "entities": {
         "mentions": [
           {
@@ -367,7 +389,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1813165424864866542"],
+      "edit_history_tweet_ids": [
+        "1813165424864866542"
+      ],
       "entities": {
         "mentions": [
           {
@@ -406,8 +430,12 @@
     },
     {
       "attachments": {
-        "media_keys": ["3_1812743638234931200"],
-        "media_source_tweet_id": ["1812743643972894961"]
+        "media_keys": [
+          "3_1812743638234931200"
+        ],
+        "media_source_tweet_id": [
+          "1812743643972894961"
+        ]
       },
       "author_id": "1205730701703819264",
       "context_annotations": [
@@ -513,7 +541,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1813164972626567192"],
+      "edit_history_tweet_ids": [
+        "1813164972626567192"
+      ],
       "entities": {
         "annotations": [
           {
@@ -579,7 +609,9 @@
         "edits_remaining": 5,
         "is_edit_eligible": false
       },
-      "edit_history_tweet_ids": ["1812920478908227874"],
+      "edit_history_tweet_ids": [
+        "1812920478908227874"
+      ],
       "entities": {
         "mentions": [
           {
@@ -673,7 +705,9 @@
     "tweets": [
       {
         "attachments": {
-          "media_keys": ["3_1813150442010079232"]
+          "media_keys": [
+            "3_1813150442010079232"
+          ]
         },
         "author_id": "348429830",
         "conversation_id": "1813150472171073591",
@@ -683,7 +717,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1813150472171073591"],
+        "edit_history_tweet_ids": [
+          "1813150472171073591"
+        ],
         "entities": {
           "urls": [
             {
@@ -719,7 +755,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1813438787407483364"],
+        "edit_history_tweet_ids": [
+          "1813438787407483364"
+        ],
         "entities": {
           "mentions": [
             {
@@ -766,7 +804,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1812933395938484319"],
+        "edit_history_tweet_ids": [
+          "1812933395938484319"
+        ],
         "entities": {
           "mentions": [
             {
@@ -806,7 +846,9 @@
       },
       {
         "attachments": {
-          "media_keys": ["3_1812520002542579713"]
+          "media_keys": [
+            "3_1812520002542579713"
+          ]
         },
         "author_id": "802543466207203328",
         "conversation_id": "1812520004950057225",
@@ -816,7 +858,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": true
         },
-        "edit_history_tweet_ids": ["1812520004950057225"],
+        "edit_history_tweet_ids": [
+          "1812520004950057225"
+        ],
         "entities": {
           "urls": [
             {
@@ -852,7 +896,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": true
         },
-        "edit_history_tweet_ids": ["1812883932490211359"],
+        "edit_history_tweet_ids": [
+          "1812883932490211359"
+        ],
         "id": "1812883932490211359",
         "lang": "en",
         "possibly_sensitive": false,
@@ -876,7 +922,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": true
         },
-        "edit_history_tweet_ids": ["1812925660857266202"],
+        "edit_history_tweet_ids": [
+          "1812925660857266202"
+        ],
         "entities": {
           "mentions": [
             {
@@ -903,7 +951,9 @@
       },
       {
         "attachments": {
-          "media_keys": ["3_1812743638234931200"]
+          "media_keys": [
+            "3_1812743638234931200"
+          ]
         },
         "author_id": "1016059981907386368",
         "context_annotations": [
@@ -1055,7 +1105,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": true
         },
-        "edit_history_tweet_ids": ["1812743643972894961"],
+        "edit_history_tweet_ids": [
+          "1812743643972894961"
+        ],
         "entities": {
           "annotations": [
             {
@@ -1107,7 +1159,9 @@
           "edits_remaining": 5,
           "is_edit_eligible": false
         },
-        "edit_history_tweet_ids": ["1812825194500591963"],
+        "edit_history_tweet_ids": [
+          "1812825194500591963"
+        ],
         "entities": {
           "mentions": [
             {

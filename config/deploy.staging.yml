@@ -2,54 +2,53 @@
 accessories:
   db:
     directories:
-      - data:/var/lib/postgresql/data
+    - data:/var/lib/postgresql/data
     env:
       clear:
         POSTGRES_DB: code_production
         POSTGRES_USER: code
       secret:
-        - POSTGRES_PASSWORD
+      - POSTGRES_PASSWORD
     host: 146.190.28.38
     image: postgres:16.1
     port: 5432
   redis:
-    cmd:
-      redis-server --requirepass <%= File.read(".env.staging")[/REDIS_PASSWORD="(.*)"/,
+    cmd: redis-server --requirepass <%= File.read(".env.staging")[/REDIS_PASSWORD="(.*)"/,
       1] %>
     directories:
-      - data:/data
+    - data:/data
     host: 146.190.28.38
     image: redis:7
     port: 6379
 env:
   secret:
-    - BASE_URL
-    - DATABASE_URL
-    - HOST
-    - HOSTS
-    - POSTGRES_PASSWORD
-    - RAILS_MASTER_KEY
-    - REDIS_URL
+  - BASE_URL
+  - DATABASE_URL
+  - HOST
+  - HOSTS
+  - POSTGRES_PASSWORD
+  - RAILS_MASTER_KEY
+  - REDIS_URL
 healthcheck:
   max_attempts: 20
 image: dorianmariecom/code
 registry:
   password:
-    - KAMAL_REGISTRY_PASSWORD
+  - KAMAL_REGISTRY_PASSWORD
   username:
-    - KAMAL_REGISTRY_USERNAME
+  - KAMAL_REGISTRY_USERNAME
 servers:
   jobs:
     cmd: bin/rake solid_queue:start
     hosts:
-      - 146.190.28.38
+    - 146.190.28.38
   push:
     cmd: bin/rpush start -f
     hosts:
-      - 146.190.28.38
+    - 146.190.28.38
   web:
     hosts:
-      - 146.190.28.38
+    - 146.190.28.38
     labels:
       traefik.http.routers.code.rule: Host(`staging.codedorian.com`)
       traefik.http.routers.code_secure.entrypoints: websecure
@@ -70,6 +69,6 @@ traefik:
     entryPoints.websecure.address: ":443"
   options:
     publish:
-      - 443:443
+    - 443:443
     volume:
-      - "/letsencrypt/acme.json:/letsencrypt/acme.json"
+    - "/letsencrypt/acme.json:/letsencrypt/acme.json"
