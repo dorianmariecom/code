@@ -9,11 +9,10 @@ GIT
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
-  revision: 163661555e3c6f2eaf60e0b6efde4cae02217be2
+  revision: dfabcf787b44a67642fc97f4e76c0cf73d78a17c
   specs:
     turbo-rails (2.0.7)
       actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
       railties (>= 6.0.0)
 
 GIT
@@ -215,7 +214,7 @@ GEM
     hkdf (0.3.0)
     http-2 (0.12.0)
       base64
-    i18n (1.14.5)
+    i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     interception (0.5)
     io-console (0.7.2)
