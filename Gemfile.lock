@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
-  revision: 1b60474bcb594fecc715b4c603db69189e880c21
+  revision: 034c6320668287def0ee4d3f047d66b01922e632
   specs:
     turbo-rails (2.0.7)
       actionpack (>= 6.0.0)
@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 4aa78117fa427ec6d761b81fb1d3877a20703b9e
+  revision: c0807dc6c2f83b9e65bfdc45d52d8d36ddf5e897
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -185,7 +185,7 @@ GEM
       yaml
     dorian-arguments (1.2.2)
       bigdecimal
-    dorian-eval (1.4.3)
+    dorian-eval (1.5.0)
       yaml
     dorian-progress (1.1.2)
       ruby-progressbar
