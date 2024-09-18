@@ -9,9 +9,9 @@ GIT
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
-  revision: fa4b60adefd745546d8355f32088d715a52c759f
+  revision: 780ee0da511a3d104683b6852ee00594569109e2
   specs:
-    turbo-rails (2.0.8)
+    turbo-rails (2.0.9)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
 
@@ -165,7 +165,7 @@ GEM
     did-you-mean (0.1.1)
       levenshtein (>= 0.2.0)
     diff-lcs (1.5.1)
-    dorian (2.6.2)
+    dorian (2.6.3)
       csv
       dorian-arguments
       dorian-eval
@@ -517,17 +517,17 @@ GEM
     syntax_tree-xml (0.1.0)
       prettier_print
       syntax_tree (>= 2.0.1)
-    tailwindcss-rails (2.7.4)
+    tailwindcss-rails (2.7.5)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.4-aarch64-linux)
+    tailwindcss-rails (2.7.5-aarch64-linux)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.4-arm-linux)
+    tailwindcss-rails (2.7.5-arm-linux)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.4-arm64-darwin)
+    tailwindcss-rails (2.7.5-arm64-darwin)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.4-x86_64-darwin)
+    tailwindcss-rails (2.7.5-x86_64-darwin)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.4-x86_64-linux)
+    tailwindcss-rails (2.7.5-x86_64-linux)
       railties (>= 7.0.0)
     temple (0.10.3)
     terminal-table (3.0.2)
@@ -629,4 +629,4 @@ RUBY VERSION
    ruby 3.3.5p100
 
 BUNDLED WITH
-   2.5.18
+   2.5.19
