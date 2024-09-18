@@ -9,9 +9,9 @@ GIT
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
-  revision: 034c6320668287def0ee4d3f047d66b01922e632
+  revision: fa4b60adefd745546d8355f32088d715a52c759f
   specs:
-    turbo-rails (2.0.7)
+    turbo-rails (2.0.8)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
 
@@ -165,7 +165,7 @@ GEM
     did-you-mean (0.1.1)
       levenshtein (>= 0.2.0)
     diff-lcs (1.5.1)
-    dorian (2.6.1)
+    dorian (2.6.2)
       csv
       dorian-arguments
       dorian-eval
