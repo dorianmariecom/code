@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: fd975a87758713a26abe22ab1c337d4ea24c8899
+  revision: d6e250d406e281b726db0c6746cf80bf2852bda8
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -553,7 +553,7 @@ GEM
     webpush (1.1.0)
       hkdf (~> 0.2)
       jwt (~> 2.0)
-    webrick (1.8.1)
+    webrick (1.8.2)
     websocket (1.2.11)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
