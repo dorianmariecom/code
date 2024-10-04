@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: ced86070009881362446b5dbbaa36bde36c64b6a
+  revision: c1689d8a2fff7c62d84f4b372fe6a4c9cf1e0cee
   specs:
     actioncable (8.0.0.beta1)
       actionpack (= 8.0.0.beta1)
@@ -241,7 +241,7 @@ GEM
     json (2.7.2)
     jwt (2.9.3)
       base64
-    kamal (2.1.0)
+    kamal (2.1.1)
       activesupport (>= 7.0)
       base64 (~> 0.2)
       bcrypt_pbkdf (~> 1.0)
@@ -629,4 +629,4 @@ RUBY VERSION
    ruby 3.3.5p100
 
 BUNDLED WITH
-   2.5.20
+   2.5.21
