@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
-  revision: 567520f6443ed6b753b7ef65eb2c2bf4f2e8b5ea
+  revision: b775fe4a1f9db28e3d650864c1bb6c089f44efa6
   specs:
     turbo-rails (2.0.10)
       actionpack (>= 6.0.0)
@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 64c404d3346cdf7da2d967f1d0854f406f9184bf
+  revision: fae425b8fbbd0f78b151e5e2161b4daa5d5dd49a
   specs:
     actioncable (8.0.0.beta1)
       actionpack (= 8.0.0.beta1)
@@ -241,7 +241,7 @@ GEM
     json (2.7.2)
     jwt (2.9.3)
       base64
-    kamal (2.1.1)
+    kamal (2.2.0)
       activesupport (>= 7.0)
       base64 (~> 0.2)
       bcrypt_pbkdf (~> 1.0)
@@ -290,9 +290,10 @@ GEM
     mini_racer (0.16.0)
       libv8-node (~> 18.19.0.0)
     minitest (5.25.1)
-    mission_control-jobs (0.3.1)
+    mission_control-jobs (0.3.2)
       importmap-rails
       irb (~> 1.13)
+      propshaft
       rails (>= 7.1)
       stimulus-rails
       turbo-rails
@@ -517,17 +518,17 @@ GEM
     syntax_tree-xml (0.1.0)
       prettier_print
       syntax_tree (>= 2.0.1)
-    tailwindcss-rails (2.7.7)
+    tailwindcss-rails (2.7.8)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.7-aarch64-linux)
+    tailwindcss-rails (2.7.8-aarch64-linux)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.7-arm-linux)
+    tailwindcss-rails (2.7.8-arm-linux)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.7-arm64-darwin)
+    tailwindcss-rails (2.7.8-arm64-darwin)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.7-x86_64-darwin)
+    tailwindcss-rails (2.7.8-x86_64-darwin)
       railties (>= 7.0.0)
-    tailwindcss-rails (2.7.7-x86_64-linux)
+    tailwindcss-rails (2.7.8-x86_64-linux)
       railties (>= 7.0.0)
     temple (0.10.3)
     terminal-table (3.0.2)
