@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: fae425b8fbbd0f78b151e5e2161b4daa5d5dd49a
+  revision: 57fe7e781ee37a50e54b17df24738ce6c26b22db
   specs:
     actioncable (8.0.0.beta1)
       actionpack (= 8.0.0.beta1)
@@ -562,7 +562,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     yaml (0.3.0)
-    zeitwerk (2.6.18)
+    zeitwerk (2.7.0)
     zxcvbn-ruby (1.2.0)
 
 PLATFORMS
