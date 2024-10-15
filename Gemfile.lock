@@ -9,9 +9,9 @@ GIT
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
-  revision: b775fe4a1f9db28e3d650864c1bb6c089f44efa6
+  revision: 52727cbf29d37fb2d54b5fc6cff7baaf4d007249
   specs:
-    turbo-rails (2.0.10)
+    turbo-rails (2.0.11)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
 
@@ -371,7 +371,7 @@ GEM
       activesupport (>= 3.0.0)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (3.1.7)
+    rack (3.1.8)
     rack-attack (6.7.0)
       rack (>= 1.0, < 4)
     rack-protection (4.0.0)
@@ -562,7 +562,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     yaml (0.3.0)
-    zeitwerk (2.6.18)
+    zeitwerk (2.7.0)
     zxcvbn-ruby (1.2.0)
 
 PLATFORMS
