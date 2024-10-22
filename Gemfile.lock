@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/hotwired/turbo-rails
-  revision: 52727cbf29d37fb2d54b5fc6cff7baaf4d007249
+  revision: b733dfc3d08b6c64be68b6699250cf402e1cd631
   specs:
     turbo-rails (2.0.11)
       actionpack (>= 6.0.0)
@@ -558,7 +558,7 @@ GEM
     xpath (3.2.0)
       nokogiri (~> 1.8)
     yaml (0.3.0)
-    zeitwerk (2.7.0)
+    zeitwerk (2.7.1)
     zxcvbn-ruby (1.2.0)
 
 PLATFORMS
