@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: a801911a03a33af79aec0063ae76805bdabd938d
+  revision: ac98964910369dd9821316a68f5477bd0d8e4ced
   specs:
     actioncable (8.1.0.alpha)
       actionpack (= 8.1.0.alpha)
@@ -275,7 +275,7 @@ GEM
     libv8-node (18.19.0.0-x86_64-darwin)
     libv8-node (18.19.0.0-x86_64-linux)
     logger (1.6.1)
-    loofah (2.22.0)
+    loofah (2.23.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
