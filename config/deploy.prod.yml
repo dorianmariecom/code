@@ -1,50 +1,34 @@
 ---
-env:
-  secret:
-  - BASE_URL
-  - DATABASE_URL
-  - HOST
-  - HOSTS
-healthcheck:
-  max_attempts: 20
+service: code
 image: dorianmariecom/code
-registry:
-  password:
-  - KAMAL_REGISTRY_PASSWORD
-  username:
-  - KAMAL_REGISTRY_USERNAME
 servers:
+  web:
+    - 138.201.175.197
   jobs:
     cmd: bin/rake solid_queue:start
     hosts:
-    - 164.92.135.114
+    - 138.201.175.197
   push:
     cmd: bin/rpush start -f
     hosts:
-    - 164.92.135.114
-  web:
-    hosts:
-    - 164.92.135.114
-    labels:
-      traefik.http.routers.code.rule: Host(`codedorian.com`)
-      traefik.http.routers.code_secure.entrypoints: websecure
-      traefik.http.routers.code_secure.rule: Host(`codedorian.com`)
-      traefik.http.routers.code_secure.tls: true
-      traefik.http.routers.code_secure.tls.certresolver: letsencrypt
-service: code
-traefik:
-  args:
-    certificatesResolvers.letsencrypt.acme.email: dorian@dorianmarie.com
-    certificatesResolvers.letsencrypt.acme.httpchallenge: true
-    certificatesResolvers.letsencrypt.acme.httpchallenge.entrypoint: web
-    certificatesResolvers.letsencrypt.acme.storage: "/letsencrypt/acme.json"
-    entryPoints.web.address: ":80"
-    entryPoints.web.http.redirections.entryPoint.scheme: https
-    entryPoints.web.http.redirections.entryPoint.to: websecure
-    entryPoints.web.http.redirections.entrypoint.permanent: true
-    entryPoints.websecure.address: ":443"
-  options:
-    publish:
-    - 443:443
-    volume:
-    - "/letsencrypt/acme.json:/letsencrypt/acme.json"
+    - 138.201.175.197
+proxy:
+  ssl: true
+  host: codedorian.com
+registry:
+  username:
+    - KAMAL_REGISTRY_USERNAME
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+env:
+  secret:
+    - RAILS_MASTER_KEY
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+volumes:
+  - "code_storage:/rails/storage"
+builder:
+  arch: arm64
