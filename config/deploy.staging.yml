@@ -1,9 +1,10 @@
 ---
 env:
   secret:
-    - RAILS_MASTER_KEY
+    - BASE_URL
     - HOST
     - HOSTS
+    - RAILS_MASTER_KEY
 service: code-staging
 image: dorianmariecom/code-staging
 servers:
