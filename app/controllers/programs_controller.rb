@@ -26,11 +26,6 @@ class ProgramsController < ApplicationController
         .where(program: @program)
         .order(created_at: :desc)
         .page(params[:page])
-    @prompts =
-      policy_scope(Prompt)
-        .where(program: @program)
-        .order(created_at: :desc)
-        .page(params[:page])
     @breadcrumbs = [@user, @program]
   end
 
@@ -131,7 +126,6 @@ class ProgramsController < ApplicationController
     params.require(:program).permit(
       :user_id,
       :input,
-      :prompt,
       schedules_attributes: %i[id _destroy starts_at interval]
     )
   end

@@ -13,17 +13,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.0].define(version: 20_240_804_140_411) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "data", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.jsonb "data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_data_on_user_id"
-  end
-
   create_table "devices", force: :cascade do |t|
     t.bigint "user_id"
     t.string "token"
@@ -87,17 +76,6 @@ ActiveRecord::Schema[8.0].define(version: 20_240_804_140_411) do
     t.index ["user_id"], name: "index_names_on_user_id"
   end
 
-  create_table "pages", force: :cascade do |t|
-    t.bigint "page_id"
-    t.string "title"
-    t.text "body"
-    t.string "slug", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["page_id"], name: "index_pages_on_page_id"
-    t.index ["slug"], name: "index_pages_on_slug", unique: true
-  end
-
   create_table "passwords", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "password_digest"
@@ -123,19 +101,7 @@ ActiveRecord::Schema[8.0].define(version: 20_240_804_140_411) do
     t.text "input"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "prompt", default: "", null: false
     t.index ["user_id"], name: "index_programs_on_user_id"
-  end
-
-  create_table "prompts", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "program_id"
-    t.text "prompt"
-    t.text "input"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["program_id"], name: "index_prompts_on_program_id"
-    t.index ["user_id"], name: "index_prompts_on_user_id"
   end
 
   create_table "rpush_apps", force: :cascade do |t|
@@ -216,33 +182,6 @@ ActiveRecord::Schema[8.0].define(version: 20_240_804_140_411) do
     t.string "interval"
     t.datetime "starts_at"
     t.index ["program_id"], name: "index_schedules_on_program_id"
-  end
-
-  create_table "slack_accounts", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "primary", default: false, null: false
-    t.boolean "verified", default: false, null: false
-    t.jsonb "auth", default: {}, null: false
-    t.jsonb "conversations", default: {}, null: false
-    t.index ["user_id"], name: "index_slack_accounts_on_user_id"
-  end
-
-  create_table "smtp_accounts", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.boolean "primary", default: false, null: false
-    t.boolean "verified", default: false, null: false
-    t.string "address", default: "smtp.gmail.com", null: false
-    t.bigint "port", default: 587, null: false
-    t.string "user_name", default: "", null: false
-    t.string "password", default: "", null: false
-    t.string "authentication", default: "plain", null: false
-    t.boolean "enable_starttls_auto", default: true, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "display_name", default: "", null: false
-    t.index ["user_id"], name: "index_smtp_accounts_on_user_id"
   end
 
   create_table "solid_errors", force: :cascade do |t|
@@ -425,32 +364,15 @@ ActiveRecord::Schema[8.0].define(version: 20_240_804_140_411) do
     t.string "name", default: "", null: false
   end
 
-  create_table "x_accounts", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.boolean "verified", default: false, null: false
-    t.boolean "primary", default: false, null: false
-    t.jsonb "auth", default: {}, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.jsonb "me", default: {}, null: false
-    t.index ["user_id"], name: "index_x_accounts_on_user_id"
-  end
-
-  add_foreign_key "data", "users"
   add_foreign_key "devices", "users"
   add_foreign_key "email_addresses", "users"
   add_foreign_key "executions", "programs"
   add_foreign_key "locations", "users"
   add_foreign_key "names", "users"
-  add_foreign_key "pages", "pages"
   add_foreign_key "passwords", "users"
   add_foreign_key "phone_numbers", "users"
   add_foreign_key "programs", "users"
-  add_foreign_key "prompts", "programs"
-  add_foreign_key "prompts", "users"
   add_foreign_key "schedules", "programs"
-  add_foreign_key "slack_accounts", "users"
-  add_foreign_key "smtp_accounts", "users"
   add_foreign_key "solid_errors_occurrences", "solid_errors", column: "error_id"
   add_foreign_key "solid_queue_blocked_executions",
                   "solid_queue_jobs",
@@ -478,5 +400,4 @@ ActiveRecord::Schema[8.0].define(version: 20_240_804_140_411) do
                   on_delete: :cascade
   add_foreign_key "time_zones", "users"
   add_foreign_key "tokens", "users"
-  add_foreign_key "x_accounts", "users"
 end

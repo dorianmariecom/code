@@ -14,10 +14,6 @@
 .text-sm= t(".updated_at")
 .mb-5= @program.updated_at
 
-- if @program.prompt.present?
-  .text-sm=> t(".prompt")
-  pre.mt-0= @program.prompt
-
 - if @program.input.present?
   .text-sm=> t(".input")
   pre.mt-0= @program.input
@@ -40,5 +36,4 @@
 = button_to t(".delete"), @program, method: :delete, class: "a text-red-600"
 
 = render "shared/models", model: :execution, collection: @executions, parent: @program
-= render "shared/models", model: :prompt, collection: @prompts, parent: @program
 = render "shared/models", model: :schedule, collection: @schedules, parent: @program

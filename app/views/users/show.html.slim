@@ -18,7 +18,6 @@
 
 = button_to t(".destroy"), @user, method: :delete, class: "a text-red-600", data: { turbo_confirm: t(".confirm") }
 
-= render "shared/models", model: :datum, collection: @data, parent: @user
 = render "shared/models", model: :device, collection: @devices, parent: @user
 = render "shared/models", model: :email_address, collection: @email_addresses, parent: @user
 = render "shared/models", model: :execution, collection: @executions, parent: @user
@@ -29,8 +28,5 @@
 = render "shared/models", model: :program, collection: @programs, parent: @user
 = render "shared/models", model: :prompt, collection: @prompts, parent: @user
 = render "shared/models", model: :schedule, collection: @schedules, parent: @user
-= render "shared/models", model: :slack_account, collection: @slack_accounts, parent: @user
-= render "shared/models", model: :smtp_account, collection: @smtp_accounts, parent: @user
 = render "shared/models", model: :time_zone, collection: @time_zones, parent: @user
 = render "shared/models", model: :token, collection: @tokens, parent: @user
-= render "shared/models", model: :x_account, collection: @x_accounts, parent: @user

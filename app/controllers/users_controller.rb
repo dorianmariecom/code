@@ -21,14 +21,8 @@ class UsersController < ApplicationController
     @phone_numbers =
       policy_scope(PhoneNumber).where(user: @user).page(params[:page])
     @programs = policy_scope(Program).where(user: @user).page(params[:page])
-    @prompts = policy_scope(Prompt).where(user: @user).page(params[:page])
-    @slack_accounts =
-      policy_scope(SlackAccount).where(user: @user).page(params[:page])
-    @smtp_accounts =
-      policy_scope(SmtpAccount).where(user: @user).page(params[:page])
     @time_zones = policy_scope(TimeZone).where(user: @user).page(params[:page])
     @tokens = policy_scope(Token).where(user: @user).page(params[:page])
-    @x_accounts = policy_scope(XAccount).where(user: @user).page(params[:page])
     # programs
     @executions =
       policy_scope(Execution).where(program: @programs).page(params[:page])

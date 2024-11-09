@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 class StaticPolicy < ApplicationPolicy
-  def home?
-    true
-  end
-
   def up?
     true
   end

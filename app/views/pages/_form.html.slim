@@ -1,8 +1,0 @@
-- page = local_assigns.fetch(:page)
-- submit = local_assigns.fetch(:submit)
-
-= form_for page do |f|
-  = render "shared/field", f: f, name: :title, type: :string
-  = render "shared/field", f: f, name: :slug, type: :string
-  = render "shared/field", f: f, name: :body, type: :text
-  = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

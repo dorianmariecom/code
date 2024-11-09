@@ -1,5 +1,6 @@
 .DS_Store
 *.gem
+*.sqlite3*
 /.bundle
 /.env
 /.env.*.local

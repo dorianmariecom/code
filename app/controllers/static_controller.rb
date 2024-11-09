@@ -6,9 +6,6 @@ class StaticController < ApplicationController
 
   layout "empty", only: :up
 
-  def home
-  end
-
   def up
   end
 

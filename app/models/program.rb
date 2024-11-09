@@ -71,13 +71,12 @@ class Program < ApplicationRecord
   end
 
   def scheduled_jobs
-    SolidQueue::Job.where(class_name: "EvaluateAndScheduleJob").where(
-      "arguments::jsonb @> ?",
-      { arguments: [{ program: { _aj_globalid: to_global_id } }] }.to_json
-    )
+    SolidQueue::Job
+      .where(class_name: "EvaluateAndScheduleJob")
+      .where("arguments like ?", "%{to_global_id}%")
   end
 
   def to_s
-    prompt.presence || input.presence || "program##{id}"
+    input.presence || "program##{id}"
   end
 end

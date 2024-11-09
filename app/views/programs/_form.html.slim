@@ -1,7 +1,4 @@
-= form_for(program, data: { controller: "prompt" }) do |f|
-  = f.hidden_field :id, data: { prompt_target: "id" }
-  = render "shared/field", f: f, field: :prompt, type: :string, data: { prompt_target: :prompt, action: "keydown.enter->prompt#create" }
-  button.bg-black.text-white.px-2.py-1.rounded.cursor-pointer(data-action="prompt#create") generate
-  = render "shared/field", f: f, field: :input, type: :text, data: { prompt_target: :input }
+= form_for(program) do |f|
+  = render "shared/field", f: f, field: :input, type: :text
   = render "schedules/nested", f: f
   = f.submit submit, class: "bg-black text-white px-4 py-2 rounded cursor-pointer"

@@ -1,10 +1,10 @@
 ---
 development:
-  gssencmode: disable
-  url: <%= ENV.fetch("DATABASE_URL") %>
+  adapter: sqlite3
+  database: db/development.sqlite3
 production:
-  gssencmode: disable
-  url: <%= ENV.fetch("DATABASE_URL") %>
+  adapter: sqlite3
+  database: db/production.sqlite3
 test:
-  gssencmode: disable
-  url: <%= ENV.fetch("DATABASE_URL") %>
+  adapter: sqlite3
+  database: db/test.sqlite3

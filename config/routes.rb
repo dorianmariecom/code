@@ -22,10 +22,6 @@ Rails.application.routes.draw do
         resources(:schedules) do
           collection { delete "/", to: "schedules#destroy_all" }
         end
-
-        resources(:prompts) do
-          collection { delete "/", to: "prompts#destroy_all" }
-        end
       end
 
       resources :email_addresses do
@@ -38,23 +34,8 @@ Rails.application.routes.draw do
         resource :verification_code
       end
 
-      resources :smtp_accounts do
-        collection { delete "/", to: "smtp_accounts#destroy_all" }
-        resource :verification_code
-      end
-
-      resources :x_accounts do
-        collection { delete "/", to: "x_accounts#destroy_all" }
-        post "refresh_auth"
-        post "refresh_me"
-      end
-
       resources(:executions) do
         collection { delete "/", to: "executions#destroy_all" }
-      end
-
-      resources(:slack_accounts) do
-        collection { delete "/", to: "slack_accounts#destroy_all" }
       end
 
       resources(:time_zones) do
@@ -80,9 +61,6 @@ Rails.application.routes.draw do
       resources(:guests) { collection { delete "/", to: "guests#destroy_all" } }
       resources(:names) { collection { delete "/", to: "names#destroy_all" } }
       resources(:pages) { collection { delete "/", to: "pages#destroy_all" } }
-      resources(:prompts) do
-        collection { delete "/", to: "prompts#destroy_all" }
-      end
       resources(:tokens) { collection { delete "/", to: "tokens#destroy_all" } }
       resources(:users) { collection { delete "/", to: "users#destroy_all" } }
     end
@@ -102,8 +80,6 @@ Rails.application.routes.draw do
   resources :password_validations
   resource :session
 
-  match "/auth/slack/callback", to: "slack_accounts#callback", via: %i[get post]
-  match "/auth/x/callback", to: "x_accounts#callback", via: %i[get post]
   get "up", to: "static#up"
   get "about", to: "static#about"
   get "terms", to: "static#terms"
@@ -114,5 +90,5 @@ Rails.application.routes.draw do
   match "/422", to: "errors#unprocessable_entity", via: :all
   match "/500", to: "errors#internal_server_error", via: :all
 
-  root to: "static#home"
+  root to: "programs#new"
 end

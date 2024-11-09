@@ -9,10 +9,6 @@ module ApplicationHelper
     content_for(:title).presence || t("#{controller}.#{action}.title")
   end
 
-  def fake_slack_teams
-    Array.new(3) { Faker::Internet.username(separators: []) }.join(", ")
-  end
-
   def google_maps_api_key
     Rails.application.credentials.console_cloud_google_com.api_key
   end
@@ -43,44 +39,6 @@ module ApplicationHelper
 
   def fake_names
     Array.new(3) { Faker::Name.name }
-  end
-
-  def fake_smtp_display_names
-    Array.new(3) { Faker::Name.name }
-  end
-
-  def fake_smtp_addresses
-    %w[
-      smtp.gmail.com
-      smtp.mail.yahoo.com
-      smtp.office365.com
-      smtp.aol.com
-      smtp.mail.me.com
-      smtp.bizmail.yahoo.com
-      smtpcorp.com
-      smtp.mailgun.org
-      smtp.mailchimp.com
-    ]
-  end
-
-  def fake_smtp_ports
-    [465, 587]
-  end
-
-  def fake_smtp_user_names
-    Array.new(3) { Faker::Internet.email }
-  end
-
-  def fake_smtp_passwords
-    Array.new(3) { Faker::Internet.password }
-  end
-
-  def fake_smtp_authentications
-    %w[plain login cram_md5 none]
-  end
-
-  def fake_data
-    "1, true, { 123: false }, [1, 2, 3]"
   end
 
   def time_zone_options(time_zone: nil)
@@ -136,16 +94,8 @@ module ApplicationHelper
     json_regexp(EmailAddress::EMAIL_ADDRESS_REGEXP)
   end
 
-  def domain_regexp
-    json_regexp(SmtpAccount::DOMAIN_REGEXP)
-  end
-
   def verification_code_regexp
     json_regexp(PhoneNumber::VERIFICATION_CODE_REGEXP)
-  end
-
-  def slack_team_regexp
-    json_regexp(SlackAccount::TEAM_REGEXP)
   end
 
   def whatsapp_to(phone_number, name)
