@@ -19,7 +19,14 @@ servers:
     - 138.201.175.197
 proxy:
   ssl: true
-  host: staging.codedorian.com
+  hosts:
+    - staging.code-dorian.com
+    - staging.code.dorianmarie.com
+    - staging.codedorian.co
+    - staging.codedorian.com
+    - staging.codedorian.fr
+    - staging.codedorian.net
+    - staging.codedorian.org
 registry:
   username:
     - KAMAL_REGISTRY_USERNAME

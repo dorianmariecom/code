@@ -19,7 +19,14 @@ servers:
     - 138.201.175.197
 proxy:
   ssl: true
-  host: codedorian.com
+  hosts:
+    - code-dorian.com
+    - code.dorianmarie.com
+    - codedorian.co
+    - codedorian.com
+    - codedorian.fr
+    - codedorian.net
+    - codedorian.org
 registry:
   username:
     - KAMAL_REGISTRY_USERNAME
