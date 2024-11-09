@@ -5,6 +5,7 @@ env:
     - HOST
     - HOSTS
     - RAILS_MASTER_KEY
+readiness_delay: 20
 service: code-staging
 image: dorianmariecom/code-staging
 servers:
