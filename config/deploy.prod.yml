@@ -32,9 +32,6 @@ registry:
     - KAMAL_REGISTRY_USERNAME
   password:
     - KAMAL_REGISTRY_PASSWORD
-env:
-  secret:
-    - RAILS_MASTER_KEY
 aliases:
   console: app exec --interactive --reuse "bin/rails console"
   shell: app exec --interactive --reuse "bash"
