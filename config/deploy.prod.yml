@@ -1,4 +1,9 @@
 ---
+env:
+  secret:
+    - RAILS_MASTER_KEY
+    - HOST
+    - HOSTS
 service: code
 image: dorianmariecom/code
 servers:
