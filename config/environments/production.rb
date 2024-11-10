@@ -14,7 +14,7 @@ Rails.application.configure do
   config.enable_reloading = false
   config.force_ssl = true
   config.i18n.fallbacks = true
-  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
+  config.log_level = :info
   config.log_tags = [:request_id]
   config.public_file_server.enabled = true
   config.require_master_key = ENV["RAILS_MASTER_KEY_DUMMY"].blank?

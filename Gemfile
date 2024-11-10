@@ -35,6 +35,8 @@ gem "rails", rails: :rails
 gem "redis"
 gem "rpush"
 gem "slim-rails"
+gem "solid_cable"
+gem "solid_cache"
 gem "solid_errors"
 gem "solid_queue"
 gem "sqlite3"
