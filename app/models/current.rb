@@ -93,34 +93,6 @@ class Current < ActiveSupport::CurrentAttributes
     !!phone_number
   end
 
-  def slack_accounts
-    (user || guest).slack_accounts.verified
-  end
-
-  def slack_accounts!
-    unless slack_accounts?
-      raise(Code::Error, "no verified slack accounts found")
-    end
-
-    slack_accounts
-  end
-
-  def slack_accounts?
-    slack_accounts.any?
-  end
-
-  def slack_account
-    slack_accounts.verified.primary.first || slack_accounts.verified.first
-  end
-
-  def slack_account!
-    slack_account || raise(Code::Error, "no verified slack account found")
-  end
-
-  def slack_account?
-    !!slack_account
-  end
-
   def passwords
     (user || guest).passwords
   end
@@ -199,58 +171,6 @@ class Current < ActiveSupport::CurrentAttributes
     !!schedule
   end
 
-  def smtp_accounts
-    (user || guest).smtp_accounts.verified
-  end
-
-  def smtp_accounts!
-    raise(Code::Error, "no verified smtp accounts found") unless smtp_accounts?
-
-    smtp_accounts
-  end
-
-  def smtp_accounts?
-    smtp_accounts.any?
-  end
-
-  def smtp_account
-    smtp_accounts.verified.primary.first || smtp_accounts.verified.first
-  end
-
-  def smtp_account!
-    smtp_account || raise(Code::Error, "no verified smtp account found")
-  end
-
-  def smtp_account?
-    !!smtp_account
-  end
-
-  def x_accounts
-    (user || guest).x_accounts.verified
-  end
-
-  def x_accounts?
-    x_accounts.any?
-  end
-
-  def x_accounts!
-    raise(Code::Error, "no verified x accounts found") unless x_accounts?
-
-    x_accounts
-  end
-
-  def x_account
-    x_accounts.verified.primary.first || x_accounts.verified.first
-  end
-
-  def x_account!
-    x_account || raise(Code::Error, "no verified x account found")
-  end
-
-  def x_account?
-    !!x_account
-  end
-
   def names
     (user || guest).names.verified
   end
@@ -275,32 +195,6 @@ class Current < ActiveSupport::CurrentAttributes
 
   def name?
     !!name
-  end
-
-  def data
-    (user || guest).data
-  end
-
-  def data?
-    data.any?
-  end
-
-  def data!
-    raise(Code::Error, "no datum found") unless data?
-
-    data
-  end
-
-  def datum
-    data.first
-  end
-
-  def datum!
-    datum || raise(Code::Error, "no datum found")
-  end
-
-  def datum?
-    !!datum
   end
 
   def time_zones

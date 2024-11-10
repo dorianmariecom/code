@@ -49,13 +49,6 @@ RUN HOST=example.com \
     SECRET_KEY_BASE_DUMMY=1 \
     ./bin/rails assets:precompile
 
-RUN HOST=example.com \
-    HOSTS=example.com \
-    BASE_URL=https://example.com \
-    RAILS_MASTER_KEY_DUMMY=1 \
-    SECRET_KEY_BASE_DUMMY=1 \
-    ./bin/rails db:create db:schema:load db:seed
-
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 EXPOSE 3000
