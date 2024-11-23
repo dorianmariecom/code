@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails
-  revision: 852d0cd4123463cf215f4b024801b256857295c4
+  revision: 04a63ad9b6575de8434be6dc39d62eb8cca1ee4c
   specs:
     actioncable (8.1.0.alpha)
       actionpack (= 8.1.0.alpha)
@@ -289,7 +289,7 @@ GEM
     mini_mime (1.1.5)
     mini_racer (0.16.0)
       libv8-node (~> 18.19.0.0)
-    minitest (5.25.1)
+    minitest (5.25.2)
     mission_control-jobs (0.5.0)
       actioncable (>= 7.1)
       actionpack (>= 7.1)
@@ -385,7 +385,7 @@ GEM
     rack-test (2.1.0)
       rack (>= 1.3)
     rack-timeout (0.7.0)
-    rackup (2.2.0)
+    rackup (2.2.1)
       rack (>= 3)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
@@ -397,7 +397,7 @@ GEM
     rainbow (3.1.1)
     rake (13.2.1)
     rchardet (1.8.0)
-    rdoc (6.7.0)
+    rdoc (6.8.1)
       psych (>= 4.0.0)
     redis (5.3.0)
       redis-client (>= 0.22.0)
@@ -468,7 +468,7 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    securerandom (0.3.1)
+    securerandom (0.3.2)
     selenium-webdriver (4.26.0)
       base64 (~> 0.2)
       logger (~> 1.4)
@@ -556,7 +556,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
-    uri (1.0.1)
+    uri (1.0.2)
     useragent (0.16.10)
     w_syntax_tree-erb (0.12.0)
       prettier_print (~> 1.2, >= 1.2.0)
