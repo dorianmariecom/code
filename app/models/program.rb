@@ -71,9 +71,10 @@ class Program < ApplicationRecord
   end
 
   def scheduled_jobs
-    SolidQueue::Job
-      .where(class_name: "EvaluateAndScheduleJob")
-      .where("arguments like ?", "%{to_global_id}%")
+    SolidQueue::Job.where(class_name: "EvaluateAndScheduleJob").where(
+      "arguments like ?",
+      "%<to_global_id>s%"
+    )
   end
 
   def to_s
