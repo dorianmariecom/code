@@ -12,7 +12,7 @@ ENV BUNDLER_VERSION="2.5.16" \
     RAILS_ENV="production" \
     RUBY_INSTALL_VERSION="0.9.3"
 
-RUN apt-get update && \
+RUN apt-get update &&
     apt-get install -y \
         autoconf \
         build-essential \

@@ -1,15 +1,34 @@
 ---
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+  logs: app logs -f
+  shell: app exec --interactive --reuse "bash"
+builder:
+  arch: arm64
 env:
   secret:
-    - BASE_URL
-    - HOST
-    - HOSTS
-    - RAILS_MASTER_KEY
-service: code-staging
+  - BASE_URL
+  - HOST
+  - HOSTS
+  - RAILS_MASTER_KEY
 image: dorianmariecom/code-staging
+proxy:
+  hosts:
+  - staging.code-dorian.com
+  - staging.code.dorianmarie.com
+  - staging.codedorian.co
+  - staging.codedorian.com
+  - staging.codedorian.fr
+  - staging.codedorian.net
+  - staging.codedorian.org
+  ssl: true
+registry:
+  password:
+  - KAMAL_REGISTRY_PASSWORD
+  username:
+  - KAMAL_REGISTRY_USERNAME
 servers:
-  web:
-    - 138.201.175.197
   jobs:
     cmd: bin/rake solid_queue:start
     hosts:
@@ -18,27 +37,8 @@ servers:
     cmd: bin/rpush start -f
     hosts:
     - 138.201.175.197
-proxy:
-  ssl: true
-  hosts:
-    - staging.code-dorian.com
-    - staging.code.dorianmarie.com
-    - staging.codedorian.co
-    - staging.codedorian.com
-    - staging.codedorian.fr
-    - staging.codedorian.net
-    - staging.codedorian.org
-registry:
-  username:
-    - KAMAL_REGISTRY_USERNAME
-  password:
-    - KAMAL_REGISTRY_PASSWORD
-aliases:
-  console: app exec --interactive --reuse "bin/rails console"
-  shell: app exec --interactive --reuse "bash"
-  logs: app logs -f
-  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+  web:
+  - 138.201.175.197
+service: code-staging
 volumes:
-  - "code_storage:/rails/storage"
-builder:
-  arch: arm64
+- code_storage:/rails/storage
