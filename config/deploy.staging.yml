@@ -1,4 +1,15 @@
 ---
+accessories:
+  postgres:
+    directories:
+    - data:/var/lib/postgresql/data
+    env:
+      secret:
+      - POSTGRES_USER
+      - PORTGRES_DB
+      - POSTGRES_PASSWORD
+    host: 138.201.175.197
+    image: postgres:17
 aliases:
   console: app exec --interactive --reuse "bin/rails console"
   dbc: app exec --interactive --reuse "bin/rails dbconsole"
@@ -8,7 +19,7 @@ builder:
   arch: arm64
 env:
   clear:
-    RAILS_ENV: "production"
+    RAILS_ENV: production
   secret:
   - BASE_URL
   - HOST

@@ -14,19 +14,19 @@ ENV BUNDLER_VERSION="2.5.16" \
 
 RUN apt-get update
 RUN apt-get install -y \
-        autoconf \
-        build-essential \
-        curl \
-        fish \
-        git \
-        libpq-dev \
-        libvips \
-        pkg-config \
-        postgresql \
-        postgresql-contrib \
-        libpq-dev \
-        vim \
-        wget
+    autoconf \
+    build-essential \
+    curl \
+    fish \
+    git \
+    libpq-dev \
+    libvips \
+    pkg-config \
+    postgresql \
+    postgresql-contrib \
+    libpq-dev \
+    vim \
+    wget
 
 WORKDIR /rails
 
