@@ -1,6 +1,7 @@
 ---
 accessories:
   postgres:
+    cmd: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
     directories:
     - data:/var/lib/postgresql/data
     env:
@@ -8,6 +9,9 @@ accessories:
       - POSTGRES_USER
       - PORTGRES_DB
       - POSTGRES_PASSWORD
+    files:
+    - config/postgres/production.conf:/etc/postgresql/postgresql.conf
+    - config/init.sql:/docker-entrypoint-initdb.d/setup.sql
     host: 138.201.175.197
     image: postgres:17
 aliases:
@@ -56,18 +60,3 @@ servers:
 service: codedorian-staging
 volumes:
 - code_storage:/rails/storage
-accessories:
-  postgres:
-    image: postgres:17
-    host: 138.201.175.197
-    env:
-      secret:
-      - POSTGRES_USER
-      - PORTGRES_DB
-      - POSTGRES_PASSWORD
-    files:
-      - config/postgres/production.conf:/etc/postgresql/postgresql.conf
-      - config/init.sql:/docker-entrypoint-initdb.d/setup.sql
-    directories:
-      - data:/var/lib/postgresql/data
-    cmd: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
