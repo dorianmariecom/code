@@ -20,7 +20,7 @@ image: dorianmariecom/codedorian.com-staging
 proxy:
   healthcheck:
     interval: 10
-    timeout: 100
+    timeout: 1000000000000
   hosts:
   - staging.code-dorian.com
   - staging.code.dorianmarie.com
