@@ -23,7 +23,8 @@ RUN apt-get install -y \
         libvips \
         pkg-config \
         postgresql \
-        postgresql-dev \
+        postgresql-contrib \
+        libpq-dev \
         vim \
         wget
 
