@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
   def show
     # user
-    @data = policy_scope(Datum).where(user: @user).page(params[:page])
     @devices = policy_scope(Device).where(user: @user).page(params[:page])
     @email_addresses =
       policy_scope(EmailAddress).where(user: @user).page(params[:page])
