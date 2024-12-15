@@ -42,6 +42,7 @@ gem "solid_errors"
 gem "solid_queue"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
+gem "thruster", require: false
 gem "turbo-rails", hotwired: "turbo-rails"
 gem "zxcvbn-ruby", require: "zxcvbn"
 
