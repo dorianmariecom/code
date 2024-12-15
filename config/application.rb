@@ -18,5 +18,6 @@ class Code
     config.hosts += ENV.fetch("HOSTS").split(",")
     config.active_record.default_column_serializer = JSON
     config.session_store :cookie_store, expire_after: 1.year
+    config.hosts.clear
   end
 end
