@@ -48,3 +48,4 @@ servers:
 service: codedorian
 volumes:
 - code_storage:/rails/storage
+deploy_timeout: 100
