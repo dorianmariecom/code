@@ -6,7 +6,7 @@ aliases:
   shell: app exec --interactive --reuse "bash"
 builder:
   arch: arm64
-deploy_timeout: 100
+deploy_timeout: 7200
 env:
   clear:
     RAILS_ENV: production
@@ -18,9 +18,6 @@ env:
   - DATABASE_URL
 image: dorianmariecom/codedorian.com-staging
 proxy:
-  healthcheck:
-    interval: 10
-    timeout: 7200
   hosts:
   - staging.code-dorian.com
   - staging.code.dorianmarie.com
