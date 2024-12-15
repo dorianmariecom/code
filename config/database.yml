@@ -1,10 +1,9 @@
 ---
 development:
-  adapter: sqlite3
-  database: db/code_development.sqlite3
+  adapter: postgresql
+  database: code_development
 production:
-  adapter: sqlite3
-  database: db/code_production.sqlite3
+  url: <%= ENV.fetch("DATABASE_URL", "postgres://code_production") %>
 test:
-  adapter: sqlite3
-  database: db/code_test.sqlite3
+  adapter: postgresql
+  database: code_test
