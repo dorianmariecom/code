@@ -20,7 +20,7 @@ image: dorianmariecom/codedorian.com
 proxy:
   healthcheck:
     interval: 10
-    timeout: 10000000000000
+    timeout: 2h
   hosts:
   - code-dorian.com
   - code.dorianmarie.com
