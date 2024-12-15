@@ -7,12 +7,15 @@ aliases:
 builder:
   arch: arm64
 env:
+  clear:
+    RAILS_ENV: "production"
   secret:
   - BASE_URL
   - HOST
   - HOSTS
   - RAILS_MASTER_KEY
-image: dorianmariecom/code
+  - DATABASE_URL
+image: dorianmariecom/codedorian.com
 proxy:
   hosts:
   - code-dorian.com
@@ -39,6 +42,17 @@ servers:
     - 138.201.175.197
   web:
   - 138.201.175.197
-service: code
+service: codedorian.com
 volumes:
 - code_storage:/rails/storage
+accessories:
+  postgres:
+    image: postgres:17
+    host: 138.201.175.197
+    env:
+      secret:
+      - POSTGRES_USER
+      - PORTGRES_DB
+      - POSTGRES_PASSWORD
+    directories:
+    - data:/var/lib/postgresql/data
