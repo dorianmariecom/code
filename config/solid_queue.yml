@@ -6,9 +6,6 @@ dispatchers:
     schedule_all_job:
       class: ScheduleAllJob
       schedule: every minute
-    x_accounts_refresh_auth_job:
-      class: XAccountsRefreshAuthJob
-      schedule: every minute
 workers:
 - polling_interval: 2
   queues: "*"

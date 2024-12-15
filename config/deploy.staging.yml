@@ -6,7 +6,6 @@ aliases:
   shell: app exec --interactive --reuse "bash"
 builder:
   arch: arm64
-deploy_timeout: 7200
 env:
   clear:
     RAILS_ENV: production
