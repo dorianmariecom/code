@@ -1,19 +1,4 @@
 ---
-accessories:
-  postgres:
-    cmd: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
-    directories:
-    - data:/var/lib/postgresql/data
-    env:
-      secret:
-      - POSTGRES_USER
-      - PORTGRES_DB
-      - POSTGRES_PASSWORD
-    files:
-    - config/postgres/production.conf:/etc/postgresql/postgresql.conf
-    - config/init.sql:/docker-entrypoint-initdb.d/setup.sql
-    host: 138.201.175.197
-    image: postgres:17
 aliases:
   console: app exec --interactive --reuse "bin/rails console"
   dbc: app exec --interactive --reuse "bin/rails dbconsole"
