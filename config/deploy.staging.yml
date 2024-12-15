@@ -6,6 +6,7 @@ aliases:
   shell: app exec --interactive --reuse "bash"
 builder:
   arch: arm64
+deploy_timeout: 100
 env:
   clear:
     RAILS_ENV: production
@@ -17,6 +18,9 @@ env:
   - DATABASE_URL
 image: dorianmariecom/codedorian.com-staging
 proxy:
+  healthcheck:
+    interval: 10
+    timeout: 100
   hosts:
   - staging.code-dorian.com
   - staging.code.dorianmarie.com
@@ -26,9 +30,6 @@ proxy:
   - staging.codedorian.net
   - staging.codedorian.org
   ssl: true
-  healthcheck:
-    interval: 10
-    timeout: 100
 registry:
   password:
   - KAMAL_REGISTRY_PASSWORD
@@ -48,4 +49,3 @@ servers:
 service: codedorian-staging
 volumes:
 - code_storage:/rails/storage
-deploy_timeout: 100
