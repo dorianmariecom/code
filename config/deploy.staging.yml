@@ -26,6 +26,9 @@ proxy:
   - staging.codedorian.net
   - staging.codedorian.org
   ssl: true
+  healthcheck:
+    interval: 10
+    timeout: 100
 registry:
   password:
   - KAMAL_REGISTRY_PASSWORD
@@ -45,7 +48,3 @@ servers:
 service: codedorian-staging
 volumes:
 - code_storage:/rails/storage
-proxy:
-  healthcheck:
-    interval: 10
-    timeout: 100
