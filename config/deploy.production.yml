@@ -45,3 +45,7 @@ servers:
 service: codedorian
 volumes:
 - code_storage:/rails/storage
+proxy:
+  healthcheck:
+    interval: 10
+    timeout: 100
